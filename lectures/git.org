@@ -1,0 +1,175 @@
+#+TITLE: Git and GitHub
+#+REVEAL_TRANS: zoom
+#+REVEAL_THEME: league
+
+
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+# #+OPTIONS: toc:nil num:nil
+
+
+* Git for VCS and collaboration
+** Overview
+   - Git is a version control system.
+   - We will learn how to use Git for LaTeX.
+** Goals
+   - Version Control: Keep all versions of your tex file.
+   - Go back to any version if needed.
+   - View the changes in each version.
+   - View the differences between your tex file and your collaborators'.
+   - Merge your tex file with your collaborators'.
+** Installation
+   - Mac
+      - Type the following in your terminal will install Git if you don't have it already.
+        : git --version
+      - See the instruction [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][here]] if it doesn't work.
+   - Windows
+     - Download "64-bit Git for Windows Setup" (or 32-bit depending on your
+        machine) [[https://git-scm.com/download/win][here]].
+     - Install Git using default settings.
+     - Restart your computer.
+** Configuring user name and email
+    - Before using Git you need to identify yourself by entering this.
+      : git config --global user.name "NAME"
+      : git config --global user.email "EMAIL"
+    - This needs to be done only once.
+** Making a folder as a Git repository
+    - Open a terminal in the folder you want to make a Git repository.
+    - Enter the following in the terminal.
+      : git init
+    - This Git repository contains all files in this folder and its sub-folders.
+** Commits
+*** Definition of commit  
+    - [[https://git-scm.com/docs/user-manual][Git manual]] defines /commit/ as follows.
+    - As a noun: A single point in the Git history; the entire history of a
+       project is represented as a set of interrelated commits. 
+    - As a verb: The action of storing a new snapshot of the project’s state in
+       the Git history, by creating a new commit representing the current state
+       of the index and advancing HEAD to point at the new commit.
+*** How to commit
+    - A commit has two parts.
+    - Suppose that you have made some changes in files A, B, C in your project.
+    - Suppose that you want to commit the changes in files A and B.
+    - You first need to /add/ files A and B so that they are /staged/.
+    - You can then commit these staged files by doing /commit/.
+*** How to really commit
+    - To commit changes you first need to "add" your files.
+      : git add FILENAME1 FILENAME2 FILENAME3
+    - These files are now "staged". 
+    - To see the current state enter this.
+      : git status
+    - To commit the staged files enter this.
+      : git commit -m "COMMIT MESSAGE"
+    - You can see all commits you have made as follows.
+      : git log
+** Branches 
+*** What is a branch?
+    - [[https://git-scm.com/docs/user-manual][Git manual]] defines /branch/ as follows.
+    - A "branch" is an active line of development. The most recent commit on a
+      branch is referred to as the tip of that branch. The tip of the branch is
+      referenced by a branch head, which moves forward as additional development
+      is done on the branch. A single Git repository can track an arbitrary
+      number of branches, but your working tree is associated with just one of
+      them (the "current" or "checked out" branch), and HEAD points to that
+      branch.
+*** What branches do I have?
+    - Your default branch is "master" branch.
+    - To view what branches you have, type this.
+      : git branch
+    - Your current branch will be marked with *.
+    - By switching between branches you can go back to any state of your
+      project like a time machine.
+*** Creating branches
+    - You can create a branch like this.
+      : git branch BRANCH-NAME
+    - You can change to the branch "BRANCH-NAME" like this.
+      : git checkout BRANCH-NAME
+    - You can go back to the master branch.
+      : git checkout master
+    - You can delete a branch like this.
+      : git branch -d BRANCH-NAME
+*** Going back to a commit
+    - ~git log~ shows all commits you have made so far.
+    - Suppose that you have the commit number below.
+      : commit 61c261ad4c8c9febd736c7b3bc5da6bf14067f21
+    - The long and strange string ~61c261ad4c8c9febd736c7b3bc5da6bf14067f21~ can
+      be thought of the name of the "branch" when this commit was made.
+    - So you can go back to the state when this commit was made as you did for
+      branches.
+      : git checkout 61c261ad4c8c9febd736c7b3bc5da6bf14067f21
+    - If you want to go back to the current file you can do as follows.
+      : git checkout master
+*** Merging branches
+    - To merge the current branch with branch "BRANCH-NAME" type this.
+      : git merge BRANCH-NAME
+    - This will automatically combine the two branches.
+    - However, if there are some conflicts between the two branches you need to
+      resolve the conflicts first.
+** Useful extensions for Git
+   - GitLens
+   - Git History
+
+** Git commands in VS Code
+*** 
+** How to use Git for collaboration
+*** Assumption
+    - We assume that (unfortunately) your collaborations do NOT use GitHub.
+    - So you have to do this all by yourself.
+    - You have been working on ~master~ branch and you received a modified tex
+      file from your collaborators.
+    - Let's say your version is A and your collaborators' version is B.
+    - Since A and B are different, you need to combine them together.
+*** Process
+    1. Create a branch, say "B", from the current master branch.
+    2. Checkout to that branch.
+    3. Replace the content of your tex file with that of version B. (If both
+       files have the same filename you can simply overwrite your file with your
+       collaborators' file.)
+    4. Commit the changes.
+    5. Checkout to the master branch.
+    6. Merge version B.
+    7. Delete the branch B.
+
+* GitHub
+** Overview
+   - GitHub is a platform to share codes with your collaborators.
+   - 
+** Sign up
+   - Sign up here https://github.com/
+** Initiating a remove repository
+** Pull requests
+   - [[https://guides.github.com/activities/hello-world/][GitHub Guides]] say 
+   - Pull Requests are the heart of collaboration on GitHub.
+   - And we will NOT use pull requests!
+** The easiest work flow (without simultaneous working)
+   1. You wait until your collaborators finish their editing.
+   2. Once they are done, they will tell you so (by phone, text message or email).
+   3. You now tell them that you start working on the file.
+   4. You *pull* (this will make your file up-to-date).
+   5. Make a commit (or two or more).
+   6. Push
+   7. You tell your collaborators that you are done.
+
+** The easiest work flow (with simultaneous working but no conflicts)
+   1. You and your collaborators decide to edit particular sections.
+   2. For example, you edit Section 1, collaborator A edits Section 2, and
+      collaborator B edits Section 3.
+   3. You *pull* (this will make your file up-to-date).
+   4. Make a commit (or two or more).
+   5. Push
+   6. If push is not successful, you need to pull and then push. (It will
+      automatically merge the two files if there are no conflicts.)
+
+** The easiest work flow (with simultaneous working)
+   1. Pull (this will make up-to-date).
+   2. Make a commit (or two or more).
+   3. Push and you will see a message saying that you need to pull first.
+   4. So pull. Then you will see a message saying that you need to resolve conflicts.
+   5. Click your file in the source control sidebar.
+   6. Then you can resolve the conflicts by choosing the changes you like to
+      keep.
+   7. Commit your change and push.
+
+* Useful videos
+  - Learn Git In 15 Minutes
+    https://www.youtube.com/watch?v=USjZcfj8yxE
+  - 
