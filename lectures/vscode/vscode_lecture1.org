@@ -36,11 +36,11 @@
 *** Exercise
    1. Download [[file:vscode-lecture-files.zip][this file]] and extract it in your computer.
    2. Close everything in your VS Code.
-   3. Open the folder "tex-exercise".
+   3. Open the folder "tex-exercise" in VS Code.
    4. Close everything in your VS Code.
-   5. Open the folder "bib-exercise".
+   5. Open the folder "bib-exercise" in VS Code.
    6. Close everything in your VS Code.
-   7. Open the folder "git-exercise".
+   7. Open the folder "git-exercise" in VS Code.
    8. Open recent folders using *CTRL+R*.
 ** How to install extensions
 #+ATTR_REVEAL: :frag (roll-in)
