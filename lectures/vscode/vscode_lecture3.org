@@ -43,6 +43,8 @@
       : git config --global user.name "NAME"
       : git config --global user.email "EMAIL"
     - This needs to be done only once.
+    - You can check the result using
+      : git config --list
 ** Installing VS Code Extensions
    - We will use the following two extensions.
    - GitLens
@@ -165,10 +167,13 @@
 * Exercises
 ** Making Git repositories
    1. Download [[file:git-exercises.zip][this file]] and extract it in your computer.
-   2. Compile the tex file.
-   3. Make this folder a local repository and create a remote repository (Hint:
+   2. Drag-and-drop the whole folder (not just the tex file!) into VS Code.
+      (Make sure that you have closed all folder in VS Code before opening this
+      folder.)
+   3. Compile the tex file.
+   4. Make this folder a local repository and create a remote repository (Hint:
       "Publish to GitHub")
-   4. Select only the tex file when you do this.
+   5. Select only the tex file when you do this.
 ** A file from your collaborator
    1. Your collaborator just sent you their tex file. This is in the folder
       "from your collaborator".

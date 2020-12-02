@@ -24,15 +24,24 @@
      many files and subfolders).
    - I recommend you to have one folder for one project (i.e., your
      paper).
+   - Always open a folder not a single file!
 ** Open folders
 #+ATTR_REVEAL: :frag (roll-in)
    - Before you open a folder for the first time, make sure that you close
      everything using "File $\to$ Close Folder" in the menu bar. 
    - By drag-and-drop you can open a folder.
    - It will create a workspace having all the contents in that folder.
-:   - Exercise: Open the attached folders.
    - You can open recent workspaces (i.e., folders for us) or files using *CTRL+R*,
      which means "File: Open Recent".
+*** Exercise
+   1. Download [[file:vscode-lecture-files.zip][this file]] and extract it in your computer.
+   2. Close everything in your VS Code.
+   3. Open the folder "tex-exercise".
+   4. Close everything in your VS Code.
+   5. Open the folder "bib-exercise".
+   6. Close everything in your VS Code.
+   7. Open the folder "git-exercise".
+   8. Open recent folders using *CTRL+R*.
 ** How to install extensions
 #+ATTR_REVEAL: :frag (roll-in)
    1. Click the icon "Extensions" on the left.

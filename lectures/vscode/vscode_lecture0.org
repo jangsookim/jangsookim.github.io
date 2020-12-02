@@ -14,10 +14,26 @@
     your own.
 * Lecture 1
   - We learn basics on VS Code and LaTeX Workshop.
-  - [[./vscode_lecture1.html][Link to Lecture 1]]
+  - [[./vscode_lecture1.html][Lecture Notes]], [[./vscode_lecture1(slides).html][Slides]], Video
 * Lecture 2
   - We learn BibTeX and Vim. 
-  - [[./vscode_lecture2.html][Link to Lecture 2]]
+  - [[./vscode_lecture2.html][Lecture Notes]]
+  - Prepartion for Lecture 2: Install JabRef.
+     - Download here: http://www.jabref.org/
+
 * Lecture 3
   - We learn Git and GitHub for version control and collaboration. 
-  - [[./vscode_lecture3.html][Link to Lecture 3]]
+  - [[./vscode_lecture3.html][Lecture Notes]]
+** Preparations for Lecture 3
+*** Installing Git
+    - Mac
+      - Type the following in your terminal will install Git if you don't have it already.
+        : git --version
+      - See the instruction [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][here]] if it doesn't work.
+    - Windows
+      - Download "64-bit Git for Windows Setup" (or 32-bit depending on your
+         machine) [[https://git-scm.com/download/win][here]].
+      - Install Git using default settings.
+      - Restart your computer.
+*** Signing up GitHub
+    - Sign up here https://github.com/
