@@ -196,7 +196,7 @@
      use $\mathrm{\LaTeX}$ in Visual Studio Code.
    - [[./lectures/vscode/flyer_vscode.pdf][Poster]]
    - Links to lecture videos will be available soon.
-   # - [[./lectures/vscode/vscode_lecture0.html][link to lectures]]
+   - [[./lectures/vscode/vscode_lecture0.html][link to lectures]]
 ** Topics in Combinatorics: The Theory of Alternating Sign Matrices
    - [[https://www.youtube.com/playlist?list=PLGB0U_OssPo73Ha4Ity13ZgPjlg2hxdbU][link to videos]]
    - This is a graduate course that I taught at Sungkyunkwan University in 2017.
