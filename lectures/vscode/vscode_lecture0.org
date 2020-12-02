@@ -14,7 +14,7 @@
     your own.
 * Lecture 1
   - We learn basics on VS Code and LaTeX Workshop.
-  - [[./vscode_lecture1.html][Lecture Notes]], [[./vscode_lecture1(slides).html][Slides]], Video
+  - [[./vscode_lecture1.html][Lecture Notes]], Video
 * Lecture 2
   - We learn BibTeX and Vim. 
   - [[./vscode_lecture2.html][Lecture Notes]]
