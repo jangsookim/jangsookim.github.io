@@ -45,7 +45,7 @@
 
 ** JabRef
 #+ATTR_REVEAL: :frag (roll-in)
-   - JabRef is a free BibTex Manager.
+   - JabRef is a free BibTeX Manager.
    - Download here: http://www.jabref.org/
    - JabRef is useful when your BibTeX file has many entries.
    - Using JabRef you can add a new entry directly from "Web search" at the
