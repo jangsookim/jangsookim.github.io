@@ -1,0 +1,217 @@
+#+TITLE: Lecture 3: Git and GitHub
+#+REVEAL_TRANS: zoom
+#+REVEAL_THEME: league
+
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+# #+OPTIONS: toc:nil num:nil
+
+
+
+* Git and GitHub for VCS and collaboration
+** Overview
+   - Git is a version control system.
+   - GitHub is a platform to share codes for collaboration.
+   - We will learn how to use Git and GitHub for writing $\mathrm{\LaTeX}$
+     collaboratively.
+   - We will do so without using "branches" and "pull requests", although these
+     are in fact very important concepts in Git and GitHub.
+   - In this way you can learn the work flow much more easily.
+   - After this lecture, when you feel necessary, you can learn more about Git
+     and GitHub in your own.
+** Goals
+   - Version Control: Keep all versions of your tex file.
+   - Go back to any version if needed.
+   - View the changes in each version.
+   - View the differences between your tex file and your collaborators'.
+   - You and your collaborators should be able to edit the tex file
+     simultaneously.
+   - Merge your tex file with your collaborators'.
+   - Limitation: We allow only one time-line (because we don't use branches).
+* Preparations
+** Installing Git
+   - Mac
+     - Type the following in your terminal will install Git if you don't have it already.
+       : git --version
+     - See the instruction [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][here]] if it doesn't work.
+   - Windows
+     - Download "64-bit Git for Windows Setup" (or 32-bit depending on your
+        machine) [[https://git-scm.com/download/win][here]].
+     - Install Git using default settings.
+     - Restart your computer.
+** Configuring Git user name and email
+    - Before using Git you need to identify yourself by entering this.
+      : git config --global user.name "NAME"
+      : git config --global user.email "EMAIL"
+    - This needs to be done only once.
+** Installing VS Code Extensions
+   - We will use the following two extensions.
+   - GitLens
+   - Git History
+   - These extensions have convenient graphic user interface.
+** Signing up GitHub
+   - Sign up here https://github.com/
+* Work flow
+** Overview of work flow
+*** Setting up Git repositories
+     - A /Git repository/ is a folder that is tracked by Git. 
+     - Git will keep track of all files in a Git repository and its sub-folders.
+     - You first need to set up your local and remote repositories.
+     - The local repository is an actual folder in your computer.
+     - The remote repository is located in the GitHub server.
+*** Commit, Push, and Pull
+    - Once you set up local and remote repositories, they are identical now.
+    - After making some changes in your files, you need to "commit", which will
+      tell Git that the files have been changed.
+    - Now only your local repository has been update.
+    - To update the remote repository, you need to "push".
+    - If your collaborators have changed the remote repository, then you first
+      need to "pull" in order to make your local repository up-to-date.
+
+** Setting up Git repositories
+   - There are two ways to create Git repositories.
+   - The first one is using your own folder.
+   - The second one is using already existing GitHub repository.
+   - Every Git repository has a hidden folder named ~.git~.
+   - NEVER touch this hidden folder!
+*** From a folder in your computer
+     1. Open your folder in VS Code that you want to make a Git repository.
+     2. Click the icon "Source Control" on the left.
+     3. Click "Publish to GitHub".
+     4. Command Palette (CP) will be opened with two options:
+        - Publish to GitHub private repository
+        - Publish to GitHub public repository
+     5. Select "Publish to GitHub private repository" and select only the tex
+        file (NOT the pdf file!) and other necessary files to compile the tex
+        file.
+*** From already existing GitHub repository
+    - Visit the GitHub repository that you want to make a remote repository.
+    - In the Code tap click the green button "Code".
+    - Copy the https address.
+    - Go to the "Explorer" tap in your VS Code and close everything using "Close
+      Folder" in "File" tap.
+    - Click "Clone Repository" and enter the https address here.
+    - Select the location of your local repository.
+
+*** Inviting your collaborators or accepting the invitation
+    - If your collaborators created the remote repository, they will invite you
+      to the repository.
+    - If you created the remote repository, you need to invite them as follows.
+    - Login to GitHub and visit the GitHub repository you want to share.
+    - Click "Settings" and click "Manage access".
+    - Click "Invite a collaborator" and add your collaborator one at a time.
+    - Once they accept the invitation they will be able to change the files.
+
+** Commits
+   - [[https://git-scm.com/docs/user-manual][Git manual]] defines a /commit/ as a single point in the Git history.
+   - We will simply think of a commit as a version of your tex file.
+   - A commit has two parts.
+     - Move changed files to the staged area.
+     - Make a commit with a commit message.
+*** Making commits using VS Code
+     - Click the "Source Control" icon on the left.
+     - Each file has a mark.
+       - U means the file is untracked by Git.
+       - M means the file is modified (and is kept tract of by Git).
+     - Click the + button on the modified file (marked M).
+     - The file will be move to "Staged Changes".
+     - Write a commit message in the message box and enter CMD+ENTER.
+
+** Push and Pull
+   - Push is the command that updates the remote repository with the local repository.
+   - Pull is the other way around.
+   - To push type "Git: Push" in CP.
+   - To pull type "Git: Pull" in CP.
+** Merge
+   - If your local repository is not up-to-date, you have to pull first and then push.
+   - If there are no conflicts Git will automatically merge the two files from
+     local and remote repositories.
+   - If there are conflicts, you have to merge the two files manually as follows.
+     1. Git will write the conflicts in the tex file.
+     2. You can simply click the change that you want to keep.
+     3. Once you've resolved all conflicts, save the file and the click the + button.
+     4. Commit and now you can push.
+
+* GitLens and Git History
+** GitLens
+   - GitLens shows who and when the line with cursor was committed.
+   - Moving your mouse pointer over this line shows more details.
+   - From there you can see the changes when the commit was made.
+** Git History
+   - Git History shows the history of all commits using a diagram.
+   - Enter "Git: View History" in CP.
+   - You can investigate each commit by clicking it on the diagram.
+   - You can see the file or changes at that commit.
+   - In the diagram on the right, 
+     - "master" is the current state of your local repository and
+     - "origin/master" is the current state of your remote repository.
+** Previous PDF files using Git History
+   - Enter "Git: View History" in CP.
+   - Click the commit that you want to see a pdf.
+   - Click "View" icon at the bottom.
+   - This will open the tex file when the commit was made.
+   - You can build LaTeX and view PDF as usual.
+
+
+
+* If collaborators don't use GitHub 
+  - You can still do the same thing even if your collaborators do not use GitHub.
+  - When you make changes you push as usual.
+  - But you have to wait when your collaborators are working on the tex file.
+  - Whenever your collaborator sends you their file you need to do as follows.
+    1. Replace your tex file with your collaborator's (their filenames must be
+       identical).
+    2. Commit and push.
+    3. Review the changes your collaborator have made.
+* Exercises
+** Making Git repositories
+   1. Download [[file:git-exercises.zip][this file]] and extract it in your computer.
+   2. Compile the tex file.
+   3. Make this folder a local repository and create a remote repository (Hint:
+      "Publish to GitHub")
+   4. Select only the tex file when you do this.
+** A file from your collaborator
+   1. Your collaborator just sent you their tex file. This is in the folder
+      "from your collaborator".
+   2. Replace your tex file with the file from your collaborator. 
+   3. Commit and push.
+   4. Review the changes.
+   5. Modify the file if you feel necessary.
+   6. Commit and push.
+** Commits and push
+   1. Write contents in Section 5.
+   2. Commit your changes with commit message "Add contents in Section 4" (the
+      tex file only).
+   3. Push.
+   4. Check Git History and see the changes that you just made.
+
+* Branches 
+** What is a branch?
+   - [[https://git-scm.com/docs/user-manual][Git manual]] defines /branch/ as follows.
+   - A "branch" is an active line of development. The most recent commit on a
+     branch is referred to as the tip of that branch. The tip of the branch is
+     referenced by a branch head, which moves forward as additional development
+     is done on the branch. A single Git repository can track an arbitrary
+     number of branches, but your working tree is associated with just one of
+     them (the "current" or "checked out" branch), and HEAD points to that
+     branch.
+** Creating branches
+   - You can easily create a branch using Git History.
+   - In Git History, click "+Branch" at the commit you want to make a branch from.
+   - Enter a branch name.
+   - Then an icon with that branch name will appear.
+   - Clicking on this icon you can switch to that branch.
+** Merging branches
+   - To merge the current branch from another branch enter "Git: Merge Branch"
+     in CP and then enter the branch you want to merge from.
+   - This will automatically merge the two branches.
+   - However, if there are some conflicts between the two branches you need to
+     resolve the conflicts first.
+
+
+
+* Other tips
+** .gitignore file
+   - ~.gitignore~ file tells Git what files to ignore.
+   - If you add a file to ~.gitignore~ then Git will no longer track this file.
+   - To add a file to ~.gitignore~, right click on that file and click "Add to
+     .gitignore".

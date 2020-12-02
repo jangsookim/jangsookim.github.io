@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-11-27 Fri 22:47 -->
+<!-- 2020-12-02 Wed 14:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>\(\mathrm{\LaTeX}\) in VSCode</title>
+<title>Lecture 2: BibTeX and Vim</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Jang Soo Kim" />
 <style type="text/css">
@@ -270,367 +270,68 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">\(\mathrm{\LaTeX}\) in VSCode</h1>
+<h1 class="title">Lecture 2: BibTeX and Vim</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org561ab7b">1. Basics on VSCode</a>
+<li><a href="#orga44ef0f">1. BibTeX</a>
 <ul>
-<li><a href="#orgbba9ae5">1.1. Installation</a></li>
-<li><a href="#org883d026">1.2. Open files</a></li>
-<li><a href="#org4f8e039">1.3. Command Pallette</a></li>
-<li><a href="#org63bc4f1">1.4. How to change settings</a></li>
-<li><a href="#orgf9309bd">1.5. How to change themes</a></li>
-<li><a href="#orgb762ccc">1.6. How to install extensions</a>
+<li><a href="#org8a324ef">1.1. Overview</a></li>
+<li><a href="#orga4115a3">1.2. Entries in BibTeX file</a></li>
+<li><a href="#org3848893">1.3. BibTeX entries from Google Scholar</a></li>
+<li><a href="#orge256689">1.4. JabRef</a></li>
+<li><a href="#org35b6d60">1.5. bbl file</a></li>
+</ul>
+</li>
+<li><a href="#orgad1ce19">2. Code Ace Jumper (extension)</a>
 <ul>
-<li><a href="#org0585f6a">1.6.1. Community Material Theme (extension)</a></li>
-<li><a href="#orgf1b5629">1.6.2. Code Spell Checker (extension)</a></li>
+<li><a href="#org812e7e7">2.1. Overview</a></li>
+<li><a href="#orgbfaa551">2.2. Add Keyboard shortcuts</a></li>
+<li><a href="#orgde3d121">2.3. Change some options</a>
+<ul>
+<li><a href="#orgc764946">2.3.1. Redefine "words"</a></li>
+<li><a href="#org081ff4d">2.3.2. Change the background color</a></li>
+<li><a href="#org06b2ed3">2.3.3. Change the scroll mode</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org8ac55b2">2. LaTeX Workshop (extension)</a>
+<li><a href="#org3ccb54c">3. Vim (extension)</a>
 <ul>
-<li><a href="#org787babd">2.1. Installation</a></li>
-<li><a href="#orgaf4b56b">2.2. Basic commands</a>
+<li><a href="#org5c81fdb">3.1. Overview</a></li>
+<li><a href="#org2ecb824">3.2. Installation</a></li>
+<li><a href="#orgbf14d22">3.3. Changing modes</a></li>
+<li><a href="#orgf483bc2">3.4. Movements (Normal Mode)</a></li>
+<li><a href="#org035ec0d">3.5. Editing (Normal Mode)</a></li>
+<li><a href="#org7f55741">3.6. Visual Mode</a></li>
+<li><a href="#org50d41e5">3.7. Finding a letter (Normal Mode)</a></li>
+<li><a href="#orgfd90860">3.8. Finding a word (Normal Mode)</a></li>
+<li><a href="#orgb7130c7">3.9. Other useful commands (Normal Mode)</a></li>
+<li><a href="#org71f751d">3.10. Useful combos</a></li>
+<li><a href="#orgee15f36">3.11. Registers</a></li>
+<li><a href="#orgb1f695c">3.12. Mark positions</a></li>
+<li><a href="#org95f27fa">3.13. Dot: Repeat the previous command.</a></li>
+<li><a href="#org8d4dd39">3.14. Macros</a>
 <ul>
-<li><a href="#org42fe6bf">2.2.1. Exercises</a></li>
+<li><a href="#orge87d76c">3.14.1. Example</a></li>
+<li><a href="#org1ababdd">3.14.2. Exercises</a></li>
 </ul>
 </li>
-<li><a href="#org3a09be5">2.3. Move between sections or labels</a></li>
-<li><a href="#org72fe049">2.4. Some interesting features</a></li>
-<li><a href="#org5e55c9a">2.5. Snippets</a></li>
-<li><a href="#org675e0b5">2.6. More Snippets</a></li>
-<li><a href="#orgf42bef4">2.7. Add Keyboard shortcuts</a>
-<ul>
-<li><a href="#org557e89b">2.7.1. Exercise</a></li>
-</ul>
-</li>
-<li><a href="#orgdfc2f54">2.8. Finding errors</a></li>
-</ul>
-</li>
-<li><a href="#org7402453">3. BibTeX</a>
-<ul>
-<li><a href="#org10de57b">3.1. Overview</a></li>
-<li><a href="#org0527890">3.2. Entries in BibTeX file</a></li>
-<li><a href="#org1b1fb7e">3.3. BibTeX entries from Google Scholar</a></li>
-<li><a href="#orgc204ff4">3.4. JabRef</a></li>
-<li><a href="#org76c7848">3.5. bbl file</a></li>
-</ul>
-</li>
-<li><a href="#org36bb262">4. User Snippets</a>
-<ul>
-<li><a href="#org755b1cd">4.1. latex.json</a></li>
-<li><a href="#org1da5d46">4.2. Write user snippets (without arguments)</a>
-<ul>
-<li><a href="#orgd262679">4.2.1. Example</a></li>
-<li><a href="#orgcdecbf5">4.2.2. Example</a></li>
-</ul>
-</li>
-<li><a href="#orgc827c02">4.3. Write user snippets (with arguments)</a>
-<ul>
-<li><a href="#org174b24f">4.3.1. Example</a></li>
-<li><a href="#orgad64884">4.3.2. Example (default arguments)</a></li>
-</ul>
-</li>
-<li><a href="#org5e1cefc">4.4. Exercises</a></li>
-<li><a href="#org53a2124">4.5. More Exercises</a></li>
-</ul>
-</li>
-<li><a href="#orgb16586e">5. Code Ace Jumper (extension)</a>
-<ul>
-<li><a href="#org2e130e6">5.1. Overview</a></li>
-<li><a href="#org83bd50b">5.2. Add Keyboard shortcuts</a></li>
-<li><a href="#orgb8033cd">5.3. Change some options</a>
-<ul>
-<li><a href="#orga360382">5.3.1. Redefine "words"</a></li>
-<li><a href="#org2e61468">5.3.2. Change the background color</a></li>
-<li><a href="#orgd50e4fa">5.3.3. Change the scroll mode</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org3008b9f">6. Vim (extension)</a>
-<ul>
-<li><a href="#org034baf1">6.1. Overview</a></li>
-<li><a href="#org1217fad">6.2. Installation</a></li>
-<li><a href="#org2f06187">6.3. Changing modes</a></li>
-<li><a href="#orgd5a5586">6.4. Movements (Normal Mode)</a></li>
-<li><a href="#orgbdfedd1">6.5. Editing (Normal Mode)</a></li>
-<li><a href="#org8c64e21">6.6. Visual Mode</a></li>
-<li><a href="#orgf6a2cc5">6.7. Finding a letter (Normal Mode)</a></li>
-<li><a href="#orgf07be08">6.8. Finding a word (Normal Mode)</a></li>
-<li><a href="#org2faa742">6.9. Other useful commands (Normal Mode)</a></li>
-<li><a href="#orgce50f19">6.10. Useful combos</a></li>
-<li><a href="#org816a4b6">6.11. Registers</a></li>
-<li><a href="#orga0792df">6.12. Mark positions</a></li>
-<li><a href="#org2dfb064">6.13. Dot: Repeat the previous command.</a></li>
-<li><a href="#org957f183">6.14. Macros</a>
-<ul>
-<li><a href="#orga92f177">6.14.1. Example</a></li>
-<li><a href="#orgd5028d2">6.14.2. Exercises</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orge244e70">7. More tips and tricks</a>
-<ul>
-<li><a href="#orgc25c1d6">7.1. Hold a key to repeat it.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org561ab7b" class="outline-2">
-<h2 id="org561ab7b"><span class="section-number-2">1</span> Basics on VSCode</h2>
+
+<div id="outline-container-orga44ef0f" class="outline-2">
+<h2 id="orga44ef0f"><span class="section-number-2">1</span> BibTeX</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgbba9ae5" class="outline-3">
-<h3 id="orgbba9ae5"><span class="section-number-3">1.1</span> Installation</h3>
+<div id="outline-container-org8a324ef" class="outline-3">
+<h3 id="org8a324ef"><span class="section-number-3">1.1</span> Overview</h3>
 <div class="outline-text-3" id="text-1-1">
-<ul class="org-ul">
-<li>Download here: <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org883d026" class="outline-3">
-<h3 id="org883d026"><span class="section-number-3">1.2</span> Open files</h3>
-<div class="outline-text-3" id="text-1-2">
-<ul class="org-ul">
-<li>You can open a file by drag-and-drop.</li>
-<li><b>CMD + P</b> allows you to search files.</li>
-<li>Note: <b>CMD</b> means Command Key for Mac and Control Key for Windows.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org4f8e039" class="outline-3">
-<h3 id="org4f8e039"><span class="section-number-3">1.3</span> Command Pallette</h3>
-<div class="outline-text-3" id="text-1-3">
-<ul class="org-ul">
-<li><b>CMD + SHIFT + P</b> opens a command line showing all commands.</li>
-<li>We will call this command line CP.</li>
-<li>Probably the most important keyboard shortcut!</li>
-<li>Very helpful when you forgot keyboard shortcuts.</li>
-<li>You can also discover many things using CP.</li>
-<li>Quiz: How can you make the minimap disappear?</li>
-<li>Hint: Search "minimap" at CP, and you will get the answer.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org63bc4f1" class="outline-3">
-<h3 id="org63bc4f1"><span class="section-number-3">1.4</span> How to change settings</h3>
-<div class="outline-text-3" id="text-1-4">
-<ol class="org-ol">
-<li>CP \(\rightarrow\) "Preferences: Open Settings (UI)" (or type <b>CMD+,</b>)</li>
-<li>Search "Editor: Font Size".</li>
-<li>Enter 14 (or any font size you want) in the box.</li>
-<li>Exercise: Disable the line number.</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orgf9309bd" class="outline-3">
-<h3 id="orgf9309bd"><span class="section-number-3">1.5</span> How to change themes</h3>
-<div class="outline-text-3" id="text-1-5">
-<ul class="org-ul">
-<li>Search "theme" at CP, and choose "Preferences: Color Theme".</li>
-<li>You can check out more themes from extensions.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgb762ccc" class="outline-3">
-<h3 id="orgb762ccc"><span class="section-number-3">1.6</span> How to install extensions</h3>
-<div class="outline-text-3" id="text-1-6">
-<ol class="org-ol">
-<li>Click the icon "Extensions" on the left.</li>
-<li>Search the extension you want to install.</li>
-<li>Click "Install".</li>
-</ol>
-</div>
-<div id="outline-container-org0585f6a" class="outline-4">
-<h4 id="org0585f6a"><span class="section-number-4">1.6.1</span> Community Material Theme (extension)</h4>
-<div class="outline-text-4" id="text-1-6-1">
-<ol class="org-ol">
-<li>Install "Community Material Theme" extension.</li>
-<li>Select "Community Material Theme Palenight (Higher Contrast)" from
-"Preferences: Color Theme" as we did above.</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orgf1b5629" class="outline-4">
-<h4 id="orgf1b5629"><span class="section-number-4">1.6.2</span> Code Spell Checker (extension)</h4>
-<div class="outline-text-4" id="text-1-6-2">
-<ul class="org-ul">
-<li>Quick fix: <b>CMD + .</b></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org8ac55b2" class="outline-2">
-<h2 id="org8ac55b2"><span class="section-number-2">2</span> LaTeX Workshop (extension)</h2>
-<div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-org787babd" class="outline-3">
-<h3 id="org787babd"><span class="section-number-3">2.1</span> Installation</h3>
-<div class="outline-text-3" id="text-2-1">
-<ul class="org-ul">
-<li>First you need to install LaTeX Workshop using "Extensions" icon as before.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgaf4b56b" class="outline-3">
-<h3 id="orgaf4b56b"><span class="section-number-3">2.2</span> Basic commands</h3>
-<div class="outline-text-3" id="text-2-2">
-<ul class="org-ul">
-<li><b>TeX Compile</b> 
-<ul class="org-ul">
-<li>To build a pdf type <b>CMD + OPTION + B</b>.</li>
-<li>If you forgot this, search "latex build" at CP.</li>
-<li>Alternatively, you can simply save the tex file.</li>
-<li>What's the shortcut for "Save"? (Hint: CP)</li>
-</ul></li>
-<li><b>View PDF</b>
-<ul class="org-ul">
-<li>To view a pdf, type <b>CMD + OPTION + V</b>.</li>
-<li>If you forgot this, search "latex pdf" at CP.</li>
-</ul></li>
-<li><b>Inverse Search</b> (find source code from pdf)
-<ul class="org-ul">
-<li><b>CMD + left click on the pdf</b></li>
-</ul></li>
-<li><b>SyncTeX from cursor</b> (Forward Search)
-<ul class="org-ul">
-<li><b>CMD + OPTION + J</b></li>
-</ul></li>
-</ul>
-</div>
-<div id="outline-container-org42fe6bf" class="outline-4">
-<h4 id="org42fe6bf"><span class="section-number-4">2.2.1</span> Exercises</h4>
-<div class="outline-text-4" id="text-2-2-1">
-<ol class="org-ol">
-<li>Find the shortcuts for "Copy" and "Paste".</li>
-<li>Discover what "Copy Line Up" and "Copy Line Down" mean.</li>
-<li>Find the shortcut for "Find".</li>
-<li>Find a way to comment a line.</li>
-<li>Experiment with your finding in 4 by using its shortcut after selecting a
-region.</li>
-</ol>
-</div>
-</div>
-</div>
-<div id="outline-container-org3a09be5" class="outline-3">
-<h3 id="org3a09be5"><span class="section-number-3">2.3</span> Move between sections or labels</h3>
-<div class="outline-text-3" id="text-2-3">
-<ul class="org-ul">
-<li>Click the icon \(\mathrm{\TeX}\) on the left.</li>
-<li>This will show the sidebar with sections and labels.</li>
-<li>By clicking a section here you can move to that section in your tex file.</li>
-<li>You can toggle the sidebar with <b>CMD + B</b>. If you forgot this, you know what
-to do.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org72fe049" class="outline-3">
-<h3 id="org72fe049"><span class="section-number-3">2.4</span> Some interesting features</h3>
-<div class="outline-text-3" id="text-2-4">
-<ul class="org-ul">
-<li>Auto Completion: Try to type <code>\begin{theorem}</code></li>
-<li>Collapsing environments
-<ul class="org-ul">
-<li>Click the down arrow appearing at the left of an environment.</li>
-</ul></li>
-<li>Preview
-<ul class="org-ul">
-<li>Place your mouse pointer at an equation.</li>
-</ul></li>
-<li>Latex Snippet Panel 
-<ul class="org-ul">
-<li>CP \(\rightarrow\) "Latex Workshop: Show Snippet Panel"</li>
-</ul></li>
-<li>Typing "\ref{" shows all labels.
-<ul class="org-ul">
-<li>By clicking the arrow at the right corner, you can see the content of the
-label.</li>
-</ul></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org5e55c9a" class="outline-3">
-<h3 id="org5e55c9a"><span class="section-number-3">2.5</span> Snippets</h3>
-<div class="outline-text-3" id="text-2-5">
-<ul class="org-ul">
-<li>A <i>snippet</i> means a block of re-usable code, somewhat similar to macro.</li>
-<li>If you type the "prefix" of a snippet and press <code>TAB</code> or <code>ENTER</code>, then it
-will insert the "body" of the snippet.</li>
-<li>@a: <code>\alpha</code></li>
-<li>@(: <code>\left( \right)</code></li>
-<li>@/: <code>\frac{}{}</code></li>
-<li>bit: <code>\begin{itemize} ... \end{itemize}</code></li>
-<li>fem: <code>\emph{}</code></li>
-<li>mbf: <code>\mathbf{}</code></li>
-<li>Typing a letter and <code>CTRL+SPC</code> will show all snippets whose prefix contains
-that letter.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org675e0b5" class="outline-3">
-<h3 id="org675e0b5"><span class="section-number-3">2.6</span> More Snippets</h3>
-<div class="outline-text-3" id="text-2-6">
-<ul class="org-ul">
-<li><p>
-See the links below for more snippets.
-<a href="https://github.com/James-Yu/LaTeX-Workshop/wiki/Snippets#Handy-mathematical-snippets">https://github.com/James-Yu/LaTeX-Workshop/wiki/Snippets#Handy-mathematical-snippets</a>
-</p>
-
-<p>
-<a href="https://cheatography.com/jcwinkler/cheat-sheets/latex-workshop-visual-studio-code/#downloads">https://cheatography.com/jcwinkler/cheat-sheets/latex-workshop-visual-studio-code/#downloads</a>
-</p></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgf42bef4" class="outline-3">
-<h3 id="orgf42bef4"><span class="section-number-3">2.7</span> Add Keyboard shortcuts</h3>
-<div class="outline-text-3" id="text-2-7">
-<ol class="org-ol">
-<li>CP \(\rightarrow\) Preferences: Open Keyboard Shortcuts</li>
-<li>Search "Latex Workshop: Select the current environment content."</li>
-<li>Double click this line and enter your desired key combination (e.g. <b>CMD+'</b>).</li>
-</ol>
-</div>
-<div id="outline-container-org557e89b" class="outline-4">
-<h4 id="org557e89b"><span class="section-number-4">2.7.1</span> Exercise</h4>
-<div class="outline-text-4" id="text-2-7-1">
-<ul class="org-ul">
-<li>Setup a keyboard shortcut for "Latex Workshop: Select the current section".</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-orgdfc2f54" class="outline-3">
-<h3 id="orgdfc2f54"><span class="section-number-3">2.8</span> Finding errors</h3>
-<div class="outline-text-3" id="text-2-8">
-<ol class="org-ol">
-<li>If there are some errors in your tex file, VSCode will show a message box
-when you build LaTeX.</li>
-<li>Click "Open compiler log" in the message box.</li>
-<li>Click "Problems" in the small window at the bottom. You can make it bigger
-by dragging its top.</li>
-<li>Clicking a line in this window will send you to the precise location in
-your tex file where the error occurs.</li>
-</ol>
-</div>
-</div>
-</div>
-<div id="outline-container-org7402453" class="outline-2">
-<h2 id="org7402453"><span class="section-number-2">3</span> BibTeX</h2>
-<div class="outline-text-2" id="text-3">
-</div>
-<div id="outline-container-org10de57b" class="outline-3">
-<h3 id="org10de57b"><span class="section-number-3">3.1</span> Overview</h3>
-<div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>BibTeX is a program used for generating references.</li>
 <li>First you need a BibTeX file.</li>
@@ -651,9 +352,9 @@ Then you need to have the following two lines in you tex file:
 </ul>
 </div>
 </div>
-<div id="outline-container-org0527890" class="outline-3">
-<h3 id="org0527890"><span class="section-number-3">3.2</span> Entries in BibTeX file</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-orga4115a3" class="outline-3">
+<h3 id="orga4115a3"><span class="section-number-3">1.2</span> Entries in BibTeX file</h3>
+<div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li><p>
 A BibTeX file has entries like this:
@@ -676,9 +377,9 @@ A BibTeX file has entries like this:
 </div>
 </div>
 
-<div id="outline-container-org1b1fb7e" class="outline-3">
-<h3 id="org1b1fb7e"><span class="section-number-3">3.3</span> BibTeX entries from Google Scholar</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-org3848893" class="outline-3">
+<h3 id="org3848893"><span class="section-number-3">1.3</span> BibTeX entries from Google Scholar</h3>
+<div class="outline-text-3" id="text-1-3">
 <ol class="org-ol">
 <li>Search the paper you want to cite in Google Scholar.
 <a href="https://scholar.google.com/">https://scholar.google.com/</a></li>
@@ -690,23 +391,23 @@ A BibTeX file has entries like this:
 </div>
 </div>
 
-<div id="outline-container-orgc204ff4" class="outline-3">
-<h3 id="orgc204ff4"><span class="section-number-3">3.4</span> JabRef</h3>
-<div class="outline-text-3" id="text-3-4">
+<div id="outline-container-orge256689" class="outline-3">
+<h3 id="orge256689"><span class="section-number-3">1.4</span> JabRef</h3>
+<div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>JabRef is a free BibTex Manager.</li>
 <li>Download here: <a href="http://www.jabref.org/">http://www.jabref.org/</a></li>
 <li>JabRef is useful when your BibTeX file has many entries.</li>
 <li>Using JabRef you can add a new entry directly from "Web search" at the
 bottom left corner.</li>
-<li>I couldn't find any BibTeX managers in VSCode extensions. Let me know if
-you found one.</li>
+<li>I couldn't find any BibTeX managers in VS Code extensions. Let me know if
+you find one.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org76c7848" class="outline-3">
-<h3 id="org76c7848"><span class="section-number-3">3.5</span> bbl file</h3>
-<div class="outline-text-3" id="text-3-5">
+<div id="outline-container-org35b6d60" class="outline-3">
+<h3 id="org35b6d60"><span class="section-number-3">1.5</span> bbl file</h3>
+<div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>If you compile bibtex, it will generate a bbl file <code>TEXFILENAME.bbl</code>, where
 <code>TEXFILENAME</code> is your tex filename.</li>
@@ -719,219 +420,13 @@ you found one.</li>
 </div>
 </div>
 
-
-
-<div id="outline-container-org36bb262" class="outline-2">
-<h2 id="org36bb262"><span class="section-number-2">4</span> User Snippets</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgad1ce19" class="outline-2">
+<h2 id="orgad1ce19"><span class="section-number-2">2</span> Code Ace Jumper (extension)</h2>
+<div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org755b1cd" class="outline-3">
-<h3 id="org755b1cd"><span class="section-number-3">4.1</span> latex.json</h3>
-<div class="outline-text-3" id="text-4-1">
-<ul class="org-ul">
-<li>To write user snippets we need to open the "latex.json" file.</li>
-<li>CP \(\rightarrow\) Preferences: Configure User Snippets</li>
-<li>Find "latex (latex)" or "latex.json (latex)".</li>
-<li>It will open the file latex.json.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org1da5d46" class="outline-3">
-<h3 id="org1da5d46"><span class="section-number-3">4.2</span> Write user snippets (without arguments)</h3>
-<div class="outline-text-3" id="text-4-2">
-<ul class="org-ul">
-<li>In the latex.json file everything is enclosed by a pair of curly braces <code>{...}</code>.</li>
-<li>You can write your own snippets inside this braces.</li>
-<li><p>
-Each snippet has the following structure.
-</p>
-<pre class="example">
-"snippet name": {
-    "prefix": "snippet key",
-     "body": "snippet body"
-}
-</pre></li>
-</ul>
-</div>
-<div id="outline-container-orgd262679" class="outline-4">
-<h4 id="orgd262679"><span class="section-number-4">4.2.1</span> Example</h4>
-<div class="outline-text-4" id="text-4-2-1">
-<ul class="org-ul">
-<li><p>
-Consider the following snippet.
-</p>
-<pre class="example">
-"vandermonde determinant": {
-    "prefix": "vdm", 
-    "body": "\\prod_{1\\le i&lt;j\\le n} (x_i - x_j)" 
-}
-</pre></li>
-<li><p>
-This  snippet will insert the following when you press TAP after
-typing vdm:
-</p>
-<pre class="example">
-\prod_{1\le i&lt;j\le n} (x_i - x_j)
-</pre></li>
-<li>Notice that we must write two slashes <code>\\</code> to insert a single slash <code>\</code>.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgcdecbf5" class="outline-4">
-<h4 id="orgcdecbf5"><span class="section-number-4">4.2.2</span> Example</h4>
-<div class="outline-text-4" id="text-4-2-2">
-<ul class="org-ul">
-<li>If you have more than one snippets, you must put a comma <code>,</code> after each
-snippet.</li>
-<li><p>
-So, for example, your latex.jason file should look something like this
-(notice the outermost pair of curly braces):
-</p>
-<pre class="example">
-{
-   "vandermonde determinant": {
-       "prefix": "vdm", 
-       "body": "\\prod_{1\\le i&lt;j\\le n} (x_i - x_j)" 
-   },
-   "vandermonde determinant2": {
-       "prefix": "vdm2", 
-       "body": "\\prod_{1\\le i&lt;j\\le n} (y_i - y_j)" 
-   }
-}
-</pre></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-orgc827c02" class="outline-3">
-<h3 id="orgc827c02"><span class="section-number-3">4.3</span> Write user snippets (with arguments)</h3>
-<div class="outline-text-3" id="text-4-3">
-<ul class="org-ul">
-<li>Using arguments you can create more flexible snippets.</li>
-<li>Arguments are of this form <code>$1</code>, <code>$2</code>, etc., and <code>$0</code>.</li>
-<li><code>$1</code>, <code>$2</code>, etc. mean the first argument and the second argument etc.</li>
-<li>You will be asked to type these variables when you use the snippet.</li>
-<li><code>$0</code> means the final location of the cursor when all the arguments have
-been typed.</li>
-</ul>
-</div>
-<div id="outline-container-org174b24f" class="outline-4">
-<h4 id="org174b24f"><span class="section-number-4">4.3.1</span> Example</h4>
-<div class="outline-text-4" id="text-4-3-1">
-<ul class="org-ul">
-<li><p>
-Consider the following snippet.
-</p>
-<pre class="example">
-"vandermonde det": {
-	"prefix": "vdm",
-	"body": "\\prod_{1\\le i&lt;j\\le $1} ($2_i - $2_j)"
-}
-</pre></li>
-<li>If you use this snippet, it will ask you to fill <code>$1</code> and then <code>$2</code>. You
-can move to the next argument by pressing <code>TAB</code>.</li>
-<li><p>
-If you type <code>m</code> <code>TAB</code> <code>z</code> <code>TAB</code>, then the snippet will insert this:
-</p>
-<pre class="example">
-\prod_{1\le i&lt;j\le m} (z_i - z_j)
-</pre></li>
-<li>Note that you need to type <code>$2</code> only once and it will be inserted twice as
-designed.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgad64884" class="outline-4">
-<h4 id="orgad64884"><span class="section-number-4">4.3.2</span> Example (default arguments)</h4>
-<div class="outline-text-4" id="text-4-3-2">
-<ul class="org-ul">
-<li>You can also set default arguments using <code>${n:default}</code>.</li>
-<li><p>
-For example, the following snippet has default values <code>n</code> and <code>x</code> for the
-arguments <code>$1</code> and <code>$2</code> respectively.
-</p>
-<pre class="example">
-"vandermonde det": {
-	"prefix": "vdm",
-	"body": "\\prod_{1\\le i&lt;j\\le ${1:n} (${2:x}_i - $2_j)"
-}
-</pre></li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org5e1cefc" class="outline-3">
-<h3 id="org5e1cefc"><span class="section-number-3">4.4</span> Exercises</h3>
-<div class="outline-text-3" id="text-4-4">
-<ol class="org-ol">
-<li><p>
-Write a snippet that inserts the following and place the cursor in the
-middle.
-</p>
-<pre class="example">
-\langle  \rangle
-</pre></li>
-<li><p>
-Write a snippet that inserts the following and place the cursor in the
-middle. (Hint: a new line can be created using <code>\n</code>.)
-</p>
-<pre class="example">
-\[
-
-\]
-</pre></li>
-<li><p>
-Write a snippet that inserts the following, where <code>x</code> and <code>n</code> are
-given as default but can be changed to anything.
-</p>
-<pre class="example">
-(x_1,x_2,\dots,x_n) 
-</pre></li>
-</ol>
-</div>
-</div>
-<div id="outline-container-org53a2124" class="outline-3">
-<h3 id="org53a2124"><span class="section-number-3">4.5</span> More Exercises</h3>
-<div class="outline-text-3" id="text-4-5">
-<ol class="org-ol">
-<li><p>
-LaTeX Workshop has the snippet <code>BCAS</code> that inserts the following.
-</p>
-<pre class="example">
-\begin{cases}
-
-\end{cases}
-</pre>
-
-<p>
-Write your own snippet with the same prefix <code>BCAS</code> that inserts 
-</p>
-<pre class="example">
-\begin{cases}
-  A  &amp;  \mbox{if $B$},\\
-  C  &amp;  \mbox{D}.
-\end{cases}
-</pre>
-
-<p>
-and asks you to fill A, B, C, D in this order, where D is set to be
-<code>otherwise</code> by default, and locate the cursor below the line containing
-<code>\end{cases}</code>.
-</p></li>
-<li>See what happens if you type <code>BCAS</code>.</li>
-</ol>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgb16586e" class="outline-2">
-<h2 id="orgb16586e"><span class="section-number-2">5</span> Code Ace Jumper (extension)</h2>
-<div class="outline-text-2" id="text-5">
-</div>
-<div id="outline-container-org2e130e6" class="outline-3">
-<h3 id="org2e130e6"><span class="section-number-3">5.1</span> Overview</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-org812e7e7" class="outline-3">
+<h3 id="org812e7e7"><span class="section-number-3">2.1</span> Overview</h3>
+<div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Code Ace Jumper is an extension that allows you to jump around your file.</li>
 <li>How to use:
@@ -946,9 +441,9 @@ each word starting with <code>d</code>.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org83bd50b" class="outline-3">
-<h3 id="org83bd50b"><span class="section-number-3">5.2</span> Add Keyboard shortcuts</h3>
-<div class="outline-text-3" id="text-5-2">
+<div id="outline-container-orgbfaa551" class="outline-3">
+<h3 id="orgbfaa551"><span class="section-number-3">2.2</span> Add Keyboard shortcuts</h3>
+<div class="outline-text-3" id="text-2-2">
 <ol class="org-ol">
 <li>CP \(\rightarrow\) Preferences: Open Keyboard Shortcuts</li>
 <li>Search "ace jump".</li>
@@ -963,13 +458,13 @@ example,
 </ol>
 </div>
 </div>
-<div id="outline-container-orgb8033cd" class="outline-3">
-<h3 id="orgb8033cd"><span class="section-number-3">5.3</span> Change some options</h3>
-<div class="outline-text-3" id="text-5-3">
+<div id="outline-container-orgde3d121" class="outline-3">
+<h3 id="orgde3d121"><span class="section-number-3">2.3</span> Change some options</h3>
+<div class="outline-text-3" id="text-2-3">
 </div>
-<div id="outline-container-orga360382" class="outline-4">
-<h4 id="orga360382"><span class="section-number-4">5.3.1</span> Redefine "words"</h4>
-<div class="outline-text-4" id="text-5-3-1">
+<div id="outline-container-orgc764946" class="outline-4">
+<h4 id="orgc764946"><span class="section-number-4">2.3.1</span> Redefine "words"</h4>
+<div class="outline-text-4" id="text-2-3-1">
 <ol class="org-ol">
 <li>We want to make the <code>f</code> in <code>\frac</code> or in <code>$f$</code> as the start of a word.</li>
 <li>CP \(\rightarrow\) Preferences: Open Settings (UI). (or <code>CMD+,</code> for a shortcut)</li>
@@ -990,17 +485,17 @@ so that it looks like this:
 </ol>
 </div>
 </div>
-<div id="outline-container-org2e61468" class="outline-4">
-<h4 id="org2e61468"><span class="section-number-4">5.3.2</span> Change the background color</h4>
-<div class="outline-text-4" id="text-5-3-2">
+<div id="outline-container-org081ff4d" class="outline-4">
+<h4 id="org081ff4d"><span class="section-number-4">2.3.2</span> Change the background color</h4>
+<div class="outline-text-4" id="text-2-3-2">
 <ul class="org-ul">
 <li>Enter "yellow" in "Ace Jump &gt; Placeholder: Background Color".</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd50e4fa" class="outline-4">
-<h4 id="orgd50e4fa"><span class="section-number-4">5.3.3</span> Change the scroll mode</h4>
-<div class="outline-text-4" id="text-5-3-3">
+<div id="outline-container-org06b2ed3" class="outline-4">
+<h4 id="org06b2ed3"><span class="section-number-4">2.3.3</span> Change the scroll mode</h4>
+<div class="outline-text-4" id="text-2-3-3">
 <ul class="org-ul">
 <li>Set "none" in "Ace Jump &gt; Scroll:Mode".</li>
 </ul>
@@ -1009,13 +504,13 @@ so that it looks like this:
 </div>
 </div>
 
-<div id="outline-container-org3008b9f" class="outline-2">
-<h2 id="org3008b9f"><span class="section-number-2">6</span> Vim (extension)</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-org3ccb54c" class="outline-2">
+<h2 id="org3ccb54c"><span class="section-number-2">3</span> Vim (extension)</h2>
+<div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org034baf1" class="outline-3">
-<h3 id="org034baf1"><span class="section-number-3">6.1</span> Overview</h3>
-<div class="outline-text-3" id="text-6-1">
+<div id="outline-container-org5c81fdb" class="outline-3">
+<h3 id="org5c81fdb"><span class="section-number-3">3.1</span> Overview</h3>
+<div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>Vim is a modal editor meaning that it has several modes.
 <ul class="org-ul">
@@ -1023,15 +518,15 @@ so that it looks like this:
 <li>Insert mode: used for inserting text</li>
 <li>Command-line mode: used for doing some commands</li>
 </ul></li>
-<li>Vim Extension allows us to use Vim commands inside VSCode.</li>
+<li>Vim Extension allows us to use Vim commands inside VS Code.</li>
 <li>Vim graphical cheat sheet<br />
 <a href="https://eggplant.pro/blog/wp-content/uploads/2016/12/vi-vim-tutorial.pdf">https://eggplant.pro/blog/wp-content/uploads/2016/12/vi-vim-tutorial.pdf</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1217fad" class="outline-3">
-<h3 id="org1217fad"><span class="section-number-3">6.2</span> Installation</h3>
-<div class="outline-text-3" id="text-6-2">
+<div id="outline-container-org2ecb824" class="outline-3">
+<h3 id="org2ecb824"><span class="section-number-3">3.2</span> Installation</h3>
+<div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>First you need to install Vim using "Extensions" icon as before.</li>
 <li>Once you have Vim installed, you can use Vim commands immediately.</li>
@@ -1043,9 +538,9 @@ so that it looks like this:
 </ul>
 </div>
 </div>
-<div id="outline-container-org2f06187" class="outline-3">
-<h3 id="org2f06187"><span class="section-number-3">6.3</span> Changing modes</h3>
-<div class="outline-text-3" id="text-6-3">
+<div id="outline-container-orgbf14d22" class="outline-3">
+<h3 id="orgbf14d22"><span class="section-number-3">3.3</span> Changing modes</h3>
+<div class="outline-text-3" id="text-3-3">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1084,9 +579,9 @@ so that it looks like this:
 </table>
 </div>
 </div>
-<div id="outline-container-orgd5a5586" class="outline-3">
-<h3 id="orgd5a5586"><span class="section-number-3">6.4</span> Movements (Normal Mode)</h3>
-<div class="outline-text-3" id="text-6-4">
+<div id="outline-container-orgf483bc2" class="outline-3">
+<h3 id="orgf483bc2"><span class="section-number-3">3.4</span> Movements (Normal Mode)</h3>
+<div class="outline-text-3" id="text-3-4">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1135,9 +630,9 @@ so that it looks like this:
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbdfedd1" class="outline-3">
-<h3 id="orgbdfedd1"><span class="section-number-3">6.5</span> Editing (Normal Mode)</h3>
-<div class="outline-text-3" id="text-6-5">
+<div id="outline-container-org035ec0d" class="outline-3">
+<h3 id="org035ec0d"><span class="section-number-3">3.5</span> Editing (Normal Mode)</h3>
+<div class="outline-text-3" id="text-3-5">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1189,9 +684,9 @@ so that it looks like this:
 </div>
 </div>
 
-<div id="outline-container-org8c64e21" class="outline-3">
-<h3 id="org8c64e21"><span class="section-number-3">6.6</span> Visual Mode</h3>
-<div class="outline-text-3" id="text-6-6">
+<div id="outline-container-org7f55741" class="outline-3">
+<h3 id="org7f55741"><span class="section-number-3">3.6</span> Visual Mode</h3>
+<div class="outline-text-3" id="text-3-6">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1227,9 +722,9 @@ so that it looks like this:
 </div>
 
 
-<div id="outline-container-orgf6a2cc5" class="outline-3">
-<h3 id="orgf6a2cc5"><span class="section-number-3">6.7</span> Finding a letter (Normal Mode)</h3>
-<div class="outline-text-3" id="text-6-7">
+<div id="outline-container-org50d41e5" class="outline-3">
+<h3 id="org50d41e5"><span class="section-number-3">3.7</span> Finding a letter (Normal Mode)</h3>
+<div class="outline-text-3" id="text-3-7">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1276,9 +771,9 @@ so that it looks like this:
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf07be08" class="outline-3">
-<h3 id="orgf07be08"><span class="section-number-3">6.8</span> Finding a word (Normal Mode)</h3>
-<div class="outline-text-3" id="text-6-8">
+<div id="outline-container-orgfd90860" class="outline-3">
+<h3 id="orgfd90860"><span class="section-number-3">3.8</span> Finding a word (Normal Mode)</h3>
+<div class="outline-text-3" id="text-3-8">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1318,9 +813,9 @@ so that it looks like this:
 </ul>
 </div>
 </div>
-<div id="outline-container-org2faa742" class="outline-3">
-<h3 id="org2faa742"><span class="section-number-3">6.9</span> Other useful commands (Normal Mode)</h3>
-<div class="outline-text-3" id="text-6-9">
+<div id="outline-container-orgb7130c7" class="outline-3">
+<h3 id="orgb7130c7"><span class="section-number-3">3.9</span> Other useful commands (Normal Mode)</h3>
+<div class="outline-text-3" id="text-3-9">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1385,9 +880,9 @@ so that it looks like this:
 </div>
 </div>
 
-<div id="outline-container-orgce50f19" class="outline-3">
-<h3 id="orgce50f19"><span class="section-number-3">6.10</span> Useful combos</h3>
-<div class="outline-text-3" id="text-6-10">
+<div id="outline-container-org71f751d" class="outline-3">
+<h3 id="org71f751d"><span class="section-number-3">3.10</span> Useful combos</h3>
+<div class="outline-text-3" id="text-3-10">
 <ul class="org-ul">
 <li><code>yf$</code>: If you are at the beginning of an inline math mode <code>$</code>, then <code>yf$</code>
 can copy the whole math expression.</li>
@@ -1405,9 +900,9 @@ V / \\section Enter k
 </div>
 </div>
 
-<div id="outline-container-org816a4b6" class="outline-3">
-<h3 id="org816a4b6"><span class="section-number-3">6.11</span> Registers</h3>
-<div class="outline-text-3" id="text-6-11">
+<div id="outline-container-orgee15f36" class="outline-3">
+<h3 id="orgee15f36"><span class="section-number-3">3.11</span> Registers</h3>
+<div class="outline-text-3" id="text-3-11">
 <ul class="org-ul">
 <li>You can store something in a register.</li>
 <li>The easiest way is as follows:
@@ -1422,9 +917,9 @@ V / \\section Enter k
 </ul>
 </div>
 </div>
-<div id="outline-container-orga0792df" class="outline-3">
-<h3 id="orga0792df"><span class="section-number-3">6.12</span> Mark positions</h3>
-<div class="outline-text-3" id="text-6-12">
+<div id="outline-container-orgb1f695c" class="outline-3">
+<h3 id="orgb1f695c"><span class="section-number-3">3.12</span> Mark positions</h3>
+<div class="outline-text-3" id="text-3-12">
 <ul class="org-ul">
 <li>You can mark the current position for future use.
 <ol class="org-ol">
@@ -1435,9 +930,9 @@ V / \\section Enter k
 </ul>
 </div>
 </div>
-<div id="outline-container-org2dfb064" class="outline-3">
-<h3 id="org2dfb064"><span class="section-number-3">6.13</span> Dot: Repeat the previous command.</h3>
-<div class="outline-text-3" id="text-6-13">
+<div id="outline-container-org95f27fa" class="outline-3">
+<h3 id="org95f27fa"><span class="section-number-3">3.13</span> Dot: Repeat the previous command.</h3>
+<div class="outline-text-3" id="text-3-13">
 <ul class="org-ul">
 <li><code>.</code> repeats the previously performed command.</li>
 <li>For example, <code>dd</code> deletes the line at cursor. Pressing <code>.</code> will delete
@@ -1448,9 +943,9 @@ another line.</li>
 </div>
 </div>
 
-<div id="outline-container-org957f183" class="outline-3">
-<h3 id="org957f183"><span class="section-number-3">6.14</span> Macros</h3>
-<div class="outline-text-3" id="text-6-14">
+<div id="outline-container-org8d4dd39" class="outline-3">
+<h3 id="org8d4dd39"><span class="section-number-3">3.14</span> Macros</h3>
+<div class="outline-text-3" id="text-3-14">
 <ul class="org-ul">
 <li><code>qa</code> followed by <code>q</code> records all your commands performed between them at
 <code>a</code>.</li>
@@ -1501,9 +996,9 @@ commands, for example,
 
 
 
-<div id="outline-container-orga92f177" class="outline-4">
-<h4 id="orga92f177"><span class="section-number-4">6.14.1</span> Example</h4>
-<div class="outline-text-4" id="text-6-14-1">
+<div id="outline-container-orge87d76c" class="outline-4">
+<h4 id="orge87d76c"><span class="section-number-4">3.14.1</span> Example</h4>
+<div class="outline-text-4" id="text-3-14-1">
 <ul class="org-ul">
 <li><p>
 We want to insert <code>&amp;</code> before each <code>=</code> below.
@@ -1526,9 +1021,9 @@ We want to insert <code>&amp;</code> before each <code>=</code> below.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd5028d2" class="outline-4">
-<h4 id="orgd5028d2"><span class="section-number-4">6.14.2</span> Exercises</h4>
-<div class="outline-text-4" id="text-6-14-2">
+<div id="outline-container-org1ababdd" class="outline-4">
+<h4 id="org1ababdd"><span class="section-number-4">3.14.2</span> Exercises</h4>
+<div class="outline-text-4" id="text-3-14-2">
 <ul class="org-ul">
 <li><p>
 Replace each pair <code>[ ]</code> by <code>( )</code> using a macro (you may use one macro many
@@ -1547,24 +1042,10 @@ times).
 </div>
 </div>
 </div>
-
-<div id="outline-container-orge244e70" class="outline-2">
-<h2 id="orge244e70"><span class="section-number-2">7</span> More tips and tricks</h2>
-<div class="outline-text-2" id="text-7">
-</div>
-<div id="outline-container-orgc25c1d6" class="outline-3">
-<h3 id="orgc25c1d6"><span class="section-number-3">7.1</span> Hold a key to repeat it.</h3>
-<div class="outline-text-3" id="text-7-1">
-<p>
-<a href="https://stackoverflow.com/questions/39972335/how-do-i-press-and-hold-a-key-and-have-it-repeat-in-vscode">https://stackoverflow.com/questions/39972335/how-do-i-press-and-hold-a-key-and-have-it-repeat-in-vscode</a>
-</p>
-</div>
-</div>
-</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2020-11-27 Fri 22:47</p>
+<p class="date">Created: 2020-12-02 Wed 14:42</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
