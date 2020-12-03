@@ -3,6 +3,7 @@
 #+REVEAL_THEME: league
 
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
 # #+OPTIONS: toc:nil num:nil
 
 
@@ -188,6 +189,15 @@
       tex file only).
    3. Push.
    4. Check Git History and see the changes that you just made.
+** Collaboration
+   1. Find a partner to practice Git.
+   2. Invite your partner to your GitHub repository (or accept their invitation).
+   3. Let's say person A invited person B.
+   4. Make sure that both have the current tex file by doing pull.
+   5. First A changes the title of "Section 1" to "Section ABC" and do commit and push.
+   6. Then B changes the title of "Section 1" to "Section DEF" and do commit and
+      push. (There will be a conflict to merge manually.)
+   7. Repeat 4,5,6 with "Section 2" but with roles of A and B reversed.
 
 * Branches 
 ** What is a branch?

@@ -2,9 +2,9 @@
 #+REVEAL_TRANS: zoom
 #+REVEAL_THEME: league
 
-
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-# #+OPTIONS: toc:nil num:nil
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+# #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+OPTIONS: toc:nil num:nil
 
 
 
@@ -26,7 +26,6 @@
      paper).
    - Always open a folder not a single file!
 ** Open folders
-#+ATTR_REVEAL: :frag (roll-in)
    - Before you open a folder for the first time, make sure that you close
      everything using "File $\to$ Close Folder" in the menu bar. 
    - By drag-and-drop you can open a folder.
@@ -43,7 +42,6 @@
    7. Open the folder "git-exercise" in VS Code.
    8. Open recent folders using *CTRL+R*.
 ** How to install extensions
-#+ATTR_REVEAL: :frag (roll-in)
    1. Click the icon "Extensions" on the left.
    2. Search the extension you want to install.
    3. Click "Install".
@@ -52,7 +50,6 @@
    6. Using Code Spell Checker you can do "Quick fix": *CMD + .*
 
 ** Command Palette
-#+ATTR_REVEAL: :frag (roll-in)
    - *CMD + SHIFT + P* opens a command line showing all commands.
    - Note: *CMD* means Command Key for Mac and Control Key for Windows.
    - We will call this command line CP. 
@@ -60,15 +57,14 @@
    - Very helpful when you forgot keyboard shortcuts.
    - You can also discover many things using CP.
    - Quiz: How can you make the minimap disappear?
+#+ATTR_REVEAL: :frag (roll-in)
    - Hint: Search "minimap" at CP, and you will get the answer.
 ** How to change settings
-#+ATTR_REVEAL: :frag (roll-in)
    1. CP $\rightarrow$ "Preferences: Open Settings (UI)" (or type *CMD+,*)
    2. Search "Editor: Font Size".
    3. Enter 14 (or any font size you want) in the box.
    4. Exercise: Disable the line number.
 ** How to change themes
-#+ATTR_REVEAL: :frag (roll-in)
    - Search "theme" at CP, and choose "Preferences: Color Theme".
    - You can check out more themes from extensions.
      1. Install "Community Material Theme" extension.
@@ -78,7 +74,6 @@
 ** Installation
    - First you need to install LaTeX Workshop using "Extensions" icon as before.
 ** Basic commands
-#+ATTR_REVEAL: :frag (roll-in)
    - *TeX Compile* 
       - To build a pdf type *CMD + OPTION + B*. 
       - If you forgot this, search "latex build" at CP.
@@ -99,14 +94,12 @@
     5. Experiment with your finding in 4 by using its shortcut after selecting a
        region.
 ** Move between sections or labels
-#+ATTR_REVEAL: :frag (roll-in)
    - Click the icon $\mathrm{\TeX}$ on the left.
    - This will show the sidebar with sections and labels.
    - By clicking a section here you can move to that section in your tex file.
    - You can toggle the sidebar with *CMD + B*. If you forgot this, you know what
      to do.
 ** Some interesting features
-#+ATTR_REVEAL: :frag (roll-in)
    - Auto Completion: Try to type ~\begin{theorem}~
    - Collapsing environments
      - Click the down arrow appearing at the left of an environment.
@@ -118,7 +111,6 @@
      - By clicking the arrow at the right corner, you can see the content of the
        label.
 ** Snippets
-#+ATTR_REVEAL: :frag (roll-in)
    - A /snippet/ means a block of re-usable code, somewhat similar to macro.
    - If you type the "prefix" of a snippet and press ~TAB~ or ~ENTER~, then it
      will insert the "body" of the snippet.
@@ -136,7 +128,6 @@
 
      https://cheatography.com/jcwinkler/cheat-sheets/latex-workshop-visual-studio-code/#downloads
 ** Add Keyboard shortcuts
-#+ATTR_REVEAL: :frag (roll-in)
    1. CP $\rightarrow$ Preferences: Open Keyboard Shortcuts
    2. Search "Latex Workshop: Select the current environment content."
    3. Double click this line and enter your desired key combination (e.g. *CMD+'*).
@@ -153,13 +144,11 @@
 
 * User Snippets
 ** latex.json
-#+ATTR_REVEAL: :frag (roll-in)
    - To write user snippets we need to open the "latex.json" file.
    - CP $\rightarrow$ Preferences: Configure User Snippets
    - Find "latex (latex)" or "latex.json (latex)".
    - It will open the file latex.json.
 ** Write user snippets (without arguments)
-#+ATTR_REVEAL: :frag (roll-in)
    - In the latex.json file everything is enclosed by a pair of curly braces ~{...}~.
    - You can write your own snippets inside this braces.
    - Each snippet has the following structure.
@@ -168,7 +157,6 @@
      :         "body": "snippet body"
      :  	 }
 *** Example
-#+ATTR_REVEAL: :frag (roll-in)
     - Consider the following snippet.
      :    "vandermonde determinant": {
      :        "prefix": "vdm", 
@@ -179,7 +167,6 @@
       : \prod_{1\le i<j\le n} (x_i - x_j)
     - Notice that we must write two slashes ~\\~ to insert a single slash ~\~.
 *** Example
-#+ATTR_REVEAL: :frag (roll-in)
    - If you have more than one snippets, you must put a comma ~,~ after each
      snippet. 
    - So, for example, your latex.jason file should look something like this
@@ -195,7 +182,6 @@
      :    }
      : }
 ** Write user snippets (with arguments)
-#+ATTR_REVEAL: :frag (roll-in)
    - Using arguments you can create more flexible snippets.
    - Arguments are of this form ~$1~, ~$2~, etc., and ~$0~.
    - ~$1~, ~$2~, etc. mean the first argument and the second argument etc.
@@ -203,7 +189,6 @@
    - ~$0~ means the final location of the cursor when all the arguments have
      been typed.
 *** Example
-#+ATTR_REVEAL: :frag (roll-in)
    - Consider the following snippet.
      : 	"vandermonde det": {
      : 		"prefix": "vdm",
@@ -251,7 +236,7 @@
       ~\end{cases}~.
    2. See what happens if you type ~BCAS~.
 
-* More tips and tricks
-** Hold a key to repeat it.
-   https://stackoverflow.com/questions/39972335/how-do-i-press-and-hold-a-key-and-have-it-repeat-in-vscode
+# * More tips and tricks
+# ** Hold a key to repeat it.
+#    https://stackoverflow.com/questions/39972335/how-do-i-press-and-hold-a-key-and-have-it-repeat-in-vscode
 

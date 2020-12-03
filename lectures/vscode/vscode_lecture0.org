@@ -14,12 +14,16 @@
     your own.
 * Lecture 1
   - We learn basics on VS Code and LaTeX Workshop.
-  - [[./vscode_lecture1.html][Lecture Notes]], Video
+  - [[./vscode_lecture1.html][Lecture Notes]], [[./vscode_lecture1(slides).html][Slides]], Video
+  - Preparations for Lecture 1
+    - Install VS Code: https://code.visualstudio.com/
+    - Download [[file:vscode-lecture-files.zip][this file]] and extract it somewhere in your computer.
+
 * Lecture 2
   - We learn BibTeX and Vim. 
   - [[./vscode_lecture2.html][Lecture Notes]]
-  - Prepartion for Lecture 2: Install JabRef.
-     - Download here: http://www.jabref.org/
+  - Prepartion for Lecture 2
+     - Install JabRef: http://www.jabref.org/
 
 * Lecture 3
   - We learn Git and GitHub for version control and collaboration. 
@@ -37,3 +41,6 @@
       - Restart your computer.
 *** Signing up GitHub
     - Sign up here https://github.com/
+*** Find a partner to practice Git together.
+    - If you want me to find someone for you, send me an email at this address:
+      jangsookim@skku.edu
