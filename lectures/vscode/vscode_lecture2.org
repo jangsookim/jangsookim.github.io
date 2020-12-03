@@ -4,8 +4,8 @@
 
 
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-# #+OPTIONS: toc:nil num:nil
+# #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+OPTIONS: toc:nil num:nil
 
 
 * BibTeX
@@ -20,7 +20,6 @@
    - ~BIBFILE~ is the location of your BibTeX, for example, something like this:
      : /Users/jangsookim/bibtex/ref.bib
 ** Entries in BibTeX file
-#+ATTR_REVEAL: :frag (roll-in)
    - A BibTeX file has entries like this:
      : @article{Bressoud1979,
      :   title={A generalization of the {R}ogers-{R}amanujan
@@ -36,16 +35,15 @@
    - Note that in the title you must use ~{ }~ for capital letters as above.
 
 ** BibTeX entries from Google Scholar
-#+ATTR_REVEAL: :frag (roll-in)
      1. Search the paper you want to cite in Google Scholar.
         https://scholar.google.com/
      2. Google Scholar will show a thumbnail for that paper.
      3. Click ~"~ at the bottom of the thumbnail.
      4. Click the BibTeX icon at the bottom.
      5. You can copy the text into you BibTeX file.
+     6. There are other data base systems such as [[https://mathscinet.ams.org/mathscinet/][MathSciNet]].
 
 ** JabRef
-#+ATTR_REVEAL: :frag (roll-in)
    - JabRef is a free BibTeX Manager.
    - Download here: http://www.jabref.org/
    - JabRef is useful when your BibTeX file has many entries.
@@ -54,7 +52,6 @@
    - I couldn't find any BibTeX managers in VS Code extensions. Let me know if
      you find one.
 ** bbl file
-#+ATTR_REVEAL: :frag (roll-in)
    - If you compile bibtex, it will generate a bbl file ~TEXFILENAME.bbl~, where
      ~TEXFILENAME~ is your tex filename.
    - This file contains all bibitems you need in your tex file.
@@ -73,7 +70,6 @@
    - There are three more commands like this.
    - First, you need to assign keyboard shortcuts for these commands.
 ** Add Keyboard shortcuts
-#+ATTR_REVEAL: :frag (roll-in)
    1. CP $\rightarrow$ Preferences: Open Keyboard Shortcuts
    2. Search "ace jump".
    3. You can assign a keyboard shortcut by double clicking each command. For
@@ -84,7 +80,6 @@
       - AceJump: Selection $\rightarrow$ *CMD+J S*
 ** Change some options
 *** Redefine "words"
-#+ATTR_REVEAL: :frag (roll-in)
     1. We want to make the ~f~ in ~\frac~ or in ~$f$~ as the start of a word.
     2. CP $\rightarrow$ Preferences: Open Settings (UI). (or ~CMD+,~ for a shortcut)
     3. Search "Ace Jump > Finder: Pattern".
@@ -99,16 +94,14 @@
 
 * Vim (extension)
 ** Overview
-#+ATTR_REVEAL: :frag (roll-in)
    - Vim is a modal editor meaning that it has several modes.
      - Normal mode: used for editor commands
      - Insert mode: used for inserting text
      - Command-line mode: used for doing some commands
    - Vim Extension allows us to use Vim commands inside VS Code.
-   - Vim graphical cheat sheet\\
-     https://eggplant.pro/blog/wp-content/uploads/2016/12/vi-vim-tutorial.pdf
+   - [[https://eggplant.pro/blog/wp-content/uploads/2016/12/vi-vim-tutorial.pdf][Vim graphical cheat sheet]]
+     
 ** Installation 
-#+ATTR_REVEAL: :frag (roll-in)
    - First you need to install Vim using "Extensions" icon as before.
    - Once you have Vim installed, you can use Vim commands immediately.
    - You can disable Vim as follows.
@@ -129,7 +122,6 @@
 | b          | previous word         |
 | CTRL+f     | page forward          |
 | CTRL+b     | page backward         |
-#+ATTR_REVEAL: :frag (roll-in)
     - Typing ~n~ will repeat the following command n times.
     - For example, ~4w~ is equivalent to ~wwww~.
     - You can still use the arrow keys, but it's not recommended.
@@ -141,7 +133,6 @@
 | p   | paste after                 |
 | P   | paste before                |
 | x   | delete letter at cursor |
-#+ATTR_REVEAL: :frag (roll-in)
     - Deleted text is always copied in clipboard.
     - You can make a sentence using these.
     - ~yy~ : yank line
@@ -153,7 +144,6 @@
 |-----+-----------------------------------|
 | v   | Change to Visual Mode             |
 | V   | Change to Visual Mode (line-wise) |
-#+ATTR_REVEAL: :frag (roll-in)
     - Visual Mode highlights a region.
     - In Visual Mode, ~y~ yanks the content in the selected region.
     - In Visual Mode, ~d~ deletes the content in the selected region.
@@ -174,7 +164,6 @@
 | ~/~ | Find a word.            |
 | n   | Find the next word.     |
 | N   | Find the previous word. |
-#+ATTR_REVEAL: :frag (roll-in)
     - ~/abc ENTER~ will move the cursor after the first occurrence of the word
       ~abc~.
     - ~n~ will find the next occurrence of the word.
@@ -186,17 +175,18 @@
 | CTRL+r | Redo                    |
 | 0      | beginning of line       |
 | $      | end of line             |
+| (      | beginning of sentence   |
+| )      | end of sentence         |
 | gg     | beginning of the file   |
 | G      | end of the file         |
-| zt     | scroll cursor to top    |
-| zb     | scroll cursor to bottom |
 | zz     | scroll cursor to center |
+# | zt     | scroll cursor to top    |
+# | zb     | scroll cursor to bottom |
 
 ** Useful combos
-#+ATTR_REVEAL: :frag (roll-in)
    - ~yf$~: If you are at the beginning of an inline math mode ~$~, then ~yf$~
       can copy the whole math expression.
-   - ~yt$~: Similar, but ~$~ is excluded.
+   - ~y)~: Copy the sentence (from the location of cursor).
    - ~dt.~: This will delete up to the period.
    - ~xp~: This will swap two letters.
    - Selecting a whole section: (cursor at \section{ABC})
@@ -204,7 +194,6 @@
    - Selecting a whole file: ~gg V G~
 
 ** Registers
-#+ATTR_REVEAL: :frag (roll-in)
    - You can store something in a register.
    - The easiest way is as follows:
      1. Select a region that you want to register.
@@ -214,13 +203,11 @@
    - To view the registers type the following.\\
      ~:reg ENTER~
 ** Mark positions
-#+ATTR_REVEAL: :frag (roll-in)
    - You can mark the current position for future use.
      1. ~ma~ marks the current position by ~a~, where ~a~ can be any letter.
      2. Typing ~`a~ send you back to the position marked by ~a~.
    - It's helpful to mark the position where macros are defined.
 ** Dot: Repeat the previous command.
-#+ATTR_REVEAL: :frag (roll-in)
    - ~.~ repeats the previously performed command.
    - For example, ~dd~ deletes the line at cursor. Pressing ~.~ will delete
      another line.
@@ -228,7 +215,6 @@
    - More complicated tasks can be done by macros.
 
 ** Macros
-#+ATTR_REVEAL: :frag (roll-in)
    - ~qa~ followed by ~q~ records all your commands performed between them at
      ~a~.
    - ~@a~ repeats the commands recorded at ~a~.
@@ -245,7 +231,6 @@
 
 
 *** Example
-#+ATTR_REVEAL: :frag (roll-in)
     - We want to insert ~&~ before each ~=~ below.
       : \begin{align*}
       :   a = b,\\
@@ -267,4 +252,6 @@
       :   a[x]+a[y]+a[z] = b[x]+b[y]+b[z],\\
       :   a[x]+a[y]+a[z]+a[w] = b[x]+b[y]+b[z]+b[w].
       : \end{align*}
+    - Replace each letter in parentheses by its capital letter. (Hint: Try ~~~
+      on a letter.)
 

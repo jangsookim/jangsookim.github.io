@@ -12,9 +12,10 @@
     efficiency. I'll teach you only the basics. I hope that after this
     course you can explore and enjoy more interesting and advanced techniques in
     your own.
+  - [[./flyer_vscode.pdf][Poster]]
 * Lecture 1
   - We learn basics on VS Code and LaTeX Workshop.
-  - [[./vscode_lecture1.html][Lecture Notes]], [[./vscode_lecture1(slides).html][Slides]], Video
+  - [[./vscode_lecture1.html][Lecture Notes]], [[./vscode_lecture1(slides).html][Slides]], [[https://youtu.be/aSdGb47jJtc][Video (in Korean)]]
   - Preparations for Lecture 1
     - Install VS Code: https://code.visualstudio.com/
     - Download [[file:vscode-lecture-files.zip][this file]] and extract it somewhere in your computer.
