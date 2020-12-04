@@ -29,6 +29,11 @@
        Change the relative path ~./ref.bib~ to the absolute path.
     3. Check if the references are compiled as before.
 
+** Add a citation in VS Code
+   - Similarly to ~\ref{}~ if you type ~\cite{~ all available bib items appear.
+   - By clicking the arrow at the right you can see the content of each item.
+   - If you type letters it shows all items having those letters in authors,
+     titles, journals, year, etc.
 ** NatBib package
 #+ATTR_REVEAL: :frag (roll-in)
    - NatBib package shows citations using author names and years instead of numbers.

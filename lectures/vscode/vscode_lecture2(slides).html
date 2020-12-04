@@ -27,18 +27,18 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Lecture 2: BibTeX and Vim</h1><h2 class="author">Jang Soo Kim</h2><p class="date">Created: 2020-12-04 Fri 13:10</p>
+<section id="sec-title-slide"><h1 class="title">Lecture 2: BibTeX and Vim</h1><h2 class="author">Jang Soo Kim</h2><p class="date">Created: 2020-12-04 Fri 13:22</p>
 </section>
 
 
 <section>
-<section id="slide-org23b8f42">
-<h2 id="org23b8f42">BibTeX</h2>
-<div class="outline-text-2" id="text-org23b8f42">
+<section id="slide-org315da62">
+<h2 id="org315da62">BibTeX</h2>
+<div class="outline-text-2" id="text-org315da62">
 </div>
 </section>
-<section id="slide-org25fda68">
-<h3 id="org25fda68">Overview</h3>
+<section id="slide-org572f5ba">
+<h3 id="org572f5ba">Overview</h3>
 <ul>
 <li class="fragment roll-in">BibTeX is a program used for generating references.</li>
 <li class="fragment roll-in">First you need a BibTeX file.</li>
@@ -61,8 +61,8 @@ Then you need to have the following two lines in you tex file:
 
 </ul>
 </section>
-<section id="slide-orgb82e8b9">
-<h4 id="orgb82e8b9">Exercise</h4>
+<section id="slide-org7ab82ca">
+<h4 id="org7ab82ca">Exercise</h4>
 <ol>
 <li class="fragment roll-in">Compile the tex file in "bib-exercise" folder.</li>
 <li class="fragment roll-in"><p>
@@ -80,8 +80,18 @@ Change the relative path <code>./ref.bib</code> to the absolute path.
 </ol>
 
 </section>
-<section id="slide-orga0f6c5c">
-<h3 id="orga0f6c5c">NatBib package</h3>
+<section id="slide-orgcfab1d5">
+<h3 id="orgcfab1d5">Add a citation in VS Code</h3>
+<ul>
+<li>Similarly to <code>\ref{}</code> if you type <code>\cite{</code> all available bib items appear.</li>
+<li>By clicking the arrow at the right you can see the content of each item.</li>
+<li>If you type letters it shows all items having those letters in authors,
+titles, journals, year, etc.</li>
+
+</ul>
+</section>
+<section id="slide-org326d6da">
+<h3 id="org326d6da">NatBib package</h3>
 <ul>
 <li class="fragment roll-in">NatBib package shows citations using author names and years instead of numbers.</li>
 <li class="fragment roll-in">To use this package add <code>\usepackage{natbib}</code> in your tex file.</li>
@@ -97,8 +107,8 @@ Change the relative path <code>./ref.bib</code> to the absolute path.
 </ul>
 
 </section>
-<section id="slide-org591547c">
-<h3 id="org591547c">Entries in BibTeX file</h3>
+<section id="slide-orgda95b0d">
+<h3 id="orgda95b0d">Entries in BibTeX file</h3>
 <ul>
 <li class="fragment roll-in"><p>
 A BibTeX file has entries like this:
@@ -120,8 +130,8 @@ A BibTeX file has entries like this:
 
 </ul>
 </section>
-<section id="slide-orge8825de">
-<h4 id="orge8825de">Exercise</h4>
+<section id="slide-orga6e4da4">
+<h4 id="orga6e4da4">Exercise</h4>
 <ol>
 <li class="fragment roll-in">Add the previous entry in the <code>ref.bib</code> file.</li>
 <li class="fragment roll-in">Cite this paper in the tex file and compile it.</li>
@@ -131,8 +141,8 @@ A BibTeX file has entries like this:
 </ol>
 
 </section>
-<section id="slide-orgfcf6800">
-<h3 id="orgfcf6800">arXiv papers</h3>
+<section id="slide-org4726ba3">
+<h3 id="org4726ba3">arXiv papers</h3>
 <ul>
 <li><p>
 arXiv papers or preprints can be added like this.
@@ -150,8 +160,8 @@ arXiv papers or preprints can be added like this.
 </ul>
 
 </section>
-<section id="slide-org329eea3">
-<h3 id="org329eea3">BibTeX entries from Google Scholar</h3>
+<section id="slide-orgf6a412c">
+<h3 id="orgf6a412c">BibTeX entries from Google Scholar</h3>
 <ol>
 <li>Search the paper you want to cite in Google Scholar.
 <a href="https://scholar.google.com/">https://scholar.google.com/</a></li>
@@ -165,8 +175,8 @@ subscription).</li>
 </ol>
 
 </section>
-<section id="slide-orgf2c8883">
-<h4 id="orgf2c8883">Exercise</h4>
+<section id="slide-orgdc1f370">
+<h4 id="orgdc1f370">Exercise</h4>
 <ol>
 <li class="fragment roll-in"><p>
 Add a bib entry to <code>ref.bib</code> for the following paper using Google Scholar.
@@ -182,8 +192,8 @@ J. Eur. Math. Soc. (JEMS), 20(9):2105–2129, 2018.
 
 
 </section>
-<section id="slide-org5804290">
-<h3 id="org5804290">JabRef</h3>
+<section id="slide-org0662ac1">
+<h3 id="org0662ac1">JabRef</h3>
 <ul>
 <li class="fragment roll-in">JabRef is a free BibTeX Manager.</li>
 <li class="fragment roll-in">Download here: <a href="http://www.jabref.org/">http://www.jabref.org/</a></li>
@@ -196,8 +206,8 @@ you find one.</li>
 
 </ul>
 </section>
-<section id="slide-org62c1877">
-<h4 id="org62c1877">Exercise</h4>
+<section id="slide-orgc3aa133">
+<h4 id="orgc3aa133">Exercise</h4>
 <ol>
 <li class="fragment roll-in"><p>
 Add the following paper to <code>ref.bib</code>.
@@ -224,8 +234,8 @@ domino tableaux, arXiv:2011.12493
 
 </ol>
 </section>
-<section id="slide-orga51ee0d">
-<h3 id="orga51ee0d">bbl file</h3>
+<section id="slide-orgeef71aa">
+<h3 id="orgeef71aa">bbl file</h3>
 <ul>
 <li class="fragment roll-in">If you compile bibtex, it will generate a bbl file <code>TEXFILENAME.bbl</code>, where
 <code>TEXFILENAME</code> is your tex filename.</li>
@@ -236,8 +246,8 @@ domino tableaux, arXiv:2011.12493
 
 </ul>
 </section>
-<section id="slide-orgdea5f13">
-<h4 id="orgdea5f13">Exercise</h4>
+<section id="slide-org1d01541">
+<h4 id="org1d01541">Exercise</h4>
 <ul>
 <li>Edit the tex file so that it does not need the bib file.</li>
 
@@ -245,13 +255,13 @@ domino tableaux, arXiv:2011.12493
 </section>
 </section>
 <section>
-<section id="slide-org9767883">
-<h2 id="org9767883">Code Ace Jumper (extension)</h2>
-<div class="outline-text-2" id="text-org9767883">
+<section id="slide-orgc4d34ee">
+<h2 id="orgc4d34ee">Code Ace Jumper (extension)</h2>
+<div class="outline-text-2" id="text-orgc4d34ee">
 </div>
 </section>
-<section id="slide-org222e2b6">
-<h3 id="org222e2b6">Overview</h3>
+<section id="slide-orgbb514f8">
+<h3 id="orgbb514f8">Overview</h3>
 <ul>
 <li class="fragment roll-in">Code Ace Jumper is an extension that allows you to jump around your file.</li>
 <li class="fragment roll-in">How to use:
@@ -267,8 +277,8 @@ each word starting with <code>d</code>.</li>
 
 </ul>
 </section>
-<section id="slide-org055e380">
-<h3 id="org055e380">Add Keyboard shortcuts</h3>
+<section id="slide-org587e9ee">
+<h3 id="org587e9ee">Add Keyboard shortcuts</h3>
 <ol>
 <li class="fragment roll-in">CP \(\rightarrow\) Preferences: Open Keyboard Shortcuts</li>
 <li class="fragment roll-in">Search "ace jump".</li>
@@ -284,13 +294,13 @@ example,
 
 </ol>
 </section>
-<section id="slide-orgde1fa50">
-<h3 id="orgde1fa50">Change some options</h3>
-<div class="outline-text-3" id="text-orgde1fa50">
+<section id="slide-org4a0a117">
+<h3 id="org4a0a117">Change some options</h3>
+<div class="outline-text-3" id="text-org4a0a117">
 </div>
 </section>
-<section id="slide-orgbdaf723">
-<h4 id="orgbdaf723">Redefine "words"</h4>
+<section id="slide-org2450b3a">
+<h4 id="org2450b3a">Redefine "words"</h4>
 <ol>
 <li class="fragment roll-in">We want to make the <code>f</code> in <code>\frac</code> or in <code>$f$</code> as the start of a word.</li>
 <li class="fragment roll-in">CP \(\rightarrow\) Preferences: Open Settings (UI). (or <code>CMD+,</code> for a shortcut)</li>
@@ -311,15 +321,15 @@ so that it looks like this:
 
 </ol>
 </section>
-<section id="slide-orgf40ad2d">
-<h4 id="orgf40ad2d">Change the background color</h4>
+<section id="slide-orgabe493e">
+<h4 id="orgabe493e">Change the background color</h4>
 <ul>
 <li>Enter "yellow" in "Ace Jump &gt; Placeholder: Background Color".</li>
 
 </ul>
 </section>
-<section id="slide-orgd40a271">
-<h4 id="orgd40a271">Change the scroll mode</h4>
+<section id="slide-org273e08e">
+<h4 id="org273e08e">Change the scroll mode</h4>
 <ul>
 <li>Set "none" in "Ace Jump &gt; Scroll:Mode".</li>
 
@@ -328,13 +338,13 @@ so that it looks like this:
 </section>
 </section>
 <section>
-<section id="slide-org658415b">
-<h2 id="org658415b">Vim (extension)</h2>
-<div class="outline-text-2" id="text-org658415b">
+<section id="slide-org91df07b">
+<h2 id="org91df07b">Vim (extension)</h2>
+<div class="outline-text-2" id="text-org91df07b">
 </div>
 </section>
-<section id="slide-orga46aa67">
-<h3 id="orga46aa67">Overview</h3>
+<section id="slide-orgb727ca5">
+<h3 id="orgb727ca5">Overview</h3>
 <ul>
 <li class="fragment roll-in">Vim is a modal editor meaning that it has several modes.
 <ul>
@@ -349,8 +359,8 @@ so that it looks like this:
 </ul>
 
 </section>
-<section id="slide-orgf6bb5ac">
-<h3 id="orgf6bb5ac">Installation</h3>
+<section id="slide-org57cc8f3">
+<h3 id="org57cc8f3">Installation</h3>
 <ul>
 <li class="fragment roll-in">First you need to install Vim using "Extensions" icon as before.</li>
 <li class="fragment roll-in">Once you have Vim installed, you can use Vim commands immediately.</li>
@@ -363,8 +373,8 @@ so that it looks like this:
 
 </ul>
 </section>
-<section id="slide-orgccb47c2">
-<h3 id="orgccb47c2">Changing modes</h3>
+<section id="slide-org29f6d42">
+<h3 id="org29f6d42">Changing modes</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -402,8 +412,8 @@ so that it looks like this:
 </tbody>
 </table>
 </section>
-<section id="slide-org4f83dda">
-<h3 id="org4f83dda">Movements (Normal Mode)</h3>
+<section id="slide-orgee329e7">
+<h3 id="orgee329e7">Movements (Normal Mode)</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -452,8 +462,8 @@ so that it looks like this:
 
 </ul>
 </section>
-<section id="slide-orga587c4e">
-<h3 id="orga587c4e">Editing (Normal Mode)</h3>
+<section id="slide-org865a58a">
+<h3 id="org865a58a">Editing (Normal Mode)</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -505,8 +515,8 @@ so that it looks like this:
 </ul>
 
 </section>
-<section id="slide-org025c47b">
-<h3 id="org025c47b">Visual Mode</h3>
+<section id="slide-org62ea0f9">
+<h3 id="org62ea0f9">Visual Mode</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -542,8 +552,8 @@ so that it looks like this:
 
 
 </section>
-<section id="slide-org92e2d2d">
-<h3 id="org92e2d2d">Finding a letter (Normal Mode)</h3>
+<section id="slide-org995285a">
+<h3 id="org995285a">Finding a letter (Normal Mode)</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -590,8 +600,8 @@ so that it looks like this:
 
 </ul>
 </section>
-<section id="slide-org0dedfd2">
-<h3 id="org0dedfd2">Finding a word (Normal Mode)</h3>
+<section id="slide-org08f1954">
+<h3 id="org08f1954">Finding a word (Normal Mode)</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -631,8 +641,8 @@ so that it looks like this:
 
 </ul>
 </section>
-<section id="slide-orgea1f7a1">
-<h3 id="orgea1f7a1">Other useful commands (Normal Mode)</h3>
+<section id="slide-org7230e77">
+<h3 id="org7230e77">Other useful commands (Normal Mode)</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -696,8 +706,8 @@ so that it looks like this:
 </table>
 
 </section>
-<section id="slide-orgdcefa67">
-<h3 id="orgdcefa67">Useful combos</h3>
+<section id="slide-org46a5161">
+<h3 id="org46a5161">Useful combos</h3>
 <ul>
 <li class="fragment roll-in"><code>yf$</code>: If you are at the beginning of an inline math mode <code>$</code>, then <code>yf$</code>
 can copy the whole math expression.</li>
@@ -715,8 +725,8 @@ V / \\section Enter k
 </ul>
 
 </section>
-<section id="slide-org13663e7">
-<h3 id="org13663e7">Registers</h3>
+<section id="slide-orge4dee36">
+<h3 id="orge4dee36">Registers</h3>
 <ul>
 <li class="fragment roll-in">You can store something in a register.</li>
 <li class="fragment roll-in">The easiest way is as follows:
@@ -732,8 +742,8 @@ V / \\section Enter k
 
 </ul>
 </section>
-<section id="slide-orgc8ab47b">
-<h3 id="orgc8ab47b">Mark positions</h3>
+<section id="slide-org33e22e0">
+<h3 id="org33e22e0">Mark positions</h3>
 <ul>
 <li class="fragment roll-in">You can mark the current position for future use.
 <ol>
@@ -745,8 +755,8 @@ V / \\section Enter k
 
 </ul>
 </section>
-<section id="slide-org2588e49">
-<h3 id="org2588e49">Dot: Repeat the previous command.</h3>
+<section id="slide-org72db6e9">
+<h3 id="org72db6e9">Dot: Repeat the previous command.</h3>
 <ul>
 <li class="fragment roll-in"><code>.</code> repeats the previously performed command.</li>
 <li class="fragment roll-in">For example, <code>dd</code> deletes the line at cursor. Pressing <code>.</code> will delete
@@ -757,8 +767,8 @@ another line.</li>
 </ul>
 
 </section>
-<section id="slide-org6399aaa">
-<h3 id="org6399aaa">Macros</h3>
+<section id="slide-org6c5a0c8">
+<h3 id="org6c5a0c8">Macros</h3>
 <ul>
 <li class="fragment roll-in"><code>qa</code> followed by <code>q</code> records all your commands performed between them at
 <code>a</code>.</li>
@@ -810,8 +820,8 @@ commands, for example,
 
 
 </section>
-<section id="slide-org89841e0">
-<h4 id="org89841e0">Example</h4>
+<section id="slide-org8b78298">
+<h4 id="org8b78298">Example</h4>
 <ul>
 <li class="fragment roll-in"><p>
 We want to insert <code>&amp;</code> before each <code>=</code> below.
@@ -835,8 +845,8 @@ We want to insert <code>&amp;</code> before each <code>=</code> below.
 
 </ul>
 </section>
-<section id="slide-org8970717">
-<h4 id="org8970717">Exercises</h4>
+<section id="slide-orgf26ee40">
+<h4 id="orgf26ee40">Exercises</h4>
 <ul>
 <li class="fragment roll-in"><p>
 Replace each pair <code>[ ]</code> by <code>( )</code> using a macro (you may use one macro many
@@ -855,8 +865,8 @@ on a letter.)</li>
 
 </ul>
 </section>
-<section id="slide-org3beb620">
-<h3 id="org3beb620">More advanced commands: i and s</h3>
+<section id="slide-org45ed440">
+<h3 id="org45ed440">More advanced commands: i and s</h3>
 <ul>
 <li class="fragment roll-in"><code>i</code> means "inner" and <code>s</code> means "surrounding".</li>
 <li class="fragment roll-in">Using these keys you can create a sentence like this.</li>
