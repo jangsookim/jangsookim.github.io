@@ -22,7 +22,7 @@
 
 * Lecture 2
   - We learn BibTeX and Vim. 
-  - [[./vscode_lecture2.html][Lecture Notes]], [[./vscode_lecture2(slides).html][Slides]] 
+  - [[./vscode_lecture2.html][Lecture Notes]], [[./vscode_lecture2(slides).html][Slides]], [[https://youtu.be/9tthxIhm5IM][Video (in Korean)]]
   - Prepartion for Lecture 2
      - Install JabRef: http://www.jabref.org/
 
