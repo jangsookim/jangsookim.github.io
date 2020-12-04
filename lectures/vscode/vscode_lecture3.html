@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-12-02 Wed 23:23 -->
+<!-- 2020-12-03 Thu 23:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lecture 3: Git and GitHub</title>
@@ -275,70 +275,70 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org531111b">1. Git and GitHub for VCS and collaboration</a>
+<li><a href="#org0ae715c">1. Git and GitHub for VCS and collaboration</a>
 <ul>
-<li><a href="#org01ab1d6">1.1. Overview</a></li>
-<li><a href="#orgabbffcc">1.2. Goals</a></li>
+<li><a href="#orgc8a26d0">1.1. Overview</a></li>
+<li><a href="#orgc82c79b">1.2. Goals</a></li>
 </ul>
 </li>
-<li><a href="#org0af020d">2. Preparations</a>
+<li><a href="#org9bbfacb">2. Preparations</a>
 <ul>
-<li><a href="#org4434a9c">2.1. Installing Git</a></li>
-<li><a href="#orgd5acc34">2.2. Configuring Git user name and email</a></li>
-<li><a href="#org10be047">2.3. Installing VS Code Extensions</a></li>
-<li><a href="#org26017f3">2.4. Signing up GitHub</a></li>
+<li><a href="#orgc68f164">2.1. Installing Git</a></li>
+<li><a href="#orgd89ce68">2.2. Configuring Git user name and email</a></li>
+<li><a href="#org74e080a">2.3. Installing VS Code Extensions</a></li>
+<li><a href="#org96e5272">2.4. Signing up GitHub</a></li>
 </ul>
 </li>
-<li><a href="#orgdedcd19">3. Work flow</a>
+<li><a href="#org8b1eedc">3. Work flow</a>
 <ul>
-<li><a href="#orge28380a">3.1. Overview of work flow</a>
+<li><a href="#orgb0c0490">3.1. Overview of work flow</a>
 <ul>
-<li><a href="#org367ae83">3.1.1. Setting up Git repositories</a></li>
-<li><a href="#org7aa1a58">3.1.2. Commit, Push, and Pull</a></li>
+<li><a href="#org11ef765">3.1.1. Setting up Git repositories</a></li>
+<li><a href="#org533bd7f">3.1.2. Commit, Push, and Pull</a></li>
 </ul>
 </li>
-<li><a href="#org23cc881">3.2. Setting up Git repositories</a>
+<li><a href="#org6f1d2fd">3.2. Setting up Git repositories</a>
 <ul>
-<li><a href="#org78e339a">3.2.1. From a folder in your computer</a></li>
-<li><a href="#orgc2765af">3.2.2. From already existing GitHub repository</a></li>
-<li><a href="#org1d9545a">3.2.3. Inviting your collaborators or accepting the invitation</a></li>
+<li><a href="#org8ff38f0">3.2.1. From a folder in your computer</a></li>
+<li><a href="#orgbeef299">3.2.2. From already existing GitHub repository</a></li>
+<li><a href="#org56d3885">3.2.3. Inviting your collaborators or accepting the invitation</a></li>
 </ul>
 </li>
-<li><a href="#org3e420de">3.3. Commits</a>
+<li><a href="#orgbaee86e">3.3. Commits</a>
 <ul>
-<li><a href="#orge2fc974">3.3.1. Making commits using VS Code</a></li>
+<li><a href="#org7beba80">3.3.1. Making commits using VS Code</a></li>
 </ul>
 </li>
-<li><a href="#orgf88f941">3.4. Push and Pull</a></li>
-<li><a href="#org3e71598">3.5. Merge</a></li>
+<li><a href="#org14da6d4">3.4. Push and Pull</a></li>
+<li><a href="#orgdce518a">3.5. Merge</a></li>
 </ul>
 </li>
-<li><a href="#org2b96974">4. GitLens and Git History</a>
+<li><a href="#org1e464e3">4. GitLens and Git History</a>
 <ul>
-<li><a href="#orgf70b17c">4.1. GitLens</a></li>
-<li><a href="#org54597c7">4.2. Git History</a></li>
-<li><a href="#orge449367">4.3. Previous PDF files using Git History</a></li>
+<li><a href="#orgb4bc250">4.1. GitLens</a></li>
+<li><a href="#orgd0c41b4">4.2. Git History</a></li>
+<li><a href="#org30de1f1">4.3. Previous PDF files using Git History</a></li>
 </ul>
 </li>
-<li><a href="#org9fb20f5">5. If collaborators don't use GitHub</a></li>
-<li><a href="#orge92bc91">6. Exercises</a>
+<li><a href="#org9401b72">5. If collaborators don't use GitHub</a></li>
+<li><a href="#orgbcc8b28">6. Exercises</a>
 <ul>
-<li><a href="#orgc66cff3">6.1. Making Git repositories</a></li>
-<li><a href="#org8111590">6.2. A file from your collaborator</a></li>
-<li><a href="#orga299891">6.3. Commits and push</a></li>
-<li><a href="#org2773644">6.4. Collaboration</a></li>
+<li><a href="#org9e02e72">6.1. Making Git repositories</a></li>
+<li><a href="#org9a5e892">6.2. A file from your collaborator</a></li>
+<li><a href="#orgbc3b85c">6.3. Commits and push</a></li>
+<li><a href="#orge475bb9">6.4. Collaboration</a></li>
 </ul>
 </li>
-<li><a href="#org201e065">7. Branches</a>
+<li><a href="#orge95eb00">7. Branches</a>
 <ul>
-<li><a href="#org5ff12a1">7.1. What is a branch?</a></li>
-<li><a href="#orge4e7a89">7.2. Creating branches</a></li>
-<li><a href="#org80ea60c">7.3. Merging branches</a></li>
+<li><a href="#orgc59a4b7">7.1. What is a branch?</a></li>
+<li><a href="#orgee4d8f6">7.2. Creating branches</a></li>
+<li><a href="#org382bca1">7.3. Merging branches</a></li>
 </ul>
 </li>
-<li><a href="#org182a969">8. Other tips</a>
+<li><a href="#org99aab2c">8. Other tips</a>
 <ul>
-<li><a href="#org913c296">8.1. .gitignore file</a></li>
+<li><a href="#org9f266bb">8.1. .gitignore file</a></li>
 </ul>
 </li>
 </ul>
@@ -347,12 +347,12 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org531111b" class="outline-2">
-<h2 id="org531111b"><span class="section-number-2">1</span> Git and GitHub for VCS and collaboration</h2>
+<div id="outline-container-org0ae715c" class="outline-2">
+<h2 id="org0ae715c"><span class="section-number-2">1</span> Git and GitHub for VCS and collaboration</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org01ab1d6" class="outline-3">
-<h3 id="org01ab1d6"><span class="section-number-3">1.1</span> Overview</h3>
+<div id="outline-container-orgc8a26d0" class="outline-3">
+<h3 id="orgc8a26d0"><span class="section-number-3">1.1</span> Overview</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>Git is a version control system.</li>
@@ -367,8 +367,8 @@ and GitHub in your own.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgabbffcc" class="outline-3">
-<h3 id="orgabbffcc"><span class="section-number-3">1.2</span> Goals</h3>
+<div id="outline-container-orgc82c79b" class="outline-3">
+<h3 id="orgc82c79b"><span class="section-number-3">1.2</span> Goals</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>Version Control: Keep all versions of your tex file.</li>
@@ -383,12 +383,12 @@ simultaneously.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org0af020d" class="outline-2">
-<h2 id="org0af020d"><span class="section-number-2">2</span> Preparations</h2>
+<div id="outline-container-org9bbfacb" class="outline-2">
+<h2 id="org9bbfacb"><span class="section-number-2">2</span> Preparations</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org4434a9c" class="outline-3">
-<h3 id="org4434a9c"><span class="section-number-3">2.1</span> Installing Git</h3>
+<div id="outline-container-orgc68f164" class="outline-3">
+<h3 id="orgc68f164"><span class="section-number-3">2.1</span> Installing Git</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Mac
@@ -411,8 +411,8 @@ machine) <a href="https://git-scm.com/download/win">here</a>.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd5acc34" class="outline-3">
-<h3 id="orgd5acc34"><span class="section-number-3">2.2</span> Configuring Git user name and email</h3>
+<div id="outline-container-orgd89ce68" class="outline-3">
+<h3 id="orgd89ce68"><span class="section-number-3">2.2</span> Configuring Git user name and email</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li><p>
@@ -432,8 +432,8 @@ git config --list
 </ul>
 </div>
 </div>
-<div id="outline-container-org10be047" class="outline-3">
-<h3 id="org10be047"><span class="section-number-3">2.3</span> Installing VS Code Extensions</h3>
+<div id="outline-container-org74e080a" class="outline-3">
+<h3 id="org74e080a"><span class="section-number-3">2.3</span> Installing VS Code Extensions</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li>We will use the following two extensions.</li>
@@ -443,8 +443,8 @@ git config --list
 </ul>
 </div>
 </div>
-<div id="outline-container-org26017f3" class="outline-3">
-<h3 id="org26017f3"><span class="section-number-3">2.4</span> Signing up GitHub</h3>
+<div id="outline-container-org96e5272" class="outline-3">
+<h3 id="org96e5272"><span class="section-number-3">2.4</span> Signing up GitHub</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li>Sign up here <a href="https://github.com/">https://github.com/</a></li>
@@ -452,16 +452,16 @@ git config --list
 </div>
 </div>
 </div>
-<div id="outline-container-orgdedcd19" class="outline-2">
-<h2 id="orgdedcd19"><span class="section-number-2">3</span> Work flow</h2>
+<div id="outline-container-org8b1eedc" class="outline-2">
+<h2 id="org8b1eedc"><span class="section-number-2">3</span> Work flow</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orge28380a" class="outline-3">
-<h3 id="orge28380a"><span class="section-number-3">3.1</span> Overview of work flow</h3>
+<div id="outline-container-orgb0c0490" class="outline-3">
+<h3 id="orgb0c0490"><span class="section-number-3">3.1</span> Overview of work flow</h3>
 <div class="outline-text-3" id="text-3-1">
 </div>
-<div id="outline-container-org367ae83" class="outline-4">
-<h4 id="org367ae83"><span class="section-number-4">3.1.1</span> Setting up Git repositories</h4>
+<div id="outline-container-org11ef765" class="outline-4">
+<h4 id="org11ef765"><span class="section-number-4">3.1.1</span> Setting up Git repositories</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
 <li>A <i>Git repository</i> is a folder that is tracked by Git.</li>
@@ -472,8 +472,8 @@ git config --list
 </ul>
 </div>
 </div>
-<div id="outline-container-org7aa1a58" class="outline-4">
-<h4 id="org7aa1a58"><span class="section-number-4">3.1.2</span> Commit, Push, and Pull</h4>
+<div id="outline-container-org533bd7f" class="outline-4">
+<h4 id="org533bd7f"><span class="section-number-4">3.1.2</span> Commit, Push, and Pull</h4>
 <div class="outline-text-4" id="text-3-1-2">
 <ul class="org-ul">
 <li>Once you set up local and remote repositories, they are identical now.</li>
@@ -488,8 +488,8 @@ need to "pull" in order to make your local repository up-to-date.</li>
 </div>
 </div>
 
-<div id="outline-container-org23cc881" class="outline-3">
-<h3 id="org23cc881"><span class="section-number-3">3.2</span> Setting up Git repositories</h3>
+<div id="outline-container-org6f1d2fd" class="outline-3">
+<h3 id="org6f1d2fd"><span class="section-number-3">3.2</span> Setting up Git repositories</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>There are two ways to create Git repositories.</li>
@@ -499,8 +499,8 @@ need to "pull" in order to make your local repository up-to-date.</li>
 <li>NEVER touch this hidden folder!</li>
 </ul>
 </div>
-<div id="outline-container-org78e339a" class="outline-4">
-<h4 id="org78e339a"><span class="section-number-4">3.2.1</span> From a folder in your computer</h4>
+<div id="outline-container-org8ff38f0" class="outline-4">
+<h4 id="org8ff38f0"><span class="section-number-4">3.2.1</span> From a folder in your computer</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <ol class="org-ol">
 <li>Open your folder in VS Code that you want to make a Git repository.</li>
@@ -517,8 +517,8 @@ file.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgc2765af" class="outline-4">
-<h4 id="orgc2765af"><span class="section-number-4">3.2.2</span> From already existing GitHub repository</h4>
+<div id="outline-container-orgbeef299" class="outline-4">
+<h4 id="orgbeef299"><span class="section-number-4">3.2.2</span> From already existing GitHub repository</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <ul class="org-ul">
 <li>Visit the GitHub repository that you want to make a remote repository.</li>
@@ -532,8 +532,8 @@ Folder" in "File" tap.</li>
 </div>
 </div>
 
-<div id="outline-container-org1d9545a" class="outline-4">
-<h4 id="org1d9545a"><span class="section-number-4">3.2.3</span> Inviting your collaborators or accepting the invitation</h4>
+<div id="outline-container-org56d3885" class="outline-4">
+<h4 id="org56d3885"><span class="section-number-4">3.2.3</span> Inviting your collaborators or accepting the invitation</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <ul class="org-ul">
 <li>If your collaborators created the remote repository, they will invite you
@@ -548,8 +548,8 @@ to the repository.</li>
 </div>
 </div>
 
-<div id="outline-container-org3e420de" class="outline-3">
-<h3 id="org3e420de"><span class="section-number-3">3.3</span> Commits</h3>
+<div id="outline-container-orgbaee86e" class="outline-3">
+<h3 id="orgbaee86e"><span class="section-number-3">3.3</span> Commits</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li><a href="https://git-scm.com/docs/user-manual">Git manual</a> defines a <i>commit</i> as a single point in the Git history.</li>
@@ -561,8 +561,8 @@ to the repository.</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-orge2fc974" class="outline-4">
-<h4 id="orge2fc974"><span class="section-number-4">3.3.1</span> Making commits using VS Code</h4>
+<div id="outline-container-org7beba80" class="outline-4">
+<h4 id="org7beba80"><span class="section-number-4">3.3.1</span> Making commits using VS Code</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <ul class="org-ul">
 <li>Click the "Source Control" icon on the left.</li>
@@ -579,8 +579,8 @@ to the repository.</li>
 </div>
 </div>
 
-<div id="outline-container-orgf88f941" class="outline-3">
-<h3 id="orgf88f941"><span class="section-number-3">3.4</span> Push and Pull</h3>
+<div id="outline-container-org14da6d4" class="outline-3">
+<h3 id="org14da6d4"><span class="section-number-3">3.4</span> Push and Pull</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>Push is the command that updates the remote repository with the local repository.</li>
@@ -590,8 +590,8 @@ to the repository.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3e71598" class="outline-3">
-<h3 id="org3e71598"><span class="section-number-3">3.5</span> Merge</h3>
+<div id="outline-container-orgdce518a" class="outline-3">
+<h3 id="orgdce518a"><span class="section-number-3">3.5</span> Merge</h3>
 <div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li>If your local repository is not up-to-date, you have to pull first and then push.</li>
@@ -609,12 +609,12 @@ local and remote repositories.</li>
 </div>
 </div>
 
-<div id="outline-container-org2b96974" class="outline-2">
-<h2 id="org2b96974"><span class="section-number-2">4</span> GitLens and Git History</h2>
+<div id="outline-container-org1e464e3" class="outline-2">
+<h2 id="org1e464e3"><span class="section-number-2">4</span> GitLens and Git History</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgf70b17c" class="outline-3">
-<h3 id="orgf70b17c"><span class="section-number-3">4.1</span> GitLens</h3>
+<div id="outline-container-orgb4bc250" class="outline-3">
+<h3 id="orgb4bc250"><span class="section-number-3">4.1</span> GitLens</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>GitLens shows who and when the line with cursor was committed.</li>
@@ -623,8 +623,8 @@ local and remote repositories.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org54597c7" class="outline-3">
-<h3 id="org54597c7"><span class="section-number-3">4.2</span> Git History</h3>
+<div id="outline-container-orgd0c41b4" class="outline-3">
+<h3 id="orgd0c41b4"><span class="section-number-3">4.2</span> Git History</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>Git History shows the history of all commits using a diagram.</li>
@@ -639,8 +639,8 @@ local and remote repositories.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge449367" class="outline-3">
-<h3 id="orge449367"><span class="section-number-3">4.3</span> Previous PDF files using Git History</h3>
+<div id="outline-container-org30de1f1" class="outline-3">
+<h3 id="org30de1f1"><span class="section-number-3">4.3</span> Previous PDF files using Git History</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li>Enter "Git: View History" in CP.</li>
@@ -655,8 +655,8 @@ local and remote repositories.</li>
 
 
 
-<div id="outline-container-org9fb20f5" class="outline-2">
-<h2 id="org9fb20f5"><span class="section-number-2">5</span> If collaborators don't use GitHub</h2>
+<div id="outline-container-org9401b72" class="outline-2">
+<h2 id="org9401b72"><span class="section-number-2">5</span> If collaborators don't use GitHub</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>You can still do the same thing even if your collaborators do not use GitHub.</li>
@@ -672,12 +672,12 @@ identical).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge92bc91" class="outline-2">
-<h2 id="orge92bc91"><span class="section-number-2">6</span> Exercises</h2>
+<div id="outline-container-orgbcc8b28" class="outline-2">
+<h2 id="orgbcc8b28"><span class="section-number-2">6</span> Exercises</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgc66cff3" class="outline-3">
-<h3 id="orgc66cff3"><span class="section-number-3">6.1</span> Making Git repositories</h3>
+<div id="outline-container-org9e02e72" class="outline-3">
+<h3 id="org9e02e72"><span class="section-number-3">6.1</span> Making Git repositories</h3>
 <div class="outline-text-3" id="text-6-1">
 <ol class="org-ol">
 <li>Download <a href="git-exercises.zip">this file</a> and extract it in your computer.</li>
@@ -691,8 +691,8 @@ folder.)</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org8111590" class="outline-3">
-<h3 id="org8111590"><span class="section-number-3">6.2</span> A file from your collaborator</h3>
+<div id="outline-container-org9a5e892" class="outline-3">
+<h3 id="org9a5e892"><span class="section-number-3">6.2</span> A file from your collaborator</h3>
 <div class="outline-text-3" id="text-6-2">
 <ol class="org-ol">
 <li>Your collaborator just sent you their tex file. This is in the folder
@@ -705,8 +705,8 @@ folder.)</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orga299891" class="outline-3">
-<h3 id="orga299891"><span class="section-number-3">6.3</span> Commits and push</h3>
+<div id="outline-container-orgbc3b85c" class="outline-3">
+<h3 id="orgbc3b85c"><span class="section-number-3">6.3</span> Commits and push</h3>
 <div class="outline-text-3" id="text-6-3">
 <ol class="org-ol">
 <li>Write contents in Section 5.</li>
@@ -717,8 +717,8 @@ tex file only).</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org2773644" class="outline-3">
-<h3 id="org2773644"><span class="section-number-3">6.4</span> Collaboration</h3>
+<div id="outline-container-orge475bb9" class="outline-3">
+<h3 id="orge475bb9"><span class="section-number-3">6.4</span> Collaboration</h3>
 <div class="outline-text-3" id="text-6-4">
 <ol class="org-ol">
 <li>Find a partner to practice Git.</li>
@@ -734,12 +734,12 @@ push. (There will be a conflict to merge manually.)</li>
 </div>
 </div>
 
-<div id="outline-container-org201e065" class="outline-2">
-<h2 id="org201e065"><span class="section-number-2">7</span> Branches</h2>
+<div id="outline-container-orge95eb00" class="outline-2">
+<h2 id="orge95eb00"><span class="section-number-2">7</span> Branches</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org5ff12a1" class="outline-3">
-<h3 id="org5ff12a1"><span class="section-number-3">7.1</span> What is a branch?</h3>
+<div id="outline-container-orgc59a4b7" class="outline-3">
+<h3 id="orgc59a4b7"><span class="section-number-3">7.1</span> What is a branch?</h3>
 <div class="outline-text-3" id="text-7-1">
 <ul class="org-ul">
 <li><a href="https://git-scm.com/docs/user-manual">Git manual</a> defines <i>branch</i> as follows.</li>
@@ -753,8 +753,8 @@ branch.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge4e7a89" class="outline-3">
-<h3 id="orge4e7a89"><span class="section-number-3">7.2</span> Creating branches</h3>
+<div id="outline-container-orgee4d8f6" class="outline-3">
+<h3 id="orgee4d8f6"><span class="section-number-3">7.2</span> Creating branches</h3>
 <div class="outline-text-3" id="text-7-2">
 <ul class="org-ul">
 <li>You can easily create a branch using Git History.</li>
@@ -765,8 +765,8 @@ branch.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org80ea60c" class="outline-3">
-<h3 id="org80ea60c"><span class="section-number-3">7.3</span> Merging branches</h3>
+<div id="outline-container-org382bca1" class="outline-3">
+<h3 id="org382bca1"><span class="section-number-3">7.3</span> Merging branches</h3>
 <div class="outline-text-3" id="text-7-3">
 <ul class="org-ul">
 <li>To merge the current branch from another branch enter "Git: Merge Branch"
@@ -781,12 +781,12 @@ resolve the conflicts first.</li>
 
 
 
-<div id="outline-container-org182a969" class="outline-2">
-<h2 id="org182a969"><span class="section-number-2">8</span> Other tips</h2>
+<div id="outline-container-org99aab2c" class="outline-2">
+<h2 id="org99aab2c"><span class="section-number-2">8</span> Other tips</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org913c296" class="outline-3">
-<h3 id="org913c296"><span class="section-number-3">8.1</span> .gitignore file</h3>
+<div id="outline-container-org9f266bb" class="outline-3">
+<h3 id="org9f266bb"><span class="section-number-3">8.1</span> .gitignore file</h3>
 <div class="outline-text-3" id="text-8-1">
 <ul class="org-ul">
 <li><code>.gitignore</code> file tells Git what files to ignore.</li>
@@ -800,7 +800,7 @@ resolve the conflicts first.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2020-12-02 Wed 23:23</p>
+<p class="date">Created: 2020-12-03 Thu 23:57</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

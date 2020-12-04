@@ -4,8 +4,8 @@
 
 
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
-# #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-#+OPTIONS: toc:nil num:nil
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+# #+OPTIONS: toc:nil num:nil
 
 
 * BibTeX
@@ -19,7 +19,28 @@
    - ~STYLE~ can be ~abbrv~, ~alpha~, ~plain~, etc.
    - ~BIBFILE~ is the location of your BibTeX, for example, something like this:
      : /Users/jangsookim/bibtex/ref.bib
+   - All exercises in this section will use the tex file and the bib file in
+     "bib-exercise" folder in [[file:vscode-lecture-files.zip][this file.]]
+*** Exercise
+#+ATTR_REVEAL: :frag (roll-in)
+    1. Compile the tex file in "bib-exercise" folder.
+    2. At the end of the tex file there is a line as follows.
+       : \bibliography{./ref.bib}
+       Change the relative path ~./ref.bib~ to the absolute path.
+    3. Check if the references are compiled as before.
+
+** NatBib package
+#+ATTR_REVEAL: :frag (roll-in)
+   - NatBib package shows citations using author names and years instead of numbers.
+   - To use this package add ~\usepackage{natbib}~ in your tex file.
+   - NatBib package has styles like these.
+     - ~plainnat~
+     - ~abbrvnat~
+   - See [[https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management][LaTeX/Bibliography Management]] for more information.
+   - Exercise: Try the above two styles in the tex file.
+
 ** Entries in BibTeX file
+#+ATTR_REVEAL: :frag (roll-in)
    - A BibTeX file has entries like this:
      : @article{Bressoud1979,
      :   title={A generalization of the {R}ogers-{R}amanujan
@@ -33,6 +54,22 @@
      : }
    - To cite this paper you can type ~\cite{Bressoud1979}~ in your tex file.
    - Note that in the title you must use ~{ }~ for capital letters as above.
+*** Exercise
+#+ATTR_REVEAL: :frag (roll-in)
+   1. Add the previous entry in the ~ref.bib~ file.
+   2. Cite this paper in the tex file and compile it.
+   3. See what happens if you write "Rogers-Ramanujan" instead of
+      "{R}ogers-{R}amanujan".
+
+** arXiv papers
+    - arXiv papers or preprints can be added like this.
+      : @misc{kim20:jacob_flagged,
+      :   author       = {Jang Soo Kim},
+      :   title        = {{Jacobi--Trudi formulas for flagged 
+      :                   refined dual stable
+      :                   Grothendieck polynomials}},
+      :   howpublished = {arXiv:2008.12000v2}
+      : }
 
 ** BibTeX entries from Google Scholar
      1. Search the paper you want to cite in Google Scholar.
@@ -41,9 +78,20 @@
      3. Click ~"~ at the bottom of the thumbnail.
      4. Click the BibTeX icon at the bottom.
      5. You can copy the text into you BibTeX file.
-     6. There are other data base systems such as [[https://mathscinet.ams.org/mathscinet/][MathSciNet]].
+     6. There are other data base systems such as [[https://mathscinet.ams.org/mathscinet/][MathSciNet]] (but you need a
+        subscription).
+
+*** Exercise
+#+ATTR_REVEAL: :frag (roll-in)
+    1. Add a bib entry to ~ref.bib~ for the following paper using Google Scholar.
+      : S. Eliahou, Wilf’s conjecture and Macaulay’s theorem, 
+      : J. Eur. Math. Soc. (JEMS), 20(9):2105–2129, 2018.
+    2. Cite this paper in the tex file and compile it.
+    3. Repeat 1 and 2 using [[https://mathscinet.ams.org/mathscinet/][MathSciNet]].
+
 
 ** JabRef
+#+ATTR_REVEAL: :frag (roll-in)
    - JabRef is a free BibTeX Manager.
    - Download here: http://www.jabref.org/
    - JabRef is useful when your BibTeX file has many entries.
@@ -51,16 +99,32 @@
      bottom left corner.
    - I couldn't find any BibTeX managers in VS Code extensions. Let me know if
      you find one.
+   - [[https://bibdesk.sourceforge.io/][BibDesk]] is also a good BibTeX manager but only for Mac.
+*** Exercise
+#+ATTR_REVEAL: :frag (roll-in)
+    1. Add the following paper to ~ref.bib~.
+      : P. Langevin, Calculs de Certaines Sommes de Gauss, 
+      : J. Number Theory 32, 59–64, (1997)
+    2. Cite these papers in the tex file and compile it.
+    3. Repeat 1 and 2 with the following arXiv paper.
+      : Florence Maas-Gariépy and Rebecca Patrias, 
+      : Set-valued domino tableaux and shifted set-valued 
+      : domino tableaux, arXiv:2011.12493
+      - Note: If you use JabRef, you may have to change the bibitem type from
+        ~@Article~ to ~@Misc~ and add a new entry ~howpublished~.
 ** bbl file
+#+ATTR_REVEAL: :frag (roll-in)
    - If you compile bibtex, it will generate a bbl file ~TEXFILENAME.bbl~, where
      ~TEXFILENAME~ is your tex filename.
    - This file contains all bibitems you need in your tex file.
    - You can copy everything in this file and paste it at the end of your tex file.
    - After this you no longer need your BibTeX file.
    - This may be helpful if you want to have a single stand-alone tex file.
-
+*** Exercise
+    - Edit the tex file so that it does not need the bib file.
 * Code Ace Jumper (extension)
 ** Overview
+#+ATTR_REVEAL: :frag (roll-in)
    - Code Ace Jumper is an extension that allows you to jump around your file.
    - How to use:
      1. Execute "AceJump: Jump".
@@ -70,6 +134,7 @@
    - There are three more commands like this.
    - First, you need to assign keyboard shortcuts for these commands.
 ** Add Keyboard shortcuts
+#+ATTR_REVEAL: :frag (roll-in)
    1. CP $\rightarrow$ Preferences: Open Keyboard Shortcuts
    2. Search "ace jump".
    3. You can assign a keyboard shortcut by double clicking each command. For
@@ -80,6 +145,7 @@
       - AceJump: Selection $\rightarrow$ *CMD+J S*
 ** Change some options
 *** Redefine "words"
+#+ATTR_REVEAL: :frag (roll-in)
     1. We want to make the ~f~ in ~\frac~ or in ~$f$~ as the start of a word.
     2. CP $\rightarrow$ Preferences: Open Settings (UI). (or ~CMD+,~ for a shortcut)
     3. Search "Ace Jump > Finder: Pattern".
@@ -94,6 +160,7 @@
 
 * Vim (extension)
 ** Overview
+#+ATTR_REVEAL: :frag (roll-in)
    - Vim is a modal editor meaning that it has several modes.
      - Normal mode: used for editor commands
      - Insert mode: used for inserting text
@@ -102,6 +169,7 @@
    - [[https://eggplant.pro/blog/wp-content/uploads/2016/12/vi-vim-tutorial.pdf][Vim graphical cheat sheet]]
      
 ** Installation 
+#+ATTR_REVEAL: :frag (roll-in)
    - First you need to install Vim using "Extensions" icon as before.
    - Once you have Vim installed, you can use Vim commands immediately.
    - You can disable Vim as follows.
@@ -184,6 +252,7 @@
 # | zb     | scroll cursor to bottom |
 
 ** Useful combos
+#+ATTR_REVEAL: :frag (roll-in)
    - ~yf$~: If you are at the beginning of an inline math mode ~$~, then ~yf$~
       can copy the whole math expression.
    - ~y)~: Copy the sentence (from the location of cursor).
@@ -194,6 +263,7 @@
    - Selecting a whole file: ~gg V G~
 
 ** Registers
+#+ATTR_REVEAL: :frag (roll-in)
    - You can store something in a register.
    - The easiest way is as follows:
      1. Select a region that you want to register.
@@ -203,11 +273,13 @@
    - To view the registers type the following.\\
      ~:reg ENTER~
 ** Mark positions
+#+ATTR_REVEAL: :frag (roll-in)
    - You can mark the current position for future use.
      1. ~ma~ marks the current position by ~a~, where ~a~ can be any letter.
      2. Typing ~`a~ send you back to the position marked by ~a~.
    - It's helpful to mark the position where macros are defined.
 ** Dot: Repeat the previous command.
+#+ATTR_REVEAL: :frag (roll-in)
    - ~.~ repeats the previously performed command.
    - For example, ~dd~ deletes the line at cursor. Pressing ~.~ will delete
      another line.
@@ -215,6 +287,7 @@
    - More complicated tasks can be done by macros.
 
 ** Macros
+#+ATTR_REVEAL: :frag (roll-in)
    - ~qa~ followed by ~q~ records all your commands performed between them at
      ~a~.
    - ~@a~ repeats the commands recorded at ~a~.
@@ -231,6 +304,7 @@
 
 
 *** Example
+#+ATTR_REVEAL: :frag (roll-in)
     - We want to insert ~&~ before each ~=~ below.
       : \begin{align*}
       :   a = b,\\
@@ -244,6 +318,7 @@
       3. Type ~f = i & ESC k 0~ and ~q~.
       4. Type ~@a~ and then ~@@~ twice.
 *** Exercises
+#+ATTR_REVEAL: :frag (roll-in)
     - Replace each pair ~[ ]~ by ~( )~ using a macro (you may use one macro many
       times).
       : \begin{align*}
@@ -254,4 +329,17 @@
       : \end{align*}
     - Replace each letter in parentheses by its capital letter. (Hint: Try ~~~
       on a letter.)
+** More advanced commands: i and s
+#+ATTR_REVEAL: :frag (roll-in)
+   - ~i~ means "inner" and ~s~ means "surrounding". 
+   - Using these keys you can create a sentence like this.
+   - ~yiw~: yank inner word 
+     - This is similar to ~yw~ (yank word), but the cursor doesn't have to be at
+       the beginning of a word.
+     - ~diw~ and ~ciw~ work similarly with deleting and changing.
+   - ~ysiw)~: insert ( ) surrounding inner word
+   - ~ysiw$~: insert $ $ surrounding inner word
+   - ~ysiW$~: insert $ $ surrounding inner WORD (WORD means a maximal string
+     without a space)
+
 
