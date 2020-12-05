@@ -28,7 +28,7 @@
 
 * Lecture 3
   - We learn Git and GitHub for version control and collaboration. 
-  - [[./vscode_lecture3.html][Lecture Notes]], [[./vscode_lecture3(slides).html][Slides]]
+  - [[./vscode_lecture3.html][Lecture Notes]], [[./vscode_lecture3(slides).html][Slides]], [[https://youtu.be/QWao4Zr4LXI][Video (in Korean)]]
 ** Preparations for Lecture 3
 *** Installing Git
     - Mac
