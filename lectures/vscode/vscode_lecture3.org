@@ -2,14 +2,15 @@
 #+REVEAL_TRANS: zoom
 #+REVEAL_THEME: league
 
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 # #+OPTIONS: toc:nil num:nil
 
 
 
 * Git and GitHub for VCS and collaboration
 ** Overview
+#+ATTR_REVEAL: :frag (roll-in)
    - Git is a version control system.
    - GitHub is a platform to share codes for collaboration.
    - We will learn how to use Git and GitHub for writing $\mathrm{\LaTeX}$
@@ -20,6 +21,7 @@
    - After this lecture, when you feel necessary, you can learn more about Git
      and GitHub in your own.
 ** Goals
+#+ATTR_REVEAL: :frag (roll-in)
    - Version Control: Keep all versions of your tex file.
    - Go back to any version if needed.
    - View the changes in each version.
@@ -27,7 +29,7 @@
    - You and your collaborators should be able to edit the tex file
      simultaneously.
    - Merge your tex file with your collaborators'.
-   - Limitation: We allow only one time-line (because we don't use branches).
+   # - Limitation: We allow only one time-line (because we don't use branches).
 * Preparations
 ** Installing Git
    - Mac
@@ -38,8 +40,9 @@
      - Download "64-bit Git for Windows Setup" (or 32-bit depending on your
         machine) [[https://git-scm.com/download/win][here]].
      - Install Git using default settings.
-     - Restart your computer.
+     - Restart VS Code.
 ** Configuring Git user name and email
+#+ATTR_REVEAL: :frag (roll-in)
     - Before using Git you need to identify yourself by entering this.
       : git config --global user.name "NAME"
       : git config --global user.email "EMAIL"
@@ -56,6 +59,7 @@
 * Work flow
 ** Overview of work flow
 *** Setting up Git repositories
+#+ATTR_REVEAL: :frag (roll-in)
      - A /Git repository/ is a folder that is tracked by Git. 
      - Git will keep track of all files in a Git repository and its sub-folders.
      - You first need to set up your local and remote repositories.
@@ -71,11 +75,21 @@
       need to "pull" in order to make your local repository up-to-date.
 
 ** Setting up Git repositories
+#+ATTR_REVEAL: :frag (roll-in)
    - There are two ways to create Git repositories.
-   - The first one is using your own folder.
-   - The second one is using already existing GitHub repository.
+   - The first one is using already existing GitHub repository.
+   - The second one is using your own folder.
    - Every Git repository has a hidden folder named ~.git~.
    - NEVER touch this hidden folder!
+*** From already existing GitHub repository (clone)
+    - Visit the GitHub repository that you want to make a remote repository.
+    - In the Code tap click the green button "Code".
+    - Copy the https address.
+    - Go to the "Explorer" tap in your VS Code and close everything using "Close
+      Folder" in "File" tap.
+    - Click "Clone Repository" and enter the https address here.
+    - Select the location of your local repository.
+
 *** From a folder in your computer
      1. Open your folder in VS Code that you want to make a Git repository.
      2. Click the icon "Source Control" on the left.
@@ -86,15 +100,6 @@
      5. Select "Publish to GitHub private repository" and select only the tex
         file (NOT the pdf file!) and other necessary files to compile the tex
         file.
-*** From already existing GitHub repository
-    - Visit the GitHub repository that you want to make a remote repository.
-    - In the Code tap click the green button "Code".
-    - Copy the https address.
-    - Go to the "Explorer" tap in your VS Code and close everything using "Close
-      Folder" in "File" tap.
-    - Click "Clone Repository" and enter the https address here.
-    - Select the location of your local repository.
-
 *** Inviting your collaborators or accepting the invitation
     - If your collaborators created the remote repository, they will invite you
       to the repository.
@@ -104,27 +109,53 @@
     - Click "Invite a collaborator" and add your collaborator one at a time.
     - Once they accept the invitation they will be able to change the files.
 
+*** Exercises (Starting from GitHub)
+#+ATTR_REVEAL: :frag (roll-in)
+    1. Login to GitHub.
+    2. Create a new repository "Git-practice1".
+    3. In the Code tap, click the link "creating a new file" and make a file
+       "practice1.txt" with the following content:
+       : Git practice 1
+    4. Clone this GitHub repository into your local repository.
+
 ** Commits
+#+ATTR_REVEAL: :frag (roll-in)
    - [[https://git-scm.com/docs/user-manual][Git manual]] defines a /commit/ as a single point in the Git history.
    - We will simply think of a commit as a version of your tex file.
    - A commit has two parts.
      - Move changed files to the staged area.
      - Make a commit with a commit message.
 *** Making commits using VS Code
+#+ATTR_REVEAL: :frag (roll-in)
      - Click the "Source Control" icon on the left.
      - Each file has a mark.
        - U means the file is untracked by Git.
        - M means the file is modified (and is kept tract of by Git).
+       - C means the file has some conflicts.
      - Click the + button on the modified file (marked M).
      - The file will be move to "Staged Changes".
      - Write a commit message in the message box and enter CMD+ENTER.
 
 ** Push and Pull
+#+ATTR_REVEAL: :frag (roll-in)
    - Push is the command that updates the remote repository with the local repository.
    - Pull is the other way around.
    - To push type "Git: Push" in CP.
    - To pull type "Git: Pull" in CP.
+*** Exercises (Commit and Push)
+#+ATTR_REVEAL: :frag (roll-in)
+    1. Open your local repository "Git-practice1" in VS Code.
+    2. Add a new line in the file "practice1.txt".
+    3. Commit with commit message "first commit".
+    4. Push.
+    5. Check the changes in your GitHub repository.
+    6. Create a new file "practice2.txt" in your local repository and repeat
+       2,3,4,5.
+    7. Delete the file "practice2.txt" in VS Code.
+    8. Move the deleted file into the staged area and commit and push.
+    9. Check the changes in your GitHub repository.
 ** Merge
+#+ATTR_REVEAL: :frag (roll-in)
    - If your local repository is not up-to-date, you have to pull first and then push.
    - If there are no conflicts Git will automatically merge the two files from
      local and remote repositories.
@@ -132,8 +163,17 @@
      1. Git will write the conflicts in the tex file.
      2. You can simply click the change that you want to keep.
      3. Once you've resolved all conflicts, save the file and the click the + button.
-     4. Commit and now you can push.
-
+     4. Commit and push.
+*** Exercises (Merge)
+#+ATTR_REVEAL: :frag (roll-in)
+    1. Visit your GitHub repository "Git-practice1".
+    2. In the Code tap click the file "practice1.txt".
+    3. Add a new line "Added from GitHub" in this file and commit (in GitHub).
+    4. Open your local repository "Git-practice1" in VS Code.
+    5. Add a new line "Added from VS Code" in this file and commit (in VS Code).
+    6. Push. (This will show an error message.)
+    7. Pull and merge the changes (accept both changes).
+    8. Push and check the changes in GitHub.
 * GitLens and Git History
 ** GitLens
    - GitLens shows who and when the line with cursor was committed.
@@ -147,16 +187,9 @@
    - In the diagram on the right, 
      - "master" is the current state of your local repository and
      - "origin/master" is the current state of your remote repository.
-** Previous PDF files using Git History
-   - Enter "Git: View History" in CP.
-   - Click the commit that you want to see a pdf.
-   - Click "View" icon at the bottom.
-   - This will open the tex file when the commit was made.
-   - You can build LaTeX and view PDF as usual.
-
-
 
 * If collaborators don't use GitHub 
+#+ATTR_REVEAL: :frag (roll-in)
   - You can still do the same thing even if your collaborators do not use GitHub.
   - When you make changes you push as usual.
   - But you have to wait when your collaborators are working on the tex file.
@@ -165,17 +198,19 @@
        identical).
     2. Commit and push.
     3. Review the changes your collaborator have made.
-* Exercises
+* Exercises (solitary)
 ** Making Git repositories
+#+ATTR_REVEAL: :frag (roll-in)
    1. Download [[file:git-exercises.zip][this file]] and extract it in your computer.
    2. Drag-and-drop the whole folder (not just the tex file!) into VS Code.
       (Make sure that you have closed all folder in VS Code before opening this
       folder.)
    3. Compile the tex file.
-   4. Make this folder a local repository and create a remote repository (Hint:
+   4. Make this folder a local repository and create a remote repository. (Hint:
       "Publish to GitHub")
    5. Select only the tex file when you do this.
 ** A file from your collaborator
+#+ATTR_REVEAL: :frag (roll-in)
    1. Your collaborator just sent you their tex file. This is in the folder
       "from your collaborator".
    2. Replace your tex file with the file from your collaborator. 
@@ -183,21 +218,50 @@
    4. Review the changes.
    5. Modify the file if you feel necessary.
    6. Commit and push.
-** Commits and push
+** Commit and push
+#+ATTR_REVEAL: :frag (roll-in)
    1. Write contents in Section 5.
    2. Commit your changes with commit message "Add contents in Section 4" (the
       tex file only).
    3. Push.
    4. Check Git History and see the changes that you just made.
-** Collaboration
-   1. Find a partner to practice Git.
-   2. Invite your partner to your GitHub repository (or accept their invitation).
-   3. Let's say person A invited person B.
-   4. Make sure that both have the current tex file by doing pull.
-   5. First A changes the title of "Section 1" to "Section ABC" and do commit and push.
-   6. Then B changes the title of "Section 1" to "Section DEF" and do commit and
-      push. (There will be a conflict to merge manually.)
-   7. Repeat 4,5,6 with "Section 2" but with roles of A and B reversed.
+* Exercises (collaborative push-pull game)
+** Forming a group
+   1. Form a group of at least 3 people.
+   2. Choose a leader.
+** Making Git repositories
+#+ATTR_REVEAL: :frag (roll-in)
+   1. The leader creates a new Git repository "Push-Pull-Game" directly from GitHub.
+   2. In GitHub the leader creates a new file "Push-Pull-Game.txt" with the following content.
+      :  Push-Pull Game
+      :  Numbers: 1
+      :
+      :  1. The leader's name (or nickname)
+   3. The leader invites the group members to this repository.
+   4. The group members (including the leader) creates a local repository by
+      cloning this GitHub repository.
+** Goal
+#+ATTR_REVEAL: :frag (roll-in)
+   - The goal is to update the file so that it looks like
+      :  Push-Pull Game
+      :  Numbers: 1, 2, 3, 4
+      :
+      :  1. Name1
+      :  2. Name2
+      :  3. Name3
+      :  4. Name4
+   - Everyone tries to add the next number at the end of the second line and add
+     his/her name at the end with that number.
+   - Everyone must write his/her name (or nickname) exactly 3 times.
+** Rules
+#+ATTR_REVEAL: :frag (roll-in)
+   - If you pushed successively, then you have to wait for 1 minute before you
+     try pushing again.
+   - You cannot delete anything that's already written in the file.
+** Troubleshooting
+   - If you are stuck and cannot do either push or pull, you can discard you
+     changes by clicking the curvy arrow in "Source Control" sidebar. You can
+     then start over.
 
 * Branches 
 ** What is a branch?
@@ -225,8 +289,28 @@
 
 
 * Other tips
+** Viewing previous PDF files using Git History
+   - Enter "Git: View History" in CP.
+   - Click the commit that you want to see a pdf.
+   - Click "View" icon at the bottom.
+   - This will open the tex file when the commit was made.
+   - You can build LaTeX and view PDF as usual.
+
 ** .gitignore file
    - ~.gitignore~ file tells Git what files to ignore.
    - If you add a file to ~.gitignore~ then Git will no longer track this file.
    - To add a file to ~.gitignore~, right click on that file and click "Add to
      .gitignore".
+** (For Mac) Hold a key to repeat it. 
+   - If you want to have a key repeated when you hold it, type the following in
+     a terminal:
+     : defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+   - You have to restart VS Code.
+   - Reference: [[https://stackoverflow.com/questions/39972335/how-do-i-press-and-hold-a-key-and-have-it-repeat-in-vscode][stackoverflow]]
+** Deleting GitHub repositories
+   - You can delete a GitHub repository in the "Settings" tap.
+   - You can simply delete your local repository as usual.
+** Creating your own webpage in GitHub
+   - You can make your webpage by creating a new repository named
+     "username.github.io".
+   - See [[https://pages.github.com/][Link]].
