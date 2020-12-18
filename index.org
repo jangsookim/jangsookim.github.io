@@ -21,6 +21,8 @@
 
 * Papers
 ** Preprints
+   - Generalized Schur function determinants using the Bazin identity (with Meesue),
+     [[https://arxiv.org/abs/2012.08741][arXiv:2012.08741]]
    - Orthogonal polynomials of type $R_I$ (with Dennis Stanton), [[https://arxiv.org/abs/2009.14475][arXiv:2009.14475]]
    - Enumeration of Gelfand--Cetlin type reduced words (with Yunhyung Cho and
      Eunjeong Lee), [[https://arxiv.org/abs/2009.06906][arXiv:2009.06906]]
