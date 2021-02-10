@@ -32,10 +32,10 @@
      Dennis Stanton), [[https://arxiv.org/abs/2006.08120][arXiv:2006.08120]]
    - Enumeration of standard barely set-valued tableaux of shifted shapes (with
      Michael Schlosser and Meesue Yoo), [[https://arxiv.org/abs/2006.03253][arXiv:2006.03253]]
-   - Jacobi--Trudi formula for refined dual stable Grothendieck polynomials,
-     [[https://arxiv.org/abs/2003.00540][arXiv:2003.00540]]
 
 ** To appear
+   - Jacobi--Trudi formula for refined dual stable Grothendieck polynomials, to
+     appear in /J. Combin. Theory Ser. A/, [[https://arxiv.org/abs/2003.00540][arXiv:2003.00540]]
    - Whitney numbers for poset cones (with Galen Dorpalen-Barry and Vic Reiner)
      to appear in /Order/, [[https://arxiv.org/abs/1906.00036][arXiv:1906.00036]]
    - Weight multiplicities and Young tableaux through affine crystals (with
