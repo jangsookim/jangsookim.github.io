@@ -43,7 +43,7 @@
      [[https://arxiv.org/abs/1703.10321][arXiv:1703.10321]]
 ** 2021
    - Volumes of generalized Chan-Robbins-Yuen polytopes (with Sylvie Corteel and
-     Karola Meszaros), to appear in /Discrete & Computational Geometry/,  65, 510–530 (2021),
+     Karola Meszaros), /Discrete & Computational Geometry/,  65, 510–530 (2021),
      [[https://arxiv.org/abs/1704.02701][arXiv:1704.02701]]
 ** 2020
    - Volumes of flow polytopes related to caracol graphs (with Jihyeug Jang),
