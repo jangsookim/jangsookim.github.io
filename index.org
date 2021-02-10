@@ -38,12 +38,13 @@
 ** To appear
    - Whitney numbers for poset cones (with Galen Dorpalen-Barry and Vic Reiner)
      to appear in /Order/, [[https://arxiv.org/abs/1906.00036][arXiv:1906.00036]]
-   - Volumes of generalized Chan-Robbins-Yuen polytopes (with Sylvie Corteel and
-     Karola Meszaros), to appear in /Discrete & Computational Geometry/,
-     [[https://arxiv.org/abs/1704.02701][arXiv:1704.02701]]
    - Weight multiplicities and Young tableaux through affine crystals (with
      Kyu-Hwan Lee and Se-jin Oh), to appear in /Memoirs of the AMS/,
      [[https://arxiv.org/abs/1703.10321][arXiv:1703.10321]]
+** 2021
+   - Volumes of generalized Chan-Robbins-Yuen polytopes (with Sylvie Corteel and
+     Karola Meszaros), to appear in /Discrete & Computational Geometry/,  65, 510–530 (2021),
+     [[https://arxiv.org/abs/1704.02701][arXiv:1704.02701]]
 ** 2020
    - Volumes of flow polytopes related to caracol graphs (with Jihyeug Jang),
      /Electronic J. Combin./ 27(4)(2020), #P4.21, [[https://arxiv.org/abs/1911.10703][arXiv:1911.10703]]
