@@ -21,7 +21,7 @@
 
 * Papers
 ** Preprints
-   - Generalized Schur function determinants using the Bazin identity (with Meesue),
+   - Generalized Schur function determinants using the Bazin identity (with Meesue Yoo),
      [[https://arxiv.org/abs/2012.08741][arXiv:2012.08741]]
    - Orthogonal polynomials of type $R_I$ (with Dennis Stanton), [[https://arxiv.org/abs/2009.14475][arXiv:2009.14475]]
    - Enumeration of Gelfand--Cetlin type reduced words (with Yunhyung Cho and
@@ -34,14 +34,14 @@
      Michael Schlosser and Meesue Yoo), [[https://arxiv.org/abs/2006.03253][arXiv:2006.03253]]
 
 ** To appear
-   - Jacobi--Trudi formula for refined dual stable Grothendieck polynomials, to
-     appear in /J. Combin. Theory Ser. A/, [[https://arxiv.org/abs/2003.00540][arXiv:2003.00540]]
    - Whitney numbers for poset cones (with Galen Dorpalen-Barry and Vic Reiner)
      to appear in /Order/, [[https://arxiv.org/abs/1906.00036][arXiv:1906.00036]]
    - Weight multiplicities and Young tableaux through affine crystals (with
      Kyu-Hwan Lee and Se-jin Oh), to appear in /Memoirs of the AMS/,
      [[https://arxiv.org/abs/1703.10321][arXiv:1703.10321]]
 ** 2021
+   - Jacobi--Trudi formula for refined dual stable Grothendieck polynomials, 
+     /J. Combin. Theory Ser. A/ 180 (2021), 105415, [[https://arxiv.org/abs/2003.00540][arXiv:2003.00540]]
    - Volumes of generalized Chan-Robbins-Yuen polytopes (with Sylvie Corteel and
      Karola Meszaros), /Discrete & Computational Geometry/,  65, 510–530 (2021),
      [[https://arxiv.org/abs/1704.02701][arXiv:1704.02701]]
