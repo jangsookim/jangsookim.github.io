@@ -188,6 +188,7 @@
   - [[https://www.mat.univie.ac.at/~schlosse/][Michael Schlosser]]
   - Seunghyun Seo
   - [[http://hshin.info/][Heesung Shin]]
+  - Minho Song
   - U-Keun Song
   - [[http://www.math.umn.edu/~stanton/][Dennis Stanton]]
   - [[http://dbwilson.com/][David B. Wilson]]
