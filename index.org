@@ -21,6 +21,8 @@
 
 * Papers
 ** Preprints
+   - Refined canonical stable Grothendieck polynomials and their duals (with
+     Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), [[https://arxiv.org/abs/2104.04251][arXiv:2104.04251]]
    - Generalized Schur function determinants using the Bazin identity (with Meesue Yoo),
      [[https://arxiv.org/abs/2012.08741][arXiv:2012.08741]]
    - Orthogonal polynomials of type $R_I$ (with Dennis Stanton), [[https://arxiv.org/abs/2009.14475][arXiv:2009.14475]]
