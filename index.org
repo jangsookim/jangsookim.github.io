@@ -21,6 +21,7 @@
 
 * Papers
 ** Preprints
+   - Three families of /q/-Lommel polynomials (with Dennis Stanton), [[https://arxiv.org/abs/2105.10096][arXiv:2105.10096]]
    - Refined canonical stable Grothendieck polynomials and their duals (with
      Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), [[https://arxiv.org/abs/2104.04251][arXiv:2104.04251]]
    - Generalized Schur function determinants using the Bazin identity (with Meesue Yoo),
@@ -30,8 +31,6 @@
      Eunjeong Lee), [[https://arxiv.org/abs/2009.06906][arXiv:2009.06906]]
    - Jacobi--Trudi formulas for flagged refined dual stable Grothendieck
      polynomials, [[https://arxiv.org/abs/2008.12000][arXiv:2008.12000]]
-   - Ratios of Hahn-Exton /q/-Bessel functions and /q/-Lommel polynomials (with
-     Dennis Stanton), [[https://arxiv.org/abs/2006.08120][arXiv:2006.08120]]
    - Enumeration of standard barely set-valued tableaux of shifted shapes (with
      Michael Schlosser and Meesue Yoo), [[https://arxiv.org/abs/2006.03253][arXiv:2006.03253]]
 
@@ -158,13 +157,16 @@
 ** 2007
    - The initial involution patterns of permutations (with Dongsu Kim),
      /Electron. J. Combin./ 14 (2007), #R2
-
+** Unpublished manuscript
+   - Ratios of Hahn-Exton /q/-Bessel functions and /q/-Lommel polynomials (with
+     Dennis Stanton), [[https://arxiv.org/abs/2006.08120][arXiv:2006.08120]]
+   
 
 * Collaborators
   - [[https://geometry.knu.ac.kr/~anbyhee/][Byung Hee An]]
   - [[http://riordan.skku.edu/home/GSCheon.php][Gi-Sang Cheon]]
   - [[https://sites.google.com/site/yhchomath/][Yunhyung Cho]] 
-  - Suyoung Choi
+  - [[http://acmi.ajou.ac.kr/~schoi/][Suyoung Choi]]
   - [[https://math.berkeley.edu/~corteel/][Sylvie Corteel]]
   - [[https://sites.google.com/umn.edu/galen-dorpalen-barry/][Galen Dorpalen-Barry]]
   - Dan Drake
