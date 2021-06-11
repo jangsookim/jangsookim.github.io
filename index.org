@@ -31,8 +31,6 @@
      polynomials, [[https://arxiv.org/abs/2008.12000][arXiv:2008.12000]]
    - Enumeration of standard barely set-valued tableaux of shifted shapes (with
      Michael Schlosser and Meesue Yoo), [[https://arxiv.org/abs/2006.03253][arXiv:2006.03253]]
-
-** To appear
    - Generalized Schur function determinants using the Bazin identity (with
      Meesue Yoo), to appear in SIAM J. Discrete Math, [[https://arxiv.org/abs/2012.08741][arXiv:2012.08741]]
    - Whitney numbers for poset cones (with Galen Dorpalen-Barry and Vic Reiner)
