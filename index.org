@@ -192,7 +192,7 @@
   - U-Keun Song
   - [[http://www.math.umn.edu/~stanton/][Dennis Stanton]]
   - [[http://dbwilson.com/][David B. Wilson]]
-  - Meesue Yoo
+  - [[https://meesue.github.io/teaching.html][Meesue Yoo]]
   - Sang-Hoon Yu
   - Sun-mi Yun
 
