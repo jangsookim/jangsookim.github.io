@@ -186,7 +186,7 @@
   - [[https://sites.google.com/usc.edu/gpanova/home][Greta Panova]]
   - [[http://www-users.math.umn.edu/~reiner/][Vic Reiner]]
   - [[https://www.mat.univie.ac.at/~schlosse/][Michael Schlosser]]
-  - Seunghyun Seo
+  - [[https://sites.google.com/site/shyunseo/][Seunghyun Seo]]
   - [[http://hshin.info/][Heesung Shin]]
   - Minho Song
   - U-Keun Song
