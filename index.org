@@ -31,12 +31,14 @@
      polynomials, [[https://arxiv.org/abs/2008.12000][arXiv:2008.12000]]
    - Enumeration of standard barely set-valued tableaux of shifted shapes (with
      Michael Schlosser and Meesue Yoo), [[https://arxiv.org/abs/2006.03253][arXiv:2006.03253]]
-   - Generalized Schur function determinants using the Bazin identity (with
-     Meesue Yoo), to appear in SIAM J. Discrete Math, [[https://arxiv.org/abs/2012.08741][arXiv:2012.08741]]
    - Weight multiplicities and Young tableaux through affine crystals (with
      Kyu-Hwan Lee and Se-jin Oh), to appear in /Memoirs of the AMS/,
      [[https://arxiv.org/abs/1703.10321][arXiv:1703.10321]]
+   - Symmetric Pascal matrices and related graphs (with Gi-Sang Cheon, Seyed
+     Ahmad Mojallal, Meesue Yoo), to appear in Linear and Multilinear Algebra
 ** 2021
+   - Generalized Schur function determinants using the Bazin identity (with
+     Meesue Yoo),  SIAM J. Discrete Math. 35 (2021), no. 3, 1650–1672, [[https://arxiv.org/abs/2012.08741][arXiv:2012.08741]]
    - Whitney numbers for poset cones (with Galen Dorpalen-Barry and Vic Reiner),
      Order 38 (2021), no. 2, 283–322, [[https://arxiv.org/abs/1906.00036][arXiv:1906.00036]]
    - Jacobi--Trudi formula for refined dual stable Grothendieck polynomials, 
