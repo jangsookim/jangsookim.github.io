@@ -21,6 +21,7 @@
 
 * Papers
 ** Preprints
+   - Negative moments of orthogonal polynomials (with Jihyeug Jang, Donghyun Kim,  Minho Song, U-Keun Song), [[https://arxiv.org/abs/2201.11344][arxiv:2201.11344]]
    - Three families of /q/-Lommel polynomials (with Dennis Stanton), [[https://arxiv.org/abs/2105.10096][arXiv:2105.10096]]
    - Refined canonical stable Grothendieck polynomials and their duals (with
      Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), [[https://arxiv.org/abs/2104.04251][arXiv:2104.04251]]
@@ -177,6 +178,7 @@
   - [[http://www.combinatorics.net.cn/homepage/ji/][Kathy Ji]]
   - [[https://www.irif.fr/~josuat/][Matthieu Josuat-Vergès]]
   - [[http://square.seoultech.ac.kr/~bkim4/][Byungchan Kim]]
+  - [[https://donghyunkim8.wixsite.com/dhkim][Donghyun Kim]]
   - [[http://mathsci.kaist.ac.kr/~dskim/][Dongsu Kim]]
   - [[https://sites.google.com/view/eunjeonglee/][Eunjeong Lee]]
   - [[http://www.math.uconn.edu/~khlee/][Kyu-Hwan Lee]]
