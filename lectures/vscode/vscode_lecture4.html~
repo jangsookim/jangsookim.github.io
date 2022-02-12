@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-02-12 Sat 09:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lecture 3: Git and GitHub - part 2</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Jang Soo Kim" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Lecture 3: Git and GitHub - part 2</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd413dba">1. Git for VCS and collaboration</a>
+<ul>
+<li><a href="#orga5a64bc">1.1. Overview</a></li>
+<li><a href="#orgcac8a27">1.2. Goals</a></li>
+<li><a href="#orgda750d1">1.3. Installation</a></li>
+<li><a href="#orga125981">1.4. Configuring user name and email</a></li>
+<li><a href="#org51aab36">1.5. Making a folder as a Git repository</a></li>
+<li><a href="#orgea1b87e">1.6. Commits</a>
+<ul>
+<li><a href="#orgd8c4dff">1.6.1. Definition of commit</a></li>
+<li><a href="#org61da95c">1.6.2. How to commit</a></li>
+<li><a href="#org2cbb79b">1.6.3. How to really commit</a></li>
+</ul>
+</li>
+<li><a href="#org6fce448">1.7. Branches</a>
+<ul>
+<li><a href="#org5fd208f">1.7.1. What is a branch?</a></li>
+<li><a href="#orgd054153">1.7.2. What branches do I have?</a></li>
+<li><a href="#org262b6c2">1.7.3. Creating branches</a></li>
+<li><a href="#org469b592">1.7.4. Going back to a commit</a></li>
+<li><a href="#orgeddcc4b">1.7.5. Merging branches</a></li>
+</ul>
+</li>
+<li><a href="#org1911203">1.8. Useful extensions for Git</a></li>
+<li><a href="#orgb73a500">1.9. Git commands in VS Code</a>
+<ul>
+<li><a href="#orgeda83c3">1.9.1. </a></li>
+</ul>
+</li>
+<li><a href="#org2fe4d18">1.10. How to use Git for collaboration</a>
+<ul>
+<li><a href="#orgaa2c029">1.10.1. Assumption</a></li>
+<li><a href="#org7e588a8">1.10.2. Process</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2d7c545">2. GitHub</a>
+<ul>
+<li><a href="#org9f26fee">2.1. Overview</a></li>
+<li><a href="#org515b267">2.2. Sign up</a></li>
+<li><a href="#org5e8420f">2.3. Initiating a remove repository</a></li>
+<li><a href="#org11a4403">2.4. Pull requests</a></li>
+<li><a href="#org5724b59">2.5. The easiest work flow (without simultaneous working)</a></li>
+<li><a href="#orgd858be3">2.6. The easiest work flow (with simultaneous working but no conflicts)</a></li>
+<li><a href="#org6562ac7">2.7. The easiest work flow (with simultaneous working)</a></li>
+</ul>
+</li>
+<li><a href="#org5698580">3. Useful videos</a></li>
+<li><a href="#org843f8a3">4. If collaborators don't use GitHub</a>
+<ul>
+<li><a href="#org8e94a67">4.1. Exercises</a>
+<ul>
+<li><a href="#org1e0dca1">4.1.1. Making Git repositories</a></li>
+<li><a href="#org7b475a6">4.1.2. Commits and push</a></li>
+<li><a href="#org58b6c71">4.1.3. Merge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgd413dba" class="outline-2">
+<h2 id="orgd413dba"><span class="section-number-2">1</span> Git for VCS and collaboration</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orga5a64bc" class="outline-3">
+<h3 id="orga5a64bc"><span class="section-number-3">1.1</span> Overview</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Git is a version control system.</li>
+<li>We will learn how to use Git for LaTeX.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcac8a27" class="outline-3">
+<h3 id="orgcac8a27"><span class="section-number-3">1.2</span> Goals</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Version Control: Keep all versions of your tex file.</li>
+<li>Go back to any version if needed.</li>
+<li>View the changes in each version.</li>
+<li>View the differences between your tex file and your collaborators'.</li>
+<li>Merge your tex file with your collaborators'.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgda750d1" class="outline-3">
+<h3 id="orgda750d1"><span class="section-number-3">1.3</span> Installation</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Mac
+<ul class="org-ul">
+<li><p>
+Type the following in your terminal will install Git if you don't have it already.
+</p>
+<pre class="example">
+git --version
+</pre></li>
+<li>See the instruction <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</a> if it doesn't work.</li>
+</ul></li>
+<li>Windows
+<ul class="org-ul">
+<li>Download "64-bit Git for Windows Setup" (or 32-bit depending on your
+machine) <a href="https://git-scm.com/download/win">here</a>.</li>
+<li>Install Git using default settings.</li>
+<li>Restart your computer.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga125981" class="outline-3">
+<h3 id="orga125981"><span class="section-number-3">1.4</span> Configuring user name and email</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li><p>
+Before using Git you need to identify yourself by entering this.
+</p>
+<pre class="example">
+git config --global user.name "NAME"
+git config --global user.email "EMAIL"
+</pre></li>
+<li>This needs to be done only once.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org51aab36" class="outline-3">
+<h3 id="org51aab36"><span class="section-number-3">1.5</span> Making a folder as a Git repository</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Open a terminal in the folder you want to make a Git repository.</li>
+<li><p>
+Enter the following in the terminal.
+</p>
+<pre class="example">
+git init
+</pre></li>
+<li>This Git repository contains all files in this folder and its sub-folders.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgea1b87e" class="outline-3">
+<h3 id="orgea1b87e"><span class="section-number-3">1.6</span> Commits</h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-orgd8c4dff" class="outline-4">
+<h4 id="orgd8c4dff"><span class="section-number-4">1.6.1</span> Definition of commit</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<ul class="org-ul">
+<li><a href="https://git-scm.com/docs/user-manual">Git manual</a> defines <i>commit</i> as follows.</li>
+<li>As a noun: A single point in the Git history; the entire history of a
+project is represented as a set of interrelated commits.</li>
+<li>As a verb: The action of storing a new snapshot of the project’s state in
+the Git history, by creating a new commit representing the current state
+of the index and advancing HEAD to point at the new commit.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org61da95c" class="outline-4">
+<h4 id="org61da95c"><span class="section-number-4">1.6.2</span> How to commit</h4>
+<div class="outline-text-4" id="text-1-6-2">
+<ul class="org-ul">
+<li>A commit has two parts.</li>
+<li>Suppose that you have made some changes in files A, B, C in your project.</li>
+<li>Suppose that you want to commit the changes in files A and B.</li>
+<li>You first need to <i>add</i> files A and B so that they are <i>staged</i>.</li>
+<li>You can then commit these staged files by doing <i>commit</i>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2cbb79b" class="outline-4">
+<h4 id="org2cbb79b"><span class="section-number-4">1.6.3</span> How to really commit</h4>
+<div class="outline-text-4" id="text-1-6-3">
+<ul class="org-ul">
+<li><p>
+To commit changes you first need to "add" your files.
+</p>
+<pre class="example">
+git add FILENAME1 FILENAME2 FILENAME3
+</pre></li>
+<li>These files are now "staged".</li>
+<li><p>
+To see the current state enter this.
+</p>
+<pre class="example">
+git status
+</pre></li>
+<li><p>
+To commit the staged files enter this.
+</p>
+<pre class="example">
+git commit -m "COMMIT MESSAGE"
+</pre></li>
+<li><p>
+You can see all commits you have made as follows.
+</p>
+<pre class="example">
+git log
+</pre></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6fce448" class="outline-3">
+<h3 id="org6fce448"><span class="section-number-3">1.7</span> Branches</h3>
+<div class="outline-text-3" id="text-1-7">
+</div>
+<div id="outline-container-org5fd208f" class="outline-4">
+<h4 id="org5fd208f"><span class="section-number-4">1.7.1</span> What is a branch?</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<ul class="org-ul">
+<li><a href="https://git-scm.com/docs/user-manual">Git manual</a> defines <i>branch</i> as follows.</li>
+<li>A "branch" is an active line of development. The most recent commit on a
+branch is referred to as the tip of that branch. The tip of the branch is
+referenced by a branch head, which moves forward as additional development
+is done on the branch. A single Git repository can track an arbitrary
+number of branches, but your working tree is associated with just one of
+them (the "current" or "checked out" branch), and HEAD points to that
+branch.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd054153" class="outline-4">
+<h4 id="orgd054153"><span class="section-number-4">1.7.2</span> What branches do I have?</h4>
+<div class="outline-text-4" id="text-1-7-2">
+<ul class="org-ul">
+<li>Your default branch is "master" branch.</li>
+<li><p>
+To view what branches you have, type this.
+</p>
+<pre class="example">
+git branch
+</pre></li>
+<li>Your current branch will be marked with *.</li>
+<li>By switching between branches you can go back to any state of your
+project like a time machine.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org262b6c2" class="outline-4">
+<h4 id="org262b6c2"><span class="section-number-4">1.7.3</span> Creating branches</h4>
+<div class="outline-text-4" id="text-1-7-3">
+<ul class="org-ul">
+<li><p>
+You can create a branch like this.
+</p>
+<pre class="example">
+git branch BRANCH-NAME
+</pre></li>
+<li><p>
+You can change to the branch "BRANCH-NAME" like this.
+</p>
+<pre class="example">
+git checkout BRANCH-NAME
+</pre></li>
+<li><p>
+You can go back to the master branch.
+</p>
+<pre class="example">
+git checkout master
+</pre></li>
+<li><p>
+You can delete a branch like this.
+</p>
+<pre class="example">
+git branch -d BRANCH-NAME
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org469b592" class="outline-4">
+<h4 id="org469b592"><span class="section-number-4">1.7.4</span> Going back to a commit</h4>
+<div class="outline-text-4" id="text-1-7-4">
+<ul class="org-ul">
+<li><code>git log</code> shows all commits you have made so far.</li>
+<li><p>
+Suppose that you have the commit number below.
+</p>
+<pre class="example">
+commit 61c261ad4c8c9febd736c7b3bc5da6bf14067f21
+</pre></li>
+<li>The long and strange string <code>61c261ad4c8c9febd736c7b3bc5da6bf14067f21</code> can
+be thought of the name of the "branch" when this commit was made.</li>
+<li><p>
+So you can go back to the state when this commit was made as you did for
+branches.
+</p>
+<pre class="example">
+git checkout 61c261ad4c8c9febd736c7b3bc5da6bf14067f21
+</pre></li>
+<li><p>
+If you want to go back to the current file you can do as follows.
+</p>
+<pre class="example">
+git checkout master
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgeddcc4b" class="outline-4">
+<h4 id="orgeddcc4b"><span class="section-number-4">1.7.5</span> Merging branches</h4>
+<div class="outline-text-4" id="text-1-7-5">
+<ul class="org-ul">
+<li><p>
+To merge the current branch with branch "BRANCH-NAME" type this.
+</p>
+<pre class="example">
+git merge BRANCH-NAME
+</pre></li>
+<li>This will automatically combine the two branches.</li>
+<li>However, if there are some conflicts between the two branches you need to
+resolve the conflicts first.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1911203" class="outline-3">
+<h3 id="org1911203"><span class="section-number-3">1.8</span> Useful extensions for Git</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>GitLens</li>
+<li>Git History</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb73a500" class="outline-3">
+<h3 id="orgb73a500"><span class="section-number-3">1.9</span> Git commands in VS Code</h3>
+<div class="outline-text-3" id="text-1-9">
+</div>
+<div id="outline-container-orgeda83c3" class="outline-4">
+<h4 id="orgeda83c3"><span class="section-number-4">1.9.1</span> </h4>
+</div>
+</div>
+<div id="outline-container-org2fe4d18" class="outline-3">
+<h3 id="org2fe4d18"><span class="section-number-3">1.10</span> How to use Git for collaboration</h3>
+<div class="outline-text-3" id="text-1-10">
+</div>
+<div id="outline-container-orgaa2c029" class="outline-4">
+<h4 id="orgaa2c029"><span class="section-number-4">1.10.1</span> Assumption</h4>
+<div class="outline-text-4" id="text-1-10-1">
+<ul class="org-ul">
+<li>We assume that (unfortunately) your collaborations do NOT use GitHub.</li>
+<li>So you have to do this all by yourself.</li>
+<li>You have been working on <code>master</code> branch and you received a modified tex
+file from your collaborators.</li>
+<li>Let's say your version is A and your collaborators' version is B.</li>
+<li>Since A and B are different, you need to combine them together.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7e588a8" class="outline-4">
+<h4 id="org7e588a8"><span class="section-number-4">1.10.2</span> Process</h4>
+<div class="outline-text-4" id="text-1-10-2">
+<ol class="org-ol">
+<li>Create a branch, say "B", from the current master branch.</li>
+<li>Checkout to that branch.</li>
+<li>Replace the content of your tex file with that of version B. (If both
+files have the same filename you can simply overwrite your file with your
+collaborators' file.)</li>
+<li>Commit the changes.</li>
+<li>Checkout to the master branch.</li>
+<li>Merge version B.</li>
+<li>Delete the branch B.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2d7c545" class="outline-2">
+<h2 id="org2d7c545"><span class="section-number-2">2</span> GitHub</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org9f26fee" class="outline-3">
+<h3 id="org9f26fee"><span class="section-number-3">2.1</span> Overview</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>GitHub is a platform to share codes with your collaborators.</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org515b267" class="outline-3">
+<h3 id="org515b267"><span class="section-number-3">2.2</span> Sign up</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Sign up here <a href="https://github.com/">https://github.com/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5e8420f" class="outline-3">
+<h3 id="org5e8420f"><span class="section-number-3">2.3</span> Initiating a remove repository</h3>
+</div>
+<div id="outline-container-org11a4403" class="outline-3">
+<h3 id="org11a4403"><span class="section-number-3">2.4</span> Pull requests</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li><a href="https://guides.github.com/activities/hello-world/">GitHub Guides</a> say</li>
+<li>Pull Requests are the heart of collaboration on GitHub.</li>
+<li>And we will NOT use pull requests!</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5724b59" class="outline-3">
+<h3 id="org5724b59"><span class="section-number-3">2.5</span> The easiest work flow (without simultaneous working)</h3>
+<div class="outline-text-3" id="text-2-5">
+<ol class="org-ol">
+<li>You wait until your collaborators finish their editing.</li>
+<li>Once they are done, they will tell you so (by phone, text message or email).</li>
+<li>You now tell them that you start working on the file.</li>
+<li>You <b>pull</b> (this will make your file up-to-date).</li>
+<li>Make a commit (or two or more).</li>
+<li>Push</li>
+<li>You tell your collaborators that you are done.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgd858be3" class="outline-3">
+<h3 id="orgd858be3"><span class="section-number-3">2.6</span> The easiest work flow (with simultaneous working but no conflicts)</h3>
+<div class="outline-text-3" id="text-2-6">
+<ol class="org-ol">
+<li>You and your collaborators decide to edit particular sections.</li>
+<li>For example, you edit Section 1, collaborator A edits Section 2, and
+collaborator B edits Section 3.</li>
+<li>You <b>pull</b> (this will make your file up-to-date).</li>
+<li>Make a commit (or two or more).</li>
+<li>Push</li>
+<li>If push is not successful, you need to pull and then push. (It will
+automatically merge the two files if there are no conflicts.)</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org6562ac7" class="outline-3">
+<h3 id="org6562ac7"><span class="section-number-3">2.7</span> The easiest work flow (with simultaneous working)</h3>
+<div class="outline-text-3" id="text-2-7">
+<ol class="org-ol">
+<li>Pull (this will make up-to-date).</li>
+<li>Make a commit (or two or more).</li>
+<li>Push and you will see a message saying that you need to pull first.</li>
+<li>So pull. Then you will see a message saying that you need to resolve conflicts.</li>
+<li>Click your file in the source control sidebar.</li>
+<li>Then you can resolve the conflicts by choosing the changes you like to
+keep.</li>
+<li>Commit your change and push.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5698580" class="outline-2">
+<h2 id="org5698580"><span class="section-number-2">3</span> Useful videos</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Learn Git In 15 Minutes
+<a href="https://www.youtube.com/watch?v=USjZcfj8yxE">https://www.youtube.com/watch?v=USjZcfj8yxE</a></li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org843f8a3" class="outline-2">
+<h2 id="org843f8a3"><span class="section-number-2">4</span> If collaborators don't use GitHub</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>You can still do the same thing even if your collaborators do not use GitHub.</li>
+<li>But you have to use "branches".</li>
+<li>When you make changes you push as usual.</li>
+<li>Whenever your collaborator sends you their file do the following.
+<ol class="org-ol">
+<li>Make sure that their file has the same name as yours in GitHub.</li>
+<li>Upload their file in the GitHub repository.</li>
+<li>You pull in VS Code.</li>
+<li>If there are conflicts you can merge as before.</li>
+</ol></li>
+</ul>
+</div>
+<div id="outline-container-org8e94a67" class="outline-3">
+<h3 id="org8e94a67"><span class="section-number-3">4.1</span> Exercises</h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+<div id="outline-container-org1e0dca1" class="outline-4">
+<h4 id="org1e0dca1"><span class="section-number-4">4.1.1</span> Making Git repositories</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<ol class="org-ol">
+<li>Download this file and extract it in your computer.</li>
+<li>Compile the tex file.</li>
+<li>Make this folder a local repository and create a remote repository (Hint: "Publish to GitHub")</li>
+<li>Select only the tex file when you do this.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org7b475a6" class="outline-4">
+<h4 id="org7b475a6"><span class="section-number-4">4.1.2</span> Commits and push</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<ol class="org-ol">
+<li>Write contents in Section 4.</li>
+<li>Commit your changes with commit message "Add contents in Section 4" (the
+tex file only).</li>
+<li>Push.</li>
+<li>Check Git History and see the changes that you just made.</li>
+<li>Repeat the same thing with Section 5.</li>
+<li>Correct Corollary 3.1 and commit and push.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org58b6c71" class="outline-4">
+<h4 id="org58b6c71"><span class="section-number-4">4.1.3</span> Merge</h4>
+<div class="outline-text-4" id="text-4-1-3">
+<ol class="org-ol">
+<li>Your collaborator just sent you their tex file. This is in the folder "from your collaborator".</li>
+<li>Change the file name of this file to "git-test.tex" so that it's the same as our tex file name.</li>
+<li>Visit your GitHub repository and upload their tex file and commit there.</li>
+<li>Go back to your VS Code and pull.</li>
+<li>Resolve the conflicts.</li>
+<li>Commit and push.</li>
+<li>Check Git History and see the changes that you just made.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jang Soo Kim</p>
+<p class="date">Created: 2022-02-12 Sat 09:53</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

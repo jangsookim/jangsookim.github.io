@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Lecture 3: Git and GitHub</title>
+<meta name="author" content="(Jang Soo Kim)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/league.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Lecture 3: Git and GitHub</h1><h2 class="author">Jang Soo Kim</h2><p class="date">Created: 2020-12-05 Sat 12:39</p>
+</section>
+
+
+
+<section>
+<section id="slide-org7c73efc">
+<h2 id="org7c73efc">Git and GitHub for VCS and collaboration</h2>
+<div class="outline-text-2" id="text-org7c73efc">
+</div>
+</section>
+<section id="slide-org27cbdb8">
+<h3 id="org27cbdb8">Overview</h3>
+<ul>
+<li class="fragment roll-in">Git is a version control system.</li>
+<li class="fragment roll-in">GitHub is a platform to share codes for collaboration.</li>
+<li class="fragment roll-in">We will learn how to use Git and GitHub for writing \(\mathrm{\LaTeX}\)
+collaboratively.</li>
+<li class="fragment roll-in">We will do so without using "branches" and "pull requests", although these
+are in fact very important concepts in Git and GitHub.</li>
+<li class="fragment roll-in">In this way you can learn the work flow much more easily.</li>
+<li class="fragment roll-in">After this lecture, when you feel necessary, you can learn more about Git
+and GitHub in your own.</li>
+
+</ul>
+</section>
+<section id="slide-org8ff7b4f">
+<h3 id="org8ff7b4f">Goals</h3>
+<ul>
+<li class="fragment roll-in">Version Control: Keep all versions of your tex file.</li>
+<li class="fragment roll-in">Go back to any version if needed.</li>
+<li class="fragment roll-in">View the changes in each version.</li>
+<li class="fragment roll-in">View the differences between your tex file and your collaborators'.</li>
+<li class="fragment roll-in">You and your collaborators should be able to edit the tex file
+simultaneously.</li>
+<li class="fragment roll-in">Merge your tex file with your collaborators'.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org45d07bc">
+<h2 id="org45d07bc">Preparations</h2>
+<div class="outline-text-2" id="text-org45d07bc">
+</div>
+</section>
+<section id="slide-orgd9d2fbd">
+<h3 id="orgd9d2fbd">Installing Git</h3>
+<ul>
+<li>Mac
+<ul>
+<li><p>
+Type the following in your terminal will install Git if you don't have it already.
+</p>
+<pre class="example">
+git --version
+</pre></li>
+<li>See the instruction <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</a> if it doesn't work.</li>
+
+</ul></li>
+<li>Windows
+<ul>
+<li>Download "64-bit Git for Windows Setup" (or 32-bit depending on your
+machine) <a href="https://git-scm.com/download/win">here</a>.</li>
+<li>Install Git using default settings.</li>
+<li>Restart VS Code.</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org93846f6">
+<h3 id="org93846f6">Configuring Git user name and email</h3>
+<ul>
+<li class="fragment roll-in"><p>
+Before using Git you need to identify yourself by entering this.
+</p>
+<pre class="example">
+git config --global user.name "NAME"
+git config --global user.email "EMAIL"
+</pre></li>
+<li class="fragment roll-in">This needs to be done only once.</li>
+<li class="fragment roll-in"><p>
+You can check the result using
+</p>
+<pre class="example">
+git config --list
+</pre></li>
+
+</ul>
+</section>
+<section id="slide-org53daacc">
+<h3 id="org53daacc">Installing VS Code Extensions</h3>
+<ul>
+<li>We will use the following two extensions.</li>
+<li>GitLens</li>
+<li>Git History</li>
+<li>These extensions have convenient graphic user interface.</li>
+
+</ul>
+</section>
+<section id="slide-orgc3418f1">
+<h3 id="orgc3418f1">Signing up GitHub</h3>
+<ul>
+<li>Sign up here <a href="https://github.com/">https://github.com/</a></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org81944cf">
+<h2 id="org81944cf">Work flow</h2>
+<div class="outline-text-2" id="text-org81944cf">
+</div>
+</section>
+<section id="slide-org5b5fe28">
+<h3 id="org5b5fe28">Overview of work flow</h3>
+<div class="outline-text-3" id="text-org5b5fe28">
+</div>
+</section>
+<section id="slide-org9fb934c">
+<h4 id="org9fb934c">Setting up Git repositories</h4>
+<ul>
+<li class="fragment roll-in">A <i>Git repository</i> is a folder that is tracked by Git.</li>
+<li class="fragment roll-in">Git will keep track of all files in a Git repository and its sub-folders.</li>
+<li class="fragment roll-in">You first need to set up your local and remote repositories.</li>
+<li class="fragment roll-in">The local repository is an actual folder in your computer.</li>
+<li class="fragment roll-in">The remote repository is located in the GitHub server.</li>
+
+</ul>
+</section>
+<section id="slide-org14f9f8a">
+<h4 id="org14f9f8a">Commit, Push, and Pull</h4>
+<ul>
+<li>Once you set up local and remote repositories, they are identical now.</li>
+<li>After making some changes in your files, you need to "commit", which will
+tell Git that the files have been changed.</li>
+<li>Now only your local repository has been update.</li>
+<li>To update the remote repository, you need to "push".</li>
+<li>If your collaborators have changed the remote repository, then you first
+need to "pull" in order to make your local repository up-to-date.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgd53b70a">
+<h3 id="orgd53b70a">Setting up Git repositories</h3>
+<ul>
+<li class="fragment roll-in">There are two ways to create Git repositories.</li>
+<li class="fragment roll-in">The first one is using already existing GitHub repository.</li>
+<li class="fragment roll-in">The second one is using your own folder.</li>
+<li class="fragment roll-in">Every Git repository has a hidden folder named <code>.git</code>.</li>
+<li class="fragment roll-in">NEVER touch this hidden folder!</li>
+
+</ul>
+</section>
+<section id="slide-orga6c7b6b">
+<h4 id="orga6c7b6b">From already existing GitHub repository (clone)</h4>
+<ul>
+<li>Visit the GitHub repository that you want to make a remote repository.</li>
+<li>In the Code tap click the green button "Code".</li>
+<li>Copy the https address.</li>
+<li>Go to the "Explorer" tap in your VS Code and close everything using "Close
+Folder" in "File" tap.</li>
+<li>Click "Clone Repository" and enter the https address here.</li>
+<li>Select the location of your local repository.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgf0fa025">
+<h4 id="orgf0fa025">From a folder in your computer</h4>
+<ol>
+<li>Open your folder in VS Code that you want to make a Git repository.</li>
+<li>Click the icon "Source Control" on the left.</li>
+<li>Click "Publish to GitHub".</li>
+<li>Command Palette (CP) will be opened with two options:
+<ul>
+<li>Publish to GitHub private repository</li>
+<li>Publish to GitHub public repository</li>
+
+</ul></li>
+<li>Select "Publish to GitHub private repository" and select only the tex
+file (NOT the pdf file!) and other necessary files to compile the tex
+file.</li>
+
+</ol>
+</section>
+<section id="slide-org17b4ea5">
+<h4 id="org17b4ea5">Inviting your collaborators or accepting the invitation</h4>
+<ul>
+<li>If your collaborators created the remote repository, they will invite you
+to the repository.</li>
+<li>If you created the remote repository, you need to invite them as follows.</li>
+<li>Login to GitHub and visit the GitHub repository you want to share.</li>
+<li>Click "Settings" and click "Manage access".</li>
+<li>Click "Invite a collaborator" and add your collaborator one at a time.</li>
+<li>Once they accept the invitation they will be able to change the files.</li>
+
+</ul>
+
+</section>
+<section id="slide-org50d0497">
+<h4 id="org50d0497">Exercises (Starting from GitHub)</h4>
+<ol>
+<li class="fragment roll-in">Login to GitHub.</li>
+<li class="fragment roll-in">Create a new repository "Git-practice1".</li>
+<li class="fragment roll-in"><p>
+In the Code tap, click the link "creating a new file" and make a file
+"practice1.txt" with the following content:
+</p>
+<pre class="example">
+Git practice 1
+</pre></li>
+<li class="fragment roll-in">Clone this GitHub repository into your local repository.</li>
+
+</ol>
+
+</section>
+<section id="slide-orge98711c">
+<h3 id="orge98711c">Commits</h3>
+<ul>
+<li class="fragment roll-in"><a href="https://git-scm.com/docs/user-manual">Git manual</a> defines a <i>commit</i> as a single point in the Git history.</li>
+<li class="fragment roll-in">We will simply think of a commit as a version of your tex file.</li>
+<li class="fragment roll-in">A commit has two parts.
+<ul>
+<li>Move changed files to the staged area.</li>
+<li>Make a commit with a commit message.</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgb6ff0ce">
+<h4 id="orgb6ff0ce">Making commits using VS Code</h4>
+<ul>
+<li class="fragment roll-in">Click the "Source Control" icon on the left.</li>
+<li class="fragment roll-in">Each file has a mark.
+<ul>
+<li>U means the file is untracked by Git.</li>
+<li>M means the file is modified (and is kept tract of by Git).</li>
+<li>C means the file has some conflicts.</li>
+
+</ul></li>
+<li class="fragment roll-in">Click the + button on the modified file (marked M).</li>
+<li class="fragment roll-in">The file will be move to "Staged Changes".</li>
+<li class="fragment roll-in">Write a commit message in the message box and enter CMD+ENTER.</li>
+
+</ul>
+
+</section>
+<section id="slide-org1f45e5c">
+<h3 id="org1f45e5c">Push and Pull</h3>
+<ul>
+<li class="fragment roll-in">Push is the command that updates the remote repository with the local repository.</li>
+<li class="fragment roll-in">Pull is the other way around.</li>
+<li class="fragment roll-in">To push type "Git: Push" in CP.</li>
+<li class="fragment roll-in">To pull type "Git: Pull" in CP.</li>
+
+</ul>
+</section>
+<section id="slide-org1bacb88">
+<h4 id="org1bacb88">Exercises (Commit and Push)</h4>
+<ol>
+<li class="fragment roll-in">Open your local repository "Git-practice1" in VS Code.</li>
+<li class="fragment roll-in">Add a new line in the file "practice1.txt".</li>
+<li class="fragment roll-in">Commit with commit message "first commit".</li>
+<li class="fragment roll-in">Push.</li>
+<li class="fragment roll-in">Check the changes in your GitHub repository.</li>
+<li class="fragment roll-in">Create a new file "practice2.txt" in your local repository and repeat
+2,3,4,5.</li>
+<li class="fragment roll-in">Delete the file "practice2.txt" in VS Code.</li>
+<li class="fragment roll-in">Move the deleted file into the staged area and commit and push.</li>
+<li class="fragment roll-in">Check the changes in your GitHub repository.</li>
+
+</ol>
+</section>
+<section id="slide-org48c0c58">
+<h3 id="org48c0c58">Merge</h3>
+<ul>
+<li class="fragment roll-in">If your local repository is not up-to-date, you have to pull first and then push.</li>
+<li class="fragment roll-in">If there are no conflicts Git will automatically merge the two files from
+local and remote repositories.</li>
+<li class="fragment roll-in">If there are conflicts, you have to merge the two files manually as follows.
+<ol>
+<li>Git will write the conflicts in the tex file.</li>
+<li>You can simply click the change that you want to keep.</li>
+<li>Once you've resolved all conflicts, save the file and the click the + button.</li>
+<li>Commit and push.</li>
+
+</ol></li>
+
+</ul>
+</section>
+<section id="slide-org1aab925">
+<h4 id="org1aab925">Exercises (Merge)</h4>
+<ol>
+<li class="fragment roll-in">Visit your GitHub repository "Git-practice1".</li>
+<li class="fragment roll-in">In the Code tap click the file "practice1.txt".</li>
+<li class="fragment roll-in">Add a new line "Added from GitHub" in this file and commit (in GitHub).</li>
+<li class="fragment roll-in">Open your local repository "Git-practice1" in VS Code.</li>
+<li class="fragment roll-in">Add a new line "Added from VS Code" in this file and commit (in VS Code).</li>
+<li class="fragment roll-in">Push. (This will show an error message.)</li>
+<li class="fragment roll-in">Pull and merge the changes (accept both changes).</li>
+<li class="fragment roll-in">Push and check the changes in GitHub.</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-org2ab01a9">
+<h2 id="org2ab01a9">GitLens and Git History</h2>
+<div class="outline-text-2" id="text-org2ab01a9">
+</div>
+</section>
+<section id="slide-orgb3f7838">
+<h3 id="orgb3f7838">GitLens</h3>
+<ul>
+<li>GitLens shows who and when the line with cursor was committed.</li>
+<li>Moving your mouse pointer over this line shows more details.</li>
+<li>From there you can see the changes when the commit was made.</li>
+
+</ul>
+</section>
+<section id="slide-org8da6498">
+<h3 id="org8da6498">Git History</h3>
+<ul>
+<li>Git History shows the history of all commits using a diagram.</li>
+<li>Enter "Git: View History" in CP.</li>
+<li>You can investigate each commit by clicking it on the diagram.</li>
+<li>You can see the file or changes at that commit.</li>
+<li>In the diagram on the right, 
+<ul>
+<li>"master" is the current state of your local repository and</li>
+<li>"origin/master" is the current state of your remote repository.</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org2bca5af">
+<h2 id="org2bca5af">If collaborators don't use GitHub</h2>
+<ul>
+<li class="fragment roll-in">You can still do the same thing even if your collaborators do not use GitHub.</li>
+<li class="fragment roll-in">When you make changes you push as usual.</li>
+<li class="fragment roll-in">But you have to wait when your collaborators are working on the tex file.</li>
+<li class="fragment roll-in">Whenever your collaborator sends you their file you need to do as follows.
+<ol>
+<li>Replace your tex file with your collaborator's (their filenames must be
+identical).</li>
+<li>Commit and push.</li>
+<li>Review the changes your collaborator have made.</li>
+
+</ol></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org441106d">
+<h2 id="org441106d">Exercises (solitary)</h2>
+<div class="outline-text-2" id="text-org441106d">
+</div>
+</section>
+<section id="slide-org571e1b6">
+<h3 id="org571e1b6">Making Git repositories</h3>
+<ol>
+<li class="fragment roll-in">Download <a href="git-exercises.zip">this file</a> and extract it in your computer.</li>
+<li class="fragment roll-in">Drag-and-drop the whole folder (not just the tex file!) into VS Code.
+(Make sure that you have closed all folder in VS Code before opening this
+folder.)</li>
+<li class="fragment roll-in">Compile the tex file.</li>
+<li class="fragment roll-in">Make this folder a local repository and create a remote repository. (Hint:
+"Publish to GitHub")</li>
+<li class="fragment roll-in">Select only the tex file when you do this.</li>
+
+</ol>
+</section>
+<section id="slide-org5c1611e">
+<h3 id="org5c1611e">A file from your collaborator</h3>
+<ol>
+<li class="fragment roll-in">Your collaborator just sent you their tex file. This is in the folder
+"from your collaborator".</li>
+<li class="fragment roll-in">Replace your tex file with the file from your collaborator.</li>
+<li class="fragment roll-in">Commit and push.</li>
+<li class="fragment roll-in">Review the changes.</li>
+<li class="fragment roll-in">Modify the file if you feel necessary.</li>
+<li class="fragment roll-in">Commit and push.</li>
+
+</ol>
+</section>
+<section id="slide-orgd726a86">
+<h3 id="orgd726a86">Commit and push</h3>
+<ol>
+<li class="fragment roll-in">Write contents in Section 5.</li>
+<li class="fragment roll-in">Commit your changes with commit message "Add contents in Section 4" (the
+tex file only).</li>
+<li class="fragment roll-in">Push.</li>
+<li class="fragment roll-in">Check Git History and see the changes that you just made.</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-orgba098d0">
+<h2 id="orgba098d0">Exercises (collaborative push-pull game)</h2>
+<div class="outline-text-2" id="text-orgba098d0">
+</div>
+</section>
+<section id="slide-orgc169330">
+<h3 id="orgc169330">Forming a group</h3>
+<ol>
+<li>Form a group of at least 3 people.</li>
+<li>Choose a leader.</li>
+
+</ol>
+</section>
+<section id="slide-orgeb91ede">
+<h3 id="orgeb91ede">Making Git repositories</h3>
+<ol>
+<li class="fragment roll-in">The leader creates a new Git repository "Push-Pull-Game" directly from GitHub.</li>
+<li class="fragment roll-in"><p>
+In GitHub the leader creates a new file "Push-Pull-Game.txt" with the following content.
+</p>
+<pre class="example">
+Push-Pull Game
+Numbers: 1
+
+1. The leader's name (or nickname)
+</pre></li>
+<li class="fragment roll-in">The leader invites the group members to this repository.</li>
+<li class="fragment roll-in">The group members (including the leader) creates a local repository by
+cloning this GitHub repository.</li>
+
+</ol>
+</section>
+<section id="slide-org54dcd8c">
+<h3 id="org54dcd8c">Goal</h3>
+<ul>
+<li class="fragment roll-in"><p>
+The goal is to update the file so that it looks like
+</p>
+<pre class="example">
+Push-Pull Game
+Numbers: 1, 2, 3, 4
+
+1. Name1
+2. Name2
+3. Name3
+4. Name4
+</pre></li>
+<li class="fragment roll-in">Everyone tries to add the next number at the end of the second line and add
+his/her name at the end with that number.</li>
+<li class="fragment roll-in">Everyone must write his/her name (or nickname) exactly 3 times.</li>
+
+</ul>
+</section>
+<section id="slide-orgcd7ed54">
+<h3 id="orgcd7ed54">Rules</h3>
+<ul>
+<li class="fragment roll-in">If you pushed successively, then you have to wait for 1 minute before you
+try pushing again.</li>
+<li class="fragment roll-in">You cannot delete anything that's already written in the file.</li>
+
+</ul>
+</section>
+<section id="slide-org4f35283">
+<h3 id="org4f35283">Troubleshooting</h3>
+<ul>
+<li>If you are stuck and cannot do either push or pull, you can discard you
+changes by clicking the curvy arrow in "Source Control" sidebar. You can
+then start over.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org845866b">
+<h2 id="org845866b">Branches</h2>
+<div class="outline-text-2" id="text-org845866b">
+</div>
+</section>
+<section id="slide-org774ecc3">
+<h3 id="org774ecc3">What is a branch?</h3>
+<ul>
+<li><a href="https://git-scm.com/docs/user-manual">Git manual</a> defines <i>branch</i> as follows.</li>
+<li>A "branch" is an active line of development. The most recent commit on a
+branch is referred to as the tip of that branch. The tip of the branch is
+referenced by a branch head, which moves forward as additional development
+is done on the branch. A single Git repository can track an arbitrary
+number of branches, but your working tree is associated with just one of
+them (the "current" or "checked out" branch), and HEAD points to that
+branch.</li>
+
+</ul>
+</section>
+<section id="slide-org7ce2882">
+<h3 id="org7ce2882">Creating branches</h3>
+<ul>
+<li>You can easily create a branch using Git History.</li>
+<li>In Git History, click "+Branch" at the commit you want to make a branch from.</li>
+<li>Enter a branch name.</li>
+<li>Then an icon with that branch name will appear.</li>
+<li>Clicking on this icon you can switch to that branch.</li>
+
+</ul>
+</section>
+<section id="slide-orgf1f909a">
+<h3 id="orgf1f909a">Merging branches</h3>
+<ul>
+<li>To merge the current branch from another branch enter "Git: Merge Branch"
+in CP and then enter the branch you want to merge from.</li>
+<li>This will automatically merge the two branches.</li>
+<li>However, if there are some conflicts between the two branches you need to
+resolve the conflicts first.</li>
+
+</ul>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgeee7b58">
+<h2 id="orgeee7b58">Other tips</h2>
+<div class="outline-text-2" id="text-orgeee7b58">
+</div>
+</section>
+<section id="slide-org4512097">
+<h3 id="org4512097">Viewing previous PDF files using Git History</h3>
+<ul>
+<li>Enter "Git: View History" in CP.</li>
+<li>Click the commit that you want to see a pdf.</li>
+<li>Click "View" icon at the bottom.</li>
+<li>This will open the tex file when the commit was made.</li>
+<li>You can build LaTeX and view PDF as usual.</li>
+
+</ul>
+
+</section>
+<section id="slide-org665b8f3">
+<h3 id="org665b8f3">.gitignore file</h3>
+<ul>
+<li><code>.gitignore</code> file tells Git what files to ignore.</li>
+<li>If you add a file to <code>.gitignore</code> then Git will no longer track this file.</li>
+<li>To add a file to <code>.gitignore</code>, right click on that file and click "Add to
+.gitignore".</li>
+
+</ul>
+</section>
+<section id="slide-org610695a">
+<h3 id="org610695a">(For Mac) Hold a key to repeat it.</h3>
+<ul>
+<li><p>
+If you want to have a key repeated when you hold it, type the following in
+a terminal:
+</p>
+<pre class="example">
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+</pre></li>
+<li>You have to restart VS Code.</li>
+<li>Reference: <a href="https://stackoverflow.com/questions/39972335/how-do-i-press-and-hold-a-key-and-have-it-repeat-in-vscode">stackoverflow</a></li>
+
+</ul>
+</section>
+<section id="slide-orgde66beb">
+<h3 id="orgde66beb">Deleting GitHub repositories</h3>
+<ul>
+<li>You can delete a GitHub repository in the "Settings" tap.</li>
+<li>You can simply delete your local repository as usual.</li>
+
+</ul>
+</section>
+<section id="slide-orge2f7e2c">
+<h3 id="orge2f7e2c">Creating your own webpage in GitHub</h3>
+<ul>
+<li>You can make your webpage by creating a new repository named
+"username.github.io".</li>
+<li>See <a href="https://pages.github.com/">Link</a>.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-02-12 Sat 09:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lecture 3: Git and GitHub</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Jang Soo Kim" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Lecture 3: Git and GitHub</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org9a3836b">1. Git and GitHub for VCS and collaboration</a>
+<ul>
+<li><a href="#orgb483189">1.1. Overview</a></li>
+<li><a href="#org10c76fc">1.2. Goals</a></li>
+</ul>
+</li>
+<li><a href="#org01483bc">2. Preparations</a>
+<ul>
+<li><a href="#org4fbe85f">2.1. Installing Git</a></li>
+<li><a href="#orgf27b73d">2.2. Configuring Git user name and email</a></li>
+<li><a href="#org65220fc">2.3. Installing VS Code Extensions</a></li>
+<li><a href="#orga8fc924">2.4. Signing up GitHub</a></li>
+</ul>
+</li>
+<li><a href="#org20a18dd">3. Work flow</a>
+<ul>
+<li><a href="#org8e9df45">3.1. Overview of work flow</a>
+<ul>
+<li><a href="#org61ce0d7">3.1.1. Setting up Git repositories</a></li>
+<li><a href="#org910a91a">3.1.2. Commit, Push, and Pull</a></li>
+</ul>
+</li>
+<li><a href="#org4d15d5c">3.2. Setting up Git repositories</a>
+<ul>
+<li><a href="#orgdd8ee82">3.2.1. From already existing GitHub repository (clone)</a></li>
+<li><a href="#org7ca7630">3.2.2. From a folder in your computer</a></li>
+<li><a href="#org52637cf">3.2.3. Inviting your collaborators or accepting the invitation</a></li>
+<li><a href="#orgfe69774">3.2.4. Exercises (Starting from GitHub)</a></li>
+</ul>
+</li>
+<li><a href="#org6f266a7">3.3. Commits</a>
+<ul>
+<li><a href="#org5868b6c">3.3.1. Making commits using VS Code</a></li>
+</ul>
+</li>
+<li><a href="#orgb3151bf">3.4. Push and Pull</a>
+<ul>
+<li><a href="#orgad3aa59">3.4.1. Exercises (Commit and Push)</a></li>
+</ul>
+</li>
+<li><a href="#orgbc46845">3.5. Merge</a>
+<ul>
+<li><a href="#org21a2fca">3.5.1. Exercises (Merge)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb73d556">4. GitLens and Git History</a>
+<ul>
+<li><a href="#orgf8ca148">4.1. GitLens</a></li>
+<li><a href="#org597b8c7">4.2. Git History</a></li>
+</ul>
+</li>
+<li><a href="#org7650542">5. If collaborators don't use GitHub</a></li>
+<li><a href="#orgd761f1c">6. Exercises (solitary)</a>
+<ul>
+<li><a href="#org27e216b">6.1. Making Git repositories</a></li>
+<li><a href="#org39a0084">6.2. A file from your collaborator</a></li>
+<li><a href="#orgb22f9cd">6.3. Commit and push</a></li>
+</ul>
+</li>
+<li><a href="#orgcb3c4b5">7. Exercises (collaborative push-pull game)</a>
+<ul>
+<li><a href="#org0af7cac">7.1. Forming a group</a></li>
+<li><a href="#org3414382">7.2. Making Git repositories</a></li>
+<li><a href="#org9c08d23">7.3. Goal</a></li>
+<li><a href="#org399305f">7.4. Rules</a></li>
+<li><a href="#org50223b6">7.5. Troubleshooting</a></li>
+</ul>
+</li>
+<li><a href="#orgc2ab719">8. Branches</a>
+<ul>
+<li><a href="#org27204a2">8.1. What is a branch?</a></li>
+<li><a href="#orgb867ec4">8.2. Creating branches</a></li>
+<li><a href="#org6f14eaa">8.3. Merging branches</a></li>
+</ul>
+</li>
+<li><a href="#org752b5c3">9. Other tips</a>
+<ul>
+<li><a href="#org93bd91c">9.1. Viewing previous PDF files using Git History</a></li>
+<li><a href="#orgf9f478c">9.2. .gitignore file</a></li>
+<li><a href="#org0be04bf">9.3. (For Mac) Hold a key to repeat it.</a></li>
+<li><a href="#org8dc1e86">9.4. Deleting GitHub repositories</a></li>
+<li><a href="#org705f25a">9.5. Creating your own webpage in GitHub</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-org9a3836b" class="outline-2">
+<h2 id="org9a3836b"><span class="section-number-2">1</span> Git and GitHub for VCS and collaboration</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgb483189" class="outline-3">
+<h3 id="orgb483189"><span class="section-number-3">1.1</span> Overview</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Git is a version control system.</li>
+<li>GitHub is a platform to share codes for collaboration.</li>
+<li>We will learn how to use Git and GitHub for writing \(\mathrm{\LaTeX}\)
+collaboratively.</li>
+<li>We will do so without using "branches" and "pull requests", although these
+are in fact very important concepts in Git and GitHub.</li>
+<li>In this way you can learn the work flow much more easily.</li>
+<li>After this lecture, when you feel necessary, you can learn more about Git
+and GitHub in your own.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org10c76fc" class="outline-3">
+<h3 id="org10c76fc"><span class="section-number-3">1.2</span> Goals</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Version Control: Keep all versions of your tex file.</li>
+<li>Go back to any version if needed.</li>
+<li>View the changes in each version.</li>
+<li>View the differences between your tex file and your collaborators'.</li>
+<li>You and your collaborators should be able to edit the tex file
+simultaneously.</li>
+<li>Merge your tex file with your collaborators'.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org01483bc" class="outline-2">
+<h2 id="org01483bc"><span class="section-number-2">2</span> Preparations</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org4fbe85f" class="outline-3">
+<h3 id="org4fbe85f"><span class="section-number-3">2.1</span> Installing Git</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Mac
+<ul class="org-ul">
+<li><p>
+Type the following in your terminal will install Git if you don't have it already.
+</p>
+<pre class="example">
+git --version
+</pre></li>
+<li>See the instruction <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</a> if it doesn't work.</li>
+</ul></li>
+<li>Windows
+<ul class="org-ul">
+<li>Download "64-bit Git for Windows Setup" (or 32-bit depending on your
+machine) <a href="https://git-scm.com/download/win">here</a>.</li>
+<li>Install Git using default settings.</li>
+<li>Restart VS Code.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf27b73d" class="outline-3">
+<h3 id="orgf27b73d"><span class="section-number-3">2.2</span> Configuring Git user name and email</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li><p>
+Before using Git you need to identify yourself by entering this.
+</p>
+<pre class="example">
+git config --global user.name "NAME"
+git config --global user.email "EMAIL"
+</pre></li>
+<li>This needs to be done only once.</li>
+<li><p>
+You can check the result using
+</p>
+<pre class="example">
+git config --list
+</pre></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org65220fc" class="outline-3">
+<h3 id="org65220fc"><span class="section-number-3">2.3</span> Installing VS Code Extensions</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>We will use the following two extensions.</li>
+<li>GitLens</li>
+<li>Git History</li>
+<li>These extensions have convenient graphic user interface.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga8fc924" class="outline-3">
+<h3 id="orga8fc924"><span class="section-number-3">2.4</span> Signing up GitHub</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>Sign up here <a href="https://github.com/">https://github.com/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org20a18dd" class="outline-2">
+<h2 id="org20a18dd"><span class="section-number-2">3</span> Work flow</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org8e9df45" class="outline-3">
+<h3 id="org8e9df45"><span class="section-number-3">3.1</span> Overview of work flow</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<div id="outline-container-org61ce0d7" class="outline-4">
+<h4 id="org61ce0d7"><span class="section-number-4">3.1.1</span> Setting up Git repositories</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>A <i>Git repository</i> is a folder that is tracked by Git.</li>
+<li>Git will keep track of all files in a Git repository and its sub-folders.</li>
+<li>You first need to set up your local and remote repositories.</li>
+<li>The local repository is an actual folder in your computer.</li>
+<li>The remote repository is located in the GitHub server.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org910a91a" class="outline-4">
+<h4 id="org910a91a"><span class="section-number-4">3.1.2</span> Commit, Push, and Pull</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<ul class="org-ul">
+<li>Once you set up local and remote repositories, they are identical now.</li>
+<li>After making some changes in your files, you need to "commit", which will
+tell Git that the files have been changed.</li>
+<li>Now only your local repository has been update.</li>
+<li>To update the remote repository, you need to "push".</li>
+<li>If your collaborators have changed the remote repository, then you first
+need to "pull" in order to make your local repository up-to-date.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4d15d5c" class="outline-3">
+<h3 id="org4d15d5c"><span class="section-number-3">3.2</span> Setting up Git repositories</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>There are two ways to create Git repositories.</li>
+<li>The first one is using already existing GitHub repository.</li>
+<li>The second one is using your own folder.</li>
+<li>Every Git repository has a hidden folder named <code>.git</code>.</li>
+<li>NEVER touch this hidden folder!</li>
+</ul>
+</div>
+<div id="outline-container-orgdd8ee82" class="outline-4">
+<h4 id="orgdd8ee82"><span class="section-number-4">3.2.1</span> From already existing GitHub repository (clone)</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li>Visit the GitHub repository that you want to make a remote repository.</li>
+<li>In the Code tap click the green button "Code".</li>
+<li>Copy the https address.</li>
+<li>Go to the "Explorer" tap in your VS Code and close everything using "Close
+Folder" in "File" tap.</li>
+<li>Click "Clone Repository" and enter the https address here.</li>
+<li>Select the location of your local repository.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7ca7630" class="outline-4">
+<h4 id="org7ca7630"><span class="section-number-4">3.2.2</span> From a folder in your computer</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<ol class="org-ol">
+<li>Open your folder in VS Code that you want to make a Git repository.</li>
+<li>Click the icon "Source Control" on the left.</li>
+<li>Click "Publish to GitHub".</li>
+<li>Command Palette (CP) will be opened with two options:
+<ul class="org-ul">
+<li>Publish to GitHub private repository</li>
+<li>Publish to GitHub public repository</li>
+</ul></li>
+<li>Select "Publish to GitHub private repository" and select only the tex
+file (NOT the pdf file!) and other necessary files to compile the tex
+file.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org52637cf" class="outline-4">
+<h4 id="org52637cf"><span class="section-number-4">3.2.3</span> Inviting your collaborators or accepting the invitation</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<ul class="org-ul">
+<li>If your collaborators created the remote repository, they will invite you
+to the repository.</li>
+<li>If you created the remote repository, you need to invite them as follows.</li>
+<li>Login to GitHub and visit the GitHub repository you want to share.</li>
+<li>Click "Settings" and click "Manage access".</li>
+<li>Click "Invite a collaborator" and add your collaborator one at a time.</li>
+<li>Once they accept the invitation they will be able to change the files.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfe69774" class="outline-4">
+<h4 id="orgfe69774"><span class="section-number-4">3.2.4</span> Exercises (Starting from GitHub)</h4>
+<div class="outline-text-4" id="text-3-2-4">
+<ol class="org-ol">
+<li>Login to GitHub.</li>
+<li>Create a new repository "Git-practice1".</li>
+<li><p>
+In the Code tap, click the link "creating a new file" and make a file
+"practice1.txt" with the following content:
+</p>
+<pre class="example">
+Git practice 1
+</pre></li>
+<li>Clone this GitHub repository into your local repository.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6f266a7" class="outline-3">
+<h3 id="org6f266a7"><span class="section-number-3">3.3</span> Commits</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li><a href="https://git-scm.com/docs/user-manual">Git manual</a> defines a <i>commit</i> as a single point in the Git history.</li>
+<li>We will simply think of a commit as a version of your tex file.</li>
+<li>A commit has two parts.
+<ul class="org-ul">
+<li>Move changed files to the staged area.</li>
+<li>Make a commit with a commit message.</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org5868b6c" class="outline-4">
+<h4 id="org5868b6c"><span class="section-number-4">3.3.1</span> Making commits using VS Code</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<ul class="org-ul">
+<li>Click the "Source Control" icon on the left.</li>
+<li>Each file has a mark.
+<ul class="org-ul">
+<li>U means the file is untracked by Git.</li>
+<li>M means the file is modified (and is kept tract of by Git).</li>
+<li>C means the file has some conflicts.</li>
+</ul></li>
+<li>Click the + button on the modified file (marked M).</li>
+<li>The file will be move to "Staged Changes".</li>
+<li>Write a commit message in the message box and enter CMD+ENTER.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb3151bf" class="outline-3">
+<h3 id="orgb3151bf"><span class="section-number-3">3.4</span> Push and Pull</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Push is the command that updates the remote repository with the local repository.</li>
+<li>Pull is the other way around.</li>
+<li>To push type "Git: Push" in CP.</li>
+<li>To pull type "Git: Pull" in CP.</li>
+</ul>
+</div>
+<div id="outline-container-orgad3aa59" class="outline-4">
+<h4 id="orgad3aa59"><span class="section-number-4">3.4.1</span> Exercises (Commit and Push)</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<ol class="org-ol">
+<li>Open your local repository "Git-practice1" in VS Code.</li>
+<li>Add a new line in the file "practice1.txt".</li>
+<li>Commit with commit message "first commit".</li>
+<li>Push.</li>
+<li>Check the changes in your GitHub repository.</li>
+<li>Create a new file "practice2.txt" in your local repository and repeat
+2,3,4,5.</li>
+<li>Delete the file "practice2.txt" in VS Code.</li>
+<li>Move the deleted file into the staged area and commit and push.</li>
+<li>Check the changes in your GitHub repository.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbc46845" class="outline-3">
+<h3 id="orgbc46845"><span class="section-number-3">3.5</span> Merge</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>If your local repository is not up-to-date, you have to pull first and then push.</li>
+<li>If there are no conflicts Git will automatically merge the two files from
+local and remote repositories.</li>
+<li>If there are conflicts, you have to merge the two files manually as follows.
+<ol class="org-ol">
+<li>Git will write the conflicts in the tex file.</li>
+<li>You can simply click the change that you want to keep.</li>
+<li>Once you've resolved all conflicts, save the file and the click the + button.</li>
+<li>Commit and push.</li>
+</ol></li>
+</ul>
+</div>
+<div id="outline-container-org21a2fca" class="outline-4">
+<h4 id="org21a2fca"><span class="section-number-4">3.5.1</span> Exercises (Merge)</h4>
+<div class="outline-text-4" id="text-3-5-1">
+<ol class="org-ol">
+<li>Visit your GitHub repository "Git-practice1".</li>
+<li>In the Code tap click the file "practice1.txt".</li>
+<li>Add a new line "Added from GitHub" in this file and commit (in GitHub).</li>
+<li>Open your local repository "Git-practice1" in VS Code.</li>
+<li>Add a new line "Added from VS Code" in this file and commit (in VS Code).</li>
+<li>Push. (This will show an error message.)</li>
+<li>Pull and merge the changes (accept both changes).</li>
+<li>Push and check the changes in GitHub.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb73d556" class="outline-2">
+<h2 id="orgb73d556"><span class="section-number-2">4</span> GitLens and Git History</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgf8ca148" class="outline-3">
+<h3 id="orgf8ca148"><span class="section-number-3">4.1</span> GitLens</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>GitLens shows who and when the line with cursor was committed.</li>
+<li>Moving your mouse pointer over this line shows more details.</li>
+<li>From there you can see the changes when the commit was made.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org597b8c7" class="outline-3">
+<h3 id="org597b8c7"><span class="section-number-3">4.2</span> Git History</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Git History shows the history of all commits using a diagram.</li>
+<li>Enter "Git: View History" in CP.</li>
+<li>You can investigate each commit by clicking it on the diagram.</li>
+<li>You can see the file or changes at that commit.</li>
+<li>In the diagram on the right, 
+<ul class="org-ul">
+<li>"master" is the current state of your local repository and</li>
+<li>"origin/master" is the current state of your remote repository.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7650542" class="outline-2">
+<h2 id="org7650542"><span class="section-number-2">5</span> If collaborators don't use GitHub</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>You can still do the same thing even if your collaborators do not use GitHub.</li>
+<li>When you make changes you push as usual.</li>
+<li>But you have to wait when your collaborators are working on the tex file.</li>
+<li>Whenever your collaborator sends you their file you need to do as follows.
+<ol class="org-ol">
+<li>Replace your tex file with your collaborator's (their filenames must be
+identical).</li>
+<li>Commit and push.</li>
+<li>Review the changes your collaborator have made.</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd761f1c" class="outline-2">
+<h2 id="orgd761f1c"><span class="section-number-2">6</span> Exercises (solitary)</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org27e216b" class="outline-3">
+<h3 id="org27e216b"><span class="section-number-3">6.1</span> Making Git repositories</h3>
+<div class="outline-text-3" id="text-6-1">
+<ol class="org-ol">
+<li>Download <a href="git-exercises.zip">this file</a> and extract it in your computer.</li>
+<li>Drag-and-drop the whole folder (not just the tex file!) into VS Code.
+(Make sure that you have closed all folder in VS Code before opening this
+folder.)</li>
+<li>Compile the tex file.</li>
+<li>Make this folder a local repository and create a remote repository. (Hint:
+"Publish to GitHub")</li>
+<li>Select only the tex file when you do this.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org39a0084" class="outline-3">
+<h3 id="org39a0084"><span class="section-number-3">6.2</span> A file from your collaborator</h3>
+<div class="outline-text-3" id="text-6-2">
+<ol class="org-ol">
+<li>Your collaborator just sent you their tex file. This is in the folder
+"from your collaborator".</li>
+<li>Replace your tex file with the file from your collaborator.</li>
+<li>Commit and push.</li>
+<li>Review the changes.</li>
+<li>Modify the file if you feel necessary.</li>
+<li>Commit and push.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgb22f9cd" class="outline-3">
+<h3 id="orgb22f9cd"><span class="section-number-3">6.3</span> Commit and push</h3>
+<div class="outline-text-3" id="text-6-3">
+<ol class="org-ol">
+<li>Write contents in Section 5.</li>
+<li>Commit your changes with commit message "Add contents in Section 4" (the
+tex file only).</li>
+<li>Push.</li>
+<li>Check Git History and see the changes that you just made.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcb3c4b5" class="outline-2">
+<h2 id="orgcb3c4b5"><span class="section-number-2">7</span> Exercises (collaborative push-pull game)</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org0af7cac" class="outline-3">
+<h3 id="org0af7cac"><span class="section-number-3">7.1</span> Forming a group</h3>
+<div class="outline-text-3" id="text-7-1">
+<ol class="org-ol">
+<li>Form a group of at least 3 people.</li>
+<li>Choose a leader.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org3414382" class="outline-3">
+<h3 id="org3414382"><span class="section-number-3">7.2</span> Making Git repositories</h3>
+<div class="outline-text-3" id="text-7-2">
+<ol class="org-ol">
+<li>The leader creates a new Git repository "Push-Pull-Game" directly from GitHub.</li>
+<li><p>
+In GitHub the leader creates a new file "Push-Pull-Game.txt" with the following content.
+</p>
+<pre class="example">
+Push-Pull Game
+Numbers: 1
+
+1. The leader's name (or nickname)
+</pre></li>
+<li>The leader invites the group members to this repository.</li>
+<li>The group members (including the leader) creates a local repository by
+cloning this GitHub repository.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9c08d23" class="outline-3">
+<h3 id="org9c08d23"><span class="section-number-3">7.3</span> Goal</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li><p>
+The goal is to update the file so that it looks like
+</p>
+<pre class="example">
+Push-Pull Game
+Numbers: 1, 2, 3, 4
+
+1. Name1
+2. Name2
+3. Name3
+4. Name4
+</pre></li>
+<li>Everyone tries to add the next number at the end of the second line and add
+his/her name at the end with that number.</li>
+<li>Everyone must write his/her name (or nickname) exactly 3 times.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org399305f" class="outline-3">
+<h3 id="org399305f"><span class="section-number-3">7.4</span> Rules</h3>
+<div class="outline-text-3" id="text-7-4">
+<ul class="org-ul">
+<li>If you pushed successively, then you have to wait for 1 minute before you
+try pushing again.</li>
+<li>You cannot delete anything that's already written in the file.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org50223b6" class="outline-3">
+<h3 id="org50223b6"><span class="section-number-3">7.5</span> Troubleshooting</h3>
+<div class="outline-text-3" id="text-7-5">
+<ul class="org-ul">
+<li>If you are stuck and cannot do either push or pull, you can discard you
+changes by clicking the curvy arrow in "Source Control" sidebar. You can
+then start over.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc2ab719" class="outline-2">
+<h2 id="orgc2ab719"><span class="section-number-2">8</span> Branches</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org27204a2" class="outline-3">
+<h3 id="org27204a2"><span class="section-number-3">8.1</span> What is a branch?</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li><a href="https://git-scm.com/docs/user-manual">Git manual</a> defines <i>branch</i> as follows.</li>
+<li>A "branch" is an active line of development. The most recent commit on a
+branch is referred to as the tip of that branch. The tip of the branch is
+referenced by a branch head, which moves forward as additional development
+is done on the branch. A single Git repository can track an arbitrary
+number of branches, but your working tree is associated with just one of
+them (the "current" or "checked out" branch), and HEAD points to that
+branch.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb867ec4" class="outline-3">
+<h3 id="orgb867ec4"><span class="section-number-3">8.2</span> Creating branches</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li>You can easily create a branch using Git History.</li>
+<li>In Git History, click "+Branch" at the commit you want to make a branch from.</li>
+<li>Enter a branch name.</li>
+<li>Then an icon with that branch name will appear.</li>
+<li>Clicking on this icon you can switch to that branch.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6f14eaa" class="outline-3">
+<h3 id="org6f14eaa"><span class="section-number-3">8.3</span> Merging branches</h3>
+<div class="outline-text-3" id="text-8-3">
+<ul class="org-ul">
+<li>To merge the current branch from another branch enter "Git: Merge Branch"
+in CP and then enter the branch you want to merge from.</li>
+<li>This will automatically merge the two branches.</li>
+<li>However, if there are some conflicts between the two branches you need to
+resolve the conflicts first.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org752b5c3" class="outline-2">
+<h2 id="org752b5c3"><span class="section-number-2">9</span> Other tips</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-org93bd91c" class="outline-3">
+<h3 id="org93bd91c"><span class="section-number-3">9.1</span> Viewing previous PDF files using Git History</h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>Enter "Git: View History" in CP.</li>
+<li>Click the commit that you want to see a pdf.</li>
+<li>Click "View" icon at the bottom.</li>
+<li>This will open the tex file when the commit was made.</li>
+<li>You can build LaTeX and view PDF as usual.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf9f478c" class="outline-3">
+<h3 id="orgf9f478c"><span class="section-number-3">9.2</span> .gitignore file</h3>
+<div class="outline-text-3" id="text-9-2">
+<ul class="org-ul">
+<li><code>.gitignore</code> file tells Git what files to ignore.</li>
+<li>If you add a file to <code>.gitignore</code> then Git will no longer track this file.</li>
+<li>To add a file to <code>.gitignore</code>, right click on that file and click "Add to
+.gitignore".</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0be04bf" class="outline-3">
+<h3 id="org0be04bf"><span class="section-number-3">9.3</span> (For Mac) Hold a key to repeat it.</h3>
+<div class="outline-text-3" id="text-9-3">
+<ul class="org-ul">
+<li><p>
+If you want to have a key repeated when you hold it, type the following in
+a terminal:
+</p>
+<pre class="example">
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+</pre></li>
+<li>You have to restart VS Code.</li>
+<li>Reference: <a href="https://stackoverflow.com/questions/39972335/how-do-i-press-and-hold-a-key-and-have-it-repeat-in-vscode">stackoverflow</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8dc1e86" class="outline-3">
+<h3 id="org8dc1e86"><span class="section-number-3">9.4</span> Deleting GitHub repositories</h3>
+<div class="outline-text-3" id="text-9-4">
+<ul class="org-ul">
+<li>You can delete a GitHub repository in the "Settings" tap.</li>
+<li>You can simply delete your local repository as usual.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org705f25a" class="outline-3">
+<h3 id="org705f25a"><span class="section-number-3">9.5</span> Creating your own webpage in GitHub</h3>
+<div class="outline-text-3" id="text-9-5">
+<ul class="org-ul">
+<li>You can make your webpage by creating a new repository named
+"username.github.io".</li>
+<li>See <a href="https://pages.github.com/">Link</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jang Soo Kim</p>
+<p class="date">Created: 2022-02-12 Sat 09:53</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
