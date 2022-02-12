@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-12 Sat 17:31 -->
+<!-- 2022-02-12 Sat 17:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Introduction to WeBWorK</title>
+<title>Instructions for TAs</title>
 <meta name="author" content="Jang Soo Kim" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -202,51 +202,164 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Introduction to WeBWorK</h1>
+<h1 class="title">Instructions for TAs</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org1727c92">1. Introduction</a></li>
-<li><a href="#orga8418ae">2. Class webpages</a></li>
-<li><a href="#org31e7c1d">3. Instructions</a></li>
+<li><a href="#orga5b89b5">1. Main duties</a></li>
+<li><a href="#org503153e">2. Class webpages</a></li>
+<li><a href="#orgcd7dd16">3. How to add students to the system</a>
+<ul>
+<li><a href="#org70abdd5">3.1. Adding one student at a time</a></li>
+<li><a href="#org19e43f2">3.2. Adding many students at once</a>
+<ul>
+<li><a href="#org7825a79">3.2.1. Classlist files</a></li>
+<li><a href="#org38c062e">3.2.2. Creating a classlist file (.lst file) using Excel</a></li>
+<li><a href="#org53fe884">3.2.3. Adding students</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgcee7fc8">4. Importing homework sets</a></li>
+<li><a href="#org3ca7493">5. Changing homework dates</a></li>
+<li><a href="#orga02eb8a">6. Scoring tools (at the end of the semester)</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org1727c92" class="outline-2">
-<h2 id="org1727c92"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-orga5b89b5" class="outline-2">
+<h2 id="orga5b89b5"><span class="section-number-2">1.</span> Main duties</h2>
 <div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li>Webwork is an online homework system.</li>
-<li>For more information check this page. <a href="https://webwork.maa.org/">https://webwork.maa.org/</a></li>
-</ul>
+<ol class="org-ol">
+<li>Add students to the system.</li>
+<li>Import homework sets.</li>
+<li>Change homework dues if requested.</li>
+<li>Answer questions from students related to webwork system.</li>
+<li>Send the final homework scores to the professors of your classes at the end
+of the semester.</li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-orga8418ae" class="outline-2">
-<h2 id="orga8418ae"><span class="section-number-2">2.</span> Class webpages</h2>
+<div id="outline-container-org503153e" class="outline-2">
+<h2 id="org503153e"><span class="section-number-2">2.</span> Class webpages</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li>Webwork class webpages are listed here. <a href="https://webwork.skku.edu">https://webwork.skku.edu</a></li>
+<li>Your classes are listed here. <a href="https://webwork.skku.edu">https://webwork.skku.edu</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org31e7c1d" class="outline-2">
-<h2 id="org31e7c1d"><span class="section-number-2">3.</span> Instructions</h2>
+<div id="outline-container-orgcd7dd16" class="outline-2">
+<h2 id="orgcd7dd16"><span class="section-number-2">3.</span> How to add students to the system</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
-<li><a href="instruction-student.html">Instruction for Students</a></li>
-<li><a href="instruction-TA.html">Instruction for Teaching Assistants</a></li>
-<li><a href="instruction-professor.html">Instruction for Professors</a></li>
+<li>You can add one student at a time manually or many students at once using a cvs file.</li>
+<li>To do this, first login to the webwork class homepage where you want to add students.</li>
 </ul>
+</div>
+
+<div id="outline-container-org70abdd5" class="outline-3">
+<h3 id="org70abdd5"><span class="section-number-3">3.1.</span> Adding one student at a time</h3>
+<div class="outline-text-3" id="text-3-1">
+<ol class="org-ol">
+<li>Click <code>Classlist Editor</code> under <code>Instructor Tools</code> on the side bar.</li>
+<li>Click <code>Add</code> tap.</li>
+<li>Enter the number of students you want to add and click <code>Take Action!</code>.</li>
+<li>Enter students' information.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org19e43f2" class="outline-3">
+<h3 id="org19e43f2"><span class="section-number-3">3.2.</span> Adding many students at once</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-org7825a79" class="outline-4">
+<h4 id="org7825a79"><span class="section-number-4">3.2.1.</span> Classlist files</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li>In order to add many students at once, you need to create a classlist file,
+which is a file with extension <code>lst</code>.</li>
+<li>You can create a classlist file using Excel as follows.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org38c062e" class="outline-4">
+<h4 id="org38c062e"><span class="section-number-4">3.2.2.</span> Creating a classlist file (.lst file) using Excel</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<ol class="org-ol">
+<li>Create an empty Excel file.</li>
+<li>Enter the student ids in the 1st and 9th columns.</li>
+<li>Enter the student names in the 2nd column.</li>
+<li>Enter the letter <code>C</code> in the 4th column.</li>
+<li>Enter the email addresses in the 8th column.</li>
+<li>For example, if you have an excel file like <a href="sample_classlist.xlsx">this one</a>, you should make an
+excel file like <a href="sample_classlist_changed.xlsx">this one</a>.</li>
+<li>Save the new excel file as a cvs file (.cvs). You should get a file like <a href="sample_classlist_changed.csv">this</a>.</li>
+<li>Find the file in your folder and change the extension from <code>.cvs</code> to <code>.lst</code>. The final file must be something like <a href="sample_classlist_changed.lst">this</a>.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org53fe884" class="outline-4">
+<h4 id="org53fe884"><span class="section-number-4">3.2.3.</span> Adding students</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<ol class="org-ol">
+<li>Login Webwork.</li>
+<li>Click <code>File Manager</code> under <code>Instructor Tools</code> on the side bar.</li>
+<li>Upload the lst file in <code>templates</code> folder.</li>
+<li>Click <code>Classlist Editor</code>  under <code>Instructor Tools</code> on the side bar.</li>
+<li>Click <code>Import</code> tap and select the classlist file that you created above.</li>
+<li>Click <code>Take Action!</code>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcee7fc8" class="outline-2">
+<h2 id="orgcee7fc8"><span class="section-number-2">4.</span> Importing homework sets</h2>
+<div class="outline-text-2" id="text-4">
+<ol class="org-ol">
+<li>Click <code>Hmwk Sets Editor</code>  under <code>Instructor Tools</code> in the side bar.</li>
+<li>Click <code>Import</code> tap.</li>
+<li>Select the appropriate homework file <code>skku-library/def/HOMEWORKSET.def</code>
+from the second dropdown button saying <code>Import from where?</code>. (These sets
+are not listed in the best order. They appear after
+<code>Contrib/CAPA/...</code> but before <code>Contrib/Michigan/...</code>)</li>
+<li>Select <code>all current users</code> in the list dropdown button saying <code>Assign this set of which users?</code>.</li>
+<li>Click <code>Take Action!</code>.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org3ca7493" class="outline-2">
+<h2 id="org3ca7493"><span class="section-number-2">5.</span> Changing homework dates</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li>Click <code>Hmwk Sets Editor</code>  under <code>Instructor Tools</code> in the side bar.</li>
+<li>Click the pencil icon next the homework set you want to edit.</li>
+<li>Change the dates and click <code>Take Action!</code>.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga02eb8a" class="outline-2">
+<h2 id="orga02eb8a"><span class="section-number-2">6.</span> Scoring tools (at the end of the semester)</h2>
+<div class="outline-text-2" id="text-6">
+<ol class="org-ol">
+<li>This should be done after the due of the final homework assignment.</li>
+<li>Click <code>Scoring Tools</code> under <code>Instructor Tools</code> in the side bar.</li>
+<li>Select all homework assignments and clink  <code>Score selected sets and save to</code>.</li>
+<li>A cvs file is created and you can download it.</li>
+<li>Open the cvs file using Excel. If you cannot open the cvs file, change the
+extension to <code>.txt</code> and then try it again.</li>
+<li>Make an excel file that contains only 2 columns: Student ID and <code>%scores</code>.</li>
+<li>Send this excel file to the professor of your class.</li>
+</ol>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-02-12 Sat 17:31</p>
+<p class="date">Created: 2022-02-12 Sat 17:10</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
