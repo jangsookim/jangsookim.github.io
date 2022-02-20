@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-12 Sat 10:27 -->
+<!-- 2022-02-16 Wed 12:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lecture 1: VS Code and LaTeX Workshop</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="Jang Soo Kim" />
-<meta name="generator" content="Org Mode" />
-<style>
-  #content { max-width: 60em; margin: auto; }
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,9 +31,8 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -42,21 +41,21 @@
   pre.src {
     position: relative;
     overflow: auto;
+    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    top: -8px;
-    right: 12px;
+    background-color: white;
+    top: -10px;
+    right: 10px;
     padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
+    border: 1px solid black;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -192,6 +191,7 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
+  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
@@ -199,6 +199,28 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -219,68 +241,69 @@
              }
 });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content" class="content">
+<div id="content">
 <h1 class="title">Lecture 1: VS Code and LaTeX Workshop</h1>
-<div id="table-of-contents" role="doc-toc">
+<div id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcd6cf1c">1. Basics on VS Code</a>
+<li><a href="#org9ecdbd3">1. Basics on VS Code</a>
 <ul>
-<li><a href="#orge27c32b">1.1. Overview</a></li>
-<li><a href="#org25bd5e0">1.2. Installation</a></li>
-<li><a href="#org5710f33">1.3. Workspaces</a></li>
-<li><a href="#org3c5a58c">1.4. Open folders</a>
+<li><a href="#org7d6b7c0">1.1. Overview</a></li>
+<li><a href="#org534cdb2">1.2. Installation</a></li>
+<li><a href="#orga23e3c3">1.3. Workspaces</a></li>
+<li><a href="#orgfbf1edd">1.4. Open folders</a>
 <ul>
-<li><a href="#org85b006b">1.4.1. Exercise</a></li>
+<li><a href="#org35c4b50">1.4.1. Exercise</a></li>
 </ul>
 </li>
-<li><a href="#orga9eb588">1.5. How to install extensions</a></li>
-<li><a href="#org33aadfd">1.6. Command Palette</a></li>
-<li><a href="#orga4cfd20">1.7. How to change settings</a></li>
-<li><a href="#orga9c531e">1.8. How to change themes</a></li>
+<li><a href="#org60e363b">1.5. How to install extensions</a></li>
+<li><a href="#org37d6013">1.6. Command Palette</a></li>
+<li><a href="#orgca07723">1.7. How to change settings</a></li>
+<li><a href="#org3d41071">1.8. How to change themes</a></li>
 </ul>
 </li>
-<li><a href="#orgd74a471">2. LaTeX Workshop (extension)</a>
+<li><a href="#org7e22bb0">2. LaTeX Workshop (extension)</a>
 <ul>
-<li><a href="#orgb41c864">2.1. Installation</a></li>
-<li><a href="#org1a9eb18">2.2. Basic commands</a>
+<li><a href="#org6d67f60">2.1. Installation</a></li>
+<li><a href="#org04d24df">2.2. Basic commands</a>
 <ul>
-<li><a href="#org64b5690">2.2.1. Exercises</a></li>
+<li><a href="#orgcd5b50b">2.2.1. Exercises</a></li>
 </ul>
 </li>
-<li><a href="#orgd4ca60a">2.3. Move between sections or labels</a></li>
-<li><a href="#orgc281fd0">2.4. Some interesting features</a></li>
-<li><a href="#org0de4deb">2.5. Snippets</a></li>
-<li><a href="#org3fedf83">2.6. More Snippets</a></li>
-<li><a href="#org73cbb93">2.7. Add Keyboard shortcuts</a>
+<li><a href="#org2a447c4">2.3. Move between sections or labels</a></li>
+<li><a href="#org62adc4b">2.4. Some interesting features</a></li>
+<li><a href="#orgeb25572">2.5. Snippets</a></li>
+<li><a href="#org8ea8503">2.6. More Snippets</a></li>
+<li><a href="#orgad43ce3">2.7. Add Keyboard shortcuts</a>
 <ul>
-<li><a href="#org967cdff">2.7.1. Exercise</a></li>
+<li><a href="#orgd494fa6">2.7.1. Exercise</a></li>
 </ul>
 </li>
-<li><a href="#orgcf25030">2.8. Finding errors</a></li>
+<li><a href="#org8105f78">2.8. Finding errors</a></li>
 </ul>
 </li>
-<li><a href="#orgb7823cc">3. User Snippets</a>
+<li><a href="#orga694032">3. User Snippets</a>
 <ul>
-<li><a href="#org0490c19">3.1. latex.json</a></li>
-<li><a href="#org3c627e0">3.2. Write user snippets (without arguments)</a>
+<li><a href="#orgf6e8bf9">3.1. latex.json</a></li>
+<li><a href="#org11055cf">3.2. Write user snippets (without arguments)</a>
 <ul>
-<li><a href="#org5a5cbcc">3.2.1. Example</a></li>
-<li><a href="#org3fc3fda">3.2.2. Example</a></li>
+<li><a href="#orgd178438">3.2.1. Example</a></li>
+<li><a href="#orgf8bd07c">3.2.2. Example</a></li>
 </ul>
 </li>
-<li><a href="#org01de1f5">3.3. Write user snippets (with arguments)</a>
+<li><a href="#org56d97c4">3.3. Write user snippets (with arguments)</a>
 <ul>
-<li><a href="#org60bbb8a">3.3.1. Example</a></li>
-<li><a href="#org053344f">3.3.2. Example (default arguments)</a></li>
+<li><a href="#orgec13c8d">3.3.1. Example</a></li>
+<li><a href="#org3857a8f">3.3.2. Example (default arguments)</a></li>
 </ul>
 </li>
-<li><a href="#org8e0f10c">3.4. Exercises</a></li>
-<li><a href="#orge43cc10">3.5. More Exercises</a></li>
+<li><a href="#org1327d8a">3.4. Exercises</a></li>
+<li><a href="#org32d4c5c">3.5. More Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -289,12 +312,12 @@
 
 
 
-<div id="outline-container-orgcd6cf1c" class="outline-2">
-<h2 id="orgcd6cf1c"><span class="section-number-2">1.</span> Basics on VS Code</h2>
+<div id="outline-container-org9ecdbd3" class="outline-2">
+<h2 id="org9ecdbd3"><span class="section-number-2">1</span> Basics on VS Code</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orge27c32b" class="outline-3">
-<h3 id="orge27c32b"><span class="section-number-3">1.1.</span> Overview</h3>
+<div id="outline-container-org7d6b7c0" class="outline-3">
+<h3 id="org7d6b7c0"><span class="section-number-3">1.1</span> Overview</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>VS Code is a free source-code editor made by Microsoft.</li>
@@ -304,16 +327,16 @@ development environment.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org25bd5e0" class="outline-3">
-<h3 id="org25bd5e0"><span class="section-number-3">1.2.</span> Installation</h3>
+<div id="outline-container-org534cdb2" class="outline-3">
+<h3 id="org534cdb2"><span class="section-number-3">1.2</span> Installation</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>Download here: <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5710f33" class="outline-3">
-<h3 id="org5710f33"><span class="section-number-3">1.3.</span> Workspaces</h3>
+<div id="outline-container-orga23e3c3" class="outline-3">
+<h3 id="orga23e3c3"><span class="section-number-3">1.3</span> Workspaces</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>A <i>workspace</i> in VS Code is a collection of folders.</li>
@@ -326,8 +349,8 @@ paper).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3c5a58c" class="outline-3">
-<h3 id="org3c5a58c"><span class="section-number-3">1.4.</span> Open folders</h3>
+<div id="outline-container-orgfbf1edd" class="outline-3">
+<h3 id="orgfbf1edd"><span class="section-number-3">1.4</span> Open folders</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>Before you open a folder for the first time, make sure that you close
@@ -338,8 +361,8 @@ everything using "File \(\to\) Close Folder" in the menu bar.</li>
 which means "File: Open Recent".</li>
 </ul>
 </div>
-<div id="outline-container-org85b006b" class="outline-4">
-<h4 id="org85b006b"><span class="section-number-4">1.4.1.</span> Exercise</h4>
+<div id="outline-container-org35c4b50" class="outline-4">
+<h4 id="org35c4b50"><span class="section-number-4">1.4.1</span> Exercise</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ol class="org-ol">
 <li>Download <a href="vscode-lecture-files.zip">this file</a> and extract it in your computer.</li>
@@ -354,8 +377,8 @@ which means "File: Open Recent".</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orga9eb588" class="outline-3">
-<h3 id="orga9eb588"><span class="section-number-3">1.5.</span> How to install extensions</h3>
+<div id="outline-container-org60e363b" class="outline-3">
+<h3 id="org60e363b"><span class="section-number-3">1.5</span> How to install extensions</h3>
 <div class="outline-text-3" id="text-1-5">
 <ol class="org-ol">
 <li>Click the icon "Extensions" on the left.</li>
@@ -368,8 +391,8 @@ which means "File: Open Recent".</li>
 </div>
 </div>
 
-<div id="outline-container-org33aadfd" class="outline-3">
-<h3 id="org33aadfd"><span class="section-number-3">1.6.</span> Command Palette</h3>
+<div id="outline-container-org37d6013" class="outline-3">
+<h3 id="org37d6013"><span class="section-number-3">1.6</span> Command Palette</h3>
 <div class="outline-text-3" id="text-1-6">
 <ul class="org-ul">
 <li><b>CMD + SHIFT + P</b> opens a command line showing all commands.</li>
@@ -385,8 +408,8 @@ which means "File: Open Recent".</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga4cfd20" class="outline-3">
-<h3 id="orga4cfd20"><span class="section-number-3">1.7.</span> How to change settings</h3>
+<div id="outline-container-orgca07723" class="outline-3">
+<h3 id="orgca07723"><span class="section-number-3">1.7</span> How to change settings</h3>
 <div class="outline-text-3" id="text-1-7">
 <ol class="org-ol">
 <li>CP \(\rightarrow\) "Preferences: Open Settings (UI)" (or type <b>CMD+,</b>)</li>
@@ -396,8 +419,8 @@ which means "File: Open Recent".</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orga9c531e" class="outline-3">
-<h3 id="orga9c531e"><span class="section-number-3">1.8.</span> How to change themes</h3>
+<div id="outline-container-org3d41071" class="outline-3">
+<h3 id="org3d41071"><span class="section-number-3">1.8</span> How to change themes</h3>
 <div class="outline-text-3" id="text-1-8">
 <ul class="org-ul">
 <li>Search "theme" at CP, and choose "Preferences: Color Theme".</li>
@@ -411,20 +434,20 @@ which means "File: Open Recent".</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd74a471" class="outline-2">
-<h2 id="orgd74a471"><span class="section-number-2">2.</span> LaTeX Workshop (extension)</h2>
+<div id="outline-container-org7e22bb0" class="outline-2">
+<h2 id="org7e22bb0"><span class="section-number-2">2</span> LaTeX Workshop (extension)</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgb41c864" class="outline-3">
-<h3 id="orgb41c864"><span class="section-number-3">2.1.</span> Installation</h3>
+<div id="outline-container-org6d67f60" class="outline-3">
+<h3 id="org6d67f60"><span class="section-number-3">2.1</span> Installation</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>First you need to install LaTeX Workshop using "Extensions" icon as before.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1a9eb18" class="outline-3">
-<h3 id="org1a9eb18"><span class="section-number-3">2.2.</span> Basic commands</h3>
+<div id="outline-container-org04d24df" class="outline-3">
+<h3 id="org04d24df"><span class="section-number-3">2.2</span> Basic commands</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li><b>TeX Compile</b> 
@@ -449,8 +472,8 @@ which means "File: Open Recent".</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org64b5690" class="outline-4">
-<h4 id="org64b5690"><span class="section-number-4">2.2.1.</span> Exercises</h4>
+<div id="outline-container-orgcd5b50b" class="outline-4">
+<h4 id="orgcd5b50b"><span class="section-number-4">2.2.1</span> Exercises</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <ol class="org-ol">
 <li>Find the shortcuts for "Copy" and "Paste".</li>
@@ -463,8 +486,8 @@ region.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd4ca60a" class="outline-3">
-<h3 id="orgd4ca60a"><span class="section-number-3">2.3.</span> Move between sections or labels</h3>
+<div id="outline-container-org2a447c4" class="outline-3">
+<h3 id="org2a447c4"><span class="section-number-3">2.3</span> Move between sections or labels</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li>Click the icon \(\mathrm{\TeX}\) on the left.</li>
@@ -475,8 +498,8 @@ to do.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc281fd0" class="outline-3">
-<h3 id="orgc281fd0"><span class="section-number-3">2.4.</span> Some interesting features</h3>
+<div id="outline-container-org62adc4b" class="outline-3">
+<h3 id="org62adc4b"><span class="section-number-3">2.4</span> Some interesting features</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li>Auto Completion: Try to type <code>\begin{theorem}</code></li>
@@ -500,8 +523,8 @@ label.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0de4deb" class="outline-3">
-<h3 id="org0de4deb"><span class="section-number-3">2.5.</span> Snippets</h3>
+<div id="outline-container-orgeb25572" class="outline-3">
+<h3 id="orgeb25572"><span class="section-number-3">2.5</span> Snippets</h3>
 <div class="outline-text-3" id="text-2-5">
 <ul class="org-ul">
 <li>A <i>snippet</i> means a block of re-usable code, somewhat similar to macro.</li>
@@ -518,8 +541,8 @@ that letter.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3fedf83" class="outline-3">
-<h3 id="org3fedf83"><span class="section-number-3">2.6.</span> More Snippets</h3>
+<div id="outline-container-org8ea8503" class="outline-3">
+<h3 id="org8ea8503"><span class="section-number-3">2.6</span> More Snippets</h3>
 <div class="outline-text-3" id="text-2-6">
 <ul class="org-ul">
 <li><p>
@@ -533,8 +556,8 @@ See the links below for more snippets.
 </ul>
 </div>
 </div>
-<div id="outline-container-org73cbb93" class="outline-3">
-<h3 id="org73cbb93"><span class="section-number-3">2.7.</span> Add Keyboard shortcuts</h3>
+<div id="outline-container-orgad43ce3" class="outline-3">
+<h3 id="orgad43ce3"><span class="section-number-3">2.7</span> Add Keyboard shortcuts</h3>
 <div class="outline-text-3" id="text-2-7">
 <ol class="org-ol">
 <li>CP \(\rightarrow\) Preferences: Open Keyboard Shortcuts</li>
@@ -542,8 +565,8 @@ See the links below for more snippets.
 <li>Double click this line and enter your desired key combination (e.g. <b>CMD+'</b>).</li>
 </ol>
 </div>
-<div id="outline-container-org967cdff" class="outline-4">
-<h4 id="org967cdff"><span class="section-number-4">2.7.1.</span> Exercise</h4>
+<div id="outline-container-orgd494fa6" class="outline-4">
+<h4 id="orgd494fa6"><span class="section-number-4">2.7.1</span> Exercise</h4>
 <div class="outline-text-4" id="text-2-7-1">
 <ul class="org-ul">
 <li>Setup a keyboard shortcut for "Latex Workshop: Select the current section".</li>
@@ -551,8 +574,8 @@ See the links below for more snippets.
 </div>
 </div>
 </div>
-<div id="outline-container-orgcf25030" class="outline-3">
-<h3 id="orgcf25030"><span class="section-number-3">2.8.</span> Finding errors</h3>
+<div id="outline-container-org8105f78" class="outline-3">
+<h3 id="org8105f78"><span class="section-number-3">2.8</span> Finding errors</h3>
 <div class="outline-text-3" id="text-2-8">
 <ol class="org-ol">
 <li>If there are some errors in your tex file, VS Code will show a message box
@@ -567,12 +590,12 @@ your tex file where the error occurs.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb7823cc" class="outline-2">
-<h2 id="orgb7823cc"><span class="section-number-2">3.</span> User Snippets</h2>
+<div id="outline-container-orga694032" class="outline-2">
+<h2 id="orga694032"><span class="section-number-2">3</span> User Snippets</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org0490c19" class="outline-3">
-<h3 id="org0490c19"><span class="section-number-3">3.1.</span> latex.json</h3>
+<div id="outline-container-orgf6e8bf9" class="outline-3">
+<h3 id="orgf6e8bf9"><span class="section-number-3">3.1</span> latex.json</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>To write user snippets we need to open the "latex.json" file.</li>
@@ -582,8 +605,8 @@ your tex file where the error occurs.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3c627e0" class="outline-3">
-<h3 id="org3c627e0"><span class="section-number-3">3.2.</span> Write user snippets (without arguments)</h3>
+<div id="outline-container-org11055cf" class="outline-3">
+<h3 id="org11055cf"><span class="section-number-3">3.2</span> Write user snippets (without arguments)</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>In the latex.json file everything is enclosed by a pair of curly braces <code>{...}</code>.</li>
@@ -599,8 +622,8 @@ Each snippet has the following structure.
 </pre></li>
 </ul>
 </div>
-<div id="outline-container-org5a5cbcc" class="outline-4">
-<h4 id="org5a5cbcc"><span class="section-number-4">3.2.1.</span> Example</h4>
+<div id="outline-container-orgd178438" class="outline-4">
+<h4 id="orgd178438"><span class="section-number-4">3.2.1</span> Example</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li><p>
@@ -623,8 +646,8 @@ typing vdm:
 </ul>
 </div>
 </div>
-<div id="outline-container-org3fc3fda" class="outline-4">
-<h4 id="org3fc3fda"><span class="section-number-4">3.2.2.</span> Example</h4>
+<div id="outline-container-orgf8bd07c" class="outline-4">
+<h4 id="orgf8bd07c"><span class="section-number-4">3.2.2</span> Example</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <ul class="org-ul">
 <li>If you have more than one snippets, you must put a comma <code>,</code> after each
@@ -649,8 +672,8 @@ So, for example, your latex.jason file should look something like this
 </div>
 </div>
 </div>
-<div id="outline-container-org01de1f5" class="outline-3">
-<h3 id="org01de1f5"><span class="section-number-3">3.3.</span> Write user snippets (with arguments)</h3>
+<div id="outline-container-org56d97c4" class="outline-3">
+<h3 id="org56d97c4"><span class="section-number-3">3.3</span> Write user snippets (with arguments)</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>Using arguments you can create more flexible snippets.</li>
@@ -661,8 +684,8 @@ So, for example, your latex.jason file should look something like this
 been typed.</li>
 </ul>
 </div>
-<div id="outline-container-org60bbb8a" class="outline-4">
-<h4 id="org60bbb8a"><span class="section-number-4">3.3.1.</span> Example</h4>
+<div id="outline-container-orgec13c8d" class="outline-4">
+<h4 id="orgec13c8d"><span class="section-number-4">3.3.1</span> Example</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <ul class="org-ul">
 <li><p>
@@ -687,8 +710,8 @@ designed.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org053344f" class="outline-4">
-<h4 id="org053344f"><span class="section-number-4">3.3.2.</span> Example (default arguments)</h4>
+<div id="outline-container-org3857a8f" class="outline-4">
+<h4 id="org3857a8f"><span class="section-number-4">3.3.2</span> Example (default arguments)</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <ul class="org-ul">
 <li>You can also set default arguments using <code>${n:default}</code>.</li>
@@ -707,8 +730,8 @@ arguments <code>$1</code> and <code>$2</code> respectively.
 </div>
 </div>
 
-<div id="outline-container-org8e0f10c" class="outline-3">
-<h3 id="org8e0f10c"><span class="section-number-3">3.4.</span> Exercises</h3>
+<div id="outline-container-org1327d8a" class="outline-3">
+<h3 id="org1327d8a"><span class="section-number-3">3.4</span> Exercises</h3>
 <div class="outline-text-3" id="text-3-4">
 <ol class="org-ol">
 <li><p>
@@ -737,8 +760,8 @@ given as default but can be changed to anything.
 </ol>
 </div>
 </div>
-<div id="outline-container-orge43cc10" class="outline-3">
-<h3 id="orge43cc10"><span class="section-number-3">3.5.</span> More Exercises</h3>
+<div id="outline-container-org32d4c5c" class="outline-3">
+<h3 id="org32d4c5c"><span class="section-number-3">3.5</span> More Exercises</h3>
 <div class="outline-text-3" id="text-3-5">
 <ol class="org-ol">
 <li><p>
@@ -773,7 +796,7 @@ and asks you to fill A, B, C, D in this order, where D is set to be
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-02-12 Sat 10:27</p>
+<p class="date">Created: 2022-02-16 Wed 12:06</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

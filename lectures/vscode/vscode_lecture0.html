@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-12 Sat 10:27 -->
+<!-- 2022-02-16 Wed 12:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>$\mathrm{\LaTeX}$ in VS Code</title>
+<title>\(\mathrm{\LaTeX}\) in VS Code</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="Jang Soo Kim" />
-<meta name="generator" content="Org Mode" />
-<style>
-  #content { max-width: 60em; margin: auto; }
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,9 +31,8 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -42,21 +41,21 @@
   pre.src {
     position: relative;
     overflow: auto;
+    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    top: -8px;
-    right: 12px;
+    background-color: white;
+    top: -10px;
+    right: 10px;
     padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
+    border: 1px solid black;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -192,6 +191,7 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
+  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
@@ -199,6 +199,28 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -219,25 +241,26 @@
              }
 });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content" class="content">
+<div id="content">
 <h1 class="title">\(\mathrm{\LaTeX}\) in VS Code</h1>
-<div id="table-of-contents" role="doc-toc">
+<div id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#orgebe4285">Introduction</a></li>
-<li><a href="#org9149d82">Lecture 1</a></li>
-<li><a href="#org4f44d87">Lecture 2</a></li>
-<li><a href="#orgf74486f">Lecture 3</a>
+<li><a href="#org7f1fd59">Introduction</a></li>
+<li><a href="#org3ffa1aa">Lecture 1</a></li>
+<li><a href="#org1b67fb1">Lecture 2</a></li>
+<li><a href="#orgcd28d6c">Lecture 3</a>
 <ul>
-<li><a href="#org6cf011c">Preparations for Lecture 3</a>
+<li><a href="#org1d5af0c">Preparations for Lecture 3</a>
 <ul>
-<li><a href="#org9136427">Installing Git</a></li>
-<li><a href="#orgd8e587a">Signing up GitHub</a></li>
-<li><a href="#orge57ad70">Find a partner to practice Git together.</a></li>
+<li><a href="#org9c60f88">Installing Git</a></li>
+<li><a href="#orga98497b">Signing up GitHub</a></li>
+<li><a href="#org526a0b6">Find a partner to practice Git together.</a></li>
 </ul>
 </li>
 </ul>
@@ -247,9 +270,9 @@
 </div>
 
 
-<div id="outline-container-orgebe4285" class="outline-2">
-<h2 id="orgebe4285">Introduction</h2>
-<div class="outline-text-2" id="text-orgebe4285">
+<div id="outline-container-org7f1fd59" class="outline-2">
+<h2 id="org7f1fd59">Introduction</h2>
+<div class="outline-text-2" id="text-org7f1fd59">
 <ul class="org-ul">
 <li>Nowadays most mathematicians use \(\mathrm{\LaTeX}\). Since it is quite a
 straightforward software to use, one may not think much about how to write
@@ -263,9 +286,9 @@ your own.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9149d82" class="outline-2">
-<h2 id="org9149d82">Lecture 1</h2>
-<div class="outline-text-2" id="text-org9149d82">
+<div id="outline-container-org3ffa1aa" class="outline-2">
+<h2 id="org3ffa1aa">Lecture 1</h2>
+<div class="outline-text-2" id="text-org3ffa1aa">
 <ul class="org-ul">
 <li>We learn basics on VS Code and LaTeX Workshop.</li>
 <li><a href="vscode_lecture1.html">Lecture Notes</a>, <a href="./vscode_lecture1(slides).html">Slides</a>, <a href="https://youtu.be/aSdGb47jJtc">Video (in Korean)</a></li>
@@ -278,9 +301,9 @@ your own.</li>
 </div>
 </div>
 
-<div id="outline-container-org4f44d87" class="outline-2">
-<h2 id="org4f44d87">Lecture 2</h2>
-<div class="outline-text-2" id="text-org4f44d87">
+<div id="outline-container-org1b67fb1" class="outline-2">
+<h2 id="org1b67fb1">Lecture 2</h2>
+<div class="outline-text-2" id="text-org1b67fb1">
 <ul class="org-ul">
 <li>We learn BibTeX and Vim.</li>
 <li><a href="vscode_lecture2.html">Lecture Notes</a>, <a href="./vscode_lecture2(slides).html">Slides</a>, <a href="https://youtu.be/9tthxIhm5IM">Video (in Korean)</a></li>
@@ -292,21 +315,21 @@ your own.</li>
 </div>
 </div>
 
-<div id="outline-container-orgf74486f" class="outline-2">
-<h2 id="orgf74486f">Lecture 3</h2>
-<div class="outline-text-2" id="text-orgf74486f">
+<div id="outline-container-orgcd28d6c" class="outline-2">
+<h2 id="orgcd28d6c">Lecture 3</h2>
+<div class="outline-text-2" id="text-orgcd28d6c">
 <ul class="org-ul">
 <li>We learn Git and GitHub for version control and collaboration.</li>
 <li><a href="vscode_lecture3.html">Lecture Notes</a>, <a href="./vscode_lecture3(slides).html">Slides</a>, <a href="https://youtu.be/QWao4Zr4LXI">Video (in Korean)</a></li>
 </ul>
 </div>
-<div id="outline-container-org6cf011c" class="outline-3">
-<h3 id="org6cf011c">Preparations for Lecture 3</h3>
-<div class="outline-text-3" id="text-org6cf011c">
+<div id="outline-container-org1d5af0c" class="outline-3">
+<h3 id="org1d5af0c">Preparations for Lecture 3</h3>
+<div class="outline-text-3" id="text-org1d5af0c">
 </div>
-<div id="outline-container-org9136427" class="outline-4">
-<h4 id="org9136427">Installing Git</h4>
-<div class="outline-text-4" id="text-org9136427">
+<div id="outline-container-org9c60f88" class="outline-4">
+<h4 id="org9c60f88">Installing Git</h4>
+<div class="outline-text-4" id="text-org9c60f88">
 <ul class="org-ul">
 <li>Mac
 <ul class="org-ul">
@@ -328,17 +351,17 @@ machine) <a href="https://git-scm.com/download/win">here</a>.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd8e587a" class="outline-4">
-<h4 id="orgd8e587a">Signing up GitHub</h4>
-<div class="outline-text-4" id="text-orgd8e587a">
+<div id="outline-container-orga98497b" class="outline-4">
+<h4 id="orga98497b">Signing up GitHub</h4>
+<div class="outline-text-4" id="text-orga98497b">
 <ul class="org-ul">
 <li>Sign up here <a href="https://github.com/">https://github.com/</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge57ad70" class="outline-4">
-<h4 id="orge57ad70">Find a partner to practice Git together.</h4>
-<div class="outline-text-4" id="text-orge57ad70">
+<div id="outline-container-org526a0b6" class="outline-4">
+<h4 id="org526a0b6">Find a partner to practice Git together.</h4>
+<div class="outline-text-4" id="text-org526a0b6">
 <ul class="org-ul">
 <li>If you want me to find someone for you, send me an email at this address:
 jangsookim@skku.edu</li>
@@ -350,7 +373,7 @@ jangsookim@skku.edu</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-02-12 Sat 10:27</p>
+<p class="date">Created: 2022-02-16 Wed 12:06</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
