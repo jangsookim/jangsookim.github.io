@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-20 Sun 20:18 -->
+<!-- 2022-02-21 Mon 11:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Instructions for students</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="Jang Soo Kim" />
-<meta name="generator" content="Org Mode" />
-<style>
-  #content { max-width: 60em; margin: auto; }
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,9 +31,8 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -42,21 +41,21 @@
   pre.src {
     position: relative;
     overflow: auto;
+    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    top: -8px;
-    right: 12px;
+    background-color: white;
+    top: -10px;
+    right: 10px;
     padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
+    border: 1px solid black;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -192,6 +191,7 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
+  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
@@ -199,29 +199,51 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
 </head>
 <body>
-<div id="content" class="content">
+<div id="content">
 <h1 class="title">Instructions for students</h1>
-<div id="table-of-contents" role="doc-toc">
+<div id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfb72b49">1. Video instruction</a></li>
-<li><a href="#org3d68d17">2. How to use webwork</a>
+<li><a href="#org478908c">1. Video instruction</a></li>
+<li><a href="#orgc7ab2ea">2. How to use webwork</a>
 <ul>
-<li><a href="#org36fc015">2.1. Initial setup</a></li>
-<li><a href="#org3e6f691">2.2. How to view homework problems</a></li>
+<li><a href="#org7d21e88">2.1. Initial setup</a></li>
+<li><a href="#orgcd92e67">2.2. How to view homework problems</a></li>
 </ul>
 </li>
-<li><a href="#org4b2a53e">3. Contact information</a></li>
-<li><a href="#org9c4e97e">4. More information</a></li>
+<li><a href="#orgd870c21">3. Contact information</a></li>
+<li><a href="#org782b639">4. More information</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgfb72b49" class="outline-2">
-<h2 id="orgfb72b49"><span class="section-number-2">1.</span> Video instruction</h2>
+<div id="outline-container-org478908c" class="outline-2">
+<h2 id="org478908c"><span class="section-number-2">1</span> Video instruction</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><a href="https://youtu.be/cIMMWeIUWdo">https://youtu.be/cIMMWeIUWdo</a> (in Korean)</li>
@@ -230,23 +252,23 @@
 </div>
 </div>
 
-<div id="outline-container-org3d68d17" class="outline-2">
-<h2 id="org3d68d17"><span class="section-number-2">2.</span> How to use webwork</h2>
+<div id="outline-container-orgc7ab2ea" class="outline-2">
+<h2 id="orgc7ab2ea"><span class="section-number-2">2</span> How to use webwork</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org36fc015" class="outline-3">
-<h3 id="org36fc015"><span class="section-number-3">2.1.</span> Initial setup</h3>
+<div id="outline-container-org7d21e88" class="outline-3">
+<h3 id="org7d21e88"><span class="section-number-3">2.1</span> Initial setup</h3>
 <div class="outline-text-3" id="text-2-1">
 <ol class="org-ol">
 <li>Find your class here. <a href="https://webwork.skku.edu">https://webwork.skku.edu</a></li>
-<li>Login id is your student id. (<b>Your account will be activated on March 1st.</b>)</li>
+<li>Login id is your student id. (<b>Your account will be activated during the second week of the semester.</b>)</li>
 <li>Initial password is your student id.</li>
 <li>Click <code>User Settings</code> in the sidebar and change your password.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org3e6f691" class="outline-3">
-<h3 id="org3e6f691"><span class="section-number-3">2.2.</span> How to view homework problems</h3>
+<div id="outline-container-orgcd92e67" class="outline-3">
+<h3 id="orgcd92e67"><span class="section-number-3">2.2</span> How to view homework problems</h3>
 <div class="outline-text-3" id="text-2-2">
 <ol class="org-ol">
 <li>Click <code>Homework Sets</code> in the sidebar. It will show you homework sets and due dates.</li>
@@ -262,8 +284,8 @@ personal email client.)</li>
 </div>
 </div>
 
-<div id="outline-container-org4b2a53e" class="outline-2">
-<h2 id="org4b2a53e"><span class="section-number-2">3.</span> Contact information</h2>
+<div id="outline-container-orgd870c21" class="outline-2">
+<h2 id="orgd870c21"><span class="section-number-2">3</span> Contact information</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>If you have any questions about the system, please contact the webwork TA.</li>
@@ -273,8 +295,8 @@ and the class session number.</li>
 </div>
 </div>
 
-<div id="outline-container-org9c4e97e" class="outline-2">
-<h2 id="org9c4e97e"><span class="section-number-2">4.</span> More information</h2>
+<div id="outline-container-org782b639" class="outline-2">
+<h2 id="org782b639"><span class="section-number-2">4</span> More information</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><a href="https://webwork.maa.org/wiki/Student_Information">https://webwork.maa.org/wiki/Student_Information</a></li>
@@ -286,7 +308,7 @@ necessarily the same as your friend's.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-02-20 Sun 20:18</p>
+<p class="date">Created: 2022-02-21 Mon 11:22</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
