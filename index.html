@@ -3,196 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-09 Mon 16:25 -->
+<!-- 2022-06-18 Sat 19:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Jang Soo Kim</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="Jang Soo Kim" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
-</style>
+<meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/bigblow.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/bigblow_theme/css/hideshow.css"/>
@@ -204,28 +20,6 @@
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/bigblow.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/hideshow.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -246,16 +40,15 @@
              }
 });
 </script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">Jang Soo Kim</h1>
 
-<div id="outline-container-orgd947087" class="outline-2">
-<h2 id="orgd947087">Home</h2>
-<div class="outline-text-2" id="text-orgd947087">
+<div id="outline-container-org5e19f9c" class="outline-2">
+<h2 id="org5e19f9c">Home</h2>
+<div class="outline-text-2" id="text-org5e19f9c">
 <pre class="example">
 Associate Professor
 
@@ -272,7 +65,7 @@ Email: name@skku.edu, where name=jangsookim
 
 
 
-<div id="orgc86d7c7" class="figure">
+<div id="org09dec34" class="figure">
 <p><img src="./files/photo.jpeg" alt="photo.jpeg" width="300" />
 </p>
 </div>
@@ -280,13 +73,13 @@ Email: name@skku.edu, where name=jangsookim
 </div>
 
 
-<div id="outline-container-orgb6578cd" class="outline-2">
-<h2 id="orgb6578cd">Papers</h2>
-<div class="outline-text-2" id="text-orgb6578cd">
+<div id="outline-container-org202ec4f" class="outline-2">
+<h2 id="org202ec4f">Papers</h2>
+<div class="outline-text-2" id="text-org202ec4f">
 </div>
-<div id="outline-container-orgd69656f" class="outline-3">
-<h3 id="orgd69656f">Preprints</h3>
-<div class="outline-text-3" id="text-orgd69656f">
+<div id="outline-container-org0a71a83" class="outline-3">
+<h3 id="org0a71a83">Preprints</h3>
+<div class="outline-text-3" id="text-org0a71a83">
 <ul class="org-ul">
 <li>Characteristic polynomials of the weak order on classical and affine Coxeter groups (with Sun-mi Yun), <a href="https://arxiv.org/abs/2204.01310">arXiv:2204.01310</a></li>
 <li>Negative moments of orthogonal polynomials (with Jihyeug Jang, Donghyun Kim,  Minho Song, U-Keun Song), <a href="https://arxiv.org/abs/2201.11344">arxiv:2201.11344</a></li>
@@ -305,9 +98,9 @@ Ahmad Mojallal, Meesue Yoo), to appear in <i>Linear and Multilinear Algebra</i><
 </ul>
 </div>
 </div>
-<div id="outline-container-orged1a172" class="outline-3">
-<h3 id="orged1a172">2022</h3>
-<div class="outline-text-3" id="text-orged1a172">
+<div id="outline-container-org5c35699" class="outline-3">
+<h3 id="org5c35699">2022</h3>
+<div class="outline-text-3" id="text-org5c35699">
 <ul class="org-ul">
 <li>Jacobi&#x2013;Trudi formulas for flagged refined dual stable Grothendieck
 polynomials, <i>Algebraic Combinatorics</i>, Volume 5 (2022) no. 1, pp. 121-148, <a href="https://arxiv.org/abs/2008.12000">arXiv:2008.12000</a></li>
@@ -316,9 +109,9 @@ Eunjeong Lee), <i>Electronic J. Combin.</i> 29(1)(2022), #P1.27,  <a href="https
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd2975ae" class="outline-3">
-<h3 id="orgd2975ae">2021</h3>
-<div class="outline-text-3" id="text-orgd2975ae">
+<div id="outline-container-org17fa61c" class="outline-3">
+<h3 id="org17fa61c">2021</h3>
+<div class="outline-text-3" id="text-org17fa61c">
 <ul class="org-ul">
 <li>Generalized Schur function determinants using the Bazin identity (with
 Meesue Yoo),  <i>SIAM J. Discrete Math.</i> 35 (2021), no. 3, 1650–1672, <a href="https://arxiv.org/abs/2012.08741">arXiv:2012.08741</a></li>
@@ -332,9 +125,9 @@ Karola Meszaros), <i>Discrete &amp; Computational Geometry</i>,  65, 510–530 (
 </ul>
 </div>
 </div>
-<div id="outline-container-org5790df7" class="outline-3">
-<h3 id="org5790df7">2020</h3>
-<div class="outline-text-3" id="text-org5790df7">
+<div id="outline-container-org4d6e245" class="outline-3">
+<h3 id="org4d6e245">2020</h3>
+<div class="outline-text-3" id="text-org4d6e245">
 <ul class="org-ul">
 <li>Volumes of flow polytopes related to caracol graphs (with Jihyeug Jang),
 <i>Electronic J. Combin.</i> 27(4)(2020), #P4.21, <a href="https://arxiv.org/abs/1911.10703">arXiv:1911.10703</a></li>
@@ -351,9 +144,9 @@ Combin.</i> 84 (2020), 103038, <a href="https://arxiv.org/abs/1806.01525">arXiv:
 </ul>
 </div>
 </div>
-<div id="outline-container-orge1e79da" class="outline-3">
-<h3 id="orge1e79da">2019</h3>
-<div class="outline-text-3" id="text-orge1e79da">
+<div id="outline-container-org32476fb" class="outline-3">
+<h3 id="org32476fb">2019</h3>
+<div class="outline-text-3" id="text-org32476fb">
 <ul class="org-ul">
 <li>Reverse plane partitions of skew staircase shapes and <i>q</i>-Euler numbers (with
 Byung-Hak Hwang, Meesue Yoo and Sun-mi Yun), <i>J. Combin. Theory Ser. A</i> 168
@@ -363,9 +156,9 @@ Yoo), <i>J. Combin. Theory, Ser. A</i> 162 (2019), 167-221, <a href="https://arx
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb01eb29" class="outline-3">
-<h3 id="orgb01eb29">2018</h3>
-<div class="outline-text-3" id="text-orgb01eb29">
+<div id="outline-container-org1b898b1" class="outline-3">
+<h3 id="org1b898b1">2018</h3>
+<div class="outline-text-3" id="text-org1b898b1">
 <ul class="org-ul">
 <li>Proof of Chapoton's conjecture on Newton polygons of <i>q</i>-Ehrhart polynomials
 (with U-Keun Song), <i>Electronic J. Combin.</i> 25(2)(2018), #P2.51
@@ -377,9 +170,9 @@ Yunhyung Cho), <i>European J. Combin.</i> 67 (2018), 61-77, <a href="https://arx
 </ul>
 </div>
 </div>
-<div id="outline-container-org6bdf0ba" class="outline-3">
-<h3 id="org6bdf0ba">2017</h3>
-<div class="outline-text-3" id="text-org6bdf0ba">
+<div id="outline-container-orgc3562cd" class="outline-3">
+<h3 id="orgc3562cd">2017</h3>
+<div class="outline-text-3" id="text-orgc3562cd">
 <ul class="org-ul">
 <li>Colored permutations with no monochromatic cycles (with Dongsu Kim and
 Seunghyun Seo), <i>J. Korean Math. Soc.</i> 54 (2017), No. 4, pp. 1149–1161</li>
@@ -395,9 +188,9 @@ A</i> 145 (2017), 1–24, <a href="https://arxiv.org/abs/1409.1317">arXiv:1409.1
 </ul>
 </div>
 </div>
-<div id="outline-container-org69908de" class="outline-3">
-<h3 id="org69908de">2016</h3>
-<div class="outline-text-3" id="text-org69908de">
+<div id="outline-container-org7be16ac" class="outline-3">
+<h3 id="org7be16ac">2016</h3>
+<div class="outline-text-3" id="text-org7be16ac">
 <ul class="org-ul">
 <li>Moments of orthogonal polynomials and combinatorics (with Sylvie Corteel
 and Dennis Stanton), a book chapter, <i>IMA Volumes in Mathematics and
@@ -410,9 +203,9 @@ Kathy Ji and Byungchan Kim), <i>Int. J. Number Theory</i> 12, 1475-1482
 </ul>
 </div>
 </div>
-<div id="outline-container-org3e9ebf5" class="outline-3">
-<h3 id="org3e9ebf5">2015</h3>
-<div class="outline-text-3" id="text-org3e9ebf5">
+<div id="outline-container-orgcedd25d" class="outline-3">
+<h3 id="orgcedd25d">2015</h3>
+<div class="outline-text-3" id="text-orgcedd25d">
 <ul class="org-ul">
 <li>The combinatorics of associated Laguerre polynomials (with Dennis Stanton),
 <i>SIGMA</i> 11 (2015), 039, <a href="https://arxiv.org/abs/1501.03880">arXiv:1501.03880</a></li>
@@ -421,9 +214,9 @@ Anal. Appl.</i>, 421 (2015), 501-520, <a href="https://arxiv.org/abs/1403.0053">
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb17a651" class="outline-3">
-<h3 id="orgb17a651">2014</h3>
-<div class="outline-text-3" id="text-orgb17a651">
+<div id="outline-container-org95e99fb" class="outline-3">
+<h3 id="org95e99fb">2014</h3>
+<div class="outline-text-3" id="text-org95e99fb">
 <ul class="org-ul">
 <li>Moments of Askey-Wilson polynomials (with Dennis Stanton), <i>J. Combin.
 Theory Ser. A</i> 125 (2014), 113-145, <a href="https://arxiv.org/abs/1207.3446">arXiv:1207.3446</a></li>
@@ -436,9 +229,9 @@ Mészáros, Greta Panova, David B. Wilson), <i>J. Combin. Theory Ser. A</i> 122
 </ul>
 </div>
 </div>
-<div id="outline-container-org5f2c36a" class="outline-3">
-<h3 id="org5f2c36a">2013</h3>
-<div class="outline-text-3" id="text-org5f2c36a">
+<div id="outline-container-org18c1854" class="outline-3">
+<h3 id="org18c1854">2013</h3>
+<div class="outline-text-3" id="text-org18c1854">
 <ul class="org-ul">
 <li>Crossings of signed permutations and <i>q</i>-Eulerian numbers of type B (with
 Sylvie Corteel and Matthieu Josuat-Vergès), <i>Journal of Combinatorics</i> 4
@@ -453,9 +246,9 @@ identity (with Matthieu Josuat-Vergès), <i>Ramanujan J.</i> 30 (2013), no. 3,
 </ul>
 </div>
 </div>
-<div id="outline-container-org742a132" class="outline-3">
-<h3 id="org742a132">2012</h3>
-<div class="outline-text-3" id="text-org742a132">
+<div id="outline-container-orgc9d8bca" class="outline-3">
+<h3 id="orgc9d8bca">2012</h3>
+<div class="outline-text-3" id="text-orgc9d8bca">
 <ul class="org-ul">
 <li>Enumeration formulas for generalized <i>q</i>-Euler numbers, <i>Adv. App. Math.</i> 49
 (2012), 326-350, <a href="https://arxiv.org/abs/1104.4584">arXiv:1104.4584</a></li>
@@ -464,9 +257,9 @@ Theory Ser. A</i> 119 (2012), 1692-1710, <a href="https://arxiv.org/abs/1108.555
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc4e3fde" class="outline-3">
-<h3 id="orgc4e3fde">2011</h3>
-<div class="outline-text-3" id="text-orgc4e3fde">
+<div id="outline-container-org2408651" class="outline-3">
+<h3 id="org2408651">2011</h3>
+<div class="outline-text-3" id="text-org2408651">
 <ul class="org-ul">
 <li>Combinatorial rigidity of 3-dimensional simplicial polytopes (with Suyoung
 Choi), <i>Int. Math. Res. Notices</i> 2011 (2011), 1935-1951, <a href="https://arxiv.org/abs/1002.0828">arXiv:1002.0828</a></li>
@@ -486,9 +279,9 @@ Combin. Theory Ser. A</i> 118 (2011), 1168-1189, <a href="https://arxiv.org/abs/
 </div>
 </div>
 
-<div id="outline-container-org4f810d6" class="outline-3">
-<h3 id="org4f810d6">2010</h3>
-<div class="outline-text-3" id="text-org4f810d6">
+<div id="outline-container-orgbf07d9e" class="outline-3">
+<h3 id="orgbf07d9e">2010</h3>
+<div class="outline-text-3" id="text-orgbf07d9e">
 <ul class="org-ul">
 <li>A note on 2-distant noncrossing partitions and weighted Motzkin paths (with
 Ira M. Gessel), <i>Discrete Math.</i> 310 (2010), 3421-3425, <a href="https://arxiv.org/abs/1003.5301">arXiv:1003.5301</a></li>
@@ -503,27 +296,27 @@ Math.</i> 310 (2010), 1398-1400, <a href="https://arxiv.org/abs/0909.0683">arXiv
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd86fb47" class="outline-3">
-<h3 id="orgd86fb47">2009</h3>
-<div class="outline-text-3" id="text-orgd86fb47">
+<div id="outline-container-orgad0ce6a" class="outline-3">
+<h3 id="orgad0ce6a">2009</h3>
+<div class="outline-text-3" id="text-orgad0ce6a">
 <ul class="org-ul">
 <li><i>k</i>-distant crossings and nestings of matchings and partitions (with Dan
 Drake), <i>DMTCS proc., AK (FPSAC 2009)</i> 349-360, <a href="https://arxiv.org/abs/0812.2725">arXiv:0812.2725</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc394019" class="outline-3">
-<h3 id="orgc394019">2007</h3>
-<div class="outline-text-3" id="text-orgc394019">
+<div id="outline-container-org3c3786e" class="outline-3">
+<h3 id="org3c3786e">2007</h3>
+<div class="outline-text-3" id="text-org3c3786e">
 <ul class="org-ul">
 <li>The initial involution patterns of permutations (with Dongsu Kim),
 <i>Electron. J. Combin.</i> 14 (2007), #R2</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3952304" class="outline-3">
-<h3 id="org3952304">Unpublished manuscript</h3>
-<div class="outline-text-3" id="text-org3952304">
+<div id="outline-container-orgc547713" class="outline-3">
+<h3 id="orgc547713">Unpublished manuscript</h3>
+<div class="outline-text-3" id="text-orgc547713">
 <ul class="org-ul">
 <li>Ratios of Hahn-Exton <i>q</i>-Bessel functions and <i>q</i>-Lommel polynomials (with
 Dennis Stanton), <a href="https://arxiv.org/abs/2006.08120">arXiv:2006.08120</a></li>
@@ -533,9 +326,9 @@ Dennis Stanton), <a href="https://arxiv.org/abs/2006.08120">arXiv:2006.08120</a>
 </div>
 
 
-<div id="outline-container-org0539ab2" class="outline-2">
-<h2 id="org0539ab2">Collaborators</h2>
-<div class="outline-text-2" id="text-org0539ab2">
+<div id="outline-container-org93e7310" class="outline-2">
+<h2 id="org93e7310">Collaborators</h2>
+<div class="outline-text-2" id="text-org93e7310">
 <ul class="org-ul">
 <li><a href="https://geometry.knu.ac.kr/~anbyhee/">Byung Hee An</a></li>
 <li><a href="http://riordan.skku.edu/home/GSCheon.php">Gi-Sang Cheon</a></li>
@@ -556,7 +349,7 @@ Dennis Stanton), <a href="https://arxiv.org/abs/2006.08120">arXiv:2006.08120</a>
 <li><a href="http://www.math.uconn.edu/~khlee/">Kyu-Hwan Lee</a></li>
 <li><a href="https://pi.math.cornell.edu/~karola/">Karola Mészáros</a></li>
 <li><a href="http://ahmadmojallal.weebly.com/">Seyed Ahmad Mojallal</a></li>
-<li>Jaeseong Oh</li>
+<li><a href="https://sites.google.com/view/jaeseong-oh/">Jaeseong Oh</a></li>
 <li><a href="https://sites.google.com/site/mathsejinoh/">Se-jin Oh</a></li>
 <li>Suho Oh</li>
 <li>Soichi Okada</li>
@@ -576,13 +369,13 @@ Dennis Stanton), <a href="https://arxiv.org/abs/2006.08120">arXiv:2006.08120</a>
 </div>
 </div>
 
-<div id="outline-container-orga840933" class="outline-2">
-<h2 id="orga840933">Lecture Videos</h2>
-<div class="outline-text-2" id="text-orga840933">
+<div id="outline-container-org14cf45e" class="outline-2">
+<h2 id="org14cf45e">Lecture Videos</h2>
+<div class="outline-text-2" id="text-org14cf45e">
 </div>
-<div id="outline-container-org20c4dee" class="outline-3">
-<h3 id="org20c4dee">\(\mathrm{\LaTeX}\) in Visual Studio Code</h3>
-<div class="outline-text-3" id="text-org20c4dee">
+<div id="outline-container-orgd67cee5" class="outline-3">
+<h3 id="orgd67cee5">\(\mathrm{\LaTeX}\) in Visual Studio Code</h3>
+<div class="outline-text-3" id="text-orgd67cee5">
 <ul class="org-ul">
 <li>This is a course that I taught online in December 2020. We learn how to
 use \(\mathrm{\LaTeX}\) in Visual Studio Code.</li>
@@ -592,9 +385,9 @@ use \(\mathrm{\LaTeX}\) in Visual Studio Code.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgad6a937" class="outline-3">
-<h3 id="orgad6a937">Topics in Combinatorics: The Theory of Alternating Sign Matrices</h3>
-<div class="outline-text-3" id="text-orgad6a937">
+<div id="outline-container-orga049cbd" class="outline-3">
+<h3 id="orga049cbd">Topics in Combinatorics: The Theory of Alternating Sign Matrices</h3>
+<div class="outline-text-3" id="text-orga049cbd">
 <ul class="org-ul">
 <li><a href="https://www.youtube.com/playlist?list=PLGB0U_OssPo73Ha4Ity13ZgPjlg2hxdbU">link to videos</a></li>
 <li>This is a graduate course that I taught at Sungkyunkwan University in 2017.
@@ -603,9 +396,9 @@ Alternating Sign Matrix Conjecture by Bressoud.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge7e507b" class="outline-3">
-<h3 id="orge7e507b">Representation Theory (in Korean)</h3>
-<div class="outline-text-3" id="text-orge7e507b">
+<div id="outline-container-org2510281" class="outline-3">
+<h3 id="org2510281">Representation Theory (in Korean)</h3>
+<div class="outline-text-3" id="text-org2510281">
 <ul class="org-ul">
 <li><a href="https://www.youtube.com/playlist?list=PLGB0U_OssPo5BAvB6QvWiOLPJhw4_jRZG">link to videos</a></li>
 <li>This is a graduate course on Representation Theory that I taught at
@@ -614,9 +407,9 @@ Representation Theory, A First Course, by Fulton and Harris.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf845d65" class="outline-3">
-<h3 id="orgf845d65">Lie Groups and Lie Algebras</h3>
-<div class="outline-text-3" id="text-orgf845d65">
+<div id="outline-container-org966bf91" class="outline-3">
+<h3 id="org966bf91">Lie Groups and Lie Algebras</h3>
+<div class="outline-text-3" id="text-org966bf91">
 <ul class="org-ul">
 <li><a href="https://www.youtube.com/playlist?list=PLGB0U_OssPo5agzqnsr9Ubx3ACk0_2S2Y">link to videos</a></li>
 <li>This is a graduate course that I taught at Sungkyunkwan University in 2019.
@@ -625,9 +418,9 @@ and Representations, 2nd ed, by Brian C. Hall.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org557e8f0" class="outline-3">
-<h3 id="org557e8f0">Discrete Mathematics</h3>
-<div class="outline-text-3" id="text-org557e8f0">
+<div id="outline-container-org8da6f02" class="outline-3">
+<h3 id="org8da6f02">Discrete Mathematics</h3>
+<div class="outline-text-3" id="text-org8da6f02">
 <ul class="org-ul">
 <li><a href="https://www.youtube.com/playlist?list=PLGB0U_OssPo4coTntcR4v0HFnM85HnDcE">link to videos</a></li>
 <li>This is an undergraduate course on Discrete Mathematics that I taught at
@@ -636,9 +429,9 @@ Mathematics by Johnsonbaugh, 7th edition.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9c45364" class="outline-3">
-<h3 id="org9c45364">Introduction to Combinatorics</h3>
-<div class="outline-text-3" id="text-org9c45364">
+<div id="outline-container-org23df081" class="outline-3">
+<h3 id="org23df081">Introduction to Combinatorics</h3>
+<div class="outline-text-3" id="text-org23df081">
 <ul class="org-ul">
 <li><a href="https://www.youtube.com/playlist?list=PLGB0U_OssPo61SjBLstG16BF6BgmCAwKS">link to videos</a></li>
 <li>This is an undergraduate course on Combinatorics that I taught at
@@ -648,9 +441,9 @@ Combinatorics Through Guided Discovery by Kenneth P. Bogart.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-orgab96d9b" class="outline-2">
-<h2 id="orgab96d9b">WeBWorK</h2>
-<div class="outline-text-2" id="text-orgab96d9b">
+<div id="outline-container-org31933e5" class="outline-2">
+<h2 id="org31933e5">WeBWorK</h2>
+<div class="outline-text-2" id="text-org31933e5">
 <ul class="org-ul">
 <li><a href="webwork/index.html">Introduction to WeBWorK</a></li>
 </ul>
@@ -659,7 +452,7 @@ Combinatorics Through Guided Discovery by Kenneth P. Bogart.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-05-09 Mon 16:25</p>
+<p class="date">Created: 2022-06-18 Sat 19:21</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
