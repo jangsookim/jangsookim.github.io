@@ -21,7 +21,6 @@
 #+ATTR_HTML: :width 300
 [[./files/photo.jpeg]]
 
-
 * Papers
 ** Preprints
    - Extended commonality of paths and cycles via Schur convexity (with Joonkyung Lee), [[https://arxiv.org/abs/2210.00977][arXiv:2210.00977]]
