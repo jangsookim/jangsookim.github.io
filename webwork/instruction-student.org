@@ -1,0 +1,35 @@
+#+TITLE: Instructions for students
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+* Video instruction
+- https://youtu.be/cIMMWeIUWdo (in Korean)
+- https://youtu.be/juxQoi3w5Og (in English)
+
+* How to use webwork
+** Initial setup
+   1. Find your class here. https://webwork.skku.edu
+   2. Login id is your student id. (*Your account will be activated during the second week of the semester.*)
+   3. Initial password is your student id.
+   4. Click =User Settings= in the sidebar and change your password.
+** How to view homework problems
+   1. Click =Homework Sets= in the sidebar. It will show you homework sets and due dates.
+   2. Click the homework set name that you want to view.
+   3. You can view problems and submit your answers here.
+   4. If you have questions, you can write a message to the instructor and TA by
+      clicking =Email Instructor=. 
+   5. You can use various functions in your answers. Check this link: [[https://webwork.maa.org/wiki/Available_Functions][available functions]]
+   6. You can also download a pdf file of the homework problems by clicking the =Download PDF or TeX Hardcopy for Current Set= button.
+** Alternative way to send homework link to TA
+   1. Copy the url of the homework problem that you want to ask a question about. The url should look something like this:
+     : https://webwork.skku.edu/webwork2/2022-1_Calculus1_GEDB001_51/hw1/1/?effectiveUser=202200001
+   2. Send the url to your TA by email. 
+   3. TA should be able to see your homework problem together with your answers.
+
+* Contact information
+- If you have any questions about the system, please contact the webwork TA.
+- When you write an email to the webwork TA, you must tell him/her your student id
+  and the class session number.
+
+* More information
+- https://webwork.maa.org/wiki/Student_Information
+- In most problems numbers are randomly generated. So your homework problems may not be the same as your friend's.

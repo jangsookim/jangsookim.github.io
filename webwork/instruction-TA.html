@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-21 Mon 11:22 -->
+<!-- 2022-02-13 Sun 09:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Instructions for TAs</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="Jang Soo Kim" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -41,21 +42,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -191,7 +192,6 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
@@ -199,128 +199,70 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">Instructions for TAs</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5c3ace3">1. Video instruction</a></li>
-<li><a href="#orgdb57e25">2. Main duties</a>
+<li><a href="#orga54b54b">1. Main duties</a></li>
+<li><a href="#org6434300">2. Class webpages</a></li>
+<li><a href="#org998b295">3. How to add students to the system</a>
 <ul>
-<li><a href="#orga41d6fd">2.1. Beginning of the semester</a></li>
-<li><a href="#orgddbc2e3">2.2. During the semester</a></li>
-<li><a href="#org166176e">2.3. End of the semester</a></li>
-</ul>
-</li>
-<li><a href="#org5e8ed97">3. Class webpages</a></li>
-<li><a href="#org8a2bba2">4. How to add students to the system</a>
+<li><a href="#org45aca76">3.1. Adding one student at a time</a></li>
+<li><a href="#org680f7df">3.2. Adding many students at once</a>
 <ul>
-<li><a href="#org60e2e04">4.1. Adding one student at a time</a></li>
-<li><a href="#org543ea40">4.2. Adding many students at once</a>
-<ul>
-<li><a href="#orge7a925f">4.2.1. Classlist files</a></li>
-<li><a href="#org7a3379c">4.2.2. Creating a classlist file (.lst file) using Excel</a></li>
-<li><a href="#org319aa9f">4.2.3. Adding students</a></li>
+<li><a href="#org097ede0">3.2.1. Classlist files</a></li>
+<li><a href="#org21206fa">3.2.2. Creating a classlist file (.lst file) using Excel</a></li>
+<li><a href="#orgf814418">3.2.3. Adding students</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org540c9f9">5. Importing homework sets</a></li>
-<li><a href="#orgb845049">6. Changing homework dates</a></li>
-<li><a href="#org986bc98">7. Scoring tools (at the end of the semester)</a></li>
-<li><a href="#org1eab9fc">8. Instructions for students and professors</a></li>
+<li><a href="#org08c2392">4. Importing homework sets</a></li>
+<li><a href="#org98e0166">5. Changing homework dates</a></li>
+<li><a href="#org52278a4">6. Scoring tools (at the end of the semester)</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5c3ace3" class="outline-2">
-<h2 id="org5c3ace3"><span class="section-number-2">1</span> Video instruction</h2>
+<div id="outline-container-orga54b54b" class="outline-2">
+<h2 id="orga54b54b"><span class="section-number-2">1.</span> Main duties</h2>
 <div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li><a href="https://youtu.be/Qfb0-eMak3g">https://youtu.be/Qfb0-eMak3g</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgdb57e25" class="outline-2">
-<h2 id="orgdb57e25"><span class="section-number-2">2</span> Main duties</h2>
-<div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-orga41d6fd" class="outline-3">
-<h3 id="orga41d6fd"><span class="section-number-3">2.1</span> Beginning of the semester</h3>
-<div class="outline-text-3" id="text-2-1">
-<ul class="org-ul">
-<li>Add students to the webwork courses.</li>
+<ol class="org-ol">
+<li>Add students to the system.</li>
 <li>Import homework sets.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgddbc2e3" class="outline-3">
-<h3 id="orgddbc2e3"><span class="section-number-3">2.2</span> During the semester</h3>
-<div class="outline-text-3" id="text-2-2">
-<ul class="org-ul">
-<li>Change homework dues if requested by professors.</li>
-<li>Answer questions from students.</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org166176e" class="outline-3">
-<h3 id="org166176e"><span class="section-number-3">2.3</span> End of the semester</h3>
-<div class="outline-text-3" id="text-2-3">
-<ul class="org-ul">
-<li>Send the final homework scores to the professors at the end of
-the semester.</li>
-</ul>
-</div>
+<li>Change homework dues if requested.</li>
+<li>Answer questions from students related to webwork system.</li>
+<li>Send the final homework scores to the professors of your classes at the end
+of the semester.</li>
+</ol>
 </div>
 </div>
 
-<div id="outline-container-org5e8ed97" class="outline-2">
-<h2 id="org5e8ed97"><span class="section-number-2">3</span> Class webpages</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org6434300" class="outline-2">
+<h2 id="org6434300"><span class="section-number-2">2.</span> Class webpages</h2>
+<div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Your classes are listed here. <a href="https://webwork.skku.edu">https://webwork.skku.edu</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8a2bba2" class="outline-2">
-<h2 id="org8a2bba2"><span class="section-number-2">4</span> How to add students to the system</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org998b295" class="outline-2">
+<h2 id="org998b295"><span class="section-number-2">3.</span> How to add students to the system</h2>
+<div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>You can add one student at a time manually or many students at once using a cvs file.</li>
 <li>To do this, first login to the webwork class homepage where you want to add students.</li>
 </ul>
 </div>
 
-<div id="outline-container-org60e2e04" class="outline-3">
-<h3 id="org60e2e04"><span class="section-number-3">4.1</span> Adding one student at a time</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-org45aca76" class="outline-3">
+<h3 id="org45aca76"><span class="section-number-3">3.1.</span> Adding one student at a time</h3>
+<div class="outline-text-3" id="text-3-1">
 <ol class="org-ol">
 <li>Click <code>Classlist Editor</code> under <code>Instructor Tools</code> on the side bar.</li>
 <li>Click <code>Add</code> tap.</li>
@@ -329,13 +271,13 @@ the semester.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org543ea40" class="outline-3">
-<h3 id="org543ea40"><span class="section-number-3">4.2</span> Adding many students at once</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-org680f7df" class="outline-3">
+<h3 id="org680f7df"><span class="section-number-3">3.2.</span> Adding many students at once</h3>
+<div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-orge7a925f" class="outline-4">
-<h4 id="orge7a925f"><span class="section-number-4">4.2.1</span> Classlist files</h4>
-<div class="outline-text-4" id="text-4-2-1">
+<div id="outline-container-org097ede0" class="outline-4">
+<h4 id="org097ede0"><span class="section-number-4">3.2.1.</span> Classlist files</h4>
+<div class="outline-text-4" id="text-3-2-1">
 <ul class="org-ul">
 <li>In order to add many students at once, you need to create a classlist file,
 which is a file with extension <code>lst</code>.</li>
@@ -343,13 +285,13 @@ which is a file with extension <code>lst</code>.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7a3379c" class="outline-4">
-<h4 id="org7a3379c"><span class="section-number-4">4.2.2</span> Creating a classlist file (.lst file) using Excel</h4>
-<div class="outline-text-4" id="text-4-2-2">
+<div id="outline-container-org21206fa" class="outline-4">
+<h4 id="org21206fa"><span class="section-number-4">3.2.2.</span> Creating a classlist file (.lst file) using Excel</h4>
+<div class="outline-text-4" id="text-3-2-2">
 <ol class="org-ol">
 <li>Create an empty Excel file.</li>
 <li>Enter the student ids in the 1st and 9th columns.</li>
-<li>Enter the student names in the 2nd column. (<b>Important: Student names must be in English, not in Korean.</b>)</li>
+<li>Enter the student names in the 2nd column.</li>
 <li>Enter the letter <code>C</code> in the 4th column.</li>
 <li>Enter the email addresses in the 8th column.</li>
 <li>For example, if you have an excel file like <a href="sample_classlist.xlsx">this one</a>, you should make an
@@ -359,11 +301,11 @@ excel file like <a href="sample_classlist_changed.xlsx">this one</a>.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org319aa9f" class="outline-4">
-<h4 id="org319aa9f"><span class="section-number-4">4.2.3</span> Adding students</h4>
-<div class="outline-text-4" id="text-4-2-3">
+<div id="outline-container-orgf814418" class="outline-4">
+<h4 id="orgf814418"><span class="section-number-4">3.2.3.</span> Adding students</h4>
+<div class="outline-text-4" id="text-3-2-3">
 <ol class="org-ol">
-<li>Login to Webwork.</li>
+<li>Login Webwork.</li>
 <li>Click <code>File Manager</code> under <code>Instructor Tools</code> on the side bar.</li>
 <li>Upload the lst file in <code>templates</code> folder.</li>
 <li>Click <code>Classlist Editor</code>  under <code>Instructor Tools</code> on the side bar.</li>
@@ -374,9 +316,9 @@ excel file like <a href="sample_classlist_changed.xlsx">this one</a>.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org540c9f9" class="outline-2">
-<h2 id="org540c9f9"><span class="section-number-2">5</span> Importing homework sets</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org08c2392" class="outline-2">
+<h2 id="org08c2392"><span class="section-number-2">4.</span> Importing homework sets</h2>
+<div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li>Click <code>Hmwk Sets Editor</code>  under <code>Instructor Tools</code> in the side bar.</li>
 <li>Click <code>Import</code> tap.</li>
@@ -389,9 +331,9 @@ excel file like <a href="sample_classlist_changed.xlsx">this one</a>.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgb845049" class="outline-2">
-<h2 id="orgb845049"><span class="section-number-2">6</span> Changing homework dates</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-org98e0166" class="outline-2">
+<h2 id="org98e0166"><span class="section-number-2">5.</span> Changing homework dates</h2>
+<div class="outline-text-2" id="text-5">
 <ol class="org-ol">
 <li>Click <code>Hmwk Sets Editor</code>  under <code>Instructor Tools</code> in the side bar.</li>
 <li>Click the pencil icon next the homework set you want to edit.</li>
@@ -399,9 +341,9 @@ excel file like <a href="sample_classlist_changed.xlsx">this one</a>.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org986bc98" class="outline-2">
-<h2 id="org986bc98"><span class="section-number-2">7</span> Scoring tools (at the end of the semester)</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-org52278a4" class="outline-2">
+<h2 id="org52278a4"><span class="section-number-2">6.</span> Scoring tools (at the end of the semester)</h2>
+<div class="outline-text-2" id="text-6">
 <ol class="org-ol">
 <li>This should be done after the due of the final homework assignment.</li>
 <li>Click <code>Scoring Tools</code> under <code>Instructor Tools</code> in the side bar.</li>
@@ -414,22 +356,10 @@ extension to <code>.txt</code> and then try it again.</li>
 </ol>
 </div>
 </div>
-
-<div id="outline-container-org1eab9fc" class="outline-2">
-<h2 id="org1eab9fc"><span class="section-number-2">8</span> Instructions for students and professors</h2>
-<div class="outline-text-2" id="text-8">
-<ul class="org-ul">
-<li>The instructions below contain everything students and professors need to know.</li>
-<li>If they have questions about the webwork system, you can answer them using these instructions.</li>
-<li><a href="instruction-student.html">Instructions for Students</a></li>
-<li><a href="instruction-professor.html">Instructions for Professors</a></li>
-</ul>
-</div>
-</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-02-21 Mon 11:22</p>
+<p class="date">Created: 2022-02-13 Sun 09:41</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

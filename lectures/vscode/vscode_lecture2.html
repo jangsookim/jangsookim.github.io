@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-02-16 Wed 12:06 -->
+<!-- 2020-12-04 Fri 23:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lecture 2: BibTeX and Vim</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: auto;
+    overflow: visible;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
+  pre.src:hover:before { display: inline;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -200,26 +200,50 @@
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
 <script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -251,73 +275,73 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7cbda06">1. BibTeX</a>
+<li><a href="#orgef889c5">1. BibTeX</a>
 <ul>
-<li><a href="#orgab4bada">1.1. Overview</a>
+<li><a href="#orga709208">1.1. Overview</a>
 <ul>
-<li><a href="#org676f7c4">1.1.1. Exercise</a></li>
+<li><a href="#orgd8aea8f">1.1.1. Exercise</a></li>
 </ul>
 </li>
-<li><a href="#org5899bc2">1.2. Add a citation in VS Code</a></li>
-<li><a href="#orgde8f229">1.3. NatBib package</a></li>
-<li><a href="#orga771275">1.4. Entries in BibTeX file</a>
+<li><a href="#org33b3cea">1.2. Add a citation in VS Code</a></li>
+<li><a href="#org23330be">1.3. NatBib package</a></li>
+<li><a href="#orgbcdeb16">1.4. Entries in BibTeX file</a>
 <ul>
-<li><a href="#org16a47ea">1.4.1. Exercise</a></li>
+<li><a href="#orgc32b5cc">1.4.1. Exercise</a></li>
 </ul>
 </li>
-<li><a href="#org3e21121">1.5. arXiv papers</a></li>
-<li><a href="#orgf6a469a">1.6. BibTeX entries from Google Scholar</a>
+<li><a href="#org2bb130d">1.5. arXiv papers</a></li>
+<li><a href="#orga660c14">1.6. BibTeX entries from Google Scholar</a>
 <ul>
-<li><a href="#org561dff4">1.6.1. Exercise</a></li>
+<li><a href="#org530bf8d">1.6.1. Exercise</a></li>
 </ul>
 </li>
-<li><a href="#org0224fd0">1.7. JabRef</a>
+<li><a href="#org097cff1">1.7. JabRef</a>
 <ul>
-<li><a href="#org459d8e0">1.7.1. Exercise</a></li>
+<li><a href="#org3416637">1.7.1. Exercise</a></li>
 </ul>
 </li>
-<li><a href="#org3abd5ce">1.8. bbl file</a>
+<li><a href="#org98ab6fa">1.8. bbl file</a>
 <ul>
-<li><a href="#orgaffd155">1.8.1. Exercise</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org11a6f22">2. Code Ace Jumper (extension)</a>
-<ul>
-<li><a href="#orga073d81">2.1. Overview</a></li>
-<li><a href="#org7164b7f">2.2. Add Keyboard shortcuts</a></li>
-<li><a href="#org11c628f">2.3. Change some options</a>
-<ul>
-<li><a href="#org1d487f1">2.3.1. Redefine "words"</a></li>
-<li><a href="#orgf8c586d">2.3.2. Change the background color</a></li>
-<li><a href="#org0db1fa7">2.3.3. Change the scroll mode</a></li>
+<li><a href="#org05cce84">1.8.1. Exercise</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3059c39">3. Vim (extension)</a>
+<li><a href="#orgdd99143">2. Code Ace Jumper (extension)</a>
 <ul>
-<li><a href="#org04a2385">3.1. Overview</a></li>
-<li><a href="#org66820de">3.2. Installation</a></li>
-<li><a href="#orga63c9fd">3.3. Changing modes</a></li>
-<li><a href="#orgf3ba59b">3.4. Movements (Normal Mode)</a></li>
-<li><a href="#org700a934">3.5. Editing (Normal Mode)</a></li>
-<li><a href="#org39a670c">3.6. Visual Mode</a></li>
-<li><a href="#org16eccc7">3.7. Finding a letter (Normal Mode)</a></li>
-<li><a href="#org61899f7">3.8. Finding a word (Normal Mode)</a></li>
-<li><a href="#orgcf79591">3.9. Other useful commands (Normal Mode)</a></li>
-<li><a href="#org2601af4">3.10. Useful combos</a></li>
-<li><a href="#org4652eb3">3.11. Registers</a></li>
-<li><a href="#org7dba40e">3.12. Mark positions</a></li>
-<li><a href="#org8738e32">3.13. Dot: Repeat the previous command.</a></li>
-<li><a href="#orgcaedd0c">3.14. Macros</a>
+<li><a href="#org82f675d">2.1. Overview</a></li>
+<li><a href="#orgbe6c4e7">2.2. Add Keyboard shortcuts</a></li>
+<li><a href="#org35d8ccd">2.3. Change some options</a>
 <ul>
-<li><a href="#org1242040">3.14.1. Example</a></li>
-<li><a href="#orgb79b095">3.14.2. Exercises</a></li>
+<li><a href="#org71e91d6">2.3.1. Redefine "words"</a></li>
+<li><a href="#orgd8e5a83">2.3.2. Change the background color</a></li>
+<li><a href="#org723b6a8">2.3.3. Change the scroll mode</a></li>
 </ul>
 </li>
-<li><a href="#org295c7e7">3.15. More advanced commands: i and s</a></li>
+</ul>
+</li>
+<li><a href="#orgb600467">3. Vim (extension)</a>
+<ul>
+<li><a href="#orga5e9ebd">3.1. Overview</a></li>
+<li><a href="#org5564295">3.2. Installation</a></li>
+<li><a href="#org70911a9">3.3. Changing modes</a></li>
+<li><a href="#org50a3d0b">3.4. Movements (Normal Mode)</a></li>
+<li><a href="#org790ea13">3.5. Editing (Normal Mode)</a></li>
+<li><a href="#orgb723752">3.6. Visual Mode</a></li>
+<li><a href="#org10dfced">3.7. Finding a letter (Normal Mode)</a></li>
+<li><a href="#org83d97b2">3.8. Finding a word (Normal Mode)</a></li>
+<li><a href="#org485f960">3.9. Other useful commands (Normal Mode)</a></li>
+<li><a href="#org3b2f8c0">3.10. Useful combos</a></li>
+<li><a href="#org455add7">3.11. Registers</a></li>
+<li><a href="#org4d28437">3.12. Mark positions</a></li>
+<li><a href="#org1bddbd0">3.13. Dot: Repeat the previous command.</a></li>
+<li><a href="#org6906f29">3.14. Macros</a>
+<ul>
+<li><a href="#org3ba396f">3.14.1. Example</a></li>
+<li><a href="#orgd0de440">3.14.2. Exercises</a></li>
+</ul>
+</li>
+<li><a href="#org5447e58">3.15. More advanced commands: i and s</a></li>
 </ul>
 </li>
 </ul>
@@ -325,12 +349,12 @@
 </div>
 
 
-<div id="outline-container-org7cbda06" class="outline-2">
-<h2 id="org7cbda06"><span class="section-number-2">1</span> BibTeX</h2>
+<div id="outline-container-orgef889c5" class="outline-2">
+<h2 id="orgef889c5"><span class="section-number-2">1</span> BibTeX</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgab4bada" class="outline-3">
-<h3 id="orgab4bada"><span class="section-number-3">1.1</span> Overview</h3>
+<div id="outline-container-orga709208" class="outline-3">
+<h3 id="orga709208"><span class="section-number-3">1.1</span> Overview</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>BibTeX is a program used for generating references.</li>
@@ -353,8 +377,8 @@ Then you need to have the following two lines in you tex file:
 "bib-exercise" folder in <a href="vscode-lecture-files.zip">this file.</a></li>
 </ul>
 </div>
-<div id="outline-container-org676f7c4" class="outline-4">
-<h4 id="org676f7c4"><span class="section-number-4">1.1.1</span> Exercise</h4>
+<div id="outline-container-orgd8aea8f" class="outline-4">
+<h4 id="orgd8aea8f"><span class="section-number-4">1.1.1</span> Exercise</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ol class="org-ol">
 <li>Compile the tex file in "bib-exercise" folder.</li>
@@ -374,8 +398,8 @@ Change the relative path <code>./ref.bib</code> to the absolute path.
 </div>
 </div>
 
-<div id="outline-container-org5899bc2" class="outline-3">
-<h3 id="org5899bc2"><span class="section-number-3">1.2</span> Add a citation in VS Code</h3>
+<div id="outline-container-org33b3cea" class="outline-3">
+<h3 id="org33b3cea"><span class="section-number-3">1.2</span> Add a citation in VS Code</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>Similarly to <code>\ref{}</code> if you type <code>\cite{</code> all available bib items appear.</li>
@@ -385,8 +409,8 @@ titles, journals, year, etc.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgde8f229" class="outline-3">
-<h3 id="orgde8f229"><span class="section-number-3">1.3</span> NatBib package</h3>
+<div id="outline-container-org23330be" class="outline-3">
+<h3 id="org23330be"><span class="section-number-3">1.3</span> NatBib package</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li>NatBib package shows citations using author names and years instead of numbers.</li>
@@ -402,8 +426,8 @@ titles, journals, year, etc.</li>
 </div>
 </div>
 
-<div id="outline-container-orga771275" class="outline-3">
-<h3 id="orga771275"><span class="section-number-3">1.4</span> Entries in BibTeX file</h3>
+<div id="outline-container-orgbcdeb16" class="outline-3">
+<h3 id="orgbcdeb16"><span class="section-number-3">1.4</span> Entries in BibTeX file</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li><p>
@@ -425,8 +449,8 @@ A BibTeX file has entries like this:
 <li>Note that in the title you must use <code>{ }</code> for capital letters as above.</li>
 </ul>
 </div>
-<div id="outline-container-org16a47ea" class="outline-4">
-<h4 id="org16a47ea"><span class="section-number-4">1.4.1</span> Exercise</h4>
+<div id="outline-container-orgc32b5cc" class="outline-4">
+<h4 id="orgc32b5cc"><span class="section-number-4">1.4.1</span> Exercise</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ol class="org-ol">
 <li>Add the previous entry in the <code>ref.bib</code> file.</li>
@@ -438,8 +462,8 @@ A BibTeX file has entries like this:
 </div>
 </div>
 
-<div id="outline-container-org3e21121" class="outline-3">
-<h3 id="org3e21121"><span class="section-number-3">1.5</span> arXiv papers</h3>
+<div id="outline-container-org2bb130d" class="outline-3">
+<h3 id="org2bb130d"><span class="section-number-3">1.5</span> arXiv papers</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li><p>
@@ -458,8 +482,8 @@ arXiv papers or preprints can be added like this.
 </div>
 </div>
 
-<div id="outline-container-orgf6a469a" class="outline-3">
-<h3 id="orgf6a469a"><span class="section-number-3">1.6</span> BibTeX entries from Google Scholar</h3>
+<div id="outline-container-orga660c14" class="outline-3">
+<h3 id="orga660c14"><span class="section-number-3">1.6</span> BibTeX entries from Google Scholar</h3>
 <div class="outline-text-3" id="text-1-6">
 <ol class="org-ol">
 <li>Search the paper you want to cite in Google Scholar.
@@ -473,8 +497,8 @@ subscription).</li>
 </ol>
 </div>
 
-<div id="outline-container-org561dff4" class="outline-4">
-<h4 id="org561dff4"><span class="section-number-4">1.6.1</span> Exercise</h4>
+<div id="outline-container-org530bf8d" class="outline-4">
+<h4 id="org530bf8d"><span class="section-number-4">1.6.1</span> Exercise</h4>
 <div class="outline-text-4" id="text-1-6-1">
 <ol class="org-ol">
 <li><p>
@@ -492,8 +516,8 @@ J. Eur. Math. Soc. (JEMS), 20(9):2105–2129, 2018.
 </div>
 
 
-<div id="outline-container-org0224fd0" class="outline-3">
-<h3 id="org0224fd0"><span class="section-number-3">1.7</span> JabRef</h3>
+<div id="outline-container-org097cff1" class="outline-3">
+<h3 id="org097cff1"><span class="section-number-3">1.7</span> JabRef</h3>
 <div class="outline-text-3" id="text-1-7">
 <ul class="org-ul">
 <li>JabRef is a free BibTeX Manager.</li>
@@ -506,8 +530,8 @@ you find one.</li>
 <li><a href="https://bibdesk.sourceforge.io/">BibDesk</a> is also a good BibTeX manager but only for Mac.</li>
 </ul>
 </div>
-<div id="outline-container-org459d8e0" class="outline-4">
-<h4 id="org459d8e0"><span class="section-number-4">1.7.1</span> Exercise</h4>
+<div id="outline-container-org3416637" class="outline-4">
+<h4 id="org3416637"><span class="section-number-4">1.7.1</span> Exercise</h4>
 <div class="outline-text-4" id="text-1-7-1">
 <ol class="org-ol">
 <li><p>
@@ -535,8 +559,8 @@ domino tableaux, arXiv:2011.12493
 </div>
 </div>
 </div>
-<div id="outline-container-org3abd5ce" class="outline-3">
-<h3 id="org3abd5ce"><span class="section-number-3">1.8</span> bbl file</h3>
+<div id="outline-container-org98ab6fa" class="outline-3">
+<h3 id="org98ab6fa"><span class="section-number-3">1.8</span> bbl file</h3>
 <div class="outline-text-3" id="text-1-8">
 <ul class="org-ul">
 <li>If you compile bibtex, it will generate a bbl file <code>TEXFILENAME.bbl</code>, where
@@ -547,8 +571,8 @@ domino tableaux, arXiv:2011.12493
 <li>This may be helpful if you want to have a single stand-alone tex file.</li>
 </ul>
 </div>
-<div id="outline-container-orgaffd155" class="outline-4">
-<h4 id="orgaffd155"><span class="section-number-4">1.8.1</span> Exercise</h4>
+<div id="outline-container-org05cce84" class="outline-4">
+<h4 id="org05cce84"><span class="section-number-4">1.8.1</span> Exercise</h4>
 <div class="outline-text-4" id="text-1-8-1">
 <ul class="org-ul">
 <li>Edit the tex file so that it does not need the bib file.</li>
@@ -557,12 +581,12 @@ domino tableaux, arXiv:2011.12493
 </div>
 </div>
 </div>
-<div id="outline-container-org11a6f22" class="outline-2">
-<h2 id="org11a6f22"><span class="section-number-2">2</span> Code Ace Jumper (extension)</h2>
+<div id="outline-container-orgdd99143" class="outline-2">
+<h2 id="orgdd99143"><span class="section-number-2">2</span> Code Ace Jumper (extension)</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orga073d81" class="outline-3">
-<h3 id="orga073d81"><span class="section-number-3">2.1</span> Overview</h3>
+<div id="outline-container-org82f675d" class="outline-3">
+<h3 id="org82f675d"><span class="section-number-3">2.1</span> Overview</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Code Ace Jumper is an extension that allows you to jump around your file.</li>
@@ -578,8 +602,8 @@ each word starting with <code>d</code>.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7164b7f" class="outline-3">
-<h3 id="org7164b7f"><span class="section-number-3">2.2</span> Add Keyboard shortcuts</h3>
+<div id="outline-container-orgbe6c4e7" class="outline-3">
+<h3 id="orgbe6c4e7"><span class="section-number-3">2.2</span> Add Keyboard shortcuts</h3>
 <div class="outline-text-3" id="text-2-2">
 <ol class="org-ol">
 <li>CP \(\rightarrow\) Preferences: Open Keyboard Shortcuts</li>
@@ -595,12 +619,12 @@ example,
 </ol>
 </div>
 </div>
-<div id="outline-container-org11c628f" class="outline-3">
-<h3 id="org11c628f"><span class="section-number-3">2.3</span> Change some options</h3>
+<div id="outline-container-org35d8ccd" class="outline-3">
+<h3 id="org35d8ccd"><span class="section-number-3">2.3</span> Change some options</h3>
 <div class="outline-text-3" id="text-2-3">
 </div>
-<div id="outline-container-org1d487f1" class="outline-4">
-<h4 id="org1d487f1"><span class="section-number-4">2.3.1</span> Redefine "words"</h4>
+<div id="outline-container-org71e91d6" class="outline-4">
+<h4 id="org71e91d6"><span class="section-number-4">2.3.1</span> Redefine "words"</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <ol class="org-ol">
 <li>We want to make the <code>f</code> in <code>\frac</code> or in <code>$f$</code> as the start of a word.</li>
@@ -622,16 +646,16 @@ so that it looks like this:
 </ol>
 </div>
 </div>
-<div id="outline-container-orgf8c586d" class="outline-4">
-<h4 id="orgf8c586d"><span class="section-number-4">2.3.2</span> Change the background color</h4>
+<div id="outline-container-orgd8e5a83" class="outline-4">
+<h4 id="orgd8e5a83"><span class="section-number-4">2.3.2</span> Change the background color</h4>
 <div class="outline-text-4" id="text-2-3-2">
 <ul class="org-ul">
 <li>Enter "yellow" in "Ace Jump &gt; Placeholder: Background Color".</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0db1fa7" class="outline-4">
-<h4 id="org0db1fa7"><span class="section-number-4">2.3.3</span> Change the scroll mode</h4>
+<div id="outline-container-org723b6a8" class="outline-4">
+<h4 id="org723b6a8"><span class="section-number-4">2.3.3</span> Change the scroll mode</h4>
 <div class="outline-text-4" id="text-2-3-3">
 <ul class="org-ul">
 <li>Set "none" in "Ace Jump &gt; Scroll:Mode".</li>
@@ -641,12 +665,12 @@ so that it looks like this:
 </div>
 </div>
 
-<div id="outline-container-org3059c39" class="outline-2">
-<h2 id="org3059c39"><span class="section-number-2">3</span> Vim (extension)</h2>
+<div id="outline-container-orgb600467" class="outline-2">
+<h2 id="orgb600467"><span class="section-number-2">3</span> Vim (extension)</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org04a2385" class="outline-3">
-<h3 id="org04a2385"><span class="section-number-3">3.1</span> Overview</h3>
+<div id="outline-container-orga5e9ebd" class="outline-3">
+<h3 id="orga5e9ebd"><span class="section-number-3">3.1</span> Overview</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>Vim is a modal editor meaning that it has several modes.
@@ -661,8 +685,8 @@ so that it looks like this:
 </div>
 </div>
 
-<div id="outline-container-org66820de" class="outline-3">
-<h3 id="org66820de"><span class="section-number-3">3.2</span> Installation</h3>
+<div id="outline-container-org5564295" class="outline-3">
+<h3 id="org5564295"><span class="section-number-3">3.2</span> Installation</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>First you need to install Vim using "Extensions" icon as before.</li>
@@ -675,8 +699,8 @@ so that it looks like this:
 </ul>
 </div>
 </div>
-<div id="outline-container-orga63c9fd" class="outline-3">
-<h3 id="orga63c9fd"><span class="section-number-3">3.3</span> Changing modes</h3>
+<div id="outline-container-org70911a9" class="outline-3">
+<h3 id="org70911a9"><span class="section-number-3">3.3</span> Changing modes</h3>
 <div class="outline-text-3" id="text-3-3">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -716,8 +740,8 @@ so that it looks like this:
 </table>
 </div>
 </div>
-<div id="outline-container-orgf3ba59b" class="outline-3">
-<h3 id="orgf3ba59b"><span class="section-number-3">3.4</span> Movements (Normal Mode)</h3>
+<div id="outline-container-org50a3d0b" class="outline-3">
+<h3 id="org50a3d0b"><span class="section-number-3">3.4</span> Movements (Normal Mode)</h3>
 <div class="outline-text-3" id="text-3-4">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -767,8 +791,8 @@ so that it looks like this:
 </ul>
 </div>
 </div>
-<div id="outline-container-org700a934" class="outline-3">
-<h3 id="org700a934"><span class="section-number-3">3.5</span> Editing (Normal Mode)</h3>
+<div id="outline-container-org790ea13" class="outline-3">
+<h3 id="org790ea13"><span class="section-number-3">3.5</span> Editing (Normal Mode)</h3>
 <div class="outline-text-3" id="text-3-5">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -821,8 +845,8 @@ so that it looks like this:
 </div>
 </div>
 
-<div id="outline-container-org39a670c" class="outline-3">
-<h3 id="org39a670c"><span class="section-number-3">3.6</span> Visual Mode</h3>
+<div id="outline-container-orgb723752" class="outline-3">
+<h3 id="orgb723752"><span class="section-number-3">3.6</span> Visual Mode</h3>
 <div class="outline-text-3" id="text-3-6">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -859,8 +883,8 @@ so that it looks like this:
 </div>
 
 
-<div id="outline-container-org16eccc7" class="outline-3">
-<h3 id="org16eccc7"><span class="section-number-3">3.7</span> Finding a letter (Normal Mode)</h3>
+<div id="outline-container-org10dfced" class="outline-3">
+<h3 id="org10dfced"><span class="section-number-3">3.7</span> Finding a letter (Normal Mode)</h3>
 <div class="outline-text-3" id="text-3-7">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -908,8 +932,8 @@ so that it looks like this:
 </ul>
 </div>
 </div>
-<div id="outline-container-org61899f7" class="outline-3">
-<h3 id="org61899f7"><span class="section-number-3">3.8</span> Finding a word (Normal Mode)</h3>
+<div id="outline-container-org83d97b2" class="outline-3">
+<h3 id="org83d97b2"><span class="section-number-3">3.8</span> Finding a word (Normal Mode)</h3>
 <div class="outline-text-3" id="text-3-8">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -950,8 +974,8 @@ so that it looks like this:
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcf79591" class="outline-3">
-<h3 id="orgcf79591"><span class="section-number-3">3.9</span> Other useful commands (Normal Mode)</h3>
+<div id="outline-container-org485f960" class="outline-3">
+<h3 id="org485f960"><span class="section-number-3">3.9</span> Other useful commands (Normal Mode)</h3>
 <div class="outline-text-3" id="text-3-9">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -1017,8 +1041,8 @@ so that it looks like this:
 </div>
 </div>
 
-<div id="outline-container-org2601af4" class="outline-3">
-<h3 id="org2601af4"><span class="section-number-3">3.10</span> Useful combos</h3>
+<div id="outline-container-org3b2f8c0" class="outline-3">
+<h3 id="org3b2f8c0"><span class="section-number-3">3.10</span> Useful combos</h3>
 <div class="outline-text-3" id="text-3-10">
 <ul class="org-ul">
 <li><code>yf$</code>: If you are at the beginning of an inline math mode <code>$</code>, then <code>yf$</code>
@@ -1037,8 +1061,8 @@ V / \\section Enter k
 </div>
 </div>
 
-<div id="outline-container-org4652eb3" class="outline-3">
-<h3 id="org4652eb3"><span class="section-number-3">3.11</span> Registers</h3>
+<div id="outline-container-org455add7" class="outline-3">
+<h3 id="org455add7"><span class="section-number-3">3.11</span> Registers</h3>
 <div class="outline-text-3" id="text-3-11">
 <ul class="org-ul">
 <li>You can store something in a register.</li>
@@ -1054,8 +1078,8 @@ V / \\section Enter k
 </ul>
 </div>
 </div>
-<div id="outline-container-org7dba40e" class="outline-3">
-<h3 id="org7dba40e"><span class="section-number-3">3.12</span> Mark positions</h3>
+<div id="outline-container-org4d28437" class="outline-3">
+<h3 id="org4d28437"><span class="section-number-3">3.12</span> Mark positions</h3>
 <div class="outline-text-3" id="text-3-12">
 <ul class="org-ul">
 <li>You can mark the current position for future use.
@@ -1067,8 +1091,8 @@ V / \\section Enter k
 </ul>
 </div>
 </div>
-<div id="outline-container-org8738e32" class="outline-3">
-<h3 id="org8738e32"><span class="section-number-3">3.13</span> Dot: Repeat the previous command.</h3>
+<div id="outline-container-org1bddbd0" class="outline-3">
+<h3 id="org1bddbd0"><span class="section-number-3">3.13</span> Dot: Repeat the previous command.</h3>
 <div class="outline-text-3" id="text-3-13">
 <ul class="org-ul">
 <li><code>.</code> repeats the previously performed command.</li>
@@ -1080,8 +1104,8 @@ another line.</li>
 </div>
 </div>
 
-<div id="outline-container-orgcaedd0c" class="outline-3">
-<h3 id="orgcaedd0c"><span class="section-number-3">3.14</span> Macros</h3>
+<div id="outline-container-org6906f29" class="outline-3">
+<h3 id="org6906f29"><span class="section-number-3">3.14</span> Macros</h3>
 <div class="outline-text-3" id="text-3-14">
 <ul class="org-ul">
 <li><code>qa</code> followed by <code>q</code> records all your commands performed between them at
@@ -1133,8 +1157,8 @@ commands, for example,
 
 
 
-<div id="outline-container-org1242040" class="outline-4">
-<h4 id="org1242040"><span class="section-number-4">3.14.1</span> Example</h4>
+<div id="outline-container-org3ba396f" class="outline-4">
+<h4 id="org3ba396f"><span class="section-number-4">3.14.1</span> Example</h4>
 <div class="outline-text-4" id="text-3-14-1">
 <ul class="org-ul">
 <li><p>
@@ -1158,8 +1182,8 @@ We want to insert <code>&amp;</code> before each <code>=</code> below.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb79b095" class="outline-4">
-<h4 id="orgb79b095"><span class="section-number-4">3.14.2</span> Exercises</h4>
+<div id="outline-container-orgd0de440" class="outline-4">
+<h4 id="orgd0de440"><span class="section-number-4">3.14.2</span> Exercises</h4>
 <div class="outline-text-4" id="text-3-14-2">
 <ul class="org-ul">
 <li><p>
@@ -1180,8 +1204,8 @@ on a letter.)</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org295c7e7" class="outline-3">
-<h3 id="org295c7e7"><span class="section-number-3">3.15</span> More advanced commands: i and s</h3>
+<div id="outline-container-org5447e58" class="outline-3">
+<h3 id="org5447e58"><span class="section-number-3">3.15</span> More advanced commands: i and s</h3>
 <div class="outline-text-3" id="text-3-15">
 <ul class="org-ul">
 <li><code>i</code> means "inner" and <code>s</code> means "surrounding".</li>
@@ -1203,8 +1227,8 @@ without a space)</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-02-16 Wed 12:06</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2020-12-04 Fri 23:11</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

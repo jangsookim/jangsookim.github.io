@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       67401C0A-BC2B-44E6-A4FC-A7ED0519DDFF
+:END:
+#+title: guest-house
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+* Guest House and Math Department at SKKU
+- Guest House is located in Building #37 on the campus map.
+- Check-in and Check-out can be done at the front desk of “Jigwan” (Building #36), which is the building next to the guest house (Builing #37).
+- Check-in from 2:00 PM to 11:59 PM.
+- Check-out by 12:00 PM.
+- See the image below for the direction to Guest House from Sungkyunkwan Univ. Station.
+
+[[file:Guest_information/2022-02-05_17-06-58_image1.png]]
+
+- See the image below for the direction to Math Department from Guest House.
+
+[[file:Guest_information/2022-02-05_17-08-36_image2.png]]
+
+- The math department is located in Natural Science Building 1 (Building #23 on the campus map).
+
+[[file:Guest_information/2022-02-05_17-05-59_2.png]]
+
+[[file:Guest_information/2022-02-05_17-02-51_1.png]]
+
+
+
+- For more information please visit the webpage below.
+- http://www.skku.edu/eng_home/map/sub_tab2.jsp
