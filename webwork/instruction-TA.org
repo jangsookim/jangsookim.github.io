@@ -1,5 +1,5 @@
 #+TITLE: Instructions for TAs
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
 
 * Video instruction
 - https://youtu.be/Qfb0-eMak3g

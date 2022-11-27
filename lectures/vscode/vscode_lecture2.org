@@ -4,7 +4,7 @@
 
 
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
 # #+OPTIONS: toc:nil num:nil
 
 

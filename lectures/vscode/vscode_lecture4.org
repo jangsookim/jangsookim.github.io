@@ -3,7 +3,7 @@
 #+REVEAL_THEME: league
 
 
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
 # #+OPTIONS: toc:nil num:nil
 
 

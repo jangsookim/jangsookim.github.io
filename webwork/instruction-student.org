@@ -1,5 +1,5 @@
 #+TITLE: Instructions for students
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
 
 * Video instruction
 - https://youtu.be/cIMMWeIUWdo (in Korean)

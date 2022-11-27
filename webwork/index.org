@@ -1,5 +1,5 @@
 #+TITLE: Introduction to WeBWorK
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
 
 * Introduction
 - Webwork is an open-source online homework system.

@@ -2,7 +2,7 @@
 :ID:       67401C0A-BC2B-44E6-A4FC-A7ED0519DDFF
 :END:
 #+title: guest-house
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
 
 * Guest House and Math Department at SKKU
 - Guest House is located in Building #37 on the campus map.
