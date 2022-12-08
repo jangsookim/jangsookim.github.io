@@ -2,9 +2,10 @@
 :ID:       67401C0A-BC2B-44E6-A4FC-A7ED0519DDFF
 :END:
 #+title: guest-house
-
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 * Guest House and Math Department at SKKU
+- Address: Guest House, Sungkyunkwan University, 2066, SEOBU-RO, JANGAN-GU, SUWON 16419, GYEONGGI-DO, KOREA
 - Guest House is located in Building #37 on the campus map.
 - Check-in and Check-out can be done at the front desk of “Jigwan” (Building #36), which is the building next to the guest house (Builing #37).
 - Check-in from 2:00 PM to 11:59 PM.
@@ -26,4 +27,4 @@
 
 
 - For more information please visit the webpage below.
-- http://www.skku.edu/eng_home/map/sub_tab2.jsp
+- https://dorm.skku.edu/dorm_suwon_eng/guest/guest_info.jsp
