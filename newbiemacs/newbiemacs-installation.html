@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-11 Sun 15:18 -->
+<!-- 2022-12-11 Sun 21:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Newbiemacs Installation</title>
@@ -23,32 +23,30 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2c880db">1. Install Newbiemacs on Mac</a>
+<li><a href="#orgbbd1afe">1. Install Newbiemacs on Mac</a>
 <ul>
-<li><a href="#orgfd25ffc">1.1. Additional steps for latex on Mac (optional)</a></li>
+<li><a href="#org43cacaa">1.1. Additional steps for latex on Mac (optional)</a></li>
 </ul>
 </li>
-<li><a href="#org17821f0">2. Install Newbiemacs on Windows</a>
+<li><a href="#org9a708a7">2. Install Newbiemacs on Windows</a>
 <ul>
-<li><a href="#org974c316">2.1. Additional steps for org-roam on Windows (optional)</a></li>
-<li><a href="#orge17226e">2.2. Additional steps for latex on Windows (optional)</a></li>
+<li><a href="#org4c1a9a1">2.1. Additional steps for latex on Windows (optional)</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2c880db" class="outline-2">
-<h2 id="org2c880db"><span class="section-number-2">1.</span> Install Newbiemacs on Mac</h2>
+<div id="outline-container-orgbbd1afe" class="outline-2">
+<h2 id="orgbbd1afe"><span class="section-number-2">1.</span> Install Newbiemacs on Mac</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>Download Emacs and install it. <a href="https://emacsformacosx.com/">Click here</a></li>
-<li>Install Git if it's not installed. <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Click here</a></li>
+<li>Install <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a> and <a href="https://www.google.com/chrome/">Google Chrome</a>.</li>
 <li><p>
 Open a terminal and enter the following lines. (You can open a
 terminal by pressing Command+Space and typing "terminal". You can
-just copy the whole thing by clicking the icon on the top-right
-corner of the box below and then paste it in your terminal.)
+just copy the whole thing and then paste it in your terminal.)
 </p>
 <pre class="example">
 cd ~
@@ -59,18 +57,17 @@ cp ~/nbm-root/.emacs ~/.emacs
 </pre></li>
 <li>Run Emacs. It will take several minutes to download necessary
 packages. There may be some warnings but it's okay.</li>
-<li>Close Emacs and run it again. The above Newbiemacs main screeen will be shown.</li>
+<li>Close Emacs and run it again. The above Newbiemacs main screen will be shown.</li>
 </ol>
 </div>
-<div id="outline-container-orgfd25ffc" class="outline-3">
-<h3 id="orgfd25ffc"><span class="section-number-3">1.1.</span> Additional steps for latex on Mac (optional)</h3>
+<div id="outline-container-org43cacaa" class="outline-3">
+<h3 id="org43cacaa"><span class="section-number-3">1.1.</span> Additional steps for latex on Mac (optional)</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 If you want to edit tex files in Newbiemacs, you need to do the following (only once).
 </p>
 <ol class="org-ol">
-<li>Install Skim. <a href="https://skim-app.sourceforge.io/">Click here</a></li>
-<li>Install MacTeX (this is TeX Live for Mac) if it's not installed. <a href="https://www.tug.org/mactex/">Click here</a></li>
+<li>Install <a href="https://skim-app.sourceforge.io/">Skim</a> and <a href="https://www.tug.org/mactex/">MacTeX</a> (this is TeX Live for Mac).</li>
 <li>Open Skim and press <code>CMD+,</code> (Hold the command key and press the comma key.)</li>
 <li>Go to the <code>Sync</code> menu and check the two check boxes.</li>
 <li>Select Emacs in the drop-down box for <code>Preset</code>.</li>
@@ -78,17 +75,17 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 </div>
 </div>
 </div>
-<div id="outline-container-org17821f0" class="outline-2">
-<h2 id="org17821f0"><span class="section-number-2">2.</span> Install Newbiemacs on Windows</h2>
+<div id="outline-container-org9a708a7" class="outline-2">
+<h2 id="org9a708a7"><span class="section-number-2">2.</span> Install Newbiemacs on Windows</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Download Emacs and install it. <a href="http://ftp.jaist.ac.jp/pub/GNU/emacs/windows/emacs-28/">Click here</a> and download "emacs-28.2-installer.exe".</li>
-<li>Install Git if it's not installed. <a href="https://git-scm.com/download/win">Click here</a> (Download "Standalone Installer".)</li>
+<li>Install Git. <a href="https://git-scm.com/download/win">Click here</a> (Download "Standalone Installer".)</li>
+<li>Install <a href="https://strawberryperl.com/">Perl</a> and <a href="https://www.google.com/chrome/">Google Chrome</a>.</li>
 <li><p>
-Open "Command Prompt" (not "terminal" or "PowerShell") and enter the following
-lines. (You can just copy the whole thing by clicking the icon on
-the top-right corner of the box below and then paste it in your
-command prompt.)
+Open "Command Prompt" (not "terminal" or "PowerShell") and enter
+the following lines. (You can just copy the whole thing and then
+paste it in your command prompt.)
 </p>
 <pre class="example">
 cd %userprofile%
@@ -99,39 +96,16 @@ copy %userprofile%\nbm-root\.emacs-windows %userprofile%\AppData\Roaming\.emacs
 </pre></li>
 <li>Run Emacs. It will take several minutes to download necessary packages. There
 may be some warnings but it's okay.</li>
-<li>Close Emacs and run it again. The above Newbiemacs main screeen will be shown.</li>
+<li>Close Emacs and run it again. The above Newbiemacs main screen will be shown.</li>
 </ol>
 </div>
-<div id="outline-container-org974c316" class="outline-3">
-<h3 id="org974c316"><span class="section-number-3">2.1.</span> Additional steps for org-roam on Windows (optional)</h3>
+<div id="outline-container-org4c1a9a1" class="outline-3">
+<h3 id="org4c1a9a1"><span class="section-number-3">2.1.</span> Additional steps for latex on Windows (optional)</h3>
 <div class="outline-text-3" id="text-2-1">
-<p>
-If you want to use org-roam, you need to do the following (only once). 
-</p>
-<ol class="org-ol">
-<li>Install Perl if it's not installed. <a href="https://strawberryperl.com/">Click here</a></li>
-<li>Install <a href="https://www.google.com/chrome/">Google Chrome</a> if it's not installed. (Needed to view node connections.)</li>
-<li><p>
-Run Emacs and type the following. (SPC means the space key and RET
-means the return key, i.e., the enter key. There may be some warnings but it's okay.)
-</p>
-<pre class="example">
-SPC SPC package-refresh-contents RET
-SPC SPC package-install RET org-roam RET
-SPC SPC package-install RET org-roam-ui RET
-</pre></li>
-<li>Restart Emacs. (It will take some time to compile EmacSQL SQLite binary.)</li>
-</ol>
-</div>
-</div>
-<div id="outline-container-orge17226e" class="outline-3">
-<h3 id="orge17226e"><span class="section-number-3">2.2.</span> Additional steps for latex on Windows (optional)</h3>
-<div class="outline-text-3" id="text-2-2">
 <p>
 If you want to use latex, you need to do the following (only once). 
 </p>
 <ol class="org-ol">
-<li>Install Perl if it's not installed. <a href="https://strawberryperl.com/">Click here</a></li>
 <li>Install TeX Live if it's not installed. <a href="https://www.tug.org/texlive/windows.html">Click here</a> (It may take about 2 hours.)</li>
 <li>Install Sumatra PDF. <a href="https://www.sumatrapdfreader.org/free-pdf-reader">Click here</a> (Download "Installer", not "Portable version".)</li>
 <li>Open Sumatra PDF and in the menu go to <code>Settings</code> and click <code>Options...</code>.</li>
@@ -156,7 +130,7 @@ InverseSearchCmdLine = C:\Program Files\Emacs\emacs-28.2\bin\emacsclientw.exe -n
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-12-11 Sun 15:18</p>
+<p class="date">Created: 2022-12-11 Sun 21:25</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

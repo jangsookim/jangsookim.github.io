@@ -6,6 +6,9 @@
 * Introduction
 - Newbiemacs is a pre-configured [[https://www.gnu.org/software/emacs/][GNU Emacs]] distribution inspired by [[https://www.spacemacs.org/][Spacemacs]].
 - Newbiemacs is desiged for mathematician who are new to Emacs.
+- [[file:newbiemacs-installation.org][Installation]]
+- [[file:newbiemacs-tutorial.org][Tutorial]]
+- [[https://github.com/jangsookim/newbiemacs][Git Repository]]
 * Main features of Newbiemacs
 - Organize your pdf and tex files.
 - Search pdf and tex files quickly.
@@ -13,9 +16,3 @@
 - You can play the torus game!
 #+ATTR_HTML: :width 200
 file:files/torus-screenshot.png
-* Links
-- [[file:newbiemacs-installation.org][Newbiemacs Installation]]
-- [[file:newbiemacs-tutorial.org][Newbiemacs Tutorial]]
-- [[https://github.com/jangsookim/newbiemacs][Newbiemacs Git Repository]]
-
-
