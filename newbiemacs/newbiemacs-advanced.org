@@ -1,0 +1,17 @@
+#+title: Newbiemacs Advanced Features
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+* Packages
+** ripgrep
+- To use ~helm-rg~ or ~helm-projectile-rg~ we need ~ripgrep~.
+https://github.com/BurntSushi/ripgrep
+- Install Chocolatey
+* Dired
+| key | command                      |
+|-----+------------------------------|
+| h   | dired-up-directory           |
+| j   | dired-next-line              |
+| k   | dired-previous-line          |
+| l   | dired-find-file              |
+| W   | wdired-change-to-wdired-mode |
+| b   | browse-url-of-dired-file     |

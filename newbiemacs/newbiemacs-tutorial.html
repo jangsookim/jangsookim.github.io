@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-12-11 Sun 15:22 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Newbiemacs Tutorial</title>
+<meta name="author" content="Jang Soo Kim" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Newbiemacs Tutorial</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4b18d8f">1. Basic usage</a>
+<ul>
+<li><a href="#orge7f2345">1.1. How to manage your pdf files</a></li>
+<li><a href="#orgd5d6626">1.2. How to manage your tex files</a></li>
+</ul>
+</li>
+<li><a href="#orgc2e0a70">2. Emacs</a>
+<ul>
+<li><a href="#orgeda7aa9">2.1. Keybindings of basic commands</a></li>
+</ul>
+</li>
+<li><a href="#orgc8671f9">3. Newbiemacs</a>
+<ul>
+<li><a href="#org40cc6ad">3.1. keybindings of basic commands</a></li>
+<li><a href="#orgc2e0c61">3.2. Useful functions</a>
+<ul>
+<li><a href="#org50fe656">3.2.1. Open files with easy search</a></li>
+<li><a href="#org44afef6">3.2.2. Open the current directory in your finder</a></li>
+<li><a href="#org8b8dfdf">3.2.3. Create files</a></li>
+<li><a href="#org4d5ec75">3.2.4. Move pdf from the download folder</a></li>
+<li><a href="#org23965b2">3.2.5. Create a symlink</a></li>
+</ul>
+</li>
+<li><a href="#orgd184f0c">3.3. Latex</a>
+<ul>
+<li><a href="#org0665fc7">3.3.1. Insert figure from screenshot</a></li>
+<li><a href="#orgf09eb7d">3.3.2. Convert latex code to hwp math code</a></li>
+<li><a href="#org6bae151">3.3.3. Change variable i to j only in math mode</a></li>
+<li><a href="#orgef5dd42">3.3.4. Create a newcommand</a></li>
+<li><a href="#org642ad27">3.3.5. Create a label</a></li>
+<li><a href="#orgfb056aa">3.3.6. Create a bibtex item</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org38f8c20">4. FAQ</a>
+<ul>
+<li><a href="#orgf93535b">4.1. How can I change the newbiemacs folder?</a></li>
+<li><a href="#orgf9fb1d4">4.2. How can I update Newbiemacs?</a></li>
+<li><a href="#org0092f30">4.3. How can I open the Newbiemacs directory?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<b>This page is undercontruction.</b>
+</p>
+
+<div id="outline-container-org4b18d8f" class="outline-2">
+<h2 id="org4b18d8f"><span class="section-number-2">1.</span> Basic usage</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orge7f2345" class="outline-3">
+<h3 id="orge7f2345"><span class="section-number-3">1.1.</span> How to manage your pdf files</h3>
+</div>
+<div id="outline-container-orgd5d6626" class="outline-3">
+<h3 id="orgd5d6626"><span class="section-number-3">1.2.</span> How to manage your tex files</h3>
+</div>
+</div>
+<div id="outline-container-orgc2e0a70" class="outline-2">
+<h2 id="orgc2e0a70"><span class="section-number-2">2.</span> Emacs</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgeda7aa9" class="outline-3">
+<h3 id="orgeda7aa9"><span class="section-number-3">2.1.</span> Keybindings of basic commands</h3>
+<div class="outline-text-3" id="text-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">command</th>
+<th scope="col" class="org-left">keybinding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">quit/cancel</td>
+<td class="org-left"><code>C-g</code></td>
+</tr>
+
+<tr>
+<td class="org-left">isearch-forward</td>
+<td class="org-left"><code>C-s</code></td>
+</tr>
+
+<tr>
+<td class="org-left">query-replace</td>
+<td class="org-left"><code>M-%</code></td>
+</tr>
+
+<tr>
+<td class="org-left">kill-buffer</td>
+<td class="org-left"><code>C-x k</code></td>
+</tr>
+
+<tr>
+<td class="org-left">increase font-size</td>
+<td class="org-left"><code>C-x C-=</code></td>
+</tr>
+
+<tr>
+<td class="org-left">decrease font-size</td>
+<td class="org-left"><code>C-x C--</code></td>
+</tr>
+
+<tr>
+<td class="org-left">default font-size</td>
+<td class="org-left"><code>C-x C-0</code></td>
+</tr>
+
+<tr>
+<td class="org-left">org-store-link</td>
+<td class="org-left"><code>C-c l</code></td>
+</tr>
+
+<tr>
+<td class="org-left">org-insert-link</td>
+<td class="org-left"><code>C-c C-l</code></td>
+</tr>
+
+<tr>
+<td class="org-left">ispell-word</td>
+<td class="org-left"><code>M-$</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc8671f9" class="outline-2">
+<h2 id="orgc8671f9"><span class="section-number-2">3.</span> Newbiemacs</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org40cc6ad" class="outline-3">
+<h3 id="org40cc6ad"><span class="section-number-3">3.1.</span> keybindings of basic commands</h3>
+<div class="outline-text-3" id="text-3-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">command</th>
+<th scope="col" class="org-left">keybinding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Yank favoriate</td>
+<td class="org-left"><code>SPC y f</code></td>
+</tr>
+
+<tr>
+<td class="org-left">isearch-forward</td>
+<td class="org-left"><code>C-s</code></td>
+</tr>
+
+<tr>
+<td class="org-left">query-replace</td>
+<td class="org-left"><code>M-%</code></td>
+</tr>
+
+<tr>
+<td class="org-left">kill-buffer</td>
+<td class="org-left"><code>C-x k</code></td>
+</tr>
+
+<tr>
+<td class="org-left">increase font-size</td>
+<td class="org-left"><code>C-x C-=</code></td>
+</tr>
+
+<tr>
+<td class="org-left">decrease font-size</td>
+<td class="org-left"><code>C-x C--</code></td>
+</tr>
+
+<tr>
+<td class="org-left">default font-size</td>
+<td class="org-left"><code>C-x C-0</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgc2e0c61" class="outline-3">
+<h3 id="orgc2e0c61"><span class="section-number-3">3.2.</span> Useful functions</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-org50fe656" class="outline-4">
+<h4 id="org50fe656"><span class="section-number-4">3.2.1.</span> Open files with easy search</h4>
+</div>
+<div id="outline-container-org44afef6" class="outline-4">
+<h4 id="org44afef6"><span class="section-number-4">3.2.2.</span> Open the current directory in your finder</h4>
+</div>
+<div id="outline-container-org8b8dfdf" class="outline-4">
+<h4 id="org8b8dfdf"><span class="section-number-4">3.2.3.</span> Create files</h4>
+</div>
+<div id="outline-container-org4d5ec75" class="outline-4">
+<h4 id="org4d5ec75"><span class="section-number-4">3.2.4.</span> Move pdf from the download folder</h4>
+</div>
+<div id="outline-container-org23965b2" class="outline-4">
+<h4 id="org23965b2"><span class="section-number-4">3.2.5.</span> Create a symlink</h4>
+</div>
+</div>
+<div id="outline-container-orgd184f0c" class="outline-3">
+<h3 id="orgd184f0c"><span class="section-number-3">3.3.</span> Latex</h3>
+<div class="outline-text-3" id="text-3-3">
+</div>
+<div id="outline-container-org0665fc7" class="outline-4">
+<h4 id="org0665fc7"><span class="section-number-4">3.3.1.</span> Insert figure from screenshot</h4>
+</div>
+<div id="outline-container-orgf09eb7d" class="outline-4">
+<h4 id="orgf09eb7d"><span class="section-number-4">3.3.2.</span> Convert latex code to hwp math code</h4>
+</div>
+<div id="outline-container-org6bae151" class="outline-4">
+<h4 id="org6bae151"><span class="section-number-4">3.3.3.</span> Change variable i to j only in math mode</h4>
+</div>
+<div id="outline-container-orgef5dd42" class="outline-4">
+<h4 id="orgef5dd42"><span class="section-number-4">3.3.4.</span> Create a newcommand</h4>
+</div>
+<div id="outline-container-org642ad27" class="outline-4">
+<h4 id="org642ad27"><span class="section-number-4">3.3.5.</span> Create a label</h4>
+</div>
+<div id="outline-container-orgfb056aa" class="outline-4">
+<h4 id="orgfb056aa"><span class="section-number-4">3.3.6.</span> Create a bibtex item</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org38f8c20" class="outline-2">
+<h2 id="org38f8c20"><span class="section-number-2">4.</span> FAQ</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgf93535b" class="outline-3">
+<h3 id="orgf93535b"><span class="section-number-3">4.1.</span> How can I change the newbiemacs folder?</h3>
+<div class="outline-text-3" id="text-4-1">
+<ol class="org-ol">
+<li>Close emacs and move the newbiemacs folder as you wish.</li>
+<li>Open ~/nbm-root/nbm-home.txt. (This is the file containing the path to the Newbiemacs folder.)</li>
+<li>Update the old path with the new path.</li>
+<li>Start emacs.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf9fb1d4" class="outline-3">
+<h3 id="orgf9fb1d4"><span class="section-number-3">4.2.</span> How can I update Newbiemacs?</h3>
+<div class="outline-text-3" id="text-4-2">
+<ol class="org-ol">
+<li>Type "SPC N r"</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org0092f30" class="outline-3">
+<h3 id="org0092f30"><span class="section-number-3">4.3.</span> How can I open the Newbiemacs directory?</h3>
+<div class="outline-text-3" id="text-4-3">
+<ol class="org-ol">
+<li>Type <code>Backspace</code> twice and then type <code>F</code>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jang Soo Kim</p>
+<p class="date">Created: 2022-12-11 Sun 15:22</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

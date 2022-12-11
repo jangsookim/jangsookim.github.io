@@ -1,0 +1,58 @@
+#+title: Newbiemacs Tutorial
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+*This page is undercontruction.*
+
+* Basic usage
+** How to manage your pdf files
+** How to manage your tex files
+* Emacs
+** Keybindings of basic commands
+| command            | keybinding |
+|--------------------+------------|
+| quit/cancel        | ~C-g~        |
+| isearch-forward    | ~C-s~        |
+| query-replace      | ~M-%~        |
+| kill-buffer        | ~C-x k~      |
+| increase font-size | ~C-x C-=~    |
+| decrease font-size | ~C-x C--~    |
+| default font-size  | ~C-x C-0~    |
+| org-store-link     | ~C-c l~      |
+| org-insert-link    | ~C-c C-l~    |
+| ispell-word        | ~M-$~       |
+
+* Newbiemacs
+** keybindings of basic commands
+| command            | keybinding |
+|--------------------+------------|
+| Yank favoriate     | ~SPC y f~  |
+| isearch-forward    | ~C-s~        |
+| query-replace      | ~M-%~        |
+| kill-buffer        | ~C-x k~      |
+| increase font-size | ~C-x C-=~    |
+| decrease font-size | ~C-x C--~    |
+| default font-size  | ~C-x C-0~    |
+** Useful functions
+*** Open files with easy search
+*** Open the current directory in your finder
+*** Create files
+*** Move pdf from the download folder
+*** Create a symlink
+** Latex 
+*** Insert figure from screenshot
+*** Convert latex code to hwp math code
+*** Change variable i to j only in math mode
+*** Create a newcommand
+*** Create a label
+*** Create a bibtex item
+
+* FAQ
+** How can I change the newbiemacs folder?
+1. Close emacs and move the newbiemacs folder as you wish.
+2. Open ~/nbm-root/nbm-home.txt. (This is the file containing the path to the Newbiemacs folder.)
+3. Update the old path with the new path.
+4. Start emacs.
+** How can I update Newbiemacs?
+1. Type "SPC N r"
+** How can I open the Newbiemacs directory?
+1. Type ~Backspace~ twice and then type ~F~.
