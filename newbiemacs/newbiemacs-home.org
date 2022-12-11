@@ -14,8 +14,8 @@
 #+ATTR_HTML: :width 200
 file:files/torus-screenshot.png
 * Links
-- [[file:newbiemacs-installation.org][Installation]]
-- [[file:newbiemacs-tutorial.org][Tutorial]]
+- [[file:newbiemacs-installation.org][Newbiemacs Installation]]
+- [[file:newbiemacs-tutorial.org][Newbiemacs Tutorial]]
 - [[https://github.com/jangsookim/newbiemacs][Newbiemacs Git Repository]]
 
 

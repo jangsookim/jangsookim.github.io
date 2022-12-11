@@ -245,6 +245,11 @@
 * WeBWorK
 - [[file:webwork/index.org][Introduction to WeBWorK]]
 * Newbiemacs
-- Newbiemacs is a pre-configured [[https://www.gnu.org/software/emacs/][GNU Emacs]] distribution heavily inspired by [[https://www.spacemacs.org/][Spacemacs]].
+- Newbiemacs is a pre-configured [[https://www.gnu.org/software/emacs/][GNU Emacs]] distribution inspired by [[https://www.spacemacs.org/][Spacemacs]].
 - Newbiemacs is desiged for mathematician who are new to Emacs.
 - [[file:newbiemacs/newbiemacs-home.org][Newbiemacs Homepage]]
+- Screenshots
+#+ATTR_HTML: :width 600
+[[file:files/newbiemacs-screenshot.png][file:newbiemacs/files/newbiemacs-screenshot.png]]
+#+ATTR_HTML: :width 200
+file:newbiemacs/files/torus-screenshot.png
