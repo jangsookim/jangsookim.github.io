@@ -40,7 +40,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 ** Additional steps for latex on Windows (optional)
 If you want to use latex, you need to do the following (only once). 
 1. Install TeX Live if it's not installed. [[https://www.tug.org/texlive/windows.html][Click here]] (It may take about 2 hours.)
-2. Install Sumatra PDF. [[https://www.sumatrapdfreader.org/free-pdf-reader][Click here]] (Download "Installer", not "Portable version".)
+2. Install Sumatra PDF. [[https://www.sumatrapdfreader.org/download-free-pdf-viewer][Click here]] (Download "Installer", not "Portable version".)
 3. Open Sumatra PDF and in the menu go to ~Settings~ and click ~Options...~.
 4. Enter the following line in the box below ~Set inverse search command-line~.
    : C:\Program Files\Emacs\emacs-28.2\bin\emacsclientw.exe -n +%l "%f"
