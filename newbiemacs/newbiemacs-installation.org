@@ -35,7 +35,8 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
    :
 5. Run Emacs. It will take several minutes to download necessary packages. There
    may be some warnings but it's okay.
-6. Close Emacs and run it again. The above Newbiemacs main screen will be shown.
+6. Close Emacs and run it again. It will take some more time but
+   eventually the above Newbiemacs main screen will be shown.
 ** Additional steps for latex on Windows (optional)
 If you want to use latex, you need to do the following (only once). 
 1. Install TeX Live if it's not installed. [[https://www.tug.org/texlive/windows.html][Click here]] (It may take about 2 hours.)

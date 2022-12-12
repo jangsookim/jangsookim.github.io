@@ -1,57 +1,44 @@
 #+title: Newbiemacs Tutorial
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
-*This page is undercontruction.*
 
-* Basic usage
-** How to manage your pdf files
-** How to manage your tex files
-* Emacs
-** Keybindings of basic commands
-| command            | keybinding |
-|--------------------+------------|
-| quit/cancel        | ~C-g~        |
-| isearch-forward    | ~C-s~        |
-| query-replace      | ~M-%~        |
-| kill-buffer        | ~C-x k~      |
-| increase font-size | ~C-x C-=~    |
-| decrease font-size | ~C-x C--~    |
-| default font-size  | ~C-x C-0~    |
-| org-store-link     | ~C-c l~      |
-| org-insert-link    | ~C-c C-l~    |
-| ispell-word        | ~M-$~       |
+* Manage pdf files
+** How to add a pdf file from arxiv
+1. Download the pdf file of a paper from https://arxiv.org/ (You must
+   download it into your download folder instead of just viewing it on your
+   browser.)
+2. Copy the two lines of the title and the authors like this:
+   [[file:files/arxiv.png][file:~/Dropbox/newbiemacs/html/my-homepage/newbiemacs/files/arxiv.png]]
+3. Go to your Emacs with the Newbiemacs main screen.
+4. Type ~m~ and follow the instructions at the bottom of Emacs screen.
+5. It will save a pdf with name scheme such as "Author 1, Authur 2, Title".
+6. Now you can search the pdf by typing ~p~ in on the Newbiemacs main screen.
+** How to add a pdf file that has been published
+1. Download a pdf file into your download folder.
+2. Go to [[https://mathscinet.ams.org/mathscinet/index.html][MathSciNet]] or its [[https://beta.mathscinet.ams.org/mathscinet/beta][beta version]]. (The beta version is more convenient.)
+3. Search the paper there. You will see something like this
+   [[file:files/mathscinet.png][file:~/Dropbox/newbiemacs/html/my-homepage/newbiemacs/files/mathscinet.png]]
+4. Click the drop-down box at the top left corner and select bibtex.
+   [[file:files/mathscinet2.png][file:~/Dropbox/newbiemacs/html/my-homepage/newbiemacs/files/mathscinet2.png]]
+5. Copy the bibtex item.
+   [[file:files/mathscinet3.png][file:~/Dropbox/newbiemacs/html/my-homepage/newbiemacs/files/mathscinet3.png]] 
+6. Go to your Emacs with the Newbiemacs main screen.
+7. Type ~m~ and follow the instructions at the bottom of Emacs screen.
+8. It will save a pdf with name scheme such as "Author 1, Authur 2, Year, Title".
+9. Now you can search the pdf by typing ~p~ in on the Newbiemacs main screen.
+** How to find a pdf file
+1. Go to your Emacs with the Newbiemacs main screen.
+2. Type ~p~ and type anything that you can remember about the authors or title.
+3. It will list all papers with the key words that you have written there.
+4. Choose the pdf that you want to open and press the enter key.
 
-* Newbiemacs
-** keybindings of basic commands
-| command            | keybinding |
-|--------------------+------------|
-| Yank favoriate     | ~SPC y f~  |
-| isearch-forward    | ~C-s~        |
-| query-replace      | ~M-%~        |
-| kill-buffer        | ~C-x k~      |
-| increase font-size | ~C-x C-=~    |
-| decrease font-size | ~C-x C--~    |
-| default font-size  | ~C-x C-0~    |
-** Useful functions
-*** Open files with easy search
-*** Open the current directory in your finder
-*** Create files
-*** Move pdf from the download folder
-*** Create a symlink
-** Latex 
-*** Insert figure from screenshot
-*** Convert latex code to hwp math code
-*** Change variable i to j only in math mode
-*** Create a newcommand
-*** Create a label
-*** Create a bibtex item
-
+* More information will be updated soon!   
 * FAQ
 ** How can I change the newbiemacs folder?
-1. Close emacs and move the newbiemacs folder as you wish.
-2. Open ~/nbm-root/nbm-home.txt. (This is the file containing the path to the Newbiemacs folder.)
+1. Close Emacs and move the newbiemacs folder as you wish.
+2. Open ~~/nbm-root/nbm-home.txt~. (This is the file containing the path to the Newbiemacs folder.)
 3. Update the old path with the new path.
-4. Start emacs.
+4. Start Emacs.
 ** How can I update Newbiemacs?
 1. Type ~SPC N r~
 ** How can I open the Newbiemacs directory?

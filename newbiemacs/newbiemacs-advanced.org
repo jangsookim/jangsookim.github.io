@@ -1,6 +1,49 @@
 #+title: Newbiemacs Advanced Features
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
+* Manage tex files
+*This page is undercontruction.*
+
+** How to manage your tex files
+* Emacs
+** Keybindings of basic commands
+| command            | keybinding |
+|--------------------+------------|
+| quit/cancel        | ~C-g~        |
+| isearch-forward    | ~C-s~        |
+| query-replace      | ~M-%~        |
+| kill-buffer        | ~C-x k~      |
+| increase font-size | ~C-x C-=~    |
+| decrease font-size | ~C-x C--~    |
+| default font-size  | ~C-x C-0~    |
+| org-store-link     | ~C-c l~      |
+| org-insert-link    | ~C-c C-l~    |
+| ispell-word        | ~M-$~       |
+
+* Newbiemacs
+** keybindings of basic commands
+| command            | keybinding |
+|--------------------+------------|
+| Yank favoriate     | ~SPC y f~  |
+| isearch-forward    | ~C-s~        |
+| query-replace      | ~M-%~        |
+| kill-buffer        | ~C-x k~      |
+| increase font-size | ~C-x C-=~    |
+| decrease font-size | ~C-x C--~    |
+| default font-size  | ~C-x C-0~    |
+** Useful functions
+*** Open files with easy search
+*** Open the current directory in your finder
+*** Create files
+*** Move pdf from the download folder
+*** Create a symlink
+** Latex 
+*** Insert figure from screenshot
+*** Convert latex code to hwp math code
+*** Change variable i to j only in math mode
+*** Create a newcommand
+*** Create a label
+*** Create a bibtex item
 * Packages
 ** ripgrep
 - To use ~helm-rg~ or ~helm-projectile-rg~ we need ~ripgrep~.
