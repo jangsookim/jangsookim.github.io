@@ -25,7 +25,7 @@
 [[./files/mathscinet2.png]]
 1. Copy the bibtex item.
 #+ATTR_HTML: 
-[[./files/mathscient3.png]]
+[[./files/mathscinet3.png]]
 1. Go to your Emacs with the Newbiemacs main screen.
 2. Type ~m~ and follow the instructions at the bottom of Emacs screen.
 3. It will save a pdf with name scheme such as "Author 1, Authur 2, Year, Title".
