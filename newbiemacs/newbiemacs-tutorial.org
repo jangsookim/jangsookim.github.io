@@ -44,6 +44,6 @@
 3. Update the old path with the new path.
 4. Start Emacs.
 ** How can I update Newbiemacs?
-1. Type ~SPC N r~
+1. Type ~SPC N u~. (You may need to restart Emacs.)
 ** How can I open the Newbiemacs directory?
 1. Type ~Backspace~ twice and then type ~F~
