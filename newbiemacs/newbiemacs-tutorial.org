@@ -11,11 +11,11 @@
 * Basic concepts
 - By default your Newbiemacs folder will be ~~/newbiemacs~ (~~~ means
   your home folder.)
-- The current file (or directory) is shown at the bottom of the
+- The current file name is shown at the bottom of the
   Newbiemacs screen. 
 - Type ~F~ in the Newbiemacs screen to open the folder containing the
   current file.
-- Newbiemacs uses ~evil mode~, which allows us to use [[https://en.wikipedia.org/wiki/Vim_(text_editor)][Vim]] keybindings.
+- Newbiemacs uses [[https://www.emacswiki.org/emacs/Evil][evil mode]], which allows us to use [[https://en.wikipedia.org/wiki/Vim_(text_editor)][Vim]] keybindings.
 - In Vim, there are two modes called ~normal mode~ and ~insert mode~
 - ~normal mode~ has a fat cursor and the icon at the bottom left corder has orange color.
   #+ATTR_HTML: :width 600

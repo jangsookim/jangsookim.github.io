@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-13 Tue 13:42 -->
+<!-- 2022-12-13 Tue 13:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Newbiemacs Tutorial</title>
@@ -23,26 +23,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org850ccc4">1. Introduction</a></li>
-<li><a href="#org50019e6">2. Basic concepts</a></li>
-<li><a href="#orgddca577">3. Tutorial levels</a>
+<li><a href="#orgc06be8d">1. Introduction</a></li>
+<li><a href="#org82ca209">2. Basic concepts</a></li>
+<li><a href="#org42b841a">3. Tutorial levels</a>
 <ul>
-<li><a href="#orgda46f51">3.1. Tutorial Level 1</a></li>
-<li><a href="#orgb469e12">3.2. Tutorial Level 2</a></li>
-<li><a href="#orgb8de724">3.3. Tutorial Level 3</a></li>
+<li><a href="#org1f40dc6">3.1. Tutorial Level 1</a></li>
+<li><a href="#org1963a34">3.2. Tutorial Level 2</a></li>
+<li><a href="#orgfecb4bb">3.3. Tutorial Level 3</a></li>
 </ul>
 </li>
-<li><a href="#orgd6423fe">4. FAQ</a>
+<li><a href="#orgd63495f">4. FAQ</a>
 <ul>
-<li><a href="#org248a537">4.1. How can I open the Newbiemacs directory?</a></li>
-<li><a href="#org0af5cc8">4.2. How can I update Newbiemacs?</a></li>
-<li><a href="#orgaf46523">4.3. How can I change the newbiemacs folder?</a></li>
-<li><a href="#orgbc0034a">4.4. How can I re-install Newbiemacs?</a></li>
+<li><a href="#orgb48033b">4.1. How can I open the Newbiemacs directory?</a></li>
+<li><a href="#org1b5d4b2">4.2. How can I update Newbiemacs?</a></li>
+<li><a href="#org3679c7d">4.3. How can I change the newbiemacs folder?</a></li>
+<li><a href="#org1d55733">4.4. How can I re-install Newbiemacs?</a></li>
 </ul>
 </li>
-<li><a href="#org1988c5a">5. Troubleshooting</a>
+<li><a href="#org258423d">5. Troubleshooting</a>
 <ul>
-<li><a href="#orgd0ccfd6">5.1. Newbiemacs crashed! What should I do?</a></li>
+<li><a href="#org1ece96c">5.1. Newbiemacs crashed! What should I do?</a></li>
 </ul>
 </li>
 </ul>
@@ -50,38 +50,38 @@
 </div>
 
 
-<div id="outline-container-org850ccc4" class="outline-2">
-<h2 id="org850ccc4"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-orgc06be8d" class="outline-2">
+<h2 id="orgc06be8d"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>In this tutorial you will learn how to use Newbiemacs.</li>
 <li>You can use the basic features of Newbiemacs in the following Newbiemacs screen.</li>
 </ul>
 
-<div id="org36e1353" class="figure">
+<div id="org67510bd" class="figure">
 <p><a href="files/newbiemacs-screenshot.png" width="600"><img src="files/newbiemacs-screenshot.png" alt="newbiemacs-screenshot.png" width="600" /></a>
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org50019e6" class="outline-2">
-<h2 id="org50019e6"><span class="section-number-2">2.</span> Basic concepts</h2>
+<div id="outline-container-org82ca209" class="outline-2">
+<h2 id="org82ca209"><span class="section-number-2">2.</span> Basic concepts</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>By default your Newbiemacs folder will be <code>~/newbiemacs</code> (<code>~</code> means
 your home folder.)</li>
-<li>The current file (or directory) is shown at the bottom of the
+<li>The current file name is shown at the bottom of the
 Newbiemacs screen.</li>
 <li>Type <code>F</code> in the Newbiemacs screen to open the folder containing the
 current file.</li>
-<li>Newbiemacs uses <code>evil mode</code>, which allows us to use <a href="https://en.wikipedia.org/wiki/Vim_(text_editor)">Vim</a> keybindings.</li>
+<li>Newbiemacs uses <a href="https://www.emacswiki.org/emacs/Evil">evil mode</a>, which allows us to use <a href="https://en.wikipedia.org/wiki/Vim_(text_editor)">Vim</a> keybindings.</li>
 <li>In Vim, there are two modes called <code>normal mode</code> and <code>insert mode</code></li>
 <li><p>
 <code>normal mode</code> has a fat cursor and the icon at the bottom left corder has orange color.
 </p>
 
-<div id="orgb3b08aa" class="figure">
+<div id="orgbf86358" class="figure">
 <p><a href="files/normal-mode.png" width="600"><img src="files/normal-mode.png" alt="normal-mode.png" width="600" /></a>
 </p>
 </div></li>
@@ -89,7 +89,7 @@ current file.</li>
 <code>insert mode</code> has a thin cursor and the icon at the bottom left corder has green color.
 </p>
 
-<div id="org003e4a3" class="figure">
+<div id="org1559578" class="figure">
 <p><a href="files/normal-mode.png" width="600"><img src="files/insert-mode.png" alt="insert-mode.png" width="600" /></a>
 </p>
 </div></li>
@@ -100,15 +100,15 @@ current file.</li>
 </div>
 </div>
 
-<div id="outline-container-orgddca577" class="outline-2">
-<h2 id="orgddca577"><span class="section-number-2">3.</span> Tutorial levels</h2>
+<div id="outline-container-org42b841a" class="outline-2">
+<h2 id="org42b841a"><span class="section-number-2">3.</span> Tutorial levels</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>There are 3 levels in this tutorial. (click the link below)</li>
 </ul>
 </div>
-<div id="outline-container-orgda46f51" class="outline-3">
-<h3 id="orgda46f51"><span class="section-number-3">3.1.</span> <a href="newbiemacs-tutorial-lv1.html">Tutorial Level 1</a></h3>
+<div id="outline-container-org1f40dc6" class="outline-3">
+<h3 id="org1f40dc6"><span class="section-number-3">3.1.</span> <a href="newbiemacs-tutorial-lv1.html">Tutorial Level 1</a></h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>Manage pdf files</li>
@@ -118,8 +118,8 @@ current file.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb469e12" class="outline-3">
-<h3 id="orgb469e12"><span class="section-number-3">3.2.</span> <a href="newbiemacs-tutorial-lv2.html">Tutorial Level 2</a></h3>
+<div id="outline-container-org1963a34" class="outline-3">
+<h3 id="org1963a34"><span class="section-number-3">3.2.</span> <a href="newbiemacs-tutorial-lv2.html">Tutorial Level 2</a></h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>Edit tex files</li>
@@ -128,8 +128,8 @@ current file.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb8de724" class="outline-3">
-<h3 id="orgb8de724"><span class="section-number-3">3.3.</span> <a href="newbiemacs-tutorial-lv3.html">Tutorial Level 3</a></h3>
+<div id="outline-container-orgfecb4bb" class="outline-3">
+<h3 id="orgfecb4bb"><span class="section-number-3">3.3.</span> <a href="newbiemacs-tutorial-lv3.html">Tutorial Level 3</a></h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>Advanced editing techniques</li>
@@ -140,28 +140,28 @@ current file.</li>
 </div>
 
 
-<div id="outline-container-orgd6423fe" class="outline-2">
-<h2 id="orgd6423fe"><span class="section-number-2">4.</span> FAQ</h2>
+<div id="outline-container-orgd63495f" class="outline-2">
+<h2 id="orgd63495f"><span class="section-number-2">4.</span> FAQ</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org248a537" class="outline-3">
-<h3 id="org248a537"><span class="section-number-3">4.1.</span> How can I open the Newbiemacs directory?</h3>
+<div id="outline-container-orgb48033b" class="outline-3">
+<h3 id="orgb48033b"><span class="section-number-3">4.1.</span> How can I open the Newbiemacs directory?</h3>
 <div class="outline-text-3" id="text-4-1">
 <ol class="org-ol">
 <li>Type <code>Backspace</code> twice and then type <code>F</code></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org0af5cc8" class="outline-3">
-<h3 id="org0af5cc8"><span class="section-number-3">4.2.</span> How can I update Newbiemacs?</h3>
+<div id="outline-container-org1b5d4b2" class="outline-3">
+<h3 id="org1b5d4b2"><span class="section-number-3">4.2.</span> How can I update Newbiemacs?</h3>
 <div class="outline-text-3" id="text-4-2">
 <ol class="org-ol">
 <li>Type <code>SPC N u</code>. (You may need to restart Emacs.)</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgaf46523" class="outline-3">
-<h3 id="orgaf46523"><span class="section-number-3">4.3.</span> How can I change the newbiemacs folder?</h3>
+<div id="outline-container-org3679c7d" class="outline-3">
+<h3 id="org3679c7d"><span class="section-number-3">4.3.</span> How can I change the newbiemacs folder?</h3>
 <div class="outline-text-3" id="text-4-3">
 <ol class="org-ol">
 <li>Close Emacs and move the newbiemacs folder as you wish.</li>
@@ -171,8 +171,8 @@ current file.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgbc0034a" class="outline-3">
-<h3 id="orgbc0034a"><span class="section-number-3">4.4.</span> How can I re-install Newbiemacs?</h3>
+<div id="outline-container-org1d55733" class="outline-3">
+<h3 id="org1d55733"><span class="section-number-3">4.4.</span> How can I re-install Newbiemacs?</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 You can re-installing Newbiemacs keeping your Newbiemacs folder
@@ -187,12 +187,12 @@ etc.)</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org1988c5a" class="outline-2">
-<h2 id="org1988c5a"><span class="section-number-2">5.</span> Troubleshooting</h2>
+<div id="outline-container-org258423d" class="outline-2">
+<h2 id="org258423d"><span class="section-number-2">5.</span> Troubleshooting</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgd0ccfd6" class="outline-3">
-<h3 id="orgd0ccfd6"><span class="section-number-3">5.1.</span> Newbiemacs crashed! What should I do?</h3>
+<div id="outline-container-org1ece96c" class="outline-3">
+<h3 id="org1ece96c"><span class="section-number-3">5.1.</span> Newbiemacs crashed! What should I do?</h3>
 <div class="outline-text-3" id="text-5-1">
 <ol class="org-ol">
 <li>Restart Newbiemacs</li>
@@ -204,7 +204,7 @@ etc.)</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-12-13 Tue 13:42</p>
+<p class="date">Created: 2022-12-13 Tue 13:48</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

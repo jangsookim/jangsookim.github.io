@@ -3,8 +3,8 @@
 
 * Introduction
 - In this tutorial we learn how to edit tex files and how to use [[https://orgmode.org/][org-mode]].
-- Recall that there are two modes: ~normal mode~ and ~insert mode~
-- There is anothor mode, called ~visual mode~, which is a mode to
+- Recall that there are two modes: *normal mode* and *insert mode*
+- There is anothor mode, called *visual mode*, which is a mode to
   select a region, just like what you usually do with your mouse.
 - We first need to understand keybindings, which depend on the mode.
 
@@ -18,7 +18,7 @@
 ** Keybindings of basic commands
 | mode   | keybinding    | description                                             |
 |--------+---------------+---------------------------------------------------------|
-| both   | ~C-g~         | cancel entering keyboard input                          |
+| all | ~C-g~         | cancel entering keyboard input                          |
 | normal | ~<BACKSPACE>~ | go to newbiemacs screen                                 |
 | normal | ~i~           | change to insert mode                                   |
 | insert | ~<ESC>~       | change to normal mode                                   |
@@ -28,9 +28,9 @@
 | normal | ~p~           | paste after cursor                                      |
 | normal | ~P~           | paste before cursor                                     |
 * How to edit a tex file
-- You can edit a tex file in ~insert mode~ in the usual way.
-- To copy or paste you need to change to ~normal mode~ and use the key bindings above.
-- To compile the tex file, in ~normal mode~ type ~, b~ (the comma key
+- You can edit a tex file in *insert mode* in the usual way.
+- To copy or paste you need to change to *normal mode* and use the key bindings above.
+- To compile the tex file, in *normal mode* type ~, b~ (the comma key
   ~,~ follows by the key ~b~).
 - The same keybinding ~, b~ can also be used to save the file or to view the pdf.
 
@@ -54,6 +54,6 @@
 - Type ~i~ in the Newbiemacs screen.
 - Enter the tile of the org file to which you want to insert a link.
 
-** How to view the connections the org files
+** How to view the connections of the org files
 - Type ~u~ in the Newbiemacs screen.
 

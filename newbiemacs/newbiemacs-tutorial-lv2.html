@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-13 Tue 13:44 -->
+<!-- 2022-12-13 Tue 13:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Newbiemacs Tutorial: Level 2</title>
@@ -23,45 +23,45 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org72ab514">1. Introduction</a></li>
-<li><a href="#org792590c">2. Key bindings</a>
+<li><a href="#org5d1fdef">1. Introduction</a></li>
+<li><a href="#org7efd8f5">2. Key bindings</a>
 <ul>
-<li><a href="#org98a2c31">2.1. Notation</a></li>
-<li><a href="#org614246b">2.2. Keybindings of basic commands</a></li>
+<li><a href="#org009cff4">2.1. Notation</a></li>
+<li><a href="#org70e0879">2.2. Keybindings of basic commands</a></li>
 </ul>
 </li>
-<li><a href="#org10143ca">3. How to edit a tex file</a></li>
-<li><a href="#org1349c2c">4. Org-mode</a>
+<li><a href="#orgf4e15d0">3. How to edit a tex file</a></li>
+<li><a href="#orgff26d25">4. Org-mode</a>
 <ul>
-<li><a href="#org9a68548">4.1. How to create an org file</a></li>
-<li><a href="#orgbb6342c">4.2. How to search an org file</a></li>
-<li><a href="#org29fc459">4.3. How to insert an org file link into the current org file</a></li>
-<li><a href="#org1090918">4.4. How to view the connections the org files</a></li>
+<li><a href="#org96fbbbb">4.1. How to create an org file</a></li>
+<li><a href="#orgd25bd4a">4.2. How to search an org file</a></li>
+<li><a href="#org2ca2969">4.3. How to insert an org file link into the current org file</a></li>
+<li><a href="#org19e0c5c">4.4. How to view the connections of the org files</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org72ab514" class="outline-2">
-<h2 id="org72ab514"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org5d1fdef" class="outline-2">
+<h2 id="org5d1fdef"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>In this tutorial we learn how to edit tex files and how to use <a href="https://orgmode.org/">org-mode</a>.</li>
-<li>Recall that there are two modes: <code>normal mode</code> and <code>insert mode</code></li>
-<li>There is anothor mode, called <code>visual mode</code>, which is a mode to
+<li>Recall that there are two modes: <b>normal mode</b> and <b>insert mode</b></li>
+<li>There is anothor mode, called <b>visual mode</b>, which is a mode to
 select a region, just like what you usually do with your mouse.</li>
 <li>We first need to understand keybindings, which depend on the mode.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org792590c" class="outline-2">
-<h2 id="org792590c"><span class="section-number-2">2.</span> Key bindings</h2>
+<div id="outline-container-org7efd8f5" class="outline-2">
+<h2 id="org7efd8f5"><span class="section-number-2">2.</span> Key bindings</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org98a2c31" class="outline-3">
-<h3 id="org98a2c31"><span class="section-number-3">2.1.</span> Notation</h3>
+<div id="outline-container-org009cff4" class="outline-3">
+<h3 id="org009cff4"><span class="section-number-3">2.1.</span> Notation</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li><code>C</code> means Ctrl, i.e., the control key</li>
@@ -72,8 +72,8 @@ select a region, just like what you usually do with your mouse.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org614246b" class="outline-3">
-<h3 id="org614246b"><span class="section-number-3">2.2.</span> Keybindings of basic commands</h3>
+<div id="outline-container-org70e0879" class="outline-3">
+<h3 id="org70e0879"><span class="section-number-3">2.2.</span> Keybindings of basic commands</h3>
 <div class="outline-text-3" id="text-2-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -94,7 +94,7 @@ select a region, just like what you usually do with your mouse.</li>
 </thead>
 <tbody>
 <tr>
-<td class="org-left">both</td>
+<td class="org-left">all</td>
 <td class="org-left"><code>C-g</code></td>
 <td class="org-left">cancel entering keyboard input</td>
 </tr>
@@ -151,21 +151,21 @@ select a region, just like what you usually do with your mouse.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org10143ca" class="outline-2">
-<h2 id="org10143ca"><span class="section-number-2">3.</span> How to edit a tex file</h2>
+<div id="outline-container-orgf4e15d0" class="outline-2">
+<h2 id="orgf4e15d0"><span class="section-number-2">3.</span> How to edit a tex file</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
-<li>You can edit a tex file in <code>insert mode</code> in the usual way.</li>
-<li>To copy or paste you need to change to <code>normal mode</code> and use the key bindings above.</li>
-<li>To compile the tex file, in <code>normal mode</code> type <code>, b</code> (the comma key
+<li>You can edit a tex file in <b>insert mode</b> in the usual way.</li>
+<li>To copy or paste you need to change to <b>normal mode</b> and use the key bindings above.</li>
+<li>To compile the tex file, in <b>normal mode</b> type <code>, b</code> (the comma key
 <code>,</code> follows by the key <code>b</code>).</li>
 <li>The same keybinding <code>, b</code> can also be used to save the file or to view the pdf.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org1349c2c" class="outline-2">
-<h2 id="org1349c2c"><span class="section-number-2">4.</span> Org-mode</h2>
+<div id="outline-container-orgff26d25" class="outline-2">
+<h2 id="orgff26d25"><span class="section-number-2">4.</span> Org-mode</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><a href="https://orgmode.org/">Org-mode</a> is a very useful tool to organize text files with extension "org".</li>
@@ -175,8 +175,8 @@ select a region, just like what you usually do with your mouse.</li>
 </ul>
 </div>
 
-<div id="outline-container-org9a68548" class="outline-3">
-<h3 id="org9a68548"><span class="section-number-3">4.1.</span> How to create an org file</h3>
+<div id="outline-container-org96fbbbb" class="outline-3">
+<h3 id="org96fbbbb"><span class="section-number-3">4.1.</span> How to create an org file</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>Type <code>r</code> in the Newbiemacs screen.</li>
@@ -187,8 +187,8 @@ select a region, just like what you usually do with your mouse.</li>
 </div>
 </div>
 
-<div id="outline-container-orgbb6342c" class="outline-3">
-<h3 id="orgbb6342c"><span class="section-number-3">4.2.</span> How to search an org file</h3>
+<div id="outline-container-orgd25bd4a" class="outline-3">
+<h3 id="orgd25bd4a"><span class="section-number-3">4.2.</span> How to search an org file</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>Type <code>r</code> in the Newbiemacs screen.</li>
@@ -197,8 +197,8 @@ select a region, just like what you usually do with your mouse.</li>
 </div>
 </div>
 
-<div id="outline-container-org29fc459" class="outline-3">
-<h3 id="org29fc459"><span class="section-number-3">4.3.</span> How to insert an org file link into the current org file</h3>
+<div id="outline-container-org2ca2969" class="outline-3">
+<h3 id="org2ca2969"><span class="section-number-3">4.3.</span> How to insert an org file link into the current org file</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li>Type <code>i</code> in the Newbiemacs screen.</li>
@@ -207,8 +207,8 @@ select a region, just like what you usually do with your mouse.</li>
 </div>
 </div>
 
-<div id="outline-container-org1090918" class="outline-3">
-<h3 id="org1090918"><span class="section-number-3">4.4.</span> How to view the connections the org files</h3>
+<div id="outline-container-org19e0c5c" class="outline-3">
+<h3 id="org19e0c5c"><span class="section-number-3">4.4.</span> How to view the connections of the org files</h3>
 <div class="outline-text-3" id="text-4-4">
 <ul class="org-ul">
 <li>Type <code>u</code> in the Newbiemacs screen.</li>
@@ -219,7 +219,7 @@ select a region, just like what you usually do with your mouse.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-12-13 Tue 13:44</p>
+<p class="date">Created: 2022-12-13 Tue 13:54</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
