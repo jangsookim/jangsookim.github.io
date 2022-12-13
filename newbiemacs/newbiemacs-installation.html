@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-12 Mon 10:52 -->
+<!-- 2022-12-12 Mon 19:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Newbiemacs Installation</title>
@@ -23,22 +23,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9960500">1. Install Newbiemacs on Mac</a>
+<li><a href="#org6a50869">1. Install Newbiemacs on Mac</a>
 <ul>
-<li><a href="#org229ca38">1.1. Additional steps for latex on Mac (optional)</a></li>
+<li><a href="#org055083b">1.1. Additional steps for latex on Mac (optional)</a></li>
 </ul>
 </li>
-<li><a href="#org2e715eb">2. Install Newbiemacs on Windows</a>
+<li><a href="#org0dbe798">2. Install Newbiemacs on Windows</a>
 <ul>
-<li><a href="#orga4cfc41">2.1. Additional steps for latex on Windows (optional)</a></li>
+<li><a href="#orgd1ee302">2.1. Additional steps for latex on Windows (optional)</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9960500" class="outline-2">
-<h2 id="org9960500"><span class="section-number-2">1.</span> Install Newbiemacs on Mac</h2>
+<div id="outline-container-org6a50869" class="outline-2">
+<h2 id="org6a50869"><span class="section-number-2">1.</span> Install Newbiemacs on Mac</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>Download Emacs and install it. <a href="https://emacsformacosx.com/">Click here</a></li>
@@ -56,12 +56,14 @@ cp ~/nbm-root/.emacs ~/.emacs
 
 </pre></li>
 <li>Run Emacs. It will take several minutes to download necessary
-packages. There may be some warnings but it's okay.</li>
+packages. There may be some warnings but it's okay.
+When it's done, there will be a message at the bottom saying
+"For information about GNU Emacs and the GNU system, type C-h C-a."</li>
 <li>Close Emacs and run it again. The Newbiemacs main screen will be shown.</li>
 </ol>
 </div>
-<div id="outline-container-org229ca38" class="outline-3">
-<h3 id="org229ca38"><span class="section-number-3">1.1.</span> Additional steps for latex on Mac (optional)</h3>
+<div id="outline-container-org055083b" class="outline-3">
+<h3 id="org055083b"><span class="section-number-3">1.1.</span> Additional steps for latex on Mac (optional)</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 If you want to edit tex files in Newbiemacs, you need to do the following (only once).
@@ -75,8 +77,8 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 </div>
 </div>
 </div>
-<div id="outline-container-org2e715eb" class="outline-2">
-<h2 id="org2e715eb"><span class="section-number-2">2.</span> Install Newbiemacs on Windows</h2>
+<div id="outline-container-org0dbe798" class="outline-2">
+<h2 id="org0dbe798"><span class="section-number-2">2.</span> Install Newbiemacs on Windows</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Download Emacs and install it. <a href="http://ftp.jaist.ac.jp/pub/GNU/emacs/windows/emacs-28/">Click here</a> and download "emacs-28.2-installer.exe".</li>
@@ -94,20 +96,22 @@ rename newbiemacs nbm-root
 copy %userprofile%\nbm-root\.emacs-windows %userprofile%\AppData\Roaming\.emacs
 
 </pre></li>
-<li>Run Emacs. It will take several minutes to download necessary packages. There
-may be some warnings but it's okay.</li>
+<li>Run Emacs. It will take several minutes to download necessary
+packages. There may be some warnings but it's okay.  When it's
+done, there will be a message at the bottom saying "For information
+about GNU Emacs and the GNU system, type C-h C-a."</li>
 <li>Close Emacs and run it again. It will take some more time but
 eventually the Newbiemacs main screen will be shown.</li>
 </ol>
 </div>
-<div id="outline-container-orga4cfc41" class="outline-3">
-<h3 id="orga4cfc41"><span class="section-number-3">2.1.</span> Additional steps for latex on Windows (optional)</h3>
+<div id="outline-container-orgd1ee302" class="outline-3">
+<h3 id="orgd1ee302"><span class="section-number-3">2.1.</span> Additional steps for latex on Windows (optional)</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
-If you want to use latex, you need to do the following (only once). 
+If you want to use latex in Newbiemacs, you need to do the following (only once). 
 </p>
 <ol class="org-ol">
-<li>Install TeX Live if it's not installed. <a href="https://www.tug.org/texlive/windows.html">Click here</a> (It may take about 2 hours.)</li>
+<li>Install TeX Live. <a href="https://www.tug.org/texlive/windows.html">Click here</a> (It may take about 2 hours.)</li>
 <li>Install Sumatra PDF. <a href="https://www.sumatrapdfreader.org/download-free-pdf-viewer">Click here</a> (Download "Installer", not "Portable version".)</li>
 <li>Open Sumatra PDF and in the menu go to <code>Settings</code> and click <code>Options...</code>.</li>
 <li><p>
@@ -131,7 +135,7 @@ InverseSearchCmdLine = C:\Program Files\Emacs\emacs-28.2\bin\emacsclientw.exe -n
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-12-12 Mon 10:52</p>
+<p class="date">Created: 2022-12-12 Mon 19:57</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

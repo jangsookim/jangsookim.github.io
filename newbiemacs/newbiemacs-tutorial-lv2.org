@@ -1,0 +1,59 @@
+#+title: Newbiemacs Tutorial: Level 2
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+* Introduction
+- In this tutorial we learn how to edit tex files and how to use org-mode.
+- Recall that there are two modes: ~normal mode~ and ~insert mode~
+- There is anothor mode, called ~visual mode~, which is a mode to
+  select a region, just like what you usually do with your mouse.
+- We first need to understand keybindings, which depend on the mode.
+
+* Key bindings
+** Notation
+- ~C~ means Ctrl, i.e., the control key 
+- ~M~ means Meta, i.e., the command key for Mac and the alt key for Windows
+- ~C-g~ means hold ~C~ and then press ~g~
+- ~C-x k~ means ~C-g~ and then ~k~ (without holding ~C~)
+- ~C-x C-=~ means ~C-g~ and then ~C-=~
+** Keybindings of basic commands
+| mode   | keybinding    | description                                             |
+|--------+---------------+---------------------------------------------------------|
+| both   | ~C-g~         | cancel entering keyboard input                          |
+| normal | ~<BACKSPACE>~ | go to newbiemacs screen                                 |
+| normal | ~i~           | change to insert mode                                   |
+| insert | ~<ESC>~       | change to normal mode                                   |
+| normal | ~v~           | start visual mode                                       |
+| visual | ~y~           | yank (copy) the selected region and back to normal mode |
+| visual | ~x~           | cut the selected region and back to normal mode         |
+| normal | ~p~           | paste after cursor                                      |
+| normal | ~P~           | paste before cursor                                     |
+* How to edit a tex file
+- You can edit a tex file in ~insert mode~ in the usual way.
+- To copy or paste you need to change to ~normal mode~ and use the key bindings above.
+- To compile the tex file, in ~normal mode~ type ~, b~ (the comma key
+  ~,~ follows by the key ~b~).
+- The same keybinding ~, b~ can also be used to save the file or to view the pdf.
+
+* Org-mode
+- Org-mode is a very useful tool to organize text files with extension "org".
+- An org file is basically a text file with mark-down-like structure.
+- Your org files will be stored in the folder ~org~ under the Newbiemacs folder.
+- In Newbiemacs we use "org-roam", which is a package to connect org files nicely.
+
+** How to create an org file
+- Type ~r~ in the Newbiemacs screen.
+- Type a title of a new org file. It will open a new org file.
+- Write anything you want there.
+- Type ~C-c C-c~ when you are done.
+
+** How to search an org file
+- Type ~r~ in the Newbiemacs screen.
+- Type anything you remember about the title of the org file.
+
+** How to insert an org file link into the current org file
+- Type ~i~ in the Newbiemacs screen.
+- Enter the tile of the org file to which you want to insert a link.
+
+** How to view the connections the org files
+- Type ~u~ in the Newbiemacs screen.
+

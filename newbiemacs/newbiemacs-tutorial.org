@@ -2,48 +2,66 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 
-* Manage pdf files
-** How to add a pdf file from arxiv
-1. Download the pdf file of a paper from https://arxiv.org/ (You must
-   download it into your download folder instead of just viewing it on your
-   browser.)
-2. Copy the two lines of the title and the authors like this:
-   #+ATTR_HTML: 
-   [[./files/arxiv.png]]
-3. Go to your Emacs with the Newbiemacs main screen.
-4. Type ~m~ and follow the instructions at the bottom of Emacs screen.
-5. It will save a pdf with name scheme such as "Author 1, Authur 2, Title".
-6. Now you can search the pdf by typing ~p~ in on the Newbiemacs main screen.
-** How to add a pdf file that has been published
-1. Download a pdf file into your download folder.
-2. Go to [[https://mathscinet.ams.org/mathscinet/index.html][MathSciNet]] or its [[https://beta.mathscinet.ams.org/mathscinet/beta][beta version]]. (The beta version is more convenient.)
-3. Search the paper there. You will see something like this
-   #+ATTR_HTML: 
-   [[./files/mathscinet.png]]
-4. Click the drop-down box at the top left corner and select bibtex.
-   #+ATTR_HTML: 
-   [[./files/mathscinet2.png]]
-5. Copy the bibtex item.
-   #+ATTR_HTML: 
-   [[./files/mathscinet3.png]]
-6. Go to your Emacs with the Newbiemacs main screen.
-7. Type ~m~ and follow the instructions at the bottom of Emacs screen.
-8. It will save a pdf with name scheme such as "Author 1, Authur 2, Year, Title".
-9. Now you can search the pdf by typing ~p~ in on the Newbiemacs main screen.
-** How to find a pdf file
-1. Go to your Emacs with the Newbiemacs main screen.
-2. Type ~p~ and type anything that you can remember about the authors or title.
-3. It will list all papers with the key words that you have written there.
-4. Choose the pdf that you want to open and press the enter key.
+* Introduction
+- In this tutorial you will learn how to use Newbiemacs.
+- You can use the basic features of Newbiemacs in following the Newbiemacs screen.
+#+ATTR_HTML: :width 600
+[[file:files/newbiemacs-screenshot.png][file:files/newbiemacs-screenshot.png]]
 
-* More information will be updated soon!   
+* Basic concepts
+- By default your Newbiemacs folder will be ~~/newbiemacs~ (~~~ means
+  your home folder.)
+- The current file (or directory) is shown at the bottom of the
+  Newbiemacs screen. 
+- Type ~F~ in the Newbiemacs screen to open the folder containing the
+  current file.
+- Newbiemacs uses ~evil mode~, which allows us to use [[https://en.wikipedia.org/wiki/Vim_(text_editor)][Vim]] keybindings.
+- In Vim, there are two modes called ~normal mode~ and ~insert mode~
+- ~normal mode~ has a fat cursor and the icon at the bottom left corder has orange color.
+  #+ATTR_HTML: :width 600
+  [[file:files/normal-mode.png][file:~/Dropbox/newbiemacs/html/my-homepage/newbiemacs/files/normal-mode.png]]
+- ~insert mode~ has a thin cursor and the icon at the bottom left corder has green color.
+  #+ATTR_HTML: :width 600
+  [[file:files/normal-mode.png][file:~/Dropbox/newbiemacs/html/my-homepage/newbiemacs/files/insert-mode.png]]
+- Type ~i~ to change mode from ~normal mode~ to ~insert mode~
+- Type ~ESC~ to change mode from ~insert mode~ to ~normal mode~
+- To go to the Newbiemacs screen, type ~<BACKSPACE>~ in ~normal mode~.
+
+* Tutorial levels
+- There are 3 levels in this tutorial. (click the link below)
+** [[file:newbiemacs-tutorial-lv1.org][Tutorial Level 1]] 
+- Manage pdf files
+- Manage tex files
+- Manage miscellaneous files
+
+** [[file:newbiemacs-tutorial-lv2.org][Tutorial Level 2]]
+- Edit tex files
+- Use org-mode
+
+** [[file:newbiemacs-tutorial-lv3.org][Tutorial Level 3]]
+- Advanced editing techniques
+- Install other packages
+
+
 * FAQ
+** How can I open the Newbiemacs directory?
+1. Type ~Backspace~ twice and then type ~F~
+** How can I update Newbiemacs?
+1. Type ~SPC N u~. (You may need to restart Emacs.)
 ** How can I change the newbiemacs folder?
 1. Close Emacs and move the newbiemacs folder as you wish.
 2. Open ~~/nbm-root/nbm-home.txt~. (This is the file containing the path to the Newbiemacs folder.)
 3. Update the old path with the new path.
 4. Start Emacs.
-** How can I update Newbiemacs?
-1. Type ~SPC N u~. (You may need to restart Emacs.)
-** How can I open the Newbiemacs directory?
-1. Type ~Backspace~ twice and then type ~F~
+** How can I re-install Newbiemacs?
+You can re-installing Newbiemacs keeping your Newbiemacs folder
+~~/newbiemacs~.  It will take much less than the actual installation.
+1. Delete the folder ~~/nbm-root~. 
+2. Install Newbiemacs as instructed [[file:newbiemacs-installation.org][here]]. (You can of course omit the
+   steps for the already installed programs, Git and Google Chrome,
+   etc.)
+* Troubleshooting 
+** Newbiemacs crashed! What should I do?
+1. Restart Newbiemacs
+2. If it's still not working, re-install Newbiemacs.
+

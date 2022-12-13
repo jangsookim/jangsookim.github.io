@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-12-13 Tue 13:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Newbiemacs Tutorial: Level 2</title>
+<meta name="author" content="Jang Soo Kim" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Newbiemacs Tutorial: Level 2</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgc53ae98">1. Introduction</a></li>
+<li><a href="#orgca8f4e4">2. Key bindings</a>
+<ul>
+<li><a href="#org07259c2">2.1. Notation</a></li>
+<li><a href="#orgcbe36f9">2.2. Keybindings of basic commands</a></li>
+</ul>
+</li>
+<li><a href="#org99fdad5">3. How to edit a tex file</a></li>
+<li><a href="#orga64d8c0">4. Org-mode</a>
+<ul>
+<li><a href="#org7c23b9c">4.1. How to create an org file</a></li>
+<li><a href="#org015a812">4.2. How to search an org file</a></li>
+<li><a href="#org950d96a">4.3. How to insert an org file link into the current org file</a></li>
+<li><a href="#org229fc56">4.4. How to view the connections the org files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc53ae98" class="outline-2">
+<h2 id="orgc53ae98"><span class="section-number-2">1.</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>In this tutorial we learn how to edit tex files and how to use org-mode.</li>
+<li>Recall that there are two modes: <code>normal mode</code> and <code>insert mode</code></li>
+<li>There is anothor mode, called <code>visual mode</code>, which is a mode to
+select a region, just like what you usually do with your mouse.</li>
+<li>We first need to understand keybindings, which depend on the mode.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgca8f4e4" class="outline-2">
+<h2 id="orgca8f4e4"><span class="section-number-2">2.</span> Key bindings</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org07259c2" class="outline-3">
+<h3 id="org07259c2"><span class="section-number-3">2.1.</span> Notation</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li><code>C</code> means Ctrl, i.e., the control key</li>
+<li><code>M</code> means Meta, i.e., the command key for Mac and the alt key for Windows</li>
+<li><code>C-g</code> means hold <code>C</code> and then press <code>g</code></li>
+<li><code>C-x k</code> means <code>C-g</code> and then <code>k</code> (without holding <code>C</code>)</li>
+<li><code>C-x C-=</code> means <code>C-g</code> and then <code>C-=</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcbe36f9" class="outline-3">
+<h3 id="orgcbe36f9"><span class="section-number-3">2.2.</span> Keybindings of basic commands</h3>
+<div class="outline-text-3" id="text-2-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">mode</th>
+<th scope="col" class="org-left">keybinding</th>
+<th scope="col" class="org-left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">both</td>
+<td class="org-left"><code>C-g</code></td>
+<td class="org-left">cancel entering keyboard input</td>
+</tr>
+
+<tr>
+<td class="org-left">normal</td>
+<td class="org-left"><code>&lt;BACKSPACE&gt;</code></td>
+<td class="org-left">go to newbiemacs screen</td>
+</tr>
+
+<tr>
+<td class="org-left">normal</td>
+<td class="org-left"><code>i</code></td>
+<td class="org-left">change to insert mode</td>
+</tr>
+
+<tr>
+<td class="org-left">insert</td>
+<td class="org-left"><code>&lt;ESC&gt;</code></td>
+<td class="org-left">change to normal mode</td>
+</tr>
+
+<tr>
+<td class="org-left">normal</td>
+<td class="org-left"><code>v</code></td>
+<td class="org-left">start visual mode</td>
+</tr>
+
+<tr>
+<td class="org-left">visual</td>
+<td class="org-left"><code>y</code></td>
+<td class="org-left">yank (copy) the selected region and back to normal mode</td>
+</tr>
+
+<tr>
+<td class="org-left">visual</td>
+<td class="org-left"><code>x</code></td>
+<td class="org-left">cut the selected region and back to normal mode</td>
+</tr>
+
+<tr>
+<td class="org-left">normal</td>
+<td class="org-left"><code>p</code></td>
+<td class="org-left">paste after cursor</td>
+</tr>
+
+<tr>
+<td class="org-left">normal</td>
+<td class="org-left"><code>P</code></td>
+<td class="org-left">paste before cursor</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org99fdad5" class="outline-2">
+<h2 id="org99fdad5"><span class="section-number-2">3.</span> How to edit a tex file</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>You can edit a tex file in <code>insert mode</code> in the usual way.</li>
+<li>To copy or paste you need to change to <code>normal mode</code> and use the key bindings above.</li>
+<li>To compile the tex file, in <code>normal mode</code> type <code>, b</code> (the comma key
+<code>,</code> follows by the key <code>b</code>).</li>
+<li>The same keybinding <code>, b</code> can also be used to save the file or to view the pdf.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga64d8c0" class="outline-2">
+<h2 id="orga64d8c0"><span class="section-number-2">4.</span> Org-mode</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Org-mode is a very useful tool to organize text files with extension "org".</li>
+<li>An org file is basically a text file with mark-down-like structure.</li>
+<li>Your org files will be stored in the folder <code>org</code> under the Newbiemacs folder.</li>
+<li>In Newbiemacs we use "org-roam", which is a package to connect org files nicely.</li>
+</ul>
+</div>
+
+<div id="outline-container-org7c23b9c" class="outline-3">
+<h3 id="org7c23b9c"><span class="section-number-3">4.1.</span> How to create an org file</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Type <code>r</code> in the Newbiemacs screen.</li>
+<li>Type a title of a new org file. It will open a new org file.</li>
+<li>Write anything you want there.</li>
+<li>Type <code>C-c C-c</code> when you are done.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org015a812" class="outline-3">
+<h3 id="org015a812"><span class="section-number-3">4.2.</span> How to search an org file</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Type <code>r</code> in the Newbiemacs screen.</li>
+<li>Type anything you remember about the title of the org file.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org950d96a" class="outline-3">
+<h3 id="org950d96a"><span class="section-number-3">4.3.</span> How to insert an org file link into the current org file</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Type <code>i</code> in the Newbiemacs screen.</li>
+<li>Enter the tile of the org file to which you want to insert a link.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org229fc56" class="outline-3">
+<h3 id="org229fc56"><span class="section-number-3">4.4.</span> How to view the connections the org files</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>Type <code>u</code> in the Newbiemacs screen.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jang Soo Kim</p>
+<p class="date">Created: 2022-12-13 Tue 13:32</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

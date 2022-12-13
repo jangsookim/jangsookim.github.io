@@ -1,0 +1,19 @@
+#+title: Newbiemacs Tutorial: Level 3
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+
+- This page is under construction.
+
+* key bindings
+| command            | keybinding |
+|--------------------+------------|
+| quit/cancel        | ~C-g~        |
+| isearch-forward    | ~C-s~        |
+| query-replace      | ~M-%~        |
+| kill-buffer        | ~C-x k~      |
+| increase font-size | ~C-x C-=~    |
+| decrease font-size | ~C-x C--~    |
+| default font-size  | ~C-x C-0~    |
+| org-store-link     | ~C-c l~      |
+| org-insert-link    | ~C-c C-l~    |
+| ispell-word        | ~M-$~       |
