@@ -16,16 +16,16 @@
 - Type ~F~ in the Newbiemacs screen to open the folder containing the
   current file.
 - Newbiemacs uses [[https://www.emacswiki.org/emacs/Evil][evil mode]], which allows us to use [[https://en.wikipedia.org/wiki/Vim_(text_editor)][Vim]] keybindings.
-- In Vim, there are two modes called ~normal mode~ and ~insert mode~
-- ~normal mode~ has a fat cursor and the icon at the bottom left corder has orange color.
+- In Vim, there are two modes called *normal mode* and *insert mode*
+- *normal mode* has a fat cursor and the icon at the bottom left corder has orange color.
   #+ATTR_HTML: :width 600
   [[file:files/normal-mode.png][file:files/normal-mode.png]]
-- ~insert mode~ has a thin cursor and the icon at the bottom left corder has green color.
+- *insert mode* has a thin cursor and the icon at the bottom left corder has green color.
   #+ATTR_HTML: :width 600
   [[file:files/normal-mode.png][file:files/insert-mode.png]]
-- Type ~i~ to change mode from ~normal mode~ to ~insert mode~
-- Type ~ESC~ to change mode from ~insert mode~ to ~normal mode~
-- To go to the Newbiemacs screen, type ~BACKSPACE~ in ~normal mode~
+- Type ~i~ to change mode from *normal mode* to *insert mode*
+- Type ~ESC~ to change mode from *insert mode* to *normal mode*
+- To go to the Newbiemacs screen, type ~BACKSPACE~ in *normal mode*
 
 * Tutorial levels
 - There are 3 levels in this tutorial. (click the link below)
