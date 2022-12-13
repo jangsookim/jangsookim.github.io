@@ -69,4 +69,7 @@
 7. On Windows, however, it will only copy a string in the
    clipboard. Now open the command prompt run as administrator. Paste
    the string in the command prompt.
-   
+
+* Links
+- [[file:newbiemacs-home.org][Newbiemacs Home]]
+- [[file:newbiemacs-tutorial.org][Newbiemacs Tutorial]]

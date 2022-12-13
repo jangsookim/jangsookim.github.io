@@ -51,3 +51,6 @@ If you want to use latex in Newbiemacs, you need to do the following (only once)
    If the box is not visible, then in the menu go to ~Settings~ and click ~Advanced Options...~.
    It will open a text file. Enter the following line anywhere there and save the file.
    : InverseSearchCmdLine = C:\Program Files\Emacs\emacs-28.2\bin\emacsclientw.exe -n +%l "%f"
+* Links
+- [[file:newbiemacs-home.org][Newbiemacs Home]]
+- [[file:newbiemacs-tutorial.org][Newbiemacs Tutorial]]

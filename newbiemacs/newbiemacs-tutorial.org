@@ -65,3 +65,5 @@ You can re-installing Newbiemacs keeping your Newbiemacs folder
 1. Restart Newbiemacs
 2. If it's still not working, re-install Newbiemacs.
 
+* Links
+- [[file:newbiemacs-home.org][Newbiemacs Home]]

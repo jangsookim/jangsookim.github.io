@@ -17,3 +17,7 @@
 | org-store-link     | ~C-c l~      |
 | org-insert-link    | ~C-c C-l~    |
 | ispell-word        | ~M-$~       |
+
+* Links
+- [[file:newbiemacs-home.org][Newbiemacs Home]]
+- [[file:newbiemacs-tutorial.org][Newbiemacs Tutorial]]

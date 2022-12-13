@@ -57,3 +57,6 @@
 ** How to view the connections of the org files
 - Type ~u~ in the Newbiemacs screen.
 
+* Links
+- [[file:newbiemacs-home.org][Newbiemacs Home]]
+- [[file:newbiemacs-tutorial.org][Newbiemacs Tutorial]]
