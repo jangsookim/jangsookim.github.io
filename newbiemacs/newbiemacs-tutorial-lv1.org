@@ -5,7 +5,7 @@
 - In this tutorial we learn how to manage pdf, tex, and miscellaneous files.
 - The basic concept is to store these files in their directories and search them.
 - The directories for these files are under the newbiemacs folder.
-- To open the newbiemacs folder, type ~<BACKSPACE>~ twice and then type ~F~
+- To open the newbiemacs folder, type ~BACKSPACE~ twice and then type ~F~
 - The pdf, tex, and miscellaneous files will be stored in the ~pdf~,
   ~tex~, and ~misc~ folders under the newbiemacs folder.
 - You may manually move your files into one of these folders.
@@ -55,7 +55,7 @@
    not needed. This name will also be the title inside the tex file.)
 3. Choose a template file. (For the default, just hit the enter key.)
 4. Now you can search the tex file by typing ~t~ in on the Newbiemacs main screen.
-* Create symlinks
+* Symlinks
 - A symlink is a link to a file similar to a "shortcut" to a file.
 - Creating a symlink will allow you to search a file without moving it
   to one of the ~pdf~, ~tex~, ~misc~ folders.
@@ -63,7 +63,7 @@
 1. Go to the Newbiemacs screen.
 2. In your Finder or File Explorer, find a file that you want to create a symlink.
 3. Drag-and-drop the file into the Newbiemacs screen.
-4. Type ~<BACKSPACE>~, which will bring you back to the Newbiemacs screen.
+4. Type ~BACKSPACE~, which will bring you back to the Newbiemacs screen.
 5. Type ~S~. Then it will ask you to enter a symlink name. Follow the instructions.
 6. On Mac, a symlink will be created in this way and you are done.
 7. On Windows, however, it will only copy a string in the

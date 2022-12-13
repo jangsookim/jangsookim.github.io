@@ -4,7 +4,7 @@
 
 * Introduction
 - In this tutorial you will learn how to use Newbiemacs.
-- You can use the basic features of Newbiemacs in following the Newbiemacs screen.
+- You can use the basic features of Newbiemacs in the following Newbiemacs screen.
 #+ATTR_HTML: :width 600
 [[file:files/newbiemacs-screenshot.png][file:files/newbiemacs-screenshot.png]]
 
@@ -19,13 +19,13 @@
 - In Vim, there are two modes called ~normal mode~ and ~insert mode~
 - ~normal mode~ has a fat cursor and the icon at the bottom left corder has orange color.
   #+ATTR_HTML: :width 600
-  [[file:files/normal-mode.png][file:~/Dropbox/newbiemacs/html/my-homepage/newbiemacs/files/normal-mode.png]]
+  [[file:files/normal-mode.png][file:files/normal-mode.png]]
 - ~insert mode~ has a thin cursor and the icon at the bottom left corder has green color.
   #+ATTR_HTML: :width 600
-  [[file:files/normal-mode.png][file:~/Dropbox/newbiemacs/html/my-homepage/newbiemacs/files/insert-mode.png]]
+  [[file:files/normal-mode.png][file:files/insert-mode.png]]
 - Type ~i~ to change mode from ~normal mode~ to ~insert mode~
 - Type ~ESC~ to change mode from ~insert mode~ to ~normal mode~
-- To go to the Newbiemacs screen, type ~<BACKSPACE>~ in ~normal mode~.
+- To go to the Newbiemacs screen, type ~BACKSPACE~ in ~normal mode~
 
 * Tutorial levels
 - There are 3 levels in this tutorial. (click the link below)
@@ -36,7 +36,7 @@
 
 ** [[file:newbiemacs-tutorial-lv2.org][Tutorial Level 2]]
 - Edit tex files
-- Use org-mode
+- Use [[https://orgmode.org/][org-mode]]
 
 ** [[file:newbiemacs-tutorial-lv3.org][Tutorial Level 3]]
 - Advanced editing techniques

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-13 Tue 12:33 -->
+<!-- 2022-12-13 Tue 13:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Newbiemacs Tutorial: Level 1</title>
@@ -23,32 +23,32 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge112753">1. Introduction</a></li>
-<li><a href="#orgaae50a0">2. How to find a pdf, tex, or miscellaneous file</a></li>
-<li><a href="#orgc070ccb">3. Add new files</a>
+<li><a href="#org6a9298c">1. Introduction</a></li>
+<li><a href="#orgfa7c245">2. How to find a pdf, tex, or miscellaneous file</a></li>
+<li><a href="#org8100d8c">3. Add new files</a>
 <ul>
-<li><a href="#orgb2fbbb7">3.1. How to add a pdf file from arxiv</a></li>
-<li><a href="#orge6f6a30">3.2. How to add a pdf file of a published paper</a></li>
-<li><a href="#org8bcf5f4">3.3. How to create a new tex file</a></li>
+<li><a href="#org1b0578c">3.1. How to add a pdf file from arxiv</a></li>
+<li><a href="#orgf1b66b7">3.2. How to add a pdf file of a published paper</a></li>
+<li><a href="#org29edbb8">3.3. How to create a new tex file</a></li>
 </ul>
 </li>
-<li><a href="#org538d730">4. Create symlinks</a>
+<li><a href="#org190784c">4. Symlinks</a>
 <ul>
-<li><a href="#orga3ea342">4.1. How to create a symlink to a file</a></li>
+<li><a href="#org69e1551">4.1. How to create a symlink to a file</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge112753" class="outline-2">
-<h2 id="orge112753"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org6a9298c" class="outline-2">
+<h2 id="org6a9298c"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>In this tutorial we learn how to manage pdf, tex, and miscellaneous files.</li>
 <li>The basic concept is to store these files in their directories and search them.</li>
 <li>The directories for these files are under the newbiemacs folder.</li>
-<li>To open the newbiemacs folder, type <code>&lt;BACKSPACE&gt;</code> twice and then type <code>F</code></li>
+<li>To open the newbiemacs folder, type <code>BACKSPACE</code> twice and then type <code>F</code></li>
 <li>The pdf, tex, and miscellaneous files will be stored in the <code>pdf</code>,
 <code>tex</code>, and <code>misc</code> folders under the newbiemacs folder.</li>
 <li>You may manually move your files into one of these folders.</li>
@@ -57,8 +57,8 @@
 </div>
 </div>
 
-<div id="outline-container-orgaae50a0" class="outline-2">
-<h2 id="orgaae50a0"><span class="section-number-2">2.</span> How to find a pdf, tex, or miscellaneous file</h2>
+<div id="outline-container-orgfa7c245" class="outline-2">
+<h2 id="orgfa7c245"><span class="section-number-2">2.</span> How to find a pdf, tex, or miscellaneous file</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Finding a file is very easy.</li>
@@ -71,16 +71,16 @@ there.</li>
 </div>
 </div>
 
-<div id="outline-container-orgc070ccb" class="outline-2">
-<h2 id="orgc070ccb"><span class="section-number-2">3.</span> Add new files</h2>
+<div id="outline-container-org8100d8c" class="outline-2">
+<h2 id="org8100d8c"><span class="section-number-2">3.</span> Add new files</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>Note that it is important to have a good file name scheme so that we can search files easily.</li>
 <li>The following methods will do this effortelessly.</li>
 </ul>
 </div>
-<div id="outline-container-orgb2fbbb7" class="outline-3">
-<h3 id="orgb2fbbb7"><span class="section-number-3">3.1.</span> How to add a pdf file from arxiv</h3>
+<div id="outline-container-org1b0578c" class="outline-3">
+<h3 id="org1b0578c"><span class="section-number-3">3.1.</span> How to add a pdf file from arxiv</h3>
 <div class="outline-text-3" id="text-3-1">
 <ol class="org-ol">
 <li>Download the pdf file of a paper from <a href="https://arxiv.org/">https://arxiv.org/</a> (You must
@@ -90,19 +90,19 @@ browser.)</li>
 Copy the two lines of the title and the authors like this:
 </p>
 
-<div id="org0b0b8f8" class="figure">
+<div id="orgf8fb41f" class="figure">
 <p><img src="./files/arxiv.png" alt="arxiv.png" />
 </p>
 </div></li>
 <li>Go to your Emacs with the Newbiemacs main screen.</li>
-<li>Type <code>m</code> and follow the instructions at the bottom of Emacs screen.</li>
+<li>Type <code>m</code> and follow the instructions at the bottom of the Emacs screen.</li>
 <li>It will save a pdf with name scheme such as "Author 1, Authur 2, Title".</li>
 <li>Now you can search the pdf by typing <code>p</code> in on the Newbiemacs main screen.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orge6f6a30" class="outline-3">
-<h3 id="orge6f6a30"><span class="section-number-3">3.2.</span> How to add a pdf file of a published paper</h3>
+<div id="outline-container-orgf1b66b7" class="outline-3">
+<h3 id="orgf1b66b7"><span class="section-number-3">3.2.</span> How to add a pdf file of a published paper</h3>
 <div class="outline-text-3" id="text-3-2">
 <ol class="org-ol">
 <li>Download a pdf file into your download folder.</li>
@@ -111,7 +111,7 @@ Copy the two lines of the title and the authors like this:
 Search the paper there. You will see something like this
 </p>
 
-<div id="orgbb627ef" class="figure">
+<div id="org263f026" class="figure">
 <p><img src="./files/mathscinet.png" alt="mathscinet.png" />
 </p>
 </div></li>
@@ -119,7 +119,7 @@ Search the paper there. You will see something like this
 Click the drop-down box at the top left corner and select bibtex.
 </p>
 
-<div id="org3703735" class="figure">
+<div id="org75587c6" class="figure">
 <p><img src="./files/mathscinet2.png" alt="mathscinet2.png" />
 </p>
 </div></li>
@@ -127,19 +127,19 @@ Click the drop-down box at the top left corner and select bibtex.
 Copy the bibtex item.
 </p>
 
-<div id="orga545996" class="figure">
+<div id="org7293f20" class="figure">
 <p><img src="./files/mathscinet3.png" alt="mathscinet3.png" />
 </p>
 </div></li>
 <li>Go to your Emacs with the Newbiemacs main screen.</li>
-<li>Type <code>m</code> and follow the instructions at the bottom of Emacs screen.</li>
+<li>Type <code>m</code> and follow the instructions at the bottom of the Emacs screen.</li>
 <li>It will save a pdf with name scheme such as "Author 1, Authur 2, Year, Title".</li>
 <li>Now you can search the pdf by typing <code>p</code> in on the Newbiemacs main screen.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org8bcf5f4" class="outline-3">
-<h3 id="org8bcf5f4"><span class="section-number-3">3.3.</span> How to create a new tex file</h3>
+<div id="outline-container-org29edbb8" class="outline-3">
+<h3 id="org29edbb8"><span class="section-number-3">3.3.</span> How to create a new tex file</h3>
 <div class="outline-text-3" id="text-3-3">
 <ol class="org-ol">
 <li>Type <code>n</code> in the Newbiemacs screen.</li>
@@ -151,8 +151,8 @@ not needed. This name will also be the title inside the tex file.)</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org538d730" class="outline-2">
-<h2 id="org538d730"><span class="section-number-2">4.</span> Create symlinks</h2>
+<div id="outline-container-org190784c" class="outline-2">
+<h2 id="org190784c"><span class="section-number-2">4.</span> Symlinks</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>A symlink is a link to a file similar to a "shortcut" to a file.</li>
@@ -160,14 +160,14 @@ not needed. This name will also be the title inside the tex file.)</li>
 to one of the <code>pdf</code>, <code>tex</code>, <code>misc</code> folders.</li>
 </ul>
 </div>
-<div id="outline-container-orga3ea342" class="outline-3">
-<h3 id="orga3ea342"><span class="section-number-3">4.1.</span> How to create a symlink to a file</h3>
+<div id="outline-container-org69e1551" class="outline-3">
+<h3 id="org69e1551"><span class="section-number-3">4.1.</span> How to create a symlink to a file</h3>
 <div class="outline-text-3" id="text-4-1">
 <ol class="org-ol">
 <li>Go to the Newbiemacs screen.</li>
 <li>In your Finder or File Explorer, find a file that you want to create a symlink.</li>
 <li>Drag-and-drop the file into the Newbiemacs screen.</li>
-<li>Type <code>&lt;BACKSPACE&gt;</code>, which will bring you back to the Newbiemacs screen.</li>
+<li>Type <code>BACKSPACE</code>, which will bring you back to the Newbiemacs screen.</li>
 <li>Type <code>S</code>. Then it will ask you to enter a symlink name. Follow the instructions.</li>
 <li>On Mac, a symlink will be created in this way and you are done.</li>
 <li>On Windows, however, it will only copy a string in the
@@ -180,7 +180,7 @@ the string in the command prompt.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-12-13 Tue 12:33</p>
+<p class="date">Created: 2022-12-13 Tue 13:40</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

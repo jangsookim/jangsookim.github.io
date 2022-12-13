@@ -2,7 +2,7 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 * Introduction
-- In this tutorial we learn how to edit tex files and how to use org-mode.
+- In this tutorial we learn how to edit tex files and how to use [[https://orgmode.org/][org-mode]].
 - Recall that there are two modes: ~normal mode~ and ~insert mode~
 - There is anothor mode, called ~visual mode~, which is a mode to
   select a region, just like what you usually do with your mouse.
@@ -35,10 +35,10 @@
 - The same keybinding ~, b~ can also be used to save the file or to view the pdf.
 
 * Org-mode
-- Org-mode is a very useful tool to organize text files with extension "org".
-- An org file is basically a text file with mark-down-like structure.
+- [[https://orgmode.org/][Org-mode]] is a very useful tool to organize text files with extension "org".
+- An org file is basically a text file with [[https://en.wikipedia.org/wiki/Markdown][mark-down]]-like structure.
 - Your org files will be stored in the folder ~org~ under the Newbiemacs folder.
-- In Newbiemacs we use "org-roam", which is a package to connect org files nicely.
+- In Newbiemacs we use [[https://www.orgroam.com/][org-roam]], which is a package to connect org files nicely.
 
 ** How to create an org file
 - Type ~r~ in the Newbiemacs screen.
