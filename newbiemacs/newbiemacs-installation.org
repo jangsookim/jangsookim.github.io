@@ -8,8 +8,7 @@
    terminal by pressing Command+Space and typing "terminal". You can
    just copy the whole thing and then paste it in your terminal.)
    : cd ~
-   : git clone https://github.com/jangsookim/newbiemacs.git nbm-temp
-   : mv nbm-temp nbm-root
+   : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
    : cp ~/nbm-root/.emacs ~/.emacs
    :
 4. Run Emacs. It will take several minutes to download necessary
@@ -31,8 +30,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
    the following lines. (You can just copy the whole thing and then
    paste it in your command prompt.)
    : cd %userprofile%
-   : git clone https://github.com/jangsookim/newbiemacs.git nbm-temp
-   : rename nbm-temp nbm-root
+   : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
    : copy %userprofile%\nbm-root\.emacs-windows %userprofile%\AppData\Roaming\.emacs
    :
 5. Run Emacs. It will take several minutes to download necessary
