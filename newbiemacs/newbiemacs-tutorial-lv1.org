@@ -73,3 +73,4 @@
 * Links
 - [[file:newbiemacs-home.org][Newbiemacs Home]]
 - [[file:newbiemacs-tutorial.org][Newbiemacs Tutorial]]
+- [[file:newbiemacs-tutorial-lv2.org][Tutorial Level 2]]

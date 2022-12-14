@@ -251,5 +251,7 @@
 - Screenshots
 #+ATTR_HTML: :width 600
 [[file:files/newbiemacs-screenshot.png][file:newbiemacs/files/newbiemacs-screenshot.png]]
-#+ATTR_HTML: :width 200
+#+ATTR_HTML: :width 600
+[[file:newbiemacs/files/leader-key.png][file:newbiemacs/files/leader-key.png]]
+#+ATTR_HTML: :width 500
 file:newbiemacs/files/torus-screenshot.png

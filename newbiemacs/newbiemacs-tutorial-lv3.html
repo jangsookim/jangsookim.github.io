@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-14 Wed 16:30 -->
+<!-- 2022-12-14 Wed 16:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Newbiemacs Tutorial: Level 3</title>
@@ -23,26 +23,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0909294">1. key bindings</a></li>
-<li><a href="#org7d07ecc">2. Latex</a>
+<li><a href="#orgc292265">1. key bindings</a></li>
+<li><a href="#org2d0fc11">2. Latex</a>
 <ul>
-<li><a href="#orgcac2152">2.1. Insert figure from screenshot</a></li>
-<li><a href="#orgd3879cd">2.2. Convert latex code to hwp math code</a></li>
-<li><a href="#orgb311dde">2.3. Change variable i to j in math mode</a></li>
-<li><a href="#org07c65e7">2.4. Create a newcommand</a></li>
-<li><a href="#org4af0090">2.5. Create a label</a></li>
-<li><a href="#orga458691">2.6. Create a bibtex item</a></li>
+<li><a href="#orgbace069">2.1. Insert figure from screenshot</a></li>
+<li><a href="#orgd00701c">2.2. Convert latex code to hwp math code</a></li>
+<li><a href="#org78fe641">2.3. Change variable i to j in math mode</a></li>
+<li><a href="#org884a237">2.4. Create a newcommand</a></li>
+<li><a href="#org3c5dbe3">2.5. Create a label</a></li>
+<li><a href="#org70c1c87">2.6. Create a bibtex item</a></li>
 </ul>
 </li>
-<li><a href="#orgb30831d">3. Useful tools</a>
+<li><a href="#org2d026e9">3. Useful tools</a>
 <ul>
-<li><a href="#org07e6eef">3.1. bookmark</a></li>
-<li><a href="#org1a78251">3.2. ripgrep</a></li>
-<li><a href="#orge92d74a">3.3. grep</a></li>
-<li><a href="#org0a1af11">3.4. Dired</a></li>
+<li><a href="#org30e3f1e">3.1. bookmark</a></li>
+<li><a href="#org2e1c758">3.2. Dired</a></li>
 </ul>
 </li>
-<li><a href="#org4ab8825">4. Links</a></li>
+<li><a href="#org0232c8a">4. Links</a></li>
 </ul>
 </div>
 </div>
@@ -50,8 +48,8 @@
 <li>This page is under construction.</li>
 </ul>
 
-<div id="outline-container-org0909294" class="outline-2">
-<h2 id="org0909294"><span class="section-number-2">1.</span> key bindings</h2>
+<div id="outline-container-orgc292265" class="outline-2">
+<h2 id="orgc292265"><span class="section-number-2">1.</span> key bindings</h2>
 <div class="outline-text-2" id="text-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -143,66 +141,39 @@
 </table>
 </div>
 </div>
-<div id="outline-container-org7d07ecc" class="outline-2">
-<h2 id="org7d07ecc"><span class="section-number-2">2.</span> Latex</h2>
+<div id="outline-container-org2d0fc11" class="outline-2">
+<h2 id="org2d0fc11"><span class="section-number-2">2.</span> Latex</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgcac2152" class="outline-3">
-<h3 id="orgcac2152"><span class="section-number-3">2.1.</span> Insert figure from screenshot</h3>
+<div id="outline-container-orgbace069" class="outline-3">
+<h3 id="orgbace069"><span class="section-number-3">2.1.</span> Insert figure from screenshot</h3>
 </div>
-<div id="outline-container-orgd3879cd" class="outline-3">
-<h3 id="orgd3879cd"><span class="section-number-3">2.2.</span> Convert latex code to hwp math code</h3>
+<div id="outline-container-orgd00701c" class="outline-3">
+<h3 id="orgd00701c"><span class="section-number-3">2.2.</span> Convert latex code to hwp math code</h3>
 </div>
-<div id="outline-container-orgb311dde" class="outline-3">
-<h3 id="orgb311dde"><span class="section-number-3">2.3.</span> Change variable i to j in math mode</h3>
+<div id="outline-container-org78fe641" class="outline-3">
+<h3 id="org78fe641"><span class="section-number-3">2.3.</span> Change variable i to j in math mode</h3>
 </div>
-<div id="outline-container-org07c65e7" class="outline-3">
-<h3 id="org07c65e7"><span class="section-number-3">2.4.</span> Create a newcommand</h3>
+<div id="outline-container-org884a237" class="outline-3">
+<h3 id="org884a237"><span class="section-number-3">2.4.</span> Create a newcommand</h3>
 </div>
-<div id="outline-container-org4af0090" class="outline-3">
-<h3 id="org4af0090"><span class="section-number-3">2.5.</span> Create a label</h3>
+<div id="outline-container-org3c5dbe3" class="outline-3">
+<h3 id="org3c5dbe3"><span class="section-number-3">2.5.</span> Create a label</h3>
 </div>
-<div id="outline-container-orga458691" class="outline-3">
-<h3 id="orga458691"><span class="section-number-3">2.6.</span> Create a bibtex item</h3>
+<div id="outline-container-org70c1c87" class="outline-3">
+<h3 id="org70c1c87"><span class="section-number-3">2.6.</span> Create a bibtex item</h3>
 </div>
 </div>
-<div id="outline-container-orgb30831d" class="outline-2">
-<h2 id="orgb30831d"><span class="section-number-2">3.</span> Useful tools</h2>
+<div id="outline-container-org2d026e9" class="outline-2">
+<h2 id="org2d026e9"><span class="section-number-2">3.</span> Useful tools</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org07e6eef" class="outline-3">
-<h3 id="org07e6eef"><span class="section-number-3">3.1.</span> bookmark</h3>
+<div id="outline-container-org30e3f1e" class="outline-3">
+<h3 id="org30e3f1e"><span class="section-number-3">3.1.</span> bookmark</h3>
 </div>
-<div id="outline-container-org1a78251" class="outline-3">
-<h3 id="org1a78251"><span class="section-number-3">3.2.</span> ripgrep</h3>
+<div id="outline-container-org2e1c758" class="outline-3">
+<h3 id="org2e1c758"><span class="section-number-3">3.2.</span> Dired</h3>
 <div class="outline-text-3" id="text-3-2">
-<ul class="org-ul">
-<li>To use <code>helm-rg</code> or <code>helm-projectile-rg</code> we need <code>ripgrep</code>.</li>
-</ul>
-<p>
-<a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a>
-</p>
-<ul class="org-ul">
-<li><p>
-(Windows)
-</p>
-<pre class="example">
-pacman -S mingw-w64-x86_64-ripgrep
-</pre></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orge92d74a" class="outline-3">
-<h3 id="orge92d74a"><span class="section-number-3">3.3.</span> grep</h3>
-<div class="outline-text-3" id="text-3-3">
-<pre class="example">
-pacman -S mingw-w64-x86_64-grep
-</pre>
-</div>
-</div>
-<div id="outline-container-org0a1af11" class="outline-3">
-<h3 id="org0a1af11"><span class="section-number-3">3.4.</span> Dired</h3>
-<div class="outline-text-3" id="text-3-4">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -253,8 +224,8 @@ pacman -S mingw-w64-x86_64-grep
 </div>
 </div>
 
-<div id="outline-container-org4ab8825" class="outline-2">
-<h2 id="org4ab8825"><span class="section-number-2">4.</span> Links</h2>
+<div id="outline-container-org0232c8a" class="outline-2">
+<h2 id="org0232c8a"><span class="section-number-2">4.</span> Links</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><a href="newbiemacs-home.html">Newbiemacs Home</a></li>
@@ -265,7 +236,7 @@ pacman -S mingw-w64-x86_64-grep
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-12-14 Wed 16:30</p>
+<p class="date">Created: 2022-12-14 Wed 16:47</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

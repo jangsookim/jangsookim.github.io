@@ -14,5 +14,5 @@
 - Search pdf and tex files quickly.
 - Easy to use.
 - You can play the torus game!
-#+ATTR_HTML: :width 200
+#+ATTR_HTML: :width 500
 file:files/torus-screenshot.png

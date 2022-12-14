@@ -19,9 +19,9 @@
 | mode   | keybinding    | description                                             |
 |--------+---------------+---------------------------------------------------------|
 | all | ~C-g~         | cancel entering keyboard input                          |
-| normal | ~<BACKSPACE>~ | go to newbiemacs screen                                 |
+| normal | ~BACKSPACE~   | go to newbiemacs screen                                 |
 | normal | ~i~           | change to insert mode                                   |
-| insert | ~<ESC>~       | change to normal mode                                   |
+| insert | ~ESC~         | change to normal mode                                   |
 | normal | ~v~           | start visual mode                                       |
 | visual | ~y~           | yank (copy) the selected region and back to normal mode |
 | visual | ~x~           | cut the selected region and back to normal mode         |
@@ -34,7 +34,7 @@
   ~,~ follows by the key ~b~).
 - The same keybinding ~, b~ can also be used to save the file or to view the pdf.
 * Spell checking
-- To spell check we need to install a speel checking program.
+- To spell check we need to install a spell checking program.
 - Once the program is installed, you can spell check by typing ~SPC S b~ or ~SPC S i~
 ** Install a spell checker on Mac
 - We first need to install [[https://brew.sh/][Homebrew]]. Enter the following in a terminal.
@@ -76,3 +76,5 @@
 * Links
 - [[file:newbiemacs-home.org][Newbiemacs Home]]
 - [[file:newbiemacs-tutorial.org][Newbiemacs Tutorial]]
+- [[file:newbiemacs-tutorial-lv1.org][Tutorial Level 1]] 
+- [[file:newbiemacs-tutorial-lv3.org][Tutorial Level 3]]
