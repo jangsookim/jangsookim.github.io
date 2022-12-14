@@ -12,9 +12,12 @@
 ** Notation
 - ~C~ means Ctrl, i.e., the control key 
 - ~M~ means Meta, i.e., the command key for Mac and the alt key for Windows
+- ~SPC~ means the space key
 - ~C-g~ means hold ~C~ and then press ~g~
 - ~C-x k~ means ~C-g~ and then ~k~ (without holding ~C~)
 - ~C-x C-=~ means ~C-g~ and then ~C-=~
+- ~SPC S i~ means ~SPC~ and then ~S~ and then ~i~ (This is
+  case-senstive, so ~S~ is different from ~s~)
 ** Keybindings of basic commands
 | mode   | keybinding    | description                                             |
 |--------+---------------+---------------------------------------------------------|
@@ -30,22 +33,22 @@
 * How to edit a tex file
 - You can edit a tex file in *insert mode* in the usual way.
 - To copy or paste you need to change to *normal mode* and use the key bindings above.
-- To compile the tex file, in *normal mode* type ~, b~ (the comma key
-  ~,~ follows by the key ~b~).
+- To compile a tex file, in *normal mode* type ~, b~ (the comma key
+  ~,~ followed by the key ~b~).
 - The same keybinding ~, b~ can also be used to save the file or to view the pdf.
 * Spell checking
-- To spell check we need to install a spell checking program.
+- To spell check we need to install a spell checking program (only once).
 - Once the program is installed, you can spell check by typing ~SPC S b~ or ~SPC S i~
 ** Install a spell checker on Mac
 - We first need to install [[https://brew.sh/][Homebrew]]. Enter the following in a terminal.
   : /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 - To use homebrew we need to add its path to the system. Enter the following in a terminal.
   : echo 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshrc
-- Now install ispell by typing the following in a terminal.
+- Now install [[https://www.cs.hmc.edu/~geoff/ispell.html][ispell]] by typing the following in a terminal.
   : brew install ispell
 ** Install a spell checker on Windows
 - We first need to install [[https://www.msys2.org/][Msys2]]. Click the link and install it as instructed.
-- Open Msys2 and install hunspell by typing the following line.
+- Open Msys2 and install [[https://github.com/hunspell/hunspell][hunspell]] by typing the following line.
   : pacman -S mingw-w64-x86_64-hunspell
 - Open Msys2 and install hunspell-en by typing the following line.
   : pacman -S mingw-w64-x86_64-hunspell-en
