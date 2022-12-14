@@ -56,10 +56,16 @@
 ** How can I re-install Newbiemacs?
 You can re-installing Newbiemacs keeping your Newbiemacs folder
 ~~/newbiemacs~.  It will take much less than the actual installation.
-1. Delete the folder ~~/nbm-root~. 
-2. Install Newbiemacs as instructed [[file:newbiemacs-installation.org][here]]. (You can of course omit the
-   steps for the already installed programs, Git and Google Chrome,
-   etc.)
+1. Delete the folder ~~/nbm-root~.
+2. (For Mac) Enter the following in a terminal
+   : cd ~
+   : git clone https://github.com/jangsookim/newbiemacs.git nbm-temp
+   : mv nbm-temp nbm-root
+
+2. (For Windows) Enter the following in Command Prompt.
+   : cd %userprofile%
+   : git clone https://github.com/jangsookim/newbiemacs.git nbm-temp
+   : rename nbm-temp nbm-root
 * Troubleshooting 
 ** Newbiemacs crashed! What should I do?
 1. Restart Newbiemacs

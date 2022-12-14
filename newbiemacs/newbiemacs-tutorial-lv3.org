@@ -18,6 +18,28 @@
 | org-insert-link    | ~C-c C-l~    |
 | ispell-word        | ~M-$~       |
 
+| command            | keybinding |
+|--------------------+------------|
+| Yank favoriate     | ~SPC y f~  |
+* Latex 
+** Insert figure from screenshot
+** Convert latex code to hwp math code
+** Change variable i to j in math mode
+** Create a newcommand
+** Create a label
+** Create a bibtex item
+* Useful tools
+** bookmark
+** Dired
+| key | command                      |
+|-----+------------------------------|
+| h   | dired-up-directory           |
+| j   | dired-next-line              |
+| k   | dired-previous-line          |
+| l   | dired-find-file              |
+| W   | wdired-change-to-wdired-mode |
+| b   | browse-url-of-dired-file     |
+
 * Links
 - [[file:newbiemacs-home.org][Newbiemacs Home]]
 - [[file:newbiemacs-tutorial.org][Newbiemacs Tutorial]]
