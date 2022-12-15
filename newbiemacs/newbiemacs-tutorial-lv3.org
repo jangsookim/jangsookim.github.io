@@ -17,9 +17,6 @@
 | org-insert-link    | ~C-c C-l~    |
 | Yank favoriate     | ~SPC y f~  |
 * Latex 
-** Insert figure from screenshot
-** Convert latex code to hwp math code
-** Change variable i to j in math mode
 ** Create a newcommand
 ** Create a label
 ** Create a bibtex item
@@ -34,6 +31,15 @@
 | l   | dired-find-file              |
 | W   | wdired-change-to-wdired-mode |
 | b   | browse-url-of-dired-file     |
+* org-mode
+** todo
+** agenda
+** capture
+** further reading
+- [[https://orgmode.org/quickstart.html][Quickstart]]
+- [[https://orgmode.org/guide/index.html][Org Mode Compact Guide]]
+
+
 * Configurations
 ** key-tree
 ** user-init

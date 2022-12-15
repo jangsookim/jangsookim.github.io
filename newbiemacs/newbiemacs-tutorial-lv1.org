@@ -3,7 +3,11 @@
 
 * Introduction
 - In this tutorial we learn how to manage pdf, tex, and miscellaneous files.
-- The basic concept is to store these files in their directories and search them.
+- We will also see some useful tools: *adding a figure,* *changing
+  variables*, and *converting latex code to HWP math code* (for Korean
+  only).
+- The basic concept of managing files is to store these files in their
+  directories and search them.
 - The directories for these files are under the newbiemacs folder.
 - To open the newbiemacs folder, type ~BACKSPACE~ twice and then type ~F~
 - The pdf, tex, and miscellaneous files will be stored in the ~pdf~,
@@ -55,7 +59,7 @@
    not needed. This name will also be the title inside the tex file.)
 3. Choose a template file. (For the default, just hit the enter key.)
 4. Now you can search the tex file by typing ~t~ in on the Newbiemacs main screen.
-* Symlinks
+* Symlinks (optional)
 - A symlink is a link to a file similar to a "shortcut" to a file.
 - Creating a symlink will allow you to search a file without moving it
   to one of the ~pdf~, ~tex~, ~misc~ folders.
@@ -69,6 +73,40 @@
 7. On Windows, however, it will only copy a string in the
    clipboard. Now open the command prompt run as administrator. Paste
    the string in the command prompt.
+* Some useful tools (optional)
+- Even if you don't use Newbiemacs for editing tex files, you may find the following tools useful.
+** Add a figure in a tex file
+- Using Newbiemacs you can add an image into your tex file as follows.
+  1. Take a screenshot (or upload a screenshot from your tablet).
+  2. Go to your tex file.
+  3. Press ~BACKSPACE~ to go to the Newbiemacs main screen.
+  4. Press ~f~ and follow the instructions.
+- By default Newbiemacs will search the downloads folder and the desktop.
+- If your computer saves screenshots in a different folder you can add
+  the folder: type ~BACKSPACE~ followed by ~x~ followed by ~3~, and
+  add the directory path in a new line.
+** Change variables
+- While writing your paper, you realized that you want to change the variable ~i~ to ~j~.
+- You cannot simply replace all ~i~ to ~j~, because then it will also
+  change a word like ~this~ to ~thjs~ and a macro like ~\int~ to ~\jnt~.
+- In Newbiemacs you can do the variable change as follows.
+  1. Open your tex file.
+  2. If you want the change only on some part, select the region by
+     dragging your mouse. (If you want the change in the entire file, you don't have to do this.)
+  3. Press ~BACKSPACE~ to go to the Newbiemacs main screen.
+  4. Press ~v~ and follow the instructions.
+     
+** Convert latex code to HWP math code (for Korean)
+- Suppose that you want to use the following latex code in Hangul program (한글 프로그램).
+  : \sum_{i=1}^n \frac{a_i}{b_i} = \prod_{i=1}^n c_i^2
+- You can convert this latex code to HWP math code as follows.
+  1. Select the latex code by dragging your mouse (without ~$~ or ~\( \)~ or ~\[ \]~).
+  2. Press ~BACKSPACE~ to go to the Newbiemacs main screen.
+  3. Press ~h~ and a converted HWP math code will be stored in the
+     clipboard. For example, the above latex code will be converted to
+     : sum_{ i=1}^n   {a_i }over{b_i } =  prod_{ i=1}^n  c_i^2
+  4. Go to Hangul program and paste the clipboard string in the math
+     input window (~ctrl n m~)
 
 * Links
 - [[file:newbiemacs-home.org][Newbiemacs Home]]

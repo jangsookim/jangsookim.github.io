@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-14 Wed 22:06 -->
+<!-- 2022-12-15 Thu 13:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Newbiemacs Tutorial: Level 3</title>
@@ -23,30 +23,35 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2eab43f">1. key bindings</a></li>
-<li><a href="#org24c7262">2. Latex</a>
+<li><a href="#orgb070d41">1. key bindings</a></li>
+<li><a href="#org84ab507">2. Latex</a>
 <ul>
-<li><a href="#org05d4647">2.1. Insert figure from screenshot</a></li>
-<li><a href="#org8fb7ed8">2.2. Convert latex code to hwp math code</a></li>
-<li><a href="#orgc171c07">2.3. Change variable i to j in math mode</a></li>
-<li><a href="#org380624c">2.4. Create a newcommand</a></li>
-<li><a href="#orgeb01dbb">2.5. Create a label</a></li>
-<li><a href="#orgb526325">2.6. Create a bibtex item</a></li>
+<li><a href="#org8604fbd">2.1. Create a newcommand</a></li>
+<li><a href="#org4c7820f">2.2. Create a label</a></li>
+<li><a href="#org3e8847a">2.3. Create a bibtex item</a></li>
 </ul>
 </li>
-<li><a href="#orgc2c14da">3. Useful tools</a>
+<li><a href="#org213799d">3. Useful tools</a>
 <ul>
-<li><a href="#org7607ba0">3.1. bookmark</a></li>
-<li><a href="#orgb44d41b">3.2. Dired</a></li>
+<li><a href="#orgabb4f33">3.1. bookmark</a></li>
+<li><a href="#org0469f7d">3.2. Dired</a></li>
 </ul>
 </li>
-<li><a href="#orgf3787fc">4. Configurations</a>
+<li><a href="#org117f6c4">4. org-mode</a>
 <ul>
-<li><a href="#orga6798d1">4.1. key-tree</a></li>
-<li><a href="#org6f663ef">4.2. user-init</a></li>
+<li><a href="#orgdd93c60">4.1. todo</a></li>
+<li><a href="#orgbc37b93">4.2. agenda</a></li>
+<li><a href="#org670b3ad">4.3. capture</a></li>
+<li><a href="#org72d99d6">4.4. further reading</a></li>
 </ul>
 </li>
-<li><a href="#org12c0202">5. Links</a></li>
+<li><a href="#org0109216">5. Configurations</a>
+<ul>
+<li><a href="#org0e23f96">5.1. key-tree</a></li>
+<li><a href="#org52018e9">5.2. user-init</a></li>
+</ul>
+</li>
+<li><a href="#orgc50e99f">6. Links</a></li>
 </ul>
 </div>
 </div>
@@ -54,8 +59,8 @@
 <li>This page is under construction.</li>
 </ul>
 
-<div id="outline-container-org2eab43f" class="outline-2">
-<h2 id="org2eab43f"><span class="section-number-2">1.</span> key bindings</h2>
+<div id="outline-container-orgb070d41" class="outline-2">
+<h2 id="orgb070d41"><span class="section-number-2">1.</span> key bindings</h2>
 <div class="outline-text-2" id="text-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -120,38 +125,29 @@
 </table>
 </div>
 </div>
-<div id="outline-container-org24c7262" class="outline-2">
-<h2 id="org24c7262"><span class="section-number-2">2.</span> Latex</h2>
+<div id="outline-container-org84ab507" class="outline-2">
+<h2 id="org84ab507"><span class="section-number-2">2.</span> Latex</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org05d4647" class="outline-3">
-<h3 id="org05d4647"><span class="section-number-3">2.1.</span> Insert figure from screenshot</h3>
+<div id="outline-container-org8604fbd" class="outline-3">
+<h3 id="org8604fbd"><span class="section-number-3">2.1.</span> Create a newcommand</h3>
 </div>
-<div id="outline-container-org8fb7ed8" class="outline-3">
-<h3 id="org8fb7ed8"><span class="section-number-3">2.2.</span> Convert latex code to hwp math code</h3>
+<div id="outline-container-org4c7820f" class="outline-3">
+<h3 id="org4c7820f"><span class="section-number-3">2.2.</span> Create a label</h3>
 </div>
-<div id="outline-container-orgc171c07" class="outline-3">
-<h3 id="orgc171c07"><span class="section-number-3">2.3.</span> Change variable i to j in math mode</h3>
-</div>
-<div id="outline-container-org380624c" class="outline-3">
-<h3 id="org380624c"><span class="section-number-3">2.4.</span> Create a newcommand</h3>
-</div>
-<div id="outline-container-orgeb01dbb" class="outline-3">
-<h3 id="orgeb01dbb"><span class="section-number-3">2.5.</span> Create a label</h3>
-</div>
-<div id="outline-container-orgb526325" class="outline-3">
-<h3 id="orgb526325"><span class="section-number-3">2.6.</span> Create a bibtex item</h3>
+<div id="outline-container-org3e8847a" class="outline-3">
+<h3 id="org3e8847a"><span class="section-number-3">2.3.</span> Create a bibtex item</h3>
 </div>
 </div>
-<div id="outline-container-orgc2c14da" class="outline-2">
-<h2 id="orgc2c14da"><span class="section-number-2">3.</span> Useful tools</h2>
+<div id="outline-container-org213799d" class="outline-2">
+<h2 id="org213799d"><span class="section-number-2">3.</span> Useful tools</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org7607ba0" class="outline-3">
-<h3 id="org7607ba0"><span class="section-number-3">3.1.</span> bookmark</h3>
+<div id="outline-container-orgabb4f33" class="outline-3">
+<h3 id="orgabb4f33"><span class="section-number-3">3.1.</span> bookmark</h3>
 </div>
-<div id="outline-container-orgb44d41b" class="outline-3">
-<h3 id="orgb44d41b"><span class="section-number-3">3.2.</span> Dired</h3>
+<div id="outline-container-org0469f7d" class="outline-3">
+<h3 id="org0469f7d"><span class="section-number-3">3.2.</span> Dired</h3>
 <div class="outline-text-3" id="text-3-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -202,21 +198,46 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgf3787fc" class="outline-2">
-<h2 id="orgf3787fc"><span class="section-number-2">4.</span> Configurations</h2>
+<div id="outline-container-org117f6c4" class="outline-2">
+<h2 id="org117f6c4"><span class="section-number-2">4.</span> org-mode</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orga6798d1" class="outline-3">
-<h3 id="orga6798d1"><span class="section-number-3">4.1.</span> key-tree</h3>
+<div id="outline-container-orgdd93c60" class="outline-3">
+<h3 id="orgdd93c60"><span class="section-number-3">4.1.</span> todo</h3>
 </div>
-<div id="outline-container-org6f663ef" class="outline-3">
-<h3 id="org6f663ef"><span class="section-number-3">4.2.</span> user-init</h3>
+<div id="outline-container-orgbc37b93" class="outline-3">
+<h3 id="orgbc37b93"><span class="section-number-3">4.2.</span> agenda</h3>
+</div>
+<div id="outline-container-org670b3ad" class="outline-3">
+<h3 id="org670b3ad"><span class="section-number-3">4.3.</span> capture</h3>
+</div>
+<div id="outline-container-org72d99d6" class="outline-3">
+<h3 id="org72d99d6"><span class="section-number-3">4.4.</span> further reading</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li><a href="https://orgmode.org/quickstart.html">Quickstart</a></li>
+<li><a href="https://orgmode.org/guide/index.html">Org Mode Compact Guide</a></li>
+</ul>
+</div>
 </div>
 </div>
 
-<div id="outline-container-org12c0202" class="outline-2">
-<h2 id="org12c0202"><span class="section-number-2">5.</span> Links</h2>
+
+<div id="outline-container-org0109216" class="outline-2">
+<h2 id="org0109216"><span class="section-number-2">5.</span> Configurations</h2>
 <div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org0e23f96" class="outline-3">
+<h3 id="org0e23f96"><span class="section-number-3">5.1.</span> key-tree</h3>
+</div>
+<div id="outline-container-org52018e9" class="outline-3">
+<h3 id="org52018e9"><span class="section-number-3">5.2.</span> user-init</h3>
+</div>
+</div>
+
+<div id="outline-container-orgc50e99f" class="outline-2">
+<h2 id="orgc50e99f"><span class="section-number-2">6.</span> Links</h2>
+<div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><a href="newbiemacs-home.html">Newbiemacs Home</a></li>
 <li><a href="newbiemacs-tutorial.html">Newbiemacs Tutorial</a></li>
@@ -226,7 +247,7 @@
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-12-14 Wed 22:06</p>
+<p class="date">Created: 2022-12-15 Thu 13:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

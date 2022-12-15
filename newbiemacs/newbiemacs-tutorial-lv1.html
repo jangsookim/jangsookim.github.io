@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-14 Wed 22:05 -->
+<!-- 2022-12-15 Thu 13:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Newbiemacs Tutorial: Level 1</title>
@@ -23,31 +23,42 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga4f6b86">1. Introduction</a></li>
-<li><a href="#org088721e">2. How to find a pdf, tex, or miscellaneous file</a></li>
-<li><a href="#org9db8b2d">3. Add new files</a>
+<li><a href="#org7fded65">1. Introduction</a></li>
+<li><a href="#org6d04641">2. How to find a pdf, tex, or miscellaneous file</a></li>
+<li><a href="#org5800a82">3. Add new files</a>
 <ul>
-<li><a href="#org9d7c957">3.1. How to add a pdf file from arxiv</a></li>
-<li><a href="#org2eec2e7">3.2. How to add a pdf file of a published paper</a></li>
-<li><a href="#org201a6f0">3.3. How to create a new tex file</a></li>
+<li><a href="#org9d4cdd4">3.1. How to add a pdf file from arxiv</a></li>
+<li><a href="#org45384ed">3.2. How to add a pdf file of a published paper</a></li>
+<li><a href="#org64917d9">3.3. How to create a new tex file</a></li>
 </ul>
 </li>
-<li><a href="#org3acf3a9">4. Symlinks</a>
+<li><a href="#org4925949">4. Symlinks (optional)</a>
 <ul>
-<li><a href="#org45bb45d">4.1. How to create a symlink to a file</a></li>
+<li><a href="#org192f07f">4.1. How to create a symlink to a file</a></li>
 </ul>
 </li>
-<li><a href="#orge6b9f52">5. Links</a></li>
+<li><a href="#org95b2dec">5. Some useful tools (optional)</a>
+<ul>
+<li><a href="#org59da05e">5.1. Add a figure in a tex file</a></li>
+<li><a href="#org753b6c0">5.2. Change variables</a></li>
+<li><a href="#org3737341">5.3. Convert latex code to HWP math code (for Korean)</a></li>
+</ul>
+</li>
+<li><a href="#org5b007ff">6. Links</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga4f6b86" class="outline-2">
-<h2 id="orga4f6b86"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-org7fded65" class="outline-2">
+<h2 id="org7fded65"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>In this tutorial we learn how to manage pdf, tex, and miscellaneous files.</li>
-<li>The basic concept is to store these files in their directories and search them.</li>
+<li>We will also see some useful tools: <b>adding a figure,</b> <b>changing
+variables</b>, and <b>converting latex code to HWP math code</b> (for Korean
+only).</li>
+<li>The basic concept of managing files is to store these files in their
+directories and search them.</li>
 <li>The directories for these files are under the newbiemacs folder.</li>
 <li>To open the newbiemacs folder, type <code>BACKSPACE</code> twice and then type <code>F</code></li>
 <li>The pdf, tex, and miscellaneous files will be stored in the <code>pdf</code>,
@@ -58,8 +69,8 @@
 </div>
 </div>
 
-<div id="outline-container-org088721e" class="outline-2">
-<h2 id="org088721e"><span class="section-number-2">2.</span> How to find a pdf, tex, or miscellaneous file</h2>
+<div id="outline-container-org6d04641" class="outline-2">
+<h2 id="org6d04641"><span class="section-number-2">2.</span> How to find a pdf, tex, or miscellaneous file</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Finding a file is very easy.</li>
@@ -72,16 +83,16 @@ there.</li>
 </div>
 </div>
 
-<div id="outline-container-org9db8b2d" class="outline-2">
-<h2 id="org9db8b2d"><span class="section-number-2">3.</span> Add new files</h2>
+<div id="outline-container-org5800a82" class="outline-2">
+<h2 id="org5800a82"><span class="section-number-2">3.</span> Add new files</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>Note that it is important to have a good file name scheme so that we can search files easily.</li>
 <li>The following methods will do this effortelessly.</li>
 </ul>
 </div>
-<div id="outline-container-org9d7c957" class="outline-3">
-<h3 id="org9d7c957"><span class="section-number-3">3.1.</span> How to add a pdf file from arxiv</h3>
+<div id="outline-container-org9d4cdd4" class="outline-3">
+<h3 id="org9d4cdd4"><span class="section-number-3">3.1.</span> How to add a pdf file from arxiv</h3>
 <div class="outline-text-3" id="text-3-1">
 <ol class="org-ol">
 <li>Download the pdf file of a paper from <a href="https://arxiv.org/">https://arxiv.org/</a> (You must
@@ -91,7 +102,7 @@ browser.)</li>
 Copy the two lines of the title and the authors like this:
 </p>
 
-<div id="orge486bfb" class="figure">
+<div id="orgf91374c" class="figure">
 <p><img src="./files/arxiv.png" alt="arxiv.png" />
 </p>
 </div></li>
@@ -102,8 +113,8 @@ Copy the two lines of the title and the authors like this:
 </ol>
 </div>
 </div>
-<div id="outline-container-org2eec2e7" class="outline-3">
-<h3 id="org2eec2e7"><span class="section-number-3">3.2.</span> How to add a pdf file of a published paper</h3>
+<div id="outline-container-org45384ed" class="outline-3">
+<h3 id="org45384ed"><span class="section-number-3">3.2.</span> How to add a pdf file of a published paper</h3>
 <div class="outline-text-3" id="text-3-2">
 <ol class="org-ol">
 <li>Download a pdf file into your download folder.</li>
@@ -112,7 +123,7 @@ Copy the two lines of the title and the authors like this:
 Search the paper there. You will see something like this
 </p>
 
-<div id="org0a86f94" class="figure">
+<div id="org04c0fb7" class="figure">
 <p><img src="./files/mathscinet.png" alt="mathscinet.png" />
 </p>
 </div></li>
@@ -120,7 +131,7 @@ Search the paper there. You will see something like this
 Click the drop-down box at the top left corner and select bibtex.
 </p>
 
-<div id="org557a040" class="figure">
+<div id="org789a5d3" class="figure">
 <p><img src="./files/mathscinet2.png" alt="mathscinet2.png" />
 </p>
 </div></li>
@@ -128,7 +139,7 @@ Click the drop-down box at the top left corner and select bibtex.
 Copy the bibtex item.
 </p>
 
-<div id="orgf98a351" class="figure">
+<div id="orgdfc9ca6" class="figure">
 <p><img src="./files/mathscinet3.png" alt="mathscinet3.png" />
 </p>
 </div></li>
@@ -139,8 +150,8 @@ Copy the bibtex item.
 </ol>
 </div>
 </div>
-<div id="outline-container-org201a6f0" class="outline-3">
-<h3 id="org201a6f0"><span class="section-number-3">3.3.</span> How to create a new tex file</h3>
+<div id="outline-container-org64917d9" class="outline-3">
+<h3 id="org64917d9"><span class="section-number-3">3.3.</span> How to create a new tex file</h3>
 <div class="outline-text-3" id="text-3-3">
 <ol class="org-ol">
 <li>Type <code>n</code> in the Newbiemacs screen.</li>
@@ -152,8 +163,8 @@ not needed. This name will also be the title inside the tex file.)</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org3acf3a9" class="outline-2">
-<h2 id="org3acf3a9"><span class="section-number-2">4.</span> Symlinks</h2>
+<div id="outline-container-org4925949" class="outline-2">
+<h2 id="org4925949"><span class="section-number-2">4.</span> Symlinks (optional)</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>A symlink is a link to a file similar to a "shortcut" to a file.</li>
@@ -161,8 +172,8 @@ not needed. This name will also be the title inside the tex file.)</li>
 to one of the <code>pdf</code>, <code>tex</code>, <code>misc</code> folders.</li>
 </ul>
 </div>
-<div id="outline-container-org45bb45d" class="outline-3">
-<h3 id="org45bb45d"><span class="section-number-3">4.1.</span> How to create a symlink to a file</h3>
+<div id="outline-container-org192f07f" class="outline-3">
+<h3 id="org192f07f"><span class="section-number-3">4.1.</span> How to create a symlink to a file</h3>
 <div class="outline-text-3" id="text-4-1">
 <ol class="org-ol">
 <li>Go to the Newbiemacs screen.</li>
@@ -178,10 +189,82 @@ the string in the command prompt.</li>
 </div>
 </div>
 </div>
-
-<div id="outline-container-orge6b9f52" class="outline-2">
-<h2 id="orge6b9f52"><span class="section-number-2">5.</span> Links</h2>
+<div id="outline-container-org95b2dec" class="outline-2">
+<h2 id="org95b2dec"><span class="section-number-2">5.</span> Some useful tools (optional)</h2>
 <div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Even if you don't use Newbiemacs for editing tex files, you may find the following tools useful.</li>
+</ul>
+</div>
+<div id="outline-container-org59da05e" class="outline-3">
+<h3 id="org59da05e"><span class="section-number-3">5.1.</span> Add a figure in a tex file</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Using Newbiemacs you can add an image into your tex file as follows.
+<ol class="org-ol">
+<li>Take a screenshot (or upload a screenshot from your tablet).</li>
+<li>Go to your tex file.</li>
+<li>Press <code>BACKSPACE</code> to go to the Newbiemacs main screen.</li>
+<li>Press <code>f</code> and follow the instructions.</li>
+</ol></li>
+<li>By default Newbiemacs will search the downloads folder and the desktop.</li>
+<li>If your computer saves screenshots in a different folder you can add
+the folder: type <code>BACKSPACE</code> followed by <code>x</code> followed by <code>3</code>, and
+add the directory path in a new line.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org753b6c0" class="outline-3">
+<h3 id="org753b6c0"><span class="section-number-3">5.2.</span> Change variables</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>While writing your paper, you realized that you want to change the variable <code>i</code> to <code>j</code>.</li>
+<li>You cannot simply replace all <code>i</code> to <code>j</code>, because then it will also
+change a word like <code>this</code> to <code>thjs</code> and a macro like <code>\int</code> to <code>\jnt</code>.</li>
+<li>In Newbiemacs you can do the variable change as follows.
+<ol class="org-ol">
+<li>Open your tex file.</li>
+<li>If you want the change only on some part, select the region by
+dragging your mouse. (If you want the change in the entire file, you don't have to do this.)</li>
+<li>Press <code>BACKSPACE</code> to go to the Newbiemacs main screen.</li>
+<li>Press <code>v</code> and follow the instructions.</li>
+</ol></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3737341" class="outline-3">
+<h3 id="org3737341"><span class="section-number-3">5.3.</span> Convert latex code to HWP math code (for Korean)</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li><p>
+Suppose that you want to use the following latex code in Hangul program (한글 프로그램).
+</p>
+<pre class="example">
+\sum_{i=1}^n \frac{a_i}{b_i} = \prod_{i=1}^n c_i^2
+</pre></li>
+<li>You can convert this latex code to HWP math code as follows.
+<ol class="org-ol">
+<li>Select the latex code by dragging your mouse (without <code>$</code> or <code>\( \)</code> or <code>\[ \]</code>).</li>
+<li>Press <code>BACKSPACE</code> to go to the Newbiemacs main screen.</li>
+<li><p>
+Press <code>h</code> and a converted HWP math code will be stored in the
+clipboard. For example, the above latex code will be converted to
+</p>
+<pre class="example">
+sum_{ i=1}^n   {a_i }over{b_i } =  prod_{ i=1}^n  c_i^2
+</pre></li>
+<li>Go to Hangul program and paste the clipboard string in the math
+input window (<code>ctrl n m</code>)</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5b007ff" class="outline-2">
+<h2 id="org5b007ff"><span class="section-number-2">6.</span> Links</h2>
+<div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><a href="newbiemacs-home.html">Newbiemacs Home</a></li>
 <li><a href="newbiemacs-tutorial.html">Newbiemacs Tutorial</a></li>
@@ -192,7 +275,7 @@ the string in the command prompt.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-12-14 Wed 22:05</p>
+<p class="date">Created: 2022-12-15 Thu 13:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
