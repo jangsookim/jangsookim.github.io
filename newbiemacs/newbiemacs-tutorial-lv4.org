@@ -1,0 +1,22 @@
+#+title: Newbiemacs Tutorial: Level 4
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+
+- This page is under construction.
+
+* key bindings
+| command            | keybinding |
+|--------------------+------------|
+|         |        |
+
+* Useful tools
+** ripgrep
+- To use ~helm-rg~ or ~helm-projectile-rg~ we need ~ripgrep~.
+https://github.com/BurntSushi/ripgrep
+- (Windows)
+  : pacman -S mingw-w64-x86_64-ripgrep
+** grep
+: pacman -S mingw-w64-x86_64-grep
+* Links
+- [[file:newbiemacs-home.org][Newbiemacs Home]]
+- [[file:newbiemacs-tutorial.org][Newbiemacs Tutorial]]

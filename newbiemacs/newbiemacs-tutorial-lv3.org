@@ -37,8 +37,7 @@
 ** capture
 ** further reading
 - [[https://orgmode.org/quickstart.html][Quickstart]]
-- [[https://orgmode.org/guide/index.html][Org Mode Compact Guide]]
-
+- [[https://orgmode.org/guide/index.html][Org Mode Compact Guide]] (Click [[https://orgmode.org/orgguide.pdf][here]] for a pdf version)
 
 * Configurations
 ** key-tree

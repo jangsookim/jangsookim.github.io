@@ -59,7 +59,7 @@
    not needed. This name will also be the title inside the tex file.)
 3. Choose a template file. (For the default, just hit the enter key.)
 4. Now you can search the tex file by typing ~t~ in on the Newbiemacs main screen.
-* Symlinks (optional)
+* Symlinks
 - A symlink is a link to a file similar to a "shortcut" to a file.
 - Creating a symlink will allow you to search a file without moving it
   to one of the ~pdf~, ~tex~, ~misc~ folders.
@@ -73,7 +73,7 @@
 7. On Windows, however, it will only copy a string in the
    clipboard. Now open the command prompt run as administrator. Paste
    the string in the command prompt.
-* Some useful tools (optional)
+* Some useful tools
 - Even if you don't use Newbiemacs for editing tex files, you may find the following tools useful.
 ** Add a figure in a tex file
 - Using Newbiemacs you can add an image into your tex file as follows.

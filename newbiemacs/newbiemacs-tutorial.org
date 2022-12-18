@@ -33,6 +33,10 @@
 - Manage pdf files
 - Manage tex files
 - Manage miscellaneous files
+- Some useful tools
+  - Add a figure in a tex file
+  - Change variables
+  - Convert latex code to HWP math code (for Korean)
 
 ** [[file:newbiemacs-tutorial-lv2.org][Tutorial Level 2]]
 - Edit tex files
@@ -40,8 +44,6 @@
 
 ** [[file:newbiemacs-tutorial-lv3.org][Tutorial Level 3]]
 - Advanced editing techniques
-- Install other packages
-
 
 * FAQ
 ** How can I open the Newbiemacs directory?
@@ -70,3 +72,4 @@ You can re-installing Newbiemacs keeping your Newbiemacs folder
 
 * Links
 - [[file:newbiemacs-home.org][Newbiemacs Home]]
+
