@@ -29,9 +29,9 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 4. Open "Command Prompt" (not "terminal" or "PowerShell") and enter
    the following lines. (You can just copy the whole thing and then
    paste it in your command prompt.)
-   : cd %userprofile%
+   : cd "%userprofile%"
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
-   : copy %userprofile%\nbm-root\.emacs-windows %userprofile%\AppData\Roaming\.emacs
+   : copy "%userprofile%\nbm-root\.emacs-windows" "%userprofile%\AppData\Roaming\.emacs"
    :
 5. Run Emacs. It will take several minutes to download necessary
    packages. There may be some warnings but it's okay.  When it's
