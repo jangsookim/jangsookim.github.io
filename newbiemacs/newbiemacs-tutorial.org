@@ -12,7 +12,7 @@
 - By default your Newbiemacs folder will be ~~/newbiemacs~ (~~~ means
   your home folder.)
 - The current file name is shown at the bottom of the
-  Newbiemacs screen. 
+  Newbiemacs screen.
 - Type ~F~ in the Newbiemacs screen to open the folder containing the
   current file.
 - Newbiemacs uses [[https://www.emacswiki.org/emacs/Evil][evil mode]], which allows us to use [[https://en.wikipedia.org/wiki/Vim_(text_editor)][Vim]] keybindings.
@@ -29,7 +29,7 @@
 
 * Tutorial levels
 - There are 3 levels in this tutorial. (click the link below)
-** [[file:newbiemacs-tutorial-lv1.org][Tutorial Level 1]] 
+** [[file:newbiemacs-tutorial-lv1.org][Tutorial Level 1]]
 - Manage pdf files
 - Manage tex files
 - Manage miscellaneous files
@@ -65,11 +65,11 @@ You can re-installing Newbiemacs keeping your Newbiemacs folder
 3. (For Windows) Enter the following in Command Prompt.
    : cd %userprofile%
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
-* Troubleshooting 
+* Troubleshooting
 ** Newbiemacs crashed! What should I do?
-1. Restart Newbiemacs.
-2. If it's still not working, re-install Newbiemacs.
+1. Press ~C-x C-y~ (Press ~x~ and ~y~ while holding the control key.)
+2. Restart Newbiemacs.
+3. If it's still not working, re-install Newbiemacs.
 
 * Links
 - [[file:newbiemacs-home.org][Newbiemacs Home]]
-
