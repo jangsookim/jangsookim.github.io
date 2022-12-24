@@ -8,12 +8,12 @@
 - The Newbiemacs (local) key tree will show various commands, which
   you can run by pressing the key indicated there.
 * Which-key
-- There are many Emacs keybindings starting with ~C-x~ or ~C-c~.
+- There are many Emacs keybindings starting with ~C-x~ or ~C-c~ or ~C-h~.
 - Press one of these keys will show the possible keybingings.
 - In this way you can explore Emacs commands in your own.
 * Execute command
 - In Emacs there are tons of commands you can execute.
-- To do this type ~M-x~ and it will show all possible commands available for you.
+- Type ~M-x~ and it will show all possible commands available for you.
 - Typing anything in the prompt will narrow down the list of commands
   to those containing what you typed there.
 - Instead of ~M-x~ you can also simply type ~SPC SPC~ in *normal

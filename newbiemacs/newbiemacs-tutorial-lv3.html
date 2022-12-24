@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-24 Sat 17:24 -->
+<!-- 2022-12-24 Sat 22:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Newbiemacs Tutorial: Level 3</title>
@@ -23,25 +23,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org05082a1">1. Newbiemacs key tree</a></li>
-<li><a href="#org7e2a0e3">2. Which-key</a></li>
-<li><a href="#orgc41d811">3. Execute command</a></li>
-<li><a href="#org9b360f6">4. key bindings</a></li>
-<li><a href="#orgec89974">5. Emacs mode</a></li>
-<li><a href="#orgf555d96">6. Configurations</a>
+<li><a href="#org18581fd">1. Newbiemacs key tree</a></li>
+<li><a href="#org1a9b0c8">2. Which-key</a></li>
+<li><a href="#org288aaf4">3. Execute command</a></li>
+<li><a href="#orge7a47bb">4. key bindings</a></li>
+<li><a href="#org239c095">5. Emacs mode</a></li>
+<li><a href="#org59ceae0">6. Configurations</a>
 <ul>
-<li><a href="#org76291b8">6.1. key-tree</a></li>
-<li><a href="#org0ba3cbd">6.2. user-init</a></li>
+<li><a href="#org2d5d93e">6.1. key-tree</a></li>
+<li><a href="#org810b657">6.2. user-init</a></li>
 </ul>
 </li>
-<li><a href="#org59f3c22">7. Further readings</a></li>
-<li><a href="#orge131c98">8. Links</a></li>
+<li><a href="#org40a4a7a">7. Further readings</a></li>
+<li><a href="#orgedc87d8">8. Links</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org05082a1" class="outline-2">
-<h2 id="org05082a1"><span class="section-number-2">1.</span> Newbiemacs key tree</h2>
+<div id="outline-container-org18581fd" class="outline-2">
+<h2 id="org18581fd"><span class="section-number-2">1.</span> Newbiemacs key tree</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>In <b>normal mode</b> press <code>SPC</code> to invoke the Newbiemacs key tree.</li>
@@ -52,22 +52,22 @@ you can run by pressing the key indicated there.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7e2a0e3" class="outline-2">
-<h2 id="org7e2a0e3"><span class="section-number-2">2.</span> Which-key</h2>
+<div id="outline-container-org1a9b0c8" class="outline-2">
+<h2 id="org1a9b0c8"><span class="section-number-2">2.</span> Which-key</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li>There are many Emacs keybindings starting with <code>C-x</code> or <code>C-c</code>.</li>
+<li>There are many Emacs keybindings starting with <code>C-x</code> or <code>C-c</code> or <code>C-h</code>.</li>
 <li>Press one of these keys will show the possible keybingings.</li>
 <li>In this way you can explore Emacs commands in your own.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc41d811" class="outline-2">
-<h2 id="orgc41d811"><span class="section-number-2">3.</span> Execute command</h2>
+<div id="outline-container-org288aaf4" class="outline-2">
+<h2 id="org288aaf4"><span class="section-number-2">3.</span> Execute command</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>In Emacs there are tons of commands you can execute.</li>
-<li>To do this type <code>M-x</code> and it will show all possible commands available for you.</li>
+<li>Type <code>M-x</code> and it will show all possible commands available for you.</li>
 <li>Typing anything in the prompt will narrow down the list of commands
 to those containing what you typed there.</li>
 <li>Instead of <code>M-x</code> you can also simply type <code>SPC SPC</code> in <b>normal
@@ -76,8 +76,8 @@ mode</b>.</li>
 </div>
 </div>
 
-<div id="outline-container-org9b360f6" class="outline-2">
-<h2 id="org9b360f6"><span class="section-number-2">4.</span> key bindings</h2>
+<div id="outline-container-orge7a47bb" class="outline-2">
+<h2 id="orge7a47bb"><span class="section-number-2">4.</span> key bindings</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Here are some basic Emacs keybindings.</li>
@@ -152,8 +152,8 @@ mode</b>.</li>
 </div>
 </div>
 
-<div id="outline-container-orgec89974" class="outline-2">
-<h2 id="orgec89974"><span class="section-number-2">5.</span> Emacs mode</h2>
+<div id="outline-container-org239c095" class="outline-2">
+<h2 id="org239c095"><span class="section-number-2">5.</span> Emacs mode</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>There is another mode called <b>emacs mode</b>.</li>
@@ -167,12 +167,12 @@ mode</b>.</li>
 </div>
 </div>
 
-<div id="outline-container-orgf555d96" class="outline-2">
-<h2 id="orgf555d96"><span class="section-number-2">6.</span> Configurations</h2>
+<div id="outline-container-org59ceae0" class="outline-2">
+<h2 id="org59ceae0"><span class="section-number-2">6.</span> Configurations</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org76291b8" class="outline-3">
-<h3 id="org76291b8"><span class="section-number-3">6.1.</span> key-tree</h3>
+<div id="outline-container-org2d5d93e" class="outline-3">
+<h3 id="org2d5d93e"><span class="section-number-3">6.1.</span> key-tree</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li>You can add your own keybindings.</li>
@@ -183,8 +183,8 @@ because it will prevent to update Newbiemacs.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0ba3cbd" class="outline-3">
-<h3 id="org0ba3cbd"><span class="section-number-3">6.2.</span> user-init</h3>
+<div id="outline-container-org810b657" class="outline-3">
+<h3 id="org810b657"><span class="section-number-3">6.2.</span> user-init</h3>
 <div class="outline-text-3" id="text-6-2">
 <ul class="org-ul">
 <li>You can add your own configurations in the user init file.</li>
@@ -194,8 +194,8 @@ because it will prevent to update Newbiemacs.</li>
 </div>
 </div>
 
-<div id="outline-container-org59f3c22" class="outline-2">
-<h2 id="org59f3c22"><span class="section-number-2">7.</span> Further readings</h2>
+<div id="outline-container-org40a4a7a" class="outline-2">
+<h2 id="org40a4a7a"><span class="section-number-2">7.</span> Further readings</h2>
 <div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li><a href="https://www.gnu.org/software/emacs/tour/">A Guided Tour of Emacs</a></li>
@@ -206,8 +206,8 @@ because it will prevent to update Newbiemacs.</li>
 </div>
 </div>
 
-<div id="outline-container-orge131c98" class="outline-2">
-<h2 id="orge131c98"><span class="section-number-2">8.</span> Links</h2>
+<div id="outline-container-orgedc87d8" class="outline-2">
+<h2 id="orgedc87d8"><span class="section-number-2">8.</span> Links</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li><a href="newbiemacs-home.html">Newbiemacs Home</a></li>
@@ -218,7 +218,7 @@ because it will prevent to update Newbiemacs.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-12-24 Sat 17:24</p>
+<p class="date">Created: 2022-12-24 Sat 22:22</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
