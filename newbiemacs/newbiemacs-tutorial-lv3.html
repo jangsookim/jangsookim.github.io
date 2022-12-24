@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-12-16 Fri 18:27 -->
+<!-- 2022-12-24 Sat 17:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Newbiemacs Tutorial: Level 3</title>
@@ -23,45 +23,51 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5f4a9f4">1. key bindings</a></li>
-<li><a href="#org47f6b08">2. Latex</a>
+<li><a href="#orgb375fa7">1. Newbiemacs key tree</a></li>
+<li><a href="#org65e2b24">2. Which-key</a></li>
+<li><a href="#org40b198e">3. key bindings</a></li>
+<li><a href="#org59c3ffe">4. Emacs mode</a></li>
+<li><a href="#org664be39">5. Configurations</a>
 <ul>
-<li><a href="#org9ff9d2b">2.1. Create a newcommand</a></li>
-<li><a href="#org4f60556">2.2. Create a label</a></li>
-<li><a href="#org4ad5883">2.3. Create a bibtex item</a></li>
+<li><a href="#org8d721a1">5.1. key-tree</a></li>
+<li><a href="#org8f703fe">5.2. user-init</a></li>
 </ul>
 </li>
-<li><a href="#org5622f78">3. Useful tools</a>
-<ul>
-<li><a href="#org68821dd">3.1. bookmark</a></li>
-<li><a href="#org8317485">3.2. Dired</a></li>
-</ul>
-</li>
-<li><a href="#org4fd02ba">4. org-mode</a>
-<ul>
-<li><a href="#orgc2152cf">4.1. todo</a></li>
-<li><a href="#orgf7a1589">4.2. agenda</a></li>
-<li><a href="#orgb2ad573">4.3. capture</a></li>
-<li><a href="#org6e7089d">4.4. further reading</a></li>
-</ul>
-</li>
-<li><a href="#org230309e">5. Configurations</a>
-<ul>
-<li><a href="#org296e7f7">5.1. key-tree</a></li>
-<li><a href="#org1eeb708">5.2. user-init</a></li>
-</ul>
-</li>
-<li><a href="#org9e6850d">6. Links</a></li>
+<li><a href="#orgaf80bc4">6. Further readings</a></li>
+<li><a href="#orge27e15d">7. Links</a></li>
 </ul>
 </div>
 </div>
-<ul class="org-ul">
-<li>This page is under construction.</li>
-</ul>
 
-<div id="outline-container-org5f4a9f4" class="outline-2">
-<h2 id="org5f4a9f4"><span class="section-number-2">1.</span> key bindings</h2>
+<div id="outline-container-orgb375fa7" class="outline-2">
+<h2 id="orgb375fa7"><span class="section-number-2">1.</span> Newbiemacs key tree</h2>
 <div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>In <b>normal mode</b> press <code>SPC</code> to invoke the Newbiemacs key tree.</li>
+<li>In <b>normal mode</b> press <code>,</code> to invoke the Newbiemacs local key tree.</li>
+<li>You can also run the key tree by pressing <code>&lt;F5&gt;</code> or <code>&lt;F6&gt;</code></li>
+<li>The Newbiemacs (local) key tree will show various commands, which
+you can run by pressing the key indicated there.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org65e2b24" class="outline-2">
+<h2 id="org65e2b24"><span class="section-number-2">2.</span> Which-key</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>There are many Emacs keybindings starting with <code>C-x</code> or <code>C-c</code>.</li>
+<li>Press one of these keys will show the possible keybingings.</li>
+<li>In this way you can explore Emacs commands in your own.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org40b198e" class="outline-2">
+<h2 id="org40b198e"><span class="section-number-2">3.</span> key bindings</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Here are some basic Emacs keybindings.</li>
+</ul>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -69,174 +75,124 @@
 <col  class="org-left" />
 
 <col  class="org-left" />
+
+<col  class="org-left" />
 </colgroup>
 <thead>
 <tr>
+<th scope="col" class="org-left">mode</th>
 <th scope="col" class="org-left">command</th>
 <th scope="col" class="org-left">keybinding</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td class="org-left">all</td>
 <td class="org-left">isearch-forward</td>
 <td class="org-left"><code>C-s</code></td>
 </tr>
 
 <tr>
+<td class="org-left">all</td>
 <td class="org-left">query-replace</td>
 <td class="org-left"><code>M-%</code></td>
 </tr>
 
 <tr>
+<td class="org-left">all</td>
 <td class="org-left">kill-buffer</td>
 <td class="org-left"><code>C-x k</code></td>
 </tr>
 
 <tr>
+<td class="org-left">all</td>
 <td class="org-left">increase font-size</td>
 <td class="org-left"><code>C-x C-=</code></td>
 </tr>
 
 <tr>
+<td class="org-left">all</td>
 <td class="org-left">decrease font-size</td>
 <td class="org-left"><code>C-x C--</code></td>
 </tr>
 
 <tr>
+<td class="org-left">all</td>
 <td class="org-left">default font-size</td>
 <td class="org-left"><code>C-x C-0</code></td>
 </tr>
 
 <tr>
+<td class="org-left">all</td>
 <td class="org-left">org-store-link</td>
 <td class="org-left"><code>C-c l</code></td>
 </tr>
 
 <tr>
+<td class="org-left">all</td>
 <td class="org-left">org-insert-link</td>
 <td class="org-left"><code>C-c C-l</code></td>
 </tr>
-
-<tr>
-<td class="org-left">Yank favoriate</td>
-<td class="org-left"><code>SPC y f</code></td>
-</tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="outline-container-org47f6b08" class="outline-2">
-<h2 id="org47f6b08"><span class="section-number-2">2.</span> Latex</h2>
-<div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-org9ff9d2b" class="outline-3">
-<h3 id="org9ff9d2b"><span class="section-number-3">2.1.</span> Create a newcommand</h3>
-</div>
-<div id="outline-container-org4f60556" class="outline-3">
-<h3 id="org4f60556"><span class="section-number-3">2.2.</span> Create a label</h3>
-</div>
-<div id="outline-container-org4ad5883" class="outline-3">
-<h3 id="org4ad5883"><span class="section-number-3">2.3.</span> Create a bibtex item</h3>
-</div>
-</div>
-<div id="outline-container-org5622f78" class="outline-2">
-<h2 id="org5622f78"><span class="section-number-2">3.</span> Useful tools</h2>
-<div class="outline-text-2" id="text-3">
-</div>
-<div id="outline-container-org68821dd" class="outline-3">
-<h3 id="org68821dd"><span class="section-number-3">3.1.</span> bookmark</h3>
-</div>
-<div id="outline-container-org8317485" class="outline-3">
-<h3 id="org8317485"><span class="section-number-3">3.2.</span> Dired</h3>
-<div class="outline-text-3" id="text-3-2">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">key</th>
-<th scope="col" class="org-left">command</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">h</td>
-<td class="org-left">dired-up-directory</td>
-</tr>
-
-<tr>
-<td class="org-left">j</td>
-<td class="org-left">dired-next-line</td>
-</tr>
-
-<tr>
-<td class="org-left">k</td>
-<td class="org-left">dired-previous-line</td>
-</tr>
-
-<tr>
-<td class="org-left">l</td>
-<td class="org-left">dired-find-file</td>
-</tr>
-
-<tr>
-<td class="org-left">W</td>
-<td class="org-left">wdired-change-to-wdired-mode</td>
-</tr>
-
-<tr>
-<td class="org-left">b</td>
-<td class="org-left">browse-url-of-dired-file</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="outline-container-org4fd02ba" class="outline-2">
-<h2 id="org4fd02ba"><span class="section-number-2">4.</span> org-mode</h2>
+<div id="outline-container-org59c3ffe" class="outline-2">
+<h2 id="org59c3ffe"><span class="section-number-2">4.</span> Emacs mode</h2>
 <div class="outline-text-2" id="text-4">
-</div>
-<div id="outline-container-orgc2152cf" class="outline-3">
-<h3 id="orgc2152cf"><span class="section-number-3">4.1.</span> todo</h3>
-</div>
-<div id="outline-container-orgf7a1589" class="outline-3">
-<h3 id="orgf7a1589"><span class="section-number-3">4.2.</span> agenda</h3>
-</div>
-<div id="outline-container-orgb2ad573" class="outline-3">
-<h3 id="orgb2ad573"><span class="section-number-3">4.3.</span> capture</h3>
-</div>
-<div id="outline-container-org6e7089d" class="outline-3">
-<h3 id="org6e7089d"><span class="section-number-3">4.4.</span> further reading</h3>
-<div class="outline-text-3" id="text-4-4">
 <ul class="org-ul">
-<li><a href="https://orgmode.org/quickstart.html">Quickstart</a></li>
-<li><a href="https://orgmode.org/guide/index.html">Org Mode Compact Guide</a> (Click <a href="https://orgmode.org/orgguide.pdf">here</a> for a pdf version)</li>
+<li>There is another mode called <b>emacs mode</b>.</li>
+<li><b>emacs mode</b> is indicated with blue color at the bottom left corder.</li>
+<li>To toggle between <b>emacs mode</b> and the other mode, press <code>C-z</code>.</li>
+<li>In <b>emacs mode</b> you can use the usual Emacs keybindings.</li>
+<li>If you enter other "major modes", such as "help", "dired", or
+"magit", the default mode is <b>emacs mode</b>.</li>
+<li>In many of such modes, typing <code>?</code> shows keybindings in that mode.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org664be39" class="outline-2">
+<h2 id="org664be39"><span class="section-number-2">5.</span> Configurations</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org8d721a1" class="outline-3">
+<h3 id="org8d721a1"><span class="section-number-3">5.1.</span> key-tree</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>You can add your own keybindings.</li>
+<li>Press <code>SPC k u</code></li>
+<li>You can see the system keybindings by typing <code>SPC k s</code>.</li>
+<li>However, it is not recommended to modify the system keybindings
+because it will prevent to update Newbiemacs.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8f703fe" class="outline-3">
+<h3 id="org8f703fe"><span class="section-number-3">5.2.</span> user-init</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>You can add your own configurations in the user init file.</li>
+<li>Press <code>SPC N c u</code></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org230309e" class="outline-2">
-<h2 id="org230309e"><span class="section-number-2">5.</span> Configurations</h2>
-<div class="outline-text-2" id="text-5">
-</div>
-<div id="outline-container-org296e7f7" class="outline-3">
-<h3 id="org296e7f7"><span class="section-number-3">5.1.</span> key-tree</h3>
-</div>
-<div id="outline-container-org1eeb708" class="outline-3">
-<h3 id="org1eeb708"><span class="section-number-3">5.2.</span> user-init</h3>
+<div id="outline-container-orgaf80bc4" class="outline-2">
+<h2 id="orgaf80bc4"><span class="section-number-2">6.</span> Further readings</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><a href="https://orgmode.org/quickstart.html">Quickstart</a> for Org-mode</li>
+<li><a href="https://orgmode.org/guide/index.html">Org Mode Compact Guide</a> (Click <a href="https://orgmode.org/orgguide.pdf">here</a> for a pdf version)</li>
+</ul>
 </div>
 </div>
 
-<div id="outline-container-org9e6850d" class="outline-2">
-<h2 id="org9e6850d"><span class="section-number-2">6.</span> Links</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orge27e15d" class="outline-2">
+<h2 id="orge27e15d"><span class="section-number-2">7.</span> Links</h2>
+<div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li><a href="newbiemacs-home.html">Newbiemacs Home</a></li>
 <li><a href="newbiemacs-tutorial.html">Newbiemacs Tutorial</a></li>
@@ -246,7 +202,7 @@
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2022-12-16 Fri 18:27</p>
+<p class="date">Created: 2022-12-24 Sat 17:16</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

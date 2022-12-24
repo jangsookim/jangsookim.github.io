@@ -36,6 +36,11 @@
 - To compile a tex file, in *normal mode* type ~, b~ (the comma key
   ~,~ followed by the key ~b~).
 - The same keybinding ~, b~ can also be used to save the file or to view the pdf.
+- The forward searching (tex file to pdf file) will be done automatically.
+- To go to the location of the tex file from the pdf file, do
+  "Command+Shift+mouse click" if you are using Skim on Mac and "double
+  click" if you are using SumatraPDF on Windows.
+  
 * Spell checking
 - To spell check we need to install a spell checking program (only once).
 - Once the program is installed, you can spell check by typing ~SPC S b~ or ~SPC S i~

@@ -1,47 +1,53 @@
 #+title: Newbiemacs Tutorial: Level 3
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
-
-- This page is under construction.
+* Newbiemacs key tree
+- In *normal mode* press ~SPC~ to invoke the Newbiemacs key tree.
+- In *normal mode* press ~,~ to invoke the Newbiemacs local key tree.
+- You can also run the key tree by pressing ~<F5>~ or ~<F6>~
+- The Newbiemacs (local) key tree will show various commands, which
+  you can run by pressing the key indicated there.
+* Which-key
+- There are many Emacs keybindings starting with ~C-x~ or ~C-c~.
+- Press one of these keys will show the possible keybingings.
+- In this way you can explore Emacs commands in your own.
 
 * key bindings
-| command            | keybinding |
-|--------------------+------------|
-| isearch-forward    | ~C-s~        |
-| query-replace      | ~M-%~        |
-| kill-buffer        | ~C-x k~      |
-| increase font-size | ~C-x C-=~    |
-| decrease font-size | ~C-x C--~    |
-| default font-size  | ~C-x C-0~    |
-| org-store-link     | ~C-c l~      |
-| org-insert-link    | ~C-c C-l~    |
-| Yank favoriate     | ~SPC y f~  |
-* Latex 
-** Create a newcommand
-** Create a label
-** Create a bibtex item
-* Useful tools
-** bookmark
-** Dired
-| key | command                      |
-|-----+------------------------------|
-| h   | dired-up-directory           |
-| j   | dired-next-line              |
-| k   | dired-previous-line          |
-| l   | dired-find-file              |
-| W   | wdired-change-to-wdired-mode |
-| b   | browse-url-of-dired-file     |
-* org-mode
-** todo
-** agenda
-** capture
-** further reading
-- [[https://orgmode.org/quickstart.html][Quickstart]]
-- [[https://orgmode.org/guide/index.html][Org Mode Compact Guide]] (Click [[https://orgmode.org/orgguide.pdf][here]] for a pdf version)
+- Here are some basic Emacs keybindings.
+| mode   | command                    | keybinding |
+|--------+----------------------------+------------|
+| all    | isearch-forward            | ~C-s~      |
+| all    | query-replace              | ~M-%~      |
+| all    | kill-buffer                | ~C-x k~    |
+| all    | increase font-size         | ~C-x C-=~  |
+| all    | decrease font-size         | ~C-x C--~  |
+| all    | default font-size          | ~C-x C-0~  |
+| all    | org-store-link             | ~C-c l~    |
+| all    | org-insert-link            | ~C-c C-l~  |
+
+* Emacs mode
+- There is another mode called *emacs mode*.
+- *emacs mode* is indicated with blue color at the bottom left corder.
+- To toggle between *emacs mode* and the other mode, press ~C-z~.
+- In *emacs mode* you can use the usual Emacs keybindings.
+- If you enter other "major modes", such as "help", "dired", or
+  "magit", the default mode is *emacs mode*.
+- In many of such modes, typing ~?~ shows keybindings in that mode.
 
 * Configurations
 ** key-tree
+- You can add your own keybindings.
+- Press ~SPC k u~
+- You can see the system keybindings by typing ~SPC k s~.
+- However, it is not recommended to modify the system keybindings
+  because it will prevent to update Newbiemacs.
 ** user-init
+- You can add your own configurations in the user init file.
+- Press ~SPC N c u~
+
+* Further readings
+- [[https://orgmode.org/quickstart.html][Quickstart]] for Org-mode
+- [[https://orgmode.org/guide/index.html][Org Mode Compact Guide]] (Click [[https://orgmode.org/orgguide.pdf][here]] for a pdf version)
 
 * Links
 - [[file:newbiemacs-home.org][Newbiemacs Home]]
