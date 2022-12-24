@@ -43,7 +43,7 @@
 - Use [[https://orgmode.org/][org-mode]]
 
 ** [[file:newbiemacs-tutorial-lv3.org][Tutorial Level 3]]
-- Advanced editing techniques
+- More on Newbiemacs and Emacs
 
 * FAQ
 ** How can I open the Newbiemacs directory?
