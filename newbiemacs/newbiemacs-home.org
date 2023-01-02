@@ -10,6 +10,7 @@
 - [[file:newbiemacs-tutorial.org][Tutorial]]
 - [[https://github.com/jangsookim/newbiemacs][Git Repository]]
 - [[https://open.kakao.com/o/gbVGi9Te][Kakao Open Chat]]
+- [[https://youtu.be/vhWpeNRi7Ts][Introduction video]]
 * Main features of Newbiemacs
 - Organize your pdf and tex files.
 - Search pdf and tex files quickly.

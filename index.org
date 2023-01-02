@@ -1,6 +1,6 @@
 #+TITLE: Jang Soo Kim's homepage
+#+SETUPFILE: /Users/jangsookim/Dropbox/newbiemacs/nbm-user-settings/org-themes/src/bigblow_inline/bigblow_inline.theme
 #+OPTIONS: toc:nil num:nil
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
 
 * Home
 
@@ -208,6 +208,8 @@
   - Sun-mi Yun
 
 * Lecture Videos
+** Introduction to Newbiemacs
+   - [[https://youtu.be/vhWpeNRi7Ts][link to video]]
 ** Juggling and Mathematics
    - [[https://youtu.be/3H4E3d6GiSU][link to video]]
    - An undergraduate colloquium talk at Kyunghee University
