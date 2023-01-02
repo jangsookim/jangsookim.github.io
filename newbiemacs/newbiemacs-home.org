@@ -6,11 +6,11 @@
 * Introduction
 - Newbiemacs is a pre-configured [[https://www.gnu.org/software/emacs/][GNU Emacs]] distribution inspired by [[https://www.spacemacs.org/][Spacemacs]].
 - Newbiemacs is desiged for mathematician who are new to Emacs.
+- [[https://youtu.be/vhWpeNRi7Ts][Introduction video]]
 - [[file:newbiemacs-installation.org][Installation]]
 - [[file:newbiemacs-tutorial.org][Tutorial]]
 - [[https://github.com/jangsookim/newbiemacs][Git Repository]]
 - [[https://open.kakao.com/o/gbVGi9Te][Kakao Open Chat]]
-- [[https://youtu.be/vhWpeNRi7Ts][Introduction video]]
 * Main features of Newbiemacs
 - Organize your pdf and tex files.
 - Search pdf and tex files quickly.
