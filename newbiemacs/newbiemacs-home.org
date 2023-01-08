@@ -411,8 +411,8 @@ You can re-installing Newbiemacs keeping your Newbiemacs folder
 2. Restart Newbiemacs.
 3. If it's still not working, re-install Newbiemacs.
 * Torus Leader Board
-| rank | name  |  score | level | date       |
+| rank | name    |  score | level | date       |
 |------+---------+--------+-------+------------|
 |    1 | jia     | 426900 |    14 | 2022/12/16 |
 |    2 | U-keun  | 276000 |    11 | 2022/12/29 |
-|    3 | jangsoo | 220200 |    10 | 2022/12/12 |
+|    3 | jangsoo | 243300 |    11 | 2023/01/08 |
