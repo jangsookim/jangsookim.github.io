@@ -71,26 +71,23 @@ If you want to use latex in Newbiemacs, you need to do the following (only once)
 ** Install Newbiemacs on GNU/Linux
 1. Install necessary packages.
    : sudo apt install gcc git
-2. Install [[https://www.google.com/chrome/][Google Chrome]].
-3. Open a terminal and enter the following lines. (You can open a
-   terminal by pressing Command+Space and typing "terminal". You can
-   just copy the whole thing and then paste it in your terminal.)
+2. Install [[https://www.google.com/chrome/][Google Chrome]] 
+3. Install Emacs version 28.1 or later (Install "GNU Emacs" using
+   "Ubuntu Software" if you installed Ubuntu).
+4. Open a terminal and enter the following lines. 
    : cd ~
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
    : cp ~/nbm-root/.emacs ~/.emacs
    :
-4. Run Emacs. It will take several minutes to download necessary
+5. Run Emacs. It will take several minutes to download necessary
    packages. There may be some warnings but it's okay.
    When it's done, there will be a message at the bottom saying
    "For information about GNU Emacs and the GNU system, type C-h C-a."
-5. If there is an error, install "org-roam" manually by typing "M-x",
-   "package-install RET" and then "org-roam RET". Here "M-x" means
-   holding the alt key and pressing "x".
 6. Close Emacs and run it again. The Newbiemacs main screen will be shown.
 *** Additional steps for latex on GNU/Linux (optional)
 If you want to edit tex files in Newbiemacs, you need to do the following (only once).
 1. Install necessary packages.
-   : sudo apt install texlive texlive-full
+   : sudo apt install texlive-full
 * Tutorial 0
 ** Introduction
 - In this tutorial you will learn how to use Newbiemacs.
