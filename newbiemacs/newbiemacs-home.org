@@ -69,11 +69,11 @@ If you want to use latex in Newbiemacs, you need to do the following (only once)
    It will open a text file. Enter the following line anywhere there and save the file.
    : InverseSearchCmdLine = C:\Program Files\Emacs\emacs-28.2\bin\emacsclientw.exe -n +%l "%f"
 ** Install Newbiemacs on GNU/Linux
-1. Install necessary packages.
-   : sudo apt install gcc git
-2. Install [[https://www.google.com/chrome/][Google Chrome]] 
-3. Install Emacs version 28.1 or later (Install "GNU Emacs" using
+1. Install [[https://www.google.com/chrome/][Google Chrome]] 
+2. Install Emacs version 28.1 or later (Install "GNU Emacs" using
    "Ubuntu Software" if you installed Ubuntu).
+3. Install necessary packages.
+   : sudo apt install gcc git
 4. Open a terminal and enter the following lines. 
    : cd ~
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
