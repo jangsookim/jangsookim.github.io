@@ -1,0 +1,149 @@
+#+TITLE: Introduction to WeBWorK
+#+SETUPFILE: /Users/jangsookim/Library/CloudStorage/Dropbox/newbiemacs/nbm-user-settings/org-themes/src/bigblow_inline/bigblow_inline.theme
+
+* Home
+- Webwork is an open-source online homework system.
+- For more information on Webwork check this page. https://openwebwork.org/
+- Webwork class webpages are listed here. https://webwork.skku.edu
+
+* Instructions for students
+** Video instruction
+- https://youtu.be/cIMMWeIUWdo (in Korean)
+- https://youtu.be/juxQoi3w5Og (in English)
+
+** How to use webwork
+*** Initial setup
+   1. Find your class here. https://webwork.skku.edu
+   2. Login id is your student id. (*Your account will be activated during the second week of the semester.*)
+   3. Initial password is your student id.
+   4. Click =User Settings= in the sidebar and change your password.
+*** How to view homework problems
+   1. Click =Homework Sets= in the sidebar. It will show you homework sets and due dates.
+   2. Click the homework set name that you want to view.
+   3. You can view problems and submit your answers here.
+   4. If you have questions, you can write a message to the instructor and TA by
+      clicking =Email Instructor=.
+   5. You can use various functions in your answers. Check this link: [[https://webwork.maa.org/wiki/Available_Functions][available functions]]
+   6. You can also download a pdf file of the homework problems by clicking the =Download PDF or TeX Hardcopy for Current Set= button.
+*** Alternative way to send homework link to TA
+   1. Copy the url of the homework problem that you want to ask a question about. The url should look something like this:
+     : https://webwork.skku.edu/webwork2/2022-1_Calculus1_GEDB001_51/hw1/1/?effectiveUser=202200001
+   2. Send the url to your TA by email.
+   3. TA should be able to see your homework problem together with your answers.
+
+** Contact information
+- If you have any questions about the system, please contact the webwork TA.
+- When you write an email to the webwork TA, you must tell him/her your student id
+  and the class session number.
+
+** More information
+- https://webwork.maa.org/wiki/Student_Information
+- In most problems numbers are randomly generated. So your homework problems may not be the same as your friend's.
+
+* Instructions for TAs
+** Video instruction
+- https://youtu.be/Qfb0-eMak3g
+
+** Main duties
+*** Beginning of the semester
+- Add students to the webwork courses.
+- Import homework sets.
+*** During the semester
+- Change homework dues if requested by professors.
+- Answer questions from students.
+*** End of the semester
+- Send the final homework scores to the professors at the end of
+  the semester.
+
+** Class webpages
+- Your classes are listed here. https://webwork.skku.edu
+
+** How to add students to the system
+- You can add one student at a time manually or many students at once using a cvs file.
+- To do this, first login to the webwork class homepage where you want to add students.
+
+*** Adding one student at a time
+    1. Click =Classlist Editor= under =Instructor Tools= on the side bar.
+    2. Click =Add= tap.
+    3. Enter the number of students you want to add and click =Take Action!=.
+    4. Enter students' information.
+*** Adding many students at once
+**** Classlist files
+- In order to add many students at once, you need to create a classlist file,
+  which is a file with extension =lst=.
+- You can create a classlist file using Excel as follows.
+**** Creating a classlist file (.lst file) using Excel
+    1. Create an empty Excel file.
+    2. Enter the student ids in the 1st and 9th columns.
+    3. Enter the student names in the 2nd column. (*Important: Student names must be in English, not in Korean.*)
+    4. Enter the letter =C= in the 4th column.
+    5. Enter the email addresses in the 8th column.
+    6. For example, if you have an excel file like [[file:sample_classlist.xlsx][this one]], you should make an
+       excel file like [[file:sample_classlist_changed.xlsx][this one]].
+    7. Save the new excel file as a cvs file (.cvs). You should get a file like [[file:sample_classlist_changed.csv][this]].
+    8. Find the file in your folder and change the extension from =.cvs= to =.lst=. The final file must be something like [[file:sample_classlist_changed.lst][this]].
+**** Adding students
+    1. Login to Webwork.
+    2. Click =File Manager= under =Instructor Tools= on the side bar.
+    3. Upload the lst file in =templates= folder.
+    4. Click =Classlist Editor=  under =Instructor Tools= on the side bar.
+    5. Click =Import= tap and select the classlist file that you created above.
+    6. Click =Take Action!=.
+** Importing homework sets
+   1. Click =Hmwk Sets Editor=  under =Instructor Tools= in the side bar.
+   2. Click =Import= tap.
+   3. For the first line =Import how many sets?=, select =multiple sets=.
+   4. For the second line =Import from where?=, select the 14 files
+      =sethw1.def=, ..., =sethw14.def=. (You can use the shift key to select multiple files here.)
+   5. Select =all current users= in the list dropdown button saying =Assign this set of which users?=.
+   6. Click =Take Action!=.
+   7. It will show 14 homework sets.
+** Changing homework dates
+   1. Click =Hmwk Sets Editor=  under =Instructor Tools= in the side bar.
+   2. Click the pencil icon next the homework set you want to edit.
+   3. Change the dates and click =Take Action!=.
+** Scoring tools (at the end of the semester)
+   1. This should be done after the due of the final homework assignment.
+   2. Click =Scoring Tools= under =Instructor Tools= in the side bar.
+   3. Select all homework assignments and clink  =Score selected sets and save to=.
+   4. A cvs file is created and you can download it.
+   5. Open the cvs file using Excel. If you cannot open the cvs file, change the
+      extension to =.txt= and then try it again.
+   6. Make an excel file that contains only 2 columns: Student ID and =%scores=.
+   7. Send this excel file to the professor of your class.
+
+** Instructions for students and professors
+- The instructions below contain everything students and professors need to know.
+- If they have questions about the webwork system, you can answer them using these instructions.
+- [[file:instruction-student.org][Instructions for Students]]
+- [[file:instruction-professor.org][Instructions for Professors]]
+
+* Instructions for Professors
+** Video instruction
+- https://youtu.be/lywyNzUm7-o (in Korean)
+- https://youtu.be/17v-8QSzKz8 (in English)
+** How to login to Webwork
+   1. Find your class here. https://webwork.skku.edu
+   2. The course coordinator or the TA will send you your login id and password.
+   3. Once you login, you can change the password by clicking =User Settings= in the sidebar.
+   4. If you enter your email in =User Settings=, you will be able to receive questions from students through the system.
+** Observing student progress
+   1. Click =Student Progress=  under =Instructor Tools= in the side bar.
+   2. You can check student progress by a homework set or by a student
+** Viewing homework problems
+   1. Click =Homework Sets= in the sidebar. It will show you homework sets and due dates.
+   2. Click the homework set name that you want to view.
+   3. You can see each problem by clicking the problem number.
+   4. You can also download a pdf file of the homework problems by clicking the =Download PDF or TeX Hardcopy for Current Set= button.
+** Homework dues
+- Since the due dates of the homework sets are determined by the schedule, please cover the topics as scheduled in syllabus.
+- The materials in each week must be covered by the end of the following week at the latest.
+- If you are not able to do this, please ask the TA to change the due date.
+** How to answer student's questions
+- Your students can ask questions by clicking a button when they are working on a homework problem.
+- When they do, you will receive an email that has a link to the problem.
+- Clink on the link and it will ask you to log in to the webwork page.
+- After logging in you can see the problem.
+- You can then reply to the student by email.
+- In most problems numbers are randomly generated. So what you see in a given
+  problem is not exactly the same as what your students see.
