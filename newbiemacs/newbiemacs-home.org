@@ -69,21 +69,20 @@ If you want to use latex in Newbiemacs, you need to do the following (only once)
    It will open a text file. Enter the following line anywhere there and save the file.
    : InverseSearchCmdLine = C:\Program Files\Emacs\emacs-28.2\bin\emacsclientw.exe -n +%l "%f"
 ** Install Newbiemacs on GNU/Linux
-1. Install [[https://www.google.com/chrome/][Google Chrome]] 
-2. Install Emacs version 28.1 or later (Install "GNU Emacs" using
+1. Install Emacs version 28.1 or later (Install "GNU Emacs" using
    "Ubuntu Software" if you installed Ubuntu).
-3. Install necessary packages.
+2. Install necessary packages.
    : sudo apt install gcc git
-4. Open a terminal and enter the following lines. 
+3. Open a terminal and enter the following lines. 
    : cd ~
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
    : cp ~/nbm-root/.emacs ~/.emacs
    :
-5. Run Emacs. It will take several minutes to download necessary
+4. Run Emacs. It will take several minutes to download necessary
    packages. There may be some warnings but it's okay.
    When it's done, there will be a message at the bottom saying
    "For information about GNU Emacs and the GNU system, type C-h C-a."
-6. Close Emacs and run it again. The Newbiemacs main screen will be shown.
+5. Close Emacs and run it again. The Newbiemacs main screen will be shown.
 *** Additional steps for latex on GNU/Linux (optional)
 If you want to edit tex files in Newbiemacs, you need to do the following (only once).
 1. Install necessary packages.
