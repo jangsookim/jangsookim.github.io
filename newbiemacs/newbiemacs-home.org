@@ -6,7 +6,7 @@
 [[file:files/newbiemacs-screenshot.png][file:files/newbiemacs-screenshot.png]]
 ** Introduction
 - Newbiemacs is a pre-configured [[https://www.gnu.org/software/emacs/][GNU Emacs]] distribution inspired by [[https://www.spacemacs.org/][Spacemacs]].
-- Newbiemacs is desiged for mathematician who are new to Emacs.
+- Newbiemacs is desiged for mathematicians who are new to Emacs.
 ** Links
 - [[https://youtu.be/vhWpeNRi7Ts][Introduction video]]
 - [[https://github.com/jangsookim/newbiemacs][Git Repository]]
@@ -22,7 +22,7 @@ file:files/torus-screenshot.png
 * Installation
 ** Install Newbiemacs on Mac
 1. Download Emacs and install it. [[https://emacsformacosx.com/][Click here]]
-2. Install [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][Git]] and [[https://www.google.com/chrome/][Google Chrome]].
+2. Install [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][Git]].
 3. Open a terminal and enter the following lines. (You can open a
    terminal by pressing Command+Space and typing "terminal". You can
    just copy the whole thing and then paste it in your terminal.)
@@ -44,7 +44,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 ** Install Newbiemacs on Windows
 1. Download Emacs and install it. [[http://ftp.jaist.ac.jp/pub/GNU/emacs/windows/emacs-28/][Click here]] and download "emacs-28.2-installer.exe".
 2. Install Git. [[https://git-scm.com/download/win][Click here]] (Download "Standalone Installer".)
-3. Install [[https://strawberryperl.com/][Perl]] and [[https://www.google.com/chrome/][Google Chrome]].
+3. Install [[https://strawberryperl.com/][Perl]].
 4. Open "Command Prompt" (not "terminal" or "PowerShell") and enter
    the following lines. (You can just copy the whole thing and then
    paste it in your command prompt.)
