@@ -23,6 +23,7 @@
 
 * Papers
 ** Preprints
+   - Affine Gordon-Bender-Knuth identities for cylindric Schur functions (with JiSun Huh, Christian Krattenthaler, Soichi Okada), [[https://arxiv.org/abs/2301.13117][arXiv:2301.13117]]
    - Extended commonality of paths and cycles via Schur convexity (with Joonkyung Lee), [[https://arxiv.org/abs/2210.00977][arXiv:2210.00977]]
    - Characteristic polynomials of the weak order on classical and affine Coxeter groups (with Sun-mi Yun), [[https://arxiv.org/abs/2204.01310][arXiv:2204.01310]]
    - Negative moments of orthogonal polynomials (with Jihyeug Jang, Donghyun Kim,  Minho Song, U-Keun Song), [[https://arxiv.org/abs/2201.11344][arxiv:2201.11344]]
@@ -178,6 +179,7 @@
   - [[https://sites.google.com/umn.edu/galen-dorpalen-barry/][Galen Dorpalen-Barry]]
   - Dan Drake
   - [[http://people.brandeis.edu/~gessel/][Ira M. Gessel]]
+  - JiSun Huh
   - Byung-Hak Hwang
   - [[https://jihyeugjang.github.io/][Jihyeug Jang]]
   - [[http://www.combinatorics.net.cn/homepage/ji/][Kathy Ji]]
@@ -185,6 +187,7 @@
   - [[http://square.seoultech.ac.kr/~bkim4/][Byungchan Kim]]
   - [[https://donghyunkim8.wixsite.com/dhkim][Donghyun Kim]]
   - [[http://mathsci.kaist.ac.kr/~dskim/][Dongsu Kim]]
+  - [[https://www.mat.univie.ac.at/~kratt/][Christian Krattenthaler]]
   - [[https://sites.google.com/view/eunjeonglee/][Eunjeong Lee]]
   - [[https://sites.google.com/site/joonkyungleemaths/][Joonkyung Lee]]
   - [[http://www.math.uconn.edu/~khlee/][Kyu-Hwan Lee]]
