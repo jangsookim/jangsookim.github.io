@@ -410,6 +410,6 @@ You can re-installing Newbiemacs keeping your Newbiemacs folder
 | rank | name    |  score | level | date       |
 |------+---------+--------+-------+------------|
 |    1 | jia     | 426900 |    14 | 2022/12/16 |
-|    2 | U-keun  | 276000 |    11 | 2022/12/29 |
-|    3 | jangsoo | 261000 |    11 | 2023/01/14 |
-|    4 | jjh     | 253200 |    10 | 2023/01/11 |
+|    2 | jjh     | 369300 |    13 | 2023/02/05 |
+|    3 | U-keun  | 276000 |    11 | 2022/12/29 |
+|    4 | jangsoo | 261000 |    11 | 2023/01/14 |
