@@ -32,13 +32,15 @@
      Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), [[https://arxiv.org/abs/2104.04251][arXiv:2104.04251]]
    - Enumeration of standard barely set-valued tableaux of shifted shapes (with
      Michael Schlosser and Meesue Yoo), [[https://arxiv.org/abs/2006.03253][arXiv:2006.03253]]
-   - Weight multiplicities and Young tableaux through affine crystals (with
-     Kyu-Hwan Lee and Se-jin Oh), to appear in /Memoirs of the AMS/,
-     [[https://arxiv.org/abs/1703.10321][arXiv:1703.10321]]
    - Symmetric Pascal matrices and related graphs (with Gi-Sang Cheon, Seyed
      Ahmad Mojallal, Meesue Yoo), to appear in /Linear and Multilinear Algebra/
    - Orthogonal polynomials of type $R_I$ (with Dennis Stanton), to appear in
      /Ramanujan Journal/, [[https://arxiv.org/abs/2009.14475][arXiv:2009.14475]]
+** 2023
+   - Weight multiplicities and Young tableaux through affine crystals
+     (with Kyu-Hwan Lee and Se-jin Oh), /Memoirs of the American
+     Mathematical Society/, Volume 283 (2023), no 1401, [[https://arxiv.org/abs/1703.10321][arXiv:1703.10321]]
+
 ** 2022
    - Jacobi--Trudi formulas for flagged refined dual stable Grothendieck
      polynomials, /Algebraic Combinatorics/, Volume 5 (2022) no. 1, pp. 121-148, [[https://arxiv.org/abs/2008.12000][arXiv:2008.12000]]

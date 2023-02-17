@@ -4,7 +4,7 @@
 * Home
 #+ATTR_HTML: :width 600
 [[file:files/newbiemacs-screenshot.png][file:files/newbiemacs-screenshot.png]]
-Newbiemacs Logo by [[https://instagram.com/ujoo_peace][Artist Ujoo]]
+Newbiemacs character by [[https://instagram.com/ujoo_peace][Artist Ujoo]]
 
 ** Introduction
 - Newbiemacs is a pre-configured [[https://www.gnu.org/software/emacs/][GNU Emacs]] distribution inspired by [[https://www.spacemacs.org/][Spacemacs]].
