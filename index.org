@@ -250,7 +250,7 @@
      Sungkyunkwan University in 2016. We cover Chapters 1-6 in the textbook:
      Combinatorics Through Guided Discovery by Kenneth P. Bogart.
 * WeBWorK
-- [[file:webwork/introduction.org][Introduction to WeBWorK]]
+- [[file:webwork/index.org][Introduction to WeBWorK]]
 * Newbiemacs
 - Newbiemacs is a pre-configured [[https://www.gnu.org/software/emacs/][GNU Emacs]] distribution inspired by [[https://www.spacemacs.org/][Spacemacs]].
 - Newbiemacs is desiged for mathematician who are new to Emacs.

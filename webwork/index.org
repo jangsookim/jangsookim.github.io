@@ -5,6 +5,7 @@
 - Webwork is an open-source online homework system.
 - For more information on Webwork check this page. https://openwebwork.org/
 - Webwork class webpages are listed here. https://webwork.skku.edu
+- To see instructions on webwork click the buttons in the above tab.
 
 * Instructions for students
 ** Video instruction
