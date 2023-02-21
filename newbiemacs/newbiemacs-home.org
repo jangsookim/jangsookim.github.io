@@ -408,6 +408,11 @@ You can re-installing Newbiemacs keeping your Newbiemacs folder
 1. Press ~C-x C-y~ (Press ~x~ and ~y~ while holding the control key.)
 2. Restart Newbiemacs.
 3. If it's still not working, re-install Newbiemacs.
+** I cannot compile bibtex.
+1. If there is a space in the path of your newbiemacs folder, you cannot compile bibtex.
+2. It is strongly recommended that you change your newbiemacs folder so that it has no space.
+3. If you need to use icloud, whose path is ~/Users/<username>/Library/Mobile Documents/com~apple~CloudDocs~, you need to run the following in your terminal. (You have to change ~<username>~ with your actual username.)
+   : ln -s "/Users/<username>/Library/Mobile Documents" "/Users/<username>/Library/Mobile-Documents"
 * Torus Leader Board
 | rank | name    |  score | level | date       |
 |------+---------+--------+-------+------------|
