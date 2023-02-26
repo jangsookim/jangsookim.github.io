@@ -245,7 +245,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 
 * Tutorial 2
 ** Introduction
-- In this tutorial we learn how to edit tex files and how to use [[https://orgmode.org/][org-mode]].
+- In this tutorial we learn how to edit tex files and how to use [[https://orgmode.org/][org-mode]] and [[https://magit.vc/][magit]].
 - Recall that there are two modes: *normal mode* and *insert mode*
 - There is anothor mode, called *visual mode*, which is a mode to
   select a region, just like what you usually do with your mouse.
@@ -324,11 +324,44 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 *** How to view the connections of the org files
 - Type ~u~ in the Newbiemacs screen.
 
+** Magit (git interface)
+- ~SPC g s~: start magit (typing ~?~ shows magit commands)
+- ~SPC g c~: clone repository
+- ~SPC g i~: initiate git repository
+- ~SPC g p~: publish to github
+- ~SPC g m~: merge tool for resolving conflicts
+*** Initial setup
+1. Install GitHub CLI: https://cli.github.com/
+2. Create a token from github
+   1. Settings/developer settings
+   2. personal access tokens/tokens (classic)
+   3. generate new token (classic)
+   4. Set "Note" and "Expiration"
+   5. Check "repo" (full control of private repositories)
+   6. Click the botton "Generate token"
+   7. Save the token somewhere
+3. in magit push
+4. enter github id
+5. enter the token
+*** Basic magit commands
+| command          | keybinding |
+|------------------+------------|
+| help             | ~?~         |
+| show log         | ~l l~      |
+| stage one file   | ~s~        |
+| stage all        | ~S~        |
+| commit           | ~c c~      |
+| push to origin   | ~P p~      |
+| pull from origin | ~F u~      |
+| merge            | ~m m~      |
+*** make github stop asking password
+: git config --global credential.helper store
+
+
 * Tutorial 3
 ** Newbiemacs key tree
 - In *normal mode* press ~SPC~ to invoke the Newbiemacs key tree.
 - In *normal mode* press ~,~ to invoke the Newbiemacs local key tree.
-- You can also run the key tree by pressing ~<F5>~ or ~<F6>~
 - The Newbiemacs (local) key tree will show various commands, which
   you can run by pressing the key indicated there.
 ** Which-key

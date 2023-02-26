@@ -1,10 +1,5 @@
 #+TITLE: Lecture 3: Git and GitHub
-#+REVEAL_TRANS: zoom
-#+REVEAL_THEME: league
-
-#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
-
-# #+OPTIONS: toc:nil num:nil
+#+SETUPFILE: /Users/jangsookim/Library/CloudStorage/Dropbox/newbiemacs/nbm-user-settings/org-themes/src/readtheorg_inline/readtheorg_inline.theme
 
 
 
@@ -157,7 +152,7 @@
 ** Merge
 #+ATTR_REVEAL: :frag (roll-in)
    - If your local repository is not up-to-date, you have to pull first and then push.
-   - If there are no conflicts Git will automatically merge the two files from
+   - If there are no conflicts, Git will automatically merge the two files from
      local and remote repositories.
    - If there are conflicts, you have to merge the two files manually as follows.
      1. Git will write the conflicts in the tex file.
