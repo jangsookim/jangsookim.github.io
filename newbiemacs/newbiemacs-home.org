@@ -325,14 +325,18 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 - Type ~u~ in the Newbiemacs screen.
 
 ** Magit (git interface)
-- ~SPC g s~: start magit (typing ~?~ shows magit commands)
-- ~SPC g c~: clone repository
-- ~SPC g i~: initiate git repository
-- ~SPC g p~: publish to github
-- ~SPC g m~: merge tool for resolving conflicts
-*** Initial setup
-1. Install GitHub CLI: https://cli.github.com/
-2. Create a token from github
+*** Configuring Git user name and email
+- Before using Git you need to identify yourself by entering this.
+  : git config --global user.name "NAME"
+  : git config --global user.email "EMAIL"
+- This needs to be done only once.
+- You can check the result using
+  : git config --list
+*** GitHub CLI
+- To connect with GitHub we need GitHub CLI.
+- Install GitHub CLI: https://cli.github.com/
+*** Getting Github token
+1. Create a token from github
    1. Settings/developer settings
    2. personal access tokens/tokens (classic)
    3. generate new token (classic)
@@ -340,9 +344,20 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
    5. Check "repo" (full control of private repositories)
    6. Click the botton "Generate token"
    7. Save the token somewhere
-3. in magit push
-4. enter github id
-5. enter the token
+2. in magit push
+3. enter github id
+4. enter the token
+*** make github stop asking password
+: git config --global credential.helper store
+*** Newbiemacs git commands
+| command   | keybinding                                    |
+|-----------+-----------------------------------------------|
+| ~SPC g s~ | start magit (typing ~?~ shows magit commands) |
+| ~SPC g c~ | clone repository                              |
+| ~SPC g i~ | initiate git repository                       |
+| ~SPC g p~ | publish to github                             |
+| ~SPC g m~ | merge tool for resolving conflicts            |
+
 *** Basic magit commands
 | command          | keybinding |
 |------------------+------------|
@@ -354,9 +369,6 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 | push to origin   | ~P p~      |
 | pull from origin | ~F u~      |
 | merge            | ~m m~      |
-*** make github stop asking password
-: git config --global credential.helper store
-
 
 * Tutorial 3
 ** Newbiemacs key tree
