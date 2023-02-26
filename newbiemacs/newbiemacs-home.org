@@ -329,12 +329,6 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 - Before using Git you need to identify yourself by entering this.
   : git config --global user.name "NAME"
   : git config --global user.email "EMAIL"
-- You can check the result using
-  : git config --list
-- To prevent github from asking the password every session, type the following.
-  : git config --global credential.helper store
-- To cancel the above command, do this.
-  : git config --global --unset-all credential.helper
 *** Install GitHub CLI (one time only)
 - To connect with GitHub we need GitHub CLI.
 - Install GitHub CLI: https://cli.github.com/
@@ -342,30 +336,21 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
   : gh auth login
 - Choose the default options.
 - Enter the provided code in the web browser.
-*** Getting Github token (one time only, may be skipped on MacOS)
-1. Login to github
-2. Settings/developer settings
-3. personal access tokens/tokens (classic)
-4. generate new token (classic)
-5. Set "Note" and "Expiration"
-6. Check "repo" (full control of private repositories)
-7. Click the botton "Generate token"
-8. Save the token somewhere (this will be used for authentification)
 *** Test if everything is working
-1. Create a temporary folder (this folder may be empty).
+1. Create a temporary folder.
 2. Inside the temporary folder, type ~SPC g i~ to initiate a repository.
 3. Type "y" twice and enter any repository name.
-4. You may be asked to enter your github username and password. Use the above token for the password.
+4. Create any file and commit and push.
 5. Check if this repository is created in github.
 6. You may want to remove this testing repository from github.
 *** Newbiemacs git commands
-| command   | keybinding                                    |
-|-----------+-----------------------------------------------|
-| ~SPC g s~ | start magit (typing ~?~ shows magit commands) |
-| ~SPC g c~ | clone repository                              |
-| ~SPC g i~ | initiate git repository                       |
-| ~SPC g p~ | publish to github                             |
-| ~SPC g m~ | merge tool for resolving conflicts            |
+| command   | keybinding                         |
+|-----------+------------------------------------|
+| ~SPC g s~ | start magit                        |
+| ~SPC g c~ | clone repository                   |
+| ~SPC g i~ | initiate git repository            |
+| ~SPC g p~ | publish to github                  |
+| ~SPC g m~ | merge tool for resolving conflicts |
 
 *** Basic magit commands
 | command          | keybinding |
