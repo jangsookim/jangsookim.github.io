@@ -327,8 +327,8 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 ** Magit (git interface)
 *** Configuring Git user name and email (one time only)
 - Before using Git you need to identify yourself by entering this.
-  : git config --global user.name "NAME"
-  : git config --global user.email "EMAIL"
+  : git config --global user.name "your_github_username"
+  : git config --global user.email "your_email"
 *** Install GitHub CLI (one time only)
 - To connect with GitHub we need GitHub CLI.
 - Install GitHub CLI: https://cli.github.com/
