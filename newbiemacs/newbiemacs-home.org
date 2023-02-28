@@ -131,6 +131,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 *** Tutorial 2
 - Edit tex files
 - Use [[https://orgmode.org/][org-mode]]
+- Use git
 
 *** Tutorial 3
 - More on Newbiemacs and Emacs
@@ -364,6 +365,25 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 | pull from origin | ~F p~      |
 | merge            | ~m m~      |
 
+*** Basic git work flow
+1. Edit your files in a git repository.
+2. Start magit (type ~SPC g s~)
+3. Stage the files you want to commit (place the cursor at each file and type ~s~)
+4. Commit (type ~c c~ and enter a commit message and then type ~C-c C-c~)
+5. Push (type ~P p~)
+6. If your local repository is not upto date, you need to do the following.
+   1. Pull (type ~F p~)
+   2. Merge (type ~m m~)
+   3. If there are no conflicts, you are done.
+   4. If there are conflicts, Git will automatically write them in each conflicted file, which you need to resolve as follows.
+      1. Visit a conflicted file (place the cursor at a conflicted file and type ~RET~)
+      2. Once the conflicted file is open, run a merge tool (type ~SPC g m~)
+      3. The merge tool will find each line with conflicts. You can resolve the conflicts as instructed in the minibuffer.
+      4. Go back to magit and stage the conflicted file that have been resolved.
+      5. Repeat the above process for each conflicted file.
+      6. Commit. There should be a default commit message.
+      7. Push
+
 * Tutorial 3
 ** Newbiemacs key tree
 - In *normal mode* press ~SPC~ to invoke the Newbiemacs key tree.
@@ -420,7 +440,6 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 - [[https://www.openvim.com/][Interactive Vim tutorial]]
 - [[https://orgmode.org/quickstart.html][Quickstart]] for Org-mode
 - [[https://orgmode.org/guide/index.html][Org Mode Compact Guide]] (Click [[https://orgmode.org/orgguide.pdf][here]] for a pdf version)
-
 
 * FAQ
 ** How can I open the Newbiemacs directory?
