@@ -328,22 +328,21 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 ** Magit (git interface)
 *** Configuring Git user name and email (one time only)
 - Before using Git you need to identify yourself by entering this.
-  : git config --global user.name "your_github_username"
+  : git config --global user.name "your_username"
   : git config --global user.email "your_email"
 *** Install GitHub CLI (one time only)
-- To connect with GitHub we need GitHub CLI.
+- To connect with GitHub we need GitHub CLI (and obvious a GitHub account).
 - Install GitHub CLI: https://cli.github.com/
 - Run the following in a terminal.
   : gh auth login
-- Choose the default options.
-- Enter the provided code in the web browser.
+- Choose the default options. Then enter the provided code in the web
+  browser.
 *** Test if everything is working
 1. Create a temporary folder.
 2. Inside the temporary folder, type ~SPC g i~ to initiate a repository.
 3. Type "y" twice and enter any repository name.
 4. Create any file and commit and push.
 5. Check if this repository is created in github.
-6. You may want to remove this testing repository from github.
 *** Newbiemacs git commands
 | command   | keybinding                         |
 |-----------+------------------------------------|
@@ -375,11 +374,11 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
    1. Pull (type ~F p~)
    2. Merge (type ~m m~)
    3. If there are no conflicts, you are done.
-   4. If there are conflicts, Git will automatically write them in each conflicted file, which you need to resolve as follows.
+   4. If there are conflicts, Git will automatically write them in each conflicted file, which you need to [[https://magit.vc/manual/magit.html#Resolving-Conflicts][resolve conflicts]] as follows.
       1. Visit a conflicted file (place the cursor at a conflicted file and type ~RET~)
       2. Once the conflicted file is open, run a merge tool (type ~SPC g m~)
       3. The merge tool will find each line with conflicts. You can resolve the conflicts as instructed in the minibuffer.
-      4. Go back to magit and stage the conflicted file that have been resolved.
+      4. Go back to magit and stage the conflicted file that have been resolved. (This file may have been automatically staged by the merge tool.)
       5. Repeat the above process for each conflicted file.
       6. Commit. There should be a default commit message.
       7. Push
