@@ -1,4 +1,5 @@
 #+title: Newbiemacs Homepage
+#+OPTIONS: title:t author:t date:t toc:t num:t timestamp:nil creator:nil
 #+SETUPFILE: /Users/jangsookim/Library/CloudStorage/Dropbox/newbiemacs/nbm-user-settings/org-themes/src/bigblow_inline/bigblow_inline.theme
 
 * Home
@@ -113,6 +114,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 - *insert mode* has a thin cursor and the icon at the bottom left corder has green color.
   #+ATTR_HTML: :width 600
   [[file:files/normal-mode.png][file:files/insert-mode.png]]
+
 - Type ~i~ to change mode from *normal mode* to *insert mode*
 - Type ~ESC~ to change mode from *insert mode* to *normal mode*
 - To go to the Newbiemacs screen, type ~BACKSPACE~ in *normal mode*
@@ -301,6 +303,9 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
   : pacman -S mingw-w64-x86_64-hunspell
 - Open Msys2 and install hunspell-en by typing the following line.
   : pacman -S mingw-w64-x86_64-hunspell-en
+*** Install a spell checker on GNU/Linux
+- Enter the following in a terminal.  
+  : sudo apt-get install ispell
 
 ** Org-mode
 - [[https://orgmode.org/][Org-mode]] is a very useful tool to organize text files with extension "org".
@@ -384,11 +389,65 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
       7. Push
 
 * Tutorial 3
-** Newbiemacs key tree
-- In *normal mode* press ~SPC~ to invoke the Newbiemacs key tree.
-- In *normal mode* press ~,~ to invoke the Newbiemacs local key tree.
-- The Newbiemacs (local) key tree will show various commands, which
-  you can run by pressing the key indicated there.
+** Terminology
+- The following are fundamental terms in Emacs .
+- *frame*: A frame is what's commonly called "window" that is opened when you start Emacs.
+- *window*: Windows are what you see in a frame. Usually there is only
+  one window but sometimes you will see many windows in one frame.
+- *buffer*: When you open a file in emacs, its content is shown in a
+  buffer. You can edit the buffer. If you save a modified buffer,
+  Emacs will change the file as modified.
+- *minibuffer*: A minibuffer is a small window at the bottem of a
+  frame. It is opened when Emacs needs your input for certain
+  commends.
+** Emacs mode
+- Besides *normal mode* *insert mode*, there is another mode called
+  *emacs mode*, which is indicated with blue color at the bottom left
+  corner.
+  #+ATTR_HTML: :width 600
+  [[file:files/emacs-mode.png]]
+- To toggle between *emacs mode* and *normal mode* (or *insert mode*),
+  type ~C-z~.
+- In *emacs mode* you can use the usual Emacs keybindings.
+- If you enter other "major modes", such as "help", "dired", or
+  "magit", the default mode is *emacs mode*.
+- In many of such modes, typing ~?~ shows keybindings in that mode.
+
+** key bindings
+- Here are some basic Emacs keybindings.
+- Note that ~C-y~ (paste) will be needed if you want to paste something into a minibuffer.
+| mode   | command                    | keybinding |
+|--------+----------------------------+------------|
+| emacs | paste    | ~C-y~      |
+| all    | isearch-forward            | ~C-s~      |
+| all    | query-replace              | ~M-%~      |
+| all    | kill-buffer                | ~C-x k~    |
+| all    | increase font-size         | ~C-x C-=~  |
+| all    | decrease font-size         | ~C-x C--~  |
+| all    | default font-size          | ~C-x C-0~  |
+| all    | org-store-link             | ~C-c l~    |
+| all    | org-insert-link            | ~C-c C-l~  |
+
+** File managements
+- For beginners, I recommend using your system's file manager.
+- If you are comfortable with basics of emacs, I recommend [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html][dired]].
+*** How to open a file in Newbiemacs
+1. In your system's file manager, open the diretory of the file that you want to open.
+2. In Newbiemacs go to the main screen by pressing the backspace key.
+3. Drag the file from your file manager to Newbiemacs.
+4. You can also drag a folder to Newbiemacs. It will then show the list of files in it.
+*** How to open the current directory in the file manager
+1. Suppose that file A is opened in Newbiemacs.
+2. To open the directory containing A in the file manager, you can simply type ~SPC f F~.
+** Window managements
+- If you use Emacs, you will often encounter a situation that the
+  Emacs screen is divided into two or more windows.
+- Many of popup windows (such as help, warning, agenda, or magit) can
+  be closed by simply typing ~q~ (if it's in Emacs mode).
+- To maximize the current window, type ~SPC w m~ or ~C-x 1~.
+** Buffer managements
+- To switch to another buffer type ~SPC b b~
+- To kill the current buffer type ~SPC b d~ or ~C-x k~ and select the buffer
 ** Which-key
 - There are many Emacs keybindings starting with ~C-x~ or ~C-c~ or ~C-h~.
 - Press one of these keys will show the possible keybingings.
@@ -400,28 +459,6 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
   to those containing what you typed there.
 - Instead of ~M-x~ you can also simply type ~SPC SPC~ in *normal
   mode*.
-
-** key bindings
-- Here are some basic Emacs keybindings.
-| mode   | command                    | keybinding |
-|--------+----------------------------+------------|
-| all    | isearch-forward            | ~C-s~      |
-| all    | query-replace              | ~M-%~      |
-| all    | kill-buffer                | ~C-x k~    |
-| all    | increase font-size         | ~C-x C-=~  |
-| all    | decrease font-size         | ~C-x C--~  |
-| all    | default font-size          | ~C-x C-0~  |
-| all    | org-store-link             | ~C-c l~    |
-| all    | org-insert-link            | ~C-c C-l~  |
-
-** Emacs mode
-- There is another mode called *emacs mode*.
-- *emacs mode* is indicated with blue color at the bottom left corder.
-- To toggle between *emacs mode* and the other mode, press ~C-z~.
-- In *emacs mode* you can use the usual Emacs keybindings.
-- If you enter other "major modes", such as "help", "dired", or
-  "magit", the default mode is *emacs mode*.
-- In many of such modes, typing ~?~ shows keybindings in that mode.
 
 ** Configurations
 *** key-tree
