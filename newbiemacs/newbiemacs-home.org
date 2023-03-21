@@ -401,7 +401,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
   frame. It is opened when Emacs needs your input for certain
   commends.
 ** Emacs mode
-- Besides *normal mode* *insert mode*, there is another mode called
+- Besides *normal mode* and *insert mode*, there is another mode called
   *emacs mode*, which is indicated with blue color at the bottom left
   corner.
   #+ATTR_HTML: :width 600

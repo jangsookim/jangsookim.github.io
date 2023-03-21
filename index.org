@@ -25,16 +25,16 @@
 ** Preprints
    - Affine Gordon-Bender-Knuth identities for cylindric Schur functions (with JiSun Huh, Christian Krattenthaler, Soichi Okada), [[https://arxiv.org/abs/2301.13117][arXiv:2301.13117]]
    - Extended commonality of paths and cycles via Schur convexity (with Joonkyung Lee), [[https://arxiv.org/abs/2210.00977][arXiv:2210.00977]]
-   - Characteristic polynomials of the weak order on classical and affine Coxeter groups (with Sun-mi Yun), [[https://arxiv.org/abs/2204.01310][arXiv:2204.01310]]
-   - Negative moments of orthogonal polynomials (with Jihyeug Jang, Donghyun Kim,  Minho Song, U-Keun Song), [[https://arxiv.org/abs/2201.11344][arxiv:2201.11344]]
    - Three families of /q/-Lommel polynomials (with Dennis Stanton), [[https://arxiv.org/abs/2105.10096][arXiv:2105.10096]]
    - Refined canonical stable Grothendieck polynomials and their duals (with
      Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), [[https://arxiv.org/abs/2104.04251][arXiv:2104.04251]]
    - Enumeration of standard barely set-valued tableaux of shifted shapes (with
      Michael Schlosser and Meesue Yoo), [[https://arxiv.org/abs/2006.03253][arXiv:2006.03253]]
+   - Negative moments of orthogonal polynomials (with Jihyeug Jang, Donghyun Kim,  Minho Song, U-Keun Song), to appear in Forum of Mathematics, Sigma, [[https://arxiv.org/abs/2201.11344][arxiv:2201.11344]]
+   - Characteristic polynomials of the weak order on classical and affine Coxeter groups (with Sun-mi Yun), to appear in Order, [[https://arxiv.org/abs/2204.01310][arXiv:2204.01310]]
    - Symmetric Pascal matrices and related graphs (with Gi-Sang Cheon, Seyed
      Ahmad Mojallal, Meesue Yoo), to appear in /Linear and Multilinear Algebra/
-   - Orthogonal polynomials of type $R_I$ (with Dennis Stanton), to appear in
+   - Orthogonal polynomials of type /R_I/ (with Dennis Stanton), to appear in
      /Ramanujan Journal/, [[https://arxiv.org/abs/2009.14475][arXiv:2009.14475]]
 ** 2023
    - Weight multiplicities and Young tableaux through affine crystals
