@@ -89,7 +89,7 @@ If you want to use latex in Newbiemacs, you need to do the following (only once)
 *** Additional steps for latex on GNU/Linux (optional)
 If you want to edit tex files in Newbiemacs, you need to do the following (only once).
 1. Install necessary packages.
-   : sudo apt install texlive-full
+   : sudo apt install texlive-full wmctrl
 * Tutorial 0
 ** Introduction
 - In this tutorial you will learn how to use Newbiemacs.
@@ -510,7 +510,7 @@ You can re-installing Newbiemacs keeping your Newbiemacs folder
 * Torus Leader Board
 | rank | name    |  score | level | date       |
 |------+---------+--------+-------+------------|
-|    1 | jia     | 426900 |    14 | 2022/12/16 |
-|    2 | U-keun  | 382200 |    13 | 2023/02/21 |
-|    3 | jjh     | 369300 |    13 | 2023/02/05 |
+|    1 | jjh     | 459600 |    15 | 2023/03/25 |
+|    2 | jia     | 426900 |    14 | 2022/12/16 |
+|    3 | U-keun  | 382200 |    13 | 2023/02/21 |
 |    4 | jangsoo | 329700 |    13 | 2023/02/13 |
