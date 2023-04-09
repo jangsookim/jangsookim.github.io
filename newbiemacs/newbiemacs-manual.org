@@ -13,8 +13,9 @@
 - ~SPC S i~ means ~SPC~ and then ~S~ and then ~i~ (This is
   case-sensitive, so ~S~ is different from ~s~)
 * Cheat sheets
+- [[file:newbiemacs_cheat_sheet_vim.pdf][Cheat sheet for VIM style]]
+- [[file:newbiemacs_cheat_sheet_emacs.pdf][Cheat sheet for Emacs style]]
 - [[file:newbiemacs_cheat_sheet_windows.pdf][Cheat sheet for Windows style]]
-- [[file:newbiemacs_cheat_sheet_windows.pdf][Cheat sheet for VIM style]]
 
 * File managements
 - For beginners, I recommend using your system's file manager.

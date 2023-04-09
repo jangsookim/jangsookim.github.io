@@ -216,9 +216,9 @@ For more details, click [[file:newbiemacs-manual.org][the Newbiemacs manual]].
 
 * FAQ
 ** How can I open the Newbiemacs directory?
-1. Type ~Backspace~ twice and then type ~F~
+1. Type ~ALT-BACKSPACE~ twice and then type ~F~
 ** How can I update Newbiemacs?
-1. Type ~SPC N u~ (You may need to restart Emacs.)
+1. Type ~U~ in the Newbiemacs screen. (You may need to restart Emacs.)
 ** How can I change the newbiemacs folder?
 1. Close Emacs and move the newbiemacs folder as you wish.
 2. Open ~~/nbm-root/nbm-home.txt~ (This is the file containing the path to the Newbiemacs folder.)
