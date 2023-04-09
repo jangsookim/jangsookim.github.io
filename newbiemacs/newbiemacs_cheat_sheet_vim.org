@@ -1,0 +1,120 @@
+#+title: Newbiemacs Cheat Sheet for VIM style (ver 1.30)
+#+OPTIONS: toc:nil author:nil date:nil
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,9pt,twoside,twocolumn]
+#+LATEX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \geometry{top=0cm,left=.5cm,right=.5cm,bottom=1cm}
+#+LATEX_HEADER: \usepackage{multicol}
+#+LATEX_HEADER: \usepackage{nopageno}
+#+LATEX_HEADER: \usepackage{setspace}
+#+LATEX_HEADER: \renewcommand{\baselinestretch}{0.9} 
+
+[[https://jangsookim.github.io/newbiemacs/newbiemacs-home.html][Newbiemacs Homepage]]
+
+* Notation
+| key       | description                                 |
+|-----------+---------------------------------------------|
+| ~C~       | the ctrl key, i.e., the control key         |
+| ~M~       | the meta key, i.e., the command key for Mac |
+|           | or the alt key for Windows                  |
+| ~SPC~     | the space key                               |
+| ~RET~     | the return key, i.e. the enter key          |
+| ~C-g~     | hold ~C~ and then press ~g~                 |
+| ~C-x k~   | ~C-x~ and then ~k~ (without holding ~C~)    |
+| ~C-x C-=~ | ~C-x~ and then ~C-=~                        |
+| ~SPC S i~ | ~SPC~ and then ~S~ and then ~i~             |
+* Changing vim modes
+| keybinding | description                  |
+|------------+------------------------------|
+| ~i~ or ~a~ | change to insert mode        |
+| ~ESC~      | change to normal mode        |
+| ~C-z~      | toggle between vim and emacs |
+
+* Basic vim keybindings
+| mode   | keybinding         | description                     |
+|--------+--------------------+---------------------------------|
+| normal | ~h~, ~j~, ~k~, ~l~ | left, up, down, right           |
+| normal | ~v~ or ~V~         | start visual (select) mode      |
+| normal | ~y~                | yank (copy) the selected region |
+| normal | ~x~                | cut the selected region         |
+| normal | ~p~ or ~P~         | paste (after or before cursor)  |
+| normal | ~u~        | undo |
+| normal | ~C-r~     | redo |
+
+* Basic emacs keybindings
+| mode | keybinding | description              |
+|------+------------+--------------------------|
+| any  | ~C-g~      | cancel                   |
+| any  | ~C-x k~    | kill buffer (close file) |
+| any  | ~C-x 1~    | delete other windows     |
+| any  | ~C-x C-=~  | increase font size       |
+| any  | ~C-x C--~  | decrease font size       |
+| any  | ~C-s~      | search                   |
+| any  | ~M-%~      | search and replace       |
+- During search, typing ~C-s~ again finds the next match.
+- During search, typing ~C-r~ finds the previous match.
+
+* leader key and localleader key
+- Newbiemacs commands start with "leader key" or "localleader key".
+- Typing "leader key" shows commands for global purposes.
+- Typing "localleader key" shows commands specific to current file (tex, org, etc).
+| mode   | keybinding    | description                                             |
+|--------+---------------+---------------------------------------------------------|
+| normal | ~SPC~      | leader key                |
+| normal | ~,~  | localleader key                       |
+| insert | ~M-RET~ | localleader key                       |
+
+* Basic global commands
+- Global commands are accessible from "leader key".
+- Keybindings are organized by their categories.
+- For example, commands related to files start with ~SPC f~
+| keybinding | description                |
+|------------+----------------------------|
+| ~SPC f s~  | save                       |
+| ~SPC f A~  | save as                    |
+| ~SPC f R~  | rename file                |
+| ~SPC f r~  | recent files               |
+| ~SPC f f~  | find files           |
+| ~SPC f F~  | Finder (file manager)      |
+| ~SPC p~    | pdf find                   |
+| ~SPC t~    | tex find                   |
+| ~SPC m~    | misc find                  |
+| ~SPC o r~ | org-roam find          |
+| ~C-x~      | many global commands |
+
+* Useful global commands
+| keybinding | description           |
+|------------+-----------------------|
+| ~SPC SPC~ | all emacs commands |
+| ~SPC TAB~ | last buffer |
+| ~SPC b b~ | buffer list |
+| ~SPC f b~  | bookmark current file |
+| ~SPC RET~   | bookmark search |
+
+* Basic latex commands
+- Latex commands are accessible from "localleader key" if the current
+  file is a tex file.
+| keybinding | description                  |
+|------------+------------------------------|
+| ~, b~      | build (compile) |
+| ~, v~      | view pdf |
+| ~, ,~      | tex master command           |
+| ~, .~      | mark (select) environment    |
+| ~, r r~    | reference                    |
+| ~, n m~    | new macro                    |
+| ~C-c~       | many latex commands    |
+
+
+* Basic org-mode commands
+- Org-mode commands are accessible from "localleader key" if the current
+  file is an org file.
+| keybinding | description               |
+|------------+---------------------------|
+| ~, e~      | export to various format  |
+| ~, h h~    | export to html            |
+| ~, h H~    | insert html theme         |
+| ~, h r~    | export to presentation    |
+| ~, h R~    | insert presentation theme |
+| ~, T T~    | toggle TODO               |
+| ~C-c~      | many org-mode commands    |

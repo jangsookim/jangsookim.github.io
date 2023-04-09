@@ -1,0 +1,247 @@
+#+title: Newbiemacs Manual
+#+SETUPFILE: /Users/jangsookim/Library/CloudStorage/Dropbox/newbiemacs/nbm-user-settings/org-themes/src/readtheorg_inline/readtheorg_inline.theme
+#+OPTIONS: title:t author:t date:t toc:t num:t
+
+* Key binding Notation
+- ~C~ means Ctrl, i.e., the control key 
+- ~M~ means Meta, i.e., the command key for MacOS or the alt key for Windows
+- ~SPC~ means the space key
+- ~RET~ means the return key, i.e., the enter key.
+- ~C-g~ means hold ~C~ and then press ~g~
+- ~C-x k~ means ~C-x~ and then ~k~ (without holding ~C~)
+- ~C-x C-=~ means ~C-x~ and then ~C-=~
+- ~SPC S i~ means ~SPC~ and then ~S~ and then ~i~ (This is
+  case-sensitive, so ~S~ is different from ~s~)
+* Cheat sheets
+- [[file:newbiemacs_cheat_sheet_windows.pdf][Cheat sheet for Windows style]]
+- [[file:newbiemacs_cheat_sheet_windows.pdf][Cheat sheet for VIM style]]
+
+* File managements
+- For beginners, I recommend using your system's file manager.
+- If you are comfortable with basics of emacs, I recommend [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html][dired]] for the file management.
+** How to open a file in Newbiemacs
+1. In your system's file manager, open the directory of the file that you want to open.
+2. In Newbiemacs go to the main screen by pressing the backspace key.
+3. Drag the file from your file manager to Newbiemacs.
+4. You can also drag a folder to Newbiemacs. It will then show the list of files in it.
+** How to open the current directory in the file manager
+1. Suppose that file A is opened in Newbiemacs.
+2. To open the directory containing A in the file manager, you can simply type ~M-o f F~.
+* How to edit a tex file
+- To compile a tex file type ~M-RET b~
+- To view the pdf file type ~M-RET v~
+- The forward searching (tex file to pdf file) will be done automatically.
+- To go to the location of the tex file from the pdf file, do
+  "Command+Shift+mouse click" if you are using Skim on Mac and "double
+  click" if you are using SumatraPDF on Windows.
+  
+* Org-mode
+- [[https://orgmode.org/][Org-mode]] is a very useful tool to organize text files with extension "org".
+- An org file is basically a text file with [[https://en.wikipedia.org/wiki/Markdown][mark-down]]-like structure.
+- Your org files will be stored in the folder ~org~ under the Newbiemacs folder.
+- In Newbiemacs we use [[https://www.orgroam.com/][org-roam]], which is a package to connect org files nicely.
+
+** How to create an org file
+- Type ~r~ in the Newbiemacs screen.
+- Type a title of a new org file. It will open a new org file.
+- Write anything you want there.
+- Type ~C-c C-c~ when you are done.
+
+** How to search an org file
+- Type ~r~ in the Newbiemacs screen.
+- Type anything you remember about the title of the org file.
+
+** How to insert an org file link into the current org file
+- Type ~i~ in the Newbiemacs screen.
+- Enter the tile of the org file to which you want to insert a link.
+
+** How to view the connections of the org files
+- Type ~u~ in the Newbiemacs screen.
+
+* Magit (git interface)
+** Configuring Git user name and email (one time only)
+- Before using Git you need to identify yourself by entering this.
+  : git config --global user.name "your_username"
+  : git config --global user.email "your_email"
+** Install GitHub CLI (one time only)
+- To connect with GitHub we need GitHub CLI (and obvious a GitHub account).
+- Install GitHub CLI: https://cli.github.com/
+- Run the following in a terminal.
+  : gh auth login
+- Choose the default options. Then enter the provided code in the web
+  browser.
+** Test if everything is working
+1. Create a temporary folder.
+2. Inside the temporary folder, type ~M-o g i~ to initiate a repository.
+3. Type "y" twice and enter any repository name.
+4. Create any file and commit and push.
+5. Check if this repository is created in github.
+** Newbiemacs git commands
+| command   | keybinding                         |
+|-----------+------------------------------------|
+| ~M-o g s~ | start magit                        |
+| ~M-o g c~ | clone repository                   |
+| ~M-o g i~ | initiate git repository            |
+| ~M-o g p~ | publish to github                  |
+| ~M-o g m~ | merge tool for resolving conflicts |
+
+** Basic magit commands
+| command          | keybinding |
+|------------------+------------|
+| help             | ~?~         |
+| show log         | ~l l~      |
+| stage one file   | ~s~        |
+| stage all        | ~S~        |
+| commit           | ~c c~      |
+| push to origin   | ~P p~      |
+| pull from origin | ~F p~      |
+| merge            | ~m m~      |
+
+** Basic git work flow
+1. Edit your files in a git repository.
+2. Start magit (type ~M-o g s~)
+3. Stage the files you want to commit (place the cursor at each file and type ~s~)
+4. Commit (type ~c c~ and enter a commit message and then type ~C-c C-c~)
+5. Push (type ~P p~)
+6. If your local repository is not upto date, you need to do the following.
+   1. Pull (type ~F p~)
+   2. Merge (type ~m m~)
+   3. If there are no conflicts, you are done.
+   4. If there are conflicts, Git will automatically write them in each conflicted file, which you need to [[https://magit.vc/manual/magit.html#Resolving-Conflicts][resolve conflicts]] as follows.
+      1. Visit a conflicted file (place the cursor at a conflicted file and type ~RET~)
+      2. Once the conflicted file is open, run a merge tool (type ~M-o g m~)
+      3. The merge tool will find each line with conflicts. You can resolve the conflicts as instructed in the minibuffer.
+      4. Go back to magit and stage the conflicted file that have been resolved. (This file may have been automatically staged by the merge tool.)
+      5. Repeat the above process for each conflicted file.
+      6. Commit. There should be a default commit message.
+      7. Push
+
+* Vim
+- Newbiemacs uses [[https://www.emacswiki.org/emacs/Evil][evil mode]], which allows us to use [[https://en.wikipedia.org/wiki/Vim_(text_editor)][Vim]] keybindings.
+- To enable Vim, in the Newbiemacs screen type ~e~ and choose "vim".
+- Once you enable Vim, any shortcut prefix ~M-o~ can be replaced by ~SPC~ and any shortcut prefix ~M-RET~ can be replaced by ~,~ in normal mode.
+- For example, you can open the current directory using the system file manager by typing ~SPC f F~ in normal mode instead of typing ~M-o f F~, and you can compile a tex file by typing ~, b~ in normal mode instead of typing ~M-RET b~,
+  
+** Basic concepts on Vim
+- In Vim, there are several modes. The two most important modes are called *normal mode* and *insert mode*
+- *normal mode* has a fat cursor and the icon at the bottom left corder has orange color.
+  #+ATTR_HTML: :width 600
+  [[file:files/normal-mode.png][file:files/normal-mode.png]]
+- *insert mode* has a thin cursor and the icon at the bottom left corder has green color.
+  #+ATTR_HTML: :width 600
+  [[file:files/normal-mode.png][file:files/insert-mode.png]]
+
+- Type ~i~ to change mode from *normal mode* to *insert mode*
+- Type ~ESC~ to change mode from *insert mode* to *normal mode*
+- There is another mode, called *visual mode*, which is a mode to
+  select a region, just like what you usually do with your mouse. In
+  *visual mode*, the icon at the bottom left corder has white color.
+
+** Keybindings of basic commands
+| mode   | keybinding    | description                                             |
+|--------+---------------+---------------------------------------------------------|
+| all | ~C-g~         | cancel entering keyboard input                          |
+| normal | ~BACKSPACE~   | go to newbiemacs screen                                 |
+| normal | ~i~           | change to insert mode                                   |
+| insert | ~ESC~         | change to normal mode                                   |
+| normal | ~v~           | start visual mode                                       |
+| visual | ~y~           | yank (copy) the selected region and back to normal mode |
+| visual | ~x~           | cut the selected region and back to normal mode         |
+| normal | ~p~           | paste after cursor                                      |
+| normal | ~P~           | paste before cursor                                     |
+* Emacs Basics
+** Terminology
+- The following are fundamental terms in Emacs .
+- *frame*: A frame is what's commonly called "window" that is opened when you start Emacs.
+- *window*: Windows are what you see in a frame. Usually there is only
+  one window but sometimes you will see many windows in one frame.
+- *buffer*: When you open a file in emacs, its content is shown in a
+  buffer. You can edit the buffer. If you save a modified buffer,
+  Emacs will change the file as modified.
+- *minibuffer*: A minibuffer is a small window at the bottom of a
+  frame. It is opened when Emacs needs your input for certain
+  commends.
+** Emacs mode
+- Besides *normal mode* and *insert mode*, there is another mode called
+  *emacs mode*, which is indicated with blue color at the bottom left
+  corner.
+  #+ATTR_HTML: :width 600
+  [[file:files/emacs-mode.png]]
+- To toggle between *emacs mode* and *normal mode* (or *insert mode*),
+  type ~C-z~.
+- In *emacs mode* you can use the usual Emacs keybindings.
+- If you enter other "major modes", such as "help", "dired", or
+  "magit", the default mode is *emacs mode*.
+- In many of such modes, typing ~?~ shows keybindings in that mode.
+
+** key bindings
+- Here are some basic Emacs keybindings.
+- Note that ~C-y~ (paste) will be needed if you want to paste something into a minibuffer.
+| mode   | command                    | keybinding |
+|--------+----------------------------+------------|
+| emacs | paste    | ~C-y~      |
+| all    | isearch-forward            | ~C-s~      |
+| all    | query-replace              | ~M-%~      |
+| all    | kill-buffer                | ~C-x k~    |
+| all    | increase font-size         | ~C-x C-=~  |
+| all    | decrease font-size         | ~C-x C--~  |
+| all    | default font-size          | ~C-x C-0~  |
+| all    | org-store-link             | ~C-c l~    |
+| all    | org-insert-link            | ~C-c C-l~  |
+
+** Window managements
+- If you use Emacs, you will often encounter a situation that the
+  Emacs screen is divided into two or more windows.
+- Many of pop-up windows (such as help, warning, agenda, or magit) can
+  be closed by simply typing ~q~ (if it's in Emacs mode).
+- To maximize the current window, type ~M-o w m~ or ~C-x 1~.
+** Buffer managements
+- To switch to another buffer type ~M-o b b~
+- To kill the current buffer type ~M-o b d~ or ~C-x k~ and select the buffer
+** Which-key
+- There are many Emacs keybindings starting with ~C-x~ or ~C-c~ or ~C-h~.
+- Press one of these keys will show the possible keybingings.
+- In this way you can explore Emacs commands in your own.
+** Execute command
+- In Emacs there are tons of commands you can execute.
+- Type ~M-x~ and it will show all possible commands available for you.
+- Typing anything in the prompt will narrow down the list of commands
+  to those containing what you typed there.
+
+* Spell checking
+- To spell check we need to install a spell checking program (only once).
+- Once the program is installed, you can spell check by typing ~M-o S b~ or ~M-o S i~
+** Install a spell checker on Mac
+- We first need to install [[https://brew.sh/][Homebrew]]. Enter the following in a terminal.
+  : /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+- To use homebrew we need to add its path to the system. Enter the following in a terminal.
+  : echo 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshrc
+- Now install [[https://www.cs.hmc.edu/~geoff/ispell.html][ispell]] by typing the following in a terminal.
+  : brew install ispell
+** Install a spell checker on Windows
+- We first need to install [[https://www.msys2.org/][Msys2]]. Click the link and install it as instructed.
+- Open Msys2 and install [[https://github.com/hunspell/hunspell][hunspell]] by typing the following line.
+  : pacman -S mingw-w64-x86_64-hunspell
+- Open Msys2 and install hunspell-en by typing the following line.
+  : pacman -S mingw-w64-x86_64-hunspell-en
+** Install a spell checker on GNU/Linux
+- Enter the following in a terminal.  
+  : sudo apt-get install ispell
+
+* Configurations
+** key-tree
+- You can add your own keybindings.
+- Press ~M-o k u~
+- You can see the system keybindings by typing ~M-o k s~.
+- However, it is not recommended to modify the system keybindings
+  because it will prevent to update Newbiemacs.
+** user-init
+- You can add your own configurations in the user init file.
+- Press ~M-o N c u~
+
+* Further readings
+- [[https://www.gnu.org/software/emacs/tour/][A Guided Tour of Emacs]]
+- [[https://www.openvim.com/][Interactive Vim tutorial]]
+- [[https://orgmode.org/quickstart.html][Quickstart]] for Org-mode
+- [[https://orgmode.org/guide/index.html][Org Mode Compact Guide]] (Click [[https://orgmode.org/orgguide.pdf][here]] for a pdf version)
+
