@@ -68,8 +68,6 @@
 | ~M-o RET~  | bookmark search       |
 
 * Basic latex commands
-- Latex commands are accessible from "localleader key" if the current
-  file is a tex file.
 | keybinding  | description               |
 |-------------+---------------------------|
 | ~M-RET b~   | build (compile)           |
@@ -80,8 +78,6 @@
 | ~M-RET n m~ | new macro                 |
 
 * Basic org-mode commands
-- Org-mode commands are accessible from "localleader key" if the current
-  file is an org file.
 | keybinding | description               |
 |------------+---------------------------|
 | ~M-RET e~      | export to various format  |
