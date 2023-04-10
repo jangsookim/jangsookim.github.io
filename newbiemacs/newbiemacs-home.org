@@ -142,7 +142,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 6. Now you can search the pdf by typing ~p~ in on the Newbiemacs main screen.
 *** How to add a pdf file of a published paper
 1. Download a pdf file into your download folder.
-2. Go to [[https://mathscinet.ams.org/mathscinet/index.html][MathSciNet]] or its [[https://beta.mathscinet.ams.org/mathscinet/beta][beta version]]. (The beta version is more convenient.)
+2. Go to [[https://mathscinet.ams.org/mathscinet/index.html][MathSciNet]] or [[https://zbmath.org/][zbMATH]] (zbMATH is free).
 3. Search the paper there. You will see something like this
    #+ATTR_HTML: :width 600
    [[./files/mathscinet.png]]
@@ -156,6 +156,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 7. Type ~m~ and follow the instructions at the bottom of the Emacs screen.
 8. It will save a pdf with name scheme such as "Author 1, Authur 2, Year, Title".
 9. Now you can search the pdf by typing ~p~ in on the Newbiemacs main screen.
+10. It will also ask if you want to create a bib item for this paper.
 *** How to create a new tex file
 1. Type ~n~ in the Newbiemacs screen.
 2. Enter a file name for the new tex file. (The extension ~.tex~ is

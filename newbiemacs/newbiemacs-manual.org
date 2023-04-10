@@ -2,7 +2,7 @@
 #+SETUPFILE: /Users/jangsookim/Library/CloudStorage/Dropbox/newbiemacs/nbm-user-settings/org-themes/src/readtheorg_inline/readtheorg_inline.theme
 #+OPTIONS: title:t author:t date:t toc:t num:t
 
-* Key binding Notation
+* Keybinding Notation
 - ~C~ means Ctrl, i.e., the control key 
 - ~M~ means Meta, i.e., the command key for MacOS or the alt key for Windows
 - ~SPC~ means the space key
@@ -119,9 +119,10 @@
 
 * Vim
 - Newbiemacs uses [[https://www.emacswiki.org/emacs/Evil][evil mode]], which allows us to use [[https://en.wikipedia.org/wiki/Vim_(text_editor)][Vim]] keybindings.
-- To enable Vim, in the Newbiemacs screen type ~e~ and choose "vim".
-- Once you enable Vim, any shortcut prefix ~M-o~ can be replaced by ~SPC~ and any shortcut prefix ~M-RET~ can be replaced by ~,~ in normal mode.
+- To enable Vim, in the Newbiemacs screen, type ~e~ and choose "vim". Then restart Emacs.
+- Once Vim is enabled, the shortcut prefix ~M-o~ can be replaced by ~SPC~ and the shortcut prefix ~M-RET~ can be replaced by ~,~ in normal mode.
 - For example, you can open the current directory using the system file manager by typing ~SPC f F~ in normal mode instead of typing ~M-o f F~, and you can compile a tex file by typing ~, b~ in normal mode instead of typing ~M-RET b~,
+- Note, however, that ~M-o~ and ~M-RET~ has the advantage that they can be used in any Vim mode (normal mode, insert mode or anything else).
   
 ** Basic concepts on Vim
 - In Vim, there are several modes. The two most important modes are called *normal mode* and *insert mode*
@@ -175,7 +176,7 @@
   "magit", the default mode is *emacs mode*.
 - In many of such modes, typing ~?~ shows keybindings in that mode.
 
-** key bindings
+** Keybindings
 - Here are some basic Emacs keybindings.
 - Note that ~C-y~ (paste) will be needed if you want to paste something into a minibuffer.
 | mode   | command                    | keybinding |
@@ -234,8 +235,8 @@
 - You can add your own keybindings.
 - Press ~M-o k u~
 - You can see the system keybindings by typing ~M-o k s~.
-- However, it is not recommended to modify the system keybindings
-  because it will prevent to update Newbiemacs.
+- You *must not* modify the system keybindings because it will prevent
+  to update Newbiemacs.
 ** user-init
 - You can add your own configurations in the user init file.
 - Press ~M-o N c u~
