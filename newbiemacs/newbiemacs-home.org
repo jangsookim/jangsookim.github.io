@@ -23,7 +23,7 @@ Newbiemacs character by [[https://instagram.com/ujoo_peace][Artist Ujoo]]
 file:files/torus-screenshot.png
 
 * Installation
-** Install Newbiemacs on Mac
+** Install Newbiemacs on macOS
 1. Download Emacs and install it. [[https://emacsformacosx.com/][Click here]]
 2. Install [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][Git]].
 3. Open a terminal and enter the following lines. (You can open a
@@ -38,9 +38,9 @@ file:files/torus-screenshot.png
    When it's done, there will be a message at the bottom saying
    "For information about GNU Emacs and the GNU system, type C-h C-a."
 5. Close Emacs and run it again. The Newbiemacs main screen will be shown.
-*** Additional steps for latex on Mac (optional)
+*** Additional steps for latex on macOS (optional)
 If you want to edit tex files in Newbiemacs, you need to do the following (only once).
-1. Install [[https://skim-app.sourceforge.io/][Skim]] and [[https://www.tug.org/mactex/][MacTeX]] (this is TeX Live for Mac).
+1. Install [[https://skim-app.sourceforge.io/][Skim]] and [[https://www.tug.org/mactex/][MacTeX]] (this is TeX Live for macOS).
 3. Open Skim and press ~CMD+,~ (Hold the command key and press the comma key.)
 4. Go to the ~Sync~ menu and check the two check boxes.
 5. Select Emacs in the drop-down box for ~Preset~.
@@ -93,7 +93,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 * Tutorial
 ** Introduction
 - In this tutorial you will learn how to use Newbiemacs.
-- You can use the basic features of Newbiemacs in the following Newbiemacs screen. (To go to the Newbiemacs screen, type ~ALT-BACKSPACE~. In MacOS, ~ALT~ is the command key.)
+- You can use the basic features of Newbiemacs in the following Newbiemacs screen. (To go to the Newbiemacs screen, type ~ALT-BACKSPACE~. In macOS, ~ALT~ is the command key.)
 #+ATTR_HTML: :width 600
 [[file:files/newbiemacs-screenshot.png][file:files/newbiemacs-screenshot.png]]
 - By default your Newbiemacs folder will be ~~/newbiemacs~ (~~~ means
@@ -173,7 +173,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 3. Drag-and-drop the file into the Newbiemacs screen.
 4. Type ~ALT-BACKSPACE~, which will bring you back to the Newbiemacs screen.
 5. Type ~S~. Then it will ask you to enter a symlink name. Follow the instructions.
-6. On Mac, a symlink will be created in this way and you are done.
+6. On macOS, a symlink will be created in this way and you are done.
 7. On Windows, however, it will only copy a string in the
    clipboard. Now open the command prompt run as administrator. Paste
    the string in the command prompt.
@@ -232,7 +232,7 @@ Check the section on "Spell checking" in [[file:newbiemacs-manual.org][the Newbi
 You can re-installing Newbiemacs keeping your Newbiemacs folder
 ~~/newbiemacs~.  It will take much less than the actual installation.
 1. Delete the folder ~~/nbm-root~
-2. (For Mac or GNU/Linux) Enter the following in a terminal.
+2. (For macOS or GNU/Linux) Enter the following in a terminal.
    : cd ~
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
 3. (For Windows) Enter the following in Command Prompt.
@@ -240,9 +240,8 @@ You can re-installing Newbiemacs keeping your Newbiemacs folder
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
 * Troubleshooting
 ** Newbiemacs crashed! What should I do?
-1. Press ~C-x C-y~ (Press ~x~ and ~y~ while holding the control key.)
-2. Restart Newbiemacs.
-3. If it's still not working, re-install Newbiemacs.
+1. Restart Newbiemacs.
+2. If it's still not working, re-install Newbiemacs.
 ** I cannot compile bibtex.
 1. If there is a space in the path of your newbiemacs folder, you cannot compile bibtex.
 2. It is strongly recommended that you change your newbiemacs folder so that it has no space.

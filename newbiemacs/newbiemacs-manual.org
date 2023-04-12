@@ -4,7 +4,7 @@
 
 * Keybinding Notation
 - ~C~ means Ctrl, i.e., the control key 
-- ~M~ means Meta, i.e., the command key for MacOS or the alt key for Windows
+- ~M~ means Meta, i.e., the command key for macOS or the alt key for Windows
 - ~SPC~ means the space key
 - ~RET~ means the return key, i.e., the enter key.
 - ~C-g~ means hold ~C~ and then press ~g~
@@ -33,7 +33,7 @@
 - To view the pdf file type ~M-RET v~
 - The forward searching (tex file to pdf file) will be done automatically.
 - To go to the location of the tex file from the pdf file, do
-  "Command+Shift+mouse click" if you are using Skim on Mac and "double
+  "Command+Shift+mouse click" if you are using Skim on macOS or do "double
   click" if you are using SumatraPDF on Windows.
   
 * Org-mode
@@ -213,7 +213,7 @@
 * Spell checking
 - To spell check we need to install a spell checking program (only once).
 - Once the program is installed, you can spell check by typing ~M-o S b~ or ~M-o S i~
-** Install a spell checker on Mac
+** Install a spell checker on macOS
 - We first need to install [[https://brew.sh/][Homebrew]]. Enter the following in a terminal.
   : /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 - To use homebrew we need to add its path to the system. Enter the following in a terminal.
