@@ -62,6 +62,11 @@
 4. Click "BibTeX" and copy the contents.
 5. In a latex file, type ~, n b~ and follow the instructions.
 
+*** How to create a new bib file containing the current bibitems only
+- Type ~, t B~
+- This will create a new bib file with file name "local-ref.bib" in
+  the current directory.
+
 * Org-mode
 - [[https://orgmode.org/][Org-mode]] is a very useful tool to organize text files with extension "org".
 - An org file is basically a text file with [[https://en.wikipedia.org/wiki/Markdown][mark-down]]-like structure.
