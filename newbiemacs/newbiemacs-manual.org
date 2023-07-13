@@ -28,14 +28,40 @@
 ** How to open the current directory in the file manager
 1. Suppose that file A is opened in Newbiemacs.
 2. To open the directory containing A in the file manager, you can simply type ~M-o f F~.
-* How to edit a tex file
+* LaTeX-mode
+** How to edit a tex file
 - To compile a tex file type ~M-RET b~
 - To view the pdf file type ~M-RET v~
 - The forward searching (tex file to pdf file) will be done automatically.
 - To go to the location of the tex file from the pdf file, do
   "Command+Shift+mouse click" if you are using Skim on macOS or do "double
   click" if you are using SumatraPDF on Windows.
-  
+** BibTeX
+*** How to use the main bib file
+- In your tex file, type ~, t b~
+- This will add the following two lines in your tex file.
+  : \bibliographystyle{abbrv}
+  : \bibliography{(path-to-newbiemacs)/newbiemacs/nbm-user-settings/references/ref.bib}
+- To add a citation, type ~, i c~
+*** How to toggle the bibliography
+- In your tex file, type ~, t b~
+- This will toggle the above two lines to the actual bibitems.
+- This may be useful if you want to share your tex file with your collaborators without sharing the bib file.
+
+*** How to open the main bib file
+- Type ~SPC N s 5~
+
+*** How to add a new bibtex item from MathSciNet
+1. Copy a bibtex item from MathSciNet or zbMath.
+2. In a latex file, type ~, n b~ and follow the instructions.
+
+*** How to add a new bibtex item from arxiv
+1. Go to the arxiv page of the article you you want to cite.
+2. Click "Google Scholar" on the right box.
+3. In the Google Scholar page, click "cite".
+4. Click "BibTeX" and copy the contents.
+5. In a latex file, type ~, n b~ and follow the instructions.
+
 * Org-mode
 - [[https://orgmode.org/][Org-mode]] is a very useful tool to organize text files with extension "org".
 - An org file is basically a text file with [[https://en.wikipedia.org/wiki/Markdown][mark-down]]-like structure.
