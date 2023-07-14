@@ -57,10 +57,8 @@
 
 *** How to add a new bibtex item from arxiv
 1. Go to the arxiv page of the article you you want to cite.
-2. Click "Google Scholar" on the right box.
-3. In the Google Scholar page, click "cite".
-4. Click "BibTeX" and copy the contents.
-5. In a latex file, type ~, n b~ and follow the instructions.
+2. Click "Export BibTeX Citation" on the right box and copy the contents.
+3. In a latex file, type ~, n b~ and follow the instructions.
 
 *** How to create a new bib file containing the current bibitems only
 - Type ~, t B~
