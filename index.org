@@ -23,13 +23,13 @@
 
 * Papers
 ** Preprints
-- Affine Gordon-Bender-Knuth identities for cylindric Schur functions (with JiSun Huh, Christian Krattenthaler, Soichi Okada), [[https://arxiv.org/abs/2301.13117][arXiv:2301.13117]]
+- Bounded Littlewood identities for cylindric Schur functions (with JiSun Huh, Christian Krattenthaler, Soichi Okada), [[https://arxiv.org/abs/2301.13117][arXiv:2301.13117]]
 - Extended commonality of paths and cycles via Schur convexity (with Joonkyung Lee), [[https://arxiv.org/abs/2210.00977][arXiv:2210.00977]]
 - Three families of /q/-Lommel polynomials (with Dennis Stanton), [[https://arxiv.org/abs/2105.10096][arXiv:2105.10096]]
 - Refined canonical stable Grothendieck polynomials and their duals (with Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), [[https://arxiv.org/abs/2104.04251][arXiv:2104.04251]]
 - Characteristic polynomials of the weak order on classical and affine Coxeter groups (with Sun-mi Yun), to appear in /Order/, [[https://arxiv.org/abs/2204.01310][arXiv:2204.01310]]
 ** 2023
-- Orthogonal polynomials of type /R_I/ (with Dennis Stanton), /Ramanujan Journal/ 61 (2023), no. 2, 329–390, [[https://arxiv.org/abs/2009.14475][arXiv:2009.14475]]
+- Combinatorics of orthogonal polynomials of type /R_I/ (with Dennis Stanton), /Ramanujan Journal/ 61 (2023), no. 2, 329–390, [[https://arxiv.org/abs/2009.14475][arXiv:2009.14475]]
 - Enumeration of standard barely set-valued tableaux of shifted shapes (with Michael Schlosser and Meesue Yoo), /European Journal of Combinatorics/ 112 (2023), Paper No. 103727, [[https://arxiv.org/abs/2006.03253][arXiv:2006.03253]]
 - Negative moments of orthogonal polynomials (with Jihyeug Jang, Donghyun Kim,  Minho Song, U-Keun Song), /Forum of Mathematics, Sigma/ 11 (2023), Paper No. e22, 34 pp, [[https://arxiv.org/abs/2201.11344][arxiv:2201.11344]]
 - Weight multiplicities and Young tableaux through affine crystals (with Kyu-Hwan Lee and Se-jin Oh), /Memoirs of the American Mathematical Society/, Volume 283 (2023), no 1401, [[https://arxiv.org/abs/1703.10321][arXiv:1703.10321]]
