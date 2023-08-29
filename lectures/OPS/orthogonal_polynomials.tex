@@ -66,7 +66,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Lectures on orthogonal polynomials}
+\title{Combinatorics of orthogonal polynomials}
 \author{Jang Soo Kim}
 % \thanks{The author was supported by NRF grants \#2022R1A2C101100911 and \#2016R1A5A1008055.} 
 % \address{Department of Mathematics,
@@ -134,9 +134,9 @@ for a polynomial \( T_n(x) \) of degree \( x \).
 
 By the change of variable \( x=\cos \theta \), \eqref{eq:coscos=0} can
 be rewritten as
-\begin{equation}\label{eq:coscos=0}
+\[
   \int_{-1}^1 T_m(x)T_n(x) (1-x^2)^{-1/2} dx = 0, \qquad m\ne n.
-\end{equation}
+\]
 
 The polynomials \( T_n(x) \), \( n\ge0 \), are called the
 \emph{Tchebyshev polynomials of the first kind}.
@@ -167,10 +167,11 @@ interval \( (-1,1) \).
   \( (a,b) \) with \( \int_a^b w(x)dx >0 \) and
   \( \int_a^b x^n dx < \infty \) for all \( n\ge0 \). A sequence of
   polynomials \( \{P_n(x)\}_{n\ge0} \) is called an \emph{orthogonal
-    polynomial sequence (OPS)} with respect to the \emph{weight function}
-  \( w(x) \) on \( (a,b) \) if the following conditions hold:
+    polynomial sequence (OPS)} with respect to the \emph{weight
+    function} (or \emph{measure}) \( w(x) \) on \( (a,b) \) if the
+  following conditions hold:
   \begin{enumerate}
-  \item \( \deg P_n(x) = n \), \( n\ge0 \),
+  \item \( \deg P_n(x) = n \), for \( n\ge0 \),
   \item \( \int_a^b P_m(x)P_n(x) w(x)dx = 0 \) for \( m\ne n \).
   \end{enumerate}
 \end{defn}
@@ -456,7 +457,7 @@ corollary.
   \item There is a unique OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \)
     such that the leading coefficient of \( P_n(x) \) is \( K_n \).
   \item There is a unique OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \)
-    such that \( \LL(x_nP_n(x)) = K_n \).
+    such that \( \LL(x^nP_n(x)) = K_n \).
   \end{enumerate}
 \end{cor}
 
@@ -467,6 +468,77 @@ it is also an OPS for \( \LL' \) given by
 dividing the linear functional by the value \( \LL(1) \), we may
 assume that \( \LL(1)=1 \).
 
+
+\subsection{Existence of OPS}
+
+The main question in this section is: for what moment functional
+\( \LL \) does there exist an OPS? To answer this question we need the
+following definition.
+
+\begin{defn}
+  The \emph{Hankel determinant} of a moment sequence \( \{\mu_n\} \)
+  is defined by
+  \[
+    \Delta_n = \det(\mu_{i+j})_{i,j=0}^n
+    = \begin{vmatrix}
+        \mu_0 & \mu_1 & \cdots & \mu_n\\
+        \mu_1 & \mu_2 & \cdots & \mu_{n+1}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        \mu_n & \mu_{n+1} & \cdots & \mu_{2n}
+      \end{vmatrix} .
+  \]
+\end{defn}
+
+\begin{thm}
+  Let \( \LL \) be a moment functional with moment sequence
+  \( \{\mu_n\} \).
+  Then there is an OPS for \( \LL \) if and only if
+  \( \Delta_n\ne 0 \) for all \( n\ge0 \).
+\end{thm}
+
+\begin{proof}
+  Fix a sequence \( \{K_n\} \) of nonzero real numbers \( K_n \). By
+  \Cref{cor:OPS-unique}, if there is an OPS
+  \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \), it is uniquely determined
+  by the condition \( \LL(x^n P_n(x)) = K_n \), \( n\ge0 \). In other
+  words, using \Cref{thm:orth-equiv}, there is an OPS for \( \LL \) if
+  and only if there is a unique sequence \( \{ P_n(x) \}_{n\ge 0} \)
+  of polynomials such that
+  \begin{equation}\label{eq:1}
+    \LL(x^mP_n(x)) = K_n \delta_{m,n}, \qquad 0\le m\le n.
+  \end{equation}
+  
+  Now let \( P_n(x) = \sum_{k=0}^{n} c_{n,k} x^k \). Multiplying both
+  sides by \( x^m \) and taking \( \LL \), we get
+  \[
+    \LL(x^mP_n(x)) = \sum_{k=0}^{n} c_{n,k} \mu_{n+k}.
+  \]
+  Thus (\ref{eq:1}) can be written as the matrix equation
+  \begin{equation}\label{eq:2}
+   \begin{pmatrix}
+     \mu_0 & \mu_1 & \cdots & \mu_n\\
+     \mu_1 & \mu_2 & \cdots & \mu_{n+1}\\
+     \vdots & \vdots & \ddots & \vdots\\
+     \mu_n & \mu_{n+1} & \cdots & \mu_{2n}
+   \end{pmatrix}
+\begin{pmatrix}
+c_{n,0} \\ c_{n,1} \\ \vdots \\ c_{n,n}
+\end{pmatrix} 
+= \begin{pmatrix}
+0 \\ \vdots \\ 0 \\ K_n
+\end{pmatrix}. 
+  \end{equation}
+  Then the uniqueness of the polynomials \( P_n(x) \) satisfying
+  (\ref{eq:1}) is equivalent to the uniqueness of the solution of the
+  matrix equation (\ref{eq:2}) in \( c_{n,0},c_{n,1},\dots,c_{n,n} \).
+  In order for (\ref{eq:2}) to have a unique solution, the Hankel
+  determinant \( \Delta_n \) must be nonzero for all \( n\ge0 \). This
+  proves the theorem.
+\end{proof}
+
+Note that by solving \eqref{eq:2} using Cramer's rule, we have
+\( c_{n,n} = K_n \Delta_{n-1}/\Delta_n \), which is the leading
+coefficient of \( P_n(x) \).
 
 % \subsection{The fundamental recurrence formula}
 
