@@ -1,0 +1,33 @@
+#+TITLE: Combinatorics of Orthogonal Polynomials
+#+SETUPFILE: /Users/jangsookim/Library/CloudStorage/Dropbox/newbiemacs/nbm-user-settings/org-themes/src/readtheorg_inline/readtheorg_inline.theme
+
+
+* General Information
+** Class information
+- Class code:  Topics in Algebra MTH4031-41
+- Instructor: Jang Soo Kim (김장수)
+- email: jangsookim@skku.edu
+- Classroom: 31351A
+- Class time: Tue 16:30-17:45, Thu 15:00-16:15
+- Office hour: Tue 14:00-15:00
+
+** Overview
+Orthogonal polynomials are classical objects arising from the study of continued fractions. They have become an important subject in many areas of mathematics. In this class we will learn fascinating combinatorial properties of orthogonal polynomials.
+
+** Useful sources
+- [[file:orthogonal_polynomials.pdf][Lecture notes]] will be constantly updated.
+- The following will be useful sources for this class.
+- Viennot's lecture videos https://viennot.org/abjc4-contents.html
+- Viennot. Une théorie combinatoire des polynomes orthogonaux généraux. Lecture Notes, UQAM, 1983
+- Chihara. An introduction to orthogonal polynomials. Gordon and Breach Science Publishers, New York, 1978
+- Ismail. Classical and Quantum Orthogonal Polynomials in One Variable, 2005
+- Stanley. Enumerative Combinatorics, Volumes 1 and 2
+
+** Grading
+- The grade will be determined by class participation and homework.
+- Attendance: 50
+- Homework: 50 (student presentation may be included)
+
+** Language
+- The class will be taught in English.
+

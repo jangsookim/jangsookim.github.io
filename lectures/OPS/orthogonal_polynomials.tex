@@ -1,0 +1,522 @@
+\documentclass{amsart}
+
+\usepackage{amsmath,amsthm,amssymb,bm}
+\usepackage{hyperref}
+\usepackage{a4wide}
+\usepackage{cleveref}
+% \usepackage{refcheck}
+\usepackage{graphicx,color}
+\usepackage{tikz}
+\numberwithin{equation}{section}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+\newtheorem{exam}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem*{note}{Note}
+
+% DO NOT DELETE THIS COMMENT!!! MACROS BELOW:
+\newcommand\NN{\mathbb{N}}
+\newcommand\QQ{\mathbb{Q}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand\LL{\mathcal{L}}
+
+\newcommand\Mot{\operatorname{Mot}}
+\newcommand{\Dyck}{\operatorname{Dyck}}
+
+\newcommand\Par{\operatorname{Par}}
+\newcommand\RPP{\operatorname{RPP}}
+\newcommand\SSYT{\operatorname{SSYT}}
+\newcommand\SYT{\operatorname{SYT}}
+
+\newcommand\wt{\operatorname{wt}}
+
+\renewcommand\vec[1]{\mathbf{#1}}
+\newcommand\flr[1]{\left\lfloor #1\right\rfloor}
+\newcommand\Qbinom[3]{\genfrac{[}{]}{0pt}{}{#1}{#2}_{#3}}
+\newcommand\qbinom[2]{\Qbinom{#1}{#2}{q}}
+
+\newcommand\hyper[5]{{}_{#1}F_{#2} \left(#3;#4;#5\right)}
+\newcommand\qhyper[5]{{}_{#1}\phi_{#2} \left(#3;#4;#5\right)}
+\newcommand\Hyper[5]{{}_{#1}F_{#2} \left( \left.
+    \begin{matrix}
+      #3\\
+      #4\\
+    \end{matrix}
+    \:\right|\: #5
+    \right)}
+\newcommand\qHyper[5]{{}_{#1}\phi_{#2} \left(
+    \begin{matrix}
+      #3\\
+      #4\\
+    \end{matrix}
+    ; #5
+    \right)}
+
+\newcommand\comment[1]{\textcolor{blue}{\bf #1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Lectures on orthogonal polynomials}
+\author{Jang Soo Kim}
+% \thanks{The author was supported by NRF grants \#2022R1A2C101100911 and \#2016R1A5A1008055.} 
+% \address{Department of Mathematics,
+% Sungkyunkwan University (SKKU), Suwon, Gyeonggi-do 16419, South Korea}
+% \email{jangsookim@skku.edu}
+\date{\today}
+
+\begin{document}
+
+% \begin{abstract}
+% \end{abstract}
+
+
+\maketitle
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% start here
+
+\section{Introduction to the lectures}
+
+Orthogonal polynomials are classical objects arising from the study of
+continued fractions. Due to the long history of orthogonal
+polynomials, they have now become important objects of study in many
+areas: classical analysis and PDE, mathematical physics, probability,
+random matrix theory, and combinatorics.
+
+The combinatorial study of orthogonal polynomials was pioneered by
+Flajolet and Viennot in 1980s. In these lectures we will learn
+fascinating combinatorial properties of orthogonal polynomials.
+
+We will first study basic properties of orthogonal polynomials based
+on Chihara's book, Chapter~1 \cite{Chihara}. We will then focus on the
+combinatorial approach of orthogonal polynomials, which will be based
+on Viennot's lecture notes \cite{ViennotLN}. We will also cover more
+recent developments in the combinatorics of orthogonal polynomials
+such as their connections with ASEP, staircase tableaux, lecture hall
+partitions, and orthogonal polynomials of type \( R_1 \).
+
+The prerequisites of this course are Calculus 1, Linear Algebra, and
+Discrete Mathematics.
+
+
+\section{Elementary Theory of Orthogonal Polynomials}
+
+In this section we will cover the first chapter of Chihara's book
+\cite{Chihara}.
+
+\subsection{Introduction}
+
+Since
+\[
+  2\cos m\theta \cos n\theta  = \cos(m+n)\theta + \cos(m-n)\theta,
+\]
+for nonnegative integers \( m \) and \( n \), we have
+\begin{equation}\label{eq:coscos=0}
+  \int_0^\pi \cos m\theta \cos n\theta d\theta = 0, \qquad m\ne n.
+\end{equation}
+In this situation we say that \( \cos m\theta \) and
+\( \cos n\theta \) are orthogonal over the interval \( (0,\pi) \).
+
+Note that \( \cos n\theta \) is a polynomial in \( \cos\theta \) of
+degree \( n \). So we can write \( \cos n\theta = T_n(\cos\theta) \)
+for a polynomial \( T_n(x) \) of degree \( x \).
+
+By the change of variable \( x=\cos \theta \), \eqref{eq:coscos=0} can
+be rewritten as
+\begin{equation}\label{eq:coscos=0}
+  \int_{-1}^1 T_m(x)T_n(x) (1-x^2)^{-1/2} dx = 0, \qquad m\ne n.
+\end{equation}
+
+The polynomials \( T_n(x) \), \( n\ge0 \), are called the
+\emph{Tchebyshev polynomials of the first kind}.
+The first few polynomials are:
+\begin{align*}
+ T_0(x) &= 1, \\
+ T_1(x) &= \cos\theta = x, \\
+ T_2(x) &= \cos2\theta = 2\cos^2\theta-1 = 2x^2-1, \\
+ T_3(x) &= 4x^3-3x.
+\end{align*}
+
+Recall that in an inner product space \( V \) with inner product
+\( \langle \cdot,\cdot \rangle \), a set of vectors
+\( v_1,\dots,v_n \) are said to be orthogonal if
+\( \langle v_i,v_j \rangle = 0 \) for all \( i\ne j \). In this sense
+the Tchebyshev polynomials \( T_n(x) \) are orthogonal, where
+\( V = \RR[x] \) is the space of polynomials with real coefficients
+with the inner product given by
+\[
+  \langle f(x), g(x) \rangle = \int_{-1}^1 f(x)g(x) (1-x^2)^{-1/2} dx.
+\]
+We say that \( T_n(x) \) are \emph{orthogonal polynomials} with
+respect to the \emph{weight function} \( (1-x^2)^{-1/2} \) on the
+interval \( (-1,1) \).
+
+\begin{defn}\label{def:OPS1}
+  Suppose that \( w(x) \) is a nonnegative and integrable function on
+  \( (a,b) \) with \( \int_a^b w(x)dx >0 \) and
+  \( \int_a^b x^n dx < \infty \) for all \( n\ge0 \). A sequence of
+  polynomials \( \{P_n(x)\}_{n\ge0} \) is called an \emph{orthogonal
+    polynomial sequence (OPS)} with respect to the \emph{weight function}
+  \( w(x) \) on \( (a,b) \) if the following conditions hold:
+  \begin{enumerate}
+  \item \( \deg P_n(x) = n \), \( n\ge0 \),
+  \item \( \int_a^b P_m(x)P_n(x) w(x)dx = 0 \) for \( m\ne n \).
+  \end{enumerate}
+\end{defn}
+
+There is another way to define orthogonal polynomials without using
+the weight function. For a polynomial \( f(x) \), if we define
+\[
+  \LL(f(x)) = \int_a^b f(x) w(x)dx,
+\]
+then \( \LL(f(x)) \) is completely determined by the \emph{moments}
+\( \mu_n = \int_a^b x^n w(x)dx \). So, if we are only interested in
+polynomials, then we can define a linear functional \( \LL \) using a
+moment sequence \( \mu_0,\mu_1,\dots \). Not every sequence
+\( \mu_0,\mu_1,\dots \) gives rise to an OPS, though. We will see
+later a criterion for a sequence to be a moment sequence.
+
+\begin{defn}\label{def:OPS2}
+  Let \( \LL \) be the linear functional defined on the space of
+  polynomials in \( x \). A sequence of polynomials
+  \( \{P_n(x)\}_{n\ge0} \) is called an \emph{orthogonal polynomial
+    sequence (OPS)} with respect to \( \LL \) if the following
+  conditions hold:
+  \begin{enumerate}
+  \item \( \deg P_n(x) = n \), \( n\ge0 \),
+  \item \( \LL(P_m(x)^2) \ne 0 \) for \( m\ge0 \),
+  \item \( \LL(P_m(x)P_n(x))  = 0 \) for \( m\ne n \).
+  \end{enumerate}
+\end{defn}
+
+Note that the second condition above was not necessary in
+\Cref{def:OPS1} because it follows from the facts that \( w(x) \) is
+nonnegative and \( \int_a^b w(x)dx >0 \).
+
+\begin{remark}
+  The moments of the Tchebyshev polynomials are
+  \[
+    \mu_{2n} = \int_{-1}^1 x^{2n} (1-x^2)^{-1/2} dx
+    = \frac{\pi}{2^{2n}} \binom{2n}{n}, \qquad
+    \mu_{2n+1} = 0.
+  \]
+  This suggests that there could be some interesting combinatorics
+  behind the scene. We will later find a combinatorial way to
+  understand this situation.
+\end{remark}
+
+
+\begin{exam}[Charlier polynomials]
+  The \emph{Charlier polynomials} \( P_n(x) \) are defined by
+  \[
+    P_n(x) = \sum_{k=0}^{n} \binom{x}{k} \frac{(-a)^{n-k}}{(n-k)!},
+  \]
+  where \( \binom{x}{k} = x(x-1)\cdots(x-k+1)/k! \).
+  We will find a different type of orthogonality for \( P_n(x) \).
+
+  The generating function for \( P_n(x) \) is
+  \[
+    G(x,w) = \sum_{n\ge0} P_n(x) w^n
+    = \sum_{n\ge0} \left( \sum_{k=0}^{n} \binom{x}{k} \frac{(-a)^{n-k}}{(n-k)!} \right) w^n
+    = \sum_{n\ge0} \binom{x}{n} w^n \sum_{n\ge 0} \frac{(-a)^m}{m!} w^m,
+  \]
+  which means
+  \[
+    G(x,w) =  e^{-aw}(1+w)^x .
+  \]
+  Thus
+  \[
+    a^x G(x,v) G(x,w) = e^{-a(v+w)} \left( a(1+v)(1+w) \right)^x .
+  \]
+
+  We have
+  \[
+    \sum_{k\ge 0} \frac{a^k G(k,v)G(k,w)}{k!}
+    = \sum_{k\ge 0} \frac{e^{-a(v+w)} \left( a(1+v)(1+w) \right)^k}{k!} 
+    = e^{-a(v+w)} e^{a(1+v)(1+w)} = e^ae^{avw}.
+  \]
+  Thus
+  \begin{equation}\label{eq:G(k,v)G(k,w)}
+    \sum_{k\ge 0} \frac{a^k G(k,v)G(k,w)}{k!}
+    = \sum_{n\ge 0} \frac{e^a (avw)^n}{n!}.
+  \end{equation}
+
+On the other hand
+\begin{align}
+  \notag
+    \sum_{k\ge 0} \frac{a^k G(k,v)G(k,w)}{k!}
+    &= \sum_{k\ge 0} \frac{a^k}{k!} \sum_{m,n\ge0} P_m(k) P_n(k) v^m w^n\\
+  \label{eq:PPvw}
+    &= \sum_{m,n\ge0} \left( \sum_{k\ge 0}  P_m(k) P_n(k) \frac{a^k}{k!} \right)v^m w^n.
+\end{align}
+Comparing the coefficients of \( v^mw^n \) in \eqref{eq:G(k,v)G(k,w)} and \eqref{eq:PPvw} we obtain
+\begin{equation}\label{eq:charlier-orthogonality}
+  \sum_{k\ge 0}  P_m(k) P_n(k) \frac{a^k}{k!} = \frac{e^a a^n}{n!} \delta_{n,m}.
+\end{equation}
+Therefore, if we define a linear functional \( \LL \) by
+\[
+ \LL(x^n)  = \sum_{k\ge 0} k^n \frac{a^k}{k!},
+\]
+then \( P_n(x) \) are orthogonal polynomials with respect to \( \LL \).
+
+Note that we describe the orthogonality of \( P_n(x) \) using only the
+linear functional \( \LL \) without referring to any weight function.
+However, we can also find a weight function in this case. Let
+\( \psi(x) \) be the step function with a jump at \( k=0,1,2,\ldots \) of
+magnitude \( a^k/k! \).
+Then the linear functional \( \LL \) can be written as the following
+Riemann--Stieltjes integral
+\[
+  \LL(f(x)) = \int_{-\infty}^\infty f(x) d \psi(x).
+\]
+\end{exam}
+
+\begin{remark}
+We can also prove \eqref{eq:charlier-orthogonality} in a combinatorial way.
+To do this, note that
+\begin{align*}
+  \sum_{k\ge 0}  P_m(k) P_n(k) \frac{a^k}{k!}
+  &=  \sum_{k\ge 0} \sum_{i=0}^m \binom{k}{i} \frac{(-a)^{m-i}}{(m-i)!}
+  \sum_{j=0}^n \binom{k}{j} \frac{(-a)^{n-j}}{(n-j)!} \frac{a^k}{k!}\\
+  &=  \sum_{k\ge 0} \sum_{i=0}^m \sum_{j=0}^n
+    \binom{k}{m-i} \frac{(-a)^{i}}{i!}
+   \binom{k}{n-j} \frac{(-a)^{j}}{j!} \frac{a^k}{k!}\\
+  &= \sum_{N\ge0} \frac{a^N}{N!} \sum_{i+j+k=N}
+  (-1)^{i+j} \frac{N!}{i!j!k!} \binom{k}{m-i} \binom{k}{n-j}.
+\end{align*}
+
+For a fixed \( N \),
+\[
+  \sum_{i+j+k=N} (-1)^{i+j} \binom{N}{i,j,k} \binom{k}{m-i} \binom{k}{n-j}
+  = \sum_{(A,B,C)\in X} (-1)^{|B\setminus A| + |C\setminus A|},
+\]
+where \( X \) is the set of triples \( (A,B,C) \) such that
+\( A\cup B\cup C = \{ 1,\dots,N \} \), \( |A|=k, |B|=m, |C|=n \),
+\( (B\cap C)\setminus A = \emptyset \). If \( B\ne C \), we can find a
+sign-reversing involution, namely toggling the smallest integer in
+regions \( 1 \) and \( 2 \) or in regions \( 3 \) and \( 4 \) in
+Figure~\ref{fig:image1}.
+\begin{figure}
+  \centering
+  \includegraphics[scale=.1]{./figures/image1.jpeg}
+  \caption{The triple \( (A,B,C) \).}
+  \label{fig:image1}
+\end{figure}
+Thus we have
+\[
+  \sum_{(A,B,C)\in X} (-1)^{|B\setminus A| + |C\setminus A|}
+  = \sum_{(A,B,C)\in X: B=C} (-1)^{|B\setminus A| + |C\setminus A|}
+  = \delta_{m,n} \binom{N}{n}.
+\]
+This implies
+\[
+  \sum_{k\ge 0}  P_m(k) P_n(k) \frac{a^k}{k!}
+  = \delta_{m,n} \sum_{N\ge0} \frac{a^N}{N!} \binom{N}{n}
+  = \frac{e^a a^n}{n!} \delta_{n,m}.
+\]
+\end{remark}
+
+
+
+\begin{remark}
+  In the theory of orthogonal polynomials, finding an explicit weight
+  function is an important problem. However, in these lectures, we
+  will not pursue in this direction and we will be mostly satisfied
+  with \Cref{def:OPS2}.
+\end{remark}
+
+
+\subsection{The moment functional and orthogonality}
+
+We will consider the space \( \CC[x] \) polynomials with complex
+coefficients. A \emph{linear function} on \( \CC[x] \) is a map
+\( \LL:\CC[x] \to \CC \) such that
+\( \LL(af(x)+bg(x)) = a\LL(f(x)) + b\LL(g(x)) \) for all
+\( f(x), g(x)\in \CC[x] \) and \( a,b\in \CC \).
+
+\begin{defn}
+  Let \( \{\mu_{n}\}_{n\ge0} \) be a sequence of complex numbers. Let
+  \( \LL \) be the linear functional on the space of polynomials
+  defined by \( \LL(x^n) = \mu_n \), \( n\ge0 \). In this case we say
+  that \( \LL \) is the \emph{moment functional} determined by the
+  \emph{moment sequence} \( \{\mu_n\} \), and \( \mu_n \) is called
+  the \emph{\( n \)th moment}.
+\end{defn}
+
+We recall the definition of orthogonal polynomials.
+
+\begin{defn}
+  Let \( \LL \) be the linear functional defined on the space of
+  polynomials in \( x \). A sequence of polynomials
+  \( \{P_n(x)\}_{n\ge0} \) is called an \emph{orthogonal polynomial
+    sequence (OPS)} with respect to \( \LL \) if the following
+  conditions hold:
+  \begin{enumerate}
+  \item \( \deg P_n(x) = n \), \( n\ge0 \),
+  \item \( \LL(P_m(x)P_n(x))  = K_n \delta_{m,n} \), for some \( K_n\ne 0 \).
+  \end{enumerate}
+\end{defn}
+
+We say that \( P_n(x) \) are \emph{orthonormal} if
+\( \LL(P_m(x)P_n(x)) = \delta_{m,n} \).
+
+
+\begin{thm}\label{thm:orth-equiv}
+  Let \( \{P_n(x) \} \) be a sequence of polynomials and let \( \LL \) be
+  a moment sequence. The following are equivalent:
+  \begin{enumerate}
+  \item \( \{P_n(x) \} \) is an OPS with respect to \( \LL \);
+  \item \( \LL(\pi(x) P_n(x)) = 0 \) if \( \deg \pi(x) < n \) and
+    \( \LL(\pi(x) P_n(x)) \ne 0 \) if \( \deg \pi(x) = n \);
+  \item \( \LL(x^m P_n(x)) = K_n \delta_{m,n} \), \( 0\le m\le n \), for some \( K_n\ne 0 \).
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+\( (1) \Rightarrow (2) \):
+Suppose that \( \deg \pi(x) \le n \).
+Since \( \{P_n(x) \} \) is a basis of \( \CC[x] \), we can write
+\[
+  \pi(x) = c_0 + c_1 P_1(x) + \cdots + c_n P_n(x).
+\]
+Then
+\[
+  \LL(\pi(x) P_n(x)) = \sum_{k=0}^n \LL \left( c_k P_k(x) P_n(x) \right)
+  = c_n \LL(P_n(x)^2),
+\]
+which is zero if \( \deg \pi(x) <n \) and nonzero if \( \deg \pi(x) =n \).
+
+\( (2) \Rightarrow (3) \): Trivial.
+\( (2) \Rightarrow (3) \): Trivial.
+\end{proof}
+
+\begin{thm}\label{thm:orth-coeff}
+  Suppose that \( \{ P_n(x) \}_{n\ge 0} \) be an OPS with respect to \( \LL \).
+  Then for any polynomial \( \pi(x) \) of degree \( n \),
+\[
+  \pi(x) = \sum_{k=0}^n  c_k P_k(x), \qquad
+  c_k = \frac{\LL(\pi(x)P_k(x))}{\LL(P_k(x)^2)}.
+\]
+\end{thm}
+\begin{proof}
+  Clearly, we can write
+  \[
+    \pi(x) = \sum_{k=0}^n c_k P_k(x),
+  \]
+  for some \( c_k \). Multiplying \( P_j(x) \) both sides
+  and taking \( \LL \), we get
+  \[
+    \LL(\pi(x) P_j(x)) = \sum_{k=0}^n \LL \left( c_k P_k(x) P_j(x) \right)
+    = c_j \LL(P_j(x)^2).
+  \]
+  Dividing both sides by \( \LL(P_j(x)^2) \), we obtain the theorem.
+\end{proof}
+
+\begin{thm}
+  Suppose that \( \{ P_n(x) \}_{n\ge 0} \) be an OPS with respect to
+  \( \LL \). Then \( P_n(x) \) is uniquely determined by \( \LL \) up
+  to a nonzero factor. More precisely, if \( \{ Q_n(x) \}_{n\ge 0} \)
+  is an OPS with respect to \( \LL \), then there are constants
+  \( c_n\ne0 \) such that \( Q_n(x) = c_n P_n(x) \) for all
+  \( n\ge0 \).
+\end{thm}
+\begin{proof}
+  Let us write \(Q_n(x) = \sum_{k=0}^n c_k P_k(x) \). Then by
+  \Cref{thm:orth-coeff}, \( c_k = \LL(Q_n(x)P_k(x))/\LL(P_k(x)^2) \).
+  But by \Cref{thm:orth-equiv}, \( \LL(Q_n(x)P_k(x)) = 0 \) unless
+  \( k=n \). Thus \( Q_n(x) = c_n P_n(x) \).
+\end{proof}
+
+
+Note that if \( \{ P_n(x) \}_{n\ge 0} \) is an OPS for \( \LL \), then
+so is \( \{ c_nP_n(x) \}_{n\ge 0} \) for any \( c_n\ne 0 \). Therefore
+there is a unique monic OPS, which is obtained by dividing each
+\( P_n(x) \) by its leading coefficient. Note also that there is a
+unique orthonormal OPS as well given by
+\( p_n(x) = P_n(x)/\LL(P_n(x)^2) \). In summary we have the following
+corollary.
+
+\begin{cor}\label{cor:OPS-unique}
+  Suppose that \( \LL \) is a moment sequence such that there is an
+  OPS for \( \LL \). Let \( K_n \), \( n\ge0 \), be a sequence of
+  nonzero numbers. 
+  \begin{enumerate}
+  \item There is a unique monic OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \).
+  \item There is a unique orthonormal OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \).
+  \item There is a unique OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \)
+    such that the leading coefficient of \( P_n(x) \) is \( K_n \).
+  \item There is a unique OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \)
+    such that \( \LL(x_nP_n(x)) = K_n \).
+  \end{enumerate}
+\end{cor}
+
+
+Clearly, if \( \{ P_n(x) \}_{n\ge 0} \) is an OPS for \( \LL \), then
+it is also an OPS for \( \LL' \) given by
+\( \LL'(f(x)) = c \LL(f(x)) \) for some \( c\ne 0 \). Therefore, by
+dividing the linear functional by the value \( \LL(1) \), we may
+assume that \( \LL(1)=1 \).
+
+
+% \subsection{The fundamental recurrence formula}
+
+
+% \subsection{Zeros}
+
+
+% \subsection{Gauss quadrature (maybe skip)}
+
+
+% \subsection{Kernel polynomials (skip)}
+
+
+% \subsection{Symmetric moment functionals (skip)}
+
+
+% \subsection{Certain related recurrence relations (skip)}
+
+
+
+
+% \section{Formal power series and generating functions}
+
+% \section{Viennot theory}
+
+
+% \section{LGV lemma}
+
+
+% \section{Basics on orthogonal polynomials}
+
+
+% \section{Basics on combinatorics}
+
+
+% \section{linearization coefficients}
+
+% \section{Other topics}
+
+% \subsection{Hypergeometric series}
+
+% \subsection{Connection with random matrices}
+
+% \subsection{ASEP}
+
+
+
+
+
+\bibliographystyle{abbrv}
+\bibliography{/Users/jangsookim/Library/CloudStorage/Dropbox/newbiemacs/nbm-user-settings/references/ref.bib}
+
+\end{document}
