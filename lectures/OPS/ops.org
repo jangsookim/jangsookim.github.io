@@ -37,6 +37,6 @@ Orthogonal polynomials are classical objects arising from the study of continued
 - To be announced
 
 * Schedule and links to lecture videos
-1. [2023-08-29 Tue]: Introduction, [[file:ops-files/OPS.pdf][lecture notes]], [[https://youtu.be/JgdcBmWMwYc][video]]
+1. [2023-08-29 Tue]: Introduction, [[file:ops-files/OPS1.pdf][lecture notes]], [[https://youtu.be/JgdcBmWMwYc][video]]
 2. [2023-08-31 Thu]: No class (A lecture video will be uploaded on this date.)
 
