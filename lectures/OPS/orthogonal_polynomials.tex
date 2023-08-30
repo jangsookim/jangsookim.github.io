@@ -689,15 +689,15 @@ for \( \LL \).
 \begin{defn}
   A \emph{sign} of a set \( X \) is a function
   \( \sgn:X \to \{+1,-1\} \). A \emph{sign-reversing involution} on
-  \( X \) is an involution \( \phi:X\to X \) such that
-  \( \sgn(\phi(x)) = -\sgn(x) \) for all
+  \( X \) is an involution \( \phi:X\to X \) such that \( \sgn(x)=1 \)
+  for \( x\in \Fix(\phi) \) and \( \sgn(\phi(x)) = -\sgn(x) \) for all
   \( x\in X \setminus \Fix(\phi) \), where \( \Fix(\phi) \) is the set
   of \emph{fixed points} of \( \phi \), i.e.,
   \( \Fix(\phi) = \{x\in X: \phi(x) = x \} \).
 \end{defn}
 
-If \( \phi \) is a sign-reversing involution on \( X \),
-then
+It is easy to see that if \( \phi \) is a sign-reversing involution on
+\( X \), then
 \begin{equation}\label{eq:sgnsum=Fix}
   \sum_{x\in X} \sgn(X) = |\Fix(\phi)|.
 \end{equation}
@@ -732,7 +732,7 @@ then
   \]
   We will prove this identity using sign-reversing involutions. To do
   this, we will consider \eqref{eq:charlier-orthogonality2} as a power
-  series in \( x \). Note that
+  series in \( a \). Note that
 \begin{align*}
   \sum_{k\ge 0}  P_m(k) P_n(k) \frac{a^k}{k!}
   &=  \sum_{k\ge 0} \sum_{i=0}^m \binom{k}{i} \frac{(-a)^{m-i}}{(m-i)!}
@@ -770,8 +770,8 @@ follows.
 \item[Case 1] The regions \( 1,2,3,4 \) are all empty. In this case we define
   \( \phi(A,B,C) = (A,B,C) \).
 \item[Case 2] At least one of the regions \( 1,2,3,4 \) is nonempty.
-  Let \( m \) be the smallest integer in \( (B\cap C) \setminus A \).
-  If \( m \) is in region \( 1 \) (respectively 2, 3, 4), then move
+  Let \( s \) be the smallest integer in \( (B\cap C) \setminus A \).
+  If \( s \) is in region \( 1 \) (respectively 2, 3, 4), then move
   this integer to region \( 2 \) (respectively 1, 4, 3). Then let
   \( \phi(A,B,C) = (A',B',C') \), where \( A',B',C' \) are the
   resulting sets.
@@ -782,7 +782,7 @@ By the construction, \( \phi \) is a sign-reversing involution on
 regions \( 1,2,3,4 \) are all empty, that is, \( B=C \subseteq A \).
 If \( B=C \subseteq A \), then \( A = [N] \),
 so the number of such triples \( (A,B,C) \) is
-\( \binom{N}{n} \) if \( B=C \)
+\( \binom{N}{n} \) if \( m=n \)
 and \( 0 \) otherwise.
 Thus
 \[
