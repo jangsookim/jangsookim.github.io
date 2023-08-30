@@ -16,7 +16,7 @@
 Orthogonal polynomials are classical objects arising from the study of continued fractions. They have become an important subject in many areas of mathematics. In this class we will learn fascinating combinatorial properties of orthogonal polynomials.
 
 ** Useful sources
-- [[file:orthogonal_polynomials.pdf][Lecture notes]] will be constantly updated.
+- [[file:ops-files/orthogonal_polynomials.pdfj][Lecture notes]] will be constantly updated.
 - Lecture videos will be uploaded on Youtube.
 - The following will be useful sources for this class.
   - Viennot's lecture videos https://viennot.org/abjc4-contents.html
@@ -38,5 +38,5 @@ Orthogonal polynomials are classical objects arising from the study of continued
 
 * Schedule and links to lecture videos
 1. [2023-08-29 Tue]: Introduction, [[file:ops-files/OPS1.pdf][lecture notes]], [[https://youtu.be/JgdcBmWMwYc][video]]
-2. [2023-08-31 Thu]: No class (A lecture video will be uploaded on this date.)
+2. [2023-08-31 Thu]: Sign-reversing involutions, [[file:ops-files/OPS2.pdf][lecture notes]], [[https://youtu.be/8B_fU_00eRE][video]]
 

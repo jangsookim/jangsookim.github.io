@@ -23,6 +23,8 @@
 \newtheorem*{note}{Note}
 
 % DO NOT DELETE THIS COMMENT!!! MACROS BELOW:
+\newcommand\Fix{\operatorname{Fix}}
+\newcommand\sgn{\operatorname{sgn}}
 \newcommand\NN{\mathbb{N}}
 \newcommand\QQ{\mathbb{Q}}
 \newcommand{\CC}{\mathbb{C}}
@@ -283,50 +285,9 @@ Riemann--Stieltjes integral
 \]
 \end{exam}
 
-\begin{remark}
-We can also prove \eqref{eq:charlier-orthogonality} in a combinatorial way.
-To do this, note that
-\begin{align*}
-  \sum_{k\ge 0}  P_m(k) P_n(k) \frac{a^k}{k!}
-  &=  \sum_{k\ge 0} \sum_{i=0}^m \binom{k}{i} \frac{(-a)^{m-i}}{(m-i)!}
-  \sum_{j=0}^n \binom{k}{j} \frac{(-a)^{n-j}}{(n-j)!} \frac{a^k}{k!}\\
-  &=  \sum_{k\ge 0} \sum_{i=0}^m \sum_{j=0}^n
-    \binom{k}{m-i} \frac{(-a)^{i}}{i!}
-   \binom{k}{n-j} \frac{(-a)^{j}}{j!} \frac{a^k}{k!}\\
-  &= \sum_{N\ge0} \frac{a^N}{N!} \sum_{i+j+k=N}
-  (-1)^{i+j} \frac{N!}{i!j!k!} \binom{k}{m-i} \binom{k}{n-j}.
-\end{align*}
+We can also prove \eqref{eq:charlier-orthogonality} in a combinatorial
+way, see \Cref{sec:sign-revers-invol}.
 
-For a fixed \( N \),
-\[
-  \sum_{i+j+k=N} (-1)^{i+j} \binom{N}{i,j,k} \binom{k}{m-i} \binom{k}{n-j}
-  = \sum_{(A,B,C)\in X} (-1)^{|B\setminus A| + |C\setminus A|},
-\]
-where \( X \) is the set of triples \( (A,B,C) \) such that
-\( A\cup B\cup C = \{ 1,\dots,N \} \), \( |A|=k, |B|=m, |C|=n \),
-\( (B\cap C)\setminus A = \emptyset \). If \( B\ne C \), we can find a
-sign-reversing involution, namely toggling the smallest integer in
-regions \( 1 \) and \( 2 \) or in regions \( 3 \) and \( 4 \) in
-Figure~\ref{fig:image1}.
-\begin{figure}
-  \centering
-  \includegraphics[scale=.1]{./figures/image1.jpeg}
-  \caption{The triple \( (A,B,C) \).}
-  \label{fig:image1}
-\end{figure}
-Thus we have
-\[
-  \sum_{(A,B,C)\in X} (-1)^{|B\setminus A| + |C\setminus A|}
-  = \sum_{(A,B,C)\in X: B=C} (-1)^{|B\setminus A| + |C\setminus A|}
-  = \delta_{m,n} \binom{N}{n}.
-\]
-This implies
-\[
-  \sum_{k\ge 0}  P_m(k) P_n(k) \frac{a^k}{k!}
-  = \delta_{m,n} \sum_{N\ge0} \frac{a^N}{N!} \binom{N}{n}
-  = \frac{e^a a^n}{n!} \delta_{n,m}.
-\]
-\end{remark}
 
 
 
@@ -489,7 +450,7 @@ following definition.
   \]
 \end{defn}
 
-\begin{thm}
+\begin{thm}\label{thm:Dne0}
   Let \( \LL \) be a moment functional with moment sequence
   \( \{\mu_n\} \).
   Then there is an OPS for \( \LL \) if and only if
@@ -538,7 +499,142 @@ c_{n,0} \\ c_{n,1} \\ \vdots \\ c_{n,n}
 
 Note that by solving \eqref{eq:2} using Cramer's rule, we have
 \( c_{n,n} = K_n \Delta_{n-1}/\Delta_n \), which is the leading
-coefficient of \( P_n(x) \).
+coefficient of \( P_n(x) \). In particular, we have
+\begin{equation}\label{eq:P2=D/D}
+  \LL(P_n(x)^2) = \sum_{k=0}^n \LL(c_{n,k}x^kP_n(x))
+  = c_{n,n}\LL(x^n P_n(x)) = c_{n,n} K_n = \frac{\Delta_n}{\Delta_{n-1}}.
+\end{equation}
+
+In many important cases of orthogonal polynomials there is a
+nonnegative weight function \( w(x) \) representing the moment
+functional: \( \LL(x^n) = \int_a^b x^n w(x) dx \). In more general
+cases, \( \LL \) can be represented using the Riemann--Stieltjes
+integral \( \LL(x^n) = \int_a^b x^n d\psi (x) \), where \( \psi(x) \)
+is a nondecreasing function such that
+\( \{x: \psi(x+\epsilon)-\psi(x-\epsilon)>0 \mbox{ for all
+  \( \epsilon>0 \)} \} \) is an infinite set. It is known
+\cite[Chapter~2]{Chihara} that there is such an expression if and only
+if \( \LL(\pi(x))>0 \) for all nonzero polynomials \( \pi(x) \) such
+that \( \pi(x)\ge0 \) for all \( x\in\RR \).
+
+\begin{defn}
+  A moment functional \( \LL \) is \emph{positive-definite} if
+  \( \LL(\pi(x))>0 \) for all nonzero polynomials \( \pi(x) \) such
+  that \( \pi(x)\ge0 \) for all \( x\in\RR \).
+\end{defn}
+
+If \( \LL \) is positive-definite, then it has a real OPS. We will see
+later that the converse is not true.
+
+\begin{thm}\label{thm:pos-def-ops}
+  Let \( \LL \) be a positive-definite moment functional. Then
+  \( \LL \) has real moments and there is a real OPS for \( \LL \).
+\end{thm}
+
+\begin{proof}
+  First, we show that the moments \( \mu_n \) are real. Since
+  \( \LL \) is positive-definite, \( \mu_{2n} = \LL(x^{2n}) >0 \) is
+  real. Since
+  \( \LL((x+1)^{2n}) = \sum_{k=0}^{2n}\binom{2n}{k} \mu_{k} \) is
+  real, by induction, we obtain that \( \mu_{2n-1} \) is also real.
+
+  Now, we construct a real OPS \( \{ P_n(x) \}_{n\ge 0} \) for
+  \( \LL \). Let \( P_0(x) = 1 \). Suppose that we have constructed
+  \( P_0,\dots,P_n \) which are orthogonal with respect to \( \LL \),
+  i.e., \( \LL(P_i(x)P_j(x)) = 0 \) for \( 0\le i,j\le n \) with
+  \( i\ne j \). Now we need to find
+  \begin{equation}\label{eq:3}
+    P_{n+1} (x) = x^{n+1} + \sum_{k=0}^n a_k P_k(x)
+  \end{equation}
+  such that \( \LL(P_k(x)P_{n+1}(x)) = 0 \) for all \( 0\le k\le n \).
+  Multiplying \( P_k(x) \) and taking \( \LL \) in \eqref{eq:3} we get
+  \( \LL(P_k(x)P_{n+1}(x)) = \LL(x^{n+1}P_k(x))+a_k\LL(P_k(x)^2) \).
+  Thus, if we set
+  \[
+    a_k = - \frac{\LL(x^{n+1}P_k(x))}{\LL(P_k(x)^2)},
+  \]
+  which is real, then \( P_{n+1}(x) \) is orthogonal to
+  \( P_0(x),\dots,P_n(x) \). In this way we can construct a real OPS
+  \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \).
+\end{proof}
+
+Note that if \( \LL \) is positive-definite, then
+\( \LL(P_n(x)^2)>0 \). Thus in this case we can construct a real
+orthonormal OPS \( \{ p_n(x) \}_{n\ge 0} \) by rescaling:
+\( p_n(x) = P_n(x)/\sqrt{\LL(P_n(x)^2)} \).
+
+\medskip
+
+You may wonder why \( \LL \) is called ``positive-definite''. To see
+this recall that a real \( n\times n \) matrix \( A \) is positive
+definite if \( u^T A u >0 \) for every nonzero vector
+\( u\in \RR^n \). Sylvester's criterion says that \( A \) is positive
+definite if and only if every principal minor of \( A \) is positive.
+The following theorem justifies the terminology ``positive-definite''
+for \( \LL \).
+
+
+\begin{thm}
+  A moment functional \( \LL \) is positive-definite if and only if
+  every moment \( \mu_n \) is real and \( \Delta_n>0 \) for all
+  \( n\ge0 \). In other words, \( \LL \) is positive-definite if and
+  only if the Hankel matrix \( (\mu_{i+j})_{i,j\ge0} \) is
+  positive-definite.
+\end{thm}
+\begin{proof}
+  (\(\Rightarrow\)) By \Cref{thm:pos-def-ops}, the moments are real
+  and there is a real OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \).
+  By \eqref{eq:P2=D/D}, \( \Delta_n/\Delta_{n-1} = \LL(P_n(x)^2)>0 \)
+  for \( n\ge0 \), where \( \Delta_{-1}=1 \).
+  Thus by induction we obtain \( \Delta_n>0 \) for all \( n\ge0 \).
+
+  (\(\Leftarrow\)) Since \( \Delta_n>0 \), by \Cref{thm:Dne0}, there
+  is an OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \). We need to show
+  that \( \LL(\pi(x))>0 \) for any nonzero polynomial \( \pi(x) \)
+  with \( \pi(x)\ge0 \) for all \( x\in \RR \). Such a polynomial
+  \( \pi(x) \) can be written as \( \pi(x) = p(x)^2 + q(x)^2 \) for
+  some real polynomials \( p(x) \) and \( q(x) \), see
+  \Cref{lem:pi=p2+q2} below. Thus it suffices to show that
+  \( \LL(p(x)^2) = 0 \) for a polynomial \( p(x) \). To do this let
+  \( p(x) = \sum_{k=0}^n a_k P_k(x) \). Then by the orthogonality
+  \[
+    \LL(p(x)^2) = \sum_{k=0}^n a_k^2 \LL(P_k(x)^2)
+  \]
+  Since \( \Delta_n>0 \), we have \( \LL(P_k(x)^2)>0 \) by
+  \eqref{eq:P2=D/D}. Thus \( \LL(p(x)^2)>0 \) as desired.
+\end{proof}
+
+\begin{lem}\label{lem:pi=p2+q2}
+  Let \( \pi(x) \) be a nonzero polynomial such that \( \pi(x)\ge0 \)
+  for all \( x\in \RR \). Then \( \pi(x) = p(x)^2 + q(x)^2 \) for some
+  polynomials \( p(x) \) and \( q(x) \).
+\end{lem}
+\begin{proof}
+  Since \( \pi(x) \) is real for all real \( x \), the coefficients of
+  \( \pi(x) \) are real. This can be seen inductively by observing
+  that if \( \deg \pi(x) =n \), then the leading coefficient of
+  \( \pi(x) \) is equal to
+  \[
+    \lim_{x\to \infty} \frac{\pi(x)}{x^n}.
+  \]
+  Since \( \pi(x) \) is a real polynomial such that \( \pi(x)\ge0 \)
+  every real zero has even multiplicity and complex roots appear in
+  conjugate pairs. Thus we can write
+  \[
+    \pi(x) = r(x)^2 \prod_{k=1}^{m} (x-\alpha_k-\beta_ki)(x-\alpha_k+\beta_ki),
+  \]
+  where \( r(x) \) is a real polynomial and
+  \( \alpha_k,\beta_k\in \RR \).
+  If we write \( \prod_{k=1}^{m} (x-\alpha_k-\beta_ki) = A(x)+iB(x) \),
+  then \( \prod_{k=1}^{m} (x-\alpha_k+\beta_ki) = A(x)-iB(x) \).
+  Thus \( \pi(x) = r(x)^2(A(x)^2+B(x)^2) \) as desired.
+\end{proof}
+
+\begin{defn}
+  We say that \( \LL \) is \emph{quasi-definite} if
+  \( \Delta_n\ne 0 \) for all \( n\ge0 \).
+\end{defn}
+
 
 % \subsection{The fundamental recurrence formula}
 
@@ -585,7 +681,121 @@ coefficient of \( P_n(x) \).
 % \subsection{ASEP}
 
 
+\appendix
 
+\section{Sign-reversing involutions}
+\label{sec:sign-revers-invol}
+
+\begin{defn}
+  A \emph{sign} of a set \( X \) is a function
+  \( \sgn:X \to \{+1,-1\} \). A \emph{sign-reversing involution} on
+  \( X \) is an involution \( \phi:X\to X \) such that
+  \( \sgn(\phi(x)) = -\sgn(x) \) for all
+  \( x\in X \setminus \Fix(\phi) \), where \( \Fix(\phi) \) is the set
+  of \emph{fixed points} of \( \phi \), i.e.,
+  \( \Fix(\phi) = \{x\in X: \phi(x) = x \} \).
+\end{defn}
+
+If \( \phi \) is a sign-reversing involution on \( X \),
+then
+\begin{equation}\label{eq:sgnsum=Fix}
+  \sum_{x\in X} \sgn(X) = |\Fix(\phi)|.
+\end{equation}
+
+\begin{exam}
+  Let's prove the following identity using sign-reversing involutions:
+  \begin{equation}\label{eq:4}
+    \sum_{k=0}^{n} (-1)^{k} \binom{n}{k} = 0.
+  \end{equation}
+  To this end we need to construct a set \( X \) and a sign-reversing
+  involution \( \phi \) on \( X \) such that \eqref{eq:sgnsum=Fix}
+  becomes \eqref{eq:4}.
+
+  Let \( X \) be the set of all subsets of \( [n]:= \{ 1,\dots,n \} \)
+  and for \( A\in X \), define \( \sgn(A) = (-1)^{|A|} \). Then it
+  suffices to construct a sign-reversing involution on \( X \) with no
+  fixed points. This can be done by letting
+  \( \phi(A) = A \Delta \{1\} \), where
+  \( A \Delta B := (A \cup B) \setminus (A \cap B) \).
+\end{exam}
+
+
+\begin{exam}
+  Recall that we proved the following identitiy, which was stated in
+  \eqref{eq:charlier-orthogonality}, using generating functions:
+  \begin{equation}\label{eq:charlier-orthogonality2}
+  \sum_{k\ge 0}  P_m(k) P_n(k) \frac{a^k}{k!} = \frac{e^a a^n}{n!} \delta_{n,m},
+  \end{equation}
+  where \( P_n(x) \) are the Charlier polynomials defined by
+  \[
+    P_n(x) = \sum_{k=0}^{n} \binom{x}{k} \frac{(-a)^{n-k}}{(n-k)!}.
+  \]
+  We will prove this identity using sign-reversing involutions. To do
+  this, we will consider \eqref{eq:charlier-orthogonality2} as a power
+  series in \( x \). Note that
+\begin{align*}
+  \sum_{k\ge 0}  P_m(k) P_n(k) \frac{a^k}{k!}
+  &=  \sum_{k\ge 0} \sum_{i=0}^m \binom{k}{i} \frac{(-a)^{m-i}}{(m-i)!}
+  \sum_{j=0}^n \binom{k}{j} \frac{(-a)^{n-j}}{(n-j)!} \frac{a^k}{k!}\\
+  &=  \sum_{k\ge 0} \sum_{i=0}^m \sum_{j=0}^n
+    \binom{k}{m-i} \frac{(-a)^{i}}{i!}
+   \binom{k}{n-j} \frac{(-a)^{j}}{j!} \frac{a^k}{k!}\\
+  &= \sum_{N\ge0} \frac{a^N}{N!} \sum_{i+j+k=N}
+  (-1)^{i+j} \frac{N!}{i!j!k!} \binom{k}{m-i} \binom{k}{n-j},
+\end{align*}
+where \( \binom{r}{s}=0 \) if \( s<0 \).
+
+For a fixed \( N \),
+\[
+  \sum_{i+j+k=N} (-1)^{i+j} \binom{N}{i,j,k} \binom{k}{m-i} \binom{k}{n-j}
+  = \sum_{(A,B,C)\in X} (-1)^{|B\setminus A| + |C\setminus A|},
+\]
+where \( X \) is the set of triples \( (A,B,C) \) such that
+\( A\cup B\cup C = \{ 1,\dots,N \} \), \( |A|=k, |B|=m, |C|=n \),
+\( (B\cap C)\setminus A = \emptyset \). Define
+\( \sgn(A,B,C) = (-1)^{|B\setminus A| + |C\setminus A|} \). We will
+find a sign-reversing involution on \( X \) toggling the smallest
+integer in regions \( 1 \) and \( 2 \) or in regions \( 3 \) and
+\( 4 \) in Figure~\ref{fig:image1}.
+\begin{figure}
+  \centering
+  \includegraphics[scale=.1]{./figures/image1.jpeg}
+  \caption{The triple \( (A,B,C) \).}
+  \label{fig:image1}
+\end{figure}
+
+To be precise, for \( (A,B,C)\in X \), define \( \phi(A,B,C) \) as
+follows.
+\begin{description}
+\item[Case 1] The regions \( 1,2,3,4 \) are all empty. In this case we define
+  \( \phi(A,B,C) = (A,B,C) \).
+\item[Case 2] At least one of the regions \( 1,2,3,4 \) is nonempty.
+  Let \( m \) be the smallest integer in \( (B\cap C) \setminus A \).
+  If \( m \) is in region \( 1 \) (respectively 2, 3, 4), then move
+  this integer to region \( 2 \) (respectively 1, 4, 3). Then let
+  \( \phi(A,B,C) = (A',B',C') \), where \( A',B',C' \) are the
+  resulting sets.
+\end{description}
+
+By the construction, \( \phi \) is a sign-reversing involution on
+\( X \) whose fixed points are the triples \( (A,B,C) \) such that the
+regions \( 1,2,3,4 \) are all empty, that is, \( B=C \subseteq A \).
+If \( B=C \subseteq A \), then \( A = [N] \),
+so the number of such triples \( (A,B,C) \) is
+\( \binom{N}{n} \) if \( B=C \)
+and \( 0 \) otherwise.
+Thus
+\[
+  \sum_{(A,B,C)\in X} (-1)^{|B\setminus A| + |C\setminus A|} =
+  |\Fix(\phi)| = \delta_{m,n} \binom{N}{n}.
+\]
+This implies
+\[
+  \sum_{k\ge 0}  P_m(k) P_n(k) \frac{a^k}{k!}
+  = \delta_{m,n} \sum_{N\ge0} \frac{a^N}{N!} \binom{N}{n}
+  = \frac{e^a a^n}{n!} \delta_{n,m}.
+\]
+\end{exam}
 
 
 \bibliographystyle{abbrv}
