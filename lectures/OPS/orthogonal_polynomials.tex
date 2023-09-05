@@ -629,8 +629,9 @@ later that the converse is not true.
   Now, we construct a real OPS \( \{ P_n(x) \}_{n\ge 0} \) for
   \( \LL \). Let \( P_0(x) = 1 \). Suppose that we have constructed
   real polynomials \( P_0,\dots,P_n \) which are orthogonal with
-  respect to \( \LL \), i.e., \( \LL(P_i(x)P_j(x)) = 0 \) for
-  \( 0\le i,j\le n \) with \( i\ne j \). Now we need to find
+  respect to \( \LL \), i.e., for \( 0\le i,j\le n \),
+  \( \LL(P_i(x)P_j(x)) \) is zero if \( i\ne j \) and nonzero if
+  \( i=j \). Now we need to find
   \begin{equation}\label{eq:3}
     P_{n+1} (x) = x^{n+1} + \sum_{k=0}^n a_k P_k(x)
   \end{equation}
@@ -666,8 +667,8 @@ for \( \LL \).
   A linear functional \( \LL \) is positive-definite if and only if
   every moment \( \mu_n \) is real and \( \Delta_n>0 \) for all
   \( n\ge0 \). In other words, \( \LL \) is positive-definite if and
-  only if the Hankel matrix \( (\mu_{i+j})_{i,j\ge0} \) is
-  positive-definite.
+  only if the Hankel matrix \( (\mu_{i+j})_{i,j=0}^n \) is
+  positive-definite for all \( n\ge0 \).
 \end{thm}
 \begin{proof}
   (\(\Rightarrow\)) By \Cref{thm:pos-def-ops}, the moments are real
@@ -681,10 +682,11 @@ for \( \LL \).
   that \( \LL(\pi(x))>0 \) for any nonzero polynomial \( \pi(x) \)
   with \( \pi(x)\ge0 \) for all \( x\in \RR \). Such a polynomial
   \( \pi(x) \) can be written as \( \pi(x) = p(x)^2 + q(x)^2 \) for
-  some real polynomials \( p(x) \) and \( q(x) \), see
+  some real polynomials \( p(x) \) and \( q(x) \) (not both zero), see
   \Cref{lem:pi=p2+q2} below. Thus it suffices to show that
-  \( \LL(p(x)^2) = 0 \) for a polynomial \( p(x) \). To do this let
-  \( p(x) = \sum_{k=0}^n a_k P_k(x) \). Then by the orthogonality
+  \( \LL(p(x)^2) > 0 \) for any nonzero real polynomial \( p(x) \). To
+  do this let \( p(x) = \sum_{k=0}^n a_k P_k(x) \). Then by the
+  orthogonality,
   \[
     \LL(p(x)^2) = \sum_{k=0}^n a_k^2 \LL(P_k(x)^2).
   \]
