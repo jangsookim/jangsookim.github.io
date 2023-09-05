@@ -31,6 +31,8 @@
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand\LL{\mathcal{L}}
+\newcommand\FF{\mathbb{F}}
+\newcommand\FT{\operatorname{FT}}
 
 \newcommand\Mot{\operatorname{Mot}}
 \newcommand{\Dyck}{\operatorname{Dyck}}
@@ -64,7 +66,21 @@
     ; #5
     \right)}
 
-\newcommand\comment[1]{\textcolor{blue}{\bf #1}}
+\newcommand\comment[1]{\textcolor{gray}{\bf #1}}
+\renewcommand\emph[1]{\textcolor{blue}{\bf #1}}
+
+
+\def\addable(#1,#2){\draw [blue, line width=1pt] (#1,#2) circle [radius=6pt];}
+\def\remove(#1,#2){\fill [red] (#1,#2) circle [radius=4pt];}
+\def\BM#1{\draw [line width=2pt] (#1+0.9,0.9) rectangle +(-0.8,-0.8);} 
+\def\RM#1{\draw [line width=2pt,red] (#1+0.9,0.9) rectangle +(-0.8,-0.8);}
+\def\BD#1{\draw [line width=2pt] (#1+0.9,0.9) rectangle +(-1.8,-0.8);}
+\def\RD#1{\draw [line width=2pt,red] (#1+0.9,0.9) rectangle +(-1.8,-0.8);}
+\def\LBM#1{\BM{#1} \node at (#1+0.5, 1.3) {$1$};}
+\def\LRM#1{\RM{#1} \node at (#1+0.5, 1.3) {$-b_{#1}$};}
+\def\LBD#1{\BD{#1} \node at (#1, 1.3) {$-\lambda_{#1}$};}
+% \def\LRD#1{\RD{#1} \node at (#1, 1.3) {$-\lambda_{#1}$};}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -191,7 +207,7 @@ moment sequence \( \mu_0,\mu_1,\dots \). Not every sequence
 later a criterion for a sequence to be a moment sequence.
 
 \begin{defn}\label{def:OPS2}
-  Let \( \LL \) be the linear functional defined on the space of
+  Let \( \LL \) be a linear functional defined on the space of
   polynomials in \( x \). A sequence of polynomials
   \( \{P_n(x)\}_{n\ge0} \) is called an \emph{orthogonal polynomial
     sequence (OPS)} with respect to \( \LL \) if the following
@@ -301,8 +317,8 @@ way, see \Cref{sec:sign-revers-invol}.
 
 \subsection{The moment functional and orthogonality}
 
-We will consider the space \( \CC[x] \) polynomials with complex
-coefficients. A \emph{linear function} on \( \CC[x] \) is a map
+We will consider the space \( \CC[x] \) of polynomials with complex
+coefficients. A \emph{linear functional} on \( \CC[x] \) is a map
 \( \LL:\CC[x] \to \CC \) such that
 \( \LL(af(x)+bg(x)) = a\LL(f(x)) + b\LL(g(x)) \) for all
 \( f(x), g(x)\in \CC[x] \) and \( a,b\in \CC \).
@@ -336,7 +352,7 @@ We say that \( P_n(x) \) are \emph{orthonormal} if
 
 \begin{thm}\label{thm:orth-equiv}
   Let \( \{P_n(x) \} \) be a sequence of polynomials and let \( \LL \) be
-  a moment sequence. The following are equivalent:
+  a linear functional. The following are equivalent:
   \begin{enumerate}
   \item \( \{P_n(x) \} \) is an OPS with respect to \( \LL \);
   \item \( \LL(\pi(x) P_n(x)) = 0 \) if \( \deg \pi(x) < n \) and
@@ -384,7 +400,7 @@ which is zero if \( \deg \pi(x) <n \) and nonzero if \( \deg \pi(x) =n \).
   Dividing both sides by \( \LL(P_j(x)^2) \), we obtain the theorem.
 \end{proof}
 
-\begin{thm}
+\begin{thm}\label{thm:uniqueness-OPS}
   Suppose that \( \{ P_n(x) \}_{n\ge 0} \) be an OPS with respect to
   \( \LL \). Then \( P_n(x) \) is uniquely determined by \( \LL \) up
   to a nonzero factor. More precisely, if \( \{ Q_n(x) \}_{n\ge 0} \)
@@ -405,16 +421,15 @@ so is \( \{ c_nP_n(x) \}_{n\ge 0} \) for any \( c_n\ne 0 \). Therefore
 there is a unique monic OPS, which is obtained by dividing each
 \( P_n(x) \) by its leading coefficient. Note also that there is a
 unique orthonormal OPS as well given by
-\( p_n(x) = P_n(x)/\LL(P_n(x)^2) \). In summary we have the following
+\( p_n(x) = P_n(x)/\LL(P_n(x)^2)^{1/2} \). In summary we have the following
 corollary.
 
 \begin{cor}\label{cor:OPS-unique}
   Suppose that \( \LL \) is a moment sequence such that there is an
   OPS for \( \LL \). Let \( K_n \), \( n\ge0 \), be a sequence of
-  nonzero numbers. 
+  nonzero numbers. Then the following hold.
   \begin{enumerate}
   \item There is a unique monic OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \).
-  \item There is a unique orthonormal OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \).
   \item There is a unique OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \)
     such that the leading coefficient of \( P_n(x) \) is \( K_n \).
   \item There is a unique OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \)
@@ -432,7 +447,7 @@ assume that \( \LL(1)=1 \).
 
 \subsection{Existence of OPS}
 
-The main question in this section is: for what moment functional
+The main question in this section is: for what linear functional
 \( \LL \) does there exist an OPS? To answer this question we need the
 following definition.
 
@@ -451,7 +466,7 @@ following definition.
 \end{defn}
 
 \begin{thm}\label{thm:Dne0}
-  Let \( \LL \) be a moment functional with moment sequence
+  Let \( \LL \) be a linear functional with moment sequence
   \( \{\mu_n\} \).
   Then there is an OPS for \( \LL \) if and only if
   \( \Delta_n\ne 0 \) for all \( n\ge0 \).
@@ -493,17 +508,90 @@ c_{n,0} \\ c_{n,1} \\ \vdots \\ c_{n,n}
   (\ref{eq:1}) is equivalent to the uniqueness of the solution of the
   matrix equation (\ref{eq:2}) in \( c_{n,0},c_{n,1},\dots,c_{n,n} \).
   In order for (\ref{eq:2}) to have a unique solution, the Hankel
-  determinant \( \Delta_n \) must be nonzero for all \( n\ge0 \). This
-  proves the theorem.
+  determinant \( \Delta_n \) must be nonzero for all \( n\ge0 \).
+  Moreover, by Cramer's rule, \( c_{n,n} = K_n\Delta_n/\Delta_{n-1} \)
+  is nonzero iff \( \Delta_n\ne 0 \). This proves the theorem.
 \end{proof}
 
-Note that by solving \eqref{eq:2} using Cramer's rule, we have
-\( c_{n,n} = K_n \Delta_{n-1}/\Delta_n \), which is the leading
-coefficient of \( P_n(x) \). In particular, we have
-\begin{equation}\label{eq:P2=D/D}
-  \LL(P_n(x)^2) = \sum_{k=0}^n \LL(c_{n,k}x^kP_n(x))
-  = c_{n,n}\LL(x^n P_n(x)) = c_{n,n} K_n = \frac{\Delta_n}{\Delta_{n-1}}.
-\end{equation}
+Applying Cramer's rule to \eqref{eq:2} we can prove the following
+lemma, which will be used later.
+
+\begin{lem}\label{lem:L(pi*P)}
+  Let \( \{ P_n(x) \}_{n\ge 0} \) be an OPS for \( \LL \).
+  Then for a polynomial \( \pi(x) \) of degree \( n \) we have
+ \[
+  \LL(\pi(x)P_n(x)) = \frac{ab\Delta_n}{\Delta_{n-1}},
+\] 
+where \( a \) and \( b \) are the leading coefficients of \( \pi(x) \)
+and \( P_n(x) \), respectively. In particular, if
+\( \{ P_n(x) \}_{n\ge 0} \) is the monic OPS for \( \LL \), then
+\[
+  \LL(P_n(x)^2) = \frac{\Delta_n}{\Delta_{n-1}}.
+\]
+\end{lem}
+\begin{proof}
+  We use the notation in the proof of \Cref{thm:Dne0}. By solving
+  \eqref{eq:2} using Cramer's rule, we obtain that the leading
+  coefficient of \( P_n(x) \) is
+  \( b= c_{n,n} = K_n \Delta_{n-1}/\Delta_n \). Thus, if we let
+  \( \pi(x) = \sum_{k=0}^n a_k x^k \), we have
+\[
+  \LL(\pi(x)P_n(x)) = \sum_{k=0}^n \LL(a_{k}x^kP_n(x))
+  = a_{n}\LL(x^n P_n(x)) = a K_n = \frac{ab\Delta_n}{\Delta_{n-1}},
+\]
+as desired.
+\end{proof}
+
+Similarly every coefficient \( c_{n,i} \) of \( P_n(x) \) can be
+computed using \eqref{eq:2}. Thus we have an explicit determinant
+formula for \( P_n(x) \).
+
+\begin{thm}\label{thm:P=Hankel}
+  Let \( \LL \) be a linear functional with moment sequence
+  \( \{\mu_n\} \) with \( \Delta_n\ne 0 \) for all \( n\ge0 \).
+  Then the monic OPS for \( \LL \) is given by
+  \[
+    P_n(x) = \frac{1}{\Delta_{n-1}}
+    \begin{vmatrix}
+      \mu_0 & \mu_1 & \cdots & \mu_n\\
+      \mu_1 & \mu_2 & \cdots & \mu_{n+1}\\
+      \vdots & \vdots & \ddots & \vdots\\
+      \mu_{n-1} & \mu_{n} & \cdots & \mu_{2n-1}\\
+      1 & x & \cdots & x^n
+    \end{vmatrix}.
+  \]
+\end{thm}
+
+\begin{proof}
+  This can be proved using \eqref{eq:2}. We can also prove directly
+  that \( \{ P_n(x) \}_{n\ge 0} \) satisfies the conditions for an
+  OPS. First, the coefficient of \( x^n \) in \( P_n(x) \) is
+  \( 1 \), so \( \deg P_n(x) = n \). For
+  \( 0\le k\le n \), we have
+  \[
+    \LL(x^k P_n(x))
+    = \frac{1}{\Delta_{n-1}} \LL \left(
+      \begin{vmatrix}
+        \mu_0 & \mu_1 & \cdots & \mu_n\\
+        \mu_1 & \mu_2 & \cdots & \mu_{n+1}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        \mu_{n-1} & \mu_{n} & \cdots & \mu_{2n-1}\\
+        x^{k} & x^{k+1} & \cdots & x^{n+k}
+      \end{vmatrix}
+    \right) = \frac{1}{\Delta_{n-1}}
+    \begin{vmatrix}
+        \mu_0 & \mu_1 & \cdots & \mu_n\\
+        \mu_1 & \mu_2 & \cdots & \mu_{n+1}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        \mu_{n-1} & \mu_{n} & \cdots & \mu_{2n-1}\\
+        \mu_k & \mu_{k+1} & \cdots & \mu_{n+k}
+      \end{vmatrix}.
+  \]
+  If \( k<n \), then the right-hand side of the above equation has two
+  identical rows, hence zero. If \( k=n \), the right-hand side is
+  \( \Delta_n/\Delta_{n-1} \ne 0 \). This implies that
+  \( \{ P_n(x) \}_{n\ge 0} \) is an OPS for \( \LL \).
+\end{proof}
 
 In many important cases of orthogonal polynomials there is a
 nonnegative weight function \( w(x) \) representing the moment
@@ -518,7 +606,7 @@ if \( \LL(\pi(x))>0 \) for all nonzero polynomials \( \pi(x) \) such
 that \( \pi(x)\ge0 \) for all \( x\in\RR \).
 
 \begin{defn}
-  A moment functional \( \LL \) is \emph{positive-definite} if
+  A linear functional \( \LL \) is \emph{positive-definite} if
   \( \LL(\pi(x))>0 \) for all nonzero polynomials \( \pi(x) \) such
   that \( \pi(x)\ge0 \) for all \( x\in\RR \).
 \end{defn}
@@ -527,7 +615,7 @@ If \( \LL \) is positive-definite, then it has a real OPS. We will see
 later that the converse is not true.
 
 \begin{thm}\label{thm:pos-def-ops}
-  Let \( \LL \) be a positive-definite moment functional. Then
+  Let \( \LL \) be a positive-definite linear functional. Then
   \( \LL \) has real moments and there is a real OPS for \( \LL \).
 \end{thm}
 
@@ -540,9 +628,9 @@ later that the converse is not true.
 
   Now, we construct a real OPS \( \{ P_n(x) \}_{n\ge 0} \) for
   \( \LL \). Let \( P_0(x) = 1 \). Suppose that we have constructed
-  \( P_0,\dots,P_n \) which are orthogonal with respect to \( \LL \),
-  i.e., \( \LL(P_i(x)P_j(x)) = 0 \) for \( 0\le i,j\le n \) with
-  \( i\ne j \). Now we need to find
+  real polynomials \( P_0,\dots,P_n \) which are orthogonal with
+  respect to \( \LL \), i.e., \( \LL(P_i(x)P_j(x)) = 0 \) for
+  \( 0\le i,j\le n \) with \( i\ne j \). Now we need to find
   \begin{equation}\label{eq:3}
     P_{n+1} (x) = x^{n+1} + \sum_{k=0}^n a_k P_k(x)
   \end{equation}
@@ -574,8 +662,8 @@ The following theorem justifies the terminology ``positive-definite''
 for \( \LL \).
 
 
-\begin{thm}
-  A moment functional \( \LL \) is positive-definite if and only if
+\begin{thm}\label{thm:pos-def-equiv2}
+  A linear functional \( \LL \) is positive-definite if and only if
   every moment \( \mu_n \) is real and \( \Delta_n>0 \) for all
   \( n\ge0 \). In other words, \( \LL \) is positive-definite if and
   only if the Hankel matrix \( (\mu_{i+j})_{i,j\ge0} \) is
@@ -584,7 +672,7 @@ for \( \LL \).
 \begin{proof}
   (\(\Rightarrow\)) By \Cref{thm:pos-def-ops}, the moments are real
   and there is a real OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \).
-  By \eqref{eq:P2=D/D}, \( \Delta_n/\Delta_{n-1} = \LL(P_n(x)^2)>0 \)
+  By \Cref{lem:L(pi*P)}, \( \Delta_n/\Delta_{n-1} = \LL(P_n(x)^2)>0 \)
   for \( n\ge0 \), where \( \Delta_{-1}=1 \).
   Thus by induction we obtain \( \Delta_n>0 \) for all \( n\ge0 \).
 
@@ -598,10 +686,10 @@ for \( \LL \).
   \( \LL(p(x)^2) = 0 \) for a polynomial \( p(x) \). To do this let
   \( p(x) = \sum_{k=0}^n a_k P_k(x) \). Then by the orthogonality
   \[
-    \LL(p(x)^2) = \sum_{k=0}^n a_k^2 \LL(P_k(x)^2)
+    \LL(p(x)^2) = \sum_{k=0}^n a_k^2 \LL(P_k(x)^2).
   \]
   Since \( \Delta_n>0 \), we have \( \LL(P_k(x)^2)>0 \) by
-  \eqref{eq:P2=D/D}. Thus \( \LL(p(x)^2)>0 \) as desired.
+  \Cref{lem:L(pi*P)}. Thus \( \LL(p(x)^2)>0 \) as desired.
 \end{proof}
 
 \begin{lem}\label{lem:pi=p2+q2}
@@ -636,50 +724,792 @@ for \( \LL \).
 \end{defn}
 
 
-% \subsection{The fundamental recurrence formula}
+\subsection{The fundamental recurrence formula}
+
+One important property of orthogonal polynomials is that they satisfy
+a 3-term recurrence relation.
+
+\begin{thm}\label{thm:3-RR}
+  Let \( \LL \) be a quasi-definite linear functional
+  with monic OPS \( \{ P_n(x) \}_{n\ge 0} \).
+  Then these monic orthogonal polynomials satisfy
+  the following 3-term recurrence relation:
+  \begin{equation}\label{eq:3-rr}
+    P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x), \qquad n\ge0,
+  \end{equation}
+  with initial conditions \( P_{-1}(x) = 0 \) and \( P_0(x) = 1 \) for
+  some sequences \( \{b_n\}_{n\ge0} \) and \( \{\lambda_n\}_{n\ge1} \)
+  such that \( \lambda_n\ne 0 \).
+\end{thm}
+\begin{proof}
+  Since \( P_n(x) \) are monic polynomials, \( P_{n+1}(x) - xP_n(x) \)
+  has degree at most \( n \). Thus we can write
+  \[
+    P_{n+1}(x) - xP_n(x) = \sum_{k=0}^n a_k P_k(x).
+  \]
+  By \Cref{thm:orth-equiv}, multiplying both sides by \( x^j \) for \( 0\le j\le n-2 \)
+  and taking \( \LL \) gives
+  \[
+ 0 = \LL(x^j P_{n+1}(x) - x^{j+1}P_n(x))
+    = \sum_{k=0}^n a_k \LL(x^j P_k(x))  = a_j \LL(P_j(x)^2).
+  \]
+  Since \( \LL(P_j(x)^2) \ne 0 \), we obtain \( a_j=0 \) for all
+  \( 0\le j\le n-2 \). Then we alway have
+  \( P_{n+1}(x) - xP_n(x) = a_nP_n(x) + a_{n-1}P_{n-1}(x) \) for some
+  constants \( a_n \) and \( a_{n-1} \). This implies that the
+  polynomials \( P_n(x) \) satisfy the 3-term recurrence relation
+  \eqref{eq:3-rr}.
+
+  The condition \( \lambda_n\ne 0 \) follows from \eqref{eq:la=DD/D} below.
+\end{proof}
+
+\begin{thm}
+  Following the notation in \Cref{thm:3-RR}, we have
+  \begin{align}
+    \label{eq:la=DD/D}
+    \lambda_n &= \frac{\LL(P_n(x)^2)}{\LL(P_{n-1}(x)^2)} = \frac{\Delta_{n-2}\Delta_n}{\Delta_{n-1}^2}, \\
+    \label{eq:b=xP/P}
+    b_n &= \frac{\LL(xP_{n}(x)^2)}{\LL(P_{n}(x)^2)},\\
+    \label{eq:P2=lala}
+    \LL(P_n(x)^2) &= \lambda_1\cdots\lambda_{n} \LL(1) = \frac{\Delta_n}{\Delta_{n-1}}, \\
+    \label{eq:D=lala}
+    \Delta_n &= \lambda_1^{n}\lambda_2^{n-1}\cdots\lambda_{n}^1 \LL(1)^{n+1}.
+  \end{align}
+\end{thm}
+
+\begin{proof}
+  Multiplying \( x^{n-1} \) both sides of \eqref{eq:3-rr} and taking \( \LL \) gives
+  \begin{equation}\label{eq:5}
+    0 = \LL(x^{n-1} P_{n+1}(x)) = \LL(x^nP_n(x)) - b_n \LL(x^{n-1}
+    P_n(x)) - \lambda_n \LL(x^{n-1}P_{n-1}(x)).
+  \end{equation}
+  By \Cref{lem:L(pi*P)}, we have
+  \( \LL(x^n P_n(x)) = \LL(P_n(x) P_n(x)) = \Delta_n/\Delta_{n-1} \).
+  Thus \eqref{eq:5} becomes
+  \[
+    \frac{\Delta_n}{\Delta_{n-1}} = \LL(P_n(x)^2) = \lambda_n \LL(P_{n-1}(x)^2)
+     = \lambda_n  \frac{\Delta_{n-1}}{\Delta_{n-2}},
+  \]
+  which implies \eqref{eq:la=DD/D}. 
+
+  Multiplying \( P_n(x) \) both sides of \eqref{eq:3-rr} and taking
+  \( \LL \) gives
+  \[
+   0= \LL(P_n(x)P_{n+1}(x)) = \LL(xP_n(x)^2)- b_n\LL(P_n(x)) - \lambda_n \LL(P_nP_{n-1}(x)),
+  \]
+  which implies \eqref{eq:b=xP/P}.
+
+  The identity \eqref{eq:P2=lala} is an immediate consequence of
+  \eqref{eq:la=DD/D}. The identity \eqref{eq:D=lala} follows from
+  \eqref{eq:P2=lala}.
+\end{proof}
+
+\begin{cor}\label{cor:la-pos-def}
+  Following the notation in \Cref{thm:3-RR}, the linear functional
+  \( \LL \) is positive-definite if and only if \( b_n\in \RR \) and
+  \( \lambda_n>0 \) for all \( n \) and \( \LL(1)>0 \).
+\end{cor}
+\begin{proof}
+  Suppose that \( \LL \) is positive-definite. Then by
+  \Cref{thm:pos-def-ops} the polynomials \( P_n(x) \) are real, hence
+  the recurrence coefficients \( b_n \) and \( \lambda_n \) are real.
+  By \Cref{thm:pos-def-equiv2}, we have \( \Delta_n>0 \), which
+  together with \eqref{eq:la=DD/D} implies \( \lambda_n>0 \).
+
+  Now suppose that \( b_n\in \RR \) and \( \lambda_n>0 \) for all
+  \( n \). By \eqref{eq:la=DD/D} and \eqref{eq:b=xP/P}, one can easily
+  check by induction that all the moments are real. By \eqref{eq:D=lala},
+  we have \( \Delta_n>0 \). Thus by \Cref{thm:pos-def-equiv2},
+  \( \LL \) is positive-definite.
+\end{proof}
+
+Oftentimes non-monic orthogonal polynomials are used in the
+literature. We can always make them monic by dividing each polynomial
+by its leading coefficient. This allows us to convert a 3-term
+recurrence of monic orthogonal polynomials to that of non-monic
+orthogonal polynomials and vice versa.
+
+Suppose that \( \{ P_n(x) \}_{n\ge 0} \) is an OPS for \( \LL \),
+which is not monic. If \( k_n \) is the leading coefficient of
+\( P_n(x) \), then the monic OPS for \( \LL \) is given by
+\( \{ \hat{p}_n(x) \}_{n\ge 0} \), where
+\( \hat{p}_n(x) = P_n(x)/k_n \).
+Then, by \Cref{thm:3-RR}, we have
+\begin{equation}\label{eq:3-rr-monic}
+  \hat{p}_{n+1}(x) = (x-b_n) \hat{p}_n(x) - \lambda_n
+  \hat{p}_{n-1}(x), \quad n\ge0; \quad \hat{p}_{-1}(x) = 0, \hat{p}_{0}(x) = 1.
+\end{equation}
+Substituting \( \hat{p}_n(x) = P_n(x)/k_n \) in the above formula, we get
+\begin{equation}\label{eq:3-rr-nonmonic}
+  P_{n+1}(x) = (A_nx-B_n) P_n(x) - C_n P_{n-1}(x), \quad n\ge0; \quad P_{-1}(x) = 0, P_{0}(x) = k_0,
+\end{equation}
+where \( A_n = k_{n+1}/k_n \), \( B_n = b_nk_{n+1}/k_n \), and
+\( C_n = \lambda_nk_{n+1}/k_{n-1} \).
+
+Conversely, from the recurrence \eqref{eq:3-rr-nonmonic}, the leading
+coefficient of \( P_n(x) \) is
+\( k_n = A_{n-1}A_{n-2} \cdots A_0 k_0 \). Hence
+\[
+  \hat{p}_n(x) = (A_{n-1}A_{n-2} \cdots A_0 k_0)^{-1} P_n(x),
+\]
+and we can obtain the recurrence \eqref{eq:3-rr-monic} by dividing
+\eqref{eq:3-rr-nonmonic} by \( A_{n}A_{n-1} \cdots A_0 k_0 \).
+
+\begin{exam}
+  Since
+  \[
+    \cos(n+1)\theta + \cos(n-1)\theta
+    = 2 \cos\theta \cos n\theta, \qquad n\ge1,
+  \]
+  we have
+  \[
+    T_{n+1}(x) = 2 x T_n(x) - T_{n-1}(x) , \qquad n\ge1.
+  \]
+  Since \( T_{0}(x)=1 \) and \( T_{1}(x)=x \), we have
+  \begin{equation}\label{eq:6}
+    T_{n+1}(x) = A_n x T_n(x) - T_{n-1}(x), \qquad n\ge0,
+  \end{equation}
+  where \( T_{-1}(x) = 0 \), \( A_0=1 \) and \( A_n=2 \) for
+  \( n\ge1 \). Thus the monic Tchebyshev polynomials are given by
+  \( \hat{T}_n(x) = 2^{1-n} T_n(x) \).
+  Dividing \eqref{eq:6} by \( 2^n \) gives
+  \begin{equation}\label{eq:7}
+    \hat{T}_{n+1}(x) = x \hat{T}_n(x) - \lambda_n\hat{T}_{n-1}(x), \qquad n\ge0,
+  \end{equation}
+  where \( \lambda_1 = 1/2 \) and \( \lambda_n = 1/4 \) for \( n\ge2 \).
+\end{exam}
+
+Note that in the recurrence \eqref{eq:7} for the (monic) Tchebyshev
+polynomials, \( b_n = 0 \). This, in fact, implies that
+\( T_{2n}(x) \) is an even function and \( T_{2n+1}(x) \) is an odd
+function. It also turns out that the odd moments are all zero.
+
+\begin{defn}
+  A linear functional \( \LL \) is \emph{symmetric} if all of its odd
+  moments are zero.
+\end{defn}
+
+\begin{thm}
+  Let \( \LL \) be a quasi-definite linear functional with monic OPS
+  \( \{ P_n(x) \}_{n\ge 0} \). The following are equivalent:
+  \begin{enumerate}
+  \item \( \LL \) is symmetric.
+  \item \( P_n(-x) = (-1)^n P_n(x) \) for \( n\ge0 \).
+  \item In the 3-term recurrence \eqref{eq:3-rr}, \( b_n=0 \) for \( n\ge0 \).
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  \( (1) \Rightarrow (2) \): Since \( \LL \) is symmetric,
+  \( \LL(\pi(-x)) = \LL(\pi(x)) \) for all polynomials \( \pi(x) \).
+  Thus
+  \( \LL(P_m(-x)P_n(-x)) = \LL(P_m(x)P_n(x)) = K_n \delta_{m,n} \).
+By the uniqueness of orthogonal polynomials, \Cref{thm:uniqueness-OPS},
+we have \( P_n(-x) = c_n P_n(x) \) for some \( c_n\ne 0 \).
+Comparing their leading coefficients, we obtain \( c_n = (-1)^n \).
+
+\( (2) \Rightarrow (1) \): Since \( P_{2n+1}(-x) = -P_{2n+1}(x) \),
+\( P_{2n+1}(x) \) is an odd polynomial. Thus \( \LL(P_{2n+1}(x))=0 \)
+is a sum of odd moments. This shows by induction that all odd moments
+are zero.
+
+\( (2) \Leftrightarrow (3) \): Let \( Q_n(x) = (-1)^n P_n(-x) \). Then
+the condition in (2) is the same as \( P_n(x) = Q_n(x) \). By
+\Cref{thm:3-RR}, we have
+\begin{align*}
+    P_{n+1}(x) &= (x-b_n) P_n(x) - \lambda_n P_{n-1}(x),\\
+    Q_{n+1}(x) &= (x+b_n) Q_n(x) - \lambda_n Q_{n-1}(x),
+\end{align*}
+where the second recurrence is obtained from the first by replacing
+\( x \) by \( -x \) and multiplying both sides by \( (-1)^{n+1} \).
+Clearly, the condition \( P_n(x) = Q_n(x) \)
+is equivalent to \( b_n = 0 \), \( n\ge0 \).
+\end{proof}
 
 
-% \subsection{Zeros}
+Recall \Cref{thm:3-RR}, which states that orthogonal polynomials
+satisfy a 3-term recurrence. The converse of this theorem is also
+true.
+
+\begin{thm}[Favard's theorem]
+  Suppose \( \{b_n\}_{n\ge0} \) and \( \{\lambda_n\}_{n\ge1} \) be
+  sequences of complex numbers such that \( \lambda_n\ne0 \) for all
+  \( n\ge1 \). Let \( \{ P_n(x) \}_{n\ge 0} \) be the polynomials
+  defined by \( P_{-1}(x) = 0 \), \( P_{0}(x) = 1 \), and
+  \begin{equation}\label{eq:9}
+    P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x), \qquad n\ge 0.
+  \end{equation}
+  Then there is a (unique) linear functional \( \LL \) with
+  \( \LL(1) = 1 \) for which \( \{ P_n(x) \}_{n\ge 0} \) is an OPS
+  if and only if \( \lambda_n\ne 0 \) for all \( n\ge1 \).
+
+  Moreover, \( \LL \) is positive-definite if and only if
+  \( \lambda_n>0 \) for all \( n\ge1 \).
+\end{thm}
+
+\begin{proof}
+  The ``only if'' part is done in \Cref{thm:3-RR}. To prove the ``if''
+  part, we assume \( \lambda_n\ne 0 \) for all \( n\ge1 \). Note that
+  if \( \{ P_n(x) \}_{n\ge 0} \) is an OPS for \( \LL \), then we must
+  have \( \LL(P_n(x)) = 0 \) for \( n\ge1 \). This together with
+  \( \LL(1) = 1 \) completely determines the moments of \( \LL \).
+  Thus we define \( \LL \) to be the unique linear functional such
+  that \( \LL(1) = 1 \) and \( \LL(P_n(x)) = 0 \) for \( n\ge1 \). We
+  need to show that \( \{ P_n(x) \}_{n\ge 0} \) is indeed an OPS for
+  \( \LL \). By \Cref{thm:orth-equiv}, it suffices to show that, for
+  \( n\ge1 \),
+  \begin{equation}\label{eq:8}
+    \LL(x^k P_n(x)) = K_n \delta_{k,n}, \qquad 0\le k\le n,
+  \end{equation}
+  where \( K_n\ne 0 \).
+
+  We will prove \eqref{eq:8} by induction on \( k\ge0 \). 
+  More precisely, we claim that for every \( k\ge0 \),
+  \begin{equation}\label{eq:8-2}
+    \LL(x^k P_n(x)) = \lambda_1 \cdots \lambda_n \delta_{k,n}, \qquad n\ge \max(k,1).
+  \end{equation}
+  By the constriction of \( \LL \), \eqref{eq:8-2} is true when
+  \( k=0 \). Let \( k\ge1 \) and suppose that \eqref{eq:8-2} holds for
+  \( k-1 \). To prove \eqref{eq:8-2} for \( k \), consider an integer
+  \( n\ge k \). Multiplying \( x^{k-1} \) to \eqref{eq:9}, we get
+  \[
+    x^k P_n(x) = x^{k-1} P_{n+1}(x) + b_n x^{k-1}P_n(x)  + \lambda_n x^{k-1} P_{n-1}(x).
+  \]
+  By the induction hypothesis, taking \( \LL \) in the above formula
+  gives
+  \[
+    \LL(x^k P_n(x)) =
+    \begin{cases}
+     0 & \mbox{if \( 1\le k\le n-1 \)},\\
+     \lambda_n \LL(x^{n-1} P_{n-1}(x)) & \mbox{if \( k=n \).}
+    \end{cases}
+  \]
+  Thus \eqref{eq:8-2} also holds for \( k \), and the claim is
+  established.
+
+  The ``moreover'' statement follows from \Cref{cor:la-pos-def}.
+\end{proof}
 
 
-% \subsection{Gauss quadrature (maybe skip)}
+
+\begin{thm}[The Christoffel--Darboux identities]
+  Let \( \{ P_n(x) \}_{n\ge 0} \) be given by the 3-term recurrence
+  \eqref{eq:3-rr}. For \( n\ge0 \), we have
+\begin{align}
+  \label{eq:CD1}
+  \sum_{k=0}^{n} \frac{P_k(x)P_k(y)}{\lambda_1\cdots\lambda_k}
+  &= \frac{P_{n+1}(x)P_{n}(y) - P_{n+1}(y)P_{n}(x)}{\lambda_1\cdots\lambda_{n}(x-y)}, \\
+  \label{eq:CD2}
+  \sum_{k=0}^{n} \frac{P_k(x)^2}{\lambda_1\cdots\lambda_k}
+  &= \frac{P'_{n+1}(x)P_{n}(x) - P_{n+1}(x)P'_{n}(x)}{\lambda_1\cdots\lambda_{n}}.
+\end{align}
+\end{thm}
+\begin{proof}
+  Multiply \( P_n(y) \) to \eqref{eq:3-rr} to get
+  \begin{equation}\label{eq:10}
+    P_{n+1}(x) P_n(y) = (x-b_n) P_n(x) P_n(y) - \lambda_n P_{n-1}(x) P_n(y).
+  \end{equation}
+  Interchanging \( x \) and \( y \) in \eqref{eq:10} gives
+  \begin{equation}\label{eq:11}
+    P_{n+1}(y) P_n(x) = (y-b_n) P_n(x) P_n(y) - \lambda_n P_{n-1}(y) P_n(x).
+  \end{equation}
+  Subtracting \eqref{eq:11} from \eqref{eq:10}, we have
+  \[
+    P_{n+1}(x) P_n(y) - P_{n+1}(y) P_n(x) = (x-y) P_n(x) P_n(y)
+    - \lambda_n (P_{n-1}(x) P_n(y) - P_{n-1}(y) P_n(x)).
+  \]
+  Let \( f_k = P_{k+1}(x)P_{k}(y) - P_{k+1}(y)P_{k}(x) \). Then we can
+  rewrite the above equation (with \( n \) replaced by \( k \)) as
+  \[
+    (x-y) P_k(x)P_k(y) = f_{k} - \lambda_k f_{k-1}.
+  \]
+  Dividing both sides by \( \lambda_1\cdots\lambda_k(x-y) \) gives
+  \[
+    \frac{P_k(x)P_k(y)}{\lambda_1\cdots\lambda_k} =
+    \frac{f_{k}}{\lambda_1\cdots\lambda_k} -
+    \frac{f_{k-1}}{\lambda_1\cdots\lambda_{k-1}}.
+  \]
+  Summing the equation for \( k=0,\dots,n \), we obtain \eqref{eq:CD1}.
+
+  Rewriting  \eqref{eq:CD1} as
+  \[
+  \sum_{k=0}^{n} \frac{P_k(x)P_k(y)}{\lambda_1\cdots\lambda_k}
+    = \frac{(P_{n+1}(x)-P_{n+1}(y))P_{n}(y) -
+      P_{n+1}(y)(P_{n}(x)-P_{n}(y))}{\lambda_1\cdots\lambda_{n}(x-y)}
+  \]
+  and taking the limit \( y\to x \) gives \eqref{eq:CD2}.
+\end{proof}
+
+The Christoffel--Darboux identities have an interesting application on
+the zeros of orthogonal polynomials. We first show that orthogonal
+polynomials have distinct real zeros if \( \LL \) is
+positive-definite.
+
+\begin{lem}\label{lem:real-roots}
+  Let \( \LL \) be a positive-definite linear functional with monic
+  OPS \( \{ P_n(x) \}_{n\ge 0} \). Then \( P_n(x) \) has \( n \)
+  distinct real roots for all \( n\ge1 \).
+\end{lem}
+
+\begin{proof}
+  Since \( \LL(P_n(x)) = 0 \), \( P_n(x) \) must have a root of odd
+  multiplicity. (Because otherwise \( P_n(x)\ge0 \) for all
+  \( x\in\RR \), which in turn implies \( \LL(P_n(x))>0 \) by the
+  assumption that \( \LL \) is positive-definite.) Let
+  \( x_1,\dots,x_k \) be the distinct roots of \( P_n(x) \) with odd
+  multiplicities. Then \( (x-x_1) \cdots (x-x_k)P_n(x)\ge0 \) for all
+  \( x\in \RR \). Therefore
+  \( \LL((x-x_1) \cdots (x-x_k)P_n(x)) > 0 \). But by
+  \Cref{thm:orth-equiv} this implies \( k\ge n \). Clearly,
+  \( k\le n \) and we obtain \( k=n \). This means that \( P_n(x) \)
+  has \( n \) distinct roots.
+\end{proof}
 
 
-% \subsection{Kernel polynomials (skip)}
+
+\begin{thm}\label{thm:zero-interlace}
+  Let \( \LL \) be a positive-definite linear functional with monic
+  OPS \( \{ P_n(x) \}_{n\ge 0} \). Then \( P_n(x) \) has \( n \)
+  distinct real roots for all \( n\ge1 \) and the zeros of
+  \( P_n(x) \) and \( P_{n+1}(x) \) interlace. More precisely, if
+  \( x_{n,1}>x_{n,2} > \cdots > x_{n,n} \) are the zeros of
+  \( P_n(x) \), then
+  \begin{equation}\label{eq:interlacing}
+    x_{n+1,1} > x_{n,1} > x_{n+1,2} >x_{n,2} > \cdots >
+    x_{n+1,n}> x_{n,n} >x_{n+1,n+1}.
+  \end{equation}
+\end{thm}
+\begin{proof}
+  The first part is proved in \Cref{lem:real-roots}. For the second
+  part, we substitute \( x=x_{n,j} \) in \eqref{eq:CD2} to get
+\[
+0< \sum_{k=0}^{n} \frac{P_k(x_{n,j})^2}{\lambda_1\cdots\lambda_k} =
+  \frac{P'_{n+1}(x_{n,j})P_{n}(x_{n,j}) -
+    P_{n+1}(x_{n,j})P'_{n}(x_{n,j})}{\lambda_1\cdots\lambda_{n}} =
+  \frac{ -
+    P_{n+1}(x_{n,j})P'_{n}(x_{n,j})}{\lambda_1\cdots\lambda_{n}}.
+\]
+This implies that the sign of \( P_{n+1}(x_{n,j}) \) is the opposite
+of the sign of \( P'_{n}(x_{n,j}) \). Considering the graph of
+\( y=P_n(x) \), the sign of \( P'_n(x_{n,j}) \) is \( (-1)^{j-1} \),
+see \Cref{fig:image2}. Thus the sign of \( P_{n+1}(x_{n,j}) \), for
+\( j=1,2,\ldots,n \), is \( (-1)^j \) as indicated by the blue dots in
+\Cref{fig:image2}.
+\begin{figure}
+  \centering
+  \includegraphics[scale=.1]{./figures/image2.jpeg}
+  \caption{The interchanging zeros of \( P_n(x) \) and \( P_{n+1}(x) \).}
+  \label{fig:image2}
+\end{figure}
+This means that \( P_{n+1}(x) \) has a root between each interval
+\( (x_{n,j+1},x_{n,j}) \) for \( j=1,\dots,n-1 \). Considering the
+limits \( \lim_{x\to \infty} P_{n+1}(x) = \infty\) and
+\( \lim_{x\to -\infty} P_{n+1}(x) = (-1)^{n+1} \infty\), we can see
+that \( P_{n+1}(x) \) also has one root in \( (x_{n,1},\infty) \) and
+one root in \( (-\infty,x_{n,n}) \). Thus we obtain
+\eqref{eq:interlacing}.
+\end{proof}
 
 
-% \subsection{Symmetric moment functionals (skip)}
+
+\section{Moments and linear recurrence}
+
+From now one we will focus on the combinatorial approaches to
+orthogonal polynomials in Viennot's lecture notes \cite{ViennotLN}.
+Part of this section will have some overlaps with the previous
+sections.
+
+\subsection{Orthogonality}
+
+In this subsection we give basic definitions and prove simple but
+usuful lemmas. We then state Favard's theorem.
 
 
-% \subsection{Certain related recurrence relations (skip)}
+Let \( K \) be a field. We denote by \( K[x] \) the ring of
+polynomials in \( x \) with coefficients in \( K \). A \emph{linear
+  functional} is a linear transformation \( \LL:K[x]\to K \), i.e., a
+function satisfying \( \LL(af(x)+bg(x)) = a \LL(f(x))+b \LL(g(x)) \)
+for all \( f(x),g(x)\in K[x] \) and \( a,b\in K \). The \( n \)th
+\emph{moment} of \( \LL \) is defined to be \( \mu_n = \LL(x^n) \).
+
+\begin{defn}\label{def:formal-ops}
+  Let \( \LL \) be a linear functional defined on the space of
+  polynomials in \( x \). A sequence of polynomials
+  \( \{P_n(x)\}_{n\ge0} \) is called an \emph{orthogonal polynomial
+    sequence (OPS)} with respect to \( \LL \) if the following
+  conditions hold:
+  \begin{enumerate}
+  \item \( \deg P_n(x) = n \), \( n\ge0 \),
+  \item \( \LL(P_m(x)P_n(x))  = 0 \) for \( m\ne n \),
+  \item \( \LL(P_m(x)^2) \ne 0 \) for \( m\ge0 \).
+  \end{enumerate}
+  We also say that \( \{ P_n(x) \}_{n\ge 0} \) is orthogonal
+  for the moments \( \{\mu_n\}_{n\ge0} \).
+\end{defn}
+
+\emph{From now on whenever we consider \( \{ P_n(x) \}_{n\ge 0} \) it is
+assumed that \( \deg P_n(x) = n \).}
+
+Orthogonal polynomials in the above definition are called ``formal''
+or ``general'' orthogonal polynomials because the field \( K \) can be
+anything. For instance, it may contain arbitrary formal variables such
+as \( a,b,c,d \). Then the polynomials \( P_n(x) \) and the moments
+\( \mu_n \) can be treated as polynomials (or more complicated objects
+such as formal power series or rational functions) in these formal
+variables.
+
+\begin{prop}
+  Suppose that \( \{ P_n(x) \}_{n\ge 0} \) is an OPS for \( \LL \).
+\begin{enumerate}
+\item \( \{ P_n(x) \}_{n\ge 0} \) is also orthogonal with respect to
+  \( \LL' \) for any \( \LL' = a\LL \) for \( a\ne 0 \).
+\item \( \LL \) is uniquely determined up to
+  nonzero scalar multiplication. 
+\item If we set \( \LL(1) = 1 \), then \( \LL \) is uniquely
+  determined.
+\item \( \{ a_nP_n(x) \}_{n\ge 0} \) is an OPS with respect to
+  \( \LL \) for any sequence \( \{ a_n\}_{n\ge 0} \) with
+  \( a_n\ne 0 \).
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+  All statements are easy to check. For example, (2) can be seen by
+  noticing that once the \( 0 \)th moment \( \mu_0=\LL(1) \) is
+  determined, then the \( n \)th moment \( \mu_n \), for \( n\ge1 \),
+  is uniquely determined by the condition \( \LL(P_n(x)) = 0 \).
+\end{proof}
+
+
+\begin{lem}
+  Let \( \{ P_n(x) \}_{n\ge 0} \) be a sequence of polynomials
+  and let \( \LL:K[x] \to K \) be a linear functional.
+  Then the following are equivalent:
+  \begin{enumerate}
+  \item \( \{ P_n(x) \}_{n\ge 0} \) is orthogonal with respect to \( \LL \).
+  \item For any polynomial \( Q(x) \) of degree \( m\le n \),
+    we have \( \LL(Q(x) P_n(x)) = c_n \delta_{m,n} \), where \( c_n\ne 0 \).
+  \item For any integer \( 0\le m\le n \), we have
+    \( \LL(x^m P_n(x)) = c_n \delta_{m,n} \), where \( c_n\ne 0 \).
+  \end{enumerate}
+\end{lem}
+
+\begin{lem}
+  Let \( \{ P_n(x) \}_{n\ge 0} \) be an OPS for \( \LL \).
+  If
+  \[
+    Q(x) = \sum_{k=0}^{n} a_k P_k(x),
+  \]
+  then
+  \[
+    a_k = \frac{\LL(Q(x)P_k(x))}{\LL(P_k(x)^2)}.
+  \]
+\end{lem}
+
+
+\begin{cor}
+  Let \( \{ P_n(x) \}_{n\ge 0} \) be an OPS for \( \LL \).
+  Then every OPS \( \{ Q_n(x) \}_{n\ge 0} \)
+  for \( \LL \) is of the form \( Q_n(x) = a_n P_n(x) \),
+  for some \( a_n\ne 0 \).
+\end{cor}
+
+
+\begin{remark}
+  Usually, if \( \{ P_n(x) \}_{n\ge 0} \) is an OPS with real coefficients
+  with respect to \( \LL:\RR[x] \to \RR \), then
+  \( \LL \) is given my a Stieltjes integral:
+  \[
+    \LL(p(x)) = \int_a^b p(x) d\psi(x).
+  \]
+  Finding the measure \( \psi \) is called a \emph{moment problem}.
+  Usually we find a bounded decreasing measure \( \psi \) so that the
+  integral above is defined when the bounds \( a \) and \( b \) are
+  finite. In this work we will assume that \( \LL \) is defined by the
+  moments \( \mu_n \) and we will leave aside the (open) question of
+  the combinatorial interpretation of the measure \( \psi \).
+\end{remark}
+
+The following is one of the most important theorems
+in the theory classical orthogonal polynomials.
+
+\begin{thm}[Favard's theorem]
+  Let \( \{ P_n(x) \}_{n\ge 0} \) be a sequence of monic polynomials.
+  Then \( \{ P_n(x) \}_{n\ge 0} \) is an OPS for some linear
+  functional \( \LL \) if and only if
+  there are sequences \( \{ b_n\}_{n\ge 0} \) and \( \{ \lambda_n\}_{n\ge 1} \)
+  such that \( \lambda_n\ne 0 \) and
+  \begin{equation}\label{eq:3-RR}
+    P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x), \qquad n\ge0,
+  \end{equation}
+  where \( P_{-1}(x) = 0 \) and \( P_0(x) = 1 \).
+\end{thm}
+
+The main goal of this section is the prove this theorem.
+
+\subsection{Favard paths and Favard tilings}
+
+In this subsection we define Favard paths and Favard tilings. These
+are equivalent combinatorial objects, which give a combinatorial
+meaning to orthogonal polynomials.
+
+
+\begin{defn}
+  A \emph{path} is a sequence \( \alpha=(s_0,s_1,\dots,s_n) \) of
+  points \( s_i=(x_i,y_i) \in \ZZ^2 \). Each point \( s_i \) is
+  called a \emph{vertex} of \( \alpha \). We say that \( \alpha \)
+  travels from the \emph{initial point} (or \emph{starting point})
+  \( s_0 \) to the \emph{final point} (or \emph{ending point})
+  \( s_n \). The pairs \( (s_i,s_{i+1}) \) are called the
+  \emph{elementary steps} of \( \alpha \). The \emph{length} of
+  \( \alpha \), denoted \( |\alpha| \), is defined to be \( n \).
+\end{defn}
+
+Let \( \alpha=(s_0,s_1,\dots,s_n) \) and
+\( \beta=(t_0,t_1,\dots,t_{m}) \) be two paths. If \( s_n = t_0 \),
+then we define \( \alpha\beta \) to be the path
+\( (s_0,s_1,\dots,s_n,t_1,\dots,t_{m}) \). 
+
+Note that an elementary step \( (s_{i},s_{i+1}) \) is also a path. In
+this point of view, we can consider \( \alpha \) as the product of its
+elementary steps:
+\( \alpha=(s_0,s_1) (s_1,s_2) \cdots (s_{n-1},s_n) \). A
+\emph{factorization} of \( \alpha \) is an expression
+\( \alpha=\alpha_1 \cdots \alpha_k \), where
+\( \alpha_1,\dots,\alpha_k \) are paths such that the initial point of
+\( \alpha_i \) is equal to the final point of \( \alpha_{i+1} \) for
+\( i=1,2,\dots,n-1 \). Each \( \alpha_i \) is called a \emph{factor}
+of \( \alpha \). In particular, we say that \( \alpha_1 \) is a
+\emph{prefix} of \( \alpha \) and \( \alpha_n \) is a \emph{suffix} of
+\( \alpha \). We also consider an empty path \( (s,s) \).
+
+A \emph{north step} is a step of the form \( ((x,y), (x,y+1)) \). We
+define a \emph{south step}, an \emph{east step}, and a \emph{west
+  step} similarly. In addition, a \emph{northeast step} is a step of
+the form \( ((x,y), (x+1,y+1)) \) and a \emph{north-north step} is a
+step of the form \( ((x,y), (x,y+2)) \).
+
+The \emph{level} of a vertex \( s=(x,y) \) is defined to be \( y \).
+
+
+A \emph{(step) weight} is a function \( w:\ZZ^2\times\ZZ^2\to K \).
+For a path \( \alpha=(s_0,s_1,\dots,s_n) \), define
+\[
+  w(\alpha) = w(s_0,s_1) w(s_1,s_2) \cdots w(s_{n-1},s_n).
+\]
+
+
+\begin{defn}
+  A \emph{Favard path} is a path \( \alpha=(s_0,s_1,\dots,s_n) \) from
+  \( s_0=(0,0) \) with 3 types of elementary steps: a north step (N),
+  a north-north step (NN), and a northeast step (NE). Given two
+  sequences \( b= \{ b_n\}_{n\ge 0} \) and
+  \( \lambda=\{ \lambda_n\}_{n\ge 1} \),
+  the \emph{Favard-weight} \( w_F \) is defined as follows:
+  \begin{align*}
+    w_F((i,k),(i,k+1)) &= -b_k,\\
+    w_F((i,k-1),(i,k+1)) &= -\lambda_k,\\
+    w_F((i,k),(i+1,k+1)) &= x.
+  \end{align*}
+  For a step \( s \) other than a north step, a north-north step, and
+  a northeast step, we define \( w_F(s) = 0 \).
+\end{defn}
+
+Let \( F_n \) denote the set of Favard paths from \( (0,0) \) to a
+vertex of level \( n \).
+
+ See Figure~\ref{fig:image3}.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=.1]{./figures/image3.jpeg}
+  \caption{The Favard-weight and a Favard path.}
+  \label{fig:image3}
+\end{figure}
+
+\begin{lem}
+  Suppose that \( \{ P_n(x) \}_{n\ge 0} \)
+  is a sequence of polynomials satisfying \eqref{eq:3-RR}.
+  Then
+  \[
+    P_n(x) = \sum_{\alpha\in F_n} w_F(\alpha).
+  \]
+\end{lem}
+
+We can identify a Favard path with a Favard tiling.
+
+\begin{defn}
+  A \emph{Favard tiling of size $n$} is a tiling of a $1\times n$
+  square board with tiles where each tile is a domino or a monomino
+  and each monomino is colored black or red. We label the squares in
+  the $1\times n$ board by $1,2,\dots,n$ from left to right. The set
+  of Favard tilings of size $n$ is denoted by $\FT_n$. We define
+  \( \FT_0 \) to be the set consisting of the empty tiling.
+\end{defn}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.75]
+  \draw [help lines] (0,0) grid (5,1);
+  \foreach \x in {1,...,5} \draw node at (\x-0.5,0.5) {\x};
+  \LBD1 \LBM2 \LRM3 \LBM4
+\end{tikzpicture}
+\caption{A Favard tiling $T\in\FT_5$ with $\wt(T)=\lambda_1 b_3$.}
+  \label{fig:tiling}
+\end{figure}
+
+
+\begin{lem}
+  Suppose that \( \{ P_n(x) \}_{n\ge 0} \) is a sequence of
+  polynomials satisfying \eqref{eq:3-RR}. Then
+  \[
+    P_n(x) = \sum_{\alpha\in \FT_n} \wt(\alpha).
+  \]
+\end{lem}
+
+
+\begin{remark}
+  Note that the number \( u_n \) of Favard tilings of size \( n \)
+  satisfies \( u_{n+1} = 2u_n+u_{n-1} \) with \( u_0=1 \) and
+  \( u_1=2 \). These numbers are called the Pell numbers.
+\end{remark}
 
 
 
 
-% \section{Formal power series and generating functions}
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.75]
+    \draw[help lines] (0,0) grid (13,3);
+    \foreach \y in {0,...,3} \draw node at (-.5,\y) {$\y$};
+    \draw[line width = 1.5pt] (0,3)-- ++(0,-1)-- ++(0,-1)-- ++(1,-1)-- ++(1,1)-- ++(1,1)-- ++(0,-1)-- ++(1,-1)-- ++(1,0)-- ++(1,1)-- ++(1,1)-- ++(1,1)-- ++(1,-1)-- ++(1,0)-- ++(0,-1)-- ++(1,1)-- ++(1,0)-- ++(0,-1)-- ++(1,0);
+    \node at (0.4,2.5) {$a_{3}$};
+    \node at (0.4,1.5) {$a_{2}$};
+    \node at (0.8,0.8) {$\lambda_{1}$};
+    \node at (3.4,1.5) {$a_{2}$};
+    \node at (3.8,0.8) {$\lambda_{1}$};
+    \node at (4.5,0.3) {$b_{0}$};
+    \node at (8.8,2.8) {$\lambda_{3}$};
+    \node at (9.5,2.3) {$b_{2}$};
+    \node at (10.4,1.8) {$a_{2}$};
+    \node at (11.5,2.3) {$b_{2}$};
+    \node at (12.4,1.8) {$a_{2}$};
+    \node at (12.7,1.3) {$b_{1}$};
+\end{tikzpicture}
+\caption{A Motzkin-Schr\"oder path $\pi$ from $(0,3)$ to $(13,1)$ with
+  $\wt(\pi)=a_2^4a_3b_0b_1b_2^2\lambda_1^2\lambda_3$.}
+  \label{fig:MS}
+\end{figure}
 
-% \section{Viennot theory}
 
 
-% \section{LGV lemma}
+
+\subsection{Motzkin paths}
+
+\subsection{Bijective proof of orthogonality}
+
+\section{Moments of particular orthogonal polynomials}
+
+In this section we consider
+Tchebyshev polynomials of the 1st and 2nd kinds,
+Laguerre polynomials. Hermite polynomials,
+Charlier polynomials, and Meixner polynomials of the 1st and 2nd kinds.
+
+Note that an OPS \( \{ P_n(x) \}_{n\ge 0} \) can be defined in many
+ways, namely, one of the following determines the orthogonal
+polynomials:
+\begin{enumerate}
+\item the coefficients \( a_{n,k} \) of \( P_n(x) \),
+\item the generating function \( \sum_{n\ge0}P_n(x)t^n \)
+  or \( \sum_{n\ge0}P_n(x)t^n/n! \),
+\item the moments \( \{ \mu_n\}_{n\ge 0} \),
+\item the 3-term recurrence coefficients \( \{ b_n\}_{n\ge 0} \) and
+  \( \{ \lambda_n\}_{n\ge 1} \).
+\end{enumerate}
+
+For each OPS, we will show bijectively the equivalence of (3) and (4).
+
+For example, in the case that \( b_k \) and \( \lambda_k \) are
+integers, we interprete \( \wt(\alpha) \) as a certain number of
+``histories''. To each history we associate bijectively a certain
+combinatorial object \( \xi \) of a finite set \( M_n \). Each of
+\( b_k \) and \( \lambda_k \) is considered as the number of possible
+choices in a stage of a construction of the object, where each stage
+corresponds to an elementary step of \( \alpha \). Then it remains to
+show that \( |M_n| = \mu_n \).
+
+If \( P_n(x) \) depend on some parameters, it will be sufficient to
+consider the histories and the combinatorial objects in \( M_n \).
+
+\subsection{Tchebycheff polynomials}
+
+% \subsection{Histories}
+
+% \subsection{The bijection between Laguerre histories and permutations}
+
+% \subsection{Properties of the bijection}
+
+% \subsection{Laguerre polynomials}
+
+% \subsection{Charlier polynomials}
+
+% \subsection{Meixner polynomials of the first kind}
+
+% \subsection{Meixner polynomials of the second kind}
+
+% \subsection{Orthogonal polynomials of Scheffer}
+
+% \section{Inverse polynomials}
+
+% \subsection{Vertical polynomials}
+
+% \subsection{Bijective proof of Theorem 1}
+
+% \subsection{Examples: orthogonal polynomials of Sheffer}
+
+% \subsection{Other examples}
+
+% \subsection{Generalization: Lukasiewics paths}
+
+% \section{Determinants of moments}
+
+% \subsection{Calulating the 3-term recurrence coefficients}
+
+% \subsection{Determinants of paths}
+
+% \subsection{Hankel determinants of moments}
+
+% \subsection{The duality between Motzkin paths and Favard paths}
+
+% \subsection{Inverse generating functions}
+
+% \section{Continued fractions}
+
+% \subsection{Development in J-fraction}
+
+% \subsection{Examples}
+
+% \subsection{Convergents}
+
+% \subsection{Applications to Rogers--Ramanujan identities}
+
+% \subsection{Settling and symmetric moments}
+
+% \subsection{Multicontinued fractions}
+
+% \section{Polynomials of paving a graph}
+
+% \subsection{Coupling polynomials and paving polynomials}
+
+% \subsection{Continued fraction trees}
+
+% \subsection{Path trees over an graph}
+
+% \subsection{Coupling, derangements and orthogonality}
 
 
-% \section{Basics on orthogonal polynomials}
 
-
-% \section{Basics on combinatorics}
-
-
-% \section{linearization coefficients}
-
-% \section{Other topics}
-
-% \subsection{Hypergeometric series}
-
-% \subsection{Connection with random matrices}
-
-% \subsection{ASEP}
-
+\newpage
 
 \appendix
 
@@ -689,11 +1519,14 @@ for \( \LL \).
 \begin{defn}
   A \emph{sign} of a set \( X \) is a function
   \( \sgn:X \to \{+1,-1\} \). A \emph{sign-reversing involution} on
-  \( X \) is an involution \( \phi:X\to X \) such that \( \sgn(x)=1 \)
-  for \( x\in \Fix(\phi) \) and \( \sgn(\phi(x)) = -\sgn(x) \) for all
-  \( x\in X \setminus \Fix(\phi) \), where \( \Fix(\phi) \) is the set
-  of \emph{fixed points} of \( \phi \), i.e.,
-  \( \Fix(\phi) = \{x\in X: \phi(x) = x \} \).
+  \( X \) is an involution \( \phi:X\to X \) such that
+  \begin{enumerate}
+  \item \( \sgn(x)=1 \) for all \( x\in \Fix(\phi) \);
+  \item \( \sgn(\phi(x)) = -\sgn(x) \) for all
+  \( x\in X \setminus \Fix(\phi) \),
+  \end{enumerate}
+  where \( \Fix(\phi) \) is the set of \emph{fixed points} of
+  \( \phi \), i.e., \( \Fix(\phi) = \{x\in X: \phi(x) = x \} \).
 \end{defn}
 
 It is easy to see that if \( \phi \) is a sign-reversing involution on
@@ -796,6 +1629,18 @@ This implies
   = \frac{e^a a^n}{n!} \delta_{n,m}.
 \]
 \end{exam}
+
+
+
+% \section{Formal power series and generating functions}
+
+% \section{LGV lemma}
+
+% \subsection{Hypergeometric series}
+
+% \subsection{Connection with random matrices}
+
+% \subsection{ASEP}
 
 
 \bibliographystyle{abbrv}
