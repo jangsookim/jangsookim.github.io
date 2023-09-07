@@ -23,6 +23,8 @@
 \newtheorem*{note}{Note}
 
 % DO NOT DELETE THIS COMMENT!!! MACROS BELOW:
+\newcommand\cycle{\operatorname{cycle}}
+\newcommand\Motz{\operatorname{Motz}}
 \newcommand\Fix{\operatorname{Fix}}
 \newcommand\sgn{\operatorname{sgn}}
 \newcommand\NN{\mathbb{N}}
@@ -45,6 +47,7 @@
 \newcommand\wt{\operatorname{wt}}
 
 \renewcommand\vec[1]{\mathbf{#1}}
+\newcommand\vx{\vec{x}}
 \newcommand\flr[1]{\left\lfloor #1\right\rfloor}
 \newcommand\Qbinom[3]{\genfrac{[}{]}{0pt}{}{#1}{#2}_{#3}}
 \newcommand\qbinom[2]{\Qbinom{#1}{#2}{q}}
@@ -84,7 +87,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Combinatorics of orthogonal polynomials}
+\title{Lecture notes on the combinatorics of orthogonal polynomials}
 \author{Jang Soo Kim}
 % \thanks{The author was supported by NRF grants \#2022R1A2C101100911 and \#2016R1A5A1008055.} 
 % \address{Department of Mathematics,
@@ -127,6 +130,10 @@ partitions, and orthogonal polynomials of type \( R_1 \).
 The prerequisites of this course are Calculus 1, Linear Algebra, and
 Discrete Mathematics.
 
+In the first section we study elementary and classical results of
+orthogonal polynomials. Starting from the second section we focus on
+the combinatorics of orthogonal polynomials. Basic results in
+combinatorics are collected in the appendices.
 
 \section{Elementary Theory of Orthogonal Polynomials}
 
@@ -605,10 +612,13 @@ is a nondecreasing function such that
 if \( \LL(\pi(x))>0 \) for all nonzero polynomials \( \pi(x) \) such
 that \( \pi(x)\ge0 \) for all \( x\in\RR \).
 
+A \emph{nonnegative-valued} polynomial is a polynomial \( \pi(x) \)
+such that \( \pi(x)\ge 0 \) for all \( x\in \RR \).
+
 \begin{defn}
   A linear functional \( \LL \) is \emph{positive-definite} if
-  \( \LL(\pi(x))>0 \) for all nonzero polynomials \( \pi(x) \) such
-  that \( \pi(x)\ge0 \) for all \( x\in\RR \).
+  \( \LL(\pi(x))>0 \) for all nonzero nonnegative-valued polynomials
+  \( \pi(x) \).
 \end{defn}
 
 If \( \LL \) is positive-definite, then it has a real OPS. We will see
@@ -652,7 +662,42 @@ Note that if \( \LL \) is positive-definite, then
 orthonormal OPS \( \{ p_n(x) \}_{n\ge 0} \) by rescaling:
 \( p_n(x) = P_n(x)/\sqrt{\LL(P_n(x)^2)} \).
 
-\medskip
+Nonnegative-valued polynomials have the following useful property.
+
+\begin{lem}\label{lem:pi=p2+q2}
+  Let \( \pi(x) \) be a nonnegative-valued polynomial. Then
+  \( \pi(x) = p(x)^2 + q(x)^2 \) for some real polynomials \( p(x) \)
+  and \( q(x) \).
+\end{lem}
+\begin{proof}
+  Since \( \pi(x) \) is real for all real \( x \), the coefficients of
+  \( \pi(x) \) are real. This can be seen inductively by observing
+  that if \( \deg \pi(x) =n \), then the leading coefficient of
+  \( \pi(x) \) is equal to
+  \[
+    \lim_{x\to \infty} \frac{\pi(x)}{x^n}.
+  \]
+  Since \( \pi(x) \) is a real polynomial such that \( \pi(x)\ge0 \),
+  every real zero of \( \pi(x) \) has even multiplicity and complex
+  roots appear in conjugate pairs. Thus we can write
+  \[
+    \pi(x) = r(x)^2 \prod_{k=1}^{m} (x-\alpha_k-\beta_ki)(x-\alpha_k+\beta_ki),
+  \]
+  where \( r(x) \) is a real polynomial and
+  \( \alpha_k,\beta_k\in \RR \).
+  If we write \( \prod_{k=1}^{m} (x-\alpha_k-\beta_ki) = A(x)+iB(x) \),
+  then \( \prod_{k=1}^{m} (x-\alpha_k+\beta_ki) = A(x)-iB(x) \).
+  Thus \( \pi(x) = r(x)^2(A(x)^2+B(x)^2) \) as desired.
+\end{proof}
+
+By \Cref{lem:pi=p2+q2}, we have the following criterion for linear
+functionals.
+\begin{cor}\label{cor:pos-def-sq}
+  A linear functional \( \LL \) is positive-definite if and only if
+  \( \LL(p(x)^2)>0 \) for every nonzero real polynomial \( p(x) \).
+\end{cor}
+
+
 
 You may wonder why \( \LL \) is called ``positive-definite''. To see
 this recall that a real \( n\times n \) matrix \( A \) is positive
@@ -678,12 +723,8 @@ for \( \LL \).
   Thus by induction we obtain \( \Delta_n>0 \) for all \( n\ge0 \).
 
   (\(\Leftarrow\)) Since \( \Delta_n>0 \), by \Cref{thm:Dne0}, there
-  is an OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \). We need to show
-  that \( \LL(\pi(x))>0 \) for any nonzero polynomial \( \pi(x) \)
-  with \( \pi(x)\ge0 \) for all \( x\in \RR \). Such a polynomial
-  \( \pi(x) \) can be written as \( \pi(x) = p(x)^2 + q(x)^2 \) for
-  some real polynomials \( p(x) \) and \( q(x) \) (not both zero), see
-  \Cref{lem:pi=p2+q2} below. Thus it suffices to show that
+  is an OPS \( \{ P_n(x) \}_{n\ge 0} \) for \( \LL \). By
+  \Cref{cor:pos-def-sq}, it suffices to show that
   \( \LL(p(x)^2) > 0 \) for any nonzero real polynomial \( p(x) \). To
   do this let \( p(x) = \sum_{k=0}^n a_k P_k(x) \). Then by the
   orthogonality,
@@ -694,37 +735,6 @@ for \( \LL \).
   \Cref{lem:L(pi*P)}. Thus \( \LL(p(x)^2)>0 \) as desired.
 \end{proof}
 
-\begin{lem}\label{lem:pi=p2+q2}
-  Let \( \pi(x) \) be a nonzero polynomial such that \( \pi(x)\ge0 \)
-  for all \( x\in \RR \). Then \( \pi(x) = p(x)^2 + q(x)^2 \) for some
-  polynomials \( p(x) \) and \( q(x) \).
-\end{lem}
-\begin{proof}
-  Since \( \pi(x) \) is real for all real \( x \), the coefficients of
-  \( \pi(x) \) are real. This can be seen inductively by observing
-  that if \( \deg \pi(x) =n \), then the leading coefficient of
-  \( \pi(x) \) is equal to
-  \[
-    \lim_{x\to \infty} \frac{\pi(x)}{x^n}.
-  \]
-  Since \( \pi(x) \) is a real polynomial such that \( \pi(x)\ge0 \)
-  every real zero has even multiplicity and complex roots appear in
-  conjugate pairs. Thus we can write
-  \[
-    \pi(x) = r(x)^2 \prod_{k=1}^{m} (x-\alpha_k-\beta_ki)(x-\alpha_k+\beta_ki),
-  \]
-  where \( r(x) \) is a real polynomial and
-  \( \alpha_k,\beta_k\in \RR \).
-  If we write \( \prod_{k=1}^{m} (x-\alpha_k-\beta_ki) = A(x)+iB(x) \),
-  then \( \prod_{k=1}^{m} (x-\alpha_k+\beta_ki) = A(x)-iB(x) \).
-  Thus \( \pi(x) = r(x)^2(A(x)^2+B(x)^2) \) as desired.
-\end{proof}
-
-\begin{defn}
-  We say that \( \LL \) is \emph{quasi-definite} if
-  \( \Delta_n\ne 0 \) for all \( n\ge0 \).
-\end{defn}
-
 
 \subsection{The fundamental recurrence formula}
 
@@ -732,10 +742,9 @@ One important property of orthogonal polynomials is that they satisfy
 a 3-term recurrence relation.
 
 \begin{thm}\label{thm:3-RR}
-  Let \( \LL \) be a quasi-definite linear functional
-  with monic OPS \( \{ P_n(x) \}_{n\ge 0} \).
-  Then these monic orthogonal polynomials satisfy
-  the following 3-term recurrence relation:
+  Let \( \LL \) be a linear functional with monic OPS
+  \( \{ P_n(x) \}_{n\ge 0} \). Then these monic orthogonal polynomials
+  satisfy the following 3-term recurrence relation:
   \begin{equation}\label{eq:3-rr}
     P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x), \qquad n\ge0,
   \end{equation}
@@ -749,11 +758,11 @@ a 3-term recurrence relation.
   \[
     P_{n+1}(x) - xP_n(x) = \sum_{k=0}^n a_k P_k(x).
   \]
-  By \Cref{thm:orth-equiv}, multiplying both sides by \( x^j \) for \( 0\le j\le n-2 \)
+  By \Cref{thm:orth-equiv}, multiplying both sides by \( P_j(x) \) for \( 0\le j\le n-2 \)
   and taking \( \LL \) gives
   \[
- 0 = \LL(x^j P_{n+1}(x) - x^{j+1}P_n(x))
-    = \sum_{k=0}^n a_k \LL(x^j P_k(x))  = a_j \LL(P_j(x)^2).
+ 0 = \LL(P_j(x) P_{n+1}(x) - xP_j(x)P_n(x))
+    = \sum_{k=0}^n a_k \LL(P_j(x) P_k(x))  = a_j \LL(P_j(x)^2).
   \]
   Since \( \LL(P_j(x)^2) \ne 0 \), we obtain \( a_j=0 \) for all
   \( 0\le j\le n-2 \). Then we alway have
@@ -762,7 +771,20 @@ a 3-term recurrence relation.
   polynomials \( P_n(x) \) satisfy the 3-term recurrence relation
   \eqref{eq:3-rr}.
 
-  The condition \( \lambda_n\ne 0 \) follows from \eqref{eq:la=DD/D} below.
+  It remains to show that \( \lambda_n\ne 0 \). Multiplying
+  \( x^{n-1} \) both sides of \eqref{eq:3-rr} and taking \( \LL \)
+  gives
+  \begin{equation}\label{eq:5}
+    0 = \LL(x^{n-1} P_{n+1}(x)) = \LL(x^nP_n(x)) - b_n \LL(x^{n-1}
+    P_n(x)) - \lambda_n \LL(x^{n-1}P_{n-1}(x)).
+  \end{equation}
+  By \Cref{lem:L(pi*P)}, we have
+  \( \LL(x^n P_n(x)) = \LL(P_n(x) P_n(x)) \). Thus \eqref{eq:5}
+  implies
+  \begin{equation}\label{eq:14}
+  \lambda_n = \frac{\LL(P_n(x)^2)}{\LL(P_{n-1}(x)^2)}.
+  \end{equation}
+  Since \( \LL(P_n(x)^2)\ne0 \), we get \( \lambda_n\ne0 \).
 \end{proof}
 
 \begin{thm}
@@ -780,25 +802,17 @@ a 3-term recurrence relation.
 \end{thm}
 
 \begin{proof}
-  Multiplying \( x^{n-1} \) both sides of \eqref{eq:3-rr} and taking \( \LL \) gives
-  \begin{equation}\label{eq:5}
-    0 = \LL(x^{n-1} P_{n+1}(x)) = \LL(x^nP_n(x)) - b_n \LL(x^{n-1}
-    P_n(x)) - \lambda_n \LL(x^{n-1}P_{n-1}(x)).
-  \end{equation}
   By \Cref{lem:L(pi*P)}, we have
-  \( \LL(x^n P_n(x)) = \LL(P_n(x) P_n(x)) = \Delta_n/\Delta_{n-1} \).
-  Thus \eqref{eq:5} becomes
-  \[
-    \frac{\Delta_n}{\Delta_{n-1}} = \LL(P_n(x)^2) = \lambda_n \LL(P_{n-1}(x)^2)
-     = \lambda_n  \frac{\Delta_{n-1}}{\Delta_{n-2}},
-  \]
-  which implies \eqref{eq:la=DD/D}. 
+  \( \LL(P_n(x)^2) = \Delta_n/\Delta_{n-1} \). Thus the first identity
+  \eqref{eq:la=DD/D} follows from \eqref{eq:14}.
 
   Multiplying \( P_n(x) \) both sides of \eqref{eq:3-rr} and taking
   \( \LL \) gives
-  \[
-   0= \LL(P_n(x)P_{n+1}(x)) = \LL(xP_n(x)^2)- b_n\LL(P_n(x)) - \lambda_n \LL(P_nP_{n-1}(x)),
-  \]
+  \begin{align*}
+    0 &= \LL(P_n(x)P_{n+1}(x))
+       = \LL(xP_n(x)^2)- b_n\LL(P_n(x)^2) - \lambda_n \LL(P_nP_{n-1}(x))\\
+    &= \LL(xP_n(x)^2)- b_n\LL(P_n(x)^2),
+  \end{align*}
   which implies \eqref{eq:b=xP/P}.
 
   The identity \eqref{eq:P2=lala} is an immediate consequence of
@@ -873,7 +887,7 @@ and we can obtain the recurrence \eqref{eq:3-rr-monic} by dividing
   \end{equation}
   where \( T_{-1}(x) = 0 \), \( A_0=1 \) and \( A_n=2 \) for
   \( n\ge1 \). Thus the monic Tchebyshev polynomials are given by
-  \( \hat{T}_n(x) = 2^{1-n} T_n(x) \).
+  \( \hat{T}_n(x) = 2^{1-n} T_n(x) \) for \( n\ge1 \).
   Dividing \eqref{eq:6} by \( 2^n \) gives
   \begin{equation}\label{eq:7}
     \hat{T}_{n+1}(x) = x \hat{T}_n(x) - \lambda_n\hat{T}_{n-1}(x), \qquad n\ge0,
@@ -892,7 +906,7 @@ function. It also turns out that the odd moments are all zero.
 \end{defn}
 
 \begin{thm}
-  Let \( \LL \) be a quasi-definite linear functional with monic OPS
+  Let \( \LL \) be a linear functional with monic OPS
   \( \{ P_n(x) \}_{n\ge 0} \). The following are equivalent:
   \begin{enumerate}
   \item \( \LL \) is symmetric.
@@ -1028,8 +1042,8 @@ true.
   Dividing both sides by \( \lambda_1\cdots\lambda_k(x-y) \) gives
   \[
     \frac{P_k(x)P_k(y)}{\lambda_1\cdots\lambda_k} =
-    \frac{f_{k}}{\lambda_1\cdots\lambda_k} -
-    \frac{f_{k-1}}{\lambda_1\cdots\lambda_{k-1}}.
+    \frac{f_{k}}{\lambda_1\cdots\lambda_k(x-y)} -
+    \frac{f_{k-1}}{\lambda_1\cdots\lambda_{k-1}(x-y)}.
   \]
   Summing the equation for \( k=0,\dots,n \), we obtain \eqref{eq:CD1}.
 
@@ -1112,20 +1126,24 @@ one root in \( (-\infty,x_{n,n}) \). Thus we obtain
 \eqref{eq:interlacing}.
 \end{proof}
 
-
-
-\section{Moments and linear recurrence}
+\section{Combinatorial interpretations for orthogonal polynomials and
+  their moments}
 
 From now one we will focus on the combinatorial approaches to
 orthogonal polynomials in Viennot's lecture notes \cite{ViennotLN}.
 Part of this section will have some overlaps with the previous
 sections.
 
-\subsection{Orthogonality}
+In this section we will give combinatorial interpretations for
+orthogonal polynomials and their moments. Using these combinatorial
+interpretations, we can reprove the orthogonality of orthogonal
+polynomials using combinatorics only.
+
+\subsection{Orthogonal polynomials and 3-term recurrences}
 
 In this subsection we give basic definitions and prove simple but
-usuful lemmas. We then state Favard's theorem.
-
+useful lemmas. We then state the 3-term recurrence of orthogonal
+polynomials and Favard's theorem.
 
 Let \( K \) be a field. We denote by \( K[x] \) the ring of
 polynomials in \( x \) with coefficients in \( K \). A \emph{linear
@@ -1148,9 +1166,6 @@ for all \( f(x),g(x)\in K[x] \) and \( a,b\in K \). The \( n \)th
   We also say that \( \{ P_n(x) \}_{n\ge 0} \) is orthogonal
   for the moments \( \{\mu_n\}_{n\ge0} \).
 \end{defn}
-
-\emph{From now on whenever we consider \( \{ P_n(x) \}_{n\ge 0} \) it is
-assumed that \( \deg P_n(x) = n \).}
 
 Orthogonal polynomials in the above definition are called ``formal''
 or ``general'' orthogonal polynomials because the field \( K \) can be
@@ -1182,58 +1197,27 @@ variables.
   is uniquely determined by the condition \( \LL(P_n(x)) = 0 \).
 \end{proof}
 
+By the above proposition we may assume that \( \LL(1) = 1 \).
+\emph{From now on we will always assume that \( \deg P_n(x) = n \) and
+  \( \LL(1) = 1 \) unless otherwise stated.}
 
-\begin{lem}
-  Let \( \{ P_n(x) \}_{n\ge 0} \) be a sequence of polynomials
-  and let \( \LL:K[x] \to K \) be a linear functional.
-  Then the following are equivalent:
-  \begin{enumerate}
-  \item \( \{ P_n(x) \}_{n\ge 0} \) is orthogonal with respect to \( \LL \).
-  \item For any polynomial \( Q(x) \) of degree \( m\le n \),
-    we have \( \LL(Q(x) P_n(x)) = c_n \delta_{m,n} \), where \( c_n\ne 0 \).
-  \item For any integer \( 0\le m\le n \), we have
-    \( \LL(x^m P_n(x)) = c_n \delta_{m,n} \), where \( c_n\ne 0 \).
-  \end{enumerate}
-\end{lem}
+Recall from \Cref{thm:3-RR} that every OPS satisfies a 3-term
+recurrence.
 
-\begin{lem}
-  Let \( \{ P_n(x) \}_{n\ge 0} \) be an OPS for \( \LL \).
-  If
+\begin{thm}[3-term recurrence]
+  Let \( \LL \) be a linear functional with monic OPS
+  \( \{ P_n(x) \}_{n\ge 0} \). Then there are sequences
+  \( \{ b_n\}_{n\ge 0} \) and \( \{ \lambda_n\}_{n\ge 1} \) such that
+  \( \lambda_n\ne 0 \) and
   \[
-    Q(x) = \sum_{k=0}^{n} a_k P_k(x),
+    P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x), \qquad n\ge0,
   \]
-  then
-  \[
-    a_k = \frac{\LL(Q(x)P_k(x))}{\LL(P_k(x)^2)}.
-  \]
-\end{lem}
+  where \( P_{-1}(x) = 0 \) and \( P_0(x) = 1 \).
+\end{thm}
 
-
-\begin{cor}
-  Let \( \{ P_n(x) \}_{n\ge 0} \) be an OPS for \( \LL \).
-  Then every OPS \( \{ Q_n(x) \}_{n\ge 0} \)
-  for \( \LL \) is of the form \( Q_n(x) = a_n P_n(x) \),
-  for some \( a_n\ne 0 \).
-\end{cor}
-
-
-\begin{remark}
-  Usually, if \( \{ P_n(x) \}_{n\ge 0} \) is an OPS with real coefficients
-  with respect to \( \LL:\RR[x] \to \RR \), then
-  \( \LL \) is given my a Stieltjes integral:
-  \[
-    \LL(p(x)) = \int_a^b p(x) d\psi(x).
-  \]
-  Finding the measure \( \psi \) is called a \emph{moment problem}.
-  Usually we find a bounded decreasing measure \( \psi \) so that the
-  integral above is defined when the bounds \( a \) and \( b \) are
-  finite. In this work we will assume that \( \LL \) is defined by the
-  moments \( \mu_n \) and we will leave aside the (open) question of
-  the combinatorial interpretation of the measure \( \psi \).
-\end{remark}
-
-The following is one of the most important theorems
-in the theory classical orthogonal polynomials.
+The inverse of the above theorem is also true, which is one of the
+most important results in the theory of classical orthogonal
+polynomials.
 
 \begin{thm}[Favard's theorem]
   Let \( \{ P_n(x) \}_{n\ge 0} \) be a sequence of monic polynomials.
@@ -1247,14 +1231,19 @@ in the theory classical orthogonal polynomials.
   where \( P_{-1}(x) = 0 \) and \( P_0(x) = 1 \).
 \end{thm}
 
-The main goal of this section is the prove this theorem.
+The main goal of this section is to give combinatorial interpretations
+for the orthogonal polynomials \( P_n(x) \) and their moments
+\( \mu_n \). Using these combinatorial interpretations we will prove
+Favard's theorem bijectively.
 
-\subsection{Favard paths and Favard tilings}
+\subsection{A model for orthogonal polynomials using Favard tilings}
 
 In this subsection we define Favard paths and Favard tilings. These
 are equivalent combinatorial objects, which give a combinatorial
 meaning to orthogonal polynomials.
 
+See \Cref{sec:generating-functions} for the basics on generating
+functions.
 
 \begin{defn}
   A \emph{path} is a sequence \( \alpha=(s_0,s_1,\dots,s_n) \) of
@@ -1405,10 +1394,90 @@ We can identify a Favard path with a Favard tiling.
 
 
 
+\subsection{How to find a combinatorial model for moments}
+
+Moments are important quantities of a linear functional \( \LL \)
+because they have all the information of \( \LL \). In this subsection
+we will find a combinatorial interpretation for the moments of
+orthogonal polynomials.
+
+Suppose that \( \LL \) is a linear functional with monic OPS
+\( \{ P_n(x) \}_{n\ge 0} \), which satisfies the 3-term recurrence
+\eqref{eq:3-RR}. Let's assume \( \LL(1)=1 \). Then, using the
+orthogonality, we have
+\begin{equation}\label{eq:13}
+  \LL(P_n(x)) = \delta_{n,0}.
+\end{equation}
+This relation in fact completely determines the moments \( \mu_n \).
+For example, since
+\begin{align*}
+  P_0(x) &= 1,\\
+  P_1(x) &= (x-b_0)P_0(x) - \lambda_0P_{-1}(x) = x-b_0,\\
+  P_2(x) &= (x-b_1)P_1(x) - \lambda_1P_0(x) =  x^2 - (b_1+b_0)x +b_0b_1 - \lambda_1,\\
+\end{align*}
+we have
+\begin{align*}
+ \mu_0 &= \LL(1) = 1, \\
+ \mu_1 &= \LL(x) = \LL(P_1(x)+b_0) = b_0, \\
+  \mu_2 &= \LL(x^2) = \LL(P_2(x)+(b_0+b_1)x-b_0b_1+\lambda_1)
+          = (b_0+b_1)b_0 - b_0b_1 +\lambda_1 = b_0^2+\lambda_1.
+\end{align*}
+In this way, we can compute a few more moments:
+\begin{align*}
+  \mu_3 &= b_0^3 + 2b_0\lambda_1 + b_1\lambda_1,\\
+  \mu_4 &= b_0^4 + 3b_0^2\lambda_1 + 2b_0b_1\lambda_1 + b_1^2\lambda_1 + \lambda_1^2 + \lambda_1\lambda_2,\\
+  \mu_5 &= b_0^5 + 4b_0^3\lambda_1 + 3b_0^2b_1\lambda_1 + 2b_0b_1^2\lambda_1 + b_1^3\lambda_1 + 3b_0\lambda_1^2 + 2b_1\lambda_1^2 + 2b_0\lambda_1\lambda_2 + 2b_1\lambda_1\lambda_2 + b_2\lambda_1\lambda_2.
+\end{align*}
+
+The above experiments clearly suggest that \( \mu_n \) would be a
+polynomial in \( b_i \)'s and \( \lambda_i \)'s with nonnegative
+integer coefficients. How can we prove such a conjecture? A satisfying
+answer to this question is to find combinatorial objects whose
+generating function is \( \mu_n \). That is to find a set \( X \) of
+combinatorial objects and a weight \( \wt(A) \) of each element
+\( A\in X \) such that
+\[
+  \mu_n = \sum_{A \in X} \wt(A),
+\]
+and \( \wt(A) \) is a polynomial (preferably a monomial) in
+\( b_i \)'s and \( \lambda_i \)'s with nonnegative integer
+coefficients.
+
+But how can we find such combinatorial objects? Suppose that such
+combinatorial objects exist with monomial weight \( \wt(A) \) for each
+\( A\in X \). Then if we set \( b_i=\lambda_i=1 \) for all \( i \)
+then \( \mu_n \) would be the number of elements in \( X \). If we
+compute \( \mu_n \) with this substitution for \( n=0,1,2,\ldots \),
+then we obtain the following sequence:
+\[
+  1, 1, 2, 4, 9, 21, 51, 127, 323, 835, 2188, 5798, 15511, \ldots.
+\]
+There is a very useful webpage \url{https://oeis.org/} where you can
+search integer sequences. If you search the above sequence, the
+webpage will tell you that this is the sequence of the number of
+Motzkin paths. So we can guess that there must be a close connection
+with the moments of orthogonal polynomials and Motzkin paths.
 
 \subsection{Motzkin paths}
 
-\subsection{Bijective proof of orthogonality}
+
+
+
+
+
+After spending enough time of trials and errors, we can come up with
+the following combinatorial model for \( \mu_n \).
+
+\begin{thm}
+  We have
+\[
+  \mu_n = \sum_{\pi\in \Motz_n} \wt(\pi).
+\]
+\end{thm}
+
+
+
+\subsection{A bijective proof of Favard's theorem}
 
 \section{Moments of particular orthogonal polynomials}
 
@@ -1633,16 +1702,188 @@ This implies
 \end{exam}
 
 
+\section{Formal power series and generating functions}
+\label{sec:generating-functions}
 
-% \section{Formal power series and generating functions}
+In this section, we study basics of formal power series and generating
+functions.
 
-% \section{LGV lemma}
+A \emph{power series} is a series of the form
+\[
+ f(x) = a_0 + a_1 x + a_2 x^2 + \cdots.
+\]
+If \( a_i \)'s are real numbers, then \( f(x) \) may be considered as
+a function on \( x \) whose domain is the set of real numbers \( x \)
+such that the above infinite series converges.
 
-% \subsection{Hypergeometric series}
+For example, if
+\[
+  f(x) = 1+x+x^2 + \cdots,
+\]
+then we have \( f(x) = 1/(1-x) \) for \( |x|<1 \). Thus we can write,
+for \( |x|<1 \),
+\begin{equation}\label{eq:geometric-series}
+  1+x+x^2 + \cdots = \frac{1}{1-x}.
+\end{equation}
+This, however, does not make sense if \( |x|>1 \). Hence, in calculus,
+whenever we consider a power series we always have to mention for what
+values of \( x \) the series converges. But in formal power series the
+convergence is not needed.
 
-% \subsection{Connection with random matrices}
+Let \( R \) be a commutative ring with identity. Recall that
+\( R[x] \) denotes the ring of polynomials in \( x \) with
+coefficients in \( R \).
 
-% \subsection{ASEP}
+\begin{defn}
+  Let \( R \) be a field. The \emph{ring of formal power series} in
+  \( x \) with coefficients in \( R \) is the set
+\[
+  R[[x]] = \{a_0 + a_1 x + a_2x^2 + \cdots : a_0,a_1,a_2,\ldots \in R \},
+\]
+with addition
+\[
+  \left( \sum_{i=0}^\infty a_i x^n \right) + \left( \sum_{i=0}^\infty
+    b_i x^n \right) = \sum_{i=0}^\infty (a_i+b_i) x^n ,
+\]
+and multiplication
+\[
+  \left( \sum_{i=0}^\infty a_i x^n \right) \left( \sum_{i=0}^\infty
+    b_i x^n \right) = \sum_{i=0}^\infty \left( \sum_{k=0}^n a_k
+    b_{n-k} \right)x^n.
+\]
+\end{defn}
+
+So, roughly speaking, a formal power series is a polynomial of
+infinite degree.
+
+The multiplicative identity of \( R[[1]] \) is \( 1 \), that is,
+\( 1+0x+0x^2+\cdots \). For \( f(x),g(x) \in R[[1]] \), if
+\( f(x) g(x) = 1 \), then we say that \( f(x) \) is the \emph{inverse}
+of \( g(x) \) and write \( f(x) = g(x)^{-1} = 1/g(x) \).
+
+In the language of formal power series, \eqref{eq:geometric-series} is
+a perfectly valid identity without any convergence considered because
+\[
+  (1+x+x^2 + \cdots)(1-x) = (1+x+x^2 + \cdots) - x(1+x+x^2 + \cdots) = 1.
+\]
+
+An important aspect of a formal power series is that the coefficient
+of \( x^n \) must be computed using a finitely many additions and
+multiplications in \( R \).
+
+
+\begin{exam}
+  The series
+\[
+  e^{1+x} = \sum_{n\ge 0} \frac{(1+x)^n}{n!}
+\]
+is not a formal power series in \( \RR[[x]] \) because the constant
+term (the coefficient of \( x^0 \)) is \( \sum_{n\ge0} 1/n! \), which
+cannot be computed by a finite number of additions and multiplications
+in \( \RR \) (although we know that it is equal to \( e \)).
+On the other hand,
+\[
+  e\cdot e^{x} = \sum_{n\ge 0} \frac{e x^n}{n!}
+\]
+is a formal power series in \( \RR[[x]] \).
+\end{exam}
+
+We can also consider formal power series in more than one variable.
+
+
+\begin{defn}
+  Let \( R \) be a field. Let \( \vx =(x_1,x_2,\dots) \) be a sequence of
+  variables. Let \( Z \) denote the set of sequences
+  \( I=(i_1,i_2,\dots)\in \ZZ_{\ge0}^\infty \) such that
+  \( i_1+i_2 + \cdots < \infty \). For \( I=(i_1,i_2,\dots)\in Z \),
+  we write \( \vx^I = x_1^{i_1} x_2^{i_2} \cdots \). The \emph{ring of
+    formal power series} in \( x_1,x_2,\dots \) with coefficients in
+  \( R \) is the set
+\[
+  R[[\vx]] = \left\{ \sum_{I\in Z} a_I \vx^I  : a_I\in R \right\},
+\]
+with addition
+\[
+  \left(\sum_{I\in Z} a_I \vx^I \right) + \left(\sum_{I\in Z} b_I \vx^I
+  \right) = \left( \sum_{I\in Z} (a_I+b_I) \vx^I \right),
+\]
+and multiplication
+\[
+  \left(\sum_{I\in Z} a_I \vx^I \right) \left(\sum_{I\in Z} b_I \vx^I
+  \right) = \sum_{I\in Z} \left( \sum_{I_1,I_2\in Z, I_1+I_2=I} a_{I_1} b_{I_2} \right) \vx^I.
+\]
+\end{defn}
+
+
+
+Now we define the notion of generating functions. Usually, the
+generating function for a sequences \( \{ a_n\}_{n\ge 0} \) is defined
+to be the formal power series
+\[
+  a_0 + a_1 x + a_2 x^2 + \cdots.
+\]
+This definition can easily be extended to the generating function for
+an array \( \{ a_I\}_{I\in Z} \) of elements \( a_I\in R \). More
+generally, we will consider generating functions for arbitrary
+(combinatorial) objects.
+
+\begin{defn}
+  Let \( A \) be a set of objects. A \emph{weight} on \( A \) is a
+  function \( \wt:A\to R[[\vx]] \). The \emph{generating function} for
+  \( A \) with respect to the weight function \( \wt \) is the formal
+  power series
+  \[
+    \sum_{a \in A} \wt(a),
+  \]
+  provided that this is a valid formal power series in \( R[[\vx]] \).
+\end{defn}
+
+
+\begin{exam}
+  Let \( A = \{0,1,2,\dots\} \) and define a weight of \( A \) by
+  \( \wt(a) = x^a \). Then the generating function for \( A \)
+  (with this weight) is
+  \[
+    \sum_{a \in A} \wt(a) = \sum_{n=0}^n \wt(n)
+    = \sum_{n=0}^n x^n = \frac{1}{1-x}.
+  \]
+\end{exam}
+
+\begin{exam}
+  Let \( A \) be the set of subsets of \( [n] \) and define a weight
+  of \( A \) by \( \wt(a) = x^{|a|} \). Then the generating function for
+  \( A \) (with this weight) is
+  \[
+    \sum_{a \in A} \wt(a) = \sum_{a\subseteq [n]} x^{|a|} =
+    \sum_{k=0}^n \binom{n}{k} x^{k} = (1+x)^n.
+  \]
+\end{exam}
+
+\begin{exam}
+  Let \( A \) be the set \( S_n \) of permutations of \( [n] \) and
+  define a weight of \( A \) by \( \wt(a) = x^{\cycle(a)} \). Then it
+  can be proved that the generating function for \( A \) (with this
+  weight) is
+  \[
+    \sum_{a \in A} \wt(a) = \sum_{\pi\in S_n} x^{\cycle(a)} = x(x+1)
+    \cdots (x+n-1).
+  \]
+\end{exam}
+
+We will often use the term ``generating function'' in a flexible
+manner. For example, the generating function for the number of
+permutations would mean the generating function for the sequence
+\( \{a_n = n!\}_{n\ge0} \), that is, \( \sum_{n\ge0} n! x^n \).
+
+
+\section{Catalan numbers}
+\label{sec:catalan-numbers}
+
+
+
+\section{The Lindstr\"om--Gessel--Viennot lemma}
+\label{sec:LGV}
+
 
 
 \bibliographystyle{abbrv}

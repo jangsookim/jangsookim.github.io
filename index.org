@@ -199,7 +199,7 @@
 - Sun-mi Yun
 
 * Lecture Videos
-** Topics in Algebra: Combinatorics of orthogonal polynomials
+** Topics in Combinatorics: Combinatorics of orthogonal polynomials
 [[file:lectures/OPS/ops.org][Lecture Homepage]]
 ** Introduction to Newbiemacs
 - [[https://youtu.be/vhWpeNRi7Ts][link to video]]
