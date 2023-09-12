@@ -950,19 +950,17 @@ satisfy a 3-term recurrence. The converse of this theorem is also
 true.
 
 \begin{thm}[Favard's theorem]
-  Suppose \( \{b_n\}_{n\ge0} \) and \( \{\lambda_n\}_{n\ge1} \) are
-  sequences of complex numbers such that \( \lambda_n\ne0 \) for all
-  \( n\ge1 \). Let \( \{ P_n(x) \}_{n\ge 0} \) be the polynomials
-  defined by \( P_{-1}(x) = 0 \), \( P_{0}(x) = 1 \), and
-  \begin{equation}\label{eq:9}
-    P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x), \qquad n\ge 0.
-  \end{equation}
+  Let \( \{ P_n(x) \}_{n\ge 0} \) be a sequence of monic polynomials.
   Then there is a (unique) linear functional \( \LL \) with
   \( \LL(1) = 1 \) for which \( \{ P_n(x) \}_{n\ge 0} \) is an OPS
-  if and only if \( \lambda_n\ne 0 \) for all \( n\ge1 \).
-
-  Moreover, \( \LL \) is positive-definite if and only if
-  \( \lambda_n>0 \) for all \( n\ge1 \).
+  if and only if 
+  \begin{equation}\label{eq:9}
+    P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x), \qquad n\ge 0,
+  \end{equation}
+  for some sequences \( \{b_n\}_{n\ge0} \) and
+  \( \{\lambda_n\}_{n\ge1} \) of complex numbers with
+  \( \lambda_n\ne0 \). Moreover, \( \LL \) is positive-definite if and
+  only if \( b_n\in \RR \) and \( \lambda_n>0 \) for all \( n\ge1 \).
 \end{thm}
 
 \begin{proof}
@@ -2143,12 +2141,6 @@ This implies
   = \frac{e^a a^n}{n!} \delta_{n,m}.
 \]
 \end{exam}
-
-
-
-\section{Dyck paths and Motzkin paths}
-\label{sec:dyck-paths-motzkin}
-
 
 
 
