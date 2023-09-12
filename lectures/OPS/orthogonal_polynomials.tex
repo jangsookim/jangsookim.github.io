@@ -8,6 +8,7 @@
 \usepackage{graphicx,color}
 \usepackage{tikz}
 \numberwithin{equation}{section}
+\usetikzlibrary{snakes}
 
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{lem}[thm]{Lemma}
@@ -79,8 +80,8 @@
 \def\RM#1{\draw [line width=2pt,red] (#1+0.9,0.9) rectangle +(-0.8,-0.8);}
 \def\BD#1{\draw [line width=2pt] (#1+0.9,0.9) rectangle +(-1.8,-0.8);}
 \def\RD#1{\draw [line width=2pt,red] (#1+0.9,0.9) rectangle +(-1.8,-0.8);}
-\def\LBM#1{\BM{#1} \node at (#1+0.5, 1.3) {$1$};}
-\def\LRM#1{\RM{#1} \node at (#1+0.5, 1.3) {$-b_{#1}$};}
+\def\LRM#1{\RM{#1} \node at (#1+0.5, 1.3) {$x$};}
+\def\LBM#1{\BM{#1} \node at (#1+0.5, 1.3) {$-b_{#1}$};}
 \def\LBD#1{\BD{#1} \node at (#1, 1.3) {$-\lambda_{#1}$};}
 % \def\LRD#1{\RD{#1} \node at (#1, 1.3) {$-\lambda_{#1}$};}
 
@@ -131,11 +132,12 @@ The prerequisites of this course are Calculus 1, Linear Algebra, and
 Discrete Mathematics.
 
 In the first section we study elementary and classical results of
-orthogonal polynomials. Starting from the second section we focus on
-the combinatorics of orthogonal polynomials. Basic results in
-combinatorics are collected in the appendices.
+orthogonal polynomials. In the second section we review basics of
+enumerative combinatorics. Starting from the third section we focus on
+the combinatorics of orthogonal polynomials.
 
-\section{Elementary Theory of Orthogonal Polynomials}
+\section{Basics of orthogonal polynomials}
+\label{sec:basics-orth-polyn}
 
 In this section we will cover the first chapter of Chihara's book
 \cite{Chihara}.
@@ -736,7 +738,7 @@ for \( \LL \).
 \end{proof}
 
 
-\subsection{The fundamental recurrence formula}
+\subsection{The three-term recurrence}
 
 One important property of orthogonal polynomials is that they satisfy
 a 3-term recurrence relation.
@@ -948,7 +950,7 @@ satisfy a 3-term recurrence. The converse of this theorem is also
 true.
 
 \begin{thm}[Favard's theorem]
-  Suppose \( \{b_n\}_{n\ge0} \) and \( \{\lambda_n\}_{n\ge1} \) be
+  Suppose \( \{b_n\}_{n\ge0} \) and \( \{\lambda_n\}_{n\ge1} \) are
   sequences of complex numbers such that \( \lambda_n\ne0 \) for all
   \( n\ge1 \). Let \( \{ P_n(x) \}_{n\ge 0} \) be the polynomials
   defined by \( P_{-1}(x) = 0 \), \( P_{0}(x) = 1 \), and
@@ -972,21 +974,14 @@ true.
   Thus we define \( \LL \) to be the unique linear functional such
   that \( \LL(1) = 1 \) and \( \LL(P_n(x)) = 0 \) for \( n\ge1 \). We
   need to show that \( \{ P_n(x) \}_{n\ge 0} \) is indeed an OPS for
-  \( \LL \). By \Cref{thm:orth-equiv}, it suffices to show that, for
-  \( n\ge1 \),
-  \begin{equation}\label{eq:8}
-    \LL(x^k P_n(x)) = K_n \delta_{k,n}, \qquad 0\le k\le n,
-  \end{equation}
-  where \( K_n\ne 0 \).
-
-  We will prove \eqref{eq:8} by induction on \( k\ge0 \). 
-  More precisely, we claim that for every \( k\ge0 \),
+  \( \LL \). By \Cref{thm:orth-equiv}, it suffices to show that
   \begin{equation}\label{eq:8-2}
-    \LL(x^k P_n(x)) = \lambda_1 \cdots \lambda_n \delta_{k,n}, \qquad n\ge \max(k,1).
+    \LL(x^k P_n(x)) = \lambda_1 \cdots \lambda_n \delta_{k,n}, \qquad 0\le k\le n.
   \end{equation}
-  By the constriction of \( \LL \), \eqref{eq:8-2} is true when
-  \( k=0 \). Let \( k\ge1 \) and suppose that \eqref{eq:8-2} holds for
-  \( k-1 \). To prove \eqref{eq:8-2} for \( k \), consider an integer
+  We will prove this by induction on \( k \). By the
+  constriction of \( \LL \), \eqref{eq:8-2} is true when \( k=0 \).
+  Let \( k\ge1 \) and suppose that \eqref{eq:8-2} holds for \( k-1 \).
+  To prove \eqref{eq:8-2} for \( k \), consider an integer
   \( n\ge k \). Multiplying \( x^{k-1} \) to \eqref{eq:9}, we get
   \[
     x^k P_n(x) = x^{k-1} P_{n+1}(x) + b_n x^{k-1}P_n(x)  + \lambda_n x^{k-1} P_{n-1}(x).
@@ -1006,6 +1001,13 @@ true.
   The ``moreover'' statement follows from \Cref{cor:la-pos-def}.
 \end{proof}
 
+\subsection{Christoffel--Darboux identities
+and zeros of orthogonal polynomials}
+
+The Christoffel--Darboux identities are useful identities which have
+many applications in the theory of orthogonal polynomials. In this
+subsection we prove these identities and and their application to the
+zeros of orthogonal polynomials.
 
 
 \begin{thm}[The Christoffel--Darboux identities]
@@ -1126,18 +1128,217 @@ one root in \( (-\infty,x_{n,n}) \). Thus we obtain
 \eqref{eq:interlacing}.
 \end{proof}
 
+\section{Basics of enumerative combinatorics}
+
+In this section we review fundamental objects in enumerative
+combinatorics.
+From now on we will use the notation \( [n] := \{ 1,\dots,n\} \).
+
+\subsection{Formal power series and generating functions}
+
+In this subsection, we study basics of formal power series and generating
+functions.
+
+A \emph{power series} is a series of the form
+\[
+ f(x) = a_0 + a_1 x + a_2 x^2 + \cdots.
+\]
+If \( a_i \)'s are real numbers, then \( f(x) \) may be considered as
+a function on \( x \) whose domain is the set of real numbers \( x \)
+such that the above infinite series converges.
+
+For example, if
+\[
+  f(x) = 1+x+x^2 + \cdots,
+\]
+then we have \( f(x) = 1/(1-x) \) for \( |x|<1 \). Thus we can write,
+for \( |x|<1 \),
+\begin{equation}\label{eq:geometric-series}
+  1+x+x^2 + \cdots = \frac{1}{1-x}.
+\end{equation}
+This, however, does not make sense if \( |x|>1 \). Hence, in calculus,
+whenever we consider a power series we always have to mention for what
+values of \( x \) the series converges. But in formal power series the
+convergence is not needed.
+
+Let \( R \) be a commutative ring with identity. Recall that
+\( R[x] \) denotes the ring of polynomials in \( x \) with
+coefficients in \( R \).
+
+\begin{defn}
+  The \emph{ring of formal power series} in \( x \) with coefficients
+  in \( R \) is the set
+\[
+  R[[x]] = \{a_0 + a_1 x + a_2x^2 + \cdots : a_0,a_1,a_2,\ldots \in R \},
+\]
+with addition
+\[
+  \left( \sum_{i=0}^\infty a_i x^n \right) + \left( \sum_{i=0}^\infty
+    b_i x^n \right) = \sum_{i=0}^\infty (a_i+b_i) x^n ,
+\]
+and multiplication
+\[
+  \left( \sum_{i=0}^\infty a_i x^n \right) \left( \sum_{i=0}^\infty
+    b_i x^n \right) = \sum_{i=0}^\infty \left( \sum_{k=0}^n a_k
+    b_{n-k} \right)x^n.
+\]
+\end{defn}
+
+So, roughly speaking, a formal power series is a polynomial of
+infinite degree.
+
+The multiplicative identity of \( R[[1]] \) is \( 1 \), that is,
+\( 1+0x+0x^2+\cdots \). For \( f(x),g(x) \in R[[1]] \), if
+\( f(x) g(x) = 1 \), then we say that \( f(x) \) is the \emph{inverse}
+of \( g(x) \) and write \( f(x) = g(x)^{-1} = 1/g(x) \).
+
+In the language of formal power series, \eqref{eq:geometric-series} is
+a perfectly valid identity without any convergence considered because
+\[
+  (1+x+x^2 + \cdots)(1-x) = (1+x+x^2 + \cdots) - x(1+x+x^2 + \cdots) = 1.
+\]
+
+An important aspect of formal power series is that the coefficient of
+\( x^n \) must be computed using a finitely many additions and
+multiplications in \( R \).
+
+
+\begin{exam}
+  The series
+\[
+  e^{1+x} = \sum_{n\ge 0} \frac{(1+x)^n}{n!}
+\]
+is not a formal power series in \( \RR[[x]] \) because the constant
+term (the coefficient of \( x^0 \)) is \( \sum_{n\ge0} 1/n! \), which
+cannot be computed by a finite number of additions and multiplications
+in \( \RR \) (although we know \( \sum_{n\ge0} 1/n! = e \)). On the
+other hand,
+\[
+  e\cdot e^{x} = \sum_{n\ge 0} \frac{e x^n}{n!}
+\]
+is a formal power series in \( \RR[[x]] \). 
+\end{exam}
+
+Note that being a formal power series is all about how the series is
+presented rather than what values the series take as a function. Most
+of the time, we will not consider a formal power series as a function.
+
+We can naturally extend the definition of formal power series to the
+multivariate case.
+
+
+\begin{defn}
+  Let \( \vx =(x_1,x_2,\dots) \) be a sequence of variables. Let
+  \( Z \) denote the set of sequences
+  \( I=(i_1,i_2,\dots)\in \ZZ_{\ge0}^\infty \) such that
+  \( i_1+i_2 + \cdots < \infty \). For \( I=(i_1,i_2,\dots)\in Z \),
+  we write \( \vx^I = x_1^{i_1} x_2^{i_2} \cdots \). The \emph{ring of
+    formal power series} in \( x_1,x_2,\dots \) with coefficients in
+  \( R \) is the set
+\[
+  R[[\vx]] = \left\{ \sum_{I\in Z} a_I \vx^I  : a_I\in R \right\},
+\]
+with addition
+\[
+  \left(\sum_{I\in Z} a_I \vx^I \right) + \left(\sum_{I\in Z} b_I \vx^I
+  \right) = \left( \sum_{I\in Z} (a_I+b_I) \vx^I \right),
+\]
+and multiplication
+\[
+  \left(\sum_{I\in Z} a_I \vx^I \right) \left(\sum_{I\in Z} b_I \vx^I
+  \right) = \sum_{I\in Z} \left( \sum_{I_1,I_2\in Z, I_1+I_2=I} a_{I_1} b_{I_2} \right) \vx^I.
+\]
+\end{defn}
+
+Again, rougly speaking, a multivariate formal power series is a
+multivariate polynomial of infinite degree.
+
+
+Now we define the notion of generating functions.
+
+
+\begin{defn}
+  The \emph{generating function} for a sequences \( \{ a_n\}_{n\ge 0} \) is
+  defined to be the formal power series
+\[
+  a_0 + a_1 x + a_2 x^2 + \cdots.
+\]
+\end{defn}
+
+So, the generating function for \( \{ a_n\}_{n\ge 0} \) is nothing but
+a way of recording the sequence. One of the benefits of generating
+functions is that we can use many properties of formal power series.
+
+
+We can easily extend the definition of generating functions to
+accommodate arrays \( \{ a_I\}_{I\in Z} \) of elements \( a_I\in R \)
+using multivariate formal power series. More generally, we will
+consider generating functions for arbitrary (combinatorial) objects.
+
+\begin{defn}
+  Let \( A \) be a set of objects. A \emph{weight} on \( A \) is a
+  function \( \wt:A\to R[[\vx]] \). The \emph{generating function} for
+  \( A \) with respect to the weight function \( \wt \) is the formal
+  power series
+  \[
+    \sum_{a \in A} \wt(a),
+  \]
+  provided that this is a valid formal power series in \( R[[\vx]] \).
+\end{defn}
+
+
+\begin{exam}
+  Let \( A = \{0,1,2,\dots\} \) and define a weight of \( A \) by
+  \( \wt(a) = x^a \). Then the generating function for \( A \)
+  (with this weight) is
+  \[
+    \sum_{a \in A} \wt(a) = \sum_{n=0}^n \wt(n)
+    = \sum_{n=0}^n x^n = \frac{1}{1-x}.
+  \]
+\end{exam}
+
+\begin{exam}
+  Let \( A \) be the set of subsets of \( [n] \) and define a weight
+  of \( A \) by \( \wt(a) = x^{|a|} \). Then the generating function for
+  \( A \) (with this weight) is
+  \[
+    \sum_{a \in A} \wt(a) = \sum_{a\subseteq [n]} x^{|a|} =
+    \sum_{k=0}^n \binom{n}{k} x^{k} = (1+x)^n.
+  \]
+\end{exam}
+
+\begin{exam}
+  Let \( A \) be the set \( S_n \) of permutations of \( [n] \) and
+  define a weight of \( A \) by \( \wt(a) = x^{\cycle(a)} \). Then it
+  can be proved that the generating function for \( A \) (with this
+  weight) is
+  \[
+    \sum_{a \in A} \wt(a) = \sum_{\pi\in S_n} x^{\cycle(a)} = x(x+1)
+    \cdots (x+n-1).
+  \]
+\end{exam}
+
+We will often use the term ``generating function'' in a flexible
+manner. For example, the generating function for the number of
+permutations would mean the generating function for the sequence
+\( \{a_n = n!\}_{n\ge0} \), that is, \( \sum_{n\ge0} n! x^n \).
+
+\subsection{Dyck paths and Motzkin paths}
+
+\subsection{Matchings, set partitions, permutations}
+
 \section{Combinatorial interpretations for orthogonal polynomials and
   their moments}
+\label{sec:comb-interpr-orth}
 
 From now one we will focus on the combinatorial approaches to
 orthogonal polynomials in Viennot's lecture notes \cite{ViennotLN}.
-Part of this section will have some overlaps with the previous
-sections.
+Part of this section will have some overlaps with \Cref{sec:basics-orth-polyn}.
 
-In this section we will give combinatorial interpretations for
-orthogonal polynomials and their moments. Using these combinatorial
-interpretations, we can reprove the orthogonality of orthogonal
-polynomials using combinatorics only.
+The main goal of this section to give combinatorial interpretations
+for orthogonal polynomials and their moments. Using these
+combinatorial interpretations, we will reprove the orthogonality of
+orthogonal polynomials using combinatorics only.
 
 \subsection{Orthogonal polynomials and 3-term recurrences}
 
@@ -1238,132 +1439,63 @@ Favard's theorem bijectively.
 
 \subsection{A model for orthogonal polynomials using Favard tilings}
 
-In this subsection we define Favard paths and Favard tilings. These
-are equivalent combinatorial objects, which give a combinatorial
-meaning to orthogonal polynomials.
+In this subsection we give a combinatorial interpretation for
+orthogonal polynomials using Favard tilings.
 
-See \Cref{sec:generating-functions} for the basics on generating
-functions.
-
-\begin{defn}
-  A \emph{path} is a sequence \( \alpha=(s_0,s_1,\dots,s_n) \) of
-  points \( s_i=(x_i,y_i) \in \ZZ^2 \). Each point \( s_i \) is
-  called a \emph{vertex} of \( \alpha \). We say that \( \alpha \)
-  travels from the \emph{initial point} (or \emph{starting point})
-  \( s_0 \) to the \emph{final point} (or \emph{ending point})
-  \( s_n \). The pairs \( (s_i,s_{i+1}) \) are called the
-  \emph{elementary steps} of \( \alpha \). The \emph{length} of
-  \( \alpha \), denoted \( |\alpha| \), is defined to be \( n \).
-\end{defn}
-
-Let \( \alpha=(s_0,s_1,\dots,s_n) \) and
-\( \beta=(t_0,t_1,\dots,t_{m}) \) be two paths. If \( s_n = t_0 \),
-then we define \( \alpha\beta \) to be the path
-\( (s_0,s_1,\dots,s_n,t_1,\dots,t_{m}) \). 
-
-Note that an elementary step \( (s_{i},s_{i+1}) \) is also a path. In
-this point of view, we can consider \( \alpha \) as the product of its
-elementary steps:
-\( \alpha=(s_0,s_1) (s_1,s_2) \cdots (s_{n-1},s_n) \). A
-\emph{factorization} of \( \alpha \) is an expression
-\( \alpha=\alpha_1 \cdots \alpha_k \), where
-\( \alpha_1,\dots,\alpha_k \) are paths such that the initial point of
-\( \alpha_i \) is equal to the final point of \( \alpha_{i+1} \) for
-\( i=1,2,\dots,n-1 \). Each \( \alpha_i \) is called a \emph{factor}
-of \( \alpha \). In particular, we say that \( \alpha_1 \) is a
-\emph{prefix} of \( \alpha \) and \( \alpha_n \) is a \emph{suffix} of
-\( \alpha \). We also consider an empty path \( (s,s) \).
-
-A \emph{north step} is a step of the form \( ((x,y), (x,y+1)) \). We
-define a \emph{south step}, an \emph{east step}, and a \emph{west
-  step} similarly. In addition, a \emph{northeast step} is a step of
-the form \( ((x,y), (x+1,y+1)) \) and a \emph{north-north step} is a
-step of the form \( ((x,y), (x,y+2)) \).
-
-The \emph{level} of a vertex \( s=(x,y) \) is defined to be \( y \).
-
-
-A \emph{(step) weight} is a function \( w:\ZZ^2\times\ZZ^2\to K \).
-For a path \( \alpha=(s_0,s_1,\dots,s_n) \), define
-\[
-  w(\alpha) = w(s_0,s_1) w(s_1,s_2) \cdots w(s_{n-1},s_n).
-\]
-
-
-\begin{defn}
-  A \emph{Favard path} is a path \( \alpha=(s_0,s_1,\dots,s_n) \) from
-  \( s_0=(0,0) \) with 3 types of elementary steps: a north step (N),
-  a north-north step (NN), and a northeast step (NE). Given two
-  sequences \( b= \{ b_n\}_{n\ge 0} \) and
-  \( \lambda=\{ \lambda_n\}_{n\ge 1} \),
-  the \emph{Favard-weight} \( w_F \) is defined as follows:
-  \begin{align*}
-    w_F((i,k),(i,k+1)) &= -b_k,\\
-    w_F((i,k-1),(i,k+1)) &= -\lambda_k,\\
-    w_F((i,k),(i+1,k+1)) &= x.
-  \end{align*}
-  For a step \( s \) other than a north step, a north-north step, and
-  a northeast step, we define \( w_F(s) = 0 \).
-\end{defn}
-
-Let \( F_n \) denote the set of Favard paths from \( (0,0) \) to a
-vertex of level \( n \).
-
- See Figure~\ref{fig:image3}.
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=.1]{./figures/image3.jpeg}
-  \caption{The Favard-weight and a Favard path.}
-  \label{fig:image3}
-\end{figure}
-
-\begin{lem}
-  Suppose that \( \{ P_n(x) \}_{n\ge 0} \)
-  is a sequence of polynomials satisfying \eqref{eq:3-RR}.
-  Then
-  \[
-    P_n(x) = \sum_{\alpha\in F_n} w_F(\alpha).
-  \]
-\end{lem}
-
-We can identify a Favard path with a Favard tiling.
 
 \begin{defn}
   A \emph{Favard tiling of size $n$} is a tiling of a $1\times n$
-  square board with tiles where each tile is a domino or a monomino
-  and each monomino is colored black or red. We label the squares in
-  the $1\times n$ board by $1,2,\dots,n$ from left to right. The set
-  of Favard tilings of size $n$ is denoted by $\FT_n$. We define
-  \( \FT_0 \) to be the set consisting of the empty tiling.
+  square board with monominos and dominos, where each monomino may be
+  marked. The set of Favard tilings of size $n$ is denoted by $\FT_n$.
+
+  We label the squares in the $1\times n$ board by $0,1,\dots,n-1$
+  from left to right. Define the weight \( \wt(T) \) of
+  \( T\in \FT_n \) to be the product of the weights of the tiles in
+  \( T \), where
+  \begin{enumerate}
+  \item the weight of each marked monomino is \( x \),
+  \item the weight of each unmarked monomino containing a label
+    \( i \) is \( -b_i \), and
+  \item the weight of each domino containing labels \( i-1 \) and
+    \( i \) is \( -\lambda_i \).
+  \end{enumerate}
+
+
+
+
 \end{defn}
+
+For example, see \Cref{fig:tiling}. Note that the number \( u_n \) of
+Favard tilings of size \( n \) satisfies \( u_{n+1} = 2u_n+u_{n-1} \)
+with \( u_0=1 \) and \( u_1=2 \). These numbers are called the Pell
+numbers.
 
 \begin{figure}
   \centering
 \begin{tikzpicture}[scale=0.75]
-  \draw [help lines] (0,0) grid (5,1);
-  \foreach \x in {1,...,5} \draw node at (\x-0.5,0.5) {\x};
-  \LBD1 \LBM2 \LRM3 \LBM4
+  \draw [help lines] (0,0) grid (8,1);
+  \foreach \x in {0,...,7} \draw node at (\x+0.5,0.5) {\x};
+  \LBD1 \LRM2 \LBM3 \LBM4 \LRM5 \LRM6 \LBM7
 \end{tikzpicture}
-\caption{A Favard tiling $T\in\FT_5$ with $\wt(T)=\lambda_1 b_3$.}
+\caption{A Favard tiling $T\in\FT_8$ with
+  $\wt(T)=\lambda_1 b_3b_4b_7x^3$. The marked monominos are colored
+  red.}
   \label{fig:tiling}
 \end{figure}
 
+The following proposition gives a combinatorial interpretation for
+orthogonal polynomials.
 
-\begin{lem}
+\begin{prop}\label{pro:Favard}
   Suppose that \( \{ P_n(x) \}_{n\ge 0} \) is a sequence of
   polynomials satisfying \eqref{eq:3-RR}. Then
   \[
-    P_n(x) = \sum_{\alpha\in \FT_n} \wt(\alpha).
+    P_n(x) = \sum_{T\in \FT_n} \wt(T).
   \]
-\end{lem}
-
-
-\begin{remark}
-  Note that the number \( u_n \) of Favard tilings of size \( n \)
-  satisfies \( u_{n+1} = 2u_n+u_{n-1} \) with \( u_0=1 \) and
-  \( u_1=2 \). These numbers are called the Pell numbers.
-\end{remark}
+\end{prop}
+\begin{proof}
+  This is immediate from the recurrence \eqref{eq:3-RR}.
+\end{proof}
 
 
 
@@ -1399,7 +1531,8 @@ We can identify a Favard path with a Favard tiling.
 Moments are important quantities of a linear functional \( \LL \)
 because they have all the information of \( \LL \). In this subsection
 we will find a combinatorial interpretation for the moments of
-orthogonal polynomials.
+orthogonal polynomials. To do this we will first take a close look at
+the moments.
 
 Suppose that \( \LL \) is a linear functional with monic OPS
 \( \{ P_n(x) \}_{n\ge 0} \), which satisfies the 3-term recurrence
@@ -1413,7 +1546,7 @@ For example, since
 \begin{align*}
   P_0(x) &= 1,\\
   P_1(x) &= (x-b_0)P_0(x) - \lambda_0P_{-1}(x) = x-b_0,\\
-  P_2(x) &= (x-b_1)P_1(x) - \lambda_1P_0(x) =  x^2 - (b_1+b_0)x +b_0b_1 - \lambda_1,\\
+  P_2(x) &= (x-b_1)P_1(x) - \lambda_1P_0(x) =  x^2 - (b_1+b_0)x +b_0b_1 - \lambda_1,
 \end{align*}
 we have
 \begin{align*}
@@ -1456,30 +1589,371 @@ There is a very useful webpage \url{https://oeis.org/} where you can
 search integer sequences. If you search the above sequence, the
 webpage will tell you that this is the sequence of the number of
 Motzkin paths. So we can guess that there must be a close connection
-with the moments of orthogonal polynomials and Motzkin paths.
-
-\subsection{Motzkin paths}
-
+with the moments of orthogonal polynomials and Motzkin paths. See
+\Cref{sec:dyck-paths-motzkin} for more information on Motzkin paths.
 
 
-
-
+Let \( \Motz_n \) denote the set of Motzkin paths from \( (0,0) \) to
+\( (n,0) \). Define the weight \( \wt(\pi) \) of a Motzkin path \( \pi\in \Motz_n \)
+to be the product of the weights of the steps in \( \pi \),
+\begin{enumerate}
+\item the weight of an up step is \( 1 \),
+\item the weight of a horizontal step starting at height \( i \) is \( b_i \), and
+\item the weight of a down step starting at height \( i \) is
+  \( \lambda_i \).
+\end{enumerate}
 
 After spending enough time of trials and errors, we can come up with
-the following combinatorial model for \( \mu_n \).
+the following combinatorial model for the moments of orthogonal
+polynomials.
 
-\begin{thm}
-  We have
+\begin{thm}\label{thm:mu=Mot}
+  Suppose that \( \{ P_n(x) \}_{n\ge 0} \) is a monic OPS for a
+  linear functional \( \LL \) with \( \LL(1)=1 \). Suppose that
+  \( \{ P_n(x) \}_{n\ge 0} \) satisfy the 3-term recurrence
+  \[
+      P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x), \qquad n\ge0.
+  \]
+  Then the moments \( \mu_n=\LL(x^n) \) are given by
 \[
   \mu_n = \sum_{\pi\in \Motz_n} \wt(\pi).
 \]
 \end{thm}
 
+More generally, we will prove
+a combinatorial interpretation for mixed moments.
+
+\begin{defn}
+  Let \( \{ P_n(x) \}_{n\ge 0} \) be a monic OPS for a linear
+  functional \( \LL \). For integers \( n,r,s\ge0 \), the \emph{mixed
+    moments} \( \mu_{n,r,s} \) and \( \mu_{n,k} \) of this OPS are
+  defined by
+  \begin{align*}
+    \mu_{n,r,s} &= \frac{\LL(x^n P_r(x)P_s(x))}{\LL(P_s(x)^2)},\\
+    \mu_{n,k} &= \mu_{n,0,k} = \frac{\LL(x^n P_k(x))}{\LL(P_k(x)^2)}.
+  \end{align*}
+\end{defn}
+
+Note that \( \mu_n = \mu_{n,0,0} \).
+
+Let \( \Motz_{n,r,s} \) denote the set of Motzkin paths from
+\( (0,r) \) to \( (n,s) \). The weight of \( \pi\in \Motz_{n,r,s} \)
+is defined in the same manner as the weight of a Motzkin path from
+\( (0,0) \) to \( (n,0) \).
+
+\begin{thm}\label{thm:mu=Mot_nrs}
+  Following the notation in \Cref{thm:mu=Mot}, we have
+\[
+  \mu_{n,r,s} = \sum_{\pi\in \Motz_{n,r,s}} \wt(\pi).
+\]
+\end{thm}
+
+\begin{proof}
+  We proceed by induction on \( n \).
+  Suppose \( n=0 \). By the orthogonality of \( \{ P_n(x) \}_{n\ge 0} \),
+  we have
+  \[
+    \mu_{0,r,s} = \frac{\LL(P_r(x)P_s(x))}{\LL(P_s(x)^2)} = \delta_{r,s}.
+  \]
+  Since \( \Motz_{0,r,s} = \emptyset \) if \( r=s \) and
+  \( \Motz_{0,r,s} \) has only one (empty) Motzkin path if \( r=s \),
+  we also have
+  \( \sum_{\pi\in \Motz_{n,r,s}} \wt(\pi) = \delta_{r,s} \).
+
+  Let \( n\ge1 \) and suppose that the theorem holds for \( n-1 \).
+  Then by the 3-term recurrence,
+  \[
+    xP_r(x) = P_{r+1}(x) + b_rP_r(x) + \lambda_rP_{r-1}(x).
+  \]
+  Thus
+  \begin{align*}
+    \mu_{n,r,s}
+    &= \frac{\LL(x^n P_r(x) P_s(x))}{\LL(P_s(x)^2)}
+      = \frac{\LL(x^{n-1} (xP_r(x)) P_s(x))}{\LL(P_s(x)^2)}\\
+    &=\frac{\LL(x^{n-1} (P_{r+1}(x) + b_rP_r(x) + \lambda_rP_{r-1}(x)) P_s(x))}{\LL(P_s(x)^2)} \\
+    &= \frac{\LL(x^{n-1} P_{r+1}(x)P_s(x))}{\LL(P_s(x)^2)}
+      + b_r\frac{\LL(x^{n-1} P_rP_s(x))}{\LL(P_s(x)^2)}
+      + \lambda_r \frac{\LL(x^{n-1} P_{r-1}(x)P_s(x))}{\LL(P_s(x)^2)}\\
+    &= \mu_{n-1,r+1,s} + b_r\mu_{n-1,r,s} + \lambda_r \mu_{n-1,r-1,s}\\
+    &= \sum_{\pi\in \Motz_{n-1,r+1,s}} \wt(\pi)
+    + b_r \sum_{\pi\in \Motz_{n-1,r,s}} \wt(\pi)
+    + \lambda_r \sum_{\pi\in \Motz_{n-1,r-1,s}} \wt(\pi),
+  \end{align*}
+  where the last equation follows from the induction hypothesis.
+
+  On the other hand, considering the first step of each \( \pi\in \Motz_{n,r,s} \),
+  it is easy to check that 
+  \[
+     \sum_{\pi\in \Motz_{n,r,s}} \wt(\pi)
+    = \sum_{\pi\in \Motz_{n-1,r+1,s}} \wt(\pi)
+    + b_r \sum_{\pi\in \Motz_{n-1,r,s}} \wt(\pi)
+    + \lambda_r \sum_{\pi\in \Motz_{n-1,r-1,s}} \wt(\pi) .
+  \]
+  Hence the theorem holds for \( n \) and we are done by induction.
+\end{proof}
 
 
 \subsection{A bijective proof of Favard's theorem}
 
-\section{Moments of particular orthogonal polynomials}
+We have a combinatorial interpretation for both orthogonal polynomials
+and their moments. In this section we will prove Favard's theorem
+bijectively using these combinatorial models.
+
+
+Suppose that \( \{ P_n(x) \}_{n\ge 0} \) is a sequence of polynomials
+satisfying the 3-term recurrence
+\[
+  P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x).
+\]
+To prove Favard's theorem, we need to find a linear functional
+\( \LL \) for which \( \{ P_n(x) \}_{n\ge 0} \) are orthogonal.
+We simply define \( \LL \) so that the moments are given by
+\begin{equation}\label{eq:8}
+  \LL(x^n) = \sum_{\pi\in \Motz_{n}} \wt(\pi).
+\end{equation}
+It is enough to show that
+\[
+  \LL(P_r(x)P_s(x)) = \lambda_1 \cdots \lambda_s \delta_{r,s}.
+\]
+More generally, we will prove
+\begin{equation}\label{eq:LL(xPP)}
+  \LL(x^n P_r(x)P_s(x)) = \lambda_1 \cdots \lambda_s \sum_{\pi\in
+    \Motz_{n,r,s}} \wt(\pi).
+\end{equation}
+
+We first need to give a combinatorial meaning to the the left-hand
+side of \eqref{eq:LL(xPP)}. For a Favard tiling \( T \) with \( k \)
+marked monominos, let \( \wt'(T) = \wt(T)/x^k \). By \Cref{pro:Favard}
+and the definition \eqref{eq:8} of \( \LL(x^n) \), we have
+\[
+    \LL(x^n P_r(x)P_s(x)) = 
+    \sum_{(T_1,T_2,\pi)\in X} \wt'(T_1) \wt'(T_2) \wt(\pi),
+\]
+where \( X \) is the set of triples \( (T_1,T_2,\pi) \)
+such that
+\begin{enumerate}
+\item \( T_1\in \FT_r \) has \( i \) marked monominos for some \( 0\le i\le r \),
+\item \( T_2\in \FT_s \) has \( j \) marked monominos for some \( 0\le j\le s \), and
+\item \( \pi\in \Motz_{n+i+j} \).
+\end{enumerate}
+
+Let \( Y \) be the set of \( \pi\in \Motz_{n+r+s} \) such that the
+first \( r \) steps are up steps and the last \( s \) step s are down
+steps. Then the right-hand side of \eqref{eq:LL(xPP)} is equal to
+\( \sum_{\pi\in Y} \wt(\pi) \).
+
+By the above observation, \eqref{eq:LL(xPP)} is equivalent to the
+following theorem.
+
+\begin{thm}
+  For the sets \( X \) and \( Y \) defined above, we have
+\begin{equation}\label{eq:LL(xPP)2}
+  \sum_{(T_1,T_2,\pi)\in X} \wt'(T_1) \wt'(T_2) \wt(\pi)
+  =  \sum_{\pi\in Y} \wt(\pi).
+\end{equation}
+\end{thm}
+
+\begin{proof}
+ We will find a sign-reversing involution on \( X \).
+
+ Consider \( (T_1,T_2,\pi)\in X \). We write
+ \( \pi=S_1S_2 \cdots S_{m} \) as a sequence of steps and suppose
+ \begin{itemize}
+ \item \( a \) is the largest integer such that \( T_1 \)
+   starts with \( a \) marked monominos,
+ \item \( b \) is the largest integer such that \( T_2 \)
+   starts with \( a \) marked monominos,
+ \item \( u \) is the largest integer such that \( \pi \) starts with
+   \( u \) up steps,
+ \item \( v \) is the largest integer such that \( \pi \) ends with
+   \( v \) down steps.
+ \end{itemize}
+ We define \( \phi(T_1,T_2,\pi)= (T'_1,T'_2,\pi') \) as follows.
+\begin{description}
+\item[Case 1] \( u<a \). In this case we set \( T'_2 = T_2 \). There are two
+  subcases.
+\begin{description}
+\item[Case 1-1] \( S_{u+1} \) is a horizontal step. Let
+    \[
+      \pi' = S_1\cdots \widehat{S_{u+1}} \cdots S_{m},
+\]
+and define $T_1'$ to be the Favard tiling obtained from $T_1$ by
+replacing the \( (u+1) \)st marked monomino (at position \( u \)) by a
+unmarked monomino. Here the notation $\widehat{S_{u+1}}$ means that
+$S_{u+1}$ is removed from the sequence. See Figure~\ref{fig:case-a}.
+\item[Case 1-2] $S_{u+1}$ is a down step. Let
+    \[
+      \pi' = S_1\cdots \widehat{S_{u}}\widehat{S_{u+1}} \cdots S_m,
+\]
+and define $T_1'$ to be the Favard tiling obtained from $T_1$ by
+replacing the \( u \)th and \( (u+1) \)st marked monominos (at
+positions $u-1$ and $u$) by a domino. See Figure~\ref{fig:case-c}.
+\end{description}
+
+\item[Case 2] \( u\ge a\ne r \). In this case we set \( T'_2=T_2 \). Let
+  \( A \) be the \( (a+1) \)st tile in \( T_1 \) (\( A \) starts at position
+  \( a \)). There are two subcases.
+  \begin{description}
+  \item[Case 2-1] $A$ is a unmarked monomino. In this case let
+    \[
+      \pi' = S_1\cdots S_u H S_{u+1} \cdots S_m,
+\]
+and define $T_1'$ to be the Favard tiling obtained from $T_1$ by
+replacing $A$ by a marked monomino. See Figure~\ref{fig:case-a}.
+\item[Case 2-2] $A$ is a domino. In this case let
+    \[
+      \pi' = S_1\dots S_u UD S_{u+1} \dots S_m,
+\]
+and define $T_1'$ to be the Favard tiling obtained from $T_1$ by replacing $A$ by two
+marked monominos. See Figure~\ref{fig:case-c}.
+\end{description}
+\item[Case 3] \( u\ge a = r \) and \( v<b \). This can be done
+  similarly as Case 1. The only difference is that we set
+  \( T_1' = T_1 \) and consider the steps of \( \pi \) from the right.
+  
+\item[Case 4] \( u\ge a = r \) and \( v\ge b \ne s \).
+  This can be done similarly as Case 2.
+
+\item[Case 5] \( u\ge a = r \) and \( v\ge b=s \). In this case we set
+  \( (T'_1,T'_2,\pi') = (T_1,T_2,\pi) \).
+\end{description}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.75]
+    \draw[help lines] (0,0) grid (6,3);
+   \draw[line width = 1.5pt] (0,0)--++(3,3)--++(1,0)--++(1,-1)--++(0,-1)--++(1,1);
+   \draw[line width = 1.5pt, red] (3,3)--++(1,0);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=3$};
+\begin{scope}[shift={(0,-2.5)}]
+  \draw [help lines] (0,0) grid (6,1);
+  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
+  \BM0 \BM1 \BM2 \BM3 \RD5
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(4,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=4$};
+\end{scope}
+\end{tikzpicture}   \qquad\qquad\qquad
+\begin{tikzpicture}[scale=0.75]
+    \draw[help lines] (0,0) grid (5,3);
+   \draw[line width = 1.5pt] (0,0)--++(3,3)--++(1,-1)--++(0,-1)--++(1,1);
+   \remove(3,3)
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=3$};
+\begin{scope}[shift={(0,-2.5)}]
+  \draw [help lines] (0,0) grid (6,1);
+  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
+  \BM0 \BM1 \BM2 \RM3 \RD5
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=3$};
+\end{scope}
+\end{tikzpicture}   
+\caption{A pair $(\pi,T)\in X$ in Case 1-a on the left and the corresponding
+  pair $(\pi',T')$ in Case 2-a on the right, for $(n,m,\ell)=(2,6,2)$.
+The horizontal step starting at $(3,3)$ in $\pi$ is collapsed to a point.}
+  \label{fig:case-a}
+\end{figure}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.75]
+    \draw[help lines] (0,0) grid (6,3);
+   \draw[line width = 1.5pt] (0,0)--++(3,3)--++(0,-2)--++(1,1)--++(1,0)--++(1,1)--++(0,-1);
+   \draw[line width = 1.5pt, red] (2,2)--++(1,1)--++(0,-1);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=3$};
+\begin{scope}[shift={(0,-2.5)}]
+  \draw [help lines] (0,0) grid (6,1);
+  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
+  \BM0 \BM1 \BM2 \BM3 \RD5
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(4,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=4$};
+\end{scope}
+\end{tikzpicture}   \qquad\qquad\qquad
+\begin{tikzpicture}[scale=0.75]
+    \draw[help lines] (0,0) grid (5,3);
+   \draw[line width = 1.5pt] (0,0)--++(2,2)--++(0,-1)--++(1,1)--++(1,0)--++(1,1)--++(0,-1);
+   \remove(2,2)
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=2$};
+\begin{scope}[shift={(0,-2.5)}]
+  \draw [help lines] (0,0) grid (6,1);
+  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
+  \BM0 \BM1 \BD3 \RD5
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=2$};
+\end{scope}
+\end{tikzpicture}   
+\caption{A pair $(\pi,T)\in X$ in Case 1-b on the left and the corresponding
+  pair $(\pi',T')$ in Case 2-b on the right, for $(n,m,\ell)=(2,6,2)$.
+The peak $(U,V)$ starting at $(2,2)$ in $\pi$ is collapsed to a point.}
+  \label{fig:case-b}
+\end{figure}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.75]
+    \draw[help lines] (0,0) grid (6,3);
+   \draw[line width = 1.5pt] (0,0)--++(3,3)--++(1,-1)--++(1,0)--++(0,-1)--++(1,1);
+   \draw[line width = 1.5pt, red] (2,2)--++(1,1)--++(1,-1);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=3$};
+\begin{scope}[shift={(0,-2.5)}]
+  \draw [help lines] (0,0) grid (6,1);
+  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
+  \BM0 \BM1 \BM2 \BM3 \RD5
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(4,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=4$};
+\end{scope}
+\end{tikzpicture}   \qquad\qquad\qquad
+\begin{tikzpicture}[scale=0.75]
+    \draw[help lines] (0,0) grid (4,3);
+   \draw[line width = 1.5pt] (0,0)--++(2,2)--++(1,0)--++(0,-1)--++(1,1);
+   \remove(2,2)
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=2$};
+\begin{scope}[shift={(0,-2.5)}]
+  \draw [help lines] (0,0) grid (6,1);
+  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
+  \BM0 \BM1 \RD3 \RD5
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=2$};
+\end{scope}
+\end{tikzpicture}   
+\caption{A pair $(\pi,T)\in X$ in Case 1-c on the left and the corresponding
+  pair $(\pi',T')$ in Case 2-c on the right, for $(n,m,\ell)=(2,6,2)$.
+The peak $(U,D)$ starting at $(2,2)$ in $\pi$ is collapsed to a point.}
+  \label{fig:case-c}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[scale=0.75]
+    \draw[help lines] (0,0) grid (8,6);
+   \draw[line width = 1.5pt] (0,0)--++(6,6)--++(1,0)--++(0,-3)--++(1,1)--++(0,-2);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(6,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=6$};
+\begin{scope}[shift={(0,-2.5)}]
+  \draw [help lines] (0,0) grid (6,1);
+  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
+  \BM0 \BM1 \BM2 \BM3 \BM4 \BM5
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(6,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=6$};
+\end{scope}
+\end{tikzpicture}   
+\caption{A pair $(\pi,T)\in X$ in Case 3 for $(n,m,\ell)=(2,6,2)$. In this case
+  $(\pi,T) = (\pi',T')$ is a fixed point.}
+  \label{fig:case3}
+\end{figure}
+
+It is not hard to check that
+the map \( \phi(T_1,T_2,\pi)= (T'_1,T'_2,\pi') \)
+is a sign-reversing involution on \( X \)
+with fixed points \( (\emptyset,\emptyset,\pi) \)
+where \( \pi\in Y \).
+\end{proof}
+
+\section{Moments of classical orthogonal polynomials}
 
 In this section we consider
 Tchebyshev polynomials of the 1st and 2nd kinds,
@@ -1512,39 +1986,20 @@ show that \( |M_n| = \mu_n \).
 If \( P_n(x) \) depend on some parameters, it will be sufficient to
 consider the histories and the combinatorial objects in \( M_n \).
 
-\subsection{Tchebycheff polynomials}
 
-% \subsection{Histories}
+\subsection{Tchebyshev polynomials}
 
-% \subsection{The bijection between Laguerre histories and permutations}
-
-% \subsection{Properties of the bijection}
-
-% \subsection{Laguerre polynomials}
+% \subsection{Hermite polynomials}
 
 % \subsection{Charlier polynomials}
 
-% \subsection{Meixner polynomials of the first kind}
-
-% \subsection{Meixner polynomials of the second kind}
-
-% \subsection{Orthogonal polynomials of Scheffer}
+% \subsection{Laguerre polynomials}
 
 % \section{Inverse polynomials}
 
-% \subsection{Vertical polynomials}
-
-% \subsection{Bijective proof of Theorem 1}
-
-% \subsection{Examples: orthogonal polynomials of Sheffer}
-
-% \subsection{Other examples}
-
-% \subsection{Generalization: Lukasiewics paths}
-
 % \section{Determinants of moments}
 
-% \subsection{Calulating the 3-term recurrence coefficients}
+% \subsection{Computing the 3-term recurrence coefficients}
 
 % \subsection{Determinants of paths}
 
@@ -1562,21 +2017,9 @@ consider the histories and the combinatorial objects in \( M_n \).
 
 % \subsection{Convergents}
 
-% \subsection{Applications to Rogers--Ramanujan identities}
+% \subsection{Symmetric orthogonal polynomials}
 
-% \subsection{Settling and symmetric moments}
-
-% \subsection{Multicontinued fractions}
-
-% \section{Polynomials of paving a graph}
-
-% \subsection{Coupling polynomials and paving polynomials}
-
-% \subsection{Continued fraction trees}
-
-% \subsection{Path trees over an graph}
-
-% \subsection{Coupling, derangements and orthogonality}
+% \section{Linearization coefficients}
 
 
 
@@ -1702,182 +2145,10 @@ This implies
 \end{exam}
 
 
-\section{Formal power series and generating functions}
-\label{sec:generating-functions}
 
-In this section, we study basics of formal power series and generating
-functions.
+\section{Dyck paths and Motzkin paths}
+\label{sec:dyck-paths-motzkin}
 
-A \emph{power series} is a series of the form
-\[
- f(x) = a_0 + a_1 x + a_2 x^2 + \cdots.
-\]
-If \( a_i \)'s are real numbers, then \( f(x) \) may be considered as
-a function on \( x \) whose domain is the set of real numbers \( x \)
-such that the above infinite series converges.
-
-For example, if
-\[
-  f(x) = 1+x+x^2 + \cdots,
-\]
-then we have \( f(x) = 1/(1-x) \) for \( |x|<1 \). Thus we can write,
-for \( |x|<1 \),
-\begin{equation}\label{eq:geometric-series}
-  1+x+x^2 + \cdots = \frac{1}{1-x}.
-\end{equation}
-This, however, does not make sense if \( |x|>1 \). Hence, in calculus,
-whenever we consider a power series we always have to mention for what
-values of \( x \) the series converges. But in formal power series the
-convergence is not needed.
-
-Let \( R \) be a commutative ring with identity. Recall that
-\( R[x] \) denotes the ring of polynomials in \( x \) with
-coefficients in \( R \).
-
-\begin{defn}
-  Let \( R \) be a field. The \emph{ring of formal power series} in
-  \( x \) with coefficients in \( R \) is the set
-\[
-  R[[x]] = \{a_0 + a_1 x + a_2x^2 + \cdots : a_0,a_1,a_2,\ldots \in R \},
-\]
-with addition
-\[
-  \left( \sum_{i=0}^\infty a_i x^n \right) + \left( \sum_{i=0}^\infty
-    b_i x^n \right) = \sum_{i=0}^\infty (a_i+b_i) x^n ,
-\]
-and multiplication
-\[
-  \left( \sum_{i=0}^\infty a_i x^n \right) \left( \sum_{i=0}^\infty
-    b_i x^n \right) = \sum_{i=0}^\infty \left( \sum_{k=0}^n a_k
-    b_{n-k} \right)x^n.
-\]
-\end{defn}
-
-So, roughly speaking, a formal power series is a polynomial of
-infinite degree.
-
-The multiplicative identity of \( R[[1]] \) is \( 1 \), that is,
-\( 1+0x+0x^2+\cdots \). For \( f(x),g(x) \in R[[1]] \), if
-\( f(x) g(x) = 1 \), then we say that \( f(x) \) is the \emph{inverse}
-of \( g(x) \) and write \( f(x) = g(x)^{-1} = 1/g(x) \).
-
-In the language of formal power series, \eqref{eq:geometric-series} is
-a perfectly valid identity without any convergence considered because
-\[
-  (1+x+x^2 + \cdots)(1-x) = (1+x+x^2 + \cdots) - x(1+x+x^2 + \cdots) = 1.
-\]
-
-An important aspect of a formal power series is that the coefficient
-of \( x^n \) must be computed using a finitely many additions and
-multiplications in \( R \).
-
-
-\begin{exam}
-  The series
-\[
-  e^{1+x} = \sum_{n\ge 0} \frac{(1+x)^n}{n!}
-\]
-is not a formal power series in \( \RR[[x]] \) because the constant
-term (the coefficient of \( x^0 \)) is \( \sum_{n\ge0} 1/n! \), which
-cannot be computed by a finite number of additions and multiplications
-in \( \RR \) (although we know that it is equal to \( e \)).
-On the other hand,
-\[
-  e\cdot e^{x} = \sum_{n\ge 0} \frac{e x^n}{n!}
-\]
-is a formal power series in \( \RR[[x]] \).
-\end{exam}
-
-We can also consider formal power series in more than one variable.
-
-
-\begin{defn}
-  Let \( R \) be a field. Let \( \vx =(x_1,x_2,\dots) \) be a sequence of
-  variables. Let \( Z \) denote the set of sequences
-  \( I=(i_1,i_2,\dots)\in \ZZ_{\ge0}^\infty \) such that
-  \( i_1+i_2 + \cdots < \infty \). For \( I=(i_1,i_2,\dots)\in Z \),
-  we write \( \vx^I = x_1^{i_1} x_2^{i_2} \cdots \). The \emph{ring of
-    formal power series} in \( x_1,x_2,\dots \) with coefficients in
-  \( R \) is the set
-\[
-  R[[\vx]] = \left\{ \sum_{I\in Z} a_I \vx^I  : a_I\in R \right\},
-\]
-with addition
-\[
-  \left(\sum_{I\in Z} a_I \vx^I \right) + \left(\sum_{I\in Z} b_I \vx^I
-  \right) = \left( \sum_{I\in Z} (a_I+b_I) \vx^I \right),
-\]
-and multiplication
-\[
-  \left(\sum_{I\in Z} a_I \vx^I \right) \left(\sum_{I\in Z} b_I \vx^I
-  \right) = \sum_{I\in Z} \left( \sum_{I_1,I_2\in Z, I_1+I_2=I} a_{I_1} b_{I_2} \right) \vx^I.
-\]
-\end{defn}
-
-
-
-Now we define the notion of generating functions. Usually, the
-generating function for a sequences \( \{ a_n\}_{n\ge 0} \) is defined
-to be the formal power series
-\[
-  a_0 + a_1 x + a_2 x^2 + \cdots.
-\]
-This definition can easily be extended to the generating function for
-an array \( \{ a_I\}_{I\in Z} \) of elements \( a_I\in R \). More
-generally, we will consider generating functions for arbitrary
-(combinatorial) objects.
-
-\begin{defn}
-  Let \( A \) be a set of objects. A \emph{weight} on \( A \) is a
-  function \( \wt:A\to R[[\vx]] \). The \emph{generating function} for
-  \( A \) with respect to the weight function \( \wt \) is the formal
-  power series
-  \[
-    \sum_{a \in A} \wt(a),
-  \]
-  provided that this is a valid formal power series in \( R[[\vx]] \).
-\end{defn}
-
-
-\begin{exam}
-  Let \( A = \{0,1,2,\dots\} \) and define a weight of \( A \) by
-  \( \wt(a) = x^a \). Then the generating function for \( A \)
-  (with this weight) is
-  \[
-    \sum_{a \in A} \wt(a) = \sum_{n=0}^n \wt(n)
-    = \sum_{n=0}^n x^n = \frac{1}{1-x}.
-  \]
-\end{exam}
-
-\begin{exam}
-  Let \( A \) be the set of subsets of \( [n] \) and define a weight
-  of \( A \) by \( \wt(a) = x^{|a|} \). Then the generating function for
-  \( A \) (with this weight) is
-  \[
-    \sum_{a \in A} \wt(a) = \sum_{a\subseteq [n]} x^{|a|} =
-    \sum_{k=0}^n \binom{n}{k} x^{k} = (1+x)^n.
-  \]
-\end{exam}
-
-\begin{exam}
-  Let \( A \) be the set \( S_n \) of permutations of \( [n] \) and
-  define a weight of \( A \) by \( \wt(a) = x^{\cycle(a)} \). Then it
-  can be proved that the generating function for \( A \) (with this
-  weight) is
-  \[
-    \sum_{a \in A} \wt(a) = \sum_{\pi\in S_n} x^{\cycle(a)} = x(x+1)
-    \cdots (x+n-1).
-  \]
-\end{exam}
-
-We will often use the term ``generating function'' in a flexible
-manner. For example, the generating function for the number of
-permutations would mean the generating function for the sequence
-\( \{a_n = n!\}_{n\ge0} \), that is, \( \sum_{n\ge0} n! x^n \).
-
-
-\section{Catalan numbers}
-\label{sec:catalan-numbers}
 
 
 
