@@ -42,3 +42,4 @@ Orthogonal polynomials are classical objects arising from the study of continued
 3. [2023-09-05 Tue]: The moment functional and orthogonality, Existence of OPS, [[file:ops-files/OPS3.pdf][lecture notes]], [[https://youtu.be/imG73nDIAws][video]]
 4. [2023-09-07 Thu]: The fundamental recurrence, [[file:ops-files/OPS4.pdf][lecture notes]], [[https://youtu.be/t9BgSJr2eMc][video]]
 5. [2023-09-12 Tue]: Christoffel-Darbox identities and zeros of OP, [[file:ops-files/OPS5.pdf][lecture notes]], [[https://youtu.be/O1Lnqyg5lw0][video]]
+6. [2023-09-14 Thu]: Formal power series and generating functions, [[file:ops-files/OPS6.pdf][lecture notes]], [[https://youtu.be/ntLp_L_mlKs][video]]

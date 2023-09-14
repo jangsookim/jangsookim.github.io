@@ -1,4 +1,4 @@
-\documentclass{amsart}
+\documentclass[oneside]{book}
 
 \usepackage{amsmath,amsthm,amssymb,bm}
 \usepackage{hyperref}
@@ -108,7 +108,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % start here
 
-\section{Introduction to the lectures}
+\chapter{Introduction to the lectures}
 
 Orthogonal polynomials are classical objects arising from the study of
 continued fractions. Due to the long history of orthogonal
@@ -131,18 +131,19 @@ partitions, and orthogonal polynomials of type \( R_1 \).
 The prerequisites of this course are Calculus 1, Linear Algebra, and
 Discrete Mathematics.
 
-In the first section we study elementary and classical results of
-orthogonal polynomials. In the second section we review basics of
-enumerative combinatorics. Starting from the third section we focus on
-the combinatorics of orthogonal polynomials.
+In \Cref{sec:basics-orth-polyn} we study elementary and classical
+results of orthogonal polynomials. In \Cref{cha:basics-enum-comb} we
+review basics of enumerative combinatorics. Starting from
+\Cref{sec:comb-interpr-orth} we focus on the combinatorics of
+orthogonal polynomials.
 
-\section{Basics of orthogonal polynomials}
+\chapter{Basics of orthogonal polynomials}
 \label{sec:basics-orth-polyn}
 
-In this section we will cover the first chapter of Chihara's book
+In this chapter we will cover the first chapter of Chihara's book
 \cite{Chihara}.
 
-\subsection{Introduction}
+\section{Introduction}
 
 Since
 \[
@@ -324,7 +325,7 @@ way, see \Cref{sec:sign-revers-invol}.
 \end{remark}
 
 
-\subsection{The moment functional and orthogonality}
+\section{The moment functional and orthogonality}
 
 We will consider the space \( \CC[x] \) of polynomials with complex
 coefficients. A \emph{linear functional} on \( \CC[x] \) is a map
@@ -454,7 +455,7 @@ dividing the linear functional by the value \( \LL(1) \), we may
 assume that \( \LL(1)=1 \).
 
 
-\subsection{Existence of OPS}
+\section{Existence of OPS}
 
 The main question in this section is: for what linear functional
 \( \LL \) does there exist an OPS? To answer this question we need the
@@ -738,7 +739,7 @@ for \( \LL \).
 \end{proof}
 
 
-\subsection{The three-term recurrence}
+\section{The three-term recurrence}
 
 One important property of orthogonal polynomials is that they satisfy
 a 3-term recurrence relation.
@@ -999,12 +1000,12 @@ true.
   The ``moreover'' statement follows from \Cref{cor:la-pos-def}.
 \end{proof}
 
-\subsection{Christoffel--Darboux identities
+\section{Christoffel--Darboux identities
 and zeros of orthogonal polynomials}
 
 The Christoffel--Darboux identities are useful identities which have
 many applications in the theory of orthogonal polynomials. In this
-subsection we prove these identities and and their application to the
+section we prove these identities and and their application to the
 zeros of orthogonal polynomials.
 
 
@@ -1032,7 +1033,7 @@ zeros of orthogonal polynomials.
   Subtracting \eqref{eq:11} from \eqref{eq:10}, we have
   \[
     P_{n+1}(x) P_n(y) - P_{n+1}(y) P_n(x) = (x-y) P_n(x) P_n(y)
-    - \lambda_n (P_{n-1}(x) P_n(y) - P_{n-1}(y) P_n(x)).
+    + \lambda_n (P_n(x)P_{n-1}(y) - P_n(y)P_{n-1}(x)).
   \]
   Let \( f_k = P_{k+1}(x)P_{k}(y) - P_{k+1}(y)P_{k}(x) \). Then we can
   rewrite the above equation (with \( n \) replaced by \( k \)) as
@@ -1126,26 +1127,29 @@ one root in \( (-\infty,x_{n,n}) \). Thus we obtain
 \eqref{eq:interlacing}.
 \end{proof}
 
-\section{Basics of enumerative combinatorics}
+\chapter{Basics of enumerative combinatorics}
+\label{cha:basics-enum-comb}
 
-In this section we review fundamental objects in enumerative
+In this chapter we review fundamental objects in enumerative
 combinatorics.
 From now on we will use the notation \( [n] := \{ 1,\dots,n\} \).
 
-\subsection{Formal power series and generating functions}
+\section{Formal power series and generating functions}
 
-In this subsection, we study basics of formal power series and generating
-functions.
+In this section, we study basics of formal power series and generating
+functions. See \cite{Wilf2006} for more details on this topic.
 
 A \emph{power series} is a series of the form
 \[
  f(x) = a_0 + a_1 x + a_2 x^2 + \cdots.
 \]
-If \( a_i \)'s are real numbers, then \( f(x) \) may be considered as
-a function on \( x \) whose domain is the set of real numbers \( x \)
-such that the above infinite series converges.
+The quantity \( a_n \) is called the \emph{coefficient of \( x^n \)}
+in \( f(x) \). The \emph{constant term} of \( f(x) \) is \( a_0 \),
+which we also denote by \( f(0) \).
 
-For example, if
+If the coefficients \( a_n \) are real numbers, then \( f(x) \) may be considered as
+a function on \( x \) whose domain is the set of real numbers \( x \)
+such that the above infinite series converges. For example, if
 \[
   f(x) = 1+x+x^2 + \cdots,
 \]
@@ -1171,13 +1175,13 @@ coefficients in \( R \).
 \]
 with addition
 \[
-  \left( \sum_{i=0}^\infty a_i x^n \right) + \left( \sum_{i=0}^\infty
-    b_i x^n \right) = \sum_{i=0}^\infty (a_i+b_i) x^n ,
+  \left( \sum_{n=0}^\infty a_n x^n \right) + \left( \sum_{n=0}^\infty
+    b_n x^n \right) = \sum_{n=0}^\infty (a_n+b_n) x^n ,
 \]
 and multiplication
 \[
-  \left( \sum_{i=0}^\infty a_i x^n \right) \left( \sum_{i=0}^\infty
-    b_i x^n \right) = \sum_{i=0}^\infty \left( \sum_{k=0}^n a_k
+  \left( \sum_{n=0}^\infty a_n x^n \right) \left( \sum_{n=0}^\infty
+    b_n x^n \right) = \sum_{n=0}^\infty \left( \sum_{k=0}^n a_k
     b_{n-k} \right)x^n.
 \]
 \end{defn}
@@ -1220,6 +1224,97 @@ is a formal power series in \( \RR[[x]] \).
 Note that being a formal power series is all about how the series is
 presented rather than what values the series take as a function. Most
 of the time, we will not consider a formal power series as a function.
+
+For two formal power series \( f(x) = \sum_{n\ge0} f_n x^n \) and
+\( g(x) = \sum_{n\ge0} g_n x^n \) with \( g_0=0 \), we define the
+\emph{composition} \( (f\circ g)(x) = f(g(x)) \) of \( f(x) \) and
+\( g(x) \) by
+\begin{equation}\label{eq:12}
+  f(g(x)) = \sum_{n\ge0} f_n g(x)^n.
+\end{equation}
+To see that the above sum is a formal power series, note that since
+\( g_0=0 \), every term in \( f_ng(x)^n \) has degree at least
+\( n \). Thus, for a fixed \( m\ge0 \), the coefficient of \( x^m \)
+in \( f(g(x)) \) is the coefficient of \( x^m \) in the finite sum
+\( \sum_{n=0}^m f_n g(x)^n \) of formal power series, which in turn
+can be computed in a finite number of additions and multiplications in
+\( R \). Note also that if \( g_0\ne 0 \), then the constant term in
+the sum \eqref{eq:12} is an infinite sum \( \sum_{n\ge0} f_n g_0 \),
+hence \( f(g(x)) \) is not a formal power series (unless \( f(x) \) is
+a polynomial).
+
+There is a simple criterion for the existence of an inverse of a
+formal power series.
+
+\begin{prop}
+  Let \( R \) be a field. A formal power series \( f(x)\in R[[x]] \)
+  has an inverse if and only if \( f(0)\ne 0 \).
+\end{prop}
+\begin{proof}
+  (\(\Rightarrow\)) Let \( g(x) \) be the inverse of \( f(x) \).
+  Suppose that \( f(0)=0 \). Then the constant term of \( f(x)g(x) \)
+  is \( f(0)g(0)=0 \), which is a contradiction to \( f(x)g(x) = 1 \).
+  Thus we have \( f(0)\ne 0 \).
+
+  (\(\Leftarrow\)) Let \( f(x) = \sum_{n\ge 0} f_nx^n \).
+  Then we can write \( f(x) \) as
+  \[
+    f(x) = f_0 \left( 1 - h(x) \right),
+    \qquad h(x) = \sum_{n\ge 1} h_n x^n, \qquad h_n = - f_0^{-1}f_n.
+  \]
+  Then the inverse of \( f(x) \) can be found in this way:
+  \[
+    \frac{1}{f(x)} = \frac{1}{f_0} \cdot \frac{1}{1-h(x)}
+    = \frac{1}{f_0} \sum_{n\ge0} h(x)^n.
+  \]
+  Since the lowest degree term of \( h(x)^n \) has degree at least \( n \),
+  the above infinite sum is a well-defined formal power series.
+\end{proof}
+
+As in calculus we define the \emph{derivative} of a formal power
+series \( f(x) = \sum_{n\ge0} f_n x^n \) by
+\[
+  f'(x) := \sum_{n\ge1} n f_n x^{n-1} = \sum_{n\ge0} (n+1) f_{n+1} x^{n}.
+\]
+The usual differentiation rules hold.
+\begin{prop}
+  For two formal power series \( f(x) \) and \( g(x) \),
+  we have
+\begin{align*}
+  (f(x)g(x))'
+  &= f'(x) g(x) + f(x) g'(x), \\
+  \left(\frac{f(x)}{g(x)}\right)'
+  &= \frac{f'(x) g(x) - f(x) g'(x)}{g(x)^2}, \qquad g(x) \ne 0,\\
+  (f(g(x)))'
+  &= f'(g(x)) g'(x), \qquad g(0) = 0.
+\end{align*}
+\end{prop}
+
+\begin{proof}
+  We can prove these identities using the formal definition of the
+  derivative. We will only proof the first identity. Let
+  \( f(x) = \sum_{n\ge0} f_n x^n \) and
+  \( g(x) = \sum_{n\ge0} g_n x^n \). Then
+  \[
+    (f(x)g(x))' = \left( \sum_{n\ge 0} \left( \sum_{k=0}^{n} f_kg_{n-k} \right) x^{n} \right)'
+      = \sum_{n\ge 0} \left( \sum_{k=0}^{n} n f_kg_{n-k}
+    \right) x^{n-1}.
+  \]
+  On the other hand,
+  \begin{align*}
+    f'(x) g(x) + f(x) g'(x)
+    & =  \sum_{n\ge0} n f_n x^{n-1} \sum_{n\ge0} g_n x^n +   
+      \sum_{n\ge0} f_n x^n \sum_{n\ge0} n g_n x^{n-1}\\
+    &= \sum_{n\ge 0} \left( \sum_{k=0}^{n} kf_kg_{n-k}
+      + \sum_{k=0}^{n} f_k\cdot (n-k)g_{n-k} \right) x^{n-1}\\
+    &= \sum_{n\ge 0} \left( \sum_{k=0}^{n} nf_kg_{n-k} \right) x^{n-1}.
+  \end{align*}
+  Thus we get the first identity.
+\end{proof}
+
+
+
+
 
 We can naturally extend the definition of formal power series to the
 multivariate case.
@@ -1268,6 +1363,25 @@ a way of recording the sequence. One of the benefits of generating
 functions is that we can use many properties of formal power series.
 
 
+\begin{exam}
+  The generating function for \( \{ a_n = 2^n\}_{n\ge 0} \) is
+  \begin{equation}\label{eq:15}
+    \sum_{n\ge 0} 2^n x^n = \sum_{n\ge 0} (2x)^n = \frac{1}{1-2x}.
+  \end{equation}
+\end{exam}
+
+\begin{exam}
+  Let's find the generating function for \( \{ a_n = n 2^n\}_{n\ge 0} \).
+  Differentiating both sides of \eqref{eq:15}, we get
+  \[
+    \sum_{n\ge 0} n2^n x^{n-1} =  \frac{2}{(1-2x)^2}.
+  \]
+  Multiplying both sides by \( x \), we obtain
+  \[
+    \sum_{n\ge 0} n2^n x^{n} =  \frac{2x}{(1-2x)^2}.
+  \]
+\end{exam}
+
 We can easily extend the definition of generating functions to
 accommodate arrays \( \{ a_I\}_{I\in Z} \) of elements \( a_I\in R \)
 using multivariate formal power series. More generally, we will
@@ -1275,14 +1389,14 @@ consider generating functions for arbitrary (combinatorial) objects.
 
 \begin{defn}
   Let \( A \) be a set of objects. A \emph{weight} on \( A \) is a
-  function \( \wt:A\to R[[\vx]] \). The \emph{generating function} for
-  \( A \) with respect to the weight function \( \wt \) is the formal
-  power series
+  function \( \wt:A\to R \), where \( R \) is any commutative ring.
+  The \emph{generating function} for \( A \) with respect to the
+  weight function \( \wt \) is the formal power series
   \[
-    \sum_{a \in A} \wt(a),
+    \sum_{a \in A} \wt(a).
   \]
-  provided that this is a valid formal power series in \( R[[\vx]] \).
 \end{defn}
+
 
 
 \begin{exam}
@@ -1297,11 +1411,11 @@ consider generating functions for arbitrary (combinatorial) objects.
 
 \begin{exam}
   Let \( A \) be the set of subsets of \( [n] \) and define a weight
-  of \( A \) by \( \wt(a) = x^{|a|} \). Then the generating function for
+  of \( A \) by \( \wt(a) = x^{|a|}y^{n-|a|} \). Then the generating function for
   \( A \) (with this weight) is
   \[
-    \sum_{a \in A} \wt(a) = \sum_{a\subseteq [n]} x^{|a|} =
-    \sum_{k=0}^n \binom{n}{k} x^{k} = (1+x)^n.
+    \sum_{a \in A} \wt(a) = \sum_{a\subseteq [n]} x^{|a|} y^{n-|a|} =
+    \sum_{k=0}^n \binom{n}{k} x^{k}y^{n-k} = (x+y)^n.
   \]
 \end{exam}
 
@@ -1321,26 +1435,25 @@ manner. For example, the generating function for the number of
 permutations would mean the generating function for the sequence
 \( \{a_n = n!\}_{n\ge0} \), that is, \( \sum_{n\ge0} n! x^n \).
 
-\subsection{Dyck paths and Motzkin paths}
+\section{Dyck paths and Motzkin paths}
 
-\subsection{Matchings, set partitions, permutations}
+\section{Matchings, set partitions, permutations}
 
-\section{Combinatorial interpretations for orthogonal polynomials and
-  their moments}
+\chapter{Combinatorial models for OPS}
 \label{sec:comb-interpr-orth}
 
 From now one we will focus on the combinatorial approaches to
 orthogonal polynomials in Viennot's lecture notes \cite{ViennotLN}.
-Part of this section will have some overlaps with \Cref{sec:basics-orth-polyn}.
+Part of this chatper will have some overlaps with \Cref{sec:basics-orth-polyn}.
 
-The main goal of this section to give combinatorial interpretations
+The main goal of this chapter to give combinatorial interpretations
 for orthogonal polynomials and their moments. Using these
 combinatorial interpretations, we will reprove the orthogonality of
 orthogonal polynomials using combinatorics only.
 
-\subsection{Orthogonal polynomials and 3-term recurrences}
+\section{Orthogonal polynomials and 3-term recurrences}
 
-In this subsection we give basic definitions and prove simple but
+In this section we give basic definitions and prove simple but
 useful lemmas. We then state the 3-term recurrence of orthogonal
 polynomials and Favard's theorem.
 
@@ -1435,9 +1548,9 @@ for the orthogonal polynomials \( P_n(x) \) and their moments
 \( \mu_n \). Using these combinatorial interpretations we will prove
 Favard's theorem bijectively.
 
-\subsection{A model for orthogonal polynomials using Favard tilings}
+\section{A model for orthogonal polynomials using Favard tilings}
 
-In this subsection we give a combinatorial interpretation for
+In this section we give a combinatorial interpretation for
 orthogonal polynomials using Favard tilings.
 
 
@@ -1524,10 +1637,10 @@ orthogonal polynomials.
 
 
 
-\subsection{How to find a combinatorial model for moments}
+\section{How to find a combinatorial model for moments}
 
 Moments are important quantities of a linear functional \( \LL \)
-because they have all the information of \( \LL \). In this subsection
+because they have all the information of \( \LL \). In this section
 we will find a combinatorial interpretation for the moments of
 orthogonal polynomials. To do this we will first take a close look at
 the moments.
@@ -1587,9 +1700,7 @@ There is a very useful webpage \url{https://oeis.org/} where you can
 search integer sequences. If you search the above sequence, the
 webpage will tell you that this is the sequence of the number of
 Motzkin paths. So we can guess that there must be a close connection
-with the moments of orthogonal polynomials and Motzkin paths. See
-\Cref{sec:dyck-paths-motzkin} for more information on Motzkin paths.
-
+with the moments of orthogonal polynomials and Motzkin paths.
 
 Let \( \Motz_n \) denote the set of Motzkin paths from \( (0,0) \) to
 \( (n,0) \). Define the weight \( \wt(\pi) \) of a Motzkin path \( \pi\in \Motz_n \)
@@ -1691,7 +1802,7 @@ is defined in the same manner as the weight of a Motzkin path from
 \end{proof}
 
 
-\subsection{A bijective proof of Favard's theorem}
+\section{A bijective proof of Favard's theorem}
 
 We have a combinatorial interpretation for both orthogonal polynomials
 and their moments. In this section we will prove Favard's theorem
@@ -1951,7 +2062,7 @@ with fixed points \( (\emptyset,\emptyset,\pi) \)
 where \( \pi\in Y \).
 \end{proof}
 
-\section{Moments of classical orthogonal polynomials}
+\chapter{Moments of classical orthogonal polynomials}
 
 In this section we consider
 Tchebyshev polynomials of the 1st and 2nd kinds,
@@ -1985,39 +2096,39 @@ If \( P_n(x) \) depend on some parameters, it will be sufficient to
 consider the histories and the combinatorial objects in \( M_n \).
 
 
-\subsection{Tchebyshev polynomials}
+\section{Tchebyshev polynomials}
 
-% \subsection{Hermite polynomials}
+% \section{Hermite polynomials}
 
-% \subsection{Charlier polynomials}
+% \section{Charlier polynomials}
 
-% \subsection{Laguerre polynomials}
+% \section{Laguerre polynomials}
 
-% \section{Inverse polynomials}
+% \chapter{Inverse polynomials}
 
-% \section{Determinants of moments}
+% \chapter{Determinants of moments}
 
-% \subsection{Computing the 3-term recurrence coefficients}
+% \section{Computing the 3-term recurrence coefficients}
 
-% \subsection{Determinants of paths}
+% \section{Determinants of paths}
 
-% \subsection{Hankel determinants of moments}
+% \section{Hankel determinants of moments}
 
-% \subsection{The duality between Motzkin paths and Favard paths}
+% \section{The duality between Motzkin paths and Favard paths}
 
-% \subsection{Inverse generating functions}
+% \section{Inverse generating functions}
 
-% \section{Continued fractions}
+% \chapter{Continued fractions}
 
-% \subsection{Development in J-fraction}
+% \section{Development in J-fraction}
 
-% \subsection{Examples}
+% \section{Examples}
 
-% \subsection{Convergents}
+% \section{Convergents}
 
-% \subsection{Symmetric orthogonal polynomials}
+% \section{Symmetric orthogonal polynomials}
 
-% \section{Linearization coefficients}
+% \chapter{Linearization coefficients}
 
 
 
@@ -2025,7 +2136,7 @@ consider the histories and the combinatorial objects in \( M_n \).
 
 \appendix
 
-\section{Sign-reversing involutions}
+\chapter{Sign-reversing involutions}
 \label{sec:sign-revers-invol}
 
 \begin{defn}
@@ -2144,7 +2255,7 @@ This implies
 
 
 
-\section{The Lindstr\"om--Gessel--Viennot lemma}
+\chapter{The Lindstr\"om--Gessel--Viennot lemma}
 \label{sec:LGV}
 
 
