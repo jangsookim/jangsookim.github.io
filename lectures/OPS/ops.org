@@ -34,7 +34,8 @@ Orthogonal polynomials are classical objects arising from the study of continued
 - [[file:orthogonal_polynomials.pdf][Lecture notes]] will be constantly updated.
 * Homework
 - [[file:homework.pdf][Homework pdf]]
-- Homework 1 (Due: Sep 21 class time)
+- Email your homework as a single pdf file to the instructor by the due date.
+- Homework 1 (Due: Sep 22)
 
 * Schedule and links to lecture videos
 1. [2023-08-29 Tue]: Introduction, [[file:ops-files/OPS1.pdf][lecture notes]], [[https://youtu.be/JgdcBmWMwYc][video]]

@@ -10,6 +10,10 @@
 \numberwithin{equation}{section}
 \usetikzlibrary{snakes}
 
+\usepackage{enumerate}
+\renewcommand\labelenumi{(\theenumi)}
+
+
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{prop}[thm]{Proposition}
@@ -24,10 +28,13 @@
 \newtheorem*{note}{Note}
 
 % DO NOT DELETE THIS COMMENT!!! MACROS BELOW:
+\newcommand\evencycle{\operatorname{evencycle}}
+\newcommand\inv{\operatorname{inv}}
 \newcommand\cycle{\operatorname{cycle}}
 \newcommand\Motz{\operatorname{Motz}}
 \newcommand\Fix{\operatorname{Fix}}
 \newcommand\sgn{\operatorname{sgn}}
+\newcommand\sym{\mathfrak{S}}
 \newcommand\NN{\mathbb{N}}
 \newcommand\QQ{\mathbb{Q}}
 \newcommand{\CC}{\mathbb{C}}
@@ -1422,8 +1429,8 @@ consider generating functions for arbitrary (combinatorial) objects.
 \begin{exam}
   Let \( A \) be the set \( S_n \) of permutations of \( [n] \) and
   define a weight of \( A \) by \( \wt(a) = x^{\cycle(a)} \). Then it
-  can be proved that the generating function for \( A \) (with this
-  weight) is
+  can be proved (see \eqref{eq:c(n,k)-gf}) that the generating
+  function for \( A \) (with this weight) is
   \[
     \sum_{a \in A} \wt(a) = \sum_{\pi\in S_n} x^{\cycle(a)} = x(x+1)
     \cdots (x+n-1).
@@ -1437,7 +1444,691 @@ permutations would mean the generating function for the sequence
 
 \section{Dyck paths and Motzkin paths}
 
-\section{Matchings, set partitions, permutations}
+In this section we introduce two important classes of lattice paths.
+These are fundamental objects in studying orthogonal polynomials
+combinatorially.
+
+
+\begin{defn}
+  A \emph{lattice path} from \( u \) to \( v \) is a sequence
+  \( \pi = (v_0,v_1,\dots,v_n) \) of points in \( \ZZ\times\ZZ \) with
+  \( v_0=u \) and \( v_n =v \). Each pair \( (v_i,v_{i+1}) \) of
+  consequence points is called a \emph{step} of \( \pi \). 
+\end{defn}
+
+A path \( \pi = (v_0,v_1,\dots,v_n) \) is also considerd as a sequence
+\( S_1 \cdots S_n \) of steps, where \( S_i=(v_{i-1},v_i) \). We will
+sometimes identify a step \( (v_i,v_{i+1}) \) with
+\( v_{i+1} - v_i \in \ZZ\times\ZZ \).
+
+\begin{defn}
+  A \emph{Dyck path} is a lattice path consisting of \emph{up steps}
+  \( (1,1) \) and \emph{down steps} \( (1,-1) \) that stays on or
+  above the \( x \)-axis, see \Cref{fig:dyck-path}. Denote by
+  \( \Dyck(u\to v) \) the set of Dyck paths from \( u \) to \( v \).
+  We also define \( \Dyck_{2n} = \Dyck((0,0)\to (2n,0))\).
+\end{defn}
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+      \draw[help lines] (0,0) grid (10,3);
+\foreach \x in {0,...,10} \draw node at (\x,-.5) {\( \x \)};
+\foreach \y in {0,...,3} \draw node at (-.5,\y) {\( \y \)};
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,1);
+  \end{tikzpicture}
+  \caption{A Dyck path from \( (0,0) \) to \( (10,2) \).}
+  \label{fig:dyck-path}
+\end{figure}
+
+
+
+Let's enumerate the Dyck paths in \( \Dyck_{2n} \) using generating
+functions. To do this let
+\[
+  C(x) = \sum_{n\ge 0} |\Dyck_{2n}| x^n.
+\]
+Then
+we can also write
+\[
+  C(x) = \sum_{\pi\in \Dyck} \wt(\pi),
+\]
+where \( \Dyck \) is the set of all Dyck paths from \( (0,0) \) to
+\( (2n,0) \) for some \( n\ge0 \) and \( \wt(\pi) = x^{d(\pi)} \),
+where \( d(\pi) \) is the number of down steps in \( \pi \). It is
+helpful to imagine the generating function \( C(x) \) as a picture of
+all Dyck paths, where each Dyck path has its weight attached to it as
+shown in \Cref{fig:gf-dyck}.
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.3]
+\node at (0,0) [circle,fill,inner sep=1pt]{};
+\draw[line width = 1.5pt] (2,0) -- ++(1,1) -- ++(1,-1);
+\draw[line width = 1.5pt] (6,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1);
+\draw[line width = 1.5pt] (12,0) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1);
+\node at (0,-1) {\( 1 \)};
+\node at (3,-1) {\( x \)};
+\node at (8,-1) {\( x^2 \)};
+\node at (14,-1) {\( x^2 \)};
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.3]
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1);
+\draw[line width = 1.5pt] (8,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1);
+\draw[line width = 1.5pt] (16,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1);
+\draw[line width = 1.5pt] (24,0) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1);
+\draw[line width = 1.5pt] (32,0) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1);
+\node at (3,-1) {\( x^3 \)};
+\node at (11,-1) {\( x^3 \)};
+\node at (19,-1) {\( x^3 \)};
+\node at (27,-1) {\( x^3 \)};
+\node at (35,-1) {\( x^3 \)};
+\node at (19,-3) {\( \vdots \)};
+\end{tikzpicture}
+  \caption{An illustration of the generating function for Dyck paths.}
+  \label{fig:gf-dyck}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \draw[help lines] (0,0) grid (12,3);
+\foreach \x in {0,...,12} \draw node at (\x,-.5) {\( \x \)};
+\foreach \y in {0,...,3} \draw node at (-.5,\y) {\( \y \)};
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1);
+  \end{tikzpicture}
+  \caption{A Dyck path \( \pi \) from \( (0,0) \) to \( (12,0) \).}
+  \label{fig:dyck-path2}
+\end{figure}
+
+A Dyck path \( \pi \in \Dyck \) can be considered as a sequence of up
+steps and down steps. For example, the Dyck path in
+\Cref{fig:dyck-path2} is \( \pi = UUDUUDDDUDUD \). Every nonempty Dyck
+path \( \pi \in \Dyck \) is uniquely decomposed into
+\( \pi = U \tau D \rho \) for some \( \tau,\rho\in \Dyck \). For our
+running example,
+\begin{equation}\label{eq:dyck-decomp}
+  \pi=UUDUUDDDUDUD = U(UDUUDDD)(UDUD),
+\end{equation}
+so we have
+\( \tau = UDUUDDD \) and \( \rho = UDUD \).
+This argument shows that
+\begin{equation}\label{eq:cat-gf}
+  C(x) = 1 + C(x) x C(x).
+\end{equation}
+Solving this quadratic equation for \( C(x) \), we
+get
+\begin{equation}\label{eq:16}
+   C(x)  = \frac{1\pm\sqrt{1-4x}}{2x}.
+  \end{equation}
+
+  We must choose the correct sign here. First, by setting \( x=0 \),
+  we obtain that the constant term of \( \sqrt{1-4x} \) is \( 1 \).
+  Thus \eqref{eq:16} is a valid formal power series only for the minus
+  sign. This implies that
+  \[
+    \sum_{n\ge0} |\Dyck_{2n}| x^n = \frac{1-\sqrt{1-4x}}{2x}.
+  \]
+ 
+  Now we can use the \emph{binomial theorem}
+\[
+  (1+x)^\alpha := \sum_{n\ge 0} \binom{\alpha}{n} x^n,
+\]
+where
+\[
+  \binom{\alpha}{n} = \frac{\alpha(\alpha-1)\cdots (\alpha-n+1)}{n!}.
+\]
+By the binomial theorem, we have
+  \begin{align*}
+    \sqrt{1-4x}
+    &= (1-4x)^{1/2} = \sum_{n\ge 0} \binom{1/2}{n} (-4x)^n
+    = 1+ \sum_{n\ge 1} \frac{\frac{1}{2} \frac{-1}{2}
+    \frac{-3}{2} \cdots \frac{-2n+3}{2}}{n!} (-1)^n 4^n x^n\\
+    &= 1- \sum_{n\ge 1} \frac{1\cdot 3\cdot \cdots \cdot (2n-3)}{n!} 2^n x^n
+    = 1- \sum_{n\ge 1} \frac{2(2n-2)!}{n!(n-1)!} x^n .
+  \end{align*}
+  Therefore,
+  \[
+   \sum_{n\ge0} |\Dyck_{2n}| x^n = \frac{1-\sqrt{1-4x}}{2x} 
+   = \sum_{n\ge 1} \frac{1}{n} \binom{2n-2}{n-1} x^{n-1}
+   = \sum_{n\ge 0} \frac{1}{n+1} \binom{2n}{n} x^n.
+  \]
+  Comparing the coefficient of \( x^n \) in both sides we obtain the
+  following result.
+
+\begin{prop}
+  We have
+  \begin{equation}\label{eq:17}
+    |\Dyck_{2n}| = \frac{1}{n+1} \binom{2n}{n}.
+  \end{equation}
+\end{prop}
+Note that we proved \eqref{eq:17} using generating functions, but this
+can also be proved by a standard reflection principle.
+
+The \emph{Catalan number} \( C_n \) is defined by
+\[
+  C_n = \frac{1}{n+1} \binom{2n}{n}.
+\]
+The first few Catalan numbers are
+\[
+  1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, \ldots.
+\]
+
+There are many combinatorial objects counted by the Catalan number.
+Stanley \cite{Stanley2015} collected more than 200 such ``Catalan
+objects''. Dyck paths are one of the most well-known Catalan objects.
+Some of other well known Catalan objects are triangulations of an
+\( (n+2) \)-gon, ballot sequences of length \( 2n \), and plane binary
+trees with \( n \) vertices.
+
+The Catalan numbers satisfy the following recurrence:
+\begin{equation}\label{eq:cat-rec}
+  C_0 = 1, \qquad
+  C_n = \sum_{k=0}^{n} C_k C_{n-1-k}, \qquad n\ge1.
+\end{equation}
+This recurrence can be proved similarly as \eqref{eq:cat-gf} using the
+decomposition \eqref{eq:dyck-decomp}.
+
+
+Now we consider lattice paths with three kinds of steps. These lattice
+paths will play a fundamental role in Viennot's theory of orthogonal
+polynomials.
+
+\begin{defn}
+  A \emph{Motzkin path} is a lattice path consisting of \emph{up
+    steps} \( (1,1) \), \emph{horizontal steps} \( (1,0) \), and
+  \emph{down steps} \( (1,-1) \) that stays on or above the
+  \( x \)-axis, see Figure~\ref{fig:motzkin}. Denote by
+  \( \Motz(u\to v) \) the set of Dyck paths from \( u \) to \( v \).
+  We also define \( \Motz_{n} = \Motz((0,0)\to (n,0))\).
+\end{defn}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+  \draw[help lines] (0,0) grid (10,3);
+\foreach \x in {0,...,10} \draw node at (\x,-.5) {\( \x \)};
+\foreach \y in {0,...,3} \draw node at (-.5,\y) {\( \y \)};
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,0) -- ++(1,-1) -- ++(1,0) -- ++(1,1) -- ++(1,1) -- ++(1,0) -- ++(1,-1) -- ++(1,1) -- ++(1,-1);
+\end{tikzpicture}
+\caption{A Motzkin path from \( (0,0) \) to \( (10,1) \).}
+  \label{fig:motzkin}
+\end{figure}
+
+Considering the positions of horizontal steps, we can relate the
+number of Motzkin paths and that of Dyck paths.
+
+
+
+\begin{prop}
+  We have
+  \[
+    |\Motz_{n}| = \sum_{k=0}^{\flr{n/2}} \binom{n}{2k} C_k.
+  \]
+\end{prop}
+
+\begin{prop}
+  Let \( M(x) = \sum_{n\ge 0} |\Motz_n| x^n \). Then
+  \[
+    M(x) = \frac{1-x-\sqrt{1-2x-3x^2}}{2x^2}.
+  \]
+\end{prop}
+\begin{proof}
+  By a similar argument used to prove  \eqref{eq:cat-gf},
+  we have
+  \[
+    M(x) = 1 + x M(x) + M(x) x^2 M(x).
+  \]
+  Solving the equation we obtain the desired formula.
+\end{proof}
+
+
+\section{Set partitions and matchings}
+
+In this section we study set partitions and matchings. They will be
+used to give combinatorial interpretations for moments of Charilier
+polynomials and Hermite polynomials.
+
+\begin{defn}
+  A \emph{set partition} of a set \( X \) is a collection
+  \( \pi = \{B_1,\dots,B_k\} \) of subsets of \( X \)
+  such that
+  \begin{enumerate}
+  \item \( B_i\ne\emptyset \) for all \( i \),
+  \item \( B_i\cap B_j = \emptyset \) for all \( i\ne j \), and
+  \item \( B_1 \cup \cdots \cup B_k = X \).
+  \end{enumerate}
+  Each \( B_i \) is called a \emph{block} of \( \pi \).
+\end{defn}
+
+A set partition can be visualized by connecting consecutive elements
+in each block see \Cref{fig:set-partition}.
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{scope}[shift={(0,0)}]
+\node[draw, circle] (1) at (1,0) {\( 1 \)};
+\node[draw, circle] (4) at (4,0) {\( 4 \)};
+\node[draw, circle] (5) at (5,0) {\( 5 \)};
+\node[draw, circle] (7) at (7,0) {\( 7 \)};
+\draw[out=90,in=90] (1) to (4);
+\draw[out=90,in=90] (4) to (5);
+\draw[out=90,in=90] (5) to (7);
+\node[draw, circle] (2) at (2,0) {\( 2 \)};
+\node[draw, circle] (3) at (3,0) {\( 3 \)};
+\node[draw, circle] (8) at (8,0) {\( 8 \)};
+\draw[out=90,in=90] (2) to (3);
+\draw[out=90,in=90] (3) to (8);
+\node[draw, circle] (6) at (6,0) {\( 6 \)};
+\node[draw, circle] (9) at (9,0) {\( 9 \)};
+\end{scope}
+\end{tikzpicture}
+\caption{A visualization of a set partition
+  \( \{\{1,4,5,7\}, \{2,3,8\}, \{6\}, \{9\}\} \) of \( [9] \).}
+\label{fig:set-partition}
+\end{figure}
+
+We denote by \( \Pi_n \) the set of all set partitions of \( [n] \).
+We also define \( \Pi_{n,k} \) to be the set of all set partitions of
+\( [n] \) with exactly \( k \) blocks. The \emph{Stirling number of
+  the second kind} \( S(n,k) \) is the cardinality of \( \Pi_{n,k} \).
+
+We use the convention that \( \emptyset \) is the only set partition
+of \( \emptyset \), i.e., \( \Pi_0 = \{\emptyset\} \). The following
+are immediate from the definition of set partitions:
+\begin{itemize}
+\item \( S(n,0) = \delta_{n,0} \),
+\item \( S(n,n) = 1 \),
+\item \( S(n,k) = 0 \) if \( k>n \).
+\end{itemize}
+
+We can compute the number \( S(n,k) \) using the following recursion
+with the above initial conditions.
+
+\begin{prop}
+  For integers \( n,k\ge1 \), we have
+  \[
+    S(n,k) = S(n-1,k) + k S(n-1,k-1).
+  \]
+\end{prop}
+\begin{proof}
+  Let \( \pi\in \Pi_{n,k} \). If \( n \) is in a singleton of
+  \( \pi \), then \( \pi\setminus\{n\} \in \Pi_{n-1,k-1} \). Otherwise,
+  \( \pi \) can be obtained from a set partition
+  \( \pi'\in \Pi_{n-1,k} \) by adding \( n \) to one of the \( k \)
+  blocks of \( \pi' \). This shows the recursion.
+\end{proof}
+
+
+\begin{prop}
+  We have
+  \[
+    S(n,k) = \frac{1}{k!} \sum_{i=0}^{k} (-1)^{k-i} \binom{k}{i}i^n.
+  \]
+\end{prop}
+
+\begin{proof}
+  The number of onto functions \( f:[n] \to [k] \) is \( k! S(n,k) \).
+  By the principle of inclusion and exclusion, this number is equal to
+  \[
+     k! S(n,k) = \sum_{i=0}^{k} (-1)^{k-i} \binom{k}{i}i^n,
+  \]
+  which implies the desired formula.
+\end{proof}
+
+For an integer \( n\ge0 \), a \emph{falling factorial} \( (x)_n \) is defined by
+\[
+  (x)_n = x(x-1) \cdots (x-n+1).
+\]
+
+\begin{prop}
+  We have
+  \begin{equation}\label{eq:S(n,k)(x)k=xn}
+    \sum_{k=0}^{n} S(n,k) (x)_k = x^n.
+  \end{equation}
+\end{prop}
+
+\begin{proof}
+  Since both sides are polynomials in \( x \), it suffices to show
+  that the identity holds for all positive integers \( x \). So, let's
+  assume that \( x \) is a positive integer. Then the right-hand side
+  is the number of all functions \( f: [n] \to [x] \).
+
+  Now, consider a function \( f: [n] \to [x] \) such that the image
+  \( f([n]) \) has exactly \( k \) elements. Let
+  \( f([n]) = \{a_1<\dots<a_k\} \). Then
+  \( \{f^{-1}(a_1),\dots,f^{-1}(a_k)\} \) is a set partition of
+  \( [n] \) with \( k \) blocks. Thus such a function \( f \) is
+  obtained by first partitionining \( [n] \) into \( k \) blocks
+  \( B_1,\dots,B_k \) and constructing a one-to-one map from
+  \( \{B_1,\dots,B_k\} \) to \( [x] \). This shows that the number of
+  such functions is \( S(n,k) (x)_k \). Summing over all \( k \) gives
+  the number of all functions \( f: [n] \to [x] \).
+
+  Since both sides of the identity count the same number, they are
+  equal.
+\end{proof}
+
+\begin{defn}
+  A \emph{matching} on a set \( X \) is a set partition
+  \( \pi = \{B_1,\dots,B_k\} \) of \( X \) in which every block has
+  size \( 1 \) or \( 2 \). Each block of size \( 1 \) is called a
+  \emph{fixed point} and each block of size \( 2 \) is called an
+  \emph{edge} or an \emph{arc} of \( \pi \).
+\end{defn}
+
+A matching is said to be \emph{perfect} or \emph{complete} if there
+are no fixed points.
+
+\begin{prop}
+  The number of complete matchings of \( [2n] \) is
+  \[
+    (2n-1)!! := 1 \cdot 3 \cdot \cdots \cdot (2n-1).
+  \]
+  The number of matchings of \( [n] \) is
+  \[
+    \sum_{k=0}^{\flr{n/2}} \binom{n}{2k} (2k-1)!!.
+  \]
+\end{prop}
+
+\begin{proof}
+  The first identity can easily be proved by induction on \( n \)
+  since there are \( 2n-1 \) ways to form an edge with the last
+  element \( 2n \) and another element.
+
+  The second identity follows from the observation that if a matching
+  of \( [n] \) has \( k \) edges, then these edges form a complete
+  matching on a set of size \( 2k \).
+\end{proof}
+
+\section{Permutations}
+
+In this section we study permutations, which are one of the most
+fundamental objects in combinatorics. We will see later a connection
+between permutations and moments of Laguerre polynomials.
+
+\begin{defn}
+  A \emph{permutation} on \( [n] \) is a bijection
+  \( \pi:[n] \to [n] \). The \emph{symmetric group} \( \sym_n \) is
+  the group of permutations on \( [n] \) with multiplication given by
+  composition of functions.
+\end{defn}
+
+For \( \pi,\tau\in \sym_n \), we write \( \pi\tau = \pi\circ \tau \),
+that is \( \pi\tau \) is the permutation defined by
+\( (\pi\tau)(i) = \pi(\tau(i)) \).
+
+Let \( \pi:[n] \to [n] \) be a permutation. We will often write
+\( \pi_i = \pi(i) \) and identify this permutation with a word
+\[
+  \pi = \pi_1\pi_2 \cdots \pi_n,
+\]
+which is called the \emph{one-line notation} of \( \pi \). The
+\emph{two-line notation} of \( \pi \) is the array
+\[
+\pi = \begin{pmatrix}
+1 & 2 & \cdots & n\\
+\pi_1 & \pi_2 & \cdots & \pi_n
+\end{pmatrix}.
+\]
+
+A \emph{cycle} of \( \pi \) is a sequence \( (a_1,\dots,a_k) \) of
+distinct elements of \( [n] \) such that
+\[
+  \pi(a_1) = a_2, \qquad  
+  \pi(a_2) = a_3, \qquad 
+  \ldots, \qquad 
+  \pi(a_k) = a_1.
+\]
+We denote by \( \cycle(\pi) \) the number of cycles in \( \pi \).
+
+A cycle \( (a_1,\dots,a_k) \) is considered to be the same as any of
+its \emph{cyclic shift} \( (a_j,\dots, a_k, a_1, \dots,a_{j-1}) \). We
+also consider a cycle \( \rho=(a_1,\dots,a_k) \) as a permutation of
+\( [n] \) such that
+\[
+  \rho(i) =
+  \begin{cases}
+   i & \mbox{if \( i\not\in \{a_1,\dots,a_k\} \)},\\
+    a_{j+1} & \mbox{if \( i=a_j \),}
+  \end{cases}
+\]
+where \( a_{k+1} = a_1 \).
+
+A \emph{cycle of length \( k \)} is a permutation (in some
+\( \sym_n \)) of the form \( (a_1,\dots,a_k) \). A
+\emph{transposition} is a cycle of length \( 2 \). A \emph{simple
+  transposition} is a transposition of the form \( (i,i+1) \).
+
+\begin{prop}\label{pro:cycle-decomp}
+  Let \( \pi \in \sym_n \). Then we can write
+  \( \pi = \rho_1 \cdots \rho_k \) for some disjoint cycles
+  \( \rho_1,\dots,\rho_k \) in \( \sym_n \). Moreover, we can also
+  write \( \pi = s_1 \cdots s_r \) for some (not necessarily disjoint)
+  simple transpositions \( s_i\in \sym_n \).
+\end{prop}
+\begin{proof}
+We leave this as an exercise.
+\end{proof}
+
+
+By \Cref{pro:cycle-decomp}, we can write \( \pi \) in \emph{cycle
+  notation}, i.e., as a product of its disjoint cycles:
+\[
+  \pi = \rho_1 \cdots \rho_r.
+\]
+
+
+\begin{exam}
+  Let \( \pi = 951826743 \in \sym_9 \).
+  In two-line notation,
+  \[
+    \pi =
+\begin{pmatrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+9 & 5 & 1 & 8 & 2 & 6 & 7 & 4 & 3
+\end{pmatrix}.
+  \]
+  There are 5 disjoint cycles of \( \pi \), namely, \( (1,9,3) \),
+  \( (2,5) \), \( (4,8) \), \( (6) \), and \( (7) \). Thus, in cycle
+  notation,
+  \[
+    \pi = (1,9,3)(2,5)(4,8) (6) (7).
+  \]
+  We sometime omit the cycles of length \( 1 \) and write
+  \[
+    \pi = (1,9,3)(2,5)(4,8).
+  \]
+\end{exam}
+
+We can also visualize a permutation by drawing its cycles as shown in
+\Cref{fig:cycle}.
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{scope}[shift={(0,0)}]
+\node[draw, circle] (0) at ({90 + (360/3 * 0)}:1) {\( 1 \)};
+\node[draw, circle] (1) at ({90 + (360/3 * 1)}:1) {\( 9 \)};
+\node[draw, circle] (2) at ({90 + (360/3 * 2)}:1) {\( 3 \)};
+\draw[->,bend right] (0) to (1);
+\draw[->,bend right] (1) to (2);
+\draw[->,bend right] (2) to (0);
+\end{scope}
+\begin{scope}[shift={(3,0)}]
+\node[draw, circle] (0) at ({90 + (360/2 * 0)}:1) {\( 2 \)};
+\node[draw, circle] (1) at ({90 + (360/2 * 1)}:1) {\( 5 \)};
+\draw[->,bend right] (0) to (1);
+\draw[->,bend right] (1) to (0);
+\end{scope}
+\begin{scope}[shift={(5,0)}]
+\node[draw, circle] (0) at ({90 + (360/2 * 0)}:1) {\( 4 \)};
+\node[draw, circle] (1) at ({90 + (360/2 * 1)}:1) {\( 8 \)};
+\draw[->,bend right] (0) to (1);
+\draw[->,bend right] (1) to (0);
+\end{scope}
+\begin{scope}[shift={(7,-1)}]
+\node[draw, circle] (0) at ({90 + (360/1 * 0)}:1) {\( 6 \)};
+\draw[->,out=70,in=110,looseness=8] (0) to (0);
+\end{scope}
+\begin{scope}[shift={(9,-1)}]
+\node[draw, circle] (0) at ({90 + (360/1 * 0)}:1) {\( 7 \)};
+\draw[->,out=70,in=110,looseness=8] (0) to (0);
+\end{scope}
+  \end{tikzpicture}
+  \caption{A visualization of a permutation
+    \( \pi = (1,9,3)(2,5)(4,8) (6) (7) \in \sym_9 \).}
+  \label{fig:cycle}
+\end{figure}
+
+\begin{defn}
+  An \emph{inversion} of a permutation \( \pi\in \sym_n \) is a pair
+  \( (i,j) \) of integers \( 1\le i<j\le n \) such that
+  \( \pi(i) > \pi(j) \). We denote by \( \inv(\pi) \) the number of
+  inversions of \( \pi \).
+\end{defn}
+
+\begin{prop}
+  We have
+  \[
+    \sum_{\pi\in \sym_n} q^{\inv(\pi)}
+    = (1+q) (1+q+q^2) \cdots (1+q + \cdots + q^{n-1}).
+  \]
+\end{prop}
+\begin{proof}
+We leave this as an exercise.
+\end{proof}
+
+
+\begin{defn}
+  The \emph{sign} of a permutation \( \pi\in \sym_n \) is
+  defined to be
+  \[
+    \sgn(\pi) = (-1)^{\inv(\pi)}.
+  \]
+\end{defn}
+
+There are several ways to compute the sign of a permutation.
+
+\begin{prop}
+  For \( \pi\in \sym_n \), we have
+  \[
+    \sgn(\pi) = (-1)^{\inv(\pi)} = (-1)^{n-\cycle(\pi)} =
+    (-1)^{\evencycle(\pi)},
+  \]
+  where \( \evencycle(\pi) \) is the number of even cycles in
+  \( \pi \).
+\end{prop}
+\begin{proof}
+We leave this as an exercise.
+\end{proof}
+
+\begin{cor}
+  If \( \pi\in \sym_n \) is a product of \( k \) transpositions, then
+  \[
+    \sgn(\pi) = (-1)^k.
+  \]
+  For two permutations \( \pi,\sigma\in \sym_n \), we have
+  \[
+    \sgn(\pi\sigma) = \sgn(\pi) \sgn(\sigma).
+  \]
+\end{cor}
+\begin{proof}
+We leave this as an exercise.
+\end{proof}
+
+
+
+The \emph{signless Striling number of the first kind} \( c(n,k) \) is
+defined to be the number of permutations on \( [n] \) with \( k \)
+cycles. The \emph{Striling number of the first kind} \( s(n,k) \) is
+defined to by \( s(n,k) = (-1)^{n-k} c(n,k) \).
+
+\begin{prop}
+  For integers \( n,k\ge1 \), we have
+  \begin{equation}\label{eq:c(n,k)-rec}
+    c(n,k) = c(n-1,k-1) + (n-1) c(n-1,k).
+  \end{equation}
+\end{prop}
+\begin{proof}
+  A permutation \( \pi \in \sym_n \) can be obtained from a
+  permutation \( \pi'\in \sym_{n-1} \) by creating a new cycle
+  \( (n) \) of length \( 1 \) or by inserting \( n \) after any
+  integer in a cycle of \( \pi' \). For example, for
+  \( \pi' = (1,9,3)(2,5)(4,8) (6) (7) \in \sym_9 \), if we insert
+  \( 10 \) after \( 2 \), we get
+  \( \pi = (1,9,3)(2,10,5)(4,8) (6) (7) \in \sym_{10} \), if we insert
+  \( 10 \) after \( 6 \), we get
+  \( \pi = (1,9,3)(2,5)(4,8) (6,10) (7) \in \sym_{10} \), and if we
+  create a new cycle with \( 10 \), we get
+  \( \pi = (1,9,3)(2,5)(4,8) (6) (7) (10) \in \sym_{10} \). This shows
+  the recursion.
+\end{proof}
+
+
+\begin{prop}
+  We have
+  \begin{equation}\label{eq:s(n,k)}
+    \sum_{k=0}^{n} s(n,k) x^k = (x)_n.
+  \end{equation}
+  Equivalently,
+  \begin{equation}\label{eq:c(n,k)}
+    \sum_{k=0}^{n} c(n,k) x^k = x(x+1) \cdots (x+n-1).
+  \end{equation}
+\end{prop}
+
+\begin{proof}
+  The equivalence of \eqref{eq:s(n,k)} and \eqref{eq:c(n,k)} is
+  obtained by replacing \( x \) by \( -x \) and multiplying
+  \( (-1)^{n} \) both sides.
+  Thus it suffices to show \eqref{eq:c(n,k)}.
+  This can be proved by induction using \eqref{eq:c(n,k)-rec}.
+\end{proof}
+
+Note that \eqref{eq:c(n,k)} can be rewritten as
+\begin{equation}\label{eq:c(n,k)-gf}
+   \sum_{\pi\in \sym_n}  x^{\cycle(\pi)} = x(x+1) \cdots (x+n-1).
+\end{equation}
+
+
+
+Using \eqref{eq:S(n,k)(x)k=xn} and \eqref{eq:s(n,k)} we obtain the
+following matrix identity, which is a duality between Stirling numbers
+of the first and second kinds.
+
+
+\begin{prop}
+  We have
+ \begin{equation}\label{eq:18}
+   \Big(S(n,k)\Big)_{n,k\ge0} \Big(s(n,k)\Big)_{n,k\ge0} = I,
+ \end{equation} 
+ where \( I= (\delta_{n,k})_{n,k\ge0} \) is the infinite identity
+ matrix.
+ Equivalently, for integers \( n,m\ge0 \),
+ \begin{align}
+   \label{eq:S-s-dual}
+   \sum_{k\ge0} S(n,k)s(k,m) & = \delta_{n,m},\\
+   \label{eq:s-S-dual}
+   \sum_{k\ge0} s(n,k)S(k,m) & = \delta_{n,m}.
+ \end{align}
+\end{prop}
+
+\begin{proof}
+  By \eqref{eq:S(n,k)(x)k=xn} and \eqref{eq:s(n,k)}, we have
+  the change of basis identities between
+  two bases \( \{x^n\}_{n\ge0} \) and \( \{(x)_n\}_{n\ge0} \)
+  of the vector space of polynomials:
+  \begin{align*}
+   \Big(S(n,k)\Big)_{n,k\ge0} \Big((x)_n\Big)_{n\ge0} &=  \Big(x^n\Big)_{n\ge0},\\
+   \Big(s(n,k)\Big)_{n,k\ge0} \Big(x^n\Big)_{n\ge0} &=  \Big((x)_n\Big)_{n\ge0}.
+ \end{align*}
+ Thus the two matrices \( (S(n,k))_{n,k\ge0} \) and
+ \( (s(n,k))_{n,k\ge0} \) are inverse of each other, proving
+ \eqref{eq:18}.
+\end{proof}
+
 
 \chapter{Combinatorial models for OPS}
 \label{sec:comb-interpr-orth}
@@ -1453,11 +2144,12 @@ orthogonal polynomials using combinatorics only.
 
 \section{Orthogonal polynomials and 3-term recurrences}
 
-In this section we give basic definitions and prove simple but
-useful lemmas. We then state the 3-term recurrence of orthogonal
-polynomials and Favard's theorem.
+In this section we recall basic definitions and properties of
+orthogonal polynomials. We then state the 3-term recurrence of
+orthogonal polynomials and Favard's theorem.
 
-Let \( K \) be a field. We denote by \( K[x] \) the ring of
+Let \( K \) be a field (we can also use a commutative ring for any
+result without using divisions). We denote by \( K[x] \) the ring of
 polynomials in \( x \) with coefficients in \( K \). A \emph{linear
   functional} is a linear transformation \( \LL:K[x]\to K \), i.e., a
 function satisfying \( \LL(af(x)+bg(x)) = a \LL(f(x))+b \LL(g(x)) \)
@@ -1613,7 +2305,7 @@ orthogonal polynomials.
 
 \begin{figure}
   \centering
-\begin{tikzpicture}[scale=0.75]
+  \begin{tikzpicture}[scale=0.75]
     \draw[help lines] (0,0) grid (13,3);
     \foreach \y in {0,...,3} \draw node at (-.5,\y) {$\y$};
     \draw[line width = 1.5pt] (0,3)-- ++(0,-1)-- ++(0,-1)-- ++(1,-1)-- ++(1,1)-- ++(1,1)-- ++(0,-1)-- ++(1,-1)-- ++(1,0)-- ++(1,1)-- ++(1,1)-- ++(1,1)-- ++(1,-1)-- ++(1,0)-- ++(0,-1)-- ++(1,1)-- ++(1,0)-- ++(0,-1)-- ++(1,0);
@@ -2110,7 +2802,7 @@ consider the histories and the combinatorial objects in \( M_n \).
 
 % \section{Computing the 3-term recurrence coefficients}
 
-% \section{Determinants of paths}
+% \section{The Lindstr\"om--Gessel--Viennot lemma}
 
 % \section{Hankel determinants of moments}
 
@@ -2215,7 +2907,19 @@ integer in regions \( 1 \) and \( 2 \) or in regions \( 3 \) and
 \( 4 \) in Figure~\ref{fig:image1}.
 \begin{figure}
   \centering
-  \includegraphics[scale=.1]{./figures/image1.jpeg}
+\begin{tikzpicture}
+\node [draw, circle, minimum size =3cm,
+    label={90:$A$}] (A) at (90:1){};
+\node [draw, circle, minimum size =3cm,
+    label={210:$B$}] (B) at (210:1){};
+\node [draw, circle, minimum size =3cm,
+    label={330:$C$}] (C) at (330:1){};
+\node at (270:1) {\( \emptyset \)};
+\node at (150:1) {\( 2 \)};
+\node at (30:1) {\( 3 \)};
+\node at (210:1.5) {\( 1 \)};
+\node at (330:1.5) {\( 4 \)};
+\end{tikzpicture}
   \caption{The triple \( (A,B,C) \).}
   \label{fig:image1}
 \end{figure}
@@ -2255,8 +2959,6 @@ This implies
 
 
 
-\chapter{The Lindstr\"om--Gessel--Viennot lemma}
-\label{sec:LGV}
 
 
 
