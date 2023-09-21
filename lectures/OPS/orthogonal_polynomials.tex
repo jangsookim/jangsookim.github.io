@@ -35,6 +35,7 @@
 \newcommand\Fix{\operatorname{Fix}}
 \newcommand\sgn{\operatorname{sgn}}
 \newcommand\sym{\mathfrak{S}}
+\newcommand\invol{\mathfrak{I}}
 \newcommand\NN{\mathbb{N}}
 \newcommand\QQ{\mathbb{Q}}
 \newcommand{\CC}{\mathbb{C}}
@@ -1874,6 +1875,39 @@ which is called the \emph{one-line notation} of \( \pi \). The
 \end{pmatrix}.
 \]
 
+\begin{exam}
+  Let \( \pi\in\sym_3 \) be the permutation given by
+  \[
+    \pi(1) = 2, \pi(2) = 3, \pi(3) =1.
+  \]
+  Then in one-line notation,
+  \[
+    \pi = \pi_1\pi_2\pi_3 = 2 3 1
+  \]
+  and in two-line notation,
+  \[
+    \pi =
+    \begin{pmatrix}
+1 & 2 & 3\\
+2 & 3 & 1
+\end{pmatrix}.
+  \]
+  We have
+  \[
+    \pi^2 =
+    \begin{pmatrix}
+1 & 2 & 3\\
+3 & 1 & 2
+    \end{pmatrix}, \qquad
+        \pi^3 =
+    \begin{pmatrix}
+1 & 2 & 3\\
+1 & 2 & 3
+    \end{pmatrix}.
+  \]
+\end{exam}
+
+
 A \emph{cycle} of \( \pi \) is a sequence \( (a_1,\dots,a_k) \) of
 distinct elements of \( [n] \) such that
 \[
@@ -1902,6 +1936,21 @@ A \emph{cycle of length \( k \)} is a permutation (in some
 \emph{transposition} is a cycle of length \( 2 \). A \emph{simple
   transposition} is a transposition of the form \( (i,i+1) \).
 
+Note that for a permutation \( \pi = \pi_1 \cdots \pi_n \in \sym_n \)
+and a transposition \( \tau = (i,j)\in \sym_n \) with \( i<j \), the
+product \( \pi\tau \) is the permutation obtained from \( \pi \)
+by interchaning the values \( \pi_i \) and \( \pi_j \) at the
+positions \( i \) and \( j \):
+\[
+  \pi\tau = \pi_1 \cdots \pi_{i-1} \pi_j \pi_{i+1} \cdots \pi_{j-1}
+  \pi_i \pi_{j+1} \cdots \pi_n.
+\]
+On the other hand, the product \( \tau\pi \) is the permutation
+obtained from \( \pi \) by interchaning the values \( i \) and
+\( j \). For example, if \( \pi = \cdots i \cdots j \cdots \), then
+\( \tau\pi = \cdots j \cdots i \cdots \).
+
+
 \begin{prop}\label{pro:cycle-decomp}
   Let \( \pi \in \sym_n \). Then we can write
   \( \pi = \rho_1 \cdots \rho_k \) for some disjoint cycles
@@ -1910,7 +1959,28 @@ A \emph{cycle of length \( k \)} is a permutation (in some
   simple transpositions \( s_i\in \sym_n \).
 \end{prop}
 \begin{proof}
-We leave this as an exercise.
+  Let \( \pi\in \sym_n \). Let \( m=1 \) and consider the sequence
+  \( \pi(m), \pi^2(m), \ldots \). Since this is an infinite sequence
+  of integers in \( [n] \), we must have \( \pi^i(m) = \pi^j(m) \) for
+  some \( i<j \). By multiplying \( \pi^{-i} \), we have
+  \( m = \pi^{j-i}(m) \). Thus we can find the smallest integer
+  \( r \) such that \( \pi^r(m) = m \). Let \( \rho_1 \) be the cycle
+  \( (k,\pi(k), \pi^2(k),\dots,\pi^{r-1}(k)) \).
+
+  Now let \( m \) be the smallest integer in \( [n] \) except those in
+  \( \rho_1 \). We repeat this process and obtain cycles
+  \( \rho_1,\dots,\rho_k \) whose union as a set is \( [n] \). These
+  cycles are disjoint because if \( \rho_i \) and \( \rho_j \) have a
+  common element then they must be the same cycle.
+
+  For the second statement, let \( \pi=\pi_1 \cdots \pi_n \). Note
+  that multiplying a simple transposition \( (i,i+1) \) on the left of
+  \( \pi \) interchanges \( \pi_i \) and \( \pi_{i+1} \). Thus we can
+  sort \( \pi=\pi_1 \cdots \pi_n \) into the the identity permutation
+  \( 1 2 \cdots n \) by multiplying simple transpositions
+  \( t_1, \ldots, t_r \) on the left, i.e.,
+  \( \pi t_1 \cdots t_r = id \). Then \( \pi = t_r \cdots t_1 \),
+  which is a product of simple transpositions.
 \end{proof}
 
 
@@ -1919,7 +1989,6 @@ By \Cref{pro:cycle-decomp}, we can write \( \pi \) in \emph{cycle
 \[
   \pi = \rho_1 \cdots \rho_r.
 \]
-
 
 \begin{exam}
   Let \( \pi = 951826743 \in \sym_9 \).
@@ -1937,7 +2006,8 @@ By \Cref{pro:cycle-decomp}, we can write \( \pi \) in \emph{cycle
   \[
     \pi = (1,9,3)(2,5)(4,8) (6) (7).
   \]
-  We sometime omit the cycles of length \( 1 \) and write
+  Thus, \( \cycle(\pi) = 5 \). We sometime omit the cycles of length
+  \( 1 \) and write
   \[
     \pi = (1,9,3)(2,5)(4,8).
   \]
@@ -1983,12 +2053,37 @@ We can also visualize a permutation by drawing its cycles as shown in
   \label{fig:cycle}
 \end{figure}
 
+
+\begin{defn}
+  A permutation \( \pi\in \sym_n \) is called an \emph{involution} if
+  \( \pi^2 = \iota \), where \( \iota \) is the identity permutation
+  on \( [n] \). Let \( \invol_n \) denote the set of involutions in
+  \( \sym_n \).
+\end{defn}
+
+\begin{prop}
+  There is a bijection between \( \invol_n \) and the set of matchings
+  on \( [n] \).
+\end{prop}
+
+\begin{proof}
+  A permutation \( \pi\in \sym_n \) is an involution if and only if
+  every cycle is of length \( 1 \) or \( 2 \). Thus, if \( \pi \) is
+  an involution, changing each cycle of \( \pi \) into a block gives a
+  matching on \( [n] \). This is clearly a bijection.
+\end{proof}
+
+
+
 \begin{defn}
   An \emph{inversion} of a permutation \( \pi\in \sym_n \) is a pair
   \( (i,j) \) of integers \( 1\le i<j\le n \) such that
   \( \pi(i) > \pi(j) \). We denote by \( \inv(\pi) \) the number of
   inversions of \( \pi \).
 \end{defn}
+
+In other words, \( \inv(\pi) \) is the pair of integers such that
+their relative positions are out of orders in \( \pi \).
 
 \begin{prop}
   We have
@@ -2010,7 +2105,123 @@ We leave this as an exercise.
   \]
 \end{defn}
 
-There are several ways to compute the sign of a permutation.
+The notion of the sign of a permutation is very important when we
+study determinants. There are several ways to compute the sign of a
+permutation.
+
+\begin{lem}\label{lem:cycle+1}
+  Let \( \pi\in \sym_n \) and let \( \tau=(i,j)\in\sym_n \). Then
+  \[
+    \cycle(\tau \pi) = \cycle(\pi\tau) = 
+    \begin{cases}
+      \cycle(\pi) +1 & \mbox{if \( i \) and \( j \) are in different cycles of \( \pi \)},\\
+      \cycle(\pi) -1 & \mbox{if \( i \) and \( j \) are in the same cycle of \( \pi \).}
+    \end{cases}
+  \]
+\end{lem}
+\begin{proof}
+  Suppose that \( i \) and \( j \) are in the same cycle, say
+  \( \rho \), of \( \pi \). Then \( \rho\tau \) becomes two cycles as
+  shown in \Cref{fig:mult-tau}. Thus in this case
+  \( \cycle(\pi\tau) = \cycle(\pi) +1 \). The other cases can be
+  proved similarly.
+
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}
+      \begin{scope}[shift={(0,0)}]
+\node (0) at ({90 + (360/8 * 0)}:1) {\( \cdots \)};
+\node (1) at ({90 + (360/8 * 1)}:1) {\( a \)};
+\node (2) at ({90 + (360/8 * 2)}:1) {\( i \)};
+\node (3) at ({90 + (360/8 * 3)}:1) {\( b \)};
+\node (4) at ({90 + (360/8 * 4)}:1) {\( \cdots \)};
+\node (5) at ({90 + (360/8 * 5)}:1) {\( c \)};
+\node (6) at ({90 + (360/8 * 6)}:1) {\( j \)};
+\node (7) at ({90 + (360/8 * 7)}:1) {\( d \)};
+\draw[->,bend right] (0) to (1);
+\draw[->,bend right] (1) to (2);
+\draw[->,bend right] (2) to (3);
+\draw[->,bend right] (3) to (4);
+\draw[->,bend right] (4) to (5);
+\draw[->,bend right] (5) to (6);
+\draw[->,bend right] (6) to (7);
+\draw[->,bend right] (7) to (0);
+\end{scope}
+    \end{tikzpicture} \qquad \qquad \qquad 
+    \begin{tikzpicture}
+      \begin{scope}[shift={(0,0)}]
+\node (0) at ({90 + (360/8 * 0)}:1) {\( \cdots \)};
+\node (1) at ({90 + (360/8 * 1)}:1) {\( a \)};
+\node (2) at ({90 + (360/8 * 2)}:1) {\( i \)};
+\node (3) at ({90 + (360/8 * 3)}:1) {\( b \)};
+\node (4) at ({90 + (360/8 * 4)}:1) {\( \cdots \)};
+\node (5) at ({90 + (360/8 * 5)}:1) {\( c \)};
+\node (6) at ({90 + (360/8 * 6)}:1) {\( j \)};
+\node (7) at ({90 + (360/8 * 7)}:1) {\( d \)};
+\draw[->,bend right] (0) to (1);
+\draw[->,bend right] (1) to (2);
+\draw[->] (2) to (7);
+\draw[->,bend right] (3) to (4);
+\draw[->,bend right] (4) to (5);
+\draw[->,bend right] (5) to (6);
+\draw[->] (6) to (3);
+\draw[->,bend right] (7) to (0);
+\end{scope}
+    \end{tikzpicture}
+    \caption{A cycle \( \rho \) with \( i \) and \( j \) on the left
+      and the permutation \( \rho\tau \) on the right, where
+      \( \tau=(i,j) \).}
+    \label{fig:mult-tau}
+  \end{figure}
+\end{proof}
+
+
+\begin{lem}\label{lem:inv+1}
+  Let \( \pi\in \sym_n \) and let \( \tau=(i,i+1)\in\sym_n \). Then
+  \[
+    \sgn(\pi\tau) =  - \sgn(\pi).
+  \]
+\end{lem}
+
+\begin{proof}
+  Since
+  \[
+    \pi\tau =
+    \begin{pmatrix}
+      \cdots & i & i+1 & \cdots \\
+      \cdots & \pi_{i+1} & \pi_i & \cdots 
+    \end{pmatrix},
+  \]
+  we have \( \inv(\pi\tau) = \inv(\pi)\pm 1 \). This implies
+  \( \sgn(\pi\tau) = - \sgn(\pi) \).
+\end{proof}
+
+
+\begin{lem}\label{lem:sgn=trans}
+  If \( \pi\in \sym_n \) is a product of \( k \) simple transpositions, then
+  \[
+    \sgn(\pi) = (-1)^k.
+  \]
+  For two permutations \( \pi,\sigma\in \sym_n \), we have
+  \[
+    \sgn(\pi\sigma) = \sgn(\pi) \sgn(\sigma).
+  \]
+\end{lem}
+\begin{proof}
+  Let \( \pi = t_1 \cdots t_k \), where \( t_i \)'s are simple
+  transpositions. Then by \Cref{lem:sgn=trans},
+  \[
+    \sgn(\pi) = \sgn(t_1 \cdots t_k \iota) = (-1)^{k}\sgn(\iota) = (-1)^{k}.
+  \]
+  For the second statement suppose \( \pi = t_1 \cdots t_k \) and
+  \( \sigma = s_1 \cdots s_r \), where \( t_i \)'s and \( s_r \)'s are
+  simple transpositions. Then since \( \sgn(\pi) = (-1)^{k} \)
+  \( \sgn(\sigma) = (-1)^{r} \), we have
+  \[
+    \sgn(\pi\sigma) = \sgn(t_1 \cdots t_k s_1 \cdots s_r) = (-1)^{k+r}
+    = \sgn(\pi) \sgn(\sigma). \qedhere
+  \]
+\end{proof}
 
 \begin{prop}
   For \( \pi\in \sym_n \), we have
@@ -2019,32 +2230,33 @@ There are several ways to compute the sign of a permutation.
     (-1)^{\evencycle(\pi)},
   \]
   where \( \evencycle(\pi) \) is the number of even cycles in
-  \( \pi \).
+  \( \pi \). In particular, if \( \pi = t_1 \cdots t_k \), where
+  \( t_i \)'s are transpositions, then \( \sgn(\pi) = (-1)^{t} \).
 \end{prop}
 \begin{proof}
-We leave this as an exercise.
-\end{proof}
+  Let \( \pi = t_1 \cdots t_k \), where \( t_i \)'s are simple
+  transpositions. By the definition of \( \sgn(\pi) \) and
+  \Cref{lem:sgn=trans}, we have
+  \( \sgn(\pi) = (-1)^{\inv(\pi)} = (-1)^{k} \). On the other hand,
+  since \( \pi = t_1 \cdots t_k\iota \), by \Cref{lem:cycle+1},
+  \( (-1)^{\cycle(\pi)} = (-1)^{\cycle(\iota)+k} = (-1)^{n+k} \).
+  Thus \( \sgn(\pi) = (-1)^{k} = (-1)^{n-\cycle(\pi)} \).
 
-\begin{cor}
-  If \( \pi\in \sym_n \) is a product of \( k \) transpositions, then
+  Now let \( c_i \) be the number of cycles of length \( i \) in
+  \( \pi \). Then
   \[
-    \sgn(\pi) = (-1)^k.
+    (-1)^{n-\cycle(\pi)} = (-1)^{(1\cdot c_1 + 2\cdot c_2 + \cdots + n
+      \cdot c_n) - (c_1 + \cdots + c_n)} =(-1)^{0\cdot c_1 + 1\cdot
+      c_2 + \cdots + (n-1) \cdot c_n} = (-1)^{n-\cycle(\pi)}.
   \]
-  For two permutations \( \pi,\sigma\in \sym_n \), we have
-  \[
-    \sgn(\pi\sigma) = \sgn(\pi) \sgn(\sigma).
-  \]
-\end{cor}
-\begin{proof}
-We leave this as an exercise.
 \end{proof}
-
-
 
 The \emph{signless Striling number of the first kind} \( c(n,k) \) is
 defined to be the number of permutations on \( [n] \) with \( k \)
 cycles. The \emph{Striling number of the first kind} \( s(n,k) \) is
-defined to by \( s(n,k) = (-1)^{n-k} c(n,k) \).
+defined to by \( s(n,k) = (-1)^{n-k} c(n,k) \). Note that
+\( (-1)^{n-k} \) is the sign of a permutation on \( [n] \) with
+\( k \) cycles.
 
 \begin{prop}
   For integers \( n,k\ge1 \), we have
@@ -2091,7 +2303,35 @@ Note that \eqref{eq:c(n,k)} can be rewritten as
 \begin{equation}\label{eq:c(n,k)-gf}
    \sum_{\pi\in \sym_n}  x^{\cycle(\pi)} = x(x+1) \cdots (x+n-1).
 \end{equation}
+We can prove this bijectively.
 
+\begin{proof}[A bijective proof of \eqref{eq:c(n,k)-gf}]
+  We will construct an algorithm to construct a permutation
+  \( \pi\in \sym_n \).
+  For \( k=1,\dots,n \), we do the following.
+  \begin{description}
+  \item[Step 1] For \( k=1 \), create a new cycle consisting of \( 1 \).
+  \item[Step 2] Let \( 2\le k\le n \) and suppose that the integers
+    \( 1,\dots,k-1 \) form a permutation on \( [k-1] \) in cycle
+    notation. Then we either create a new cycle consisting of \( k \)
+    or insert \( k \) after one of the integers \( 1,\dots,k-1 \).
+  \end{description}
+
+  For each \( 1\le k\le n \), there are \( k \) choices: creating a
+  new cycle (in one way) or inserting \( k \) into one of the existing
+  cycles (in \( k-1 \) ways). The possible choices for \( k \) are
+  exactly the same as the choices for the \( k \)th factor when we
+  expand
+  \begin{equation}\label{eq:19}
+    x(x+1)(x+1+1)\cdots (x+\overbrace{1+1 + \cdots + 1}^{n-1}).
+  \end{equation}
+  Moreover, the first choice (creating a new cycle) corresponds to
+  multipying \( x \). Thus, if \( \pi \) is a permutation obtained in
+  this algoritm, then the same process in the exansion of
+  \eqref{eq:19} gives \( x^{\cycle(\pi)} \). This means that the both
+  sides of\eqref{eq:c(n,k)-gf} match term-by-term, completing the
+  proof of this identity.
+\end{proof}
 
 
 Using \eqref{eq:S(n,k)(x)k=xn} and \eqref{eq:s(n,k)} we obtain the
