@@ -1751,7 +1751,7 @@ with the above initial conditions.
 \begin{prop}
   For integers \( n,k\ge1 \), we have
   \[
-    S(n,k) = S(n-1,k) + k S(n-1,k-1).
+    S(n,k) = S(n-1,k-1) + k S(n-1,k).
   \]
 \end{prop}
 \begin{proof}
@@ -2106,16 +2106,16 @@ We leave this as an exercise.
 \end{defn}
 
 The notion of the sign of a permutation is very important when we
-study determinants. There are several ways to compute the sign of a
-permutation.
+study determinants. We will see several ways to compute the sign of a
+permutation. To this end we need some lemmas.
 
 \begin{lem}\label{lem:cycle+1}
   Let \( \pi\in \sym_n \) and let \( \tau=(i,j)\in\sym_n \). Then
   \[
     \cycle(\tau \pi) = \cycle(\pi\tau) = 
     \begin{cases}
-      \cycle(\pi) +1 & \mbox{if \( i \) and \( j \) are in different cycles of \( \pi \)},\\
-      \cycle(\pi) -1 & \mbox{if \( i \) and \( j \) are in the same cycle of \( \pi \).}
+      \cycle(\pi) -1 & \mbox{if \( i \) and \( j \) are in different cycles of \( \pi \)},\\
+      \cycle(\pi) +1 & \mbox{if \( i \) and \( j \) are in the same cycle of \( \pi \).}
     \end{cases}
   \]
 \end{lem}
@@ -2202,18 +2202,23 @@ permutation.
   \[
     \sgn(\pi) = (-1)^k.
   \]
-  For two permutations \( \pi,\sigma\in \sym_n \), we have
-  \[
-    \sgn(\pi\sigma) = \sgn(\pi) \sgn(\sigma).
-  \]
 \end{lem}
 \begin{proof}
   Let \( \pi = t_1 \cdots t_k \), where \( t_i \)'s are simple
   transpositions. Then by \Cref{lem:sgn=trans},
   \[
-    \sgn(\pi) = \sgn(t_1 \cdots t_k \iota) = (-1)^{k}\sgn(\iota) = (-1)^{k}.
+    \sgn(\pi) = \sgn(\iota t_1 \cdots t_k) = (-1)^{k}\sgn(\iota) = (-1)^{k}.
   \]
-  For the second statement suppose \( \pi = t_1 \cdots t_k \) and
+\end{proof}
+
+\begin{prop}
+    For two permutations \( \pi,\sigma\in \sym_n \), we have
+  \[
+    \sgn(\pi\sigma) = \sgn(\pi) \sgn(\sigma).
+  \]
+\end{prop}
+\begin{proof}
+  Suppose \( \pi = t_1 \cdots t_k \) and
   \( \sigma = s_1 \cdots s_r \), where \( t_i \)'s and \( s_r \)'s are
   simple transpositions. Then since \( \sgn(\pi) = (-1)^{k} \)
   \( \sgn(\sigma) = (-1)^{r} \), we have
@@ -2222,6 +2227,7 @@ permutation.
     = \sgn(\pi) \sgn(\sigma). \qedhere
   \]
 \end{proof}
+
 
 \begin{prop}
   For \( \pi\in \sym_n \), we have
@@ -2249,6 +2255,14 @@ permutation.
       \cdot c_n) - (c_1 + \cdots + c_n)} =(-1)^{0\cdot c_1 + 1\cdot
       c_2 + \cdots + (n-1) \cdot c_n} = (-1)^{n-\cycle(\pi)}.
   \]
+
+  The last statement follows from
+  \[
+    \sgn(\pi) = \sgn(t_1 \cdots t_k) = \sgn(t_1) \cdots \sgn(t_k)
+    = (-1)^{k},
+  \]
+  because the sign of a transposition \( \tau \) is
+  \( \sgn(\tau) = (-1)^{\evencycle(\tau)} = (-1)^1 = -1 \).
 \end{proof}
 
 The \emph{signless Striling number of the first kind} \( c(n,k) \) is
