@@ -96,7 +96,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Lecture notes on the combinatorics of orthogonal polynomials}
+\title{Lecture notes on combinatorics of orthogonal polynomials}
 \author{Jang Soo Kim}
 % \thanks{The author was supported by NRF grants \#2022R1A2C101100911 and \#2016R1A5A1008055.} 
 % \address{Department of Mathematics,
@@ -116,7 +116,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % start here
 
-\chapter{Introduction to the lectures}
+\chapter{Introduction}
 
 Orthogonal polynomials are classical objects arising from the study of
 continued fractions. Due to the long history of orthogonal
@@ -125,7 +125,7 @@ areas: classical analysis and PDE, mathematical physics, probability,
 random matrix theory, and combinatorics.
 
 The combinatorial study of orthogonal polynomials was pioneered by
-Flajolet and Viennot in 1980s. In these lectures we will learn
+Flajolet and Viennot in 1980s. In these lecture notes we will learn
 fascinating combinatorial properties of orthogonal polynomials.
 
 We will first study basic properties of orthogonal polynomials based
@@ -135,9 +135,6 @@ on Viennot's lecture notes \cite{ViennotLN}. We will also cover more
 recent developments in the combinatorics of orthogonal polynomials
 such as their connections with ASEP, staircase tableaux, lecture hall
 partitions, and orthogonal polynomials of type \( R_1 \).
-
-The prerequisites of this course are Calculus 1, Linear Algebra, and
-Discrete Mathematics.
 
 In \Cref{sec:basics-orth-polyn} we study elementary and classical
 results of orthogonal polynomials. In \Cref{cha:basics-enum-comb} we
@@ -327,8 +324,8 @@ way, see \Cref{sec:sign-revers-invol}.
 
 \begin{remark}
   In the theory of orthogonal polynomials, finding an explicit weight
-  function is an important problem. However, in these lectures, we
-  will not pursue in this direction and we will be mostly satisfied
+  function is an important problem. However, in these lecture notes,
+  we will not pursue in this direction and we will be mostly satisfied
   with \Cref{def:OPS2}.
 \end{remark}
 
@@ -1118,11 +1115,47 @@ This implies that the sign of \( P_{n+1}(x_{n,j}) \) is the opposite
 of the sign of \( P'_{n}(x_{n,j}) \). Considering the graph of
 \( y=P_n(x) \), the sign of \( P'_n(x_{n,j}) \) is \( (-1)^{j-1} \),
 see \Cref{fig:image2}. Thus the sign of \( P_{n+1}(x_{n,j}) \), for
-\( j=1,2,\ldots,n \), is \( (-1)^j \) as indicated by the blue dots in
+\( j=1,2,\ldots,n \), is \( (-1)^j \) as indicated by the red dots in
 \Cref{fig:image2}.
 \begin{figure}
   \centering
-  \includegraphics[scale=.1]{./figures/image2.jpeg}
+  \begin{tikzpicture}[thick,scale=0.9]
+  \draw[gray] (-2,0) -- (16,0);
+  \draw [black] plot [smooth] coordinates {(-1,2) (1.5,-2) (4,2.5) (6,-1) (8,1.5) (11,-1.5) (15,3)};
+  \draw [blue, dashed] plot [smooth] coordinates {(-1,-1) (1,2) (3,-1.5) (5.5,2.7) (7,-1) (10,2.5) (13,-2) (15,1)};
+  \node [blue] at (-1.2,.2) {\( x_{n+1,n+1} \)};
+  \node [blue] at (15.2,-.2) {\( x_{n+1,1} \)};
+  \node [blue] at (11.2,-.2) {\( x_{n+1,2} \)};
+  \node at (-.5,0) [blue,circle,fill,inner sep=1pt]{};
+  \node at (2.04,0) [blue,circle,fill,inner sep=1pt]{};
+  \node at (3.99,0) [blue,circle,fill,inner sep=1pt]{};
+  \node at (6.45,0) [blue,circle,fill,inner sep=1pt]{};
+  \node at (7.93,0) [blue,circle,fill,inner sep=1pt]{};
+  \node at (11.7,0) [blue,circle,fill,inner sep=1pt]{};
+  \node at (14.55,0) [blue,circle,fill,inner sep=1pt]{};
+  \node at (12.69,0) [circle,fill,inner sep=1pt]{};
+  \node at (9.31,0) [circle,fill,inner sep=1pt]{};
+  \node at (-.02,0) [circle,fill,inner sep=1pt]{};
+  \node at (2.69,0) [circle,fill,inner sep=1pt]{};
+  \node at (5.36,0) [circle,fill,inner sep=1pt]{};
+  \node at (6.83,0) [circle,fill,inner sep=1pt]{};
+  \node at (13.1,-.2) {\( x_{n,1} \)};
+  \node at (9.0,-.2) {\( x_{n,2} \)};
+  \node at (.5,.2) {\( x_{n,n} \)};
+  \node at (3.4,.2) {\( x_{n,n-1} \)};
+  \draw [red, dotted] (-.02,0) --++(0,.9);
+  \node at (-.02,.88) [red,circle,fill,inner sep=1.5pt]{};
+  \draw [red, dotted] (2.69,0) --++(0,-1.3);
+  \node at (2.69,-1.3) [red,circle,fill,inner sep=1.5pt]{};
+  \draw [red, dotted] (12.69,0) --++(0,-1.72);
+  \node at (12.69,-1.72) [red,circle,fill,inner sep=1.5pt]{};
+  \draw [red, dotted] (9.31,0) --++(0,2.05);
+  \node at (9.31,2.05) [red,circle,fill,inner sep=1.5pt]{};
+  \draw [red, dotted] (5.36,0) --++(0,2.64);
+  \node at (5.36,2.64) [red,circle,fill,inner sep=1.5pt]{};
+  \draw [red, dotted] (6.83,0) --++(0,-0.92);
+  \node at (6.83,-0.92) [red,circle,fill,inner sep=1.5pt]{};
+\end{tikzpicture}
   \caption{The interchanging zeros of \( P_n(x) \) and \( P_{n+1}(x) \).}
   \label{fig:image2}
 \end{figure}
@@ -2489,7 +2522,7 @@ polynomials.
   where \( P_{-1}(x) = 0 \) and \( P_0(x) = 1 \).
 \end{thm}
 
-The main goal of this section is to give combinatorial interpretations
+The main goal of this chapter is to give combinatorial interpretations
 for the orthogonal polynomials \( P_n(x) \) and their moments
 \( \mu_n \). Using these combinatorial interpretations we will prove
 Favard's theorem bijectively.
@@ -2502,16 +2535,17 @@ orthogonal polynomials using Favard tilings.
 
 \begin{defn}
   A \emph{Favard tiling of size $n$} is a tiling of a $1\times n$
-  square board with monominos and dominos, where each monomino may be
-  marked. The set of Favard tilings of size $n$ is denoted by $\FT_n$.
+  square board with three types of tiles: red monominos, black
+  monominos, and black dominos. The set of Favard tilings of size $n$
+  is denoted by $\FT_n$.
 
   We label the squares in the $1\times n$ board by $0,1,\dots,n-1$
   from left to right. Define the weight \( \wt(T) \) of
   \( T\in \FT_n \) to be the product of the weights of the tiles in
   \( T \), where
   \begin{enumerate}
-  \item the weight of each marked monomino is \( x \),
-  \item the weight of each unmarked monomino containing a label
+  \item the weight of each red monomino is \( x \),
+  \item the weight of each black monomino containing a label
     \( i \) is \( -b_i \), and
   \item the weight of each domino containing labels \( i-1 \) and
     \( i \) is \( -\lambda_i \).
@@ -2531,12 +2565,11 @@ numbers.
   \centering
 \begin{tikzpicture}[scale=0.75]
   \draw [help lines] (0,0) grid (8,1);
-  \foreach \x in {0,...,7} \draw node at (\x+0.5,0.5) {\x};
+  \foreach \x in {0,...,7} \draw node at (\x+.5,.5) {\x};
   \LBD1 \LRM2 \LBM3 \LBM4 \LRM5 \LRM6 \LBM7
 \end{tikzpicture}
 \caption{A Favard tiling $T\in\FT_8$ with
-  $\wt(T)=\lambda_1 b_3b_4b_7x^3$. The marked monominos are colored
-  red.}
+  $\wt(T)=\lambda_1 b_3b_4b_7x^3$.}
   \label{fig:tiling}
 \end{figure}
 
@@ -2553,34 +2586,6 @@ orthogonal polynomials.
 \begin{proof}
   This is immediate from the recurrence \eqref{eq:3-RR}.
 \end{proof}
-
-
-
-
-\begin{figure}
-  \centering
-  \begin{tikzpicture}[scale=0.75]
-    \draw[help lines] (0,0) grid (13,3);
-    \foreach \y in {0,...,3} \draw node at (-.5,\y) {$\y$};
-    \draw[line width = 1.5pt] (0,3)-- ++(0,-1)-- ++(0,-1)-- ++(1,-1)-- ++(1,1)-- ++(1,1)-- ++(0,-1)-- ++(1,-1)-- ++(1,0)-- ++(1,1)-- ++(1,1)-- ++(1,1)-- ++(1,-1)-- ++(1,0)-- ++(0,-1)-- ++(1,1)-- ++(1,0)-- ++(0,-1)-- ++(1,0);
-    \node at (0.4,2.5) {$a_{3}$};
-    \node at (0.4,1.5) {$a_{2}$};
-    \node at (0.8,0.8) {$\lambda_{1}$};
-    \node at (3.4,1.5) {$a_{2}$};
-    \node at (3.8,0.8) {$\lambda_{1}$};
-    \node at (4.5,0.3) {$b_{0}$};
-    \node at (8.8,2.8) {$\lambda_{3}$};
-    \node at (9.5,2.3) {$b_{2}$};
-    \node at (10.4,1.8) {$a_{2}$};
-    \node at (11.5,2.3) {$b_{2}$};
-    \node at (12.4,1.8) {$a_{2}$};
-    \node at (12.7,1.3) {$b_{1}$};
-\end{tikzpicture}
-\caption{A Motzkin-Schr\"oder path $\pi$ from $(0,3)$ to $(13,1)$ with
-  $\wt(\pi)=a_2^4a_3b_0b_1b_2^2\lambda_1^2\lambda_3$.}
-  \label{fig:MS}
-\end{figure}
-
 
 
 \section{How to find a combinatorial model for moments}
@@ -2648,19 +2653,43 @@ webpage will tell you that this is the sequence of the number of
 Motzkin paths. So we can guess that there must be a close connection
 with the moments of orthogonal polynomials and Motzkin paths.
 
-Let \( \Motz_n \) denote the set of Motzkin paths from \( (0,0) \) to
-\( (n,0) \). Define the weight \( \wt(\pi) \) of a Motzkin path \( \pi\in \Motz_n \)
-to be the product of the weights of the steps in \( \pi \),
+After spending enough time of trials and errors, we can come up with
+the following combinatorial model for the moments of orthogonal
+polynomials.
+
+Recall that \( \Motz(u\to v) \) is the set of Motzkin paths from
+\( u \) to \( v \). We define the weight \( \wt(\pi) \) of a Motzkin
+path \( \pi \) to be the product of the weights of the steps in
+\( \pi \), where
 \begin{enumerate}
 \item the weight of an up step is \( 1 \),
 \item the weight of a horizontal step starting at height \( i \) is \( b_i \), and
 \item the weight of a down step starting at height \( i \) is
   \( \lambda_i \).
 \end{enumerate}
+See \Cref{fig:Motzkin-wt}.
 
-After spending enough time of trials and errors, we can come up with
-the following combinatorial model for the moments of orthogonal
-polynomials.
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[scale=0.75]
+    \draw[help lines] (0,0) grid (12,3);
+    \foreach \y in {0,...,3} \draw node at (-.5,\y) {$\y$};
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,0) -- ++(1,-1) -- ++(1,-1);
+    \node at (2.8,1.8) {$\lambda_{2}$};
+    \node at (3.8,0.8) {$\lambda_{1}$};
+    \node at (4.5,0.3) {$b_{0}$};
+    \node at (8.8,2.8) {$\lambda_{3}$};
+    \node at (9.5,2.3) {$b_{2}$};
+    \node at (10.8,1.8) {$\lambda_{2}$};
+    \node at (11.8,0.8) {$\lambda_{1}$};
+\end{tikzpicture}
+\caption{A Motzkin path $\pi$ from $(0,0)$ to $(12,0)$ with
+  $\wt(\pi)=b_0b_2\lambda_1^2\lambda_2^2\lambda_3$.}
+  \label{fig:Motzkin-wt}
+\end{figure}
+
+We are now ready state Viennot's combinatorial interpretation for
+moments of orthogonal polynomials.
 
 \begin{thm}\label{thm:mu=Mot}
   Suppose that \( \{ P_n(x) \}_{n\ge 0} \) is a monic OPS for a
@@ -2692,9 +2721,7 @@ a combinatorial interpretation for mixed moments.
 Note that \( \mu_n = \mu_{n,0,0} \).
 
 Let \( \Motz_{n,r,s} \) denote the set of Motzkin paths from
-\( (0,r) \) to \( (n,s) \). The weight of \( \pi\in \Motz_{n,r,s} \)
-is defined in the same manner as the weight of a Motzkin path from
-\( (0,0) \) to \( (n,0) \).
+\( (0,r) \) to \( (n,s) \). 
 
 \begin{thm}\label{thm:mu=Mot_nrs}
   Following the notation in \Cref{thm:mu=Mot}, we have

@@ -31,19 +31,20 @@ Orthogonal polynomials are classical objects arising from the study of continued
 - The class will be taught in English.
 
 * Lecture notes
-- [[file:orthogonal_polynomials.pdf][Lecture notes]] will be constantly updated.
+- [[file:orthogonal_polynomials.pdf][Lecture notes]] (This file will be updated regularly.)
 * Homework
-- [[file:homework.pdf][Homework problems]]
-- [[file:homework-with-solutions.pdf][Homework solutions with grading criteria]]
+- [[file:homework.pdf][Homework problems]] (This file will be updated regularly.)
+- [[file:homework-with-solutions.pdf][Homework solutions with grading criteria]] (This file will be updated regularly.)
 - Email your homework as a single pdf file to the instructor by the due date.
 - Homework 1 (Due: Sep 21)
+- Homework 2 (Due: Oct 5) 
 
 * Schedule and links to lecture videos
 1. [2023-08-29 Tue]: Introduction, [[file:ops-files/OPS1.pdf][lecture notes]], [[https://youtu.be/JgdcBmWMwYc][video]]
 2. [2023-08-31 Thu]: Sign-reversing involutions, [[file:ops-files/OPS2.pdf][lecture notes]], [[https://youtu.be/8B_fU_00eRE][video]]
 3. [2023-09-05 Tue]: The moment functional and orthogonality, Existence of OPS, [[file:ops-files/OPS3.pdf][lecture notes]], [[https://youtu.be/imG73nDIAws][video]]
 4. [2023-09-07 Thu]: The fundamental recurrence, [[file:ops-files/OPS4.pdf][lecture notes]], [[https://youtu.be/t9BgSJr2eMc][video]]
-5. [2023-09-12 Tue]: Christoffel-Darbox identities and zeros of OP, [[file:ops-files/OPS5.pdf][lecture notes]], [[https://youtu.be/O1Lnqyg5lw0][video]]
+5. [2023-09-12 Tue]: Christoffel-Darboux identities and zeros of OP, [[file:ops-files/OPS5.pdf][lecture notes]], [[https://youtu.be/O1Lnqyg5lw0][video]]
 6. [2023-09-14 Thu]: Formal power series and generating functions, [[file:ops-files/OPS6.pdf][lecture notes]], [[https://youtu.be/ntLp_L_mlKs][video]]
 7. [2023-09-19 Tue]: Dyck paths, Motzkin paths, setpartitions, matchings, [[file:ops-files/OPS7.pdf][lecture notes]], [[https://youtu.be/f9APZDV86jY][video]]
 8. [2023-09-21 Thu]: Permutations, [[file:ops-files/OPS8.pdf][lecture notes]], [[https://youtu.be/4OVZOXcmiu0][video]]
