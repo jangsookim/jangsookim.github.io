@@ -2511,15 +2511,16 @@ most important results in the theory of classical orthogonal
 polynomials.
 
 \begin{thm}[Favard's theorem]
-  Let \( \{ P_n(x) \}_{n\ge 0} \) be a sequence of monic polynomials.
-  Then \( \{ P_n(x) \}_{n\ge 0} \) is an OPS for some linear
-  functional \( \LL \) if and only if
-  there are sequences \( \{ b_n\}_{n\ge 0} \) and \( \{ \lambda_n\}_{n\ge 1} \)
-  such that \( \lambda_n\ne 0 \) and
+  Let \( \{ P_n(x) \}_{n\ge 0} \) be a sequence of polynomials
+  satisfying \( P_{-1}(x) = 0 \), \( P_0(x) = 1 \), and
   \begin{equation}\label{eq:3-RR}
     P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x), \qquad n\ge0,
   \end{equation}
-  where \( P_{-1}(x) = 0 \) and \( P_0(x) = 1 \).
+  for some sequences \( \{ b_n\}_{n\ge 0} \) and
+  \( \{ \lambda_n\}_{n\ge 1} \) with \( \lambda_n\ne 0 \). 
+ Then
+  \( \{ P_n(x) \}_{n\ge 0} \) is an OPS for some linear functional
+  \( \LL \).
 \end{thm}
 
 The main goal of this chapter is to give combinatorial interpretations
