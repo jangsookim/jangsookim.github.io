@@ -28,6 +28,12 @@
 \newtheorem*{note}{Note}
 
 % DO NOT DELETE THIS COMMENT!!! MACROS BELOW:
+\newcommand\LRmin{\operatorname{LRmin}}
+\newcommand\LH{\operatorname{LH}}
+\newcommand\block{\operatorname{block}}
+\newcommand\CH{\operatorname{CH}}
+\newcommand\CM{\operatorname{CM}}
+\newcommand\HH{\operatorname{HH}}
 \newcommand\evencycle{\operatorname{evencycle}}
 \newcommand\inv{\operatorname{inv}}
 \newcommand\cycle{\operatorname{cycle}}
@@ -82,8 +88,8 @@
 \renewcommand\emph[1]{\textcolor{blue}{\bf #1}}
 
 
-\def\addable(#1,#2){\draw [blue, line width=1pt] (#1,#2) circle [radius=6pt];}
-\def\remove(#1,#2){\fill [red] (#1,#2) circle [radius=4pt];}
+\def\addable(#1,#2){\draw [cyan, line width=1pt] (#1,#2) circle [radius=6pt];}
+\def\remove(#1,#2){\fill [cyan] (#1,#2) circle [radius=4pt];}
 \def\BM#1{\draw [line width=2pt] (#1+0.9,0.9) rectangle +(-0.8,-0.8);} 
 \def\RM#1{\draw [line width=2pt,red] (#1+0.9,0.9) rectangle +(-0.8,-0.8);}
 \def\BD#1{\draw [line width=2pt] (#1+0.9,0.9) rectangle +(-1.8,-0.8);}
@@ -93,6 +99,7 @@
 \def\LBD#1{\BD{#1} \node at (#1, 1.3) {$-\lambda_{#1}$};}
 % \def\LRD#1{\RD{#1} \node at (#1, 1.3) {$-\lambda_{#1}$};}
 
+\def\fcirc{\,\tikz\draw[fill] (0,0) circle (2pt);\,}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2760,21 +2767,34 @@ Let \( \Motz_{n,r,s} \) denote the set of Motzkin paths from
     &= \mu_{n-1,r+1,s} + b_r\mu_{n-1,r,s} + \lambda_r \mu_{n-1,r-1,s}\\
     &= \sum_{\pi\in \Motz_{n-1,r+1,s}} \wt(\pi)
     + b_r \sum_{\pi\in \Motz_{n-1,r,s}} \wt(\pi)
-    + \lambda_r \sum_{\pi\in \Motz_{n-1,r-1,s}} \wt(\pi),
+    + \lambda_r \sum_{\pi\in \Motz_{n-1,r-1,s}} \wt(\pi)\\
+      &=      \sum_{\pi\in \Motz_{n,r,s}} \wt(\pi),
   \end{align*}
-  where the last equation follows from the induction hypothesis.
-
-  On the other hand, considering the first step of each \( \pi\in \Motz_{n,r,s} \),
-  it is easy to check that 
-  \[
-     \sum_{\pi\in \Motz_{n,r,s}} \wt(\pi)
-    = \sum_{\pi\in \Motz_{n-1,r+1,s}} \wt(\pi)
-    + b_r \sum_{\pi\in \Motz_{n-1,r,s}} \wt(\pi)
-    + \lambda_r \sum_{\pi\in \Motz_{n-1,r-1,s}} \wt(\pi) .
-  \]
-  Hence the theorem holds for \( n \) and we are done by induction.
+  where the second to last equation follows from the induction
+  hypothesis and the last equation follows from considering the first
+  step of each \( \pi\in \Motz_{n,r,s} \). Hence the theorem holds for
+  \( n \) and we are done by induction.
 \end{proof}
 
+\begin{cor}
+  Following the notation in \Cref{thm:mu=Mot}, we have
+  \[
+    \LL(P_n(x)^2) = \lambda_1 \cdots \lambda_n.
+  \]
+\end{cor}
+
+\begin{proof}
+  Since \( P_n(x) \) is monic, we can write \( P_n(x) = x^n + Q(x) \)
+  for some polynomial \( Q(x) \) of degree less than \( n \). Thus
+  by \Cref{thm:mu=Mot_nrs},
+  \[
+    \LL(P_n(x)^2) = \LL((x^n + Q(x))P_n(x)) = \LL(x^n P_n(x))
+    = \sum_{\pi\in \Motz_{n,n,0}} \wt(\pi) = \lambda_1 \cdots \lambda_n,
+  \]
+  as desired. Here, the last equality follows from the fact that there
+  is only one Motzkin path in \( \Motz_{n,n,0} \), namely, the path
+  from \( (0,n) \) to \( (n,0) \) consisting of \( n \) down steps.
+\end{proof}
 
 \section{A bijective proof of Favard's theorem}
 
@@ -2806,27 +2826,31 @@ More generally, we will prove
 
 We first need to give a combinatorial meaning to the the left-hand
 side of \eqref{eq:LL(xPP)}. For a Favard tiling \( T \) with \( k \)
-marked monominos, let \( \wt'(T) = \wt(T)/x^k \). By \Cref{pro:Favard}
-and the definition \eqref{eq:8} of \( \LL(x^n) \), we have
+red monominos, let \( \wt'(T) = \wt(T)/x^k \). In other words,
+\( \wt'(T) \) is the same as \( \wt(T) \) except we only consider the
+weights of black monominos and black dominos.
+Then \Cref{pro:Favard} can be restated as
+\[
+  P_n(x) = \sum_{T\in \FT_n} \wt'(T) \cdot x^{(\text{number of red monominos in \( T \)})}.
+\]
+Thus, by the definition of \( \LL(x^n) \) in \eqref{eq:8}, we have
 \[
     \LL(x^n P_r(x)P_s(x)) = 
     \sum_{(T_1,T_2,\pi)\in X} \wt'(T_1) \wt'(T_2) \wt(\pi),
 \]
 where \( X \) is the set of triples \( (T_1,T_2,\pi) \)
-such that
+such that for some \( 0\le i\le r \) and \( 0\le j\le s \),
 \begin{enumerate}
-\item \( T_1\in \FT_r \) has \( i \) marked monominos for some \( 0\le i\le r \),
-\item \( T_2\in \FT_s \) has \( j \) marked monominos for some \( 0\le j\le s \), and
+\item \( T_1\in \FT_r \) has \( i \) red monominos,
+\item \( T_2\in \FT_s \) has \( j \) red monominos, and
 \item \( \pi\in \Motz_{n+i+j} \).
 \end{enumerate}
 
 Let \( Y \) be the set of \( \pi\in \Motz_{n+r+s} \) such that the
 first \( r \) steps are up steps and the last \( s \) step s are down
 steps. Then the right-hand side of \eqref{eq:LL(xPP)} is equal to
-\( \sum_{\pi\in Y} \wt(\pi) \).
-
-By the above observation, \eqref{eq:LL(xPP)} is equivalent to the
-following theorem.
+\( \sum_{\pi\in Y} \wt(\pi) \). Therefore \eqref{eq:LL(xPP)} is
+equivalent to the following theorem.
 
 \begin{thm}
   For the sets \( X \) and \( Y \) defined above, we have
@@ -2837,21 +2861,25 @@ following theorem.
 \end{thm}
 
 \begin{proof}
- We will find a sign-reversing involution on \( X \).
-
- Consider \( (T_1,T_2,\pi)\in X \). We write
- \( \pi=S_1S_2 \cdots S_{m} \) as a sequence of steps and suppose
+  We will find a sign-reversing weight-preserving involution on
+  \( X \) with fixed point set
+  \( \{ (\emptyset,\emptyset,\pi):\pi\in Y\} \). Consider
+  \( (T_1,T_2,\pi)\in X \). We write \( \pi=S_1S_2 \cdots S_{m} \) as
+  a sequence of steps. Let \( a,b,u,v \) be the integers defined as follows:
  \begin{itemize}
  \item \( a \) is the largest integer such that \( T_1 \)
-   starts with \( a \) marked monominos,
+   starts with \( a \) red monominos,
  \item \( b \) is the largest integer such that \( T_2 \)
-   starts with \( a \) marked monominos,
+   starts with \( b \) red monominos,
  \item \( u \) is the largest integer such that \( \pi \) starts with
    \( u \) up steps,
  \item \( v \) is the largest integer such that \( \pi \) ends with
    \( v \) down steps.
  \end{itemize}
- We define \( \phi(T_1,T_2,\pi)= (T'_1,T'_2,\pi') \) as follows.
+
+ We now define \( \phi(T_1,T_2,\pi)= (T'_1,T'_2,\pi') \) in the following
+ way. Here, \( a',b',u',v' \) are the integers defined similarly as
+ above using \( T'_1 \), \( T'_2 \), and \( \pi' \).
 \begin{description}
 \item[Case 1] \( u<a \). In this case we set \( T'_2 = T_2 \). There are two
   subcases.
@@ -2861,34 +2889,47 @@ following theorem.
       \pi' = S_1\cdots \widehat{S_{u+1}} \cdots S_{m},
 \]
 and define $T_1'$ to be the Favard tiling obtained from $T_1$ by
-replacing the \( (u+1) \)st marked monomino (at position \( u \)) by a
-unmarked monomino. Here the notation $\widehat{S_{u+1}}$ means that
-$S_{u+1}$ is removed from the sequence. See Figure~\ref{fig:case-a}.
+replacing the \( (u+1) \)st red monomino (at position \( u \)) by a
+black monomino. Here the notation $\widehat{S_{u+1}}$ means that
+$S_{u+1}$ is removed from the sequence. See Figure~\ref{fig:case-1}.
+Observe that since \( \wt'(T'_1) = -b_u \wt'(T_1) \) and
+\( \wt'(\pi') = \wt'(\pi)/ b_u \), we have
+\[ \wt'(T'_1)\wt'(T'_2)\wt(\pi') = - \wt'(T_1)\wt'(T_2)\wt(\pi). \]
+Moreover, we always have \( u'\ge u \) and \( a'=u<a\le r \), hence
+\( u'\ge a'\ne r \).
 \item[Case 1-2] $S_{u+1}$ is a down step. Let
     \[
       \pi' = S_1\cdots \widehat{S_{u}}\widehat{S_{u+1}} \cdots S_m,
 \]
 and define $T_1'$ to be the Favard tiling obtained from $T_1$ by
-replacing the \( u \)th and \( (u+1) \)st marked monominos (at
-positions $u-1$ and $u$) by a domino. See Figure~\ref{fig:case-c}.
+replacing the \( u \)th and \( (u+1) \)st red monominos (at positions
+$u-1$ and $u$) by a domino. See Figure~\ref{fig:case-2}. 
+Observe that since \( \wt'(T'_1) = -\lambda_u \wt'(T_1) \) and
+\( \wt'(\pi') = \wt'(\pi)/ \lambda_u \), we have
+\[ \wt'(T'_1)\wt'(T'_2)\wt(\pi') = - \wt'(T_1)\wt'(T_2)\wt(\pi). \]
+Moreover, we always have \( u'\ge u-1 \) and \( a'=u-1<a\le r \),
+hence \( u'\ge a'\ne r \).
 \end{description}
 
 \item[Case 2] \( u\ge a\ne r \). In this case we set \( T'_2=T_2 \). Let
   \( A \) be the \( (a+1) \)st tile in \( T_1 \) (\( A \) starts at position
   \( a \)). There are two subcases.
   \begin{description}
-  \item[Case 2-1] $A$ is a unmarked monomino. In this case let
+  \item[Case 2-1] $A$ is a black monomino. In this case let
     \[
       \pi' = S_1\cdots S_u H S_{u+1} \cdots S_m,
 \]
 and define $T_1'$ to be the Favard tiling obtained from $T_1$ by
-replacing $A$ by a marked monomino. See Figure~\ref{fig:case-a}.
+replacing $A$ by a red monomino. See Figure~\ref{fig:case-1} (with the
+roles of \( (T_1,T_2,\pi) \) and \( (T'_1,T'_2,\pi') \) interchanged).
 \item[Case 2-2] $A$ is a domino. In this case let
     \[
       \pi' = S_1\dots S_u UD S_{u+1} \dots S_m,
 \]
-and define $T_1'$ to be the Favard tiling obtained from $T_1$ by replacing $A$ by two
-marked monominos. See Figure~\ref{fig:case-c}.
+and define $T_1'$ to be the Favard tiling obtained from $T_1$ by
+replacing $A$ by two red monominos. See Figure~\ref{fig:case-2} (with
+the roles of \( (T_1,T_2,\pi) \) and \( (T'_1,T'_2,\pi') \)
+interchanged).
 \end{description}
 \item[Case 3] \( u\ge a = r \) and \( v<b \). This can be done
   similarly as Case 1. The only difference is that we set
@@ -2898,156 +2939,186 @@ marked monominos. See Figure~\ref{fig:case-c}.
   This can be done similarly as Case 2.
 
 \item[Case 5] \( u\ge a = r \) and \( v\ge b=s \). In this case we set
-  \( (T'_1,T'_2,\pi') = (T_1,T_2,\pi) \).
+  \( (T'_1,T'_2,\pi') = (T_1,T_2,\pi) \). See \Cref{fig:case5}.
 \end{description}
 
 \begin{figure}
   \centering
-\begin{tikzpicture}[scale=0.75]
-    \draw[help lines] (0,0) grid (6,3);
-   \draw[line width = 1.5pt] (0,0)--++(3,3)--++(1,0)--++(1,-1)--++(0,-1)--++(1,1);
-   \draw[line width = 1.5pt, red] (3,3)--++(1,0);
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (10,3);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,0) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1) -- ++(1,0);
   \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=3$};
-\begin{scope}[shift={(0,-2.5)}]
-  \draw [help lines] (0,0) grid (6,1);
-  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
-  \BM0 \BM1 \BM2 \BM3 \RD5
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( u=2 \)};
+\node at (-1,1.5) {\( \pi= \)};
+\node at (9,-.5) {\( v=0 \)};
+\node at (2.5,2.5) {\( b_2 \)};
+\draw[line width = 2pt, cyan] (2,2)--++(1,0);
+\begin{scope}[shift={(0,-3.5)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,3} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \RM1 \RM2 \BM3
+  \node at (3.5,1.5) {\( -b_3 \)};
   \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(4,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=4$};
+(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( a=3 \)};
+\node at (-1,.5) {\( T_1= \)};
 \end{scope}
-\end{tikzpicture}   \qquad\qquad\qquad
-\begin{tikzpicture}[scale=0.75]
-    \draw[help lines] (0,0) grid (5,3);
-   \draw[line width = 1.5pt] (0,0)--++(3,3)--++(1,-1)--++(0,-1)--++(1,1);
-   \remove(3,3)
+\begin{scope}[shift={(8,-3.5)}]
+  \draw [help lines] (0,0) grid (2,1);
+  \foreach \x in {0,...,1} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \RM1
   \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=3$};
-\begin{scope}[shift={(0,-2.5)}]
-  \draw [help lines] (0,0) grid (6,1);
-  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
-  \BM0 \BM1 \BM2 \RM3 \RD5
-  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=3$};
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( b=2 \)};
+\node at (-1,.5) {\( T_2= \)};
 \end{scope}
-\end{tikzpicture}   
-\caption{A pair $(\pi,T)\in X$ in Case 1-a on the left and the corresponding
-  pair $(\pi',T')$ in Case 2-a on the right, for $(n,m,\ell)=(2,6,2)$.
-The horizontal step starting at $(3,3)$ in $\pi$ is collapsed to a point.}
-  \label{fig:case-a}
+\end{tikzpicture} \quad
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (9,3);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1) -- ++(1,0);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( u'=2 \)};
+\node at (-1,1.5) {\( \pi'= \)};
+\remove(2,2)
+\node at (8,-.5) {\( v'=0 \)};
+\begin{scope}[shift={(0,-3.5)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,3} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \RM1 \BM2 \BM3
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( a'=2 \)};
+\node at (-1,.5) {\( T'_1= \)};
+  \node at (2.5,1.5) {\( -b_2 \)};
+  \node at (3.5,1.5) {\( -b_3 \)};
+\end{scope}
+\begin{scope}[shift={(7,-3.5)}]
+  \draw [help lines] (0,0) grid (2,1);
+  \foreach \x in {0,...,1} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \RM1
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( b'=2 \)};
+\node at (-1,.5) {\( T'_2= \)};
+\end{scope}
+\end{tikzpicture}  
+\caption{A triple \( (\pi,T_1,T_2)\in X \) in Case 1-1 on the left and
+  the corresponding triple \( (\pi',T'_1,T'_2)\in X \) in Case 2-1 on
+  the right, where \( r=4 \), \( s=2 \), and \( n=5 \). The horizontal
+  step \( (2,2)\to(3,3) \) in \( \pi \) is collapsed to a point.}
+  \label{fig:case-1}
 \end{figure}
 
 \begin{figure}
   \centering
-\begin{tikzpicture}[scale=0.75]
-    \draw[help lines] (0,0) grid (6,3);
-   \draw[line width = 1.5pt] (0,0)--++(3,3)--++(0,-2)--++(1,1)--++(1,0)--++(1,1)--++(0,-1);
-   \draw[line width = 1.5pt, red] (2,2)--++(1,1)--++(0,-1);
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (10,3);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,0) -- ++(1,-1) -- ++(1,0) -- ++(1,-1);
   \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=3$};
-\begin{scope}[shift={(0,-2.5)}]
-  \draw [help lines] (0,0) grid (6,1);
-  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
-  \BM0 \BM1 \BM2 \BM3 \RD5
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( u=2 \)};
+\node at (-1,1.5) {\( \pi= \)};
+\node at (9,-.5) {\( v=1 \)};
+\node at (2.9,1.9) {\( \lambda_2 \)};
+\draw[line width = 2pt, cyan] (1,1) -- (2,2)--++(1,-1);
+\begin{scope}[shift={(0,-3.5)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,3} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \RM1 \RM2 \BM3
   \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(4,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=4$};
+(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( a=3 \)};
+\node at (-1,.5) {\( T_1= \)};
+\node at (3.5,1.5) {\( -b_3 \)};
 \end{scope}
-\end{tikzpicture}   \qquad\qquad\qquad
-\begin{tikzpicture}[scale=0.75]
-    \draw[help lines] (0,0) grid (5,3);
-   \draw[line width = 1.5pt] (0,0)--++(2,2)--++(0,-1)--++(1,1)--++(1,0)--++(1,1)--++(0,-1);
-   \remove(2,2)
+\begin{scope}[shift={(8,-3.5)}]
+  \draw [help lines] (0,0) grid (2,1);
+  \foreach \x in {0,...,1} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \RM1
   \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=2$};
-\begin{scope}[shift={(0,-2.5)}]
-  \draw [help lines] (0,0) grid (6,1);
-  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
-  \BM0 \BM1 \BD3 \RD5
-  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=2$};
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( b=2 \)};
+\node at (-1,.5) {\( T_2= \)};
 \end{scope}
-\end{tikzpicture}   
-\caption{A pair $(\pi,T)\in X$ in Case 1-b on the left and the corresponding
-  pair $(\pi',T')$ in Case 2-b on the right, for $(n,m,\ell)=(2,6,2)$.
-The peak $(U,V)$ starting at $(2,2)$ in $\pi$ is collapsed to a point.}
-  \label{fig:case-b}
+\end{tikzpicture} \quad
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (8,3);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,0) -- ++(1,-1) -- ++(1,0) -- ++(1,-1);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( u'=3 \)};
+\node at (-1,1.5) {\( \pi'= \)};
+\remove(1,1)
+\node at (7,-.5) {\( v'=1 \)};
+\begin{scope}[shift={(0,-3.5)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,3} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \BD2 \BM3
+\node at (-1,.5) {\( T'_1= \)};
+\node at (.5,-.5) {\( a'=1 \)};
+\node at (3.5,1.5) {\( -b_3 \)};
+\node at (2,1.5) {\( -\lambda_2 \)};
+\end{scope}
+\begin{scope}[shift={(6,-3.5)}]
+  \draw [help lines] (0,0) grid (2,1);
+  \foreach \x in {0,...,1} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \RM1
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( b'=2 \)};
+\node at (-1,.5) {\( T'_2= \)};
+\end{scope}
+\end{tikzpicture}  
+\caption{A triple \( (\pi,T_1,T_2)\in X \) in Case 1-2 on the left and
+  the corresponding triple \( (\pi',T'_1,T'_2)\in X \) in Case 2-2 on
+  the right, where \( r=4 \), \( s=2 \), and \( n=5 \). The peak (an
+  upstep followed by a down step) \( (1,1)\to (2,2)\to(3,1) \) in
+  \( \pi \) is collapsed to a point.}
+  \label{fig:case-2}
 \end{figure}
 
 \begin{figure}
   \centering
-\begin{tikzpicture}[scale=0.75]
-    \draw[help lines] (0,0) grid (6,3);
-   \draw[line width = 1.5pt] (0,0)--++(3,3)--++(1,-1)--++(1,0)--++(0,-1)--++(1,1);
-   \draw[line width = 1.5pt, red] (2,2)--++(1,1)--++(1,-1);
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (11,4);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,0) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1);
   \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=3$};
-\begin{scope}[shift={(0,-2.5)}]
-  \draw [help lines] (0,0) grid (6,1);
-  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
-  \BM0 \BM1 \BM2 \BM3 \RD5
+(4,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( u=4 \)};
+\node at (-1,1.5) {\( \pi= \)};
   \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(4,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=4$};
+(11,0) -- (8,0) node [black,midway,yshift=-0.6cm] {\( v=3 \)};
+\begin{scope}[shift={(0,-3)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,3} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \RM1 \RM2 \RM3
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(4,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( a=4 \)};
+\node at (-1,.5) {\( T_1= \)};
 \end{scope}
-\end{tikzpicture}   \qquad\qquad\qquad
-\begin{tikzpicture}[scale=0.75]
-    \draw[help lines] (0,0) grid (4,3);
-   \draw[line width = 1.5pt] (0,0)--++(2,2)--++(1,0)--++(0,-1)--++(1,1);
-   \remove(2,2)
+\begin{scope}[shift={(9,-3)}]
+  \draw [help lines] (0,0) grid (2,1);
+  \foreach \x in {0,...,1} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \RM1
   \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=2$};
-\begin{scope}[shift={(0,-2.5)}]
-  \draw [help lines] (0,0) grid (6,1);
-  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
-  \BM0 \BM1 \RD3 \RD5
-  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=2$};
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( b=2 \)};
+\node at (-1,.5) {\( T_2= \)};
 \end{scope}
-\end{tikzpicture}   
-\caption{A pair $(\pi,T)\in X$ in Case 1-c on the left and the corresponding
-  pair $(\pi',T')$ in Case 2-c on the right, for $(n,m,\ell)=(2,6,2)$.
-The peak $(U,D)$ starting at $(2,2)$ in $\pi$ is collapsed to a point.}
-  \label{fig:case-c}
+\end{tikzpicture}
+\caption{A triple \( (\pi,T_1,T_2)\in X \) in Case 5, where \( r=4 \),
+  \( s=2 \), and \( n=5 \).}
+  \label{fig:case5}
 \end{figure}
 
-\begin{figure}
-  \centering
-  \begin{tikzpicture}[scale=0.75]
-    \draw[help lines] (0,0) grid (8,6);
-   \draw[line width = 1.5pt] (0,0)--++(6,6)--++(1,0)--++(0,-3)--++(1,1)--++(0,-2);
-  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(6,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$i=6$};
-\begin{scope}[shift={(0,-2.5)}]
-  \draw [help lines] (0,0) grid (6,1);
-  \foreach \x in {1,...,6} \draw node at (\x-0.5,0.5) {\x};
-  \BM0 \BM1 \BM2 \BM3 \BM4 \BM5
-  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
-(6,0) -- (0,0) node [black,midway,yshift=-0.6cm] {$j=6$};
-\end{scope}
-\end{tikzpicture}   
-\caption{A pair $(\pi,T)\in X$ in Case 3 for $(n,m,\ell)=(2,6,2)$. In this case
-  $(\pi,T) = (\pi',T')$ is a fixed point.}
-  \label{fig:case3}
-\end{figure}
-
-It is not hard to check that
-the map \( \phi(T_1,T_2,\pi)= (T'_1,T'_2,\pi') \)
-is a sign-reversing involution on \( X \)
-with fixed points \( (\emptyset,\emptyset,\pi) \)
-where \( \pi\in Y \).
+By the construction, Case 1 corresponds to Case 2 and Case 3
+corresponds to Case 4. Thus the map
+\( \phi(T_1,T_2,\pi)= (T'_1,T'_2,\pi') \) is a sign-reversing
+weight-preserving involution on \( X \) with fixed points
+\( (\emptyset,\emptyset,\pi) \) where \( \pi\in Y \). This completes
+the proof.
 \end{proof}
 
 \chapter{Moments of classical orthogonal polynomials}
 
-In this section we consider
-Tchebyshev polynomials of the 1st and 2nd kinds,
-Laguerre polynomials. Hermite polynomials,
-Charlier polynomials, and Meixner polynomials of the 1st and 2nd kinds.
+In this chapter we apply the combinatorial interpretation of moments
+for Tchebyshev polynomials of the 1st and 2nd kinds, Hermite
+polynomials, Charlier polynomials, and Laguerre polynomials.
 
-Note that an OPS \( \{ P_n(x) \}_{n\ge 0} \) can be defined in many
-ways, namely, one of the following determines the orthogonal
+Note that a monic OPS \( \{ P_n(x) \}_{n\ge 0} \) can be defined in
+many ways, namely, one of the following determines the orthogonal
 polynomials:
 \begin{enumerate}
-\item the coefficients \( a_{n,k} \) of \( P_n(x) \),
+\item the coefficients \( \{a_{n,k}\}_{n,k\ge0} \) of \( P_n(x)= \sum_{k=0}^{n} a_{n,k} x^k   \),
 \item the generating function \( \sum_{n\ge0}P_n(x)t^n \)
   or \( \sum_{n\ge0}P_n(x)t^n/n! \),
 \item the moments \( \{ \mu_n\}_{n\ge 0} \),
@@ -3055,30 +3126,680 @@ polynomials:
   \( \{ \lambda_n\}_{n\ge 1} \).
 \end{enumerate}
 
-For each OPS, we will show bijectively the equivalence of (3) and (4).
-
-For example, in the case that \( b_k \) and \( \lambda_k \) are
-integers, we interprete \( \wt(\alpha) \) as a certain number of
-``histories''. To each history we associate bijectively a certain
-combinatorial object \( \xi \) of a finite set \( M_n \). Each of
-\( b_k \) and \( \lambda_k \) is considered as the number of possible
-choices in a stage of a construction of the object, where each stage
-corresponds to an elementary step of \( \alpha \). Then it remains to
-show that \( |M_n| = \mu_n \).
-
-If \( P_n(x) \) depend on some parameters, it will be sufficient to
-consider the histories and the combinatorial objects in \( M_n \).
-
-
 \section{Tchebyshev polynomials}
 
-% \section{Hermite polynomials}
+In this section we will compute the moments of Tchebyshev polynomials
+using \Cref{thm:mu=Mot}. We will first consider Tchebyshev polynomials
+of the second kind since they are simpler than the first kind in our
+approach.
 
-% \section{Charlier polynomials}
 
-% \section{Laguerre polynomials}
 
-% \chapter{Inverse polynomials}
+The \emph{Tchebyshev polynomials of the second kind}
+\( U_n(x) \) are defined by
+\[
+  U_n(x) = \frac{\sin(n+1)\theta}{\sin\theta}, \qquad x=\cos\theta,
+  \qquad n\ge0.
+\]
+They satisfy
+  \[
+    U_{n+1}(x) = 2x U_n(x) - U_{n-1}(x), \qquad n\ge0,
+  \]
+  where \( U_{-1}(x) = 0 \) and \( U_0(x) = 1 \).
+  Using calculus we can prove that
+  \[
+    \int_{-1}^1 U_m(x)U_n(x) (1-x^2)^{1/2} dx = \frac{\pi}{2}\delta_{m,n}.
+  \]
+  Let \( \LL \) be the linear functional defined by
+  \[
+    \LL(f(x)) = \frac{2}{\pi} \int_{-1}^1 f(x) (1-x^2)^{1/2} dx.
+  \]
+  Then \( \{U_n(x)\}_{n\ge0} \) is an OPS for \( \LL \) and
+  \( \LL(1) = 1 \).
+
+  Since \( U_n(x) \) has leading coefficient \( 2^n \), the monic
+  Tchebyshev polynomials \( \hat{U}_n(x) \) are given by
+  \( \hat{U}_n(x) = 2^{-n}U_n(x) \) and
+  \[
+    \hat{U}_{n+1}(x) = (x-b_n) \hat{U}_n(x) - \lambda_n \hat{U}_{n-1}(x), \qquad n\ge0,
+  \] 
+  where \( b_n = 0 \) and \( \lambda_n = 1/4 \).
+
+  Note that \( \{\hat{U}_n(x)\}_{n\ge0} \) is also an OPS for
+  \( \LL \). Using calculus we can prove that
+  the moments
+  \[
+    \mu_n= \LL(x^n) = \frac{2}{\pi} \int_{-1}^1 x^n (1-x^2)^{1/2} dx
+  \]
+  are given by
+  \begin{equation}\label{eq:20}
+    \mu_{2n} = \frac{1}{4^n} C_n, \qquad \mu_{2n+1} = 0.
+  \end{equation}
+  We will prove this combinatorially using the combinatorial
+  interpretation for \( \mu_n \).
+
+  By \Cref{thm:mu=Mot},
+  \[
+    \mu_n = \sum_{\pi\in \Motz_n} \wt(\pi)
+    = \sum_{\pi\in \Dyck_n} \left( \frac{1}{4} \right)^{n/2}.
+  \]
+  Thus
+  \[
+    \mu_{2n} = \frac{1}{4^n} |\Dyck_{2n}|, \qquad \mu_{2n+1} = 0.
+  \]
+  This is the same as \eqref{eq:20}.
+
+  \medskip
+
+  Now we consider the Tchebyshev polynomials
+  \( T_n(x) = \cos n\theta \), \( x=\cos \theta \), of the first kind.
+  Recall that 
+\[
+  \int_{-1}^1 T_m(x)T_n(x) (1-x^2)^{-1/2} dx = 0, \qquad m\ne n.
+\]
+  Let \( \LL \) be the linear functional defined by
+  \[
+    \LL(f(x)) = \frac{1}{\pi} \int_{-1}^1 f(x) (1-x^2)^{-1/2} dx.
+  \]
+  Then \( \{T_n(x)\}_{n\ge0} \) is an OPS for \( \LL \) and
+  \( \LL(1) = 1 \). The moments
+  \[
+    \mu_n= \LL(x^n) = \frac{1}{\pi} \int_{-1}^1 x^n (1-x^2)^{-1/2} dx
+  \]
+  are given by
+  \begin{equation}\label{eq:21}
+    \mu_{2n} = \frac{1}{2^{2n}} \binom{2n}{n}, \qquad
+    \mu_{2n+1} = 0.
+  \end{equation}
+  We will prove this combinatorially.
+
+  The monic Tchebyshev polynomials of the first kind are given by
+  \( \hat{T}_0(x) = 1 \) and \( \hat{T}_n(x) = 2^{1-n}T_n(x) \) for
+  \( n\ge1 \). We have
+  \[
+      \hat{T}_{n+1}(x) = (x-b_n) \hat{T}_n(x) - \lambda_n\hat{T}_{n-1}(x),
+      \qquad n\ge0,
+  \]
+  where \( b_n=0 \) for \( n\ge0 \), \( \lambda_1 = 1/2 \), and
+  \( \lambda_n = 1/4 \) for \( n\ge2 \).
+
+
+  By \Cref{thm:mu=Mot},
+  \[
+    \mu_n = \sum_{\pi\in \Motz_n} \wt(\pi)
+    = \left( \frac{1}{4} \right)^{n/2} \sum_{\pi\in \Dyck_n} 2^{a(\pi)},
+  \]
+  where \( a(\pi) \) is the number of down steps in \( \pi \) touching
+  the \( x \)-axis. Thus \eqref{eq:21} is a consequence of the
+  following proposition.
+
+  \begin{prop}
+    We have
+    \begin{equation}\label{eq:22}
+     \sum_{\pi\in \Dyck_{2n}} 2^{a(\pi)} = \binom{2n}{n}.
+   \end{equation}
+  \end{prop}
+
+  \begin{proof}
+    Define a \emph{colored Dyck path} to be a Dyck path in
+    \( \Dyck_{2n} \) such that every down step touching the
+    \( x \)-axis is colored red or black. The left-hand side of the
+    equation is the number of colored Dyck paths in \( \Dyck_{2n} \).
+    Thus it suffices to show that this number is equal to
+    \( \binom{2n}{n} \).
+
+    Note that every Dyck path \( \pi\in \Dyck_{2n} \) is decomposed into
+    \[
+      \pi = (U\pi_1 D) (U \pi_2 D) \cdots (U\pi_k D),
+    \]
+    where \( \pi_i\in \Dyck_{2t_i} \) for some
+    \( t_i\in \ZZ_{\ge0} \). Each down step \( D \) after \( \pi_i \)
+    touches the \( x \)-axis and no other down steps have this
+    property. Thus a colored Dyck path
+    can be identified with a sequence of the form
+    \[
+      \pi = (U\pi_1 D_1) (U \pi_2 D_2) \cdots (U\pi_k D_k),
+    \]
+    where each \( D_i \) is colored red or black. If \( D_i \) is
+    colored red, reflect the subpath \( U\pi_iD \) about the
+    \( x \)-axis. Then we get a path from \( (0,0) \) to \( (2n,0) \)
+    consisting of up steps and down steps (which may go below the
+    \( x \)-axis).
+
+    \begin{figure}
+      \centering
+     \begin{tikzpicture}[scale=.7]
+\draw[help lines] (0,0) grid (12,0);
+\draw[line width = 1pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1);
+  \node at (6,-1) {\( \downarrow \)};
+\draw[line width = 2.5pt,red] (3,1) -- (4,0);
+\draw[line width = 2.5pt,red] (11,1) -- (12,0);
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=.7]
+\draw[help lines] (0,0) grid (12,0);
+\draw[line width = 1pt] (0,0) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,1);
+\end{tikzpicture}
+      \caption{The map reflecting each path with a red down step.}
+      \label{fig:reflect}
+    \end{figure}
+
+
+    This map gives a bijection between the colored Dyck paths from
+    \( (0,0) \) to \( (2n,0) \) to any path from \( (0,0) \) to
+    \( (2n,0) \) consisting of up steps and down steps. Since there
+    are \( \binom{2n}{n} \) such paths, we obtain the result.
+  \end{proof}
+  
+
+\section{Hermite polynomials}
+
+The \emph{Hermite polynomials} \( H_n(x) \) are defined by
+\( H_{-1}(x) = 0 \), \( H_{0}(x) = 1 \), and
+\[
+  H_{n+1}(x) = 2x H_n(x) - 2n H_{n-1}(x), \qquad  n\ge1.
+\]
+Since the leading coefficient of \( H_n(x) \) is \( 2^n \), we can
+make it monic by letting \( \hat{H}_n(x) = 2^{-n}H_n(x) \). Then
+\( \hat{H}_{-1}(x) = 0 \), \( \hat{H}_{0}(x) = 1 \), and
+\begin{equation}\label{eq:25}
+  \hat{H}_{n+1}(x) = x \hat{H}_n(x) - \frac{n}{2} \hat{H}_{n-1}(x), \qquad  n\ge1.
+\end{equation}
+
+For the combinatorial study of orthogonal polynomials, it is more
+convenient if the recurrence coefficients \( b_n \) and
+\( \lambda_n \) are integers. We can rescale orthogonal polynomials
+using the following lemma.
+
+\begin{lem}[Rescaling OPS] \label{lem:rescaling} 
+  Suppose that \( \{ P_n(x) \}_{n\ge 0} \) is a monic OPS such that
+  \( P_{-1}(x) = 0 \), \( P_{0}(x) = 1 \), and
+  \begin{equation}\label{eq:23}
+      P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x), \qquad n\ge1.
+  \end{equation}
+  Let \( \widetilde{P}_n(x) = a^n P_n(x/a) \), where \( a\ne0 \). Then
+  \( \widetilde{P}_{-1}(x) = 0 \), \( \widetilde{P}_{0}(x) = 1 \), and
+  \begin{equation}\label{eq:24}
+    \widetilde{P}_{n+1}(x) = (x-ab_n) \widetilde{P}_n(x) - a^2\lambda_n
+    \widetilde{P}_{n-1}(x), \qquad n\ge1.
+  \end{equation}
+\end{lem}
+\begin{proof}
+  Replacing \( x \) by \( x/a \) and multiplying both sides by
+  \( a^{n+1} \) in \eqref{eq:23} yields \eqref{eq:24}.
+\end{proof}
+
+Define the \emph{rescaled Hermite polynomials}
+\( \widetilde{H}_n(x) \) by
+\( \widetilde{H}_n(x) = \sqrt{2}^n \hat{H}_n(x/\sqrt{2}) \). By
+\Cref{lem:rescaling} and \eqref{eq:25},
+\( \widetilde{H}_{-1}(x) = 0 \), \( \widetilde{H}_1(x) = 1 \), and 
+\begin{equation}\label{eq:hermite-3rr}
+  \widetilde{H}_{n+1}(x) = x \widetilde{H}_n(x) - n
+  \widetilde{H}_{n-1}(x), \qquad n\ge1.
+\end{equation}
+
+We note that \( H_n(x) \) are called ``physicist's Hermite
+polynomials'' and \( \widetilde{H}_n(x) \) are called ``probabilist's
+Hermite polynomials''.
+
+The moment \( \mu_n \) of \( \{ \widetilde{H}_n(x) \}_{n\ge 0} \) 
+is given by
+\[
+  \mu_n = \sum_{\pi\in\Motz_n} \wt(\pi),
+\]
+where \( \wt(\pi) \) is determined by \( b_n=0 \) and
+\( \lambda_n=n \). Since \( b_n=0 \),
+we have \( \mu_{2n+1}=0 \) and
+\[
+  \mu_{2n} = \sum_{\pi\in\Dyck_{2n}} \wt(\pi).
+\]
+Note that for each \( \pi\in\Dyck_{2n} \), its weight \( \wt(\pi) \)
+is a positive integer. It is thus natural to ask what combinatorial
+objects \( \wt(\pi) \) counts.
+
+\begin{defn}
+  A \emph{Hermite history} is a Dyck path where each down step
+  starting at height \( k \) has a label in \( \{0,1,\dots,k-1\} \).
+  Let \( \HH_{2n} \) denote the set of Hermite histories whose
+  underlying Dyck paths are from \( (0,0) \) to \( (2n,0) \).
+\end{defn}
+
+Let \( \pi\in\Dyck_{2n} \). For each down step of \( \pi \) starting
+at height \( k \), there are \( k \) ways to assign a label from
+\( \{0,1,\dots,k-1\} \). Thus \( \wt(\pi) \) is the number of Hermite
+histories with underlying Dyck path \( \pi \). This implies
+\( \mu_{2n} = |\HH_{2n}|  \).
+
+Let \( \CM_{2n} \) be the set of complete matchings on \( [2n] \).
+
+\begin{prop}
+  There is a bijection between \( \HH_{2n} \) and \( \CM_{2n} \).
+\end{prop}
+
+\begin{proof}
+  Let \( \pi\in \HH_{2n} \). We construct a complete matching
+  \( \rho \) as follows. For \( k= 1,\dots,2n \), if the \( k \)th
+  step of \( \pi \) is an up step, then make the \( k \)th vertex of
+  \( \rho \) to be an \emph{opener}, which means it will be connected
+  to a vertex to its right. If the \( k \)th step of \( \pi \) is a
+  down step, then make the \( k \)th vertex of \( \rho \) to be a
+  \emph{closer}, which means it will be connected to a vertex to its
+  left. If the \( k \)th step of \( \pi \) is a down step with label
+  \( a_k \), then connected the vertex at \( k \) with the closest
+  available opener skipping \( a_k \) openers. For example, see
+  \Cref{fig:Hermite-history}.
+
+  Observe that the height of the starting point of the \( k \)th down
+  step is equal to the number of available openers for the vertex
+  \( k \). Therefore the map \( \pi\mapsto \rho \) is well-defined.
+  The inverse map \( \rho\mapsto \pi \) is straighforward to
+  construct. Hence the map \( \pi\mapsto \rho \) is a bijection from
+  \( \HH_{2n} \) and \( \CM_{2n} \).
+\end{proof}
+
+\begin{figure}
+  \centering
+ \begin{tikzpicture}
+\draw[help lines] (0,0) grid (10,3);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1);
+\node at (3.7,2.7) {2};
+\node at (4.7,1.7) {0};
+\node at (6.7,1.7) {1};
+\node at (8.7,1.7) {0};
+\node at (9.7,0.7) {0};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{scope}[shift={(0,0)}]
+\node (0,0) at (1,1) {};
+\draw (1,0) -- (1.3,0.3);
+\draw (2,0) -- (2.3,0.3);
+\draw (3,0) -- (3.3,0.3);
+\draw (4,0) -- (3.7,0.3);
+\draw (5,0) -- (4.7,0.3);
+\draw (6,0) -- (6.3,0.3);
+\draw (7,0) -- (6.7,0.3);
+\draw (8,0) -- (8.3,0.3);
+\draw (9,0) -- (8.7,0.3);
+\draw (10,0) -- (9.7,0.3);
+\node[draw,circle,fill=white] (1) at (1,0) {};
+\node[draw,circle,fill=white] (4) at (4,0) {};
+\node[draw,circle,fill=white] (2) at (2,0) {};
+\node[draw,circle,fill=white] (7) at (7,0) {};
+\node[draw,circle,fill=white] (3) at (3,0) {};
+\node[draw,circle,fill=white] (5) at (5,0) {};
+\node[draw,circle,fill=white] (6) at (6,0) {};
+\node[draw,circle,fill=white] (10) at (10,0) {};
+\node[draw,circle,fill=white] (8) at (8,0) {};
+\node[draw,circle,fill=white] (9) at (9,0) {};
+\end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{scope}[shift={(0,0)}]
+\node (0.5) at (1,0) {};
+\node[draw, circle] (1) at (1,0) {};
+\node[draw, circle] (4) at (4,0) {};
+\draw[out=90,in=90] (1) to (4);
+\node[draw, circle] (2) at (2,0) {};
+\node[draw, circle] (7) at (7,0) {};
+\draw[out=90,in=90] (2) to (7);
+\node[draw, circle] (3) at (3,0) {};
+\node[draw, circle] (5) at (5,0) {};
+\draw[out=90,in=90] (3) to (5);
+\node[draw, circle] (6) at (6,0) {};
+\node[draw, circle] (10) at (10,0) {};
+\draw[out=90,in=90] (6) to (10);
+\node[draw, circle] (8) at (8,0) {};
+\node[draw, circle] (9) at (9,0) {};
+\draw[out=90,in=90] (8) to (9);
+\end{scope}
+\end{tikzpicture}
+\caption{A Hermite history (top), the openers and closers (middle),
+  and the corresponding matching (bottom).}
+  \label{fig:Hermite-history}
+\end{figure}
+
+Since the number of complete matchings on \( [2n] \) is
+\( (2n-1)!! \), we obtain the following result.
+
+\begin{cor}
+  The \( 2n \)th moment of rescaled Hermite polynomials
+  \( \widetilde{H}_n(x) \) is
+  \[
+    \mu_{2n} = (2n-1)!!.
+  \]
+\end{cor}
+
+
+\section{Charlier polynomials}
+
+The (normalized) \emph{Charlier polynomials}
+\( C_n(x;a) \) are defined by
+\( C_{-1}(x;a) =0 \), \( C_{1}(x;a) =1 \), and
+\[
+  C_{n+1}(x;a) = (x-n-a) C_n(x;a) - an C_{n-1}(x;a), \qquad n\ge1.
+\]
+
+\begin{defn}
+  A \emph{Charlier history} is a Motzkin path where each horizontal
+  step at height \( k \) has a label in \( \{0,1,\dots,k\} \) and each
+  down step starting at height \( k \) has a label in
+  \( \{0,1,\dots,k-1\} \). Let \( \CH_{n} \) denote the set of
+  Charlier histories whose underlying Motzkin paths are from
+  \( (0,0) \) to \( (n,0) \).
+  For \( \pi\in \CH_{n} \), define the weight \( \wt(\pi) \)
+  to be the product of the weights of its steps, where
+  \begin{itemize}
+  \item the weight of an upstep is \( 1 \),
+  \item the weight of a horizontal step of height \( k \) is \( 1 \)
+    if its label is less than \( k \) and \( \alpha \) if its label is
+    \( k \),
+  \item the weight of a down step is \( \alpha \).
+  \end{itemize}
+\end{defn}
+
+By the definition of the Charlier histories, the moment \( \mu_n \) of
+the Charlier polynomials is given by
+\[
+  \mu_n = \sum_{\pi\in \Motz_n} \wt(\pi) = \sum_{\pi\in \CH_n}
+  \wt(\pi).
+\]
+
+For a set partition \( \sigma \), let \( \block(\sigma) \) denote the
+number of blocks in \( \sigma \).
+
+\begin{thm}
+  The moment \( \mu_n \) of the Charlier polynomials is given by
+\[
+  \mu_n = \sum_{\sigma\in \Pi_n} \alpha^{\block(\sigma)}.
+\]
+\end{thm}
+
+\begin{proof}
+  We will construct a weight-preserving bijection
+  \( \phi:\CH_n\to \Pi_n \). Let \( \pi\in \CH_n \). We construct the
+  corresponding set partition \( \phi(\pi) = \sigma\in\Pi_n \) as
+  follows. For \( k= 1,\dots,n \),
+\begin{itemize}
+\item if the \( k \)th step of \( \pi \) is an up step, then make the
+  \( k \)th vertex of \( \sigma \) to be an opener,
+\item if the \( k \)th step of \( \pi \) is a down step, then make
+  the \( k \)th vertex of \( \rho \) to be a closer,
+\item if the \( k \)th step of \( \pi \) is a horizontal step, then
+  make the \( k \)th vertex of \( \rho \) to be a \emph{transient},
+  which means that it is connected to a vertex to its left and also a
+  vertex to its right.
+\end{itemize}
+If the \( k \)th step of \( \pi \) is a down step with label
+\( a_k \), then connected the vertex at \( k \) with the closest
+available opener or transient skipping \( a_k \) of them. If the
+\( k \)th step of \( \pi \) is a horizontal step with label \( a_k \),
+then connected the vertex at \( k \) with the closest available opener
+or transient skipping \( a_k \) of them. Here, if \( a_k \) is equal
+to the height of the horizontal step, ``skipping all available openers
+and transients'' means the vertex \( k \) is connected to itself
+making it a singleton. For example, see \Cref{fig:Charlier-history}.
+
+  Observe that the height of the starting point of the \( k \)th down
+  step is equal to the number of available openers for the vertex
+  \( k \). Therefore the map \( \pi\mapsto \rho \) is well-defined.
+  The inverse map \( \rho\mapsto \pi \) is straighforward to
+  construct. Hence the map \( \pi\mapsto \rho \) is a bijection from
+  \( \HH_{2n} \) and \( \CM_{2n} \).
+
+  It is not hard to see that \( \phi:\CH_n\to \Pi_n \) is a bijection.
+  Moreover, if \( \phi(\pi) = \rho \), then
+  \( \wt(\pi) = \alpha^{a+b} = \alpha^{\block(\rho)} \), where \( a \)
+  is the number of horizontal steps with maximum label and \( b \) is
+  the number of down steps in \( \pi \). This can be seen from the
+  observation that every block of \( \rho \) is either a singleton
+  (corresponding to a horizontal step of maximum label) or a block
+  with exactly one closer (corresponding to a down step). This
+  completes the proof.
+\end{proof}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+\draw[help lines] (0,0) grid (9,2);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,0) -- ++(1,1) -- ++(1,0) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,0);
+\node at (4.7,1.7) {1};
+\node at (5.7,0.7) {0};
+\node at (7.7,0.7) {0};
+\node at (8.5,0.3) {0};
+\node at (1.5,1.3) {1};
+\node at (3.5,2.3) {1};
+\end{tikzpicture}
+ 
+\begin{tikzpicture}
+\begin{scope}[shift={(0,0)}]
+\node (0,0) at (1,1) {};
+\draw (1,0) -- (1.3,0.3);
+\draw (1.7,0.3) -- (2,0) -- (2.3,0.3);
+\draw (3,0) -- (3.3,0.3);
+\draw (3.7,0.3) -- (4,0) -- (4.3,0.3);
+\draw (5,0) -- (4.7,0.3);
+\draw (6,0) -- (5.7,0.3);
+\draw (7,0) -- (7.3,0.3);
+\draw (8,0) -- (7.7,0.3);
+\draw (8.7,0.3) -- (9,0) -- (9.3,0.3);
+\node[draw,circle,fill=white] (1) at (1,0) {};
+\node[draw,circle,fill=white] (4) at (4,0) {};
+\node[draw,circle,fill=white] (2) at (2,0) {};
+\node[draw,circle,fill=white] (7) at (7,0) {};
+\node[draw,circle,fill=white] (3) at (3,0) {};
+\node[draw,circle,fill=white] (5) at (5,0) {};
+\node[draw,circle,fill=white] (6) at (6,0) {};
+\node[draw,circle,fill=white] (8) at (8,0) {};
+\node[draw,circle,fill=white] (9) at (9,0) {};
+\end{scope}
+\begin{scope}[shift={(0,-2)}]
+\node[draw, circle] (1) at (1,0) {\( 1 \)};
+\node[draw, circle] (4) at (4,0) {\( 4 \)};
+\node[draw, circle] (6) at (6,0) {\( 6 \)};
+\draw[out=90,in=90] (1) to (4);
+\draw[out=90,in=90] (4) to (6);
+\node[draw, circle] (2) at (2,0) {\( 2 \)};
+\node[draw, circle] (3) at (3,0) {\( 3 \)};
+\node[draw, circle] (5) at (5,0) {\( 5 \)};
+\draw[out=90,in=90] (3) to (5);
+\node[draw, circle] (7) at (7,0) {\( 7 \)};
+\node[draw, circle] (8) at (8,0) {\( 8 \)};
+\draw[out=90,in=90] (7) to (8);
+\node[draw, circle] (9) at (9,0) {\( 9 \)};
+\end{scope}
+\end{tikzpicture}
+
+\caption{A Charlier history (top), the openers, closers, and
+  transients (middle), and the corresponding set partition (bottom).}
+  \label{fig:Charlier-history}
+\end{figure}
+
+
+\section{Laguerre polynomials}
+
+The (normalized) \emph{Laguerre polynomials}
+\( L^{(\alpha)}_n(x) \) are defined by
+\( L^{(\alpha)}_{-1}(x) =0 \), \( L^{(\alpha)}_{1}(x) =1 \), and
+\[
+  L^{(\alpha)}_{n+1}(x) = (x-2n-\alpha) L^{(\alpha)}_n(x) - n(n-1+\alpha) L^{(\alpha)}_{n-1}(x), \qquad n\ge1.
+\]
+
+
+\begin{lem}
+  Suppose that \( \{ P_n(x) \}_{n\ge 0} \) is a monic OPS such that
+  \[
+    P_{n+1}(x) = (x-b_n) P_n(x) - a_nc_n P_{n-1}(x).
+  \]
+  Then
+  \[
+    \mu_n = \sum_{\pi\in \Motz_n} \wt'(\pi),
+  \]
+  where \( \wt'(\pi) \) is the product of the weights of the steps in \( \pi \) and
+  \begin{itemize}
+  \item the weight of an up step ending at height \( k \) is \( a_k \),
+  \item the weight of a horizontal step at height \( k \) is \( b_k \),
+  \item the weight of a down step starting at height \( k \) is \( c_k \).
+  \end{itemize}
+\end{lem}
+
+\begin{proof}
+  We know that
+  \[
+    \mu_n = \sum_{\pi\in \Motz_n} \wt(\pi),
+  \]
+  where \( \wt(\pi) \) is the product of \( b_k \) for each horizontal
+  step of height \( k \) and \( \lambda_k = a_kc_k \) for each down
+  step starting at height \( k \). Observe that for
+  \( \pi\in \Motz_n \) every down step corresponds to a unique up
+  step. Thus we can split the weight \( \lambda_k=a_kc_k \) on a down
+  step starting at height \( k \) into the weight \( a_k \) of the
+  corresponding up step and the weight \( c_k \) of the down step as
+  shown in \Cref{fig:up-down}. This proves the lemma.
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}
+\draw[help lines] (0,0) grid (11,3);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1);
+\draw[dashed] (0.5,0.5) -- (6.5,0.5);
+\draw[dashed] (2.5,1.5) -- (5.5,1.5);
+\draw[dashed] (3.5,2.5) -- (4.5,2.5);
+\draw[dashed] (7.5,0.5) -- (10.5,0.5);
+\draw[dashed] (8.5,1.5) -- (9.5,1.5);
+\node at (0.3,0.7) {\( a_1 \)};
+\node at (1.5,1.3) {\( b_1 \)};
+\node at (2.3,1.7) {\( a_2 \)};
+\node at (3.3,2.7) {\( a_3 \)};
+\node at (4.7,2.7) {\( c_3 \)};
+\node at (5.7,1.7) {\( c_2 \)};
+\node at (6.7,0.7) {\( c_1 \)};
+\node at (7.3,0.7) {\( a_1 \)};
+\node at (8.3,1.7) {\( a_2 \)};
+\node at (9.7,1.7) {\( c_2 \)};
+\node at (10.7,0.7) {\( c_1 \)};
+\end{tikzpicture}
+\caption{Splitting the weight \( \lambda_k=a_kc_k \)
+  into \( a_k \) and \( c_k \).}
+    \label{fig:up-down}
+  \end{figure}
+\end{proof}
+
+\begin{defn}
+  A \emph{Laguerre history} is a Motzkin path where 
+\begin{itemize}
+\item each up step starting at height \( k \)
+  has a label in \( \{0,1,\dots,k\} \),
+\item each horizontal step at height \( k \) has a label in
+  \( \{-k,\dots,-1,0,1,\dots,k\} \),
+\item  each down step starting at height \( k \)
+  has a label in \( \{1,2,\dots,k\} \),
+\end{itemize}
+
+ Let \( \LH_{n} \) denote the set of
+  Laguerre histories whose underlying Motzkin paths are from
+  \( (0,0) \) to \( (n,0) \).
+  For \( \pi\in \LH_{n} \), define the weight \( \wt(\pi) \)
+  to be the product of the weights of its steps, where
+  \begin{itemize}
+  \item the weight of an upstep is \( 1 \) if its label is nonzero
+    and \( \alpha \) if its label is \( 0 \),
+  \item the weight of a horizontal step of height \( k \) is \( 1 \)
+    if its label is nonzero and \( \alpha \) if its label is \( 0 \),
+  \item the weight of a down step is \( \alpha \).
+  \end{itemize}
+\end{defn}
+
+We have
+\[
+  \mu_n = \sum_{\pi\in \LH_n} \wt(\pi).
+\]
+
+\begin{thm}
+\[
+  \mu_n = \sum_{\pi\in \sym_n} \alpha^{\cycle(\pi)}.
+\]
+\end{thm}
+
+There are several bijections between \( \sym_n \) and \( \LH_n \) due
+to Fran\c{c}on--Viennot \cite{Francon1979}, Foata--Zeilberger
+\cite{Foata1990a}, see also \cite[Algorithm~7]{Corteel2020a}.
+
+We will use a slight modification of the bijection due to
+Fran\c{c}on--Viennot \cite{Francon1979}.
+
+Let \( \pi \in \LH_n \).
+Let \( S_k \) be the \( k \)th step of \( \pi \)
+and let \( \ell_k \) be its label.
+
+For each \( k= 0,1,\dots,n \), we will construct a list \( A_k \) of
+cycles of integers and dots, \( \fcirc \)'s. First we set
+\( A_0 = \emptyset \). We then construct \( A_{k} \) recursively as follows.
+\begin{description}
+\item[Case 1:] \( S_k \) is an up step.
+  \begin{description}
+  \item[Case 1-1:] \( \ell_k=0 \). Create a new
+  cycle \( (k\fcirc) \) at the beginning:
+  \[
+    A_k = (k\fcirc) A_{k-1}.
+  \]
+\item[Case 1-2:] \( \ell_k=i>0 \). Replace the
+  \( i \)th dot in \( A_{k-1} \) by ``\( \fcirc k \fcirc \)''.
+  \end{description}
+\item[Case 2:] \( S_k \) is a horizontal step.
+  \begin{description}
+  \item[Case 2-1:] \( \ell_k=0 \). Create a new cycle \( (k) \) at the
+    beginning:
+  \[
+    A_k = (k) A_{k-1}.
+  \]
+\item[Case 2-2:] \( \ell_k=i>0 \). Replace the \( i \)th dot in
+  \( A_{k-1} \) by ``\( k \fcirc \)''.
+\item[Case 2-3:] \( \ell_k=-i<0 \). Replace the \( i \)th dot in
+  \( A_{k-1} \) by ``\( \fcirc k \)''.
+  \end{description}
+
+\item[Case 3:] \( S_k \) is a down step. Then \( \ell_k=i>0 \).
+  Replace the \( i \)th dot in \( A_{k-1} \) by ``\( k \)''.
+\end{description}
+
+The number of dots in \( A_{k} \) is always equal to the height of
+\( S_1 \cdots S_k \). Therefore the above construction is well
+defined.
+
+
+A \emph{left-to-right minimum} of \( \pi = \pi_1 \cdots \pi_n \) is a
+number \( \pi_i \) such that
+\( \pi_i = \min \{ \pi_1,\dots,\pi_i\} \). Let \( \LRmin(\pi) \)
+denote the number of left-to-right minima in \( \pi \).
+
+\begin{thm}
+\[
+  \mu_n = \sum_{\pi\in \sym_n} \alpha^{\LRmin(\pi)}.
+\]
+\end{thm}
+
+\chapter{Mixed moments and coefficients}
+
+Let
+\begin{align*}
+  x^n &= \sum_{k=0}^{n} \mu_{n,k} P_k(x),\\
+  P_n(x) &= \sum_{k=0}^{n} \nu_{n,k} x^k.
+\end{align*}
+Then
+\[
+  \left( \mu_{n,k} \right)_{n,k\ge0} \left( \nu_{n,k} \right)_{n,k\ge0} = 
+  \left( \nu_{n,k} \right)_{n,k\ge0} \left( \mu_{n,k} \right)_{n,k\ge0} = I.
+\]
+
+Since we have combinatorial interpretations for \( \mu_{n,k} \) and
+\( \nu_{n,k} \), we can prove the above matrix identities
+combinatorially.
+
+In fact, we will prove these without the assumption that
+\( \lambda_k\ne 0 \).
+
 
 % \chapter{Determinants of moments}
 
