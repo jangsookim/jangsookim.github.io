@@ -48,4 +48,5 @@ Orthogonal polynomials are classical objects arising from the study of continued
 7. [2023-09-19 Tue]: Dyck paths, Motzkin paths, set partitions, matchings, [[file:ops-files/OPS7.pdf][lecture notes]], [[https://youtu.be/f9APZDV86jY][video]]
 8. [2023-09-21 Thu]: Permutations, [[file:ops-files/OPS8.pdf][lecture notes]], [[https://youtu.be/4OVZOXcmiu0][video]]
 9. [2023-09-26 Tue]: Combinatorial models for OPS 1, [[file:ops-files/OPS9.pdf][lecture notes]], [[https://youtu.be/mjrf7Ghke7A][video]]
-10. 
+10. [2023-10-05 Thu]: Combinatorial models for OPS 2, [[file:ops-files/OPS10.pdf][lecture notes]], [[https://youtu.be/QLfta0ph7kY][video]]
+
