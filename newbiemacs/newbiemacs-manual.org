@@ -207,10 +207,8 @@
 
 ** Keybindings
 - Here are some basic Emacs keybindings.
-- Note that ~C-y~ (paste) will be needed if you want to paste something into a minibuffer.
 | mode   | command                    | keybinding |
 |--------+----------------------------+------------|
-| emacs | paste    | ~C-y~      |
 | all    | isearch-forward            | ~C-s~      |
 | all    | query-replace              | ~M-%~      |
 | all    | kill-buffer                | ~C-x k~    |
