@@ -49,4 +49,5 @@ Orthogonal polynomials are classical objects arising from the study of continued
 8. [2023-09-21 Thu]: Permutations, [[file:ops-files/OPS8.pdf][lecture notes]], [[https://youtu.be/4OVZOXcmiu0][video]]
 9. [2023-09-26 Tue]: Combinatorial models for OPS 1, [[file:ops-files/OPS9.pdf][lecture notes]], [[https://youtu.be/mjrf7Ghke7A][video]]
 10. [2023-10-05 Thu]: Combinatorial models for OPS 2, [[file:ops-files/OPS10.pdf][lecture notes]], [[https://youtu.be/QLfta0ph7kY][video]]
+11. [2023-10-10 Tue]: Moments of Chebyshev and Hermite polynomials, [[file:ops-files/OPS11.pdf][lecture notes]], [[https://youtu.be/FDkEzYtCISw][video]]
 
