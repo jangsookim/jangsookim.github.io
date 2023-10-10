@@ -33,7 +33,7 @@ Orthogonal polynomials are classical objects arising from the study of continued
 * Lecture notes
 - [[file:orthogonal_polynomials.pdf][Lecture notes]] (This file will be updated regularly.)
 * Homework
-- Current homework: Homework 2 (Due: Oct 5) 
+- Current homework: Homework 3 (Due: Oct 19) 
 - [[file:homework.pdf][Homework problems]] (This file will be updated regularly.)
 - [[file:homework-with-solutions.pdf][Homework solutions with grading criteria]] (This file will be updated regularly.)
 - Please email your homework as a single pdf file to the instructor by the due date.
