@@ -12,6 +12,7 @@
 
 \usepackage{enumerate}
 \renewcommand\labelenumi{(\theenumi)}
+\setcounter{MaxMatrixCols}{20}
 
 
 \newtheorem{thm}{Theorem}[section]
@@ -28,6 +29,8 @@
 \newtheorem*{note}{Note}
 
 % DO NOT DELETE THIS COMMENT!!! MACROS BELOW:
+\newcommand\LRmax{\operatorname{LRmax}}
+\newcommand\zero{\operatorname{zero}}
 \newcommand\LRmin{\operatorname{LRmin}}
 \newcommand\LH{\operatorname{LH}}
 \newcommand\block{\operatorname{block}}
@@ -1728,7 +1731,7 @@ number of Motzkin paths and that of Dyck paths.
 \section{Set partitions and matchings}
 
 In this section we study set partitions and matchings. They will be
-used to give combinatorial interpretations for moments of Charilier
+used to give combinatorial interpretations for moments of Charlier
 polynomials and Hermite polynomials.
 
 \begin{defn}
@@ -3493,9 +3496,9 @@ The (normalized) \emph{Charlier polynomials}
   \begin{itemize}
   \item the weight of an upstep is \( 1 \),
   \item the weight of a horizontal step of height \( k \) is \( 1 \)
-    if its label is less than \( k \) and \( \alpha \) if its label is
+    if its label is less than \( k \) and \( a \) if its label is
     \( k \),
-  \item the weight of a down step is \( \alpha \).
+  \item the weight of a down step is \( a \).
   \end{itemize}
 \end{defn}
 
@@ -3512,7 +3515,7 @@ number of blocks in \( \sigma \).
 \begin{thm}
   The moment \( \mu_n \) of the Charlier polynomials is given by
 \[
-  \mu_n = \sum_{\sigma\in \Pi_n} \alpha^{\block(\sigma)}.
+  \mu_n = \sum_{\sigma\in \Pi_n} a^{\block(\sigma)}.
 \]
 \end{thm}
 
@@ -3550,7 +3553,7 @@ making it a singleton. For example, see \Cref{fig:Charlier-history}.
 
   It is not hard to see that \( \phi:\CH_n\to \Pi_n \) is a bijection.
   Moreover, if \( \phi(\pi) = \rho \), then
-  \( \wt(\pi) = \alpha^{a+b} = \alpha^{\block(\rho)} \), where \( a \)
+  \( \wt(\pi) = a^{a+b} = a^{\block(\rho)} \), where \( a \)
   is the number of horizontal steps with maximum label and \( b \) is
   the number of down steps in \( \pi \). This can be seen from the
   observation that every block of \( \rho \) is either a singleton
@@ -3619,18 +3622,20 @@ making it a singleton. For example, see \Cref{fig:Charlier-history}.
 
 \section{Laguerre polynomials}
 
-The (normalized) \emph{Laguerre polynomials}
-\( L^{(\alpha)}_n(x) \) are defined by
-\( L^{(\alpha)}_{-1}(x) =0 \), \( L^{(\alpha)}_{1}(x) =1 \), and
+The (normalized) \emph{Laguerre polynomials} \( L^{(\alpha)}_n(x) \)
+are defined by\footnote{In the literature it is more common to define
+  the Laguerre polynomials with \( \alpha \) replaced by
+  \( \alpha+1 \) in our definition.} \( L^{(\alpha)}_{-1}(x) =0 \),
+\( L^{(\alpha)}_{1}(x) =1 \), and
 \[
   L^{(\alpha)}_{n+1}(x) = (x-2n-\alpha) L^{(\alpha)}_n(x) - n(n-1+\alpha) L^{(\alpha)}_{n-1}(x), \qquad n\ge1.
 \]
 
 
-\begin{lem}
+\begin{lem}\label{lem:1}
   Suppose that \( \{ P_n(x) \}_{n\ge 0} \) is a monic OPS such that
   \[
-    P_{n+1}(x) = (x-b_n) P_n(x) - a_nc_n P_{n-1}(x).
+    P_{n+1}(x) = (x-b_n) P_n(x) - a_{n-1}c_n P_{n-1}(x).
   \]
   Then
   \[
@@ -3638,7 +3643,7 @@ The (normalized) \emph{Laguerre polynomials}
   \]
   where \( \wt'(\pi) \) is the product of the weights of the steps in \( \pi \) and
   \begin{itemize}
-  \item the weight of an up step ending at height \( k \) is \( a_k \),
+  \item the weight of an up step starting at height \( k \) is \( a_k \),
   \item the weight of a horizontal step at height \( k \) is \( b_k \),
   \item the weight of a down step starting at height \( k \) is \( c_k \).
   \end{itemize}
@@ -3653,7 +3658,12 @@ The (normalized) \emph{Laguerre polynomials}
   step of height \( k \) and \( \lambda_k = a_kc_k \) for each down
   step starting at height \( k \). Observe that for
   \( \pi\in \Motz_n \) every down step corresponds to a unique up
-  step. Thus we can split the weight \( \lambda_k=a_kc_k \) on a down
+  step. More precisely, if we write \( \pi \) as a sequence of steps
+  \( S_1 \cdots S_n \) and if \( S_i = D \), then there is a unique
+  index \( j \) such that \( S_j=U \) and \( S_{j+1}\cdots S_{i-1} \)
+  is a (translated) Dyck path in \( \Dyck_{i-j-1} \).
+
+Thus we can split the weight \( \lambda_k=a_kc_k \) on a down
   step starting at height \( k \) into the weight \( a_k \) of the
   corresponding up step and the weight \( c_k \) of the down step as
   shown in \Cref{fig:up-down}. This proves the lemma.
@@ -3667,23 +3677,31 @@ The (normalized) \emph{Laguerre polynomials}
 \draw[dashed] (3.5,2.5) -- (4.5,2.5);
 \draw[dashed] (7.5,0.5) -- (10.5,0.5);
 \draw[dashed] (8.5,1.5) -- (9.5,1.5);
-\node at (0.3,0.7) {\( a_1 \)};
+\node at (0.3,0.7) {\( a_0 \)};
 \node at (1.5,1.3) {\( b_1 \)};
-\node at (2.3,1.7) {\( a_2 \)};
-\node at (3.3,2.7) {\( a_3 \)};
+\node at (2.3,1.7) {\( a_1 \)};
+\node at (3.3,2.7) {\( a_2 \)};
 \node at (4.7,2.7) {\( c_3 \)};
 \node at (5.7,1.7) {\( c_2 \)};
 \node at (6.7,0.7) {\( c_1 \)};
-\node at (7.3,0.7) {\( a_1 \)};
-\node at (8.3,1.7) {\( a_2 \)};
+\node at (7.3,0.7) {\( a_0 \)};
+\node at (8.3,1.7) {\( a_1 \)};
 \node at (9.7,1.7) {\( c_2 \)};
 \node at (10.7,0.7) {\( c_1 \)};
 \end{tikzpicture}
-\caption{Splitting the weight \( \lambda_k=a_kc_k \)
-  into \( a_k \) and \( c_k \).}
+\caption{Splitting the weight \( \lambda_k=a_{k-1}c_k \)
+  into \( a_{k-1} \) and \( c_k \).}
     \label{fig:up-down}
   \end{figure}
 \end{proof}
+
+By \Cref{lem:1}, the moment of the Laguerre polynomials is given by
+\begin{equation}\label{eq:26}
+    \mu_n = \sum_{\pi\in \Motz_n} \wt'(\pi),
+\end{equation}
+where \( a_k = k+\alpha \), \( b_k = 2k+\alpha \), and
+\( c_k = k \).
+
 
 \begin{defn}
   A \emph{Laguerre history} is a Motzkin path where 
@@ -3696,41 +3714,36 @@ The (normalized) \emph{Laguerre polynomials}
   has a label in \( \{1,2,\dots,k\} \),
 \end{itemize}
 
- Let \( \LH_{n} \) denote the set of
-  Laguerre histories whose underlying Motzkin paths are from
-  \( (0,0) \) to \( (n,0) \).
-  For \( \pi\in \LH_{n} \), define the weight \( \wt(\pi) \)
-  to be the product of the weights of its steps, where
-  \begin{itemize}
-  \item the weight of an upstep is \( 1 \) if its label is nonzero
-    and \( \alpha \) if its label is \( 0 \),
-  \item the weight of a horizontal step of height \( k \) is \( 1 \)
-    if its label is nonzero and \( \alpha \) if its label is \( 0 \),
-  \item the weight of a down step is \( \alpha \).
-  \end{itemize}
+Let \( \LH_{n} \) denote the set of Laguerre histories whose
+underlying Motzkin paths are from \( (0,0) \) to \( (n,0) \). For
+\( \rho\in \LH_{n} \), define \( \zero(\rho) \) to be the
+number of labels equal to \( 0 \) in \( \rho \).
 \end{defn}
 
-We have
+Then \eqref{eq:26} is equivalent to
 \[
-  \mu_n = \sum_{\pi\in \LH_n} \wt(\pi).
+  \mu_n = \sum_{\rho\in \LH_n} \alpha^{\zero(\rho)}.
 \]
 
-\begin{thm}
+There are several bijections between \( \sym_n \) and \( \LH_n \) due
+to Fran\c{c}on--Viennot \cite{Francon1979}, Foata--Zeilberger
+\cite{Foata1990a}, see also \cite[Algorithm~7]{Corteel2020a}. To prove
+the following theorem we use a slight modification of the bijection
+due to Fran\c{c}on--Viennot \cite{Francon1979}.
+
+\begin{thm}\label{thm:Lag-mom}
+We have
 \[
   \mu_n = \sum_{\pi\in \sym_n} \alpha^{\cycle(\pi)}.
 \]
 \end{thm}
 
-There are several bijections between \( \sym_n \) and \( \LH_n \) due
-to Fran\c{c}on--Viennot \cite{Francon1979}, Foata--Zeilberger
-\cite{Foata1990a}, see also \cite[Algorithm~7]{Corteel2020a}.
-
-We will use a slight modification of the bijection due to
-Fran\c{c}on--Viennot \cite{Francon1979}.
-
-Let \( \pi \in \LH_n \).
-Let \( S_k \) be the \( k \)th step of \( \pi \)
-and let \( \ell_k \) be its label.
+\begin{proof}
+  It suffices to find a bijection \( \phi:\LH_n\to \sym_n \) such that
+  if \( \phi(\rho)=\pi \), then 
+  \( \zero(\rho) = \cycle(\pi) \). Consider
+  \( \pi \in \LH_n \) and let \( S_k \) be the \( k \)th step of
+  \( \pi \) and let \( \ell_k \) be its label.
 
 For each \( k= 0,1,\dots,n \), we will construct a list \( A_k \) of
 cycles of integers and dots, \( \fcirc \)'s. First we set
@@ -3739,7 +3752,7 @@ cycles of integers and dots, \( \fcirc \)'s. First we set
 \item[Case 1:] \( S_k \) is an up step.
   \begin{description}
   \item[Case 1-1:] \( \ell_k=0 \). Create a new
-  cycle \( (k\fcirc) \) at the beginning:
+  cycle ``\( (k\fcirc) \)'' at the beginning:
   \[
     A_k = (k\fcirc) A_{k-1}.
   \]
@@ -3748,7 +3761,7 @@ cycles of integers and dots, \( \fcirc \)'s. First we set
   \end{description}
 \item[Case 2:] \( S_k \) is a horizontal step.
   \begin{description}
-  \item[Case 2-1:] \( \ell_k=0 \). Create a new cycle \( (k) \) at the
+  \item[Case 2-1:] \( \ell_k=0 \). Create a new cycle ``\( (k) \)'' at the
     beginning:
   \[
     A_k = (k) A_{k-1}.
@@ -3762,10 +3775,260 @@ cycles of integers and dots, \( \fcirc \)'s. First we set
 \item[Case 3:] \( S_k \) is a down step. Then \( \ell_k=i>0 \).
   Replace the \( i \)th dot in \( A_{k-1} \) by ``\( k \)''.
 \end{description}
+Then we define \( \phi(\rho) \)
+to the permutation \( \pi \) whose cycle decomposition
+is \( A_n \).
 
-The number of dots in \( A_{k} \) is always equal to the height of
-\( S_1 \cdots S_k \). Therefore the above construction is well
-defined.
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+\draw[help lines] (0,0) grid (11,3);
+\foreach \x in {0,...,11} \draw node at (\x,-.5) {\( \x \)};
+\foreach \y in {0,...,3} \draw node at (-.5,\y) {\( \y \)};
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,0) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,0) -- ++(1,-1) -- ++(1,0) -- ++(1,-1) -- ++(1,-1);
+\node at (0.3,0.7) {\( 0 \)};
+\node at (1.3,1.7) {\( 1 \)};
+\node at (2.5,2.3) {\( 0 \)};
+\node at (3.7,1.7) {\( 1 \)};
+\node at (4.3,1.7) {\( 0 \)};
+\node at (5.3,2.7) {\( 2 \)};
+\node at (6.5,3.3) {\( -2 \)};
+\node at (7.7,2.7) {\( 3 \)};
+\node at (8.5,2.3) {\( 2 \)};
+\node at (9.7,1.7) {\( 2 \)};
+\node at (10.7,.7) {\( 1 \)};
+\end{tikzpicture}
+  \caption{A Laguerre history in \( \LH_{11} \).}
+  \label{fig:Lag-his}
+\end{figure}
+
+For example, if \( \rho \) is the Laguerre history in \Cref{fig:Lag-his},
+then
+\begin{align*}
+A_{0} &= \emptyset,\\
+A_{1} &= (1,\fcirc),\\
+A_{2} &= (1,\fcirc,2,\fcirc),\\
+A_{3} &= (3),(1,\fcirc,2,\fcirc),\\
+A_{4} &= (3),(1,4,2,\fcirc),\\
+A_{5} &= (5,\fcirc),(3),(1,4,2,\fcirc),\\
+A_{6} &= (5,\fcirc),(3),(1,4,2,\fcirc,6,\fcirc),\\
+A_{7} &= (5,\fcirc),(3),(1,4,2,\fcirc,7,6,\fcirc),\\
+A_{8} &= (5,\fcirc),(3),(1,4,2,\fcirc,7,6,8),\\
+A_{9} &= (5,\fcirc),(3),(1,4,2,9,\fcirc,7,6,8),\\
+A_{10} &= (5,\fcirc),(3),(1,4,2,9,10,7,6,8),\\
+A_{11} &= (5,11),(3),(1,4,2,9,10,7,6,8).
+\end{align*}
+
+The number of dots in \( A_{k-1} \) is always equal to the ending
+height, say \( h_{k-1} \), of \( S_1 \cdots S_{k-1} \). Since
+\( h_{k-1} \) is the height of the starting point of \( S_k \), we
+have \( |\ell_k|\le h_{k-1} \). Hence, if \( |\ell_k|=i \ne 0 \), we
+can always find the \( i \)th dot in \( A_{k-1} \) and the above
+construction is well defined.
+
+We create a cycle if and only if \( \ell_k=0 \).
+Thus, \( \zero(\rho) = \cycle(\pi) \) as desired.
+
+To prove that the map \( \phi:\LH_n\to \sym_n \) is invertible, we
+construct its inverse map. Let \( \pi\in \sym_n \). Then we write the
+cycles of \( \sym_n \) so that each cycle starts with its smallest
+element and the cycles are listed in the decreasing order of their
+smallest elements. Let \( A_n \) be the list of cycles obtained in
+this way. For \( k=n,n-1,\dots,1,0 \), we define \( A_{k-1} \) to be
+the configuration obtained from \( A_k \) by replacing \( k \)
+together with every dot ``\( \fcirc \)'' adjacent to it by a single
+dot ``\( \fcirc \)''. If \( k \) forms a cycle of length \( 1 \), then
+we delete the whole cycle ``\( (k)\)''. Once the sequence
+\( A_0, A_1,\dots,A_n \) is constructed, we can define the
+corresponding Laguerre history \( \rho \) whose \( k \)th step is
+\( S_k \) with label \( \ell_k \) as follows.
+
+For each \( k= 1,\dots,n \), we compare \( A_k \) with \( A_{k-1} \).
+\begin{description}
+\item[Case 1:] \( A_k = (k\fcirc) A_{k-1} \). Then define \( S_k=U \) and \( \ell_k=0 \).
+\item[Case 2:] \( A_k \) is obtained from \( A_{k-1} \) by replacing
+  the \( i \)th dot by ``\( \fcirc k \fcirc \)''. Then \( S_k=U \) and
+  \( \ell_k=i \).
+\item[Case 3:] \( A_k = (k) A_{k-1} \). Then define \( S_k=H \) and \( \ell_k=0 \).
+\item[Case 4:] \( A_k \) is obtained from \( A_{k-1} \) by replacing
+  the \( i \)th dot by ``\( k \fcirc \)''. Then \( S_k=D \) and
+  \( \ell_k=i \).
+\item[Case 5:] \( A_k \) is obtained from \( A_{k-1} \) by replacing
+  the \( i \)th dot by ``\( \fcirc k \)''. Then \( S_k=D \) and
+  \( \ell_k=-i \).
+\end{description}
+Then we define \( \psi(\pi) \) to be the resulting Laguerre history \( \rho \).
+
+By the construction, \( \psi \) is the inverse map of \( \phi \), and
+the proof is completed.
+\end{proof}
+
+By \Cref{thm:Lag-mom} and \eqref{eq:c(n,k)-gf}, we obtain the simple
+formula for \( \mu_n \).
+
+\begin{cor}
+  The \( n \)th moment of Laguerre polynomials is
+  \[
+    \mu_n = \alpha(\alpha+1) \cdots (\alpha+n-1).
+  \]
+\end{cor}
+
+
+Note that the bijection \( \phi:\LH_n\to \sym_n \)
+induces two bijections \( \phi_1: \CH_n\to \Pi_n \)
+and \( \phi_2: \HH_n\to \CM_n \).
+
+To see this, observe that a Laguerre history becomes a Charlier
+history if every up step has the zero label, and every horizontal step
+has a nonnegative label. Then in the corresponding list \( A_n \) of
+cycles, every cycle is an increasing list of integers. Hence the
+cycles can be identified with blocks giving a set partition.
+
+Similalry, a Laguerre history becomes a Hermite history if every up
+step has the zero label, and there is no horizontal step. Then in the
+corresponding list \( A_n \) of cycles, every cycle is a pair
+\( (i,j) \) of integers \( i<j \). Hence the cycles can be identified
+with arcs giving a complete matching.
+
+\medskip
+
+At this point the reader may wonder if there is another bijection between
+Laguerre histories and permutations similar to the bijections in the
+previous sections using arcs. Indeed, there is such a bijection due to
+Foata and Zeilberger \cite{Foata1990a}. We will briefly describe this
+bijection. For simplicity we consider the case \( \alpha=1 \). In this
+map we use the usual Motzkin weight which gives a weight
+\( b_k=2k+1 \) for a horizontal step starting at height \( k \) and a
+weight \( \lambda_k=k^2 \) for a down step starting at height \( k \).
+
+A \emph{modified Laguerre history} of length \( n \) is a Motzkin path
+from \( (0,0) \) to \( (n,0) \) in which every horizontal step with
+starting height \( k \) is labeled by an integer in
+\( \{ -k,\dots,-1, 0, 1,\dots,k\} \) every down step with starting
+height \( k \) is labeled by a pair \( (i,j) \) of integers in
+\( \{ 1,\dots,k\} \).
+
+Let \( \rho \) be a modified Laguerre history. For \( k= 1,\dots,n \),
+we construct a diagram on \( n \) vertices as follows.
+\begin{enumerate}
+\item The \( k \)th vertex is an \emph{opener}, a \emph{closer}, a
+  \emph{fixed point}, an \emph{upper transient}, or a \emph{lower
+    transient} if the \( k \)th step of \( \rho \) is an up step, a
+  down step, a horizontal step with label \( 0 \), a horizontal step
+  with label \( 0 \), a horizontal step with positive label, or a
+  horizontal step with negative label, respectively.
+\item Using the label \( \ell_k \) of the \( k \)th step of
+  \( \rho \), we connect a closer, an upper transient, or a lower
+  transient similarly to the bijections in the previous sections.
+\end{enumerate}
+
+For example, see \Cref{fig:Lag-his-modified}.
+
+Then the resulting diagram represent a permutation \( \pi \) where
+\( \pi(i)=j \) if \( i<j \) and \( i \) is connected to \( j \) with
+an upper arc or \( i>j \) and \( i \) is connected to \( j \) with a
+lower arc. If there is no arc connecting \( i \), then
+\( \pi(i) = i \).
+For example, the diagram in \Cref{fig:Lag-his-modified}
+represent the following permutation:
+\[
+\pi = \begin{pmatrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11\\
+4 & 8 & 3 & 2 & 9 & 11 & 5 & 7 & 10 & 1 & 6
+\end{pmatrix}.
+\]
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+\draw[help lines] (0,0) grid (11,3);
+\foreach \x in {0,...,11} \draw node at (\x,-.5) {\( \x \)};
+\foreach \y in {0,...,3} \draw node at (-.5,\y) {\( \y \)};
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,0) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,0) -- ++(1,-1) -- ++(1,0) -- ++(1,-1) -- ++(1,-1);
+\node at (2.5,2.3) {\( 0 \)};
+\node at (3.7,1.7) {\( 2,1 \)};
+\node at (6.5,3.3) {\( -2 \)};
+\node at (7.7,2.7) {\( 3,1 \)};
+\node at (8.5,2.3) {\( 2 \)};
+\node at (9.7,1.7) {\( 1,2 \)};
+\node at (10.7,.7) {\( 1,1 \)};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{scope}[shift={(0,0)}]
+\node (0,0) at (0.5,1) {};
+\draw (1.3,-.3) -- (1,0) -- (1.3,0.3);
+\draw (2.3,-0.3) -- (2,0) -- (2.3,0.3);
+\draw (3.7,-0.3) -- (4,0) -- (3.7,0.3);
+\draw (5.3,-0.3) -- (5,0) -- (5.3,0.3);
+\draw (6.3,-0.3) -- (6,0) -- (6.3,0.3);
+\draw (6.7,-0.3) -- (7,0) -- (7.3,-0.3);
+\draw (7.7,-0.3) -- (8,0) -- (7.7,0.3);
+\draw (8.7,0.3) -- (9,0) -- (9.3,0.3);
+\draw (9.7,-0.3) -- (10,0) -- (9.7,0.3);
+\draw (10.7,-0.3) -- (11,0) -- (10.7,0.3);
+\node[draw,circle,fill=white] (1) at (1,0) {};
+\node[draw,circle,fill=white] (4) at (4,0) {};
+\node[draw,circle,fill=white] (2) at (2,0) {};
+\node[draw,circle,fill=white] (7) at (7,0) {};
+\node[draw,circle,fill=white] (3) at (3,0) {};
+\node[draw,circle,fill=white] (5) at (5,0) {};
+\node[draw,circle,fill=white] (6) at (6,0) {};
+\node[draw,circle,fill=white] (8) at (8,0) {};
+\node[draw,circle,fill=white] (9) at (9,0) {};
+\node[draw,circle,fill=white] (10) at (10,0) {};
+\node[draw,circle,fill=white] (11) at (11,0) {};
+\end{scope}
+\begin{scope}[shift={(0,-3)}]
+\node[draw, circle] (1) at (1,0) {\( 1 \)};
+\node[draw, circle] (4) at (4,0) {\( 4 \)};
+\node[draw, circle] (6) at (6,0) {\( 6 \)};
+\node[draw, circle] (2) at (2,0) {\( 2 \)};
+\node[draw, circle] (3) at (3,0) {\( 3 \)};
+\node[draw, circle] (5) at (5,0) {\( 5 \)};
+\node[draw, circle] (7) at (7,0) {\( 7 \)};
+\node[draw, circle] (8) at (8,0) {\( 8 \)};
+\node[draw, circle] (9) at (9,0) {\( 9 \)};
+\node[draw, circle] (10) at (10,0) {\( 10 \)};
+\node[draw, circle] (11) at (11,0) {\( 11 \)};
+\draw[out=90,in=90] (1) to (4);
+\draw[out=90,in=90] (2) to (8);
+\draw[out=90,in=90] (5) to (9);
+\draw[out=90,in=90] (6) to (11);
+\draw[out=90,in=90] (9) to (10);
+\draw[out=-90,in=-90] (4) to (2);
+\draw[out=-90,in=-90] (5) to (7);
+\draw[out=-90,in=-90] (7) to (8);
+\draw[out=-90,in=-90] (1) to (10);
+\draw[out=-90,in=-90] (6) to (11);
+\end{scope}
+\end{tikzpicture}
+\caption{A modified Laguerre history in \( \LH_{11} \) and the
+  corresponding diagram representing a permutation.}
+  \label{fig:Lag-his-modified}
+\end{figure}
+
+It is not hard to show that the above map \( \rho\mapsto \pi \) is a
+bijection from the set of modified Laguerre histories of length
+\( n \) to \( \sym_n \). Moreover, this map has the property
+\( \max(\rho) = \LRmax(\pi) \), where \( \max(\rho) \) is the number
+of maximum possible labels of a horizontal step plus the number of
+maximum possible labels in the first component of a down step and
+\( \LRmax(\pi) \) is the number of left-to-right maxima of
+\( \pi=\pi_1 \cdots \pi_n \), that is \( \pi_i \) such that
+\( \pi_i = \max\{\pi_1,\dots,\pi_i\} \).
+This implies that
+\[
+  \mu_n = \sum_{\pi\in \sym_n} \alpha^{\LRmax(\pi)}.
+\]
+
+For example, suppose \( \rho \) and \( \pi \) are as in
+\Cref{fig:Lag-his-modified}. Then the \( i \)th step is a horizontal
+step with maximum possible label or a down step with maximum possible
+lable in the first component for \( i=4,8,9,11 \). The left-to-right
+maxima of \( \pi \) are exactly \( 4,8,9,11 \).
+
+
 
 
 \chapter{Mixed moments and coefficients}
