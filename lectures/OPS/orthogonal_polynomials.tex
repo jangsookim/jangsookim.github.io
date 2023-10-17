@@ -2718,7 +2718,7 @@ moments of orthogonal polynomials.
 More generally, we will prove
 a combinatorial interpretation for mixed moments.
 
-\begin{defn}
+\begin{defn}\label{def:mixed_moment}
   Let \( \{ P_n(x) \}_{n\ge 0} \) be a monic OPS for a linear
   functional \( \LL \). For integers \( n,r,s\ge0 \), the \emph{mixed
     moments} \( \mu_{n,r,s} \) and \( \mu_{n,k} \) of this OPS are
@@ -2855,7 +2855,7 @@ steps. Then the right-hand side of \eqref{eq:LL(xPP)} is equal to
 \( \sum_{\pi\in Y} \wt(\pi) \). Therefore \eqref{eq:LL(xPP)} is
 equivalent to the following theorem.
 
-\begin{thm}
+\begin{thm}\label{thm:5}
   For the sets \( X \) and \( Y \) defined above, we have
 \begin{equation}\label{eq:LL(xPP)2}
   \sum_{(T_1,T_2,\pi)\in X} \wt'(T_1) \wt'(T_2) \wt(\pi)
@@ -2920,14 +2920,14 @@ hence \( u'\ge a'\ne r \).
   \begin{description}
   \item[Case 2-1] $A$ is a black monomino. In this case let
     \[
-      \pi' = S_1\cdots S_u H S_{u+1} \cdots S_m,
+      \pi' = S_1\cdots S_a H S_{a+1} \cdots S_m,
 \]
 and define $T_1'$ to be the Favard tiling obtained from $T_1$ by
 replacing $A$ by a red monomino. See Figure~\ref{fig:case-1} (with the
 roles of \( (T_1,T_2,\pi) \) and \( (T'_1,T'_2,\pi') \) interchanged).
 \item[Case 2-2] $A$ is a domino. In this case let
     \[
-      \pi' = S_1\dots S_u UD S_{u+1} \dots S_m,
+      \pi' = S_1\dots S_a UD S_{a+1} \dots S_m,
 \]
 and define $T_1'$ to be the Favard tiling obtained from $T_1$ by
 replacing $A$ by two red monominos. See Figure~\ref{fig:case-2} (with
@@ -4014,26 +4014,472 @@ maxima of \( \pi \) are exactly \( 4,8,9,11 \).
 
 
 
+\chapter{Duality between mixed moments and coefficients}
 
-\chapter{Mixed moments and coefficients}
+Suppose that \( \{ P_n(x) \}_{n\ge 0} \) is a monic
+OPS given by
+\[
+    P_n(x) = \sum_{k=0}^{n} \nu_{n,k} x^k.
+\]
+In this chapter we will show that
+\[
+  x^n = \sum_{k=0}^{n} \mu_{n,k} P_k(x),
+\]
+where \( \mu_{n,k} = \LL(x^nP_k(x))/\LL(P_k(x)^2) \) is the mixed
+moment. We then show the duality between the mixed moments
+\( \mu_{n,k} \) and the coefficients \( \nu_{n,k} \) combinatorially.
 
-Let
+\section{Mixed moments and coefficients}
+
+
+
+As before suppose that \( \{ P_n(x) \}_{n\ge 0} \) is a monic OPS with
+a linear functional \( \LL \) given by
+\[
+  P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x).
+\]
+
+Recall from \Cref{def:mixed_moment} and \Cref{thm:mu=Mot_nrs} that the
+mixed moment \( \mu_{n,k} \) has the following
+combinatorial interpretation:
+\[
+  \mu_{n,k} = \frac{\LL(x^nP_k(x))}{\LL(P_k(x))} = 
+  \sum_{\pi\in \Motz_{n,k}} \wt(\pi).
+\]
+where \( \Motz_{n,k} \) is the set of Motzkin paths from \( (0,0) \)
+to \( (n,k) \).
+
+
+\begin{prop}\label{pro:1}
+  We have
+ \[
+     x^n = \sum_{k=0}^{n} \mu_{n,k} P_k(x).
+ \] 
+\end{prop}
+
+\begin{proof}
+  Let
+  \[
+      x^n = \sum_{k=0}^{n} \sigma_{n,k} P_k(x).
+  \]
+  Multiplying \( P_k(x) \) and taking \( \LL \) both sides, we obtain
+\[
+  \LL(x^nP_k(x)) = \sigma_{n,k} \LL(P_k(x)^2).
+\]
+Hence
+\[
+  \sigma_{n,k} =  \frac{\LL(x^nP_k(x))}{\LL(P_k(x)^2)}
+  = \mu_{n,k},
+\]
+as desired.
+\end{proof}
+
+Now let \( \nu_{n,k} \) be the coefficient of \( x^k \) in
+\( P_n(x) \) so that
 \begin{align*}
   x^n &= \sum_{k=0}^{n} \mu_{n,k} P_k(x),\\
   P_n(x) &= \sum_{k=0}^{n} \nu_{n,k} x^k.
 \end{align*}
-Then
+Since \( \{ P_n(x) \}_{n\ge 0} \) and \( \{x^n\}_{n\ge0} \) are bases
+of the space of polynomials, we have the following matrix identities:
 \[
-  \left( \mu_{n,k} \right)_{n,k\ge0} \left( \nu_{n,k} \right)_{n,k\ge0} = 
-  \left( \nu_{n,k} \right)_{n,k\ge0} \left( \mu_{n,k} \right)_{n,k\ge0} = I.
+  \left( \nu_{n,k} \right)_{n,k\ge0} \left( \mu_{n,k} \right)_{n,k\ge0} = 
+  \left( \mu_{n,k} \right)_{n,k\ge0} \left( \nu_{n,k} \right)_{n,k\ge0} = I.
 \]
+Equivalently,
+\begin{align}
+  \label{eq:27}
+\sum_{k\ge0} \nu_{n,k}\mu_{k,m} &= \delta_{n,m},\\
+  \label{eq:28}
+\sum_{k\ge0} \mu_{n,k}\nu_{k,m} &= \delta_{n,m}.
+\end{align}
+
 
 Since we have combinatorial interpretations for \( \mu_{n,k} \) and
 \( \nu_{n,k} \), we can prove the above matrix identities
-combinatorially.
+combinatorially. In fact, in the next section we will prove these
+combinatorially without the assumption that \( \lambda_k\ne 0 \).
 
-In fact, we will prove these without the assumption that
-\( \lambda_k\ne 0 \).
+\section{Combinatorial proof of duality}
+
+Suppose that \( \{b_n\}_{n\ge0} \) and \( \{\lambda_n\}_{n\ge1} \) are
+arbitrary sequences (\( \lambda_n \) may be zero). Then we can take
+the following as definitions:
+\begin{align*}
+  \mu_{n,k} &= \sum_{\pi\in \Mot_{n,k}} \wt(\pi),\\
+  \nu_{n,k} &= \sum_{T\in \FT_{n,k}} \wt'(T),
+\end{align*}
+where \( \FT_{n,k} \) is the set of Favard tilings in \( \FT_n \) with
+\( k \) red monominos, see \Cref{fig:2}. Observe that
+\( \mu_{n,k} = \nu_{n,k}=0 \) if 
+\( n<k \).
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.75]
+  \draw [help lines] (0,0) grid (8,1);
+  \foreach \x in {0,...,7} \draw node at (\x+.5,.5) {\x};
+  \LBD1 \RM2 \LBM3 \LBM4 \RM5 \RM6 \LBM7
+\end{tikzpicture}
+\caption{A Favard tiling $T\in\FT_{8,3}$ with
+  $\wt'(T)=\lambda_1 b_3b_4b_7$.}
+\label{fig:2}
+\end{figure}
+
+
+The following theorem can be proved similarly to the proof of
+\Cref{thm:5}. We give a proof of this theorem to compare it with that
+of the next theorem.
+
+\begin{thm}\label{thm:1}
+  For nonnegative integers \( n \) and \( m \), we have
+  \[
+    \sum_{k\ge0} \nu_{n,k}\mu_{k,m} = \delta_{n,m}.
+  \]
+\end{thm}
+
+\begin{proof}
+  Since the proof is similar to that of \Cref{thm:5}, we only
+  give a sketch. Note that the sum in the theorem is \( 0 \) if
+  \( n<m \) because \( \nu_{n,k}\mu_{k,m}=0 \) unless
+  \( n\ge k\ge m \). Thus we may assume \( n\ge m \).
+
+  Let \( X \) be the set of pairs \( (T,\pi) \) of a Favard tiling
+  \( T\in \FT_{n,k} \) and a Motzkin path \( \pi\in \Motz_{k,m} \),
+  for some \( m\le k\le n \). Let \( Y \) be the set of pairs
+  \( (T,\pi) \) of a Favard tiling \( T\in \FT_{n,n} \) and a Motzkin
+  path \( \pi\in \Motz_{n,m} \) such that \( T \) has red monominos
+  only and \( \pi \) has up steps only. Then \( Y \) has a unique
+  element if \( n=m \); and \( Y=\emptyset \) if \( n\ne m \).
+
+  Our goal is to find a weight-preserving sign-reversing involution
+  \( \phi: X \to X \) with fixed point set \( Y \). To do this, let
+  \( (T,\pi)\in X \) with \( T\in \FT_{n,k} \) and
+  \( \pi\in \Motz_{k,m} \). We write \( \pi=S_1S_2 \cdots S_{k} \) as
+  a sequence of steps. Let \( a,u \) be the integers defined as
+  follows:
+ \begin{itemize}
+ \item \( a \) is the largest integer such that \( T \)
+   starts with \( a \) red monominos,
+ \item \( u \) is the largest integer such that \( \pi \) starts with
+   \( u \) up steps.
+ \end{itemize}
+ We define \( \phi(T,\pi)= (T',\pi') \) in the following way. Here,
+ \( a',u' \) are the integers defined similarly as above using
+ \( T' \) and \( \pi' \).
+\begin{description}
+\item[Case 1] \( u<a \). There are two
+  subcases.
+\begin{description}
+\item[Case 1-1] \( S_{u+1} \) is a horizontal step. Let
+  \[
+    \pi' = S_1\cdots \widehat{S_{u+1}} \cdots S_{k},
+  \]
+and define $T'$ to be the Favard tiling obtained from $T$ by replacing
+the \( (u+1) \)st red monomino by a black monomino. See
+Figure~\ref{fig:1}.
+\item[Case 1-2] $S_{u+1}$ is a down step. Let
+  \[
+    \pi' = S_1\cdots \widehat{S_{u}}\widehat{S_{u+1}} \cdots S_k,
+  \]
+and define $T'$ to be the Favard tiling obtained from $T$ by replacing
+the \( u \)th and \( (u+1) \)st red monominos by a domino. See
+Figure~\ref{fig:3}.
+\end{description}
+
+\item[Case 2] \( u\ge a\ne n \). Let \( A \) be the \( (a+1) \)st tile
+  in \( T \). There are two subcases.
+  \begin{description}
+  \item[Case 2-1] $A$ is a black monomino. In this case let
+    \[
+      \pi' = S_1\cdots S_a H S_{a+1} \cdots S_k,
+    \]
+and define $T'$ to be the Favard tiling obtained from $T$ by
+replacing $A$ by a red monomino. See Figure~\ref{fig:1} (with the
+roles of \( (T,\pi) \) and \( (T',\pi') \) interchanged).
+\item[Case 2-2] $A$ is a domino. In this case let
+  \[
+    \pi' = S_1\dots S_a UD S_{a+1} \dots S_k,
+  \]
+and define $T'$ to be the Favard tiling obtained from $T$ by
+replacing $A$ by two red monominos. See Figure~\ref{fig:3} (with
+the roles of \( (T,\pi) \) and \( (T',\pi') \)
+interchanged).
+\end{description}
+\item[Case 3] \( u\ge a = n \). Since \( u\le k\le n \), we must have \( u=a=n \).
+  Then \( T \) has only red monominos and \( \pi \) has only up steps.
+  We define \( (T',\pi') = (T,\pi) \).
+\end{description}
+
+The map \( \phi:X \to X \) is a weight-preserving sign-reversing
+involution with fixed point set \( Y \). Hence
+\[
+  \sum_{(T,\pi)\in X} \wt'(T) \wt(\pi) = \sum_{(T,\pi)\in Y} \wt'(T)
+  \wt(\pi) = \delta_{n,m}.
+\]
+\end{proof}
+
+
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (6,3);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,0) -- ++(1,-1) -- ++(1,1) -- ++(1,1);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( u=2 \)};
+\node at (-1,1.5) {\( \pi= \)};
+\node at (2.5,2.5) {\( b_2 \)};
+\draw[line width = 2pt, cyan] (2,2)--++(1,0);
+\begin{scope}[shift={(0,-3.5)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,6} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \RM1 \RM2 \BM3 \RM4 \RM5 \RM6 
+  \node at (3.5,1.5) {\( -b_3 \)};
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( a=3 \)};
+\node at (-1,.5) {\( T= \)};
+\end{scope}
+\end{tikzpicture} \quad
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (5,3);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,1);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( u'=2 \)};
+\node at (-1,1.5) {\( \pi'= \)};
+\remove(2,2)
+\begin{scope}[shift={(0,-3.5)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,6} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \RM1 \BM2 \BM3 \RM4 \RM5 \RM6
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( a'=2 \)};
+\node at (-1,.5) {\( T'= \)};
+  \node at (2.5,1.5) {\( -b_2 \)};
+  \node at (3.5,1.5) {\( -b_3 \)};
+\end{scope}
+\end{tikzpicture}  
+\caption{A pair \( (T,\pi)\in X \) in Case 1-1 on the left and the
+  corresponding triple \( (T',\pi')\in X \) in Case 2-1 on the right.}
+\label{fig:1}
+\end{figure}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (5,3);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,1);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(2,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( u=2 \)};
+\node at (-1,1.5) {\( \pi= \)};
+\node at (2.9,1.9) {\( \lambda_2 \)};
+\draw[line width = 2pt, cyan] (1,1) -- (2,2)--++(1,-1);
+\begin{scope}[shift={(0,-3.5)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,5} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \RM1 \RM2 \BM3 \RM4 \RM5
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( a=3 \)};
+\node at (-1,.5) {\( T= \)};
+\node at (3.5,1.5) {\( -b_3 \)};
+\end{scope}
+\end{tikzpicture} \quad
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (3,3);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( u'=3 \)};
+\node at (-1,1.5) {\( \pi'= \)};
+\remove(1,1)
+\begin{scope}[shift={(0,-3.5)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,5} \draw node at (\x+0.5,0.5) {\x};
+  \RM0 \BD2 \BM3 \RM4 \RM5
+\node at (-1,.5) {\( T'= \)};
+\node at (.5,-.5) {\( a'=1 \)};
+\node at (3.5,1.5) {\( -b_3 \)};
+\node at (2,1.5) {\( -\lambda_2 \)};
+  \phantom{\draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(3,0) -- (0,0) node [black,midway,yshift=-0.6cm] {\( a=3 \)};}
+\end{scope}
+\end{tikzpicture}  
+\caption{A pair \( (T,\pi)\in X \) in Case 1-2 on the left and the
+  corresponding triple \( (T',\pi')\in X \) in Case 2-2 on the right.}
+\label{fig:3}
+\end{figure}
+
+Now we prove the other duality.
+
+\begin{thm}\label{thm:2}
+  For nonnegative integers \( n \) and \( m \), we have
+  \[
+    \sum_{k\ge0} \mu_{n,k}\nu_{k,m} = \delta_{n,m}.
+  \]
+\end{thm}
+
+\begin{proof}
+  The proof is quite similar to that of \Cref{thm:1} except that we
+  consider the end of a Motzkin instead of its beginning. Again, we
+  may assume \( n\ge m \).
+
+  Let \( X \) be the set of pairs \( (\pi,T) \) of a Motzkin path
+  \( \pi\in \Motz_{n,k} \) and a Favard tiling \( T\in \FT_{k,m} \),
+  for some \( m\le k\le n \). Let \( Y \) be the set of pairs
+  \( (\pi,T) \) of a Motzkin path \( \pi\in \Motz_{n,m} \) and a
+  Favard tiling \( T\in \FT_{m,m} \) such that \( \pi \) has up steps
+  only and \( T \) has red monominos only. Then \( Y \) has a unique
+  element if \( n=m \); and \( Y=\emptyset \) if \( n\ne m \).
+
+  Our goal is to find a weight-preserving sign-reversing involution
+  \( \phi: X \to X \) with fixed point set \( Y \). To do this, let
+  \( (\pi,T)\in X \) with \( \pi\in \Motz_{n,k} \) and
+  \( T\in \FT_{k,m} \) with \( m\le k\le n \). We write
+  \( \pi=S_nS_{n-1} \cdots S_{1} \) as a sequence of steps. Let
+  \( a,u \) be the integers defined as follows:
+ \begin{itemize}
+ \item \( a \) is the largest integer such that \( T \)
+   end with \( a \) red monominos,
+ \item \( u \) is the largest integer such that \( \pi \) ends with
+   \( u \) up steps.
+ \end{itemize}
+ We define \( \phi(\pi,T)= (\pi',T') \) in the following way. Here,
+ \( a',u' \) are the integers defined similarly as above using
+ \( \pi' \) and \( T' \).
+\begin{description}
+\item[Case 1] \( n\ne u\le a \). There are two
+  subcases.
+\begin{description}
+\item[Case 1-1] \( S_{u+1} \) is a horizontal step. Let \( \pi' \) be
+  the Motzkin path obtained from \( \pi \) by replacing \( S_{u+1} \)
+  by \( U \) and define $T'$ to be the Favard tiling obtained from $T$
+  by inserting a black monomino before the last \( u \) red monominos.
+  See Figure~\ref{fig:4}.
+\item[Case 1-2] $S_{u+1}$ is a down step. Let \( \pi' \) be
+  the Motzkin path obtained from \( \pi \) by replacing \( S_{u+1} \)
+  by \( U \) and define $T'$ to be the Favard tiling obtained from $T$
+  by inserting a black domino before the last \( u \) red monominos.
+ See Figure~\ref{fig:5}.
+\end{description}
+
+\item[Case 2] \( u> a \). Since \( a<u\le k \), we can let \( A \) be
+  the \( (a+1) \)st tile from the right in \( T \). There are two
+  subcases.
+  \begin{description}
+  \item[Case 2-1] $A$ is a black monomino. Let \( \pi' \) be the
+    Motzkin path obtained from \( \pi \) by replacing \( S_{a+1} \) by
+    \( H \) and define $T'$ to be the Favard tiling obtained from $T$
+    by deleting the \( (a+1) \)st tile from the right in \( T \). See
+    Figure~\ref{fig:4}. (with the roles of \( (\pi,T) \) and
+    \( (\pi',T') \) interchanged).
+\item[Case 2-2] $A$ is a domino. Let \( \pi' \) be the
+    Motzkin path obtained from \( \pi \) by replacing \( S_{a+1} \) by
+    \( D \) and define $T'$ to be the Favard tiling obtained from $T$
+    by deleting the \( (a+1) \)st tile from the right in \( T \). See
+    Figure~\ref{fig:5}. (with the roles of \( (\pi,T) \) and
+    \( (\pi',T') \) interchanged).
+\end{description}
+\item[Case 3] \( n = u\le a \). Since \( n\ge m \ge a \), we must have
+  \( u=a=n \). Then \( T \) has only red monominos and \( \pi \) has
+  only up steps. We define \( (\pi',T') = (\pi,T) \).
+\end{description}
+
+
+The map \( \phi:X \to X \) is a weight-preserving sign-reversing
+involution with fixed point set \( Y \). Hence
+\[
+  \sum_{(\pi,T)\in X} \wt'(T) \wt(\pi)
+  =  \sum_{(\pi,T)\in Y}\wt'(T) \wt(\pi) = \delta_{n,m}.
+\]
+\end{proof}
+
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (10,5);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,0) -- ++(1,1) -- ++(1,1) -- ++(1,1);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(10,0) -- (7,0) node [black,midway,yshift=-0.6cm] {\( u=3 \)};
+\node at (-1,2.5) {\( \pi= \)};
+\node at (6.5,2.5) {\( b_2 \)};
+\draw[line width = 2pt, cyan] (6,2)--++(1,0);
+\begin{scope}[shift={(5,-3.5)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,4} \draw node at (\x+0.5,0.5) {\x};
+  \BM0 \RM1 \RM2 \RM3 \RM4
+  \node at (0.5,1.5) {\( -b_0 \)};
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(5,0) -- (1,0) node [black,midway,yshift=-0.6cm] {\( a=4 \)};
+\node at (-1,.5) {\( T= \)};
+\end{scope}
+\end{tikzpicture} \quad
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (10,6);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,1);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(10,0) -- (5,0) node [black,midway,yshift=-0.6cm] {\( u'=5 \)};
+\node at (-1,2.5) {\( \pi'= \)};
+\draw[line width = 2pt, cyan] (6,2)--++(1,1);
+\begin{scope}[shift={(4,-3.5)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,5} \draw node at (\x+0.5,0.5) {\x};
+  \BM0 \RM1 \BM2 \RM3 \RM4 \RM5
+  \node at (0.5,1.5) {\( -b_0 \)};
+  \node at (2.5,1.5) {\( -b_2 \)};
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(6,0) -- (3,0) node [black,midway,yshift=-0.6cm] {\( a'=3 \)};
+\node at (-1,.5) {\( T'= \)};
+\end{scope}
+\end{tikzpicture}  
+\caption{A pair \( (T,\pi)\in X \) in Case 1-1 on the left and the
+  corresponding triple \( (T',\pi')\in X \) in Case 2-1 on the right.}
+\label{fig:4}
+\end{figure}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (10,5);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,0) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,1);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(10,0) -- (7,0) node [black,midway,yshift=-0.6cm] {\( u=3 \)};
+\node at (-1,2.5) {\( \pi= \)};
+\node at (6.9,2.9) {\( \lambda_3 \)};
+\draw[line width = 2pt, cyan] (6,3)--++(1,-1);
+\begin{scope}[shift={(5,-3.5)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,4} \draw node at (\x+0.5,0.5) {\x};
+  \BM0 \RM1 \RM2 \RM3 \RM4
+  \node at (0.5,1.5) {\( -b_0 \)};
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(5,0) -- (1,0) node [black,midway,yshift=-0.6cm] {\( a=4 \)};
+\node at (-1,.5) {\( T= \)};
+\end{scope}
+\end{tikzpicture} \quad
+\begin{tikzpicture}[scale=0.6]
+  \draw[help lines] (0,0) grid (10,7);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,1);
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(10,0) -- (5,0) node [black,midway,yshift=-0.6cm] {\( u'=5 \)};
+\node at (-1,2.5) {\( \pi'= \)};
+\draw[line width = 2pt, cyan] (6,3)--++(1,1);
+\begin{scope}[shift={(3,-3.5)}]
+  \draw [help lines] (0,0) grid (4,1);
+  \foreach \x in {0,...,6} \draw node at (\x+0.5,0.5) {\x};
+  \BM0 \RM1 \BD3 \RM4 \RM5 \RM6
+  \node at (0.5,1.5) {\( -b_0 \)};
+  \node at (3,1.5) {\( -\lambda_3 \)};
+  \draw [decorate,decoration={brace,amplitude=10pt},xshift=-0pt,yshift=-3pt]
+(7,0) -- (4,0) node [black,midway,yshift=-0.6cm] {\( a'=3 \)};
+\node at (-1,.5) {\( T'= \)};
+\end{scope}
+\end{tikzpicture}  
+\caption{A pair \( (T,\pi)\in X \) in Case 1-2 on the left and the
+  corresponding triple \( (T',\pi')\in X \) in Case 2-2 on the right.}
+\label{fig:5}
+\end{figure}
+
+
 
 
 % \chapter{Determinants of moments}
@@ -4194,7 +4640,6 @@ This implies
   = \frac{e^a a^n}{n!} \delta_{n,m}.
 \]
 \end{exam}
-
 
 
 
