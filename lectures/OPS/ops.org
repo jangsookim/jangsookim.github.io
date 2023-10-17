@@ -51,4 +51,6 @@ Orthogonal polynomials are classical objects arising from the study of continued
 10. [2023-10-05 Thu]: Combinatorial models for OPS 2, [[file:ops-files/OPS10.pdf][lecture notes]], [[https://youtu.be/QLfta0ph7kY][video]]
 11. [2023-10-10 Tue]: Moments of Chebyshev and Hermite polynomials, [[file:ops-files/OPS11.pdf][lecture notes]], [[https://youtu.be/FDkEzYtCISw][video]]
 12. [2023-10-12 Thu]: Moments of Charlier and Laguerre polynomials, [[file:ops-files/OPS12.pdf][lecture notes]], [[https://youtu.be/b3Bi820QbS8][video]]
+13. [2023-10-17 Tue]: Duality between mixed moments and coefficients, [[file:ops-files/OPS13.pdf][lecture notes]], [[https://youtu.be/yxP9x94Gy6w][video]]
+
 
