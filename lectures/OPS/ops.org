@@ -31,10 +31,10 @@ Orthogonal polynomials are classical objects arising from the study of continued
 - The class will be taught in English.
 
 * Lecture notes
-- [[file:orthogonal_polynomials.pdf][Lecture notes]] (This file will be updated regularly.)
+- [[file:ops-files/orthogonal_polynomials.pdf][Lecture notes]] (This file will be updated regularly.)
 * Homework
 - Current homework: Homework 3 (Due: Oct 19) 
-- [[file:homework.pdf][Homework problems]] (This file will be updated regularly.)
+- [[file:ops-files/homework.pdf][Homework problems]] (This file will be updated regularly.)
 - [[file:homework(solutions).pdf][Homework solutions with grading criteria]] (This file will be updated regularly.)
 - Please email your homework as a single pdf file to the instructor by the due date.
 
@@ -52,5 +52,4 @@ Orthogonal polynomials are classical objects arising from the study of continued
 11. [2023-10-10 Tue]: Moments of Chebyshev and Hermite polynomials, [[file:ops-files/OPS11.pdf][lecture notes]], [[https://youtu.be/FDkEzYtCISw][video]]
 12. [2023-10-12 Thu]: Moments of Charlier and Laguerre polynomials, [[file:ops-files/OPS12.pdf][lecture notes]], [[https://youtu.be/b3Bi820QbS8][video]]
 13. [2023-10-17 Tue]: Duality between mixed moments and coefficients, [[file:ops-files/OPS13.pdf][lecture notes]], [[https://youtu.be/yxP9x94Gy6w][video]]
-
-
+14. [2023-10-19 Thu]: Special Cases: \( e_k \), \( h_k \), and binomial coefficients, [[file:ops-files/OPS14.pdf][lecture notes]], [[https://youtu.be/NviaBKeya0M][video]]

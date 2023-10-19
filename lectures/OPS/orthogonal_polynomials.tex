@@ -2313,9 +2313,9 @@ permutation. To this end we need some lemmas.
   \( \sgn(\tau) = (-1)^{\evencycle(\tau)} = (-1)^1 = -1 \).
 \end{proof}
 
-The \emph{signless Striling number of the first kind} \( c(n,k) \) is
+The \emph{signless Stirling number of the first kind} \( c(n,k) \) is
 defined to be the number of permutations on \( [n] \) with \( k \)
-cycles. The \emph{Striling number of the first kind} \( s(n,k) \) is
+cycles. The \emph{Stirling number of the first kind} \( s(n,k) \) is
 defined to by \( s(n,k) = (-1)^{n-k} c(n,k) \). Note that
 \( (-1)^{n-k} \) is the sign of a permutation on \( [n] \) with
 \( k \) cycles.
@@ -4726,7 +4726,7 @@ principle of inclusion and exclusion. To see this, suppose that
 For a subset \( I \subseteq [n] \), we define
 \begin{align*}
   A_{=I} &= \{ x\in X: x\in A_i \mbox{ if and only if \( i\in I \)}\},\\
-  A_{\ge I} &= \{ x\in X: x\in A_i \mbox{ for some \( i\in I \)}\}.
+  A_{\ge I} &= \{ x\in X: x\in A_i \mbox{ for all \( i\in I \)}\}.
 \end{align*}
 In other words, \( A_{=I} \) is the set of elements \( x \) which are
 contained in exactly those \( A_i \) for \( i\in I \) and
@@ -4735,7 +4735,7 @@ at least those \( A_i \) for \( i\in I \).
 
 Note that 
 \[
-  A_{\ge I} = \bigcup_{i\in I} A_i = \bigcup_{J\supseteq I} A_{=J}.
+  A_{\ge I} = \bigcap_{i\in I} A_i = \bigcup_{J\supseteq I} A_{=J}.
 \]
 Thus
 \begin{equation}\label{eq:33}
@@ -5014,12 +5014,84 @@ Thus
 
 \section{Special case: Stirling numbers}
 
+In this section we consider the case \( b_k = k \) and
+\( \lambda_k=0 \). In this case we obtain the duality between Stirling
+numbers of the first kind and second kind.
+
+
 \begin{thm}\label{thm:6}
   If \( b_k = k \) and \( \lambda_k=0 \), then
   \[
     \mu_{n,k} = S(n,k), \qquad \nu_{n,k} = s(n,k).
   \]
 \end{thm}
+
+\begin{proof}
+  We have
+  \[
+    \mu_{n,k} = \sum_{\pi\in \Motz_{n,k}}  \wt(\pi).
+  \]
+  Recall that if \( b_k=k+1 \) and \( \lambda_k = k \), then
+  \( \mu_n \) is the number of Charlier histories from \( (0,0) \) to
+  \( (n,0) \). In our case \( b_k = k \) and \( \lambda_k=0 \), the
+  same bijection shows that \( \mu_{n,k} \) is the number of paths
+  from \( (0,0) \) to \( (n,k) \) consisting of \( H=(1,0) \) and
+  \( U=(1,1) \) in which every horizontal step at height \( h \) has a
+  label in \( \{ 1,\dots,h \} \). We can apply the same bijection
+  between Charlier histories and set partitions to these (partial)
+  Charlier as shown in \Cref{fig:Charlier-history-1}. Since there are
+  no singleton blocks and no closers, we obtain that such (partial)
+  Charlier histories are in bijection with set partitions of \( [n] \)
+  into \( k \) blocks.
+  This shows that \( \mu_{n,k} = S(n,k) \).
+
+  \begin{figure}
+  \centering
+\begin{tikzpicture}
+\draw[help lines] (0,0) grid (8,3);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,0) -- ++(1,0) -- ++(1,1) -- ++(1,0) -- ++(1,1) -- ++(1,0) -- ++(1,0);
+\hlabel111 \hlabel211 \hlabel422 \hlabel631 \hlabel733 
+\end{tikzpicture}
+\begin{tikzpicture}
+\begin{scope}[shift={(0,0)}]
+\draw (5,0) -- (5.5,0.5);
+\draw (7,0) -- (7.5,0.5);
+\draw (8,0) -- (8.5,0.5);
+\node[draw, circle,fill=white] (1) at (1,0) {\( 1 \)};
+\node[draw, circle,fill=white] (2) at (2,0) {\( 2 \)};
+\node[draw, circle,fill=white] (3) at (3,0) {\( 3 \)};
+\node[draw, circle,fill=white] (5) at (5,0) {\( 5 \)};
+\draw[out=90,in=90] (1) to (2);
+\draw[out=90,in=90] (2) to (3);
+\draw[out=90,in=90] (3) to (5);
+\node[draw, circle,fill=white] (4) at (4,0) {\( 4 \)};
+\node[draw, circle,fill=white] (8) at (8,0) {\( 8 \)};
+\draw[out=90,in=90] (4) to (8);
+\node[draw, circle,fill=white] (6) at (6,0) {\( 6 \)};
+\node[draw, circle,fill=white] (7) at (7,0) {\( 7 \)};
+\draw[out=90,in=90] (6) to (7);
+\end{scope}
+
+\end{tikzpicture}
+\caption{A partial Charlier history (top) and the corresponding set
+  partition, where every block has a half edge attached at the end
+  (bottom).}
+  \label{fig:Charlier-history-1}
+\end{figure}
+
+  Since \( b_k=k+1 \) and \( \lambda_k = k \), we have
+  \[
+    \sum_{k=0}^n \nu_{n,k}x^k = \sum_{T\in\FT_n} \wt(T)
+    = x(x-1)(x-2) \cdots (x-n+1).
+  \]
+  On the other hand, by \eqref{eq:c(n,k)-gf}, we have
+  \[
+       \sum_{k=0}^n s(n,k)x^k = x(x-1)(x-2) \cdots (x-n+1).
+  \]
+  This proves the second identity also holds.
+\end{proof}
+
+
 
 
 % \chapter{Determinants of moments}
