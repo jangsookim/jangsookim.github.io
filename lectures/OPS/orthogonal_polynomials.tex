@@ -7,6 +7,7 @@
 % \usepackage{refcheck}
 \usepackage{graphicx,color}
 \usepackage{tikz}
+\usepackage{ytableau}
 \numberwithin{equation}{section}
 \usetikzlibrary{snakes}
 
@@ -103,6 +104,10 @@
 % \def\LRD#1{\RD{#1} \node at (#1, 1.3) {$-\lambda_{#1}$};}
 
 \def\fcirc{\,\tikz\draw[fill] (0,0) circle (2pt);\,}
+
+\newcommand\ulabel[3]{\node at (#1+0.3,#2+0.7) {\( #3 \)};}
+\newcommand\hlabel[3]{\node at (#1+0.5,#2+0.3) {\( #3 \)};}
+\newcommand\dlabel[3]{\node at (#1+0.7,#2+0.7) {\( #3 \)};}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -4028,6 +4033,14 @@ In this chapter we will show that
 where \( \mu_{n,k} = \LL(x^nP_k(x))/\LL(P_k(x)^2) \) is the mixed
 moment. We then show the duality between the mixed moments
 \( \mu_{n,k} \) and the coefficients \( \nu_{n,k} \) combinatorially.
+As special cases we obtain
+various known dualities among
+binomial coefficients,
+\( q \)-binomial coefficients,
+Stirling numbers, and
+elementary and homogeneous symmetric functions.
+
+
 
 \section{Mixed moments and coefficients}
 
@@ -4480,6 +4493,533 @@ involution with fixed point set \( Y \). Hence
 \end{figure}
 
 
+\section{Special case: elementary and homogeneous symmetric functions}
+
+For the rest of this chapter we will study several special cases of
+the duality between \( \mu_{n,k} \) and \( \nu_{n,k} \). In this
+section we consider the case that \( b_k \) are arbitrary and
+\( \lambda_k =0 \). The next sections will cover some interesting
+special cases of this.
+
+Suppose that \( b_k=x_{k} \) and \( \lambda_k =0 \), where \( x_0,x_1,\dots \) are
+indeterminates. Observe that if \( \lambda_k=0 \), then
+\( \pi\in \Motz_{n,k} \) is a path from \( (0,0)\to (n,k) \)
+consisting of up steps \( U=(1,1) \) and horizontal steps
+\( H=(1,0) \). By replacing each \( U=(1,1) \) by \( U'=(1,0) \), we
+can identify \( \pi \) as a path from \( (0,0) \) to \( (n-k,k) \),
+see \Cref{fig:6}.
+
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+\draw[help lines] (0,0) grid (7,3);
+\foreach \x in {0,...,7} \draw node at (\x,-.5) {\( \x \)};
+\foreach \y in {0,...,3} \draw node at (-.5,\y) {\( \y \)};
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,0) -- ++(1,0) -- ++(1,1) -- ++(1,0) -- ++(1,1) -- ++(1,0);
+\hlabel11{x_1}
+\hlabel21{x_1}
+\hlabel42{x_2}
+\hlabel63{x_3}
+\end{tikzpicture} \qquad 
+\begin{tikzpicture}
+\draw[help lines] (0,0) grid (4,3);
+\foreach \x in {0,...,4} \draw node at (\x,-.5) {\( \x \)};
+\foreach \y in {0,...,3} \draw node at (-.5,\y) {\( \y \)};
+\draw[line width = 1.5pt] (0,0) -- ++(0,1) -- ++(1,0) -- ++(1,0) -- ++(0,1) -- ++(1,0) -- ++(0,1) -- ++(1,0);
+\hlabel01{x_1}
+\hlabel11{x_1}
+\hlabel22{x_2}
+\hlabel33{x_4}
+\end{tikzpicture}
+\caption{A path with steps \( U=(1,1) \) and \( H=(1,0) \) on the left
+  and the corresponding path with steps \( U'=(0,1) \) and
+  \( H=(1,0) \) on the right.}
+  \label{fig:6}
+\end{figure}
+
+Therefore we can write 
+\[
+  \mu_{n,k} = \sum_{\pi:(0,0)\to (n-k,k)} \wt(\pi),
+\]
+where the sum is over all paths \( \pi \) from \( (0,0) \) to
+\( (n-k,k) \) with steps \( U' \) and \( H \), and \( \wt(\pi) \) is
+the product of \( x_k \) for each horizontal step of height \( k \).
+Such a path is completely determined by its weight. For example, the
+path in \Cref{fig:6} is the unique path from \( (0,0) \) to
+\( (4,3) \) with weight \( x_1^2 x_2 x_3 \).
+Moreover, every weight is of the form \( x_{i_1}\cdots x_{i_{n-k}} \)
+with \( 0\le i_1 \le \cdots \le i_{n-k} \le k \).
+Thus
+\begin{equation}\label{eq:29}
+  \mu_{n,k} = \sum_{0\le i_1 \le \cdots \le i_{n-k} \le k} x_{i_1}\cdots x_{i_{n-k}}.
+\end{equation}
+This is a homogeneous symmetric polynomial.
+
+\begin{defn}\label{def:1}
+  Let \( x=(x_0,x_1,\dots) \) be a sequence of variables. A power
+  series \( f(x_0,x_1,\dots) \) in the variables \( x \) is called a
+  \emph{symmetric function} if it is invariant under permuting
+  variables. A \emph{homogeneous symmetric function}
+  \( h_k \) is defined by
+  \[
+    h_k = \sum_{i_1 \le \cdots \le i_{k}} x_{i_1}\cdots x_{i_{k}}.
+  \]
+  An \emph{elementary symmetric function}
+  \( e_k \) is defined by
+  \[
+    e_k = \sum_{i_1 < \cdots < i_{k}} x_{i_1}\cdots x_{i_{k}}.
+  \]
+  We define \( h_0 = e_0 = 1 \) and \( h_k = e_k = 0 \) if \( k<0 \).
+  A \emph{homogeneous symmetric polynomial} \( h_k(x_0,x_1,\dots,x_n) \) is
+  defined by
+  \[
+    h_k(x_0,x_1,\dots,x_n) = \sum_{0\le i_1 \le \cdots \le i_{k} \le n}
+    x_{i_1}\cdots x_{i_{k}}.
+  \]
+  An \emph{elementary symmetric polynomial} \( e_k(x_0,x_1,\dots,x_n) \)
+  is defined by
+  \[
+    e_k(x_0,x_1,\dots,x_n) = \sum_{0\le i_1 < \cdots < i_{k} \le n}
+    x_{i_1}\cdots x_{i_{k}}.
+  \]
+\end{defn}
+
+For example,
+\begin{align*}
+  h_1(x_0,x_1,x_2) &= e_1(x_0,x_1,x_2) = x_0 + x_1 + x_2,\\
+  h_2(x_0,x_1,x_2) &= x_0^2+x_1^2+x_2^2 + x_0x_1+x_0x_2+x_1x_2,\\
+  e_2(x_0,x_1,x_2) &= x_0x_1+x_0x_2+x_1x_2,\\
+  e_3(x_0,x_1,x_2) &= x_0x_1x_2.
+\end{align*}
+
+Then we can rewrite \eqref{eq:29} as follows.
+
+\begin{thm}\label{thm:3}
+  Suppose that \( b_k=x_{k} \) and \( \lambda_k =0 \).
+  Then
+  \[
+    \mu_{n,k} = h_{n-k}(x_0,x_1,\dots,x_{k}).
+  \]
+\end{thm}
+
+Now we consider
+\[
+  \nu_{n,k} = \sum_{T\in \FT_{n,k}} \wt'(T).
+\]
+Since \( \lambda_i=0 \), every \( T\in \FT_{n,k} \) has red monominos
+and black monominos only. Hence, \( T \) is determined by choosing
+\( n-k \) squares for black monominos in a \( 1\times n \) board.
+Moreover, \( \wt'(T) \) is of the form
+\( (-1)^{n-k} x_{i_1} \cdots x_{i_{n-k}} \) for some
+\( 0\le i_1 < \cdots <i_{n-k} \le n-1 \), see \Cref{fig:7}.
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+  \draw [help lines] (0,0) grid (7,1);
+  \foreach \x in {0,...,6} \draw node at (\x+0.5,0.5) {\x};
+  \BM0 \RM1 \BM2 \BM3 \RM4 \BM5 \RM6
+  \node at (0.5,1.5) {\( -x_1 \)};
+  \node at (2.5,1.5) {\( -x_3 \)};
+  \node at (3.5,1.5) {\( -x_4 \)};
+  \node at (5.5,1.5) {\( -x_6 \)};
+  \end{tikzpicture}
+  \caption{A Favard tiling with red monominos and black monominos.}
+  \label{fig:7}
+\end{figure}
+This shows that
+\[
+    \nu_{n,k} = \sum_{0\le i_1 < \cdots <i_{n-k} \le n-1}(-1)^{n-k} x_{i_1} \cdots x_{i_{n-k}}.
+\]
+This can be restated as follows.
+
+\begin{thm}\label{thm:4}
+  Suppose that \( b_k=x_{k+1} \) and \( \lambda_k =0 \).
+  Then
+  \[
+    \nu_{n,k} = (-1)^{n-k} e_{n-k}(x_0,x_1,\dots,x_{n-1}).
+  \]
+\end{thm}
+
+By the duality (\Cref{thm:1} and \Cref{thm:2})
+and \Cref{thm:3} and \Cref{thm:4},
+we obtain the following corollary.
+
+\begin{cor}\label{cor:1}
+  The following matrix identities hold:
+\begin{align*}
+  \left( h_{n-k}(x_0,x_1,\dots,x_{k}) \right)_{n,k\ge0}
+  \left( (-1)^{n-k} e_{n-k}(x_0,x_1,\dots,x_{n-1}) \right)_{n,k\ge0}
+  &= I,\\
+  \left( (-1)^{n-k} e_{n-k}(x_0,x_1,\dots,x_{n-1}) \right)_{n,k\ge0}
+  \left( h_{n-k}(x_0,x_1,\dots,x_{k}) \right)_{n,k\ge0}
+  &= I.
+\end{align*}
+Equivalently, for fixed integers \( n,m\ge0 \),
+\begin{align}
+\label{eq:31}  \sum_{k\ge 0} 
+  h_{n-k}(x_0,x_1,\dots,x_{k}) (-1)^{k-m} e_{k-m}(x_0,x_1,\dots,x_{k-1}) 
+  &= \delta_{n,m},\\
+\label{eq:30}  \sum_{k\ge 0} (-1)^{n-k} e_{n-k}(x_0,x_1,\dots,x_{n-1}) h_{k-m}(x_0,x_1,\dots,x_{m})
+  &= \delta_{n,m}.
+\end{align}
+\end{cor}
+
+Suppose that \( N=n-m\ge0 \).
+Then, by shifting the index \( k\mapsto k+m  \) in \eqref{eq:30}, we have
+\[
+  \sum_{k\ge 0} (-1)^{N-k} e_{N-k}(x_0,x_1,\dots,x_{m+N-1})
+  h_{k}(x_0,x_1,\dots,x_{m}) = \delta_{N,0}.
+\]
+If we let \( m\to \infty \), we obtain
+the well-known identity
+\[
+  \sum_{k\ge 0} (-1)^{k} e_{N-k} h_{k} = \delta_{N,0}.
+\]
+
+\section{Special case: binomial coefficients}
+
+In this section we consider the case \( b_k=1 \) and
+\( \lambda_k=0 \). We will show that the duality of this case is
+related to the principle of inclusion and exclusion.
+
+Suppose \( b_k=1 \) and \( \lambda_k=0 \). As observed in the previous
+section, in this case \( \mu_{n,k} \) is the number of paths from
+\( (0,0) \) to \( (n-k,k) \) using steps \( (1,0) \) and \( (0,1) \).
+Thus \( \mu_{n,k} = \binom{n}{k} \). On the other hand,
+\( \nu_{n,k} \) is \( (-1)^{n-k} \) times the number of Favard tilings
+of size \( n \) with \( k \) red monominos and \( n-k \) black
+monominos. Hence \( \nu_{n,k} = (-1)^{n-k}\binom{n}{k} \).
+
+\begin{prop}
+  If \( b_k=1 \) and \( \lambda_k=0 \), we have
+\[
+  \mu_{n,k} = \binom{n}{k}, \qquad 
+  \nu_{n,k} = (-1)^{n-k} \binom{n}{k}.
+\]
+\end{prop}
+
+
+
+As a corollary, we obtain the following duality between binomial
+coefficients.
+
+\begin{cor}\label{cor:2}
+  We have
+  \[
+    \left( \binom{n}{k} \right)_{n,k\ge0}  \left( (-1)^{n-k} \binom{n}{k} \right)_{n,k\ge0}
+    = 
+    \left( (-1)^{n-k} \binom{n}{k} \right)_{n,k\ge0}
+    \left( \binom{n}{k} \right)_{n,k\ge0}
+    = I.
+  \]
+  Equivalently,
+  \begin{equation}\label{eq:32}
+  \left( \binom{n}{k} \right)_{n,k\ge0}^{-1} = 
+  \left( (-1)^{n-k} \binom{n}{k} \right)_{n,k\ge0}.
+\end{equation}
+\end{cor}
+
+Equation \eqref{eq:32} has an interesting connection with the
+principle of inclusion and exclusion. To see this, suppose that
+\( A_1,\dots,A_n \) are subsets of a set \( X \).
+For a subset \( I \subseteq [n] \), we define
+\begin{align*}
+  A_{=I} &= \{ x\in X: x\in A_i \mbox{ if and only if \( i\in I \)}\},\\
+  A_{\ge I} &= \{ x\in X: x\in A_i \mbox{ for some \( i\in I \)}\}.
+\end{align*}
+In other words, \( A_{=I} \) is the set of elements \( x \) which are
+contained in exactly those \( A_i \) for \( i\in I \) and
+\( A_{\ge I} \) is the set of elements \( x \) which are contained in
+at least those \( A_i \) for \( i\in I \).
+
+Note that 
+\[
+  A_{\ge I} = \bigcup_{i\in I} A_i = \bigcup_{J\supseteq I} A_{=J}.
+\]
+Thus
+\begin{equation}\label{eq:33}
+  \left| A_{\ge I} \right| = \sum_{J\supseteq I}  \left| A_{=J} \right|.
+\end{equation}
+We can invert this equation as follows, which is a form of the
+principle of inclusion and exclusion.
+
+\begin{lem}
+  For any subset \( I \) of \( [n] \), we have
+  \begin{equation}\label{eq:34}
+  \left| A_{= I} \right| = \sum_{J\supseteq I} (-1)^{|J-I|}  \left| A_{\ge J} \right|.
+\end{equation}
+\end{lem}
+
+\begin{proof}
+  We will prove this by considering the contribution of each element
+  \( x\in X \) to both sides of the equation. Note that every
+  \( x\in X \) is contained in \( A_K \) for a unique subset \( K \)
+  of \( [n] \). We consider the following three cases.
+
+  \begin{description}
+  \item[Case 1:] \( K=I \). Then the contribution of \( x \) in both sides is \( 1 \).
+  \item[Case 2:] \( K \supsetneq I \). Then the contribution of
+    \( x \) to the left-hand side is \( 0 \). The contribution of
+    \( x \) to the right-hand side is
+    \[
+      \sum_{I \subseteq J \subseteq K} (-1)^{|J-I|} = 
+      \sum_{J \subseteq (K-I)} (-1)^{|J|} = \sum_{j=0}^{|K-I|} (-1)^{j}\binom{|K-I|}{j} = 0.
+    \]
+  \item[Case 3:] \( K \not\supseteq I\). In this case the contribution
+    of \( x \) in both sides is \( 0 \).
+  \end{description}
+  Since the contribution of \( x \) to both sides is always the same,
+  the identity holds.
+\end{proof}
+
+If \( I=\emptyset \), we obtain the following common form of the principle
+of inclusion and exclusion:
+\begin{align*}
+ \left| A_1^c  \cap \cdots \cap A_n^c \right| 
+ &= \sum_{k=0}^{n} (-1)^{k} \sum_{i_1 < \cdots <i_k}
+ \left| A_{i_1} \cap \cdots \cap A_{i_k} \right|\\
+ &= |X| - |A_1| - \cdots - |A_n|\\
+ & \qquad + |A_1\cap A_2| +|A_1\cap A_3| + \cdots + |A_{n-1}\cap A_{n}|\\
+ & \qquad  - \cdots \\
+ & \qquad + (-1)^{n}|A_1 \cap \cdots \cap A_n|.
+\end{align*}
+
+\begin{exam}
+  A \emph{derangement} is a permutation without fixed points. Let
+  \( d_n \) be the number of derangements in \( \sym_n \). To compute
+  \( d_n \), we define \( X=\sym_n \) and
+  \( A_i = \{\pi\in X: \pi(i) = i\} \).
+  Then 
+  \[
+    d_n = |A_{=\emptyset}| = \sum_{J\subseteq[n]} (-1)^{|J|}|A_{\ge J}|.
+  \]
+  If \( J = \{j_1,\dots,j_k\} \), then \( |A_{\ge J}| = (n-k)! \).
+  Thus
+  \[
+    d_n  = \sum_{k=0}^n  (-1)^{k} \binom{n}{k} (n-k)!
+    = n! \sum_{k=0}^n  \frac{(-1)^{k}}{k!}.
+  \]
+\end{exam}
+
+In the previous example, \( A_{=I} \) and \( A_{\ge I} \) depend only
+on the cardinality of \( I \). In this case let \( a_k = |A_{=I}| \)
+and \( b_k = |A_{\ge I}| \) for any subset \( I \) of cardinality
+\( k \).
+Then \eqref{eq:33} and \eqref{eq:34} can be written as
+\begin{align*}
+  b_k  &= \sum_{j=k}^n \binom{n-k}{j-k} a_j
+         = \sum_{j=0}^{n-k} \binom{n-k}{j} a_{j+k},  \\
+  a_k  &= \sum_{j=k}^n (-1)^{j-k}  \binom{n-k}{j-k} b_j
+         = \sum_{j=0}^{n-k} (-1)^{j}  \binom{n-k}{j} b_{j+k}.
+\end{align*}
+To make things look nicer, let \( b'_k:= b_{n-k} \) and
+\( a'_k:= a_{n-k} \).
+Then the above equations can be rewritten as
+\begin{align*}
+  b'_{n-k}  &= \sum_{j=0}^{n-k} \binom{n-k}{n-k-j} a'_{n-k-j}
+              = \sum_{j=0}^{n-k} \binom{n-k}{j} a'_{j},  \\
+  a'_{n-k}  & = \sum_{j=0}^{n-k} (-1)^{j}  \binom{n-k}{n-k-j} b'_{n-k-j}
+              = \sum_{j=0}^{n-k} (-1)^{n-k-j}  \binom{n-k}{j} b'_{j}.
+\end{align*}
+Finally, replacing \( k \) by \( n-k \), we obtain
+\begin{align*}
+  b'_{k}  & = \sum_{j=0}^{k} \binom{k}{j} a'_{j},  \\
+  a'_{k}  & = \sum_{j=0}^{k} (-1)^{k-j}  \binom{k}{j} b'_{j}.
+\end{align*}
+Equivalently,
+\begin{align*}
+  \begin{pmatrix}
+b'_0\\
+\vdots\\
+b'_n
+\end{pmatrix}
+&= \left( \binom{i}{j} \right)_{i,j=0}^n
+\begin{pmatrix}
+a'_0\\
+\vdots\\
+a'_n
+\end{pmatrix}\\
+  \begin{pmatrix}
+a'_0\\
+\vdots\\
+a'_n
+\end{pmatrix}
+&= \left( (-1)^{i-j}\binom{i}{j} \right)_{i,j=0}^n
+\begin{pmatrix}
+b'_0\\
+\vdots\\
+b'_n
+\end{pmatrix}
+\end{align*}
+Since \( a'_i \) and \( b'_i \) can be anything,
+we have the following matrix identity:
+\[
+  \left( \binom{i}{j} \right)_{i,j=0}^n = 
+  \left( (-1)^{i-j} \binom{i}{j} \right)_{i,j=0}^n,
+\]
+which is equivalent to \eqref{eq:32}.
+
+\section{Special case: \( q \)-binomial coefficients}
+
+In this section we consider the case \( b_k=q^k \) and
+\( \lambda_k=0 \). This case gives \( q \)-binomial coefficients. We
+first need some definitions. From now on, we treat \( q \) as an indeterminate.
+
+
+\begin{defn}\label{def:2}
+  For a nonnegative integer \( n \),
+  the \emph{\( q \)-integer} \( [n]_q \) is defined by
+  \[
+    [n]_q = \frac{1-q^n}{1-q} = 1 + \cdots + q^{n-1}.
+  \]
+  The \emph{\( q \)-factorial} \( [n]_q! \) and the
+  \emph{\( q \)-binomial coefficient} \( \qbinom{n}{k} \), for
+  \( 0\le k\le n \), are defined by
+  \[
+    [n]_q! = [1]_q [2]_q \cdots [n]_q, \qquad
+    \qbinom{n}{k} = \frac{[n]_q!}{[k]_q![n-k]_q!}.
+  \]
+  We also define \( \qbinom{n}{k} = 0 \) if \( n<k \).
+\end{defn}
+
+
+Note that if \( q=1 \), then
+\[
+  [n]_q = n, \qquad [n]_q! = n!, \qquad \qbinom{n}{k} = \binom{n}{k}.
+\]
+
+\begin{lem}\label{lem:2}
+  For \( 0\le k\le n \), we have
+  \begin{equation}\label{eq:35}
+    \qbinom{n}{k} =  q^{n-k} \qbinom{n-1}{k-1} + \qbinom{n-1}{k}.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+  We compute
+  \begin{align*}
+    q^{n-k} \qbinom{n-1}{k-1} + \qbinom{n-1}{k}
+    &= \frac{q^{n-k}[n-1]_q!}{[n-k]_q! [k-1]_q!}
+    + \frac{[n-1]_q!}{[n-1-k]_q! [k]_q!},\\
+    &= \frac{[n-1]_q!}{[n-k]_q! [k]_q!} \left( q^{n-k}[k]_q + [n-k]_q \right),\\
+    &= \frac{[n-1]_q!}{[n-k]_q! [k]_q!} [n]_q = \qbinom{n}{k}. \qedhere
+  \end{align*}
+\end{proof}
+
+
+\begin{defn}\label{def:3}
+  A \emph{partition} is a sequence of nonnegative integers
+  \( \lambda=(\lambda_1,\dots,\lambda_\ell) \) with
+  \( \lambda_1 \ge \cdots \ge \lambda_\ell \). Each \( \lambda_i \) is
+  called a \emph{part} of \( \lambda \). The \emph{size} of
+  \( \lambda \) is defined to be
+  \( |\lambda| = \lambda_1 + \cdots + \lambda_\ell \). The \emph{Young
+    diagram} of \( \lambda \) is a left-justified array of squares
+  where the \( i \)th row has \( \lambda_i \) squares.
+  The \emph{transpose} \( \lambda' \) of \( \lambda \)
+  is the partition whose Young diagram is obtained by reflecting
+  the Young diagram of \( \lambda \) along the diagonal as shown in 
+  \Cref{fig:8}.
+\end{defn}
+
+\begin{figure}
+  \centering
+\ydiagram{4,3,1} \qquad\qquad  \qquad 
+\ydiagram{3,2,2,1}
+\caption{The Young diagram of the partition \( \lambda=(4,3,1) \)
+  and its transpose \( \lambda' = (3,2,2,1) \).}
+  \label{fig:8}
+\end{figure}
+
+Let \( (a^b) \) denote the partition with \( b \) parts equal to
+\( a \). For two partitions \( \lambda \) and \( \mu \), we write
+\( \mu\subseteq\lambda \) to mean that the Young diagram of \( \mu \)
+is contained in that of \( \lambda \). The following proposition shows
+that the \( q \)-binomial coefficient \( \qbinom{n}{k} \) is always a
+polynomial in \( q \).
+
+\begin{prop}
+  For \( 0\le k\le n \), we have
+\begin{equation}\label{eq:36}
+  \qbinom{n}{k} = \sum_{\lambda\subseteq((n-k)^k)} q^{|\lambda|}.
+\end{equation}
+\end{prop}
+
+\begin{proof}
+  We prove this by induction on \( n \). If \( n=0 \), then \( k=0 \),
+  and both sides are equal to \( 1 \). Let \( n\ge1 \) and suppose
+  that the statement holds for \( n-1 \). To prove the statement for
+  \( n \), it suffices to show that the right-hand side of the
+  equation satisfies the same recurrence as \eqref{eq:35}.
+
+  To this end consider
+  \( \lambda=(\lambda_1,\dots,\lambda_{n-k}) \subseteq ((n-k)^k) \).
+  If \( \lambda_1 =n-k \), then
+  \( (\lambda_2,\dots,\lambda_{n-k}) \subseteq ((n-k)^{k-1}) = ((n-1-(k-1))^{k-1}) \). If
+  \( \lambda_1 \le n-k-1 \), then
+  \( (\lambda_1,\dots,\lambda_{n-k}) \subseteq ((n-k-1)^{k}) \).
+  Thus
+  \[
+    \sum_{\lambda\subseteq((n-k)^k)} q^{|\lambda|}
+    = q^{n-k}\sum_{\lambda\subseteq((n-1-(k-1))^{k-1})} q^{|\lambda|}
+    + \sum_{\lambda\subseteq((n-1-k)^k)} q^{|\lambda|},
+  \]
+  which is the same recurrence as \eqref{eq:35}.
+\end{proof}
+
+Note that by taking the transpose of \( \lambda \),
+we can rewrite \eqref{eq:36} as
+\begin{equation}\label{eq:37}
+  \qbinom{n}{k} = \sum_{\lambda\subseteq(k^{n-k})} q^{|\lambda|}.
+\end{equation}
+
+Now we are ready to consider the mixed moments and coefficients when
+\( b_k=q^k \) and \( \lambda_k=0 \).
+
+\begin{prop}
+  If \( b_k=q^k \) and \( \lambda_k=0 \), we have
+\[
+  \mu_{n,k} = \qbinom{n}{k}, \qquad 
+  \nu_{n,k} = (-1)^{n-k} q^{\binom{n-k}{2}}\qbinom{n}{k}.
+\]
+\end{prop}
+
+\begin{proof}
+  By \Cref{thm:3} and \Cref{thm:4}, we have
+  \begin{align*}
+    \mu_{n,k} &= h_{n-k}(x_0,x_1,\dots,x_{k}),\\
+    \nu_{n,k} &= (-1)^{n-k} e_{n-k}(x_0,x_1,\dots,x_{n-1}),
+  \end{align*}
+where \( x_i = q^i \).
+Thus
+\[
+  \mu_{n,k} = \sum_{0\le i_1 \le \cdots \le i_{n-k}\le k} q^{i_1 +
+    \cdots + i_{n-k}} =\sum_{\mu\subseteq(k^{n-k})} q^{|\mu|}.
+  \]
+ The second identity follows from 
+ \begin{align*}
+   e_{n-k}(1,q,\dots,q^n)
+   &= \sum_{0\le i_1 < \cdots < i_{n-k}\le n-1} q^{i_1 +
+     \cdots + i_{n-k}}\\
+   &= \sum_{0\le j_1 \le \cdots \le j_{n-k}\le k} q^{0+1 + \cdots + (n-k-1)}q^{j_1 +
+     \cdots + j_{n-k}}\\
+   &= q^{\binom{n-k}{2}}\sum_{\mu\subseteq(k^{n-k})} q^{|\mu|},
+ \end{align*} 
+ where the change of indices
+ \( (i_1,i_2,\dots,i_{n-k}) = (j_1+0,j_2+1,\dots,j_{n-k}+n-k+1) \)
+ is used.
+\end{proof}
+
+
+\section{Special case: Stirling numbers}
+
+\begin{thm}\label{thm:6}
+  If \( b_k = k \) and \( \lambda_k=0 \), then
+  \[
+    \mu_{n,k} = S(n,k), \qquad \nu_{n,k} = s(n,k).
+  \]
+\end{thm}
 
 
 % \chapter{Determinants of moments}
