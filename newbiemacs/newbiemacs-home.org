@@ -23,28 +23,37 @@ Newbiemacs character by [[https://instagram.com/ujoo_peace][Artist Ujoo]]
 file:files/torus-screenshot.png
 
 * Installation
-** Install Newbiemacs on macOS
-1. Download Emacs and install it. [[https://emacsformacosx.com/][Click here]]
-2. Install [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][Git]].
-3. Open a terminal and enter the following lines. (You can open a
+** macOS
+1. We first need to install [[https://brew.sh/][Homebrew]]. Enter the following in a terminal.
+  : /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+2. To use homebrew we need to add its path to the system. Enter the following in a terminal.
+   : echo 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshrc
+3. Install [[https://www.gnu.org/software/emacs/][Emacs]] by entering the following in a terminal.
+   : brew install --cask emacs
+4. Install [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][Git]]  by entering the following in a terminal.
+   : git --version
+5. Open a terminal and enter the following lines. (You can open a
    terminal by pressing Command+Space and typing "terminal". You can
    just copy the whole thing and then paste it in your terminal.)
    : cd ~
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
    : cp ~/nbm-root/.emacs ~/.emacs
-   :
-4. Run Emacs. It will take several minutes to download necessary
+6. Run Emacs. It will take several minutes to download necessary
    packages. There may be some warnings but it's okay.
    When it's done, there will be a message at the bottom saying
    "For information about GNU Emacs and the GNU system, type C-h C-a."
-5. Close Emacs and run it again. The Newbiemacs main screen will be shown.
+7. Close Emacs and run it again. The Newbiemacs main screen will be shown.
 *** Additional steps for latex on macOS (optional)
 If you want to edit tex files in Newbiemacs, you need to do the following (only once).
 1. Install [[https://skim-app.sourceforge.io/][Skim]] and [[https://www.tug.org/mactex/][MacTeX]] (this is TeX Live for macOS).
-3. Open Skim and press ~CMD+,~ (Hold the command key and press the comma key.)
-4. Go to the ~Sync~ menu and check the two check boxes.
-5. Select Emacs in the drop-down box for ~Preset~.
-** Install Newbiemacs on Windows
+2. Open Skim and press ~CMD+,~ (Hold the command key and press the comma key.)
+3. Go to the ~Sync~ menu and check the two check boxes.
+4. Select Emacs in the drop-down box for ~Preset~.
+   - If this doesn't work try the following in skim option.
+   - Select "Preset: custom" and enter ~/opt/homebrew/bin/emacsclient~.
+   - Arguments should the the same things for Emacs, i.e. ~--no-wait +%line "%file"~.
+
+** Windows
 1. Download Emacs and install it. [[http://ftp.jaist.ac.jp/pub/GNU/emacs/windows/emacs-28/][Click here]] and download "emacs-28.2-installer.exe".
 2. Install Git. [[https://git-scm.com/download/win][Click here]] (Download "Standalone Installer".)
 3. Install [[https://strawberryperl.com/][Perl]].
@@ -71,7 +80,7 @@ If you want to use latex in Newbiemacs, you need to do the following (only once)
    If the box is not visible, then in the menu go to ~Settings~ and click ~Advanced Options...~.
    It will open a text file. Enter the following line anywhere there and save the file.
    : InverseSearchCmdLine = C:\Program Files\Emacs\emacs-28.2\bin\emacsclientw.exe -n +%l "%f"
-** Install Newbiemacs on GNU/Linux
+** GNU/Linux
 1. Install Emacs version 28.1 or later (Install "GNU Emacs" using
    "Ubuntu Software" if you installed Ubuntu).
 2. Install necessary packages.
