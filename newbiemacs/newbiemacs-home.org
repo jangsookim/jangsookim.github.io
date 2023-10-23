@@ -24,25 +24,20 @@ file:files/torus-screenshot.png
 
 * Installation
 ** macOS
-1. We first need to install [[https://brew.sh/][Homebrew]]. Enter the following in a terminal.
-  : /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-2. To use homebrew we need to add its path to the system. Enter the following in a terminal.
-   : echo 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.zshrc
-3. Install [[https://www.gnu.org/software/emacs/][Emacs]] by entering the following in a terminal.
-   : brew install --cask emacs
-4. Install [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][Git]]  by entering the following in a terminal.
+1. Install [[https://www.gnu.org/software/emacs/][Emacs]] version 28.2. Click [[https://emacsformacosx.com/emacs-builds/Emacs-28.2-universal.dmg][here]] to download an installation file.
+2. Install [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][Git]]  by entering the following in a terminal.
    : git --version
-5. Open a terminal and enter the following lines. (You can open a
+3. Open a terminal and enter the following lines. (You can open a
    terminal by pressing Command+Space and typing "terminal". You can
    just copy the whole thing and then paste it in your terminal.)
    : cd ~
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
    : cp ~/nbm-root/.emacs ~/.emacs
-6. Run Emacs. It will take several minutes to download necessary
+4. Run Emacs. It will take several minutes to download necessary
    packages. There may be some warnings but it's okay.
    When it's done, there will be a message at the bottom saying
    "For information about GNU Emacs and the GNU system, type C-h C-a."
-7. Close Emacs and run it again. The Newbiemacs main screen will be shown.
+5. Close Emacs and run it again. The Newbiemacs main screen will be shown.
 *** Additional steps for latex on macOS (optional)
 If you want to edit tex files in Newbiemacs, you need to do the following (only once).
 1. Install [[https://skim-app.sourceforge.io/][Skim]] and [[https://www.tug.org/mactex/][MacTeX]] (this is TeX Live for macOS).
@@ -50,7 +45,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 3. Go to the ~Sync~ menu and check the two check boxes.
 4. Select Emacs in the drop-down box for ~Preset~.
    - If this doesn't work try the following in skim option.
-   - Select "Preset: custom" and enter ~/opt/homebrew/bin/emacsclient~.
+   - Select Preset: custom and enter the full path in the command field, e.g. ~/opt/homebrew/bin/emacsclient~ or ~/Applications/Emacs.app/Contents/MacOS/bin-arm64-11/emacsclient~.
    - Arguments should the the same things for Emacs, i.e. ~--no-wait +%line "%file"~.
 
 ** Windows
