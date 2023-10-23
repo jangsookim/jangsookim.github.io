@@ -4785,6 +4785,7 @@ of inclusion and exclusion:
  & \qquad + (-1)^{n}|A_1 \cap \cdots \cap A_n|.
 \end{align*}
 
+
 \begin{exam}
   A \emph{derangement} is a permutation without fixed points. Let
   \( d_n \) be the number of derangements in \( \sym_n \). To compute
@@ -5096,17 +5097,79 @@ numbers of the first kind and second kind.
 \end{proof}
 
 
+\chapter{Determinants of moments}
+
+We have learned that \( \mu_n \) can be written using \( b_n \) and
+\( \lambda_n \). Since a monic OPS \( \{ P_n(x) \}_{n\ge 0} \) (and
+hence the recurrence coefficients \( b_n \) and \( \lambda_n \) as
+well) is uniquely determined by \( \mu_n \), there must be a way to
+express \( b_n \) and \( \lambda_n \) using \( \mu_n \). In this
+chapter we find such an expression using nonintersecting lattice paths
+and the Lindstr\"om--Gessel--Viennot lemma.
+
+\section{Computing the 3-term recurrence coefficients}
+
+Let us first see how one can compute \( \mu_n \) using \( b_n \) and
+\( \lambda_n \) for small \( n \). Recall
+\[
+  \mu_n = \sum_{\pi\in \Motz_n} \wt(\pi).
+\]
+Thus, the first few moments are
+\begin{align*}
+  \mu_1 &= b_0,\\
+  \mu_2 &= b_0^2 + \lambda_1,\\
+  \mu_3 &= b_0^3 + 2b_0\lambda_1 + b_1\lambda_1.
+\end{align*}
+Then we can solve for \( b_n \) and \( \lambda_n \):
+\begin{align*}
+  b_0  &= \mu_1, \\
+  \lambda_1 &=  \mu_2 - b_0^2 = \mu_2 - \mu_1^2, \\
+  b_1 &=  (\mu_3 -b_0^3 + 2b_0\lambda_1)/\lambda_1
+        = (\mu_3 -\mu_1^3 + 2\mu_1(\mu_2-\mu_1^2))/(\mu_2 - \mu_1^2),
+\end{align*}
+and so on. Although, the formula gets very complicated, we can
+convince ourselves that this always gives a formula for \( b_n \) and
+\( \lambda_n \). We prove this rigorously as follows.
+
+Suppose that we have computed \( b_0,\dots,b_{n-1} \) and
+\( \lambda_1,\dots,\lambda_n \). Then in the sum
+\[
+  \mu_{2n+1} = \sum_{\pi\in \Motz_{2n+1}} \wt(\pi),
+\]
+\( b_n \) appears only once as \( b^n \lambda_n \lambda_{n-1} \cdots \lambda_1 \)
+for the Motzkin path \( U^n H D_n \). Thus
+\begin{equation}\label{eq:38}
+  b^n \lambda_n \lambda_{n-1} \cdots \lambda_1
+  = \mu_{2n+1} - \sum_{\pi\in \Motz_{2n+1}, \pi\ne U^n H D_n} \wt(\pi).
+\end{equation}
+Since the sum on the right-hand side of \eqref{eq:38} has only
+\( b_0,\dots,b_{n-1} \) and \( \lambda_1,\dots,\lambda_n \), we can
+express it using \( \mu_k \)'s. Then dividing both sides of
+\eqref{eq:38} by \( \lambda_1 \cdots \lambda_n \), which can also be
+written using \( \mu_k \)'s, we obtain a formula for \( b_n \) in
+terms of \( \mu_k \)'s.
+
+Similarly, if we have computed \( b_0,\dots,b_{n} \) and
+\( \lambda_1,\dots,\lambda_n \), then we can find a formula for
+\( \lambda_{n+1} \) in terms of \( \mu_k \)'s using
+\[
+  \mu_{2n+2} = \sum_{\pi\in \Motz_{2n+2}} \wt(\pi),
+\]
+because \( \lambda_{n+1} \) appears only once for the path
+\( U^{n+1}D^{n+1} \).
+
+The above algorithm shows that it is possible to express \( b_n \) and
+\( \lambda_n \) using \( \mu_n \). To find an explicit formula, we
+need to develop some interesting theory of lattice paths.
 
 
-% \chapter{Determinants of moments}
 
-% \section{Computing the 3-term recurrence coefficients}
 
-% \section{The Lindstr\"om--Gessel--Viennot lemma}
+\section{The Lindstr\"om--Gessel--Viennot lemma}
 
-% \section{Hankel determinants of moments}
+\section{Hankel determinants of moments}
 
-% \section{The duality between Motzkin paths and Favard paths}
+\section{The duality between Motzkin paths and Favard paths}
 
 % \section{Inverse generating functions}
 
