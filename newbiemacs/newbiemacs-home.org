@@ -25,8 +25,7 @@ file:files/torus-screenshot.png
 * Installation
 ** macOS
 1. Install [[https://www.gnu.org/software/emacs/][Emacs]] version 28.2. Click [[https://emacsformacosx.com/emacs-builds/Emacs-28.2-universal.dmg][here]] to download an installation file.
-2. Install [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][Git]]  by entering the following in a terminal.
-   : git --version
+2. Install [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][Git]].  Click [[https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.2/Git-2.42.0.2-64-bit.exe][here]] to download an installation file.
 3. Open a terminal and enter the following lines. (You can open a
    terminal by pressing Command+Space and typing "terminal". You can
    just copy the whole thing and then paste it in your terminal.)
@@ -49,8 +48,8 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
    - Arguments should the the same things for Emacs, i.e. ~--no-wait +%line "%file"~.
 
 ** Windows
-1. Download Emacs and install it. [[http://ftp.jaist.ac.jp/pub/GNU/emacs/windows/emacs-28/][Click here]] and download "emacs-28.2-installer.exe".
-2. Install Git. [[https://git-scm.com/download/win][Click here]] (Download "Standalone Installer".)
+1. Install [[https://www.gnu.org/software/emacs/][Emacs]] version 28.2. Click [[https://ftp.gnu.org/gnu/emacs/windows/emacs-28/emacs-28.2-installer.exe][here]] to download an installation file.
+2. Install Git.  Click [[https://git-scm.com/download/win][here]] to download an installation file.
 3. Install [[https://strawberryperl.com/][Perl]].
 4. Open "Command Prompt" (not "terminal" or "PowerShell") and enter
    the following lines. (You can just copy the whole thing and then
