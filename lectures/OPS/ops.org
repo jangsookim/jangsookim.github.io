@@ -51,7 +51,7 @@ Orthogonal polynomials are classical objects arising from the study of continued
   7. [[https://arxiv.org/abs/0810.3232][Kasraoui, Stanton, Zeng. 2011. The combinatorics of Al-Salam–Chihara q-Laguerre polynomials]]
   8. [[https://aps.arxiv.org/abs/1112.0970][Ismail, Kasraoui, Zeng. 2013. Separation of variables and combinatorics of linearization coefficients of orthogonal polynomials]]
   9. [[https://www.combinatorics.org/ojs/index.php/eljc/article/view/v14i1r37/pdf][Kamioka. 2007. A combinatorial representation with Schröder paths of biorthogonality of Laurent biorthogonal polynomials]]
-  10. [[https://www.combinatorics.org/ojs/index.php/eljc/article/view/v15i1r76/pdf][Kamioka. 2008. A combinatorial derivation with Schro ̈der paths of a determinant representation of Laurent biorthogonal polynomials]]
+  10. [[https://www.combinatorics.org/ojs/index.php/eljc/article/view/v15i1r76/pdf][Kamioka. 2008. A combinatorial derivation with Schröder paths of a determinant representation of Laurent biorthogonal polynomials]]
   11. [[https://www.sciencedirect.com/science/article/pii/S019566988780046X][Ismail, Stanton, Viennot. 1987. The combinatorics of the q-Hermite polynomials and the Askey-Wilson integral]]
   12. [[https://www.combinatorics.org/ojs/index.php/eljc/article/view/v27i2p22/pdf][Hwang, Kim, Oh, Yu. 2020. On linearization coefficients of q-Laguerre polynomials]]
   13. [[https://arxiv.org/abs/2005.05895][Corteel, Nunge. 2020. Combinatorics of the 2-species exclusion processes, marked Laguerre histories, and partially signed permutations]]
@@ -61,6 +61,10 @@ Orthogonal polynomials are classical objects arising from the study of continued
   17. [[https://arxiv.org/abs/2201.11344][Jang, Kim, Kim, Song, Song. 2023. Negative moments of orthogonal polynomials]]
   18. [[https://www.sciencedirect.com/science/article/pii/0097316578900663][Foata. 1978. A combinatorial proof of the Mehler formula]]
   19. [[https://arxiv.org/abs/2310.09906][Ito. Generalized Schroder paths arising from a combinatorial interpretation of generalized Laurent bi-orthogonal polynomials]]
+  20. [[https://arxiv.org/abs/0912.1279][Josuat-Verges. 2011. Combinatorics of the three-parameter PASEP partition function]]
+  21. [[https://arxiv.org/abs/0811.0524][Josuat-Verges. 2011. Rook placements in Young diagrams and permutation enumeration]]
+  22. [[https://arxiv.org/abs/1008.3093][Josuat-Verges, Rubey. 2011. Crossings, Motzkin paths and moments]]
+  23. [[https://arxiv.org/abs/0907.1004][Josuat-Verges. 2010. A q-enumeration of alternating permutations]]
 
 * Schedule and links to lecture videos
 1. [2023-08-29 Tue]: Introduction, [[file:ops-files/OPS1.pdf][lecture notes]], [[https://youtu.be/JgdcBmWMwYc][video]]
