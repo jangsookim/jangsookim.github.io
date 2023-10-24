@@ -37,6 +37,30 @@ Orthogonal polynomials are classical objects arising from the study of continued
 - [[file:homework.pdf][Homework problems]] (This file will be updated regularly.)
 - [[file:homework(solutions).pdf][Homework solutions with grading criteria]] (This file will be updated regularly.)
 - Please email your homework as a single pdf file to the instructor by the due date.
+* Student presentation
+- Dates: Nov 28, Nov 30, Dec 5, Dec 7
+- Each student will give a presentation for 20 min.
+- You can use a board or a beamer.
+- Possible papers to present:
+  1. [[https://www.jstor.org/stable/2161363][de Medicis, Stanton. 1996. Combinatorial orthogonal expansions]]
+  2. [[https://www.sciencedirect.com/science/article/pii/S0195669896900943][Kim. 1997. On Combinatorics of Al-Salam Carlitz Polynomials]]
+  3. [[https://arxiv.org/abs/2009.14475][Kim, Stanton. Combinatorics of orthogonal polynomials of type R1]]
+  4. [[https://www.emis.de/journals/SLC/wpapers/s54kimstzeng.html][Kim, Stanton, Zeng. 2006. The combinatorics of the Al-Salam-Chihara q-Charlier polynomials]]
+  5. [[https://arxiv.org/abs/1207.3446][Kim, Stanton. 2014. Moments of Askey–Wilson polynomials]]
+  6. [[https://arxiv.org/abs/2002.01518][Donghyun Kim. Combinatorial formulas for the coefficients of the Al-Salam-Chihara polynomials]]
+  7. [[https://arxiv.org/abs/0810.3232][Kasraoui, Stanton, Zeng. 2011. The combinatorics of Al-Salam–Chihara q-Laguerre polynomials]]
+  8. [[https://aps.arxiv.org/abs/1112.0970][Ismail, Kasraoui, Zeng. 2013. Separation of variables and combinatorics of linearization coefficients of orthogonal polynomials]]
+  9. [[https://www.combinatorics.org/ojs/index.php/eljc/article/view/v14i1r37/pdf][Kamioka. 2007. A combinatorial representation with Schröder paths of biorthogonality of Laurent biorthogonal polynomials]]
+  10. [[https://www.combinatorics.org/ojs/index.php/eljc/article/view/v15i1r76/pdf][Kamioka. 2008. A combinatorial derivation with Schro ̈der paths of a determinant representation of Laurent biorthogonal polynomials]]
+  11. [[https://www.sciencedirect.com/science/article/pii/S019566988780046X][Ismail, Stanton, Viennot. 1987. The combinatorics of the q-Hermite polynomials and the Askey-Wilson integral]]
+  12. [[https://www.combinatorics.org/ojs/index.php/eljc/article/view/v27i2p22/pdf][Hwang, Kim, Oh, Yu. 2020. On linearization coefficients of q-Laguerre polynomials]]
+  13. [[https://arxiv.org/abs/2005.05895][Corteel, Nunge. 2020. Combinatorics of the 2-species exclusion processes, marked Laguerre histories, and partially signed permutations]]
+  14. [[https://arxiv.org/abs/1007.5174][Corteel, Stanley, Stanton, Williams. 2012. Formulae for Askey-Wilson moments and enumeration of staircase tableaux]]
+  15. [[https://arxiv.org/abs/math/0609188][Corteel, Williams. 2007. A Markov chain on permutations which projects to the PASEP]]
+  16. [[https://arxiv.org/abs/0910.1858][Corteel, Williams. 2011. Tableaux combinatorics for the asymmetric exclusion process and Askey-Wilson polynomials]]
+  17. [[https://arxiv.org/abs/2201.11344][Jang, Kim, Kim, Song, Song. 2023. Negative moments of orthogonal polynomials]]
+  18. [[https://www.sciencedirect.com/science/article/pii/0097316578900663][Foata. 1978. A combinatorial proof of the Mehler formula]]
+  19. [[https://arxiv.org/abs/2310.09906][Ito. Generalized Schroder paths arising from a combinatorial interpretation of generalized Laurent bi-orthogonal polynomials]]
 
 * Schedule and links to lecture videos
 1. [2023-08-29 Tue]: Introduction, [[file:ops-files/OPS1.pdf][lecture notes]], [[https://youtu.be/JgdcBmWMwYc][video]]
