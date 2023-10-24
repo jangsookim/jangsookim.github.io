@@ -77,3 +77,4 @@ Orthogonal polynomials are classical objects arising from the study of continued
 12. [2023-10-12 Thu]: Moments of Charlier and Laguerre polynomials, [[file:ops-files/OPS12.pdf][lecture notes]], [[https://youtu.be/b3Bi820QbS8][video]]
 13. [2023-10-17 Tue]: Duality between mixed moments and coefficients, [[file:ops-files/OPS13.pdf][lecture notes]], [[https://youtu.be/yxP9x94Gy6w][video]]
 14. [2023-10-19 Thu]: Special Cases: \( e_k \), \( h_k \), and binomial coefficients, [[file:ops-files/OPS14.pdf][lecture notes]], [[https://youtu.be/NviaBKeya0M][video]]
+15. [2023-10-24 Tue]: Special Cases: q-binomial coefficients and Stirling numbers, [[file:ops-files/OPS15.pdf][lecture notes]], [[https://youtu.be/AbUi80fBkiE][video]]
