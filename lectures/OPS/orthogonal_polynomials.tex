@@ -5192,12 +5192,11 @@ start with basic definitions on paths in a directed graph.
 
 \begin{defn}\label{def:5}
   A \emph{graph} is a pair \( G= (V,E) \) of two sets \( V \) and
-  \( E \) such that \( E\subseteq V\times V \) and
-  \( \emptyset\not\in E \). Each element \( v\in V \) is called a
-  \emph{vertex} and each element \( (u,v)\in E \) is called an
-  \emph{edge}. We say that \( G \) is \emph{undirected} if \( (u,v) \)
-  is identified with \( (v,u) \). Otherwise, \( G \) is said to be
-  \emph{directed}.
+  \( E \) such that \( E\subseteq V\times V \). Each element
+  \( v\in V \) is called a \emph{vertex} and each element
+  \( (u,v)\in E \) is called an \emph{edge}. We say that \( G \) is
+  \emph{undirected} if \( (u,v) \) is identified with \( (v,u) \).
+  Otherwise, \( G \) is said to be \emph{directed}.
 
   A \emph{path} from \( u \) to \( v \) is a sequence of vertices
   \( (v_0,v_1,\dots,v_n) \) such that \( v_0=u \), \( v_n=v \), and
@@ -5248,7 +5247,7 @@ We are now ready to state the Lindstr\"om--Gessel--Viennot lemma.
 \]
 Then we have
 \[
-  \det M = \sum_{\vec p \in \NI(\vec A \to \vec B)} \sgn(\vec p) \wt(\vec p).
+  \det M = \sum_{\vec p \in \NI(\vec A \to \vec B)} \sgn(\vec p) w(\vec p).
 \]
 \end{thm}
 
@@ -5510,7 +5509,7 @@ Suppose that  every nonintersecting \( n \)-path
 satisfies \( p_i \in P(A_i\to B_i) \) for all \( 1\le i\le n \).
 Then 
 \[
-  \det M = \sum_{\vec p \in \NI(\vec A \to \vec B)} \wt(\vec p).
+  \det M = \sum_{\vec p \in \NI(\vec A \to \vec B)} w(\vec p).
 \]
 In particular, if \( w(e) = 1 \) for all \( e\in E \), then the number
 of nonintersecting \( n \)-paths is
@@ -5628,8 +5627,8 @@ vertices.
   Then the Lindstr\"om--Gessel--Viennot lemma says
   \begin{align*}
     \det M
-    &= \sum_{\vec p \in \NI(\vec A \to \vec B)} \sgn(\vec p) \wt(\vec p)
-    = \sum_{\vec p \in P(\vec A \to \vec B)} \sgn(\vec p) \wt(\vec p)\\
+    &= \sum_{\vec p \in \NI(\vec A \to \vec B)} \sgn(\vec p) w(\vec p)
+    = \sum_{\vec p \in P(\vec A \to \vec B)} \sgn(\vec p) w(\vec p)\\
     &= \sum_{\sigma\in\sym_n} \sgn(\sigma) \prod_{i=1}^{n} w(A_i,B_{\sigma(i)})
     = \sum_{\sigma\in\sym_n} \sgn(\sigma) \prod_{i=1}^{n} M_{i,j},
   \end{align*}
@@ -5700,7 +5699,6 @@ form \( p_i = (A_i, B_{I_{\tau(i)}}, C_{\sigma(i)}) \) for some
 \( \sgn(\vec p) = \sgn(\sigma) \) and we can write
 \( \sigma=\rho\tau \) for some \( \rho\in \sym_n \), in fact,
 \( \rho = \sigma\tau^{-1} \).
-
 Therefore
 \begin{align*}
   \det L
