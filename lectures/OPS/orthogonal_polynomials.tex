@@ -5181,42 +5181,81 @@ The above algorithm shows that it is possible to express \( b_n \) and
 need to develop some interesting theory of lattice paths.
 
 
-
-
 \section{The Lindstr\"om--Gessel--Viennot lemma}
 
 The Lindstr\"om--Gessel--Viennot lemma \cite{Lindstrom,GesselViennot}
 is a very useful tool in combinatorics. This lemma is listed in the
 book called ``Proofs from The Book'' \cite[Chapter~32]{Aigner2018},
-which tries to collect the most beautiful proofs in mathematics.
+which tries to collect the most beautiful proofs in mathematics. We
+start with basic definitions on paths in a directed graph.
 
-Let \( G \) be a finite directed graph with no directed cycles. Let
-\( w \) be a weight function defined on the edges of \( G \). Fix
-vertices \( A_1,\dots,A_n \) and \( B_1,\dots,B_n \), where
-\( A_i\ne A_j \) and \( B_i\ne B_j \) for all \( i\ne j \) (but it may
-be possible that \( A_i=B_j \)).
-Define the matrix
-\( M = (M_{i,j})_{i,j=1}^n \) by
-\[
-  M_{i,j} = \sum_{p:A_i\to B_j} w(p),
-\]
-where the sum is over all paths \( p \) from \( A_i \) to \( B_j \) in
-the directed graph \( G \) and \( w(p) \) is the product of \( w(e) \)
-for all edges \( e \) in \( p \).
 
-\begin{thm}[the Lindstr\"om--Gessel--Viennot lemma]\label{thm:7}
-  We have
+\begin{defn}\label{def:5}
+  A \emph{graph} is a pair \( G= (V,E) \) of two sets \( V \) and
+  \( E \) such that \( E\subseteq V\times V \) and
+  \( \emptyset\not\in E \). Each element \( v\in V \) is called a
+  \emph{vertex} and each element \( (u,v)\in E \) is called an
+  \emph{edge}. We say that \( G \) is \emph{undirected} if \( (u,v) \)
+  is identified with \( (v,u) \). Otherwise, \( G \) is said to be
+  \emph{directed}.
+
+  A \emph{path} from \( u \) to \( v \) is a sequence of vertices
+  \( (v_0,v_1,\dots,v_n) \) such that \( v_0=u \), \( v_n=v \), and
+  \( (v_i,v_{i+1})\in E \) for all \( 0\le i\le n-1 \). A \emph{cycle}
+  is a path from a vertex to itself. For two vertices \( u \) and
+  \( v \), we denote by \( P(u\to v) \) the set of paths from \( u \)
+  to \( v \). If there is no cycle, \( G \) is said to be
+  \emph{acyclic}. 
+
+  An \emph{edge weight} of \( G \) is a function \( w:E \to K \), for
+  some commutative ring \( K \). The \emph{weight} of a path \( p \)
+  is defined to be the product of \( w(e) \) for every edge \( e \) in
+  \( p \).
+\end{defn}
+
+
+We consider families of paths. For brevity, we define an
+\emph{\( n \)-path} to be just an \( n \)-tuple
+\( \vec p = (p_1,\dots,p_n) \) of paths. We say that two paths \( p \)
+and \( p' \) are \emph{nonintersecting} if they do not have a common
+vertex. We also say that an \( n \)-path
+\( \vec p = (p_1,\dots,p_n) \) is \emph{nonintersecting} if \( p_i \)
+and \( p_j \) are nonintersecting for all \( i\ne j \).
+
+\begin{defn}\label{def:4}
+  Let \( G \) be a directed graph with edge weight \( w \). Let
+  \( \vec{A} = (A_1,\dots,A_n) \) and \( \vec B = (B_1,\dots,B_n) \)
+  be sequences of vertices of \( G \). We denote by
+  \( P(\vec A\to \vec B) \) the set of \( n \)-paths
+  \( \vec p = (p_1,\dots,p_n) \) such that
+  \( p_i\in P(A_i\to B_{\sigma(i)}) \), \( 1\le i\le n \), for some
+  \( \sigma\in \sym_n \). We define
+  \( w(\vec p) = w(p_1) \cdots w(p_n) \) and
+  \( \sgn(\vec p)= \sgn(\sigma) \). Finally, we define
+  \( \NI(\vec A\to \vec B) \) to be the set of all nonintersecting
+  \( n \)-paths in \( P(\vec A\to \vec B) \).
+\end{defn}
+
+We are now ready to state the Lindstr\"om--Gessel--Viennot lemma.
+
+\begin{thm}[The Lindstr\"om--Gessel--Viennot lemma]\label{thm:LGV}
+  Let \( G \) be a directed graph with edge weight \( w \). Fix vertex
+  sequences \( \vec A = (A_1,\dots,A_n) \) and
+  \( \vec B = (B_1,\dots,B_n) \) and define the matrix
+  \( M = (M_{i,j})_{i,j=1}^n \) by
 \[
-  \det M = \sum_{(p_1,\dots,p_n)} \sgn(\sigma) \wt(p_1) \cdots \wt(p_n),
+  M_{i,j} = \sum_{p\in P(A_i\to B_j)} w(p).
 \]
-where the sum is over all nonintersecting families
-\( (p_1,\dots,p_n) \) of paths such that
-\( p_i:A_i \to B_{\sigma(i)} \) for some permutation
-\( \sigma\in \sym_n \).
+Then we have
+\[
+  \det M = \sum_{\vec p \in \NI(\vec A \to \vec B)} \sgn(\vec p) \wt(\vec p).
+\]
 \end{thm}
 
+Before proving this theorem let us consider an example.
+
 \begin{exam}
-  Let \( G \) be the graph whose vertex set \( V \)
+  Let \( G \) be the directed graph whose vertex set \( V \)
   and (directed) edge set \( E \) are given by
   \begin{align*}
     V &= \{(i,j): 0\le i,j\le 2\},\\
@@ -5224,12 +5263,13 @@ where the sum is over all nonintersecting families
         \cup \{(i,j)\to (i,j+1): 0\le i\le 2, 0\le j\le 1\}.
   \end{align*}
   Define the weight of every edge to be \( 1 \). Let
+  \( \vec A = (A_1,A_2) \) and \( \vec B = (B_1,B_2) \), where
   \( A_1 = (0,0) \), \( A_2 = (1,0) \), \( B_1 = (1,2) \), and
   \( B_2 = (2,2) \). Then
   \[
   \det  M =
     \det \begin{pmatrix}
-\binom{3}{1} & \binom{4}{2}\\
+\binom{3}{1} & \binom{4}{2}\\[4pt]
 \binom{2}{0} & \binom{3}{1}
 \end{pmatrix}
 = \det \begin{pmatrix}
@@ -5237,9 +5277,9 @@ where the sum is over all nonintersecting families
 1 & 3
 \end{pmatrix} = 3.
   \]
-  On the other hand, there are exactly \( 3 \) families of
-  nonintersecting paths from \( A_1,A_2 \) to \( B_1,B_2 \) as shown
-  in \Cref{fig:10}.
+  On the other hand, there are exactly \( 3 \) nonintersecting
+  \( 2 \)-paths from \( \vec A \) to \( \vec B \) as shown in
+  \Cref{fig:10}.
 \end{exam}
 
 \begin{figure}
@@ -5254,41 +5294,428 @@ where the sum is over all nonintersecting families
 \node [below left] at (1,0) {\( A_2 \)};
 \node [above right] at (1,2) {\( B_1 \)};
 \node [above right] at (2,2) {\( B_2 \)};
-\draw [line width=1pt] (0,0) -- (0,2) -- (1,2);
-\draw [line width=1pt] (1,0) -- (1,1) -- (2,1) -- (2,2);
+\draw [line width=1.5pt] (0,0) -- (0,2) -- (1,2);
+\draw [line width=1.5pt] (1,0) -- (1,1) -- (2,1) -- (2,2);
 \end{tikzpicture} \qquad 
 \begin{tikzpicture}
 \draw[help lines] (0,0) grid (2,2);
-\node at (0,0) [circle,fill,inner sep=1pt]{};
-\node at (1,0) [circle,fill,inner sep=1pt]{};
-\node at (1,2) [circle,fill,inner sep=1pt]{};
-\node at (2,2) [circle,fill,inner sep=1pt]{};
+\node at (0,0) [circle,fill,inner sep=1.5pt]{};
+\node at (1,0) [circle,fill,inner sep=1.5pt]{};
+\node at (1,2) [circle,fill,inner sep=1.5pt]{};
+\node at (2,2) [circle,fill,inner sep=1.5pt]{};
 \node [below left] at (0,0) {\( A_1 \)};
 \node [below left] at (1,0) {\( A_2 \)};
 \node [above right] at (1,2) {\( B_1 \)};
 \node [above right] at (2,2) {\( B_2 \)};
-\draw [line width=1pt] (0,0) -- (0,2) -- (1,2);
-\draw [line width=1pt] (1,0) -- (2,0) -- (2,2);
+\draw [line width=1.5pt] (0,0) -- (0,2) -- (1,2);
+\draw [line width=1.5pt] (1,0) -- (2,0) -- (2,2);
 \end{tikzpicture} \qquad 
 \begin{tikzpicture}
 \draw[help lines] (0,0) grid (2,2);
-\node at (0,0) [circle,fill,inner sep=1pt]{};
-\node at (1,0) [circle,fill,inner sep=1pt]{};
-\node at (1,2) [circle,fill,inner sep=1pt]{};
-\node at (2,2) [circle,fill,inner sep=1pt]{};
+\node at (0,0) [circle,fill,inner sep=1.5pt]{};
+\node at (1,0) [circle,fill,inner sep=1.5pt]{};
+\node at (1,2) [circle,fill,inner sep=1.5pt]{};
+\node at (2,2) [circle,fill,inner sep=1.5pt]{};
 \node [below left] at (0,0) {\( A_1 \)};
 \node [below left] at (1,0) {\( A_2 \)};
 \node [above right] at (1,2) {\( B_1 \)};
 \node [above right] at (2,2) {\( B_2 \)};
-\draw [line width=1pt] (0,0) -- (0,1) -- (1,1) -- (1,2);
-\draw [line width=1pt] (1,0) -- (2,0) -- (2,2);
+\draw [line width=1.5pt] (0,0) -- (0,1) -- (1,1) -- (1,2);
+\draw [line width=1.5pt] (1,0) -- (2,0) -- (2,2);
 \end{tikzpicture}
-\caption{All families of nonintersecting paths
-from \( A_1,A_2 \) to \( B_1,B_2 \).}
+\caption{All nonintersecting \( 3 \)-paths from \( A_1,A_2 \) to
+  \( B_1,B_2 \).}
   \label{fig:10}
 \end{figure}
 
 
+Note that in the above example, we can compute the number of
+nonintersecting \( 2 \)-paths \( \vec p\in \NI(\vec A\to \vec B) \) as
+follows. First, observe that if
+\( \vec p = (p_1,p_2)\in \NI(\vec A\to \vec B) \), then
+\( p_1 \in P(A_1 \to B_1) \) and \( p_2 \in P(A_2 \to B_2) \). Thus
+\( \NI(\vec A\to \vec B) \) is contained in the set
+\( P(A_1 \to B_1) \times P(A_2 \to B_2) \) whose cardinality is
+\( \binom{3}{1}\binom{3}{1} \). So, if we subtract the number of
+intersecting \( 2 \)-paths
+\( (p_1,p_2)\in P(A_1 \to B_1) \times P(A_2 \to B_2) \), we would get
+the cardinality of \( \NI(\vec A\to \vec B) \).
+
+Suppose that \( (p_1,p_2)\in P(A_1 \to B_1) \times P(A_2 \to B_2) \)
+is intersecting. Then we can find the first intersection point \( u \)
+of \( p_1 \) and \( p_2 \). Then we can write \( p_1 = p_1'p_1'' \)
+and \( p_2 = p_2'p_2'' \), where \( p_i' \) (resp.~\( p_i'' \)) is the
+part of \( p_i \) before \( u \) (resp.~after \( u \)). By exchanging
+the tails \( p_1'' \) and \( p_2'' \) we can construct a new
+\( 2 \)-path \( (q_1,q_2) \), that is, \( q_1 = p_1'p_2'' \) and
+\( q_2 = p_2'p_1'' \), see \Cref{fig:11}.
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+\draw[help lines] (0,0) grid (2,2);
+\node at (0,0) [circle,fill,inner sep=1.5pt]{};
+\node at (1,0) [circle,fill,inner sep=1.5pt]{};
+\node at (1,2) [circle,fill,inner sep=1.5pt]{};
+\node at (2,2) [circle,fill,inner sep=1.5pt]{};
+\node [below left] at (0,0) {\( A_1 \)};
+\node [below left] at (1,0) {\( A_2 \)};
+\node [above right] at (1,2) {\( B_1 \)};
+\node [above right] at (2,2) {\( B_2 \)};
+\draw [line width=1.5pt,blue] (0,0) -- (0,1) -- (1,1) -- (1,2);
+\draw [line width=1.5pt,red] (1,0) -- (1,1) -- (2,1) -- (2,2);
+\end{tikzpicture} \qquad 
+\begin{tikzpicture}
+\draw[help lines] (0,0) grid (2,2);
+\node at (0,0) [circle,fill,inner sep=1.5pt]{};
+\node at (1,0) [circle,fill,inner sep=1.5pt]{};
+\node at (1,2) [circle,fill,inner sep=1.5pt]{};
+\node at (2,2) [circle,fill,inner sep=1.5pt]{};
+\node [below left] at (0,0) {\( A_1 \)};
+\node [below left] at (1,0) {\( A_2 \)};
+\node [above right] at (1,2) {\( B_1 \)};
+\node [above right] at (2,2) {\( B_2 \)};
+\draw [line width=1.5pt,blue] (0,0) -- (0,1) -- (2,1) -- (2,2);
+\draw [line width=1.5pt,red] (1,0) -- (1,2);
+\end{tikzpicture}
+\caption{An intersecting \( 2 \)-path \( (p_1,p_2) \) and the
+  corresponding \( 2 \)-path \( (q_1,q_2) \) obtained by exchanged the
+  tails.}
+\label{fig:11}
+\end{figure}
+
+Note that \( (q_1,q_2)\in P(A_1 \to B_2) \times P(A_2 \to B_1) \), and
+any such \( 2 \)-path is always intersecting and thus gives rise to an
+intersecting \( 2 \)-path
+\( (p_1,p_2)\in P(A_1 \to B_1) \times P(A_2 \to B_2) \) by the same
+process of exchanging the tails. Thus the number of intersecting
+\( 2 \)-paths \( (p_1,p_2)\in P(A_1 \to B_1) \times P(A_2 \to B_2) \)
+is equal to
+\[
+  |P(A_1 \to B_2) \times P(A_2 \to B_1)| = \binom{4}{2} \binom{2}{0}.
+\]
+
+We have just shown that
+\[
+  |\NI(\vec A\to \vec B)|  =
+  \binom{3}{1}\binom{3}{1} - \binom{4}{2} \binom{2}{0}
+=     \det \begin{pmatrix}
+\binom{3}{1} & \binom{4}{2}\\[4pt]
+\binom{2}{0} & \binom{3}{1}
+           \end{pmatrix}.
+\]
+This idea of canceling intersecting \( 2 \)-paths can be extended to
+prove \Cref{thm:LGV}.
+
+\begin{proof}[Proof of \Cref{thm:LGV}]
+  By definition,
+\[
+  \det M = \sum_{\sigma\in \sym_n} \sgn(\sigma) \prod_{i=1}^{n} M_{i,\sigma(i)}
+  = \sum_{\sigma\in \sym_n} \sgn(\sigma) \sum_{p\in P(A_i\to B_{\sigma(i)})} w(p)
+  = \sum_{\vec p \in P(\vec A\to \vec B)} \sgn(\vec p) w(\vec p).
+\]
+Thus it suffices to find a sign-reversing and weight-preserving
+involution \( \phi \) on \( P(\vec A\to \vec B) \) with fixed point
+set \( \NI(\vec A\to \vec B) \).
+
+Consider an \( n \)-path
+\( \vec p = (p_1,\dots,p_n)\in P(\vec A\to \vec B) \) with
+\( p_i\in P(A_i\to B_{\sigma(i)}) \) for some \( \sigma\in \sym_n \).
+If \( \vec p \) is nonintersecting, then define
+\( \phi(\vec p) = \vec p \). Suppose now that \( \vec p \) is
+intersecting. Then we can find the lexicographically smallest pair
+\( (r,s) \) such that \( p_r \) and \( p_s \) are intersecting. We can
+then find the first intersection point, say \( u \), of \( p_r \) and
+\( p_s \). Let \( p'_r \) and \( p'_s \) to be the paths obtained from
+\( p_r \) and \( p_s \) by exchanging their tails after \( u \).
+We define \( \phi(\vec p) = \vec q \), where
+\[
+  \vec q = (q_1,\dots,q_n) = (p_1,\dots, p_{r-1}, p'_r, p_{r+1},\dots,p_{s-1}, p'_s,
+  p_{s+1},\dots,p_n).
+\]
+See \Cref{fig:12}.
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.8]
+\draw[help lines] (0,0) grid (6,5);
+\draw[red,line width = 1.5pt] (2,0) -- ++(0,1) -- ++ (1,0)-- ++ (0,1)-- ++ (1,0) -- ++ (0,2) -- ++ (1,0);
+\draw[blue,line width = 1.5pt] (1,1) -- ++(0,1) -- ++ (2,0) -- ++ (0,2) -- ++ (1,0)-- ++ (0,1);
+\draw[gray,line width = 1.5pt] (0,2) -- ++(0,1) -- ++ (6,0);
+\node at (2,0) [circle,fill,inner sep=2pt]{};
+\node at (1,1) [circle,fill,inner sep=2pt]{};
+\node at (0,2) [circle,fill,inner sep=2pt]{};
+\node at (6,3) [circle,fill,inner sep=2pt]{};
+\node at (5,4) [circle,fill,inner sep=2pt]{};
+\node at (4,5) [circle,fill,inner sep=2pt]{};
+\node at (3,2) [cyan,circle,fill,inner sep=2pt]{};
+\node [above right] at (3,2) {\( u \)};
+\node [below left] at (2,0) {\( A_1 \)};
+\node [below left] at (1,1) {\( A_2 \)};
+\node [below left] at (0,2) {\( A_3 \)};
+\node [above right] at (6,3) {\( B_1 \)};
+\node [above right] at (5,4) {\( B_2 \)};
+\node [above right] at (4,5) {\( B_3 \)};
+\end{tikzpicture} \qquad 
+\begin{tikzpicture}[scale=0.8]
+\draw[help lines] (0,0) grid (6,5);
+\draw[red,line width = 1.5pt] (2,0) -- ++(0,1) -- ++ (1,0)-- ++ (0,1) -- ++ (0,2) -- ++ (1,0)-- ++ (0,1);
+\draw[blue,line width = 1.5pt] (1,1) -- ++(0,1) -- ++ (2,0)-- ++ (1,0) -- ++ (0,2) -- ++ (1,0);
+\draw[gray,line width = 1.5pt] (0,2) -- ++(0,1) -- ++ (6,0);
+\node at (2,0) [circle,fill,inner sep=2pt]{};
+\node at (1,1) [circle,fill,inner sep=2pt]{};
+\node at (0,2) [circle,fill,inner sep=2pt]{};
+\node at (6,3) [circle,fill,inner sep=2pt]{};
+\node at (5,4) [circle,fill,inner sep=2pt]{};
+\node at (4,5) [circle,fill,inner sep=2pt]{};
+\node at (3,2) [cyan,circle,fill,inner sep=2pt]{};
+\node [above right] at (3,2) {\( u \)};
+\node [below left] at (2,0) {\( A_1 \)};
+\node [below left] at (1,1) {\( A_2 \)};
+\node [below left] at (0,2) {\( A_3 \)};
+\node [above right] at (6,3) {\( B_1 \)};
+\node [above right] at (5,4) {\( B_2 \)};
+\node [above right] at (4,5) {\( B_3 \)};
+\end{tikzpicture}
+\caption{The involution \( \phi \) exchanges the tails of \( p_1 \)
+  and \( p_2 \) after their first intersection point \( u \).}
+  \label{fig:12}
+\end{figure}
+
+Since \( \vec p \) and \( \vec q \) have the same set of edges (with
+the same multiplicities), we have \( w(\vec p) = w(\vec q) \). Since
+\(p_i\in P(A_i\to B_{\sigma(i)}) \), we have
+\(q_i\in P(A_i\to B_{\sigma'(i)}) \), where \( \sigma' \) is the
+permutation obtained from \( \sigma = \sigma_1 \cdots \sigma_n \) by
+exchanging \( \sigma_i \) and \( \sigma_j \). In other words,
+\( \sigma'=\sigma (i,j) \), hence
+\[
+  \sgn(\vec p') = \sgn(\sigma') = \sgn(\sigma) = \sgn(\vec p).
+\]
+Moreover, by the construction of \( \phi \), it is clearly an
+involution. Thus, \( \phi \) is a sign-reversing and weight-preserving
+involution \( \phi \) on \( P(\vec A\to \vec B) \) with fixed point
+set \( \NI(\vec A\to \vec B) \), which completes the proof.
+\end{proof}
+
+\begin{cor}\label{cor:LGV}
+  Let \( G \) be a directed graph with edge weight \( w \). Fix vertex
+  sequences \( \vec A = (A_1,\dots,A_n) \) and
+  \( \vec B = (B_1,\dots,B_n) \) and define the matrix
+  \( M = (M_{i,j})_{i,j=1}^n \) by
+\[
+  M_{i,j} = \sum_{p\in P(A_i\to B_j)} w(p).
+\]
+Suppose that  every nonintersecting \( n \)-path 
+\( \vec p = (p_1,\dots,p_n)\in \NI(\vec A \to \vec B) \)
+satisfies \( p_i \in P(A_i\to B_i) \) for all \( 1\le i\le n \).
+Then 
+\[
+  \det M = \sum_{\vec p \in \NI(\vec A \to \vec B)} \wt(\vec p).
+\]
+In particular, if \( w(e) = 1 \) for all \( e\in E \), then the number
+of nonintersecting \( n \)-paths is
+\[
+  |\NI(\vec A \to \vec B)| = \det M.
+\]
+\end{cor}
+
+\begin{exam}
+  The graph in \Cref{fig:12} and the vertices \( (A_1,A_2,A_3) \)
+  and \( (B_1,B_2,B_3) \) satisfy the conditions in \Cref{cor:LGV}.
+  Thus The number of nonintersecting \( 3 \)-paths from
+  \( (A_1,A_2,A_3) \) and \( (B_1,B_2,B_3) \) is
+  \[
+    \det
+    \begin{pmatrix}
+\binom{7}{4} & \binom{7}{3} & \binom{7}{2}\\[4pt]
+\binom{7}{5} & \binom{7}{4} & \binom{7}{3}\\[4pt]
+\binom{7}{6} & \binom{7}{5} & \binom{7}{4}
+\end{pmatrix} = 4116.
+  \]
+\end{exam}
+
+\begin{exam}
+  Not every directed graph and vertex sequences satisfy the conditions
+  in \Cref{cor:LGV}. See~\Cref{fig:13}.
+  In this case,
+  \[
+   \det M =  \det
+    \begin{pmatrix}
+\binom{4}{2} & \binom{6}{3}\\[4pt]
+\binom{2}{1} & \binom{4}{2}
+\end{pmatrix} = -4.
+  \]
+  Note that the number of nonintersecting \( 2 \)-paths
+  \( (p_1,p_2) \) with \( p_i\in P(A_i\to B_{\sigma(i)}) \) is \( 2 \)
+  if \( \sigma = 12 \) and \( 6 \) if \( \sigma = 21 \).
+  This is in agreement of the Lindstr\"om--Gessel--Viennot lemma:
+  \[
+    \sgn(12) \cdot 2 + \sgn(21) \cdot 6 = 2-6 = -4.
+  \]
+\end{exam}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.8]
+\draw[help lines] (0,0) grid (3,3);
+\draw[red,line width = 1.5pt] (1,1) -- ++(2,0) -- ++ (0,2);
+\draw[blue,line width = 1.5pt] (0,0) -- ++(0,2) -- ++ (2,0);
+\node at (0,0) [circle,fill,inner sep=2pt]{};
+\node at (1,1) [circle,fill,inner sep=2pt]{};
+\node at (2,2) [circle,fill,inner sep=2pt]{};
+\node at (3,3) [circle,fill,inner sep=2pt]{};
+\node [below left] at (0,0) {\( A_1 \)};
+\node [below left] at (1,1) {\( A_2 \)};
+\node [above right] at (2,2) {\( B_1 \)};
+\node [above right] at (3,3) {\( B_2 \)};
+\end{tikzpicture} \qquad 
+\begin{tikzpicture}[scale=0.8]
+\draw[help lines] (0,0) grid (3,3);
+\draw[red,line width = 1.5pt] (1,1) -- ++(1,0) -- ++ (0,1);
+\draw[blue,line width = 1.5pt] (0,0) -- ++(0,3) -- ++ (3,0);
+\node at (0,0) [circle,fill,inner sep=2pt]{};
+\node at (1,1) [circle,fill,inner sep=2pt]{};
+\node at (2,2) [circle,fill,inner sep=2pt]{};
+\node at (3,3) [circle,fill,inner sep=2pt]{};
+\node [below left] at (0,0) {\( A_1 \)};
+\node [below left] at (1,1) {\( A_2 \)};
+\node [above right] at (2,2) {\( B_1 \)};
+\node [above right] at (3,3) {\( B_2 \)};
+\end{tikzpicture}
+\caption{Two nonintersecting \( 2 \)-paths \( (p_1,p_2) \) and
+  \( (q_1,q_2) \) with different connecting patterns.}
+\label{fig:13}
+\end{figure}
+
+\begin{remark}
+What if \( A_i=A_j \) or \( B_i=B_j \) for some \( i\ne j \)? Then
+clearly there is no nonintersecting \( n \)-path from \( \vec A \)
+to \( \vec B \). Thus, \( \det M = 0 \). This can also be seen
+immediately from the definition of the matrix \( M \). For example,
+if \( A_i=A_j \) then row \( i \) and row \( j \) of \( M \) are
+identical so, \( \det M = 0 \).
+\end{remark}
+
+\begin{remark}
+What if \( A_i=B_j \) for some \( i\ne j \)? Then every
+nonintersecting \( n \)-path \( \vec p = (p_1,\dots,p_{n}) \) must
+satisfy \( p_i \in P(A_i \to B_j) \). To see this suppose
+\( p_i \in P(A_i \to B_k) \) for some \( k\ne j \). Then there is a
+path \( p_r\in P(A_r\to B_j) \) for some \( r\ne i \). Then \( p_i \)
+and \( p_r \) have a common vertex \( A_i = B_j \), a
+contradiction.
+
+Note also that if \( A_i=B_j \), then \( p_i \in P(A_i \to B_j) \)
+means that \( p_i=(A_i) \) is a path of length \( 0 \), i.e., a path
+with no edges. Hence, if \( \vec p = (p_1,\dots,p_{n}) \) is
+nonintersecting, then every path other than \( p_i \) does not touch
+the vertex \( A_i \). This can be used to find the number of paths
+in \( G \) from \( u \) to \( v \) avoiding a given list of
+vertices.
+\end{remark}
+
+\begin{exam}
+  Let \( G \) be a directed graph with vertices
+  \( A_1,\dots,A_n, B_1,\dots,B_n \) and edges \( (A_i,B_j) \) for
+  \( 1\le i,j\le n \) with edge weight \( w \). Let
+  \( \vec A = (A_1,\dots,A_n) \) and \( \vec B = (B_1,\dots,B_n) \).
+  Then each \( P(A_i\to B_j) \) has only one path \( (A_i,B_j) \) with
+  only one edge and every path \( \vec p \in P(\vec A \to \vec B) \)
+  is nonintersecting. Thus the matrix \( M=(M_{i,j}) \) has entries
+  \[
+    M_{i,j} = \sum_{p\in P(A_i\to B_j)} w(p) = w(A_i,B_j).
+  \]
+  Then the Lindstr\"om--Gessel--Viennot lemma says
+  \begin{align*}
+    \det M
+    &= \sum_{\vec p \in \NI(\vec A \to \vec B)} \sgn(\vec p) \wt(\vec p)
+    = \sum_{\vec p \in P(\vec A \to \vec B)} \sgn(\vec p) \wt(\vec p)\\
+    &= \sum_{\sigma\in\sym_n} \sgn(\sigma) \prod_{i=1}^{n} w(A_i,B_{\sigma(i)})
+    = \sum_{\sigma\in\sym_n} \sgn(\sigma) \prod_{i=1}^{n} M_{i,j},
+  \end{align*}
+  which is nothing but the definition of the determinant of a matrix.
+\end{exam}
+
+There is an interesting application of the
+Lindstr\"om--Gessel--Viennot lemma to a useful determinant identity
+called the Cauchy--Binet formula.
+
+\begin{defn}\label{def:6}
+  Let \( M = (M_{i,j})_{i\in [m], j\in [n]} \) be an \( m\times n \)
+  matrix. We denote by \( \binom{[m]}{k} \) the set of all subsets of
+  \( [m] \) with cardinality \( k \). For
+  \( I\subseteq \binom{[m]}{k} \) and \( J\subseteq \binom{[n]}{k} \),
+  the \( (I,J) \)-minor \( [M]_{I,J} \) of \( M \) 
+  is defined by
+  \[
+    [M]_{I,J} = \det (M_{i,j})_{i\in I,j\in J}.
+  \]
+\end{defn}
+
+\begin{thm}[The Cauchy--Binet formula]\label{thm:7}
+  Let \( M \) be an \( n\times \ell \) matrix let \( N \) be an
+  \( \ell\times n \) matrix.
+  Then
+  \[
+    \det (MN) = \sum_{I\in \binom{[\ell]}{n}} [M]_{[n],I} [N]_{I,[n]}.
+  \]
+\end{thm}
+
+\begin{proof}
+Let \( G \) be the directed graph with vertex set \( V \)
+and edge set \( E \) given by
+\begin{align*}
+  V &= \{A_1,\dots,A_n, B_1,\dots,B_\ell, C_1,\dots,C_n\}, \\
+  E &= \{(A_i,B_j): i\in [n], j\in [\ell]\} \cup
+      \{(B_i,C_j): i\in [\ell], j\in [n]\}.
+\end{align*}
+Define an edge weight \( w \) of \( G \) by
+\[
+  w(A_i,B_j) = M_{i,j}, \qquad w(B_i,C_j) = N_{i,j}.
+\]
+
+Consider the \( n\times n \) matrix \( L=(L_{i,j})_{i,j\in[n]} \)
+whose \( (i,j) \)-entry is
+\[
+  L_{i,j} = \sum_{p\in P(A_i\to B_j)} w(A_i,B_j).
+\]
+Since the above sum is equal to
+\[
+    \sum_{k=1}^{\ell} w(A_i,B_k) w(B_k,C_j)
+  = \sum_{k=1}^{\ell} M_{i,k} N_{k,j} = (MN)_{i,j},
+\]
+we have \( L = MN \). Letting \( \vec A = (A_1,\dots,A_n) \) and
+\( \vec C = (C_1,\dots,C_n) \), the Lindstr\"om--Gessel--Viennot lemma
+implies
+\[
+  \det L = \sum_{\vec p\in \NI(\vec A \to \vec C)} 
+  \sgn(\vec p) w(\vec p).
+\]
+
+Observe that every
+\( \vec p = (p_1,\dots,p_{n})\in \NI(\vec A \to \vec C) \) is of the
+form \( p_i = (A_i, B_{I_{\tau(i)}}, C_{\sigma(i)}) \) for some
+\( I = \{I_1 < \cdots <I_n\}\in \binom{[\ell]}{n} \) and
+\( \tau,\sigma\in \sym \). In this case
+\( \sgn(\vec p) = \sgn(\sigma) \) and we can write
+\( \sigma=\rho\tau \) for some \( \rho\in \sym_n \), in fact,
+\( \rho = \sigma\tau^{-1} \).
+
+Therefore
+\begin{align*}
+  \det L
+  &= \sum_{I\in \binom{[\ell]}{n}} \sum_{\tau\in\sym_n} \sum_{\sigma\in\sym_n}  \sgn(\sigma) \prod_{i=1}^{n} w(A_i,B_{I_{\tau(i)}}, C_{\sigma(i)})\\
+  &= \sum_{I\in \binom{[\ell]}{n}} \sum_{\tau\in\sym_n} \sum_{\rho\in\sym_n}  \sgn(\rho\tau) \prod_{i=1}^{n} w(A_i,B_{I_{\tau(i)}}, C_{\rho\tau(i)})\\
+  &= \sum_{I\in \binom{[\ell]}{n}} \sum_{\tau\in\sym_n} \sgn(\tau) \left( \prod_{i=1}^{n} w(A_i,B_{I_{\tau(i)}}) \right)
+    \sum_{\rho\in\sym_n}  \sgn(\rho) \left( \prod_{i=1}^{n} w(B_{I_{\tau(i)}}, C_{\rho\tau(i)}) \right)\\
+  &= \sum_{I\in \binom{[\ell]}{n}} \sum_{\tau\in\sym_n} \sgn(\tau) \left( \prod_{i=1}^{n} w(A_i,B_{I_{\tau(i)}}) \right)
+    \sum_{\rho\in\sym_n}  \sgn(\rho) \left( \prod_{i=1}^{n} w(B_{I_i}, C_{\rho(i)}) \right)\\
+  &= \sum_{I\in \binom{[\ell]}{n}} \sum_{\tau\in\sym_n} \sgn(\tau) \left( \prod_{i=1}^{n} M_{i,I_{\tau(i)}} \right)
+    \sum_{\rho\in\sym_n}  \sgn(\rho) \left( \prod_{i=1}^{n} N_{I_i,\rho(i)} \right)\\
+  &= \sum_{I\in \binom{[\ell]}{n}} [M]_{[n],I} [N]_{I,[n]}.
+\end{align*}
+Since \( L=MN \), the proof is completed.
+\end{proof}
 
 \section{Hankel determinants of moments}
 
