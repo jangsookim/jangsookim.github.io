@@ -5679,7 +5679,7 @@ Define an edge weight \( w \) of \( G \) by
 Consider the \( n\times n \) matrix \( L=(L_{i,j})_{i,j\in[n]} \)
 whose \( (i,j) \)-entry is
 \[
-  L_{i,j} = \sum_{p\in P(A_i\to B_j)} w(A_i,B_j).
+  L_{i,j} = \sum_{p\in P(A_i\to C_j)} w(p).
 \]
 Since the above sum is equal to
 \[
@@ -5758,7 +5758,7 @@ of length \( i+j \) with starting and ending heights \( 0 \). Let
 \( \vec A = (A_0,\dots,A_n) \) and \( \vec B = (B_0,\dots,B_n) \),
 where \( A_i = (-i,0) \) and \( B_i = (i,0) \). Then
 \[
-  \mu_{i+j} = \sum_{p\in \Motz(A_i\to B_i)} \wt(p).
+  \mu_{i+j} = \sum_{p\in \Motz(A_i\to B_j)} \wt(p).
 \]
 Therefore, by \Cref{thm:LGV},
 \[
@@ -5835,7 +5835,7 @@ See \Cref{fig:15}. This shows the following theorem.
 \draw node at (2,-.5) {\( A_1 \)};
 \draw node at (1,-.5) {\( A_2 \)};
 \draw node at (0,-.5) {\( A_3 \)};
-\draw node at (-1,-.5) {\( A_3 \)};
+\draw node at (-1,-.5) {\( A_4 \)};
 \draw node at (4,-.5) {\( B_1 \)};
 \draw node at (5,-.5) {\( B_2 \)};
 \draw node at (6,-.5) {\( B_3 \)};
@@ -5949,7 +5949,7 @@ correspondence between \( \{ \mu_{2n}\}_{n\ge 0} \) and
 \end{pmatrix}
 \det
 \begin{pmatrix}
-\mu_2 & \mu_2 \\
+\mu_2 & \mu_4 \\
 \mu_4 & \mu_6 \\
 \end{pmatrix},\\
   \Delta_4
@@ -5976,7 +5976,7 @@ correspondence between \( \{ \mu_{2n}\}_{n\ge 0} \) and
 \end{pmatrix}
 \det
 \begin{pmatrix}
-\mu_2 & \mu_2 \\
+\mu_2 & \mu_4 \\
 \mu_4 & \mu_6 \\
 \end{pmatrix}.
 \end{align*}
