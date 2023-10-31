@@ -4,7 +4,7 @@
 \usepackage{hyperref}
 \usepackage{a4wide}
 \usepackage{cleveref}
-% \usepackage{refcheck}
+\usepackage{refcheck}
 \usepackage{graphicx,color}
 \usepackage{tikz}
 \usepackage{ytableau}
@@ -56,7 +56,6 @@
 \newcommand\FF{\mathbb{F}}
 \newcommand\FT{\operatorname{FT}}
 
-\newcommand\Mot{\operatorname{Mot}}
 \newcommand{\Dyck}{\operatorname{Dyck}}
 
 \newcommand\Par{\operatorname{Par}}
@@ -108,7 +107,7 @@
 
 \newcommand\ulabel[3]{\node at (#1+0.3,#2+0.7) {\( #3 \)};}
 \newcommand\hlabel[3]{\node at (#1+0.5,#2+0.3) {\( #3 \)};}
-\newcommand\dlabel[3]{\node at (#1+0.7,#2+0.7) {\( #3 \)};}
+\newcommand\dlabel[3]{\node at (#1+0.7,#2-0.3) {\( #3 \)};}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -4120,7 +4119,7 @@ Suppose that \( \{b_n\}_{n\ge0} \) and \( \{\lambda_n\}_{n\ge1} \) are
 arbitrary sequences (\( \lambda_n \) may be zero). Then we can take
 the following as definitions:
 \begin{align*}
-  \mu_{n,k} &= \sum_{\pi\in \Mot_{n,k}} \wt(\pi),\\
+  \mu_{n,k} &= \sum_{\pi\in \Motz_{n,k}} \wt(\pi),\\
   \nu_{n,k} &= \sum_{T\in \FT_{n,k}} \wt'(T),
 \end{align*}
 where \( \FT_{n,k} \) is the set of Favard tilings in \( \FT_n \) with
@@ -5285,10 +5284,10 @@ Before proving this theorem let us consider an example.
   \centering
 \begin{tikzpicture}
 \draw[help lines] (0,0) grid (2,2);
-\node at (0,0) [circle,fill,inner sep=1pt]{};
-\node at (1,0) [circle,fill,inner sep=1pt]{};
-\node at (1,2) [circle,fill,inner sep=1pt]{};
-\node at (2,2) [circle,fill,inner sep=1pt]{};
+\node at (0,0) [circle,fill,inner sep=1.5pt]{};
+\node at (1,0) [circle,fill,inner sep=1.5pt]{};
+\node at (1,2) [circle,fill,inner sep=1.5pt]{};
+\node at (2,2) [circle,fill,inner sep=1.5pt]{};
 \node [below left] at (0,0) {\( A_1 \)};
 \node [below left] at (1,0) {\( A_2 \)};
 \node [above right] at (1,2) {\( B_1 \)};
@@ -5363,6 +5362,8 @@ the tails \( p_1'' \) and \( p_2'' \) we can construct a new
 \node [above right] at (2,2) {\( B_2 \)};
 \draw [line width=1.5pt,blue] (0,0) -- (0,1) -- (1,1) -- (1,2);
 \draw [line width=1.5pt,red] (1,0) -- (1,1) -- (2,1) -- (2,2);
+\node at (1,1) [cyan,circle,fill,inner sep=2pt]{};
+\node [above right] at (1,1) {\( u \)};
 \end{tikzpicture} \qquad 
 \begin{tikzpicture}
 \draw[help lines] (0,0) grid (2,2);
@@ -5376,10 +5377,12 @@ the tails \( p_1'' \) and \( p_2'' \) we can construct a new
 \node [above right] at (2,2) {\( B_2 \)};
 \draw [line width=1.5pt,blue] (0,0) -- (0,1) -- (2,1) -- (2,2);
 \draw [line width=1.5pt,red] (1,0) -- (1,2);
+\node at (1,1) [cyan,circle,fill,inner sep=2pt]{};
+\node [above right] at (1,1) {\( u \)};
 \end{tikzpicture}
 \caption{An intersecting \( 2 \)-path \( (p_1,p_2) \) and the
   corresponding \( 2 \)-path \( (q_1,q_2) \) obtained by exchanged the
-  tails.}
+  tails after the first intersection \( u \).}
 \label{fig:11}
 \end{figure}
 
@@ -5716,6 +5719,418 @@ Since \( L=MN \), the proof is completed.
 \end{proof}
 
 \section{Hankel determinants of moments}
+
+In this section we compute the Hankel determinants of moments using
+the Lindstr\"om--Gessel--Viennot lemma.
+
+As usual let \( \{ P_n(x) \}_{n\ge 0} \) be a monic OPS
+satisfying
+\[
+  P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x),
+\]
+and let \( \mu_n \) be the \( n \)th moment.
+
+
+\begin{defn}\label{def:7}
+  The (infinite) \emph{Hankel matrix} \( H \) of the sequence
+  \( \{ \mu_n\}_{n\ge 0} \) is defined by
+  \[
+    H = \left( \mu_{i+j} \right)_{i,j=0}^\infty.
+  \]
+  The \emph{Hankel determinant} \( \Delta_n \) is defined by
+\[
+  \Delta_n = [H]_{\{0,1,\dots,n\},\{0,1,\dots,n\}} = \det \left(
+    \mu_{i+j} \right)_{i,j=0}^n = \det
+ \begin{pmatrix}
+   \mu_0 & \mu_1 & \cdots & \mu_n\\
+   \mu_1 & \mu_2 & \cdots & \mu_{n+1}\\
+   \vdots & \vdots & \ddots & \vdots\\
+   \mu_n & \mu_{n+1} & \cdots & \mu_{2n}
+ \end{pmatrix}.
+\]
+\end{defn}
+
+We will use the convention that the determinant of an empty matrix is
+\( 1 \). For example, \( \Delta_{n} = 1 \) for \( n<0 \).
+
+Note that \( \mu_{i+j} \) is the generating function for Motzkin paths
+of length \( i+j \) with starting and ending heights \( 0 \). Let
+\( \vec A = (A_0,\dots,A_n) \) and \( \vec B = (B_0,\dots,B_n) \),
+where \( A_i = (-i,0) \) and \( B_i = (i,0) \). Then
+\[
+  \mu_{i+j} = \sum_{p\in \Motz(A_i\to B_i)} \wt(p).
+\]
+Therefore, by \Cref{thm:LGV},
+\[
+  \Delta_n = \det \left( \mu_{i+j} \right)_{i,j=0}^n = \sum_{\vec p
+    \in \NI(\vec A \to \vec B)} \sgn(\vec p) \wt(\vec p).
+\]
+But, \( \NI(\vec A \to \vec B) \) has a unique \( (n+1) \)-path
+\( \vec p = (p_0,\dots,p_n) \) as shown in \Cref{fig:14}.
+Observe that \( \wt(\vec p) = \lambda_1^n \lambda_2^{n-1} \cdots \lambda_n^1 \).
+This shows the following theorem.
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+\draw[help lines] (0,0) grid (6,3);
+\draw node at (3,-.5) {\( A_0=B_0 \)};
+\draw node at (2,-.5) {\( A_1 \)};
+\draw node at (1,-.5) {\( A_2 \)};
+\draw node at (0,-.5) {\( A_3 \)};
+\draw node at (4,-.5) {\( B_1 \)};
+\draw node at (5,-.5) {\( B_2 \)};
+\draw node at (6,-.5) {\( B_3 \)};
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1);
+\draw[line width = 1.5pt] (1,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1);
+\draw[line width = 1.5pt] (2,0) -- ++(1,1) -- ++(1,-1);
+\node at (3,0) [circle,fill,inner sep=1pt]{};
+\dlabel31{\lambda_1}
+\dlabel32{\lambda_2}
+\dlabel33{\lambda_3}
+\dlabel41{\lambda_1}
+\dlabel42{\lambda_2}
+\dlabel51{\lambda_1}
+\end{tikzpicture}
+\caption{The unique nonintersecting \( (n+1) \)-path in
+  \( \NI(\vec A \to \vec B) \) for the caes \( n=3 \).}
+  \label{fig:14}
+\end{figure}
+
+\begin{thm}\label{thm:8}
+  We have
+  \[
+    \Delta_n = \lambda_1^n \lambda_2^{n-1} \cdots \lambda_n^1.
+  \]
+\end{thm}
+
+
+Now let's consider the following minor of the Hankel matrix:
+\[
+ \Delta'_n := [H]_{\{0,1,\dots,n\},\{0,1,\dots,n-1,n+1\}} = \det(M_{i,j})_{i,j=0}^n,
+\]
+where \( M_{i,j} = \mu_{i+j} \) if \( j<n \) and
+\( M_{i,n} = \mu_{i+n+1} \). Let \( \vec A = (A_0,\dots,A_n) \) and
+\( \vec B' = (B_0,\dots,B_n) \), where \( A_i = (-i,0) \) and
+\( B_i = (i + \delta_{i,n},0) \). Then by the
+Lindstr\"om--Gessel--Viennot lemma,
+\[
+  \Delta'_n = \sum_{\vec p \in \NI(\vec A \to \vec B')} \sgn(\vec p)
+  \wt(\vec p).
+\]
+Suppose \( \vec p = (p_0,\dots,p_n)\in \NI(\vec A \to \vec B') \).
+Then \( p_0,\dots,p_{n-1} \) are fixed as in the previous case.
+Moreover, the first \( n \) steps of \( p_n \) must be all up steps.
+Since \( p_n \) is a Motzkin path of length \( 2n+1 \), the remaining
+steps are \( n \) down steps and one horizontal step. Thus
+\( \wt(p_n) = \lambda_1 \cdots \lambda_n b_k \) for some
+\( 0\le k\le n \) and \( p_n \) is determined by the number \( k \).
+See \Cref{fig:15}. This shows the following theorem.
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+\draw[help lines] (-1,0) grid (8,4);
+\draw node at (3,-.5) {\( A_0=B_0 \)};
+\draw node at (2,-.5) {\( A_1 \)};
+\draw node at (1,-.5) {\( A_2 \)};
+\draw node at (0,-.5) {\( A_3 \)};
+\draw node at (-1,-.5) {\( A_3 \)};
+\draw node at (4,-.5) {\( B_1 \)};
+\draw node at (5,-.5) {\( B_2 \)};
+\draw node at (6,-.5) {\( B_3 \)};
+\draw node at (8,-.5) {\( B_4 \)};
+\draw[line width = 1.5pt] (-1,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1) --++(1,0) --++(1,-1);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1);
+\draw[line width = 1.5pt] (1,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1);
+\draw[line width = 1.5pt] (2,0) -- ++(1,1) -- ++(1,-1);
+\node at (3,0) [circle,fill,inner sep=1pt]{};
+\dlabel31{\lambda_1}
+\dlabel32{\lambda_2}
+\dlabel33{\lambda_3}
+\dlabel34{\lambda_4}
+\dlabel41{\lambda_1}
+\dlabel42{\lambda_2}
+\dlabel43{\lambda_3}
+\dlabel52{\lambda_2}
+\dlabel51{\lambda_1}
+\dlabel71{\lambda_1}
+\hlabel61{b_1}
+\end{tikzpicture}
+\caption{A nonintersecting \( (n+1) \)-path in
+  \( \NI(\vec A \to \vec B') \) for the caes \( n=4 \).}
+\label{fig:15}
+\end{figure}
+
+\begin{thm}\label{thm:9}
+  We have
+  \[
+    \Delta'_n = \lambda_1^n \lambda_2^{n-1} \cdots \lambda_n^1 (b_0 + \cdots + b_n)
+    = \Delta_n (b_0 + \cdots + b_n).
+  \]
+\end{thm}
+
+Using \Cref{thm:8} and \Cref{thm:9} we can express \( \lambda_n \) and
+\( b_n \) using \( \mu_n \)'s as follows.
+
+\begin{cor}\label{cor:3}
+For \( n\ge1 \), we have
+  \begin{align*}
+    \lambda_n &= \frac{\Delta_n\Delta_{n-2}}{\Delta_{n-1}^2},\\
+    b_n &= \frac{\Delta'_n}{\Delta_{n}} - \frac{\Delta'_{n-1}}{\Delta_{n-1}},
+  \end{align*}
+  and \( b_0 = \Delta'_0/\Delta_{0} \).
+\end{cor}
+
+\begin{proof}
+By \Cref{thm:8}, \( \lambda_1 \cdots \lambda_n = \Delta_n/\Delta_{n-1} \).
+Thus
+\[
+  \lambda_n = \frac{\Delta_n}{\Delta_{n-1}} \cdot \left(
+    \frac{\Delta_{n-1}}{\Delta_{n-2}} \right)^{-1} =
+  \frac{\Delta_n\Delta_{n-2}}{\Delta_{n-1}^2}.
+\]
+Similarly, by \Cref{thm:9},
+\( b_0 + \cdots + b_n = \Delta'_n/\Delta_n \).
+Thus
+\[
+  b_n = \frac{\Delta'_n}{\Delta_{n}} - \frac{\Delta'_{n-1}}{\Delta_{n-1}}.
+  \qedhere
+\]
+\end{proof}
+
+\begin{cor}\label{cor:4}
+  Let \( \{ \mu_n\}_{n\ge 0} \) be a sequence of numbers. There is an
+  OPS with moments \( \mu_n \) if and only if \( \Delta_n \ne 0 \) for
+  all \( n \ge 0 \).
+\end{cor}
+
+\begin{proof}
+  We know that \( \{ P_n(x) \}_{n\ge 0} \) is an OPS
+  if and only if it satisfies a 3-term recurrence relation
+  \begin{equation}\label{eq:39}
+    P_{n+1}(x) = (x-b_n) P_n(x) - \lambda_n P_{n-1}(x)
+  \end{equation}
+  with \( \lambda_n\ne 0 \). Thus, if \( \{ P_n(x) \}_{n\ge 0} \) is
+  an OPS, then by \Cref{thm:8}, \( \Delta_n\ne 0 \).
+
+  Conversely, if \( \Delta_n\ne 0 \), then we can construct
+  \( \lambda_n \) and \( b_n \) using \Cref{cor:3}. By the
+  construction, \( \lambda_n \) and \( b_n \) are the sequences which
+  give \( \mu_n = \sum_{p\in \Motz_n} \wt(p) \). Hence, if we define
+  \( \{ P_n(x) \}_{n\ge 0} \) by \eqref{eq:39}, then it is an OPS with
+  moments \( \mu_n \).
+\end{proof}
+
+For the rest of this section, we consider the case \( b_n=0 \). Recall
+that \( \mu_{2n+1} = 0 \) for all \( n\ge0 \) if and only if
+\( b_n=0 \) for all \( n\ge0 \). In this case there is a
+correspondence between \( \{ \mu_{2n}\}_{n\ge 0} \) and
+\( \{ \lambda_n\}_{n\ge 0} \). For example,
+\begin{align*}
+  \Delta_3
+  & = \det 
+  \begin{pmatrix}
+\mu_0 & \mu_1 & \mu_2 & \mu_3 \\
+\mu_1 & \mu_2 & \mu_3 & \mu_4 \\
+\mu_2 & \mu_3 & \mu_4 & \mu_5 \\
+\mu_3 & \mu_4 & \mu_5 & \mu_6 \\
+\end{pmatrix} =\det 
+  \begin{pmatrix}
+\mu_0 & 0 & \mu_2 & 0 \\
+0 & \mu_2 & 0 & \mu_4 \\
+\mu_2 & 0 & \mu_4 & 0 \\
+0 & \mu_4 & 0 & \mu_6 \\
+\end{pmatrix}
+= \det
+\begin{pmatrix}
+\mu_0 & \mu_2 \\
+\mu_2 & \mu_4 \\
+\end{pmatrix}
+\det
+\begin{pmatrix}
+\mu_2 & \mu_2 \\
+\mu_4 & \mu_6 \\
+\end{pmatrix},\\
+  \Delta_4
+  &= \det 
+  \begin{pmatrix}
+\mu_0 & \mu_1 & \mu_2 & \mu_3 & \mu_4 \\
+\mu_1 & \mu_2 & \mu_3 & \mu_4 & \mu_5 \\
+\mu_2 & \mu_3 & \mu_4 & \mu_5 & \mu_6 \\
+\mu_3 & \mu_4 & \mu_5 & \mu_6 & \mu_7 \\
+\mu_4 & \mu_5 & \mu_6 & \mu_7 & \mu_8 \\
+\end{pmatrix} =\det 
+  \begin{pmatrix}
+\mu_0 & 0 & \mu_2 & 0 & \mu_4 \\
+0 & \mu_2 & 0 & \mu_4 & 0\\
+\mu_2 & 0 & \mu_4 & 0 & \mu_6 \\
+0 & \mu_4 & 0 & \mu_6 & 0 \\
+\mu_4 & 0 & \mu_6 & 0 & \mu_8 \\
+\end{pmatrix}\\
+&= \det
+\begin{pmatrix}
+\mu_0 & \mu_2 & \mu_4 \\
+\mu_2 & \mu_4 & \mu_6 \\
+\mu_4 & \mu_6 & \mu_8 \\
+\end{pmatrix}
+\det
+\begin{pmatrix}
+\mu_2 & \mu_2 \\
+\mu_4 & \mu_6 \\
+\end{pmatrix}.
+\end{align*}
+In general, we have
+\begin{align}
+\label{eq:40}  \Delta_{2n} &= \Delta_n(2) \Delta^+_{n-1}(2),\\
+  \Delta_{2n+1} &= \Delta_n(2) \Delta^+_{n}(2),
+\end{align}
+where
+\begin{align*}
+  \Delta_n(2) &= \det \left( \mu_{2i+2j} \right)_{i,j=0}^n,\\
+  \Delta^+_n(2) &= \det \left( \mu_{2i+2j+2} \right)_{i,j=0}^n,\\
+\end{align*}
+
+Since \( b_n=0 \), we have
+\[
+  \mu_{2n} = \sum_{p\in \Dyck_{2n}} \wt(p).
+\]
+Let \( \vec A = (A_0,\dots,A_n) \) and \( \vec B = (B_0,\dots,B_n) \),
+where \( A_i = (-2i,0) \) and \( B_i = (2i,0) \). Then
+\[
+  \mu_{2i+2j} = \sum_{p\in \Dyck(A_i\to B_j)} \wt(p). 
+\]
+Thus, by the Lindstr\"om--Gessel--Viennot lemma,
+\[
+  \Delta_n(2) = \sum_{\vec p \in \NI(\vec A \to \vec B)} \sgn(\vec p) \wt(\vec p).
+\]
+There is only one element in \( \NI(\vec A \to \vec B) \) as shown in
+\Cref{fig:16}.
+This gives the following theorem.
+
+\begin{thm}\label{thm:11}
+  If \( b_n=0 \) for all \( n\ge0 \), we have
+\[
+  \Delta_n(2) = (\lambda_1\lambda_2)^n (\lambda_3\lambda_4)^{n-1}
+  \cdots  (\lambda_{2n-1}\lambda_{2n})^1.
+\]
+\end{thm}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+\draw[help lines] (0,0) grid (12,6);
+\draw node at (6,-.5) {\( A_0=B_0 \)};
+\draw node at (4,-.5) {\( A_1 \)};
+\draw node at (2,-.5) {\( A_2 \)};
+\draw node at (0,-.5) {\( A_3 \)};
+\draw node at (8,-.5) {\( B_1 \)};
+\draw node at (10,-.5) {\( B_2 \)};
+\draw node at (12,-.5) {\( B_3 \)};
+\draw[line width = 1.5pt] (0,0) -- ++(2,2) -- ++(2,2) -- ++(2,2) -- ++(2,-2) -- ++(2,-2) -- ++(2,-2);
+\draw[line width = 1.5pt] (2,0) -- ++(2,2) -- ++(2,2) -- ++(2,-2) -- ++(2,-2);
+\draw[line width = 1.5pt] (4,0) -- ++(2,2) -- ++(2,-2);
+\node at (6,0) [circle,fill,inner sep=1pt]{};
+\dlabel71{\lambda_1}
+\dlabel{8}2{\lambda_2}
+\dlabel73{\lambda_3}
+\dlabel93{\lambda_3}
+\dlabel{11}1{\lambda_1}
+\dlabel{10}2{\lambda_2}
+\dlabel{6}2{\lambda_2}
+\dlabel91{\lambda_1}
+\dlabel64{\lambda_4}
+\dlabel84{\lambda_4}
+\dlabel75{\lambda_5}
+\dlabel{6}6{\lambda_6}
+\end{tikzpicture}
+\caption{The unique nonintersecting \( (n+1) \)-path in
+  \( \NI(\vec A \to \vec B) \) for the caes \( n=3 \).}
+\label{fig:16}
+\end{figure}
+
+
+Now let \( \vec A = (A_0,\dots,A_n) \) and \( \vec B^+ = (B^+_0,\dots,B^+_n) \),
+where \( A_i = (-2i,0) \) and \( B^+_i = (2i+2,0) \). Then
+\[
+  \mu_{2i+2j} = \sum_{p\in \Dyck(A_i\to B_j)} \wt(p). 
+\]
+Thus, by the Lindstr\"om--Gessel--Viennot lemma,
+\[
+  \Delta_n(2) = \sum_{\vec p \in \NI(\vec A \to \vec B)} \sgn(\vec p) \wt(\vec p).
+\]
+There is only one element in \( \NI(\vec A \to \vec B) \) as shown in
+\Cref{fig:16}.
+This gives the following theorem.
+\begin{thm}\label{thm:12}
+  If \( b_n=0 \) for all \( n\ge0 \), we have
+\[
+  \Delta^+_n(2) = \lambda_1^{n+1} (\lambda_2\lambda_3)^{n} (\lambda_4\lambda_5)^{n-1}
+  \cdots  (\lambda_{2n}\lambda_{2n+1})^1.
+\]
+\end{thm}
+
+
+
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+\draw[help lines] (0,0) grid (10,5);
+\draw node at (4,-.5) {\( A_0 \)};
+\draw node at (2,-.5) {\( A_1 \)};
+\draw node at (0,-.5) {\( A_2 \)};
+\draw node at (6,-.5) {\( B_0 \)};
+\draw node at (8,-.5) {\( B_1 \)};
+\draw node at (10,-.5) {\( B_2 \)};
+\draw[line width = 1.5pt] (0,0) -- ++(5,5) -- ++(5,-5);
+\draw[line width = 1.5pt] (2,0) -- ++(3,3) --++(3,-3);
+\draw[line width = 1.5pt] (4,0) -- ++(1,1) -- ++(1,-1);
+\dlabel51{\lambda_1}
+\dlabel71{\lambda_1}
+\dlabel{8}2{\lambda_2}
+\dlabel73{\lambda_3}
+\dlabel53{\lambda_3}
+\dlabel{6}2{\lambda_2}
+\dlabel91{\lambda_1}
+\dlabel64{\lambda_4}
+\dlabel55{\lambda_5}
+\end{tikzpicture}
+\caption{The unique nonintersecting \( (n+1) \)-path in
+  \( \NI(\vec A \to \vec B^+) \) for the caes \( n=2 \).}
+\label{fig:17}
+\end{figure}
+
+
+\begin{cor}\label{cor:5}
+  If \( b_n=0 \) for all \( n\ge0 \), we have
+  \begin{align*}
+  \lambda_{2n} &= \frac{\Delta_n(2)\Delta^+_{n-2}(2)}{\Delta_{n-1}(2)\Delta^+_{n-1}(2)}, \\
+  \lambda_{2n+1} &= \frac{\Delta^+_n(2)\Delta_{n-1}(2)}{\Delta_{n}(2)\Delta^+_{n-1}(2)}.
+  \end{align*}
+\end{cor}
+
+\begin{proof}
+By \Cref{thm:11} and \ref{thm:12},
+\[
+\frac{\Delta^+_n(2)}{\Delta_{n}(2)}  = \lambda_1 \lambda_3 \cdots \lambda_{2n+1}, \qquad  
+\frac{\Delta_n(2)}{\Delta^+_{n-1}(2)}  = \lambda_2 \lambda_4 \cdots \lambda_{2n}.
+\]
+Thus
+\begin{align*}
+  \lambda_{2n+1}
+  &= \frac{\Delta^+_n(2)}{\Delta_{n}(2)} \left( \frac{\Delta^+_{n-1}(2)}{\Delta_{n-1}(2)} \right)^{-1}
+    = \frac{\Delta^+_n(2)\Delta_{n-1}(2)}{\Delta_{n}(2)\Delta^+_{n-1}(2)},\\
+  \lambda_{2n}
+  &= \frac{\Delta_n(2)}{\Delta^+_{n-1}(2)} \left( \frac{\Delta_{n-1}(2)}{\Delta^+_{n-2}(2)} \right)^{-1}
+    = \frac{\Delta_n(2)\Delta^+_{n-2}(2)}{\Delta_{n-1}(2)\Delta^+_{n-1}(2)}.
+    \qedhere
+\end{align*}
+
+\end{proof}
+
+
+
 
 \section{The duality between Motzkin paths and Favard paths}
 

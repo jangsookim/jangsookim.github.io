@@ -33,7 +33,7 @@ Orthogonal polynomials are classical objects arising from the study of continued
 * Lecture notes
 - [[file:orthogonal_polynomials.pdf][Lecture notes]] (This file will be updated regularly.)
 * Homework
-- Current homework: Homework 3 (Due: Oct 19) 
+- Current homework: Homework 4 (Due: Nov 9) 
 - [[file:homework.pdf][Homework problems]] (This file will be updated regularly.)
 - [[file:homework(solutions).pdf][Homework solutions with grading criteria]] (This file will be updated regularly.)
 - Please email your homework as a single pdf file to the instructor by the due date.
@@ -65,6 +65,7 @@ Orthogonal polynomials are classical objects arising from the study of continued
   21. [[https://arxiv.org/abs/0811.0524][Josuat-Verges. 2011. Rook placements in Young diagrams and permutation enumeration]]
   22. [[https://arxiv.org/abs/1008.3093][Josuat-Verges, Rubey. 2011. Crossings, Motzkin paths and moments]]
   23. [[https://arxiv.org/abs/0907.1004][Josuat-Verges. 2010. A q-enumeration of alternating permutations]]
+  24. [[https://www.combinatorics.org/ojs/index.php/eljc/article/view/v12i1r18][Eu, Fu. 2005. A Simple Proof of the Aztec Diamond Theorem]]
 
 * Schedule and links to lecture videos
 1. [2023-08-29 Tue]: Introduction, [[file:ops-files/OPS1.pdf][lecture notes]], [[https://youtu.be/JgdcBmWMwYc][video]]
