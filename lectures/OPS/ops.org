@@ -38,6 +38,7 @@ Orthogonal polynomials are classical objects arising from the study of continued
 - [[file:homework(solutions).pdf][Homework solutions with grading criteria]] (This file will be updated regularly.)
 - Please email your homework as a single pdf file to the instructor by the due date.
 * Student presentation
+- *Send an email to the instructor by Nov 10* indicating which paper you want to present.
 - Dates: Nov 28, Nov 30, Dec 5, Dec 7
 - Each student will give a presentation for 20 min.
 - You can use a board or a beamer.

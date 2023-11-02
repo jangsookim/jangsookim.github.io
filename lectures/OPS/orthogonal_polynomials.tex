@@ -68,6 +68,7 @@
 \renewcommand\vec[1]{\mathbf{#1}}
 \newcommand\vx{\vec{x}}
 \newcommand\flr[1]{\left\lfloor #1\right\rfloor}
+\newcommand\norm[1]{\lVert #1\rVert}
 \newcommand\Qbinom[3]{\genfrac{[}{]}{0pt}{}{#1}{#2}_{#3}}
 \newcommand\qbinom[2]{\Qbinom{#1}{#2}{q}}
 
@@ -5755,7 +5756,7 @@ We will use the convention that the determinant of an empty matrix is
 
 Note that \( \mu_{i+j} \) is the generating function for Motzkin paths
 of length \( i+j \) with starting and ending heights \( 0 \). Let
-\( \vec A = (A_0,\dots,A_n) \) and \( \vec B = (B_0,\dots,B_n) \),
+\( \vec A = (A_0,\dots,A_n) \) and \( \vec B = (B_0,\dots,_n) \),
 where \( A_i = (-i,0) \) and \( B_i = (i,0) \). Then
 \[
   \mu_{i+j} = \sum_{p\in \Motz(A_i\to B_j)} \wt(p).
@@ -5784,16 +5785,22 @@ This shows the following theorem.
 \draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1);
 \draw[line width = 1.5pt] (1,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1);
 \draw[line width = 1.5pt] (2,0) -- ++(1,1) -- ++(1,-1);
-\node at (3,0) [circle,fill,inner sep=1pt]{};
 \dlabel31{\lambda_1}
 \dlabel32{\lambda_2}
 \dlabel33{\lambda_3}
 \dlabel41{\lambda_1}
 \dlabel42{\lambda_2}
 \dlabel51{\lambda_1}
+\node at (0,0) [circle,fill,inner sep=2pt]{};
+\node at (1,0) [circle,fill,inner sep=2pt]{};
+\node at (2,0) [circle,fill,inner sep=2pt]{};
+\node at (3,0) [circle,fill,inner sep=2pt]{};
+\node at (4,0) [circle,fill,inner sep=2pt]{};
+\node at (5,0) [circle,fill,inner sep=2pt]{};
+\node at (6,0) [circle,fill,inner sep=2pt]{};
 \end{tikzpicture}
 \caption{The unique nonintersecting \( (n+1) \)-path in
-  \( \NI(\vec A \to \vec B) \) for the caes \( n=3 \).}
+  \( \NI(\vec A \to \vec B) \) for the case \( n=3 \).}
   \label{fig:14}
 \end{figure}
 
@@ -5844,7 +5851,6 @@ See \Cref{fig:15}. This shows the following theorem.
 \draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1);
 \draw[line width = 1.5pt] (1,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1);
 \draw[line width = 1.5pt] (2,0) -- ++(1,1) -- ++(1,-1);
-\node at (3,0) [circle,fill,inner sep=1pt]{};
 \dlabel31{\lambda_1}
 \dlabel32{\lambda_2}
 \dlabel33{\lambda_3}
@@ -5856,9 +5862,18 @@ See \Cref{fig:15}. This shows the following theorem.
 \dlabel51{\lambda_1}
 \dlabel71{\lambda_1}
 \hlabel61{b_1}
+\node at (-1,0) [circle,fill,inner sep=2pt]{};
+\node at (0,0) [circle,fill,inner sep=2pt]{};
+\node at (1,0) [circle,fill,inner sep=2pt]{};
+\node at (2,0) [circle,fill,inner sep=2pt]{};
+\node at (3,0) [circle,fill,inner sep=2pt]{};
+\node at (4,0) [circle,fill,inner sep=2pt]{};
+\node at (5,0) [circle,fill,inner sep=2pt]{};
+\node at (6,0) [circle,fill,inner sep=2pt]{};
+\node at (8,0) [circle,fill,inner sep=2pt]{};
 \end{tikzpicture}
 \caption{A nonintersecting \( (n+1) \)-path in
-  \( \NI(\vec A \to \vec B') \) for the caes \( n=4 \).}
+  \( \NI(\vec A \to \vec B') \) for the case \( n=4 \).}
 \label{fig:15}
 \end{figure}
 
@@ -6030,7 +6045,13 @@ This gives the following theorem.
 \draw[line width = 1.5pt] (0,0) -- ++(2,2) -- ++(2,2) -- ++(2,2) -- ++(2,-2) -- ++(2,-2) -- ++(2,-2);
 \draw[line width = 1.5pt] (2,0) -- ++(2,2) -- ++(2,2) -- ++(2,-2) -- ++(2,-2);
 \draw[line width = 1.5pt] (4,0) -- ++(2,2) -- ++(2,-2);
-\node at (6,0) [circle,fill,inner sep=1pt]{};
+\node at (0,0) [circle,fill,inner sep=2pt]{};
+\node at (2,0) [circle,fill,inner sep=2pt]{};
+\node at (4,0) [circle,fill,inner sep=2pt]{};
+\node at (6,0) [circle,fill,inner sep=2pt]{};
+\node at (8,0) [circle,fill,inner sep=2pt]{};
+\node at (10,0) [circle,fill,inner sep=2pt]{};
+\node at (12,0) [circle,fill,inner sep=2pt]{};
 \dlabel71{\lambda_1}
 \dlabel{8}2{\lambda_2}
 \dlabel73{\lambda_3}
@@ -6045,7 +6066,7 @@ This gives the following theorem.
 \dlabel{6}6{\lambda_6}
 \end{tikzpicture}
 \caption{The unique nonintersecting \( (n+1) \)-path in
-  \( \NI(\vec A \to \vec B) \) for the caes \( n=3 \).}
+  \( \NI(\vec A \to \vec B) \) for the case \( n=3 \).}
 \label{fig:16}
 \end{figure}
 
@@ -6086,6 +6107,12 @@ This gives the following theorem.
 \draw[line width = 1.5pt] (0,0) -- ++(5,5) -- ++(5,-5);
 \draw[line width = 1.5pt] (2,0) -- ++(3,3) --++(3,-3);
 \draw[line width = 1.5pt] (4,0) -- ++(1,1) -- ++(1,-1);
+\node at (0,0) [circle,fill,inner sep=2pt]{};
+\node at (2,0) [circle,fill,inner sep=2pt]{};
+\node at (4,0) [circle,fill,inner sep=2pt]{};
+\node at (6,0) [circle,fill,inner sep=2pt]{};
+\node at (8,0) [circle,fill,inner sep=2pt]{};
+\node at (10,0) [circle,fill,inner sep=2pt]{};
 \dlabel51{\lambda_1}
 \dlabel71{\lambda_1}
 \dlabel{8}2{\lambda_2}
@@ -6097,7 +6124,7 @@ This gives the following theorem.
 \dlabel55{\lambda_5}
 \end{tikzpicture}
 \caption{The unique nonintersecting \( (n+1) \)-path in
-  \( \NI(\vec A \to \vec B^+) \) for the caes \( n=2 \).}
+  \( \NI(\vec A \to \vec B^+) \) for the case \( n=2 \).}
 \label{fig:17}
 \end{figure}
 
@@ -6131,18 +6158,466 @@ Thus
 
 
 
+\section{Another duality between moments and coefficients}
 
-\section{The duality between Motzkin paths and Favard paths}
+Recall that we proved a duality between mixed moments \( \mu_{n,k} \)
+and coefficients \( \nu_{n,k} \). In this section we will prove the
+following theorem, which gives another type of duality between moments
+and coefficients.
 
-% \section{Inverse generating functions}
+
+\begin{thm}\label{thm:10}
+  Let \( \LL \) be a linear functional with moment sequence
+  \( \{\mu_n\} \) with \( \Delta_n\ne 0 \) for all \( n\ge0 \).
+  Then the monic OPS for \( \LL \) is given by
+  \[
+    P_n(x) = \frac{1}{\Delta_{n-1}}
+    \begin{vmatrix}
+      \mu_0 & \mu_1 & \cdots & \mu_n\\
+      \mu_1 & \mu_2 & \cdots & \mu_{n+1}\\
+      \vdots & \vdots & \ddots & \vdots\\
+      \mu_{n-1} & \mu_{n} & \cdots & \mu_{2n-1}\\
+      1 & x & \cdots & x^n
+    \end{vmatrix}.
+  \]
+\end{thm}
+
+Let us write
+\[
+  P_n(x) = \sum_{k=0}^{n} \nu_{n,k} x^k.
+\]
+Then the theorem above is equivalent to
+\begin{equation}\label{eq:41}
+  \nu_{n,k} = \frac{(-1)^{n-k}}{\Delta_{n-1}}
+  [H]_{\{0,\dots,n-1\}, \{0,\dots,k-1,k+1,\dots,n\}}.
+ \end{equation}
+Thus we need to compute
+\[
+   [H]_{\{0,\dots,n-1\}, \{0,\dots,k-1,k+1,\dots,n\}}
+   = \det (\mu_{i+j+\chi(j\ge k)})_{i,j=0}^{n-1},
+\]
+where, for a statement \( P \), \( \chi(P)=1 \) if \( P \) is true and
+\( \chi(P)=0 \) otherwise. Let \( \vec A = (A_0,\dots,A_{n-1}) \) and
+\( \vec B^{(k)} = (B_0,\dots,B_{n-1}) \), where
+\[
+  A_i = (-i,0), \qquad B_i = (i + \chi(i\ge k),0).
+\]
+Then by the Lindstr\"om--Gessel--Viennot lemma,
+\begin{equation}\label{eq:42}
+  [H]_{\{0,\dots,n-1\}, \{0,\dots,k-1,k+1,\dots,n\}} = \sum_{\vec p
+    \in \NI(\vec A \to \vec B^{(k)})} \sgn(\vec p) \wt(\vec p).
+\end{equation}
+
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=1.2]
+\draw[help lines] (-5,0) grid (6,5);
+\draw node at (-5,-.5) {\( A_5 \)};
+\draw node at (-4,-.5) {\( A_4 \)};
+\draw node at (-3,-.5) {\( A_3 \)};
+\draw node at (-2,-.5) {\( A_2 \)};
+\draw node at (-1,-.5) {\( A_1 \)};
+\draw node at (0,-.5) {\( A_0=B^{(2)}_0 \)};
+\draw node at (1,-.5) {\( B^{(2)}_1 \)};
+\draw node at (3,-.5) {\( B^{(2)}_2 \)};
+\draw node at (4,-.5) {\( B^{(2)}_3 \)};
+\draw node at (5,-.5) {\( B^{(2)}_4 \)};
+\draw node at (6,-.5) {\( B^{(2)}_5 \)};
+\draw[line width = 1.5pt] (-1,0) --++ (1,1) --++ (1,-1);
+\draw[line width = 1.5pt] (-2,0) --++ (2,2) -- ++(1,-1) -- ++(1,1) -- ++(2,-2);
+\draw[line width = 1.5pt] (-3,0) --++ (3,3) -- ++(3,-3);
+\draw[line width = 1.5pt] (-4,0) --++ (4,4)  -- ++(1,0)-- ++(4,-4);
+\draw[line width = 1.5pt] (-5,0) --++ (5,5)  -- ++(1,0)-- ++(5,-5);
+\node at (0,0) [circle,fill,inner sep=2pt]{};
+\node at (1,0) [circle,fill,inner sep=2pt]{};
+\node at (3,0) [circle,fill,inner sep=2pt]{};
+\node at (4,0) [circle,fill,inner sep=2pt]{};
+\node at (5,0) [circle,fill,inner sep=2pt]{};
+\node at (6,0) [circle,fill,inner sep=2pt]{};
+\node at (-1,0) [circle,fill,inner sep=2pt]{};
+\node at (-2,0) [circle,fill,inner sep=2pt]{};
+\node at (-3,0) [circle,fill,inner sep=2pt]{};
+\node at (-4,0) [circle,fill,inner sep=2pt]{};
+\node at (-5,0) [circle,fill,inner sep=2pt]{};
+\end{tikzpicture}
+\caption{A nonintersecting \( (n+1) \)-path in
+  \( \NI(\vec A \to \vec B^{(k)}) \) for the case \( n=6 \) and \( k=2 \).}
+\label{fig:18}
+\end{figure}
+
+Now we investigate a nonintersecting \( (n+1) \)-path
+\( \vec p = (p_0,\dots,p_{n-1}) \in \NI(\vec A \to \vec B^{(k)}) \), see
+\Cref{fig:18} for an example. Let \( R_i \) be the region defined by
+\[
+  R_i = \{(x,y)\in\RR^2: x>0, i-1<y<i  \}.
+\]
+Then we have the following observations. See \Cref{fig:19}.
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=1.2]
+\draw[help lines] (-5,0) grid (6,5);
+\draw node at (-5,-.5) {\( A_5 \)};
+\draw node at (-4,-.5) {\( A_4 \)};
+\draw node at (-3,-.5) {\( A_3 \)};
+\draw node at (-2,-.5) {\( A_2 \)};
+\draw node at (-1,-.5) {\( A_1 \)};
+\draw node at (0,-.5) {\( A_0=B^{(2)}_0 \)};
+\draw node at (1,-.5) {\( B^{(2)}_1 \)};
+\draw node at (3,-.5) {\( B^{(2)}_2 \)};
+\draw node at (4,-.5) {\( B^{(2)}_3 \)};
+\draw node at (5,-.5) {\( B^{(2)}_4 \)};
+\draw node at (6,-.5) {\( B^{(2)}_5 \)};
+\draw[line width = 1.5pt] (-1,0) --++ (1,1) --++ (1,-1);
+\draw[line width = 1.5pt] (-2,0) --++ (2,2) -- ++(1,-1) -- ++(1,1) -- ++(2,-2);
+\draw[line width = 1.5pt] (-3,0) --++ (3,3) -- ++(3,-3);
+\draw[line width = 1.5pt] (-4,0) --++ (4,4)  -- ++(1,0)-- ++(4,-4);
+\draw[line width = 1.5pt] (-5,0) --++ (5,5)  -- ++(1,0)-- ++(5,-5);
+\node at (0,0) [circle,fill,inner sep=1pt]{};
+\draw[dotted, red,line width = 2pt] (0,5) --++ (1,-1);
+\draw[dotted, red,line width = 2pt] (0,4) --++ (1,-1);
+\draw[dotted, red,line width = 2pt] (1,3) --++ (1,-1);
+\draw[dotted, red,line width = 2pt] (1,2) --++ (1,-1);
+\draw[dotted, red,line width = 2pt] (1,1) --++ (1,-1);
+\draw[dotted, red,line width = 2pt] (1,1) --++ (1,1);
+\node at (0,0) [circle,fill,inner sep=2pt]{};
+\node at (1,0) [circle,fill,inner sep=2pt]{};
+\node at (3,0) [circle,fill,inner sep=2pt]{};
+\node at (4,0) [circle,fill,inner sep=2pt]{};
+\node at (5,0) [circle,fill,inner sep=2pt]{};
+\node at (6,0) [circle,fill,inner sep=2pt]{};
+\node at (-1,0) [circle,fill,inner sep=2pt]{};
+\node at (-2,0) [circle,fill,inner sep=2pt]{};
+\node at (-3,0) [circle,fill,inner sep=2pt]{};
+\node at (-4,0) [circle,fill,inner sep=2pt]{};
+\node at (-5,0) [circle,fill,inner sep=2pt]{};
+\end{tikzpicture}
+\caption{The missing down steps and the figure ``X'' in \Cref{fig:18}
+  are drawn with red dotted lined.}
+\label{fig:19}
+\end{figure}
+
+\begin{enumerate}
+\item The first \( i \) steps of \( p_i \) are up steps. Hence
+  \( p_i \) visits \( (0,i) \).
+\item There are \( n-i \) paths having at least one step in \( R_i \),
+  namely, \( p_{i},p_{i+1},\dots,p_{n-1} \).
+\item If \( d \) and \( u \) are the number of down steps and up steps
+  in \( R_i \), respectively, then \( d-u = n-i \). This is because
+  each of \( p_{i},p_{i+1},\dots,p_{n-1} \) must enter the line
+  \( y=i \) and exit the line \( y=i-1 \), contributing \( 1 \) to the
+  number \( d-u \).
+\item In \( R_i \), every down step is of the form
+  \( (a,i)\to (a-1,i-1) \) for some \( 0\le a\le n-i \). So there are
+  \( n-i \) possible down steps in \( R_i \).
+\item In \( R_i \), there is only one ``missing'' down step or there
+  is only one figure ``X'', but not both.
+\item In \( R_1 \), either \( (k-1,1)\to (k,0) \) or
+  \( (k,1)\to (k+1,0) \) is missing. To see this, observe that if
+  \( (k-1,1)\to (k,0) \) presents, then the path containing this down
+  step must have a horizontal step \( (k,0)\to(k+1,0) \) because
+  \( (k,0) \) cannot be an ending point and an up step cannot be used
+  here by (5). Therefore \( (k,1)\to (k+1,0) \) must be missing.
+\item If \( (a,i)\to (a+1,i-1) \) is a missing down step,
+  then exactly one of the following holds:
+  \begin{itemize}
+  \item \( (a-1,i+1)\to (a,i) \) is missing;
+  \item \( (a,i+1)\to (a+1,i) \) is missing. In this case, there is a
+    path \( p_j \) containing a horizontal step
+    \( (a,i)\to (a+1,i) \);
+  \item \( (a,i+1)\to (a+1,i) \) forms a figure ``X''.
+  \end{itemize}
+\item If \( (a,i)\to (a+1,i-1) \) forms a figure ``X'',
+  both  \( (a,i+1)\to (a+1,i) \) and \( (a,i-1)\to (a+1,i-2) \) are missing.
+\item Construct a path \( p' \) from \( C:=(k+1/2,-1/2) \) to
+  \( D:=(1/2,n-1/2) \) by connecting the midpoints of all the missing
+  down steps as shown in \Cref{fig:20}. Then \( p' \) consists of
+  northeast steps \( (-1,1) \), north steps \( (0,1) \), and double
+  north steps \( (0,2) \). This can be seen by the observations (6),
+  (7), and (8).
+\item The map \( \vec p\mapsto p' \)
+  is a bijection from \( \NI(\vec A \to \vec B^{(k)}) \)
+  to all such paths \( p':C\to D \).
+\end{enumerate}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+\draw[help lines] (0,0) grid (6,6);
+\foreach \x in {0,...,6} \draw node at (\x,-.5) {\( \x \)};
+\foreach \y in {0,...,6} \draw node at (-.5,\y) {\( \y \)};
+\draw[line width = 1.5pt] (0,1) -- ++(1,-1);
+\draw[line width = 1.5pt] (0,2) -- ++(1,-1) -- ++(1,1) -- ++(2,-2);
+\draw[line width = 1.5pt] (0,3) -- ++(3,-3);
+\draw[line width = 1.5pt] (0,4)  -- ++(1,0)-- ++(4,-4);
+\draw[line width = 1.5pt] (0,5)  -- ++(1,0)-- ++(5,-5);
+\node at (0,0) [circle,fill,inner sep=1pt]{};
+\draw[red,line width = 1pt] (.5,5.5) -- ++(0,-2) -- ++(1,-1)-- ++(0,-2) -- ++(1,-1);
+\node at (2.5,-.5) [red,circle,fill,inner sep=2pt]{};
+\node at (1.5,.5) [red,circle,fill,inner sep=2pt]{};
+\node at (1.5,2.5) [red,circle,fill,inner sep=2pt]{};
+\node at (.5,3.5) [red,circle,fill,inner sep=2pt]{};
+\node at (.5,4.5) [red,circle,fill,inner sep=2pt]{};
+\node at (.5,5.5) [red,circle,fill,inner sep=2pt]{};
+\draw [red] node at (2.5,-1) {\( C \)};
+\draw [red] node at (.5,6) {\( D \)};
+\node at (0,0) [circle,fill,inner sep=2pt]{};
+\node at (1,0) [circle,fill,inner sep=2pt]{};
+\node at (3,0) [circle,fill,inner sep=2pt]{};
+\node at (4,0) [circle,fill,inner sep=2pt]{};
+\node at (5,0) [circle,fill,inner sep=2pt]{};
+\node at (6,0) [circle,fill,inner sep=2pt]{};
+\end{tikzpicture}
+\caption{The path \( p' \) from \( C=(k+1/2,-1/2) \) to \( D=(1/2,n-1/2) \)
+  obtained by connecting the midpoints of the missing down steps in
+  \Cref{fig:19}.}
+\label{fig:20}
+\end{figure}
+
+\begin{lem}\label{lem:3}
+  Let \( p' \) be the path obtained from
+  \( \vec p = (p_0,\dots,p_{n-1}) \in \NI(\vec A \to \vec B^{(k)}) \) as
+  above. Define \( w(p') \) to be the product of \( b_i \) for each
+  north step intersecting \( y=i \) and \( -\lambda_i \) for each
+  double north step intersecting \( y=i \) and \( y=i-1 \).
+  Then
+  \[
+    \sgn(\vec p) \wt(\vec p) = w(p') \Delta_{n-1}.
+  \]
+\end{lem}
+ 
+\begin{proof}
+  By observation (7), every north step intersecting \( y=i \)
+  corresponds to a horizontal step of height \( i \), which has weight
+  \( b_i \). By observation (5), the product of the weights of all
+  down steps in \( \vec p \) is
+  \[
+    \lambda_1^{n-1} \lambda_2^{n-2} \cdots \lambda_{n-1}^1 X_1 \cdots
+    X_{n-1} = \Delta_{n-1} X_1 \cdots X_{n-1},
+  \]
+  where \( X_i = \lambda_i \) if there is a figure ``X'' in \( R_i \)
+  and \( X_i = 1 \) otherwise. Moreover, every figure ``X''
+  contributes \( -1 \) to the sign of \( \vec p \).
+  Combinining these facts, we obtain the lemma.
+\end{proof}
+
+\begin{lem}\label{lem:4}
+  We have
+  \[
+    \sum_{p':C\to D} w(p') = (-1)^{n-k} \nu_{n,k}.
+  \]
+\end{lem}
+
+\begin{proof}
+  A path \( p':C\to D \) is essentially the same as a Favard tiling,
+  say \( T \). Since \( p':C\to D \) has \( n-k \) northeast steps,
+  \( T \) has \( k \) red monominos. We need to check their signs.
+  Suppose \( p' \) has \( r \) north steps and \( s \) double north
+  steps. Then \( r+2s+k= n \) since the height difference between
+  \( C \) and \( D \) is \( n \). The sign of \( p' \) is
+  \( (-1)^{s} \) while the sign of \( T \) is \( (-1)^{r+s} \).
+  Hence the sign difference of \( p' \) and \( T \)
+  is \( (-1)^{r} = (-1)^{n-2s-k} = (-1)^{n-k} \).
+  Thus we have
+  \[
+    \sum_{p':C\to D} w(p')
+    = \sum_{T\in \FT_{n,k}} (-1)^{n-k}w(T) =
+    (-1)^{n-k} \nu_{n,k},
+  \]
+ as desired. 
+\end{proof}
+
+
+We are now ready to prove \Cref{thm:10}.
+
+\begin{proof}[Proof of \Cref{thm:10}]
+By \Cref{lem:3}, \Cref{lem:4}, and \eqref{eq:42},
+\begin{align*}
+ \nu_{n,k} &= (-1)^{n-k} \sum_{p':C\to D} w(p') = 
+ (-1)^{n-k} \sum_{\vec p \in \NI(\vec A \to \vec B^{(k)})} 
+ \frac{\sgn(\vec p) \wt(\vec p)}{\Delta_{n-1}}\\
+           &= \frac{(-1)^{n-k}}{\Delta_{n-1}}
+             [H]_{\{0,\dots,n-1\}, \{0,\dots,k-1,k+1,\dots,n\}} ,
+\end{align*}
+which is equivalent to the statement of the theorem.
+\end{proof}
+
+\Cref{thm:10} has an interesting connection with the following
+well-known lemma. (In fact, we only need the case that \( |I|=|J|=1 \),
+which is equivalent to the inverse matrix formula using cofactors.)
+
+\begin{lem}[Inverse minor formula]\label{lem:inv-minor}
+  Suppose that \( A=(A_{i,j})_{i,j=0}^{n}\) is an invertible matrix. For subsets
+  \( I,J\subseteq \{0,\dots,n\} \) of the same cardinality, we have
+  \[
+    \left[A^{-1}\right]_{I, J}=(-1)^{\norm{I}+\norm{J}} \frac{[A]_{J', I'}}{\det A},
+  \]
+  where \( \norm I=\sum_{i\in I}i \) and \( I'=\{0,\dots,n\}\setminus I \).
+\end{lem}
+
+Let \( A = (\mu_{i+j})_{i,j=0}^n \). Note that
+\[
+  \det A = \Delta_n = \Delta_{n-1} \lambda_1 \cdots \lambda_n.
+\]
+Thus \Cref{thm:10} can be restated as
+\[
+  \nu_{n,k} = \frac{(-1)^{n-k}\lambda_1 \cdots \lambda_n}{\det A} [A]_{\{0,\dots,n\}\setminus\{n\},\{0,\dots,n\}\setminus\{k\}}.
+\]
+By \Cref{lem:inv-minor} with \( I=\{k\} \) and \( J=\{n\} \),
+we have
+\[
+  \nu_{n,k} = \lambda_1 \cdots \lambda_n\cdot 
+(-1)^{\norm{I}+\norm{J}} \frac{[A]_{J', I'}}{\det A}
+= \lambda_1 \cdots \lambda_n[A^{-1}]_{I,J}
+= \lambda_1 \cdots \lambda_n(A^{-1})_{k,n}.
+\]
+This implies that \( \nu_{n,0}, \nu_{n,1},\dots,\nu_{n,n} \) are the
+entries of the last column of the matrix \( A^{-1} \).
+Equivalently, for \( 0\le i\le n \), we have
+\[
+  \sum_{k=0}^n \mu_{i+k} \nu_{n,k} = \delta_{n,i} \lambda_1 \cdots
+  \lambda_n.
+\]
+Note that this is equivalent to
+the orthogonality relation
+\[
+  \LL(x^iP_n(x)) = \delta_{n,i} \lambda_1 \cdots \lambda_n.
+\]
+
+
+The above arguments show that \Cref{thm:10} is equivalent to a formula
+for \( (A^{-1})_{k,n} \) for \( 0\le k\le n \). Therefore it is
+natural to ask whether there is a similar formula for
+\( (A^{-1})_{r,s} \) for arbitrary \( 0\le r,s\le n \).
+
+\begin{thm}\label{thm:13}
+Let \( A = (\mu_{i+j})_{i,j=0}^n \). 
+Then
+\[
+  (A^{-1})_{r,s} = \sum_{k=0}^{n} \frac{\nu_{k,r}\nu_{k,s}}{\lambda_1 \cdots \lambda_k}.
+\]
+\end{thm}
+
+\begin{proof}[Proof 1]
+  Let \( I=\{r\} \) and \( J=\{s\} \). Then
+\begin{equation}\label{eq:44}
+  (A^{-1})_{r,s} =(-1)^{r+s} \frac{[A]_{J', I'}}{\det A}.
+\end{equation}
+Let \( \vec A^{(s)} = (A_0,\dots,A_{n-1}) \) and
+\( \vec B^{(r)} = (B_0,\dots,B_{n-1}) \), where
+\[
+  A_i = (-i-\chi(i\ge s),0), \qquad B_i = (i + \chi(i\ge r),0).
+\]
+Then by the Lindstr\"om--Gessel--Viennot lemma,
+\[
+[A]_{J', I'}  = \sum_{\vec p
+    \in \NI(\vec A^{(s)} \to \vec B^{(r)})} \sgn(\vec p) \wt(\vec p).
+\]
+
+Consider \( \vec p =(p_0,\dots,p_{n-1}) \in \NI(\vec A^{(s)} \to \vec B^{(r)}) \).
+Then these paths must visit \( (0,i) \) for all \( 0\le i\le n \) with
+\( i\ne k \) for some \( k \) such that \( \max(r,s)\le k\le n \).
+By the same arguments above, we have
+\begin{equation}
+ [A]\label{eq:43}_{J', I'} = \sum_{k=\max(r,s)}^{n} \frac{\Delta_n}{\lambda_1 \cdots \lambda_k}
+ (-1)^{k-r} \nu_{k,r} (-1)^{k-s} \nu_{k,s}.
+\end{equation}
+For example, see \Cref{fig:21}. By \eqref{eq:44} and \eqref{eq:43} we
+obtain the theorem.
+\end{proof}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=0.8]
+\draw[help lines] (-8,0) grid (8,8);
+\draw node at (0,-.5) {\( 0 \)};
+\draw node at (-4,-.5) {\( -s \)};
+\draw node at (3,-.5) {\( r \)};
+\draw node at (0,7) {\( k \)};
+\draw node at (8,-.5) {\( n \)};
+\draw node at (-8,-.5) {\( -n \)};
+\draw[line width = 1.5pt] (-1,0) --++ (1,1) --++ (1,-1);
+\draw[line width = 1.5pt] (-2,0) --++ (2,2) --++ (2,-2);
+\draw[line width = 1.5pt] (-3,0) --++ (3,3) --++(3,-3) --++(1,0);
+\draw[line width = 1.5pt] (-5,0) --++ (2,2)  --++(1,0) -- ++(2,2)  --++(1,-1)
+ --++(1,0)-- ++(3,-3);
+\draw[line width = 1.5pt] (-6,0) --++ (6,6)  --++(6,-6);
+\draw[line width = 1.5pt] (-7,0) --++ (5,5)  --++(1,-1) --++(2,2) --++(6,-6);
+\draw[line width = 1.5pt] (-8,0)  --++ (8,8)--++ (8,-8);
+\node at (0,0) [circle,fill,inner sep=2pt]{};
+\node at (1,0) [circle,fill,inner sep=2pt]{};
+\node at (2,0) [circle,fill,inner sep=2pt]{};
+\node at (4,0) [circle,fill,inner sep=2pt]{};
+\node at (5,0) [circle,fill,inner sep=2pt]{};
+\node at (6,0) [circle,fill,inner sep=2pt]{};
+\node at (7,0) [circle,fill,inner sep=2pt]{};
+\node at (8,0) [circle,fill,inner sep=2pt]{};
+\node at (-1,0) [circle,fill,inner sep=2pt]{};
+\node at (-2,0) [circle,fill,inner sep=2pt]{};
+\node at (-3,0) [circle,fill,inner sep=2pt]{};
+\node at (-5,0) [circle,fill,inner sep=2pt]{};
+\node at (-6,0) [circle,fill,inner sep=2pt]{};
+\node at (-7,0) [circle,fill,inner sep=2pt]{};
+\node at (-8,0) [circle,fill,inner sep=2pt]{};
+\node at (3.5,-.5) [red,circle,fill,inner sep=2pt]{};
+\node at (3.5,.5) [red,circle,fill,inner sep=2pt]{};
+\node at (2.5,1.5) [red,circle,fill,inner sep=2pt]{};
+\node at (1.5,2.5) [red,circle,fill,inner sep=2pt]{};
+\node at (1.5,3.5) [red,circle,fill,inner sep=2pt]{};
+\node at (.5,4.5) [red,circle,fill,inner sep=2pt]{};
+\node at (.5,6.5) [red,circle,fill,inner sep=2pt]{};
+\draw[red,line width = 1pt] (3.5,-.5) --++(0,1) --++(-1,1) --++(-1,1) --++(0,1) --++(-1,1) --++(0,2);
+\draw[blue,line width = 1pt] (-4.5,-.5) --++(2,2) --++(0,1) --++(1,1) --++(0,2) --++(1,1);
+\node at (-4.5,-.5) [blue,circle,fill,inner sep=2pt]{};
+\node at (-3.5,.5) [blue,circle,fill,inner sep=2pt]{};
+\node at (-2.5,1.5) [blue,circle,fill,inner sep=2pt]{};
+\node at (-2.5,2.5) [blue,circle,fill,inner sep=2pt]{};
+\node at (-1.5,3.5) [blue,circle,fill,inner sep=2pt]{};
+\node at (-1.5,5.5) [blue,circle,fill,inner sep=2pt]{};
+\node at (-.5,6.5) [blue,circle,fill,inner sep=2pt]{};
+\end{tikzpicture}
+\caption{A nonintersecting \( (n+1) \)-path in
+  \( \NI(\vec A^{(s)} \to \vec B^{(r)}) \). The red (resp.~blue) path
+  on the left contributes to \( (-1)^{k-s}\nu_{k,s} \) (resp.~\( (-1)^{k-r}\nu_{k,r} \)). }
+\label{fig:21}
+\end{figure}
+
+
+\begin{proof}[Proof 2]
+We can also prove this theorem using orthogonality.
+Given, \( r,s \), it suffces to prove the validity of
+\[
+ \delta_{r,s} = \sum_{k=0}^{n} \mu_{r+k}(A^{-1})_{k,s}
+  = \sum_{k=0}^{n} \mu_{r+k}
+    \sum_{\ell=0}^{n} \frac{\nu_{\ell,k}\nu_{\ell,s}}{\lambda_1 \cdots \lambda_\ell} .
+\]
+We can write the right-hand side as
+\begin{align*}
+  \LL \left(    \sum_{k=0}^{n} x^{r+k}
+  \sum_{\ell=0}^{n} \frac{\nu_{\ell,k}\nu_{\ell,s}}{\lambda_1 \cdots \lambda_\ell}
+  \right)
+  &= \LL \left(     x^r 
+  \sum_{\ell=0}^{n}   \frac{\nu_{\ell,s}}{\lambda_1 \cdots \lambda_\ell}
+    \sum_{k=0}^{n} \nu_{\ell,k} x^k \right) \\
+  &= \LL \left( \sum_{a=0}^{r} \mu_{r,a}P_a(x)  
+  \sum_{\ell=0}^{n} \frac{\nu_{\ell,s}}{\lambda_1 \cdots \lambda_\ell}
+    P_\ell(x) \right) \\
+  &= \sum_{\ell=0}^{n} \mu_{r,\ell} \nu_{\ell,s} = \delta_{r,s}.
+\end{align*}
+\end{proof}
+
 
 % \chapter{Continued fractions}
+
 
 % \section{Development in J-fraction}
 
 % \section{Examples}
 
 % \section{Convergents}
+
+% \section{Inverse generating functions}
 
 % \section{Symmetric orthogonal polynomials}
 
