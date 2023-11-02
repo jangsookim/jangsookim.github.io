@@ -6218,12 +6218,12 @@ Then by the Lindstr\"om--Gessel--Viennot lemma,
 \draw node at (-3,-.5) {\( A_3 \)};
 \draw node at (-2,-.5) {\( A_2 \)};
 \draw node at (-1,-.5) {\( A_1 \)};
-\draw node at (0,-.5) {\( A_0=B^{(2)}_0 \)};
-\draw node at (1,-.5) {\( B^{(2)}_1 \)};
-\draw node at (3,-.5) {\( B^{(2)}_2 \)};
-\draw node at (4,-.5) {\( B^{(2)}_3 \)};
-\draw node at (5,-.5) {\( B^{(2)}_4 \)};
-\draw node at (6,-.5) {\( B^{(2)}_5 \)};
+\draw node at (0,-.5) {\( A_0=B_0 \)};
+\draw node at (1,-.5) {\( B_1 \)};
+\draw node at (3,-.5) {\( B_2 \)};
+\draw node at (4,-.5) {\( B_3 \)};
+\draw node at (5,-.5) {\( B_4 \)};
+\draw node at (6,-.5) {\( B_5 \)};
 \draw[line width = 1.5pt] (-1,0) --++ (1,1) --++ (1,-1);
 \draw[line width = 1.5pt] (-2,0) --++ (2,2) -- ++(1,-1) -- ++(1,1) -- ++(2,-2);
 \draw[line width = 1.5pt] (-3,0) --++ (3,3) -- ++(3,-3);
@@ -6263,12 +6263,12 @@ Then we have the following observations. See \Cref{fig:19}.
 \draw node at (-3,-.5) {\( A_3 \)};
 \draw node at (-2,-.5) {\( A_2 \)};
 \draw node at (-1,-.5) {\( A_1 \)};
-\draw node at (0,-.5) {\( A_0=B^{(2)}_0 \)};
-\draw node at (1,-.5) {\( B^{(2)}_1 \)};
-\draw node at (3,-.5) {\( B^{(2)}_2 \)};
-\draw node at (4,-.5) {\( B^{(2)}_3 \)};
-\draw node at (5,-.5) {\( B^{(2)}_4 \)};
-\draw node at (6,-.5) {\( B^{(2)}_5 \)};
+\draw node at (0,-.5) {\( A_0=B_0 \)};
+\draw node at (1,-.5) {\( B_1 \)};
+\draw node at (3,-.5) {\( B_2 \)};
+\draw node at (4,-.5) {\( B_3 \)};
+\draw node at (5,-.5) {\( B_4 \)};
+\draw node at (6,-.5) {\( B_5 \)};
 \draw[line width = 1.5pt] (-1,0) --++ (1,1) --++ (1,-1);
 \draw[line width = 1.5pt] (-2,0) --++ (2,2) -- ++(1,-1) -- ++(1,1) -- ++(2,-2);
 \draw[line width = 1.5pt] (-3,0) --++ (3,3) -- ++(3,-3);
@@ -6313,12 +6313,20 @@ Then we have the following observations. See \Cref{fig:19}.
   \( n-i \) possible down steps in \( R_i \).
 \item In \( R_i \), there is only one ``missing'' down step or there
   is only one figure ``X'', but not both.
-\item In \( R_1 \), either \( (k-1,1)\to (k,0) \) or
-  \( (k,1)\to (k+1,0) \) is missing. To see this, observe that if
-  \( (k-1,1)\to (k,0) \) presents, then the path containing this down
-  step must have a horizontal step \( (k,0)\to(k+1,0) \) because
+\item In \( R_1 \), we have exactly one of the following:
+  \begin{itemize}
+  \item \( (k-1,1)\to (k,0) \) is missing;
+  \item \( (k,1)\to (k+1,0) \) is missing;
+  \item \( (k,1)\to (k+1,0) \) and \( (k,0)\to (k+1,1) \)
+    form a figure ``X''.
+  \end{itemize}
+  To see this, observe that if \( (k-1,1)\to (k,0) \) presents, then
+  the path containing this down step must have a horizontal step
+  \( (k,0)\to(k+1,0) \) or an up step \( (k,0)\to (k+1,1) \) because
   \( (k,0) \) cannot be an ending point and an up step cannot be used
-  here by (5). Therefore \( (k,1)\to (k+1,0) \) must be missing.
+  here by (5). Therefore either \( (k,1)\to (k+1,0) \) is missing or
+  \( (k,1)\to (k+1,0) \) and \( (k,0)\to (k+1,1) \) form a figure
+  ``X''.
 \item If \( (a,i)\to (a+1,i-1) \) is a missing down step,
   then exactly one of the following holds:
   \begin{itemize}
@@ -6326,7 +6334,6 @@ Then we have the following observations. See \Cref{fig:19}.
   \item \( (a,i+1)\to (a+1,i) \) is missing. In this case, there is a
     path \( p_j \) containing a horizontal step
     \( (a,i)\to (a+1,i) \);
-  \item \( (a,i+1)\to (a+1,i) \) forms a figure ``X''.
   \end{itemize}
 \item If \( (a,i)\to (a+1,i-1) \) forms a figure ``X'',
   both  \( (a,i+1)\to (a+1,i) \) and \( (a,i-1)\to (a+1,i-2) \) are missing.
@@ -6603,9 +6610,38 @@ We can write the right-hand side as
   &= \LL \left( \sum_{a=0}^{r} \mu_{r,a}P_a(x)  
   \sum_{\ell=0}^{n} \frac{\nu_{\ell,s}}{\lambda_1 \cdots \lambda_\ell}
     P_\ell(x) \right) \\
-  &= \sum_{\ell=0}^{n} \mu_{r,\ell} \nu_{\ell,s} = \delta_{r,s}.
+  &= \sum_{\ell=0}^{n} \mu_{r,\ell} \nu_{\ell,s} = \delta_{r,s}. \qedhere
 \end{align*}
 \end{proof}
+
+Note that \Cref{thm:13} is equivalent to the following \( UDL \)
+decomposition of the inverse of a finite Hankel matrix:
+\begin{equation}\label{eq:45}
+  \left( \left( \mu_{i+j} \right)_{i,j=0}^n \right)^{-1}
+  = \left( \left( \nu_{i,j} \right)_{i,j=0}^n \right)^T
+  D(\lambda_1^{-1}, \lambda_1^{-1}\lambda_2^{-1},\dots, \lambda_1^{-1} \cdots \lambda_n^{-1})
+  \left( \nu_{i,j} \right)_{i,j=0}^n,
+\end{equation}
+where \( D(a_0,\dots,a_n) \) is the diagonal matrix with diagonal
+entries \( a_i \)'s. Since \( (\nu_{i,j})^{-1} = (\mu_{i,j}) \),
+taking the inverses of both sides of \eqref{eq:45}, we get
+the following \( LDU \) decomposition of a finite Hankel matrix:
+\begin{equation}\label{eq:46}
+   \left( \mu_{i+j} \right)_{i,j=0}^n
+  = \left( \mu_{i,j} \right)_{i,j=0}^n
+  D(\lambda_1, \lambda_1\lambda_2,\dots, \lambda_1 \cdots \lambda_n)
+  \left( \left( \mu_{i,j} \right)_{i,j=0}^n \right)^T.
+\end{equation}
+This is equivalent to
+\[
+  \mu_{r+s} = \sum_{k=0}^n \mu_{r,k} \lambda_1 \cdots \lambda_k \mu_{s,k}.
+\]
+This can also be proved combinatorially using \Cref{thm:mu=Mot_nrs} as follows:
+\[
+  \sum_{k=0}^n \mu_{r,k} \lambda_1 \cdots \lambda_k \mu_{s,k}
+  = \sum_{k=0}^n \mu_{r,0,k} \lambda_1 \cdots \lambda_k \mu_{s,0,k} 
+ = \sum_{k=0}^n \mu_{r,0,k} \mu_{s,k,0} = \mu_{r+s}.
+\]
 
 
 % \chapter{Continued fractions}
