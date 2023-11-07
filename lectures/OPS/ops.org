@@ -87,3 +87,4 @@ Orthogonal polynomials are classical objects arising from the study of continued
 16. [2023-10-26 Thu]: Lindstrom-Gessel-Viennot lemma, [[file:ops-files/OPS16.pdf][lecture notes]], [[https://youtu.be/zl5HT-3AUXI][video]]
 17. [2023-10-31 Tue]: Hankel determinants of moments, [[file:ops-files/OPS17.pdf][lecture notes]], [[https://youtu.be/i95-OlYUUnY][video]]
 18. [2023-11-02 Thu]: Duality between mixed moments and coefficients, [[file:ops-files/OPS18.pdf][lecture notes]], [[https://youtu.be/o7duLc23eMk][video]]
+19. [2023-11-07 Tue]: Continued fractions 1, [[file:ops-files/OPS19.pdf][lecture notes]], [[https://youtu.be/vZX9iVYAFVM][video]]
