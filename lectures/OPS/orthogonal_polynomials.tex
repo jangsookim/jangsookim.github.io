@@ -6732,7 +6732,6 @@ However, the sequence of \( n \)th convergents does not converge in
 \Cref{exa:2}, hence we arrived at the strange situation that the
 continued fraction is a complex number.
 
-
 \section{Flajolet's combinatorial theory of continued fractions}
 
 In this section we study Flajolet's combinatorial theory of continued
@@ -6749,7 +6748,6 @@ Here \( \wt(\pi; \vb,\vla) \) is the usual weight of a Motzkin path
 \( \pi \), i.e., the product of \( b_i \) for each horizontal step
 with starting height \( i \) and \( b_i \) for each down step with
 starting height \( i \).
-
 
 Let
 \[
@@ -6817,6 +6815,13 @@ series.
   \( x^m \) in \( F_n(x) \), \( n\ge0 \), eventually becomes the
   coefficient of \( x^m \) in \( F(x) \).
 \end{defn}
+
+\begin{exam}
+  Let \( F(x) = 1+x+x^2 + \cdots \) and
+  \( F_k(x) = 1+x+x^2 + \cdots + x^k \). Then
+  \( \lim_{k\to \infty} F_k(x) = F(x) \).
+\end{exam}
+
 
 To prove that \Cref{eq:47} converges we need to investigate its
 \( n \)th convergents. To do this we introduce the following
@@ -6964,7 +6969,7 @@ The following lemma gives a solution to \eqref{eq:53}.
 
 \begin{proof}
   We use induction on \( n \). By \eqref{eq:52}, the equation
-  \eqref{eq:54} is true for \( n=1 \). Suppose that the lemma is true
+  \eqref{eq:54} is true for \( n=0,1 \). Suppose that the lemma is true
   for \( n\ge1 \) and consider the case \( n+1 \). Observe that
   the \( (n+1) \)st convergent can be written as
   \[
@@ -7003,7 +7008,7 @@ Now we can prove \Cref{thm:15}.
 
 \begin{proof}[Proof of \Cref{thm:15}]
   By \Cref{lem:5} with
-  \( \alpha_n = \lambda_n x^2 \)
+  \( \alpha_n = -\lambda_n x^2 \)
   and \( \beta_n = 1-b_nx \), we have
   \[
     \frac{A_k}{B_k} = 1-b_0x- \cfrac{\lambda_1x^2}{ 1-b_1x-
@@ -7016,16 +7021,15 @@ Now we can prove \Cref{thm:15}.
   \( B_{-1} = 0 \), \( B_0=1 \), and for \( n\ge1 \),
   \begin{align*}
     A_n &= (1-b_nx) A_{n-1} + \lambda_n x^2 A_{n-2},\\
-    B_n &= (1-b_nx) B_{n-1} + \lambda_n x^2 B_{n-2},
+    B_n &= (1-b_nx) B_{n-1} + \lambda_n x^2 B_{n-2}.
   \end{align*}
   By \eqref{eq:51}, we obtain \( A_n = P^*_{n+1}(x;\vb,\vla) \).
   Replacing \( n \) by \( n-1 \) and taking \( \delta \) in \eqref{eq:51} we obtain
   \[
   \delta P^*_{n}(x;\vb,\vla) = (1-b_{n}x) \delta P^*_{n-1}(x;\vb,\vla) - \lambda_{n} x^2  \delta P^*_{n-2}(x;\vb,\vla).
 \]
-This shows that \( B_n = \delta P^*_n(x;\vb,\vla) \).
-Combining these restuls with 
-\Cref{thm:14}, we obtain
+This shows that \( B_n = \delta P^*_n(x;\vb,\vla) \). Combining these
+results with \Cref{thm:14}, we obtain
 \begin{align*}
   \sum_{n\ge0} \mu_n^{\le k}(\vb,\vla)x^n
   &= \cfrac{1}{
@@ -7038,34 +7042,595 @@ Combining these restuls with
 \end{align*}
 \end{proof}
 
-% \section{Refined results}
+We end this section with a connection between \Cref{thm:14} and Pad\'e
+approximants. 
 
-% \begin{lem}
-%   Let \( r,s, \) and \( k \) be integers with \( 0\le r,s\le k \).
-%   If \(r\le s\), then 
+\medskip
+
+Let \( P(x) \) and \( Q(x) \) be polynomials of degree
+\( p \) and \( q \), respectively. We say that \( \frac{P(x)}{Q(x)} \)
+is a \emph{Pad\'e approximant} of type \( (p,q) \) for \( F(x) \) if
+\[
+  F(x) - \frac{P(x)}{Q(x)} = \sum_{n\ge p+q+1} a_n x^n.
+\]
+Often times Pad\'e approximants are better than Taylor polynomials
+since rational functions can handle poles. It is well known that if a
+power series has a Pad\'e approximant of type \( (p,q) \), then it is
+unique.
+
+\begin{cor}
+Let
+\[
+  F(x) = \sum_{n\ge0} \mu_{n}(\vb,\vla) x^{n}.
+\]
+Then for a nonnegative integer \( k \),
+\[
+  \frac{\delta P^*_{k}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)}
+\]
+is the Pad\'e approximant of type \( (k,k+1) \) for \( F(x) \).
+\end{cor}
+
+\begin{proof}
+  We have
+\[
+  \sum_{n\ge0} \mu_{n}^{\le k}(\vb,\vla) x^{n} = 
+  \frac{\delta P^*_{k}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)}.
+\]
+Observe that if
+\[
+  \mu_{n}(\vb,\vla) \ne \mu_{n}^{\le k}(\vb,\vla),
+\]
+we must have \( n \ge 2k+2 \).
+Hence the lowest term of
+\[
+  F(x) - \frac{\delta P^*_{k}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)} = \sum_{n\ge0}
+  \left( \mu_{n}(\vb,\vla) -\mu_{n}^{\le k}(\vb,\vla) \right)
+  x^{n}
+\]
+has degree at most \( 2k+2 \). This implies the statement.
+\end{proof}
+
+\section{Motzkin paths with fixed starting and ending heights}
+
+In this section we generalize \Cref{thm:15} to Motzkin paths with
+bounded height and fixed starting and ending heights.
+We begin with some definitions.
+
+Let \( \Motz^{\le k}_{n,r,s} \) denote the set of Motzkin paths in
+\( \Motz_{n,r,s} = \Motz((0,r)\to (n,s)) \) that stays weakly below
+the line \( y=k \). We also define
+\[
+  \mu^{\le k}_{n,r,s}(\vb, \vla) = \sum_{\pi\in \Motz^{\le k}_{n,r,s}}
+  \wt(\pi; \vb,\vla).
+\]
+
+
+
+
+\begin{thm}\label{thm:16}
+Let \( r,s, \) and \( k \) be integers with \( 0\le r,s\le k \).
+If \(r\le s\), then 
+\[
+  \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n = x^{s-r}
+  \frac{P^*_r(x;\vb,\vla) \delta^{s+1}
+    P^*_{k-s}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)}.
+\]
+  If \(r> s\), then
+  \[
+    \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n = \lambda_{s+1}
+    \cdots \lambda_r\frac{ P^*_s(x;\vb,\vla) \delta^{r+1}
+      P^*_{k-r}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)} .
+  \]
+\end{thm}
+
+It is possible to prove \Cref{thm:16} using sign-reversing involutions
+as before. However, we will not pursue in this direction. Instead we
+will give two alternative proofs: one using linear algebra techniques
+and the other using combinatorial arguments. We first need to
+introduce some definitions.
+
+
+Let \( G=(V,E) \) be a directed graph on the vertex set \( V=[m] \).
+Let \( w:E\to K \) be an edge-weight and let
+\( A = (a_{i,j})_{i,j=1}^m \) be the adjacency matrix of this weighted
+graph \( G \), that is, \( a_{i,j} = w(i\to j) \). Here, if there is
+no edge \( i\to j \) in \( G \), we define \( a_{i,j} = 0 \).
+
+A \emph{path} of length \( n \) from \( u \) to \( v \) is a sequence
+\( p= (u_0,\dots,u_n) \) of vertices such that \( u_0=u \),
+\( u_n = v \), and \( u_{i-1}\to u_{i} \) is an edge for all
+\( i=1,\dots,n \). The \emph{weight} \( w(p) \) of \( p \) is defined
+to be the product of the weight of each step:
+\[
+  w(p) = w(u_0\to u_1) w(u_1\to u_2) \cdots w(u_{n-1}\to u_n)
+  = a_{u_0,u_1} a_{u_1,u_2} \cdots a_{u_{n-1},u_n}.
+\]
+Let \( P_n(u\to v) \) denote the set of all paths of length \( n \)
+from \( u \) to \( v \). We also define \( P(u\to v) \) to be the set
+of all paths from \( u \) to \( v \).
+
+\begin{lem}\label{lem:8}
+  For vertices \( i,j\in [m] \) and an integer \( n\ge0 \),
+  \[
+    \sum_{p\in P_n(i\to j)} w(p) = (A^n)_{i,j}.
+  \]
+\end{lem}
+
+\begin{proof}
+  This is immediate from the definition of the product of matrices.
+\end{proof}
+
+\begin{prop}\label{pro:2}
+  Suppose that \( I-A \) is invertible. We have
+\[
+  \sum_{p\in P(i\to j)}  w(p) = \left( (I-A)^{-1} \right)_{i,j}
+    = \frac{(-1)^{r+s} [I-A]_{\{j\}^c,\{i\}^c}}{\det(I-A)},
+\]
+where \( I \) is the \( m\times m \) identity matrix.
+\end{prop}
+
+\begin{proof}
+  By \Cref{lem:8}, the left-hand side is
+  equal to
+  \[
+    \sum_{n\ge0} \left( \sum_{p\in P_n(i\to j)} w(p) \right) =
+    \sum_{n\ge0} (A^n)_{i,j} = \left( \sum_{n\ge0} A^n
+    \right)_{i,j} = \left( (I- A)^{-1} \right)_{i,j} ,
+\]
+which proves the first equality. The second equality follows from the
+minor inverse formula \Cref{lem:inv-minor}.
+\end{proof}
+
+Now let us return to the following generating function that we need to
+compute:
+\begin{equation}\label{eq:59}
+  \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla)x^n = \sum_{n\ge0} 
+    \sum_{\pi\in \Motz^{\le k}_{n,r,s}} \wt(\pi; \vb,\vla)  x^n.
+\end{equation}
+Define a graph \( G_k \) on \( V=\{0,1,\dots,k\} \) with edges
+\( (i,j) \) for all possible \( i,j\in V \) with \( |i-j|\le 1 \).
+Define an edge-weight \( w \) on \( G_k \) by \( w(i,i+1)=x \),
+\( w(i,i)=b_ix \), and \( w(i,i-1)=\lambda_ix \). Then the adjacency
+matrix of \( G_k \) is the following tridiagonal matrix:
+\[
+  A = 
+  \begin{pmatrix}
+    b_0x & x &  & 0 \\
+    \lambda_1x & b_1x & \ddots & \\
+             & \ddots & \ddots & x \\
+   0  &  & \lambda_{k}x & b_{k}x
+  \end{pmatrix}.
+\]
+
+Observe that every \( \pi\in \Motz^{\le k}_{n,r,s} \) can be
+considered as a path \( p \) of length \( n \) from \( r \) to \( s \)
+for the graph \( G_k \). In this case we have
+\( \wt(\pi;\vb,\vla)x^n = w(p) \). Therefore we can rewrite \eqref{eq:59}
+as
+\begin{equation}\label{eq:60}
+  \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n
+  = \sum_{n\ge0 }  \sum_{p\in P_n(r\to s)} w(p)
+  = \sum_{p\in P(r\to s)}  w(p).
+\end{equation}
+Then, by \Cref{pro:2},
+\begin{equation}\label{eq:57}
+  \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n
+  = \frac{(-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c}}{\det(I-A)}.
+\end{equation}
+
+Now we need to compute the numerator and the denominator of the
+right-hand side of \eqref{eq:57}.
+
+
+\begin{lem}\label{lem:6}
+We have
+  \[
+    P^*_{k+1}(x;\vb,\vla) = \det (I - A).
+\]
+\end{lem}
+
+\begin{proof}
+Let 
+  \[
+ Q_{k+1}(x) = \det (I - A) = 
+ \det
+  \begin{pmatrix}
+    1-xb_0 & -x &  & 0 \\
+    -x\lambda_1 & 1-xb_1 & \ddots & \\
+             & \ddots & \ddots & -x \\
+   0  &  & -x\lambda_{k} & 1-xb_{k}
+  \end{pmatrix}.
+\]
+Expanding the determinant along the last row, we have
+\[
+    Q_{k+1}(x) = (1-b_{k}x) Q_{k}(x) - \lambda_{k} x^2 Q_{k-1}(x).
+\]
+This is the same recurrence for \( P^*_n(x;\vb,\vla) \) in
+\eqref{eq:51}. Since \( Q_0(x) = 1 = P^*_0(x) \) and
+\( Q_1(x) = 1-xb_0 = P^*_1(x) \), we obtain the lemma.
+\end{proof}
+
+
+\begin{lem}\label{lem:7}
+  We have
+\[
+  (-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c} =
+  \begin{cases}
+  x^{s-r} P^*_r(x;\vb,\vla) \delta^{s+1} P^*_{k-s}(x;\vb,\vla)  & \mbox{if \( r\le s \)},\\
+    \lambda_{s+1} \cdots \lambda_rP^*_s(x;\vb,\vla) \delta^{r+1} P^*_{k-r}(x;\vb,\vla)
+    & \mbox{if \( r>s \).}
+  \end{cases}
+\]
+\end{lem}
+
+\begin{proof}
+  Since \( I-A \) is tridiagonal, we can decompose
+  \( (-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c} = \det B_1 \det B_2 \det B_3
+  \) as shown in \Cref{fig:24}. Suppose that \( r\le s \). Then, by
+  \ref{lem:6}, we have \( \det B_1 = P^*_r(x;\vb,\vla) \) and
+  \( \det B_3 = \delta^{s+1} P^*_{k-s}(x;\vb,\vla) \). Since \( B_2 \)
+  is lower trianular with diagonal entries \( x,\dots,x \), we have
+  \( \det B_2 = x^{s-r} \).
+
+  Similarly, if \( r> s \), we have \( \det B_1 = P^*_s(x;\vb,\vla) \)
+  and \( \det B_3 = \delta^{r+1} P^*_{k-r}(x;\vb,\vla) \). Since
+  \( B_2 \) is upper trianular with diagonal entries
+  \( \lambda_{s+1},\dots,\lambda_r \), we have
+  \( \det B_2 = \lambda_{s+1},\dots,\lambda_r \). This proves the
+  lemma.
+\end{proof}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+  \draw[black] (0,0) rectangle (4,-4);
+  \fill[gray] (1,0) rectangle (1.3,-4);
+  \draw[black] (2.5,0) rectangle (2.8,-4);
+  \draw[black] (0,-1) rectangle (4,-1.3);
+  \fill[gray] (0,-2.5) rectangle (4,-2.8);
+  \draw node at (-.3,-1.15)  {\( r \)};
+  \draw node at (-.3,-2.65)  {\( s \)};
+  \draw node at (1.15,.3)  {\( r \)};
+  \draw node at (2.65,.3)  {\( s \)};
+  \draw[line width=2pt,blue] (0,0) rectangle (1,-1);
+  \draw[line width=2pt,blue] (1.3,-1) rectangle (2.8,-2.5);
+  \draw[line width=2pt,blue] (2.8,-2.8) rectangle (4,-4);
+  \draw node at (.5,-.5)  {\( B_1 \)};
+  \draw node at (2.05,-1.75)  {\( B_2 \)};
+  \draw node at (3.4,-3.4)  {\( B_3 \)};
+\end{tikzpicture} \qquad 
+\begin{tikzpicture}
+  \draw[black] (0,0) rectangle (4,-4);
+  \draw[black] (1,0) rectangle (1.3,-4);
+  \fill[gray] (2.5,0) rectangle (2.8,-4);
+  \fill[gray] (0,-1) rectangle (4,-1.3);
+  \draw[black] (0,-2.5) rectangle (4,-2.8);
+  \draw node at (-.3,-1.15)  {\( s \)};
+  \draw node at (-.3,-2.65)  {\( r \)};
+  \draw node at (1.15,.3)  {\( s \)};
+  \draw node at (2.65,.3)  {\( r \)};
+  \draw[line width=2pt,blue] (0,0) rectangle (1,-1);
+  \draw[line width=2pt,blue] (1,-1.3) rectangle (2.5,-2.8);
+  \draw[line width=2pt,blue] (2.8,-2.8) rectangle (4,-4);
+  \draw node at (.5,-.5)  {\( B_1 \)};
+  \draw node at (1.75,-2.05)  {\( B_2 \)};
+  \draw node at (3.4,-3.4)  {\( B_3 \)};
+\end{tikzpicture}
+\caption{The minor \( (-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c} \) is the
+  product of the determinants of three block matrices
+  \( B_1,B_2,B_3 \). The left diagram is for the case \( r\le s \) and
+  the right diagram is for the case \( r> s \).}
+  \label{fig:24}
+\end{figure}
+
+
+By \eqref{eq:57}, \Cref{lem:6} and \Cref{lem:7}, we
+obtain \Cref{thm:16}.
+
+\section{A combinatorial proof using disjoint paths and cycles}
+
+In this section we give another proof of \Cref{thm:16} using
+self-avoiding paths. As in the previous section let \( G=(V,E) \) be a
+directed graph on the vertex set \( V=[m] \) with edge-weight
+\( w:E\to K \) and adjacency matrix \( A = (a_{i,j})_{i,j=1}^m \).
+
+A \emph{cycle} is a path \( p=(u_0,\dots,u_n) \) such that
+\( u_n=u_0 \). We identify a cycle \( p=(u_0,\dots,u_n) \) with any of
+its cyclic shift \( p=(u_j,\dots,u_n,u_0,\dots,u_j) \). We say that a
+path \( p=(u_0,\dots,u_n) \) is \emph{self-avoiding} if
+\( u_i\ne u_j \) for all \( i\ne j \) with a possible exception
+\( u_0=u_n \). A collection \( \{p_1, p_2,\dots,p_t\} \) of paths is
+said to be \emph{disjoint} if the following conditions hold:
+\begin{itemize}
+\item \( p_i \) is self-avoiding for all \( 1\le i\le t \),
+\item \( p_i \) and \( p_j \) have no common vertices for all
+  \( 1\le i\ne j\le t \).
+\end{itemize}
+
+
+We define
+\[
+  \Gamma = \sum_{\{C_1, C_2,\dots,C_t\}\in \mathcal{C}} (-1)^{t} w(C_1) \cdots w(C_t),
+\]
+where \( \mathcal{C} \) is the set of all disjoint collections
+\( \{C_1, C_2,\dots,C_t\} \) of cycles in \( G \). For
+\( 1\le i,j\le m \), we define
+\begin{equation}\label{eq:61}
+  \Gamma_{i,j} = \sum_{(p,\{C_1, C_2,\dots,C_t\})\in \mathcal{C}_{i,j}} w(p) \cdot (-1)^{t} w(C_1) \cdots w(C_t),
+\end{equation}
+where \( \mathcal{C}_{i,j} \) is the set of all pairs
+\( (p,\{C_1, C_2,\dots,C_t\}) \) of a path \( p\in P(i\to j) \) and a
+collection \( \{C_1, C_2,\dots,C_t\} \) of cycles in \( G \) such that
+\( \{p, C_1, C_2,\dots,C_t\} \) is disjoint.
+
+Note that since 
+
+\begin{prop}\label{pro:3}
+  We have
+\[
+  \sum_{p\in P(i\to j)}  w(p) = \frac{\Gamma_{i,j}}{\Gamma}.
+\]
+\end{prop}
+
+\begin{proof}
+  We will prove the equivalent statement
+  \[
+     \Gamma  \sum_{p\in P(i\to j)}  w(p) = \Gamma_{i,j}.
+  \]
+  The left-hand side can be written as
+  \[
+   \sum_{(p,\{C_1, C_2,\dots,C_t\})\in X} w(p) \cdot (-1)^{t} w(C_1) \cdots w(C_t),
+ \]
+ where \( X \) is the set of pairs \( (p,\{C_1, C_2,\dots,C_t\}) \) of
+ any path \( p\in P(i\to j) \) and any disjoint collection
+ \( \{C_1, C_2,\dots,C_t\} \) of cycles in \( G \). By \eqref{eq:61},
+ it suffices to find a sign-reversing weight-preserving involution
+ \( \phi: X \to X \) with fixed point set \( \mathcal{C}_{i,j} \).
+
+ Consider \( (p,\{C_1, C_2,\dots,C_t\})\in X \). If
+ \( (p,\{C_1, C_2,\dots,C_t\})\in \mathcal{C}_{i,j} \), then define
+ \( \phi(p,\{C_1, C_2,\dots,C_t\}) = (p,\{C_1, C_2,\dots,C_t\}) \).
+ Now suppose that
+ \( (p,\{C_1, C_2,\dots,C_t\})\not \in \mathcal{C}_{i,j} \) and let
+ \( p = (u_0,u_1,\dots,u_n) \). Then we can find the smallest integer
+ \( s \) such that \( u_s=u_r \) for some \( 0\le r<s \) or \( u_s \)
+ is contained in \( C_r \) for some \( 1\le r\le t \). 
+
+ \begin{description}
+ \item[Case 1:] \( u_s=u_r \) for some \( 0\le r<s \). Then we define
+   \[
+     \phi(p,\{C_1, C_2,\dots,C_t\}) = (p',\{C_0,C_1, C_2,\dots,C_t\}) ,
+   \]
+ where \( p' = (u_0,\dots,u_r, u_{s+1},\dots,u_n) \) and
+   \( C_0 = (u_r,\dots,u_s) \).
+ \item[Case 2:] \( u_s \) is contained in a cycle in
+   \( \{C_1, C_2,\dots,C_t\} \). Since the ordering of the cycles does
+   not mattter, we may assume that \( u_s \in C_1 \). Let
+   \( C_1 = (v_0,v_1,\dots,v_q) \), where \( v_0=v_q=u_s \). Then we
+   define
+   \[
+     \phi(p,\{C_1, C_2,\dots,C_t\}) = (p',\{C_2, \dots,C_t\}) ,
+   \]
+ where \( p' = (u_0,\dots,u_s, v_1,\dots,v_q, u_{s+1},\dots,u_n) \).
+ \end{description}
+ Note that these two cases cannot happen at the same time because then
+ \( 0\le r<s \) would have been chosen instead of \( s \).
+
+ Since \( \phi \) increases or decreases the number of cycles by \( 1 \)
+ and does not change the set of edges, it is a desired sign-reversing
+ weight-preserving involution. This completes the proof.
+\end{proof}
+
+Now we are ready to give another proof of \Cref{thm:16}. We restate
+the theorem for the reader's convenience.
+
+\begin{thm}[\Cref{thm:16}]
+Let \( r,s, \) and \( k \) be integers with \( 0\le r,s\le k \).
+If \(r\le s\), then 
+\[
+  \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n = x^{s-r}
+  \frac{P^*_r(x;\vb,\vla) \delta^{s+1}
+    P^*_{k-s}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)}.
+\]
+  If \(r> s\), then
+  \[
+    \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n = \lambda_{s+1}
+    \cdots \lambda_r\frac{ P^*_s(x;\vb,\vla) \delta^{r+1}
+      P^*_{k-r}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)} .
+  \]
+\end{thm}
+
+\begin{proof}
+Recall the
+weighted graph \( G_k \) defined in the previous section whose
+adjacency matrix is
+ \[
+  A = 
+  \begin{pmatrix}
+    b_0x & x &  & 0 \\
+    \lambda_1x & b_1x & \ddots & \\
+             & \ddots & \ddots & x \\
+   0  &  & \lambda_{k}x & b_{k}x
+  \end{pmatrix}.
+\] 
+By \eqref{eq:60} and \Cref{pro:3},
+\begin{equation}\label{eq:64}
+  \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n
+  = \sum_{p\in P(r\to s)}  w(p) =\frac{\Gamma_{r,s}}{\Gamma},
+\end{equation}
+where
+\begin{align*}
+  \Gamma
+  &= \sum_{\{C_1, C_2,\dots,C_t\}\in \mathcal{C}} (-1)^{t} w(C_1) \cdots w(C_t),\\
+  \Gamma_{r,s} &= \sum_{(p,\{C_1, C_2,\dots,C_t\})\in \mathcal{C}_{r,s}} w(p) \cdot (-1)^{t} w(C_1) \cdots w(C_t).
+\end{align*}
+
+Since \( A \) is tridiagonal, every cycle with nonzero weight must be
+a cycle of the form \( (i) \) or \( (i-1,i) \) whose weight is
+\( -b_ix \) or \( -\lambda_ix^2 \). Then a collection
+\( \{C_1, C_2,\dots,C_t\} \) of disjoint cycles is equivalent to a
+Favard tiling \( T\in \FT_{k+1} \), where a cycle \( (i) \)
+corresponds to a black monomino labeled \( i \) and a cycle
+\( (i-1,i) \) corresponds to a black domino labeled \( i-1,i \). A red
+monomino labeled \( i \) in \( T \) means that there is no cycle
+containing \( i \) in \( \{C_1, C_2,\dots,C_t\} \). In this
+correspondence we have
+\[
+  (-1)^{t} w(C_1) \cdots w(C_t) = \wt^*(T),
+\]
+where \( \wt^*(T) \) is the product of \( -b_ix \) for each black
+monomino labeled \( i \) and \( -\lambda_ix^2 \) for each black domino
+labeled \( i-1,i \). For example, see \Cref{fig:22}. This implies that
+\begin{equation}\label{eq:62}
+  \Gamma = \sum_{T\in \FT_{k+1} \wt^*(T)} = P^*_{k+1}(x),
+\end{equation}
+where the second identity follows from the recurrence \eqref{eq:51}.
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+  \foreach \x in {0,...,8} \draw node (\x) at (\x+.5,.5) [circle,fill,inner sep=1pt] {};
+  \foreach \x in {0,...,8} \draw node at (\x+.5,1)  {\x};
+  \draw[line width =1pt, ->,out=30,in=150] (0) to (1);
+  \draw[line width =1pt, ->,out=-150,in=-30] (1) to (0);
+  \draw[line width =1pt, ->,looseness=15] (3) to (3);
+  \draw[line width =1pt, ->,looseness=15] (4) to (4);
+  \draw[line width =1pt, ->,out=30,in=150] (7) to (8);
+  \draw[line width =1pt, ->,out=-150,in=-30] (8) to (7);
+\begin{scope}[shift={(0,-1.5)}]
+  \draw [help lines] (0,0) grid (9,1);
+  \foreach \x in {0,...,8} \draw node at (\x+.5,.5) {\x};
+  \BD1 \RM2 \BM3 \BM4 \RM5 \RM6 \BD8
+  \node at (1, 1.3) {\( -\lambda_1x^2 \)};
+  \node at (3.5, 1.3) {\( -b_3x \)};
+  \node at (4.5, 1.3) {\( -b_4x \)};
+  \node at (8, 1.3) {\( -\lambda_8x^2 \)};
+\end{scope}
+\end{tikzpicture}
+\caption{A disjoint collection of cycles in \( G_k \) (up) and the
+  corresponding Favard tiling \(T\in\FT_{k+1}\) with
+  \(\wt^*(T)=\lambda_1\lambda_8 b_3b_4 x^6 \) (bottom) for \( k=8 \).}
+\label{fig:22}
+\end{figure}
+
+
+
+On the other hand, if
+\( (p,\{C_1, C_2,\dots,C_t\})\in \mathcal{C}_{r,s} \), then \( p \)
+must be the unique self-avoiding path from \( r \) to \( s \), namely
+\( p=(r,r+1,\dots,s) \). If \( r\le s \), then \( w(p) = x^{s-r} \),
+and if \( r> s \), then \( w(p) = \lambda_{s+1} \cdots \lambda_r \).
+Moreover,  we can divide \( \{C_1, C_2,\dots,C_t\} \)
+into two sets \( \{ C'_1,\dots,C'_{t_1}\} \)
+and \( \{ C''_1,\dots,C''_{t_2}\} \)
+such that \( C'_i  \) is a cycle with elements less than \( \min\{r,s\} \)
+and \( C''_i  \) is a cycle with elements great than \( \max\{r,s\} \).
+This shows that
+\begin{equation}\label{eq:63}
+  \Gamma_{r,s} = 
+  \begin{cases}
+   P^*_r(x;\vb,\vla) \delta^{s+1} P^*_{k-s}(x;\vb,\vla) & \mbox{if \( r\le s \)},\\
+   P^*_s(x;\vb,\vla) \delta^{r+1} P^*_{k-r}(x;\vb,\vla) & \mbox{otherwise.}
+  \end{cases}
+\end{equation}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+  \foreach \x in {0,...,11} \draw node (\x) at (\x+.5,.5) [circle,fill,inner sep=1pt] {};
+  \draw node at (0.5,1)  {\( 0 \)};
+  \draw node at (1.5,1)  {\( 1 \)};
+  \draw node at (2.5,1)  {\( \cdots \)};
+  \draw node at (3.5,1)  {\( r-1 \)};
+  \draw node at (4.5,1)  {\( r \)};
+  \draw node at (7.5,1)  {\( s \)};
+  \draw node at (8.5,1)  {\( s+1 \)};
+  \draw node at (9.5,1)  {\( s+2 \)};
+  \draw node at (10.5,1)  {\( \cdots \)};
+  \draw node at (11.5,1)  {\( k \)};
+  \draw[line width =1pt, ->] (4) to (5);
+  \draw[line width =1pt, ->] (5) to (6);
+  \draw[line width =1pt, ->] (6) to (7);
+  \draw[draw=black] (0,.3) rectangle (4,.7);
+  \draw[draw=black] (8,.3) rectangle (12,.7);
+  \draw node at (2,0)  {\( P^*_r(x) \)};
+  \draw node at (6,0)  {\( x^{s-r} \)};
+  \draw node at (10,0)  {\( \delta^{s+1}P^*_{k-s}(x) \)};
+\end{tikzpicture}
+\begin{tikzpicture}
+  \foreach \x in {0,...,11} \draw node (\x) at (\x+.5,.5) [circle,fill,inner sep=1pt] {};
+  \draw node at (0.5,1)  {\( 0 \)};
+  \draw node at (1.5,1)  {\( 1 \)};
+  \draw node at (2.5,1)  {\( \cdots \)};
+  \draw node at (3.5,1)  {\( s-1 \)};
+  \draw node at (4.5,1)  {\( s \)};
+  \draw node at (7.5,1)  {\( r \)};
+  \draw node at (8.5,1)  {\( r+1 \)};
+  \draw node at (9.5,1)  {\( r+2 \)};
+  \draw node at (10.5,1)  {\( \cdots \)};
+  \draw node at (11.5,1)  {\( k \)};
+  \draw[line width =1pt, <-] (4) to (5);
+  \draw[line width =1pt, <-] (5) to (6);
+  \draw[line width =1pt, <-] (6) to (7);
+  \draw[draw=black] (0,.3) rectangle (4,.7);
+  \draw[draw=black] (8,.3) rectangle (12,.7);
+  \draw node at (2,0)  {\( P^*_s(x) \)};
+  \draw node at (6,0)  {\( \lambda_{s+1}\cdots \lambda_r \)};
+  \draw node at (10,0)  {\( \delta^{r+1}P^*_{k-r}(x) \)};
+\end{tikzpicture}
+\caption{A pair \( (p,\{C_1, C_2,\dots,C_t\})\in \mathcal{C}_{r,s} \)
+  is illustrated at the top for the case \( r\le s \) and at the
+  bottom for the case \( r>s \). }
+\label{fig:23}
+\end{figure}
+
+
+By \eqref{eq:64}, \eqref{eq:62}, and \eqref{eq:63}, we obtain the theorem.
+\end{proof}
+
+% \section{Yet another proof}
+
+% Recall that for an \( n \times n \) matrix \( A= (a_{i,j})_{i,j=1}^n \) we have
+% \[
+%   \det A = \sum_{\pi\in \sym_n} \sgn(\pi) \prod_{i=1}^{n} a_{i,\pi(i)}.
+% \]
+% Let \( \pi = \rho_1 \cdots \rho_m \) be a cycle decomposition of \( \pi \).
+% Then \( \sgn(\pi) = (-1)^{n-m} \) and .
+% \[
+%   \sgn(\pi) \prod_{i=1}^{n} a_{i,\pi(i)}
+%   = (-1)^{n-m} w(\rho_1) \cdots w(\rho_m),
+% \]
+% where for a cycle \( \rho=(t_1,\dots,t_s) \), we define
+% \( w(\rho) = a_{t_1,t_2}a_{t_2,t_3}\cdots a_{t_s,t_1} \). Hence we can write
+% \begin{equation}\label{eq:56}
+%   \det A = \sum_{\rho_1 \sqcup \cdots \sqcup \rho_m = [n]} (-1)^{n-m}  w(\rho_1) \cdots w(\rho_m),
+% \end{equation}
+% where the sum is over all possible disjoint cycles
+% \( \rho_1 , \dots , \rho_m \) whose union as a set is \( [n] \).
+
+% In particular, if \( A \) is a tridiagonal matrix, then
+% \( w(\rho) = 0 \) unless \( \rho \) consists of consecutive integers.
+% This can happen only if \( \rho = (i) \) or \( \rho = (i,i+1) \).
+
+% Since
 %   \[
-%     \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n
-%     = \frac{x^{s-r}P^*_r(x;\vb,\vla) \delta^{s+1} P^*_{k-s}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)} .  
-%   \]
-%   If \(r> s\), then
-%   \[
-%     \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n
-%     = \frac{ P^*_s(x;\vb,\vla) \delta^{r+1} P^*_{k-r}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)}
-%      \prod_{i=s+1}^{r} \lambda_i.
-%   \]
-% \end{lem}
+%  I - A^{\le k} = 
+%   \begin{pmatrix}
+%     1-xb_0 & -1 &  & 0 \\
+%     -\lambda_1 & 1-xb_1 & \ddots & \\
+%              & \ddots & \ddots & -1 \\
+%    0  &  & -\lambda_{k-1} & 1-xb_{k-1}
+%   \end{pmatrix},
+% \]
+% we obtain
+% \[
+%   \det(I-A^{\le k}) = P^*_k(x;\vb,\vla).
+% \]
 
 
 
-% \section{Development in J-fraction}
 
-% \section{Examples}
-
-% \section{Convergents}
-
-% \section{Inverse generating functions}
-
-% \section{Symmetric orthogonal polynomials}
+% \chapter{Symmetric orthogonal polynomials}
 
 % \chapter{Linearization coefficients}
 
