@@ -30,6 +30,7 @@
 \newtheorem*{note}{Note}
 
 % DO NOT DELETE THIS COMMENT!!! MACROS BELOW:
+\newcommand\st{\operatorname{st}}
 \newcommand\NI{\operatorname{NI}}
 \newcommand\LRmax{\operatorname{LRmax}}
 \newcommand\zero{\operatorname{zero}}
@@ -763,6 +764,8 @@ for \( \LL \).
 
 
 \section{The three-term recurrence}
+\label{sec:three-term-recurr}
+
 
 One important property of orthogonal polynomials is that they satisfy
 a 3-term recurrence relation.
@@ -931,7 +934,7 @@ function. It also turns out that the odd moments are all zero.
   moments are zero.
 \end{defn}
 
-\begin{thm}
+\begin{thm}\label{thm:17}
   Let \( \LL \) be a linear functional with monic OPS
   \( \{ P_n(x) \}_{n\ge 0} \). The following are equivalent:
   \begin{enumerate}
@@ -7087,7 +7090,7 @@ Hence the lowest term of
   \left( \mu_{n}(\vb,\vla) -\mu_{n}^{\le k}(\vb,\vla) \right)
   x^{n}
 \]
-has degree at most \( 2k+2 \). This implies the statement.
+has degree at least \( 2k+2 \). This implies the statement.
 \end{proof}
 
 \section{Motzkin paths with fixed starting and ending heights}
@@ -7097,7 +7100,7 @@ bounded height and fixed starting and ending heights.
 We begin with some definitions.
 
 Let \( \Motz^{\le k}_{n,r,s} \) denote the set of Motzkin paths in
-\( \Motz_{n,r,s} = \Motz((0,r)\to (n,s)) \) that stays weakly below
+\( \Motz_{n,r,s} = \Motz((0,r)\to (n,s)) \) that stay weakly below
 the line \( y=k \). We also define
 \[
   \mu^{\le k}_{n,r,s}(\vb, \vla) = \sum_{\pi\in \Motz^{\le k}_{n,r,s}}
@@ -7111,14 +7114,14 @@ the line \( y=k \). We also define
 Let \( r,s, \) and \( k \) be integers with \( 0\le r,s\le k \).
 If \(r\le s\), then 
 \[
-  \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n = x^{s-r}
+  \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n = x^{s-r} \cdot
   \frac{P^*_r(x;\vb,\vla) \delta^{s+1}
     P^*_{k-s}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)}.
 \]
   If \(r> s\), then
   \[
     \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n = \lambda_{s+1}
-    \cdots \lambda_r\frac{ P^*_s(x;\vb,\vla) \delta^{r+1}
+    \cdots \lambda_rx^{r-s}\cdot \frac{ P^*_s(x;\vb,\vla) \delta^{r+1}
       P^*_{k-r}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)} .
   \]
 \end{thm}
@@ -7150,9 +7153,9 @@ from \( u \) to \( v \). We also define \( P(u\to v) \) to be the set
 of all paths from \( u \) to \( v \).
 
 \begin{lem}\label{lem:8}
-  For vertices \( i,j\in [m] \) and an integer \( n\ge0 \),
+  For vertices \( r,s\in [m] \) and an integer \( n\ge0 \),
   \[
-    \sum_{p\in P_n(i\to j)} w(p) = (A^n)_{i,j}.
+    \sum_{p\in P_n(r\to s)} w(p) = (A^n)_{r,s}.
   \]
 \end{lem}
 
@@ -7163,8 +7166,8 @@ of all paths from \( u \) to \( v \).
 \begin{prop}\label{pro:2}
   Suppose that \( I-A \) is invertible. We have
 \[
-  \sum_{p\in P(i\to j)}  w(p) = \left( (I-A)^{-1} \right)_{i,j}
-    = \frac{(-1)^{r+s} [I-A]_{\{j\}^c,\{i\}^c}}{\det(I-A)},
+  \sum_{p\in P(r\to s)}  w(p) = \left( (I-A)^{-1} \right)_{r,s}
+    = \frac{(-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c}}{\det(I-A)},
 \]
 where \( I \) is the \( m\times m \) identity matrix.
 \end{prop}
@@ -7173,9 +7176,9 @@ where \( I \) is the \( m\times m \) identity matrix.
   By \Cref{lem:8}, the left-hand side is
   equal to
   \[
-    \sum_{n\ge0} \left( \sum_{p\in P_n(i\to j)} w(p) \right) =
-    \sum_{n\ge0} (A^n)_{i,j} = \left( \sum_{n\ge0} A^n
-    \right)_{i,j} = \left( (I- A)^{-1} \right)_{i,j} ,
+    \sum_{n\ge0} \left( \sum_{p\in P_n(r\to s)} w(p) \right) =
+    \sum_{n\ge0} (A^n)_{r,s} = \left( \sum_{n\ge0} A^n
+    \right)_{r,s} = \left( (I- A)^{-1} \right)_{r,s} ,
 \]
 which proves the first equality. The second equality follows from the
 minor inverse formula \Cref{lem:inv-minor}.
@@ -7257,7 +7260,7 @@ This is the same recurrence for \( P^*_n(x;\vb,\vla) \) in
   (-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c} =
   \begin{cases}
   x^{s-r} P^*_r(x;\vb,\vla) \delta^{s+1} P^*_{k-s}(x;\vb,\vla)  & \mbox{if \( r\le s \)},\\
-    \lambda_{s+1} \cdots \lambda_rP^*_s(x;\vb,\vla) \delta^{r+1} P^*_{k-r}(x;\vb,\vla)
+    \lambda_{s+1} \cdots \lambda_r x^{r-s} P^*_s(x;\vb,\vla) \delta^{r+1} P^*_{k-r}(x;\vb,\vla)
     & \mbox{if \( r>s \).}
   \end{cases}
 \]
@@ -7265,18 +7268,18 @@ This is the same recurrence for \( P^*_n(x;\vb,\vla) \) in
 
 \begin{proof}
   Since \( I-A \) is tridiagonal, we can decompose
-  \( (-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c} = \det B_1 \det B_2 \det B_3
+  \( [I-A]_{\{s\}^c,\{r\}^c} = \det B_1 \det B_2 \det B_3
   \) as shown in \Cref{fig:24}. Suppose that \( r\le s \). Then, by
   \ref{lem:6}, we have \( \det B_1 = P^*_r(x;\vb,\vla) \) and
   \( \det B_3 = \delta^{s+1} P^*_{k-s}(x;\vb,\vla) \). Since \( B_2 \)
   is lower trianular with diagonal entries \( x,\dots,x \), we have
-  \( \det B_2 = x^{s-r} \).
+  \( \det B_2 = (-1)^{s-r} x^{s-r} \).
 
   Similarly, if \( r> s \), we have \( \det B_1 = P^*_s(x;\vb,\vla) \)
   and \( \det B_3 = \delta^{r+1} P^*_{k-r}(x;\vb,\vla) \). Since
   \( B_2 \) is upper trianular with diagonal entries
   \( \lambda_{s+1},\dots,\lambda_r \), we have
-  \( \det B_2 = \lambda_{s+1},\dots,\lambda_r \). This proves the
+  \( \det B_2 = (-1)^{r-s} \lambda_{s+1}\cdots\lambda_r x^{r-s} \). This proves the
   lemma.
 \end{proof}
 
@@ -7284,10 +7287,10 @@ This is the same recurrence for \( P^*_n(x;\vb,\vla) \) in
   \centering
 \begin{tikzpicture}
   \draw[black] (0,0) rectangle (4,-4);
-  \fill[gray] (1,0) rectangle (1.3,-4);
   \draw[black] (2.5,0) rectangle (2.8,-4);
   \draw[black] (0,-1) rectangle (4,-1.3);
-  \fill[gray] (0,-2.5) rectangle (4,-2.8);
+  \fill[lightgray] (1,0) rectangle (1.3,-4);
+  \fill[lightgray] (0,-2.5) rectangle (4,-2.8);
   \draw node at (-.3,-1.15)  {\( r \)};
   \draw node at (-.3,-2.65)  {\( s \)};
   \draw node at (1.15,.3)  {\( r \)};
@@ -7302,9 +7305,9 @@ This is the same recurrence for \( P^*_n(x;\vb,\vla) \) in
 \begin{tikzpicture}
   \draw[black] (0,0) rectangle (4,-4);
   \draw[black] (1,0) rectangle (1.3,-4);
-  \fill[gray] (2.5,0) rectangle (2.8,-4);
-  \fill[gray] (0,-1) rectangle (4,-1.3);
   \draw[black] (0,-2.5) rectangle (4,-2.8);
+  \fill[lightgray] (2.5,0) rectangle (2.8,-4);
+  \fill[lightgray] (0,-1) rectangle (4,-1.3);
   \draw node at (-.3,-1.15)  {\( s \)};
   \draw node at (-.3,-2.65)  {\( r \)};
   \draw node at (1.15,.3)  {\( s \)};
@@ -7316,10 +7319,10 @@ This is the same recurrence for \( P^*_n(x;\vb,\vla) \) in
   \draw node at (1.75,-2.05)  {\( B_2 \)};
   \draw node at (3.4,-3.4)  {\( B_3 \)};
 \end{tikzpicture}
-\caption{The minor \( (-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c} \) is the
-  product of the determinants of three block matrices
-  \( B_1,B_2,B_3 \). The left diagram is for the case \( r\le s \) and
-  the right diagram is for the case \( r> s \).}
+\caption{The minor \( [I-A]_{\{s\}^c,\{r\}^c} \) is the product of the
+  determinants of three block matrices \( B_1 \), \( B_2 \), and
+  \( B_3 \). The left diagram illustrates the case \( r\le s \) and
+  the right diagram illustrates the case \( r> s \).}
   \label{fig:24}
 \end{figure}
 
@@ -7349,9 +7352,9 @@ said to be \emph{disjoint} if the following conditions hold:
 
 
 We define
-\[
+\begin{equation}\label{eq:66}
   \Gamma = \sum_{\{C_1, C_2,\dots,C_t\}\in \mathcal{C}} (-1)^{t} w(C_1) \cdots w(C_t),
-\]
+\end{equation}
 where \( \mathcal{C} \) is the set of all disjoint collections
 \( \{C_1, C_2,\dots,C_t\} \) of cycles in \( G \). For
 \( 1\le i,j\le m \), we define
@@ -7363,58 +7366,57 @@ where \( \mathcal{C}_{i,j} \) is the set of all pairs
 collection \( \{C_1, C_2,\dots,C_t\} \) of cycles in \( G \) such that
 \( \{p, C_1, C_2,\dots,C_t\} \) is disjoint.
 
-Note that since 
-
 \begin{prop}\label{pro:3}
   We have
 \[
-  \sum_{p\in P(i\to j)}  w(p) = \frac{\Gamma_{i,j}}{\Gamma}.
+  \sum_{p\in P(r\to s)}  w(p) = \frac{\Gamma_{r,s}}{\Gamma}.
 \]
 \end{prop}
 
 \begin{proof}
   We will prove the equivalent statement
   \[
-     \Gamma  \sum_{p\in P(i\to j)}  w(p) = \Gamma_{i,j}.
+     \Gamma  \sum_{p\in P(r\to s)}  w(p) = \Gamma_{r,s}.
   \]
   The left-hand side can be written as
   \[
    \sum_{(p,\{C_1, C_2,\dots,C_t\})\in X} w(p) \cdot (-1)^{t} w(C_1) \cdots w(C_t),
  \]
  where \( X \) is the set of pairs \( (p,\{C_1, C_2,\dots,C_t\}) \) of
- any path \( p\in P(i\to j) \) and any disjoint collection
+ any path \( p\in P(r\to s) \) and any disjoint collection
  \( \{C_1, C_2,\dots,C_t\} \) of cycles in \( G \). By \eqref{eq:61},
  it suffices to find a sign-reversing weight-preserving involution
- \( \phi: X \to X \) with fixed point set \( \mathcal{C}_{i,j} \).
+ \( \phi: X \to X \) with fixed point set \( \mathcal{C}_{r,s} \).
 
  Consider \( (p,\{C_1, C_2,\dots,C_t\})\in X \). If
- \( (p,\{C_1, C_2,\dots,C_t\})\in \mathcal{C}_{i,j} \), then define
+ \( (p,\{C_1, C_2,\dots,C_t\})\in \mathcal{C}_{r,s} \), then define
  \( \phi(p,\{C_1, C_2,\dots,C_t\}) = (p,\{C_1, C_2,\dots,C_t\}) \).
  Now suppose that
- \( (p,\{C_1, C_2,\dots,C_t\})\not \in \mathcal{C}_{i,j} \) and let
+ \( (p,\{C_1, C_2,\dots,C_t\})\not \in \mathcal{C}_{r,s} \) and let
  \( p = (u_0,u_1,\dots,u_n) \). Then we can find the smallest integer
- \( s \) such that \( u_s=u_r \) for some \( 0\le r<s \) or \( u_s \)
- is contained in \( C_r \) for some \( 1\le r\le t \). 
+ \( j \) such that \( u_i=u_j \) for some \( 0\le i<j \) or \( u_j \)
+ is contained in \( C_l \) for some \( 1\le l\le t \). 
 
  \begin{description}
- \item[Case 1:] \( u_s=u_r \) for some \( 0\le r<s \). Then we define
+ \item[Case 1:] \( u_i=u_j \) for some \( 0\le i<j \). Then we define
    \[
      \phi(p,\{C_1, C_2,\dots,C_t\}) = (p',\{C_0,C_1, C_2,\dots,C_t\}) ,
    \]
- where \( p' = (u_0,\dots,u_r, u_{s+1},\dots,u_n) \) and
-   \( C_0 = (u_r,\dots,u_s) \).
- \item[Case 2:] \( u_s \) is contained in a cycle in
+ where \( p' = (u_0,\dots,u_i, u_{j+1},\dots,u_n) \) and
+   \( C_0 = (u_i,\dots,u_j) \).
+ \item[Case 2:] \( u_j \) is contained in a cycle in
    \( \{C_1, C_2,\dots,C_t\} \). Since the ordering of the cycles does
-   not mattter, we may assume that \( u_s \in C_1 \). Let
-   \( C_1 = (v_0,v_1,\dots,v_q) \), where \( v_0=v_q=u_s \). Then we
+   not mattter, we may assume that \( u_j \in C_1 \). Let
+   \( C_1 = (v_0,v_1,\dots,v_q) \), where \( v_0=v_q=u_j \). Then we
    define
    \[
      \phi(p,\{C_1, C_2,\dots,C_t\}) = (p',\{C_2, \dots,C_t\}) ,
    \]
- where \( p' = (u_0,\dots,u_s, v_1,\dots,v_q, u_{s+1},\dots,u_n) \).
+ where \( p' = (u_0,\dots,u_j, v_1,\dots,v_q, u_{j+1},\dots,u_n) \).
  \end{description}
  Note that these two cases cannot happen at the same time because then
- \( 0\le r<s \) would have been chosen instead of \( s \).
+ the integer \( i \) with \( 0\le i<j \) would have been chosen
+ instead of \( j \).
 
  Since \( \phi \) increases or decreases the number of cycles by \( 1 \)
  and does not change the set of edges, it is a desired sign-reversing
@@ -7428,14 +7430,14 @@ the theorem for the reader's convenience.
 Let \( r,s, \) and \( k \) be integers with \( 0\le r,s\le k \).
 If \(r\le s\), then 
 \[
-  \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n = x^{s-r}
+  \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n = x^{s-r} \cdot
   \frac{P^*_r(x;\vb,\vla) \delta^{s+1}
     P^*_{k-s}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)}.
 \]
   If \(r> s\), then
   \[
     \sum_{n\ge0} \mu_{n,r,s}^{\le k}(\vb,\vla) x^n = \lambda_{s+1}
-    \cdots \lambda_r\frac{ P^*_s(x;\vb,\vla) \delta^{r+1}
+    \cdots \lambda_r x^{r-s} \cdot \frac{ P^*_s(x;\vb,\vla) \delta^{r+1}
       P^*_{k-r}(x;\vb,\vla)}{P^*_{k+1}(x;\vb,\vla)} .
   \]
 \end{thm}
@@ -7482,7 +7484,7 @@ where \( \wt^*(T) \) is the product of \( -b_ix \) for each black
 monomino labeled \( i \) and \( -\lambda_ix^2 \) for each black domino
 labeled \( i-1,i \). For example, see \Cref{fig:22}. This implies that
 \begin{equation}\label{eq:62}
-  \Gamma = \sum_{T\in \FT_{k+1} \wt^*(T)} = P^*_{k+1}(x),
+  \Gamma = \sum_{T\in \FT_{k+1}} \wt^*(T) = P^*_{k+1}(x),
 \end{equation}
 where the second identity follows from the recurrence \eqref{eq:51}.
 
@@ -7523,14 +7525,14 @@ and if \( r> s \), then \( w(p) = \lambda_{s+1} \cdots \lambda_r \).
 Moreover,  we can divide \( \{C_1, C_2,\dots,C_t\} \)
 into two sets \( \{ C'_1,\dots,C'_{t_1}\} \)
 and \( \{ C''_1,\dots,C''_{t_2}\} \)
-such that \( C'_i  \) is a cycle with elements less than \( \min\{r,s\} \)
-and \( C''_i  \) is a cycle with elements great than \( \max\{r,s\} \).
+such that each \( C'_i  \) is a cycle with elements less than \( \min\{r,s\} \)
+and each \( C''_i  \) is a cycle with elements greater than \( \max\{r,s\} \).
 This shows that
 \begin{equation}\label{eq:63}
   \Gamma_{r,s} = 
   \begin{cases}
-   P^*_r(x;\vb,\vla) \delta^{s+1} P^*_{k-s}(x;\vb,\vla) & \mbox{if \( r\le s \)},\\
-   P^*_s(x;\vb,\vla) \delta^{r+1} P^*_{k-r}(x;\vb,\vla) & \mbox{otherwise.}
+  x^{s-r} P^*_r(x;\vb,\vla) \delta^{s+1} P^*_{k-s}(x;\vb,\vla) & \mbox{if \( r\le s \)},\\
+ \lambda_{s+1} \cdots \lambda_r x^{r-s}  P^*_s(x;\vb,\vla) \delta^{r+1} P^*_{k-r}(x;\vb,\vla) & \mbox{otherwise.}
   \end{cases}
 \end{equation}
 
@@ -7553,9 +7555,9 @@ This shows that
   \draw[line width =1pt, ->] (6) to (7);
   \draw[draw=black] (0,.3) rectangle (4,.7);
   \draw[draw=black] (8,.3) rectangle (12,.7);
-  \draw node at (2,0)  {\( P^*_r(x) \)};
+  \draw node at (2,0)  {\( P^*_r(x;\vb,\vla) \)};
   \draw node at (6,0)  {\( x^{s-r} \)};
-  \draw node at (10,0)  {\( \delta^{s+1}P^*_{k-s}(x) \)};
+  \draw node at (10,0)  {\( \delta^{s+1}P^*_{k-s}(x;\vb,\vla) \)};
 \end{tikzpicture}
 \begin{tikzpicture}
   \foreach \x in {0,...,11} \draw node (\x) at (\x+.5,.5) [circle,fill,inner sep=1pt] {};
@@ -7574,9 +7576,9 @@ This shows that
   \draw[line width =1pt, <-] (6) to (7);
   \draw[draw=black] (0,.3) rectangle (4,.7);
   \draw[draw=black] (8,.3) rectangle (12,.7);
-  \draw node at (2,0)  {\( P^*_s(x) \)};
-  \draw node at (6,0)  {\( \lambda_{s+1}\cdots \lambda_r \)};
-  \draw node at (10,0)  {\( \delta^{r+1}P^*_{k-r}(x) \)};
+  \draw node at (2,0)  {\( P^*_s(x;\vb,\vla) \)};
+  \draw node at (6,0)  {\( \lambda_{s+1}\cdots \lambda_rx^{r-s} \)};
+  \draw node at (10,0)  {\( \delta^{r+1}P^*_{k-r}(x;\vb,\vla) \)};
 \end{tikzpicture}
 \caption{A pair \( (p,\{C_1, C_2,\dots,C_t\})\in \mathcal{C}_{r,s} \)
   is illustrated at the top for the case \( r\le s \) and at the
@@ -7588,51 +7590,564 @@ This shows that
 By \eqref{eq:64}, \eqref{eq:62}, and \eqref{eq:63}, we obtain the theorem.
 \end{proof}
 
-% \section{Yet another proof}
+\section{Determinants and disjoint cycles}
 
-% Recall that for an \( n \times n \) matrix \( A= (a_{i,j})_{i,j=1}^n \) we have
-% \[
-%   \det A = \sum_{\pi\in \sym_n} \sgn(\pi) \prod_{i=1}^{n} a_{i,\pi(i)}.
-% \]
-% Let \( \pi = \rho_1 \cdots \rho_m \) be a cycle decomposition of \( \pi \).
-% Then \( \sgn(\pi) = (-1)^{n-m} \) and .
-% \[
-%   \sgn(\pi) \prod_{i=1}^{n} a_{i,\pi(i)}
-%   = (-1)^{n-m} w(\rho_1) \cdots w(\rho_m),
-% \]
-% where for a cycle \( \rho=(t_1,\dots,t_s) \), we define
-% \( w(\rho) = a_{t_1,t_2}a_{t_2,t_3}\cdots a_{t_s,t_1} \). Hence we can write
-% \begin{equation}\label{eq:56}
-%   \det A = \sum_{\rho_1 \sqcup \cdots \sqcup \rho_m = [n]} (-1)^{n-m}  w(\rho_1) \cdots w(\rho_m),
-% \end{equation}
-% where the sum is over all possible disjoint cycles
-% \( \rho_1 , \dots , \rho_m \) whose union as a set is \( [n] \).
+Recall that we have proved \Cref{thm:16} in two difference ways. The
+important tools in the first and the second proofs are \Cref{pro:2}
+and \Cref{pro:3}, respectively, which we state here again:
+\begin{align}\label{eq:58}
+  \sum_{p\in P(r\to s)}  w(p) &= \frac{(-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c}}{\det(I-A)},\\
+  \label{eq:65}
+    \sum_{p\in P(r\to s)}  w(p) &= \frac{\Gamma_{r,s}}{\Gamma}.
+\end{align}
+It is thus natural to ask whether there is a connection between these
+two identities. To answer this question, in this section, we will show
+that the numerators and the denominators in \eqref{eq:58} and
+\eqref{eq:65} coincide.
 
-% In particular, if \( A \) is a tridiagonal matrix, then
-% \( w(\rho) = 0 \) unless \( \rho \) consists of consecutive integers.
-% This can happen only if \( \rho = (i) \) or \( \rho = (i,i+1) \).
+As before let \( G=(V,E) \) be a directed graph on the vertex set
+\( V=[m] \) with edge-weight \( w:E\to K \) and adjacency matrix
+\( A = (a_{i,j})_{i,j=1}^m \).
+Then we have
+\[
+  \det A = \sum_{\pi\in \sym_m} \sgn(\pi) \prod_{i=1}^{m} a_{i,\pi(i)}.
+\]
+Let \( \pi = C_1 \cdots C_t \) be a cycle decomposition of
+\( \pi \). Since \( \sgn(\pi) = (-1)^{\evencycle(\pi)} \),
+we have
+\[
+  \sgn(\pi) \prod_{i=1}^{m} a_{i,\pi(i)}
+  = \prod_{i=1}^{t} (-1)^{|C_i|-1} w(C_i),
+\]
+where for a cycle \( C=(r_1,\dots,r_s) \), we define
+\( |C|=s-1 \) and
+\( w(C) = a_{r_1,r_2}a_{r_2,r_3}\cdots a_{r_s,r_1} \). Hence we can
+write
+\begin{equation}\label{eq:56}
+  \det A = \sum_{\{C_1 , \dots , C_t\}\in X}
+  \prod_{i=1}^{t} (-1)^{|C_i|-1} w(C_i),
+\end{equation}
+where \( X \) is the set of all possible collections
+\( \{ C_1 , \dots , C_t \} \) of disjoint cycles whose union
+\( C_1 \cup \cdots \cup C_t \) as a set is \( [m] \).
 
-% Since
-%   \[
-%  I - A^{\le k} = 
-%   \begin{pmatrix}
-%     1-xb_0 & -1 &  & 0 \\
-%     -\lambda_1 & 1-xb_1 & \ddots & \\
-%              & \ddots & \ddots & -1 \\
-%    0  &  & -\lambda_{k-1} & 1-xb_{k-1}
-%   \end{pmatrix},
-% \]
-% we obtain
-% \[
-%   \det(I-A^{\le k}) = P^*_k(x;\vb,\vla).
-% \]
+\begin{prop}\label{pro:4}
+  We have
+\[
+  \det (I-A) = \Gamma.
+\]
+\end{prop}
+
+\begin{proof}
+  By \eqref{eq:56}, we have
+\begin{equation}\label{eq:67}
+    \det (I-A) = \sum_{\{C_1 , \dots , C_t\}\in X}
+  \prod_{i=1}^{t} (-1)^{|C_i|-1} w'(C_i),
+\end{equation}
+where \( w'(C) = 1-w(C) \) if \( C \) is a cycle of length \( 1 \) and
+\( w'(C) = (-1)^{|C|} w(C) \) otherwise. This means that for a cycle
+\( C \) of length \( 1 \) we have two choices one for \( 1 \) and the
+other for \( -w(C) \).
+If we remove the cycles of length \( 1 \) with a choice of \( 1 \),
+we can rewrite \eqref{eq:67} as
+\[
+  \det (I-A) = \sum_{\{C_1 , \dots , C_t\}\in \mathcal{C}}
+  \prod_{i=1}^{t} (-1) w(C_i),
+\]
+where \( \mathcal{C} \) is the set of all collections
+\( \{C_1, C_2,\dots,C_t\} \) of disjoint cycles in \( G \). Since the
+right-hand side is equal to the definition of \( \Gamma \) in
+\eqref{eq:66}, we obtain the desired formula.
+\end{proof}
+
+For a word \( w = w_1 \cdots w_n \) of distinct integers, the
+\emph{standardization} \( \st(w) \) of \( w \) is the permutation
+\( \pi = \pi_1 \cdots \pi_n\in \sym_n \) such that \( \pi_i<\pi_j \)
+if and only if \( w_i<w_j \) for all \( 1\le i,j\le n \).
+For example, if \( w = 43179 \), then \( \st(w) = 32145 \).
+
+\begin{lem}\label{lem:11}
+  Let \( \pi = \pi_1 \cdots \pi_n \) be a permutation
+  such that \( \pi_i = j \) and let
+  \[
+    \pi' = \pi_1 \cdots \pi_{i-1} \pi_{i+1} \cdots \pi_n.
+  \]
+  Then
+  \[
+    \sgn(\st(\pi')) = (-1)^{j+i} \sgn(\pi).
+  \]
+\end{lem}
+
+\begin{proof}
+  Note that \( \sgn(\st(\pi')) = (-1)^{\inv(\pi')} \) and
+  \( \sgn(\pi) = (-1)^{\inv(\pi)} \). To compare \( \inv(\pi) \) and
+  \( \inv(\pi') \) we consider \( \sigma = j \pi' \). Then we have
+  \( (-1)^{\inv(\sigma)} = (-1)^{\inv(\sigma)} \) and
+  \( (-1)^{\inv(\sigma)} = (-1)^{\inv(\pi')+j-1} \).
+  Hence
+  \[
+   \sgn(\st(\pi')) = (-1)^{\inv(\pi')} 
+   = (-1)^{\inv(\sigma)+j-1}
+   = (-1)^{\inv(\pi)+i-1+j-1}
+   = (-1)^{j+i} \sgn(\pi). \qedhere
+  \]
+\end{proof}
 
 
+\begin{prop}\label{pro:5}
+  We have
+\[
+  (-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c} = \Gamma_{r,s}.
+\]
+\end{prop}
+
+\begin{proof}
+  Let \( b_{i,j} = \delta_{i,j} - a_{i,j}\). 
+  Then
+  \[
+    [I-A]_{\{s\}^c,\{r\}^c}
+    = \sum_{\substack{\pi\in \sym_m\\ \pi(s) = r}} 
+    \sgn(\st(\pi')) \prod_{\substack{1\le i\le m \\ i\ne s}} b_{i,\pi(i)},
+  \]
+  where \( \pi' = \pi_1 \cdots \pi_{s-1} \pi_{s+1} \cdots \pi_n \).
+  By \Cref{lem:11},
+  \begin{equation}\label{eq:68}
+    [I-A]_{\{s\}^c,\{r\}^c}
+    = (-1)^{r+s} \sum_{\substack{\pi\in \sym_m\\ \pi(s) = r}} 
+    \sgn(\pi) \prod_{\substack{1\le i\le m \\ i\ne s}} b_{i,\pi(i)}.
+  \end{equation}
+
+  Suppose that \( r=s \). Then
+  \[
+    [I-A]_{\{s\}^c,\{r\}^c}
+    = \sum_{\substack{\pi\in \sym_m\\ \pi(r) = r}} 
+    \sgn(\pi) \prod_{\substack{1\le i\le m \\ i\ne r}} b_{i,\pi(i)}.
+  \]
+  By the same argument in the proof of \Cref{pro:4}, we have
+\[
+  [I-A]_{\{s\}^c,\{r\}^c}= \sum_{\{C_1 , \dots , C_t\}\in \mathcal{C}'}
+  \prod_{i=1}^{t} (-1) w(C_i),
+\]
+where \( \mathcal{C}' \) is the set of all collections
+\( \{C_1, C_2,\dots,C_t\} \) of disjoint cycles in \( G \) such that
+\( r \) is not contained in any of these cycles.
+But this is equal to
+\[
+  \Gamma_{r,r} = \sum_{(p,\{C_1, C_2,\dots,C_t\})\in
+    \mathcal{C}_{r,r}} w(p) \cdot (-1)^{t} w(C_1) \cdots w(C_t),
+\]
+since \( p = (r) \) is a cycle of length \( 1 \), hence has weight
+\( w(p) = 1 \).
+
+Now suppose that \( r\ne s \). Note that in this case
+\( b_{r,s} = -a_{r,s} \). Consider \( \pi\in \sym_m \) with
+\( \pi(s) = r \). Then the cycle decomposition of \( \pi \) has a
+cycle containing an edge \( s\to r \). Hence we can rewrite
+\eqref{eq:68} as
+  \[
+    (-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c}
+    = (-a_{s,r}^{-1}) \sum_{\substack{\{C_1 , \dots , C_t\}\in X \\ (s\to r)\in C_1}}
+  \prod_{i=1}^{t} (-1)^{|C_i|-1} w'(C_i),
+  \]
+  where \( w'(C) = 1-w(C) \) if \( C \) is a cycle of length \( 1 \)
+  and \( w'(C) = (-1)^{|C|} w(C) \) otherwise. Then, by the same
+  argument in the proof of \Cref{pro:4}, we have
+\[
+  (-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c}
+  = (-a_{s,r}^{-1}) \sum_{\{C_1 , \dots , C_t\}\in \mathcal{C}'}
+  \prod_{i=1}^{t} (-1) w(C_i),
+\]
+where \( \mathcal{C}' \) is the set of all collections
+\( \{C_1, C_2,\dots,C_t\} \) of disjoint cycles in \( G \) such that
+\( C_1 \) contains an edge \( s\to r \). If we delete the edge
+\( s\to r \) from \( C_1 \), we get a path \( p \) from \( r \) to
+\( s \). Therefore, the above equation is equivalent to
+\[
+  (-1)^{r+s} [I-A]_{\{s\}^c,\{r\}^c}
+  = \sum_{(p,\{C_1 , \dots , C_t\})\in \mathcal{C}_{r,s}}
+  w(p) \prod_{i=1}^{t} (-1) w(C_i) = \Gamma_{r,s}.
+\]
+This completes the proof.
+\end{proof}
+
+\chapter{Symmetric orthogonal polynomials}
+
+In this chapter we study symmetric orthogonal polynomials. We first
+define symmetric orthogonal polynomials and show they they induce two
+families of orthogonal polynomials: even and odd polynomials. We find
+three-term recurrences for the even and odd polynomials. We also find
+connections between the original moments and the moments of even and
+odd polynomials. We provide a combinatorial proof of this fact using
+Dyck paths and bi-colored Motzkin paths. Finally we give an identity
+involving two types of continued fractions, namely, J-fractions and
+S-fractions.
 
 
-% \chapter{Symmetric orthogonal polynomials}
+\section{Even and odd polynomials of symmetric OPS}
 
-% \chapter{Linearization coefficients}
+
+Recall from \Cref{sec:three-term-recurr} that a linear functional
+\( \LL \) is \emph{symmetric} if all of its odd moments are zero. Let
+\( \{ P_n(x) \}_{n\ge 0} \) be a monic OPS for a linear functional
+\( \LL \). We say that \( \{ P_n(x) \}_{n\ge 0} \) is \emph{symmetric}
+if \( \LL \) is symmetric. We recall the following theorem, which
+gives equivalent conditions of a symmetric OPS.
+
+\begin{thm}[\Cref{thm:17}]
+  Let \( \LL \) be a linear functional with monic OPS
+  \( \{ P_n(x) \}_{n\ge 0} \). The following are equivalent:
+  \begin{enumerate}
+  \item \( \LL \) is symmetric.
+  \item \( P_n(-x) = (-1)^n P_n(x) \) for \( n\ge0 \).
+  \item We have
+    \[
+      P_{n+1}(x) = x P_n(x) - \lambda_n P_{n-1}(x).
+    \]
+  \end{enumerate}
+\end{thm}
+
+Suppose that \( \{ P_n(x) \}_{n\ge 0} \) is a symmetric OPS for a
+linear functional \( \LL \), which satisfies
+\begin{equation}\label{eq:69}
+  P_{n+1}(x) = x P_n(x) - \lambda_n P_{n-1}(x).
+\end{equation}
+By the above theorem, 
+\begin{align*}
+  P_{2n}(-x) &= (-1)^{2n} P_{2n}(x) = P_{2n}(x),\\
+  P_{2n+1}(-x) &= (-1)^{2n+1} P_{2n+1}(x) = -P_{2n+1}(x).
+\end{align*}
+Thus we can write
+\[
+  P_{2n}(x) = E_n(x^2), \qquad P_{2n+1}(x) = xO_n(x^2),
+\]
+for some polynomials \( E_n(x) \) and \( O_n(x) \). We call
+\( \{E_n(x)\}_{n\ge0} \) (resp.~\( \{O_n(x)\}_{n\ge0} \)) the
+\emph{even polynomials} (resp.~\emph{odd polynomials}) for the
+symmetric OPS \( \{ P_n(x) \}_{n\ge 0} \).
+
+Let \( \LL^e \) and \( \LL^o \) be the linear functionals defined by
+\[
+  \LL^{e}(f(x)) = \LL(f(x^2)), \qquad 
+  \LL^{o}(f(x)) = \frac{1}{\lambda_1} \LL(x^2f(x^2)).
+\]
+Here we have the factor \( \frac{1}{\lambda_1} \) so that
+\( \LL^o(1) = 1 \).
+We define
+\[
+  \mu^e_n = \LL^e(x^n), \qquad \mu^o_n = \LL^o(x^n).
+\]
+
+\begin{thm}\label{thm:18}
+  The even polynomials \( \{E_n(x)\}_{n\ge0} \) are an OPS for
+  \( \LL^e \) and the odd polynomials \( \{O_n(x)\}_{n\ge0} \) are an
+  OPS for \( \LL^o \). Moreover, 
+\[
+  \mu^e_n = \mu_{2n} , \qquad \mu^o_n = \frac{1}{\lambda_1}
+  \mu_{2n+2}.
+\]
+\end{thm}
+
+\begin{proof}
+  Since \( \{ P_n(x) \}_{n\ge 0} \) is an OPS for \( \LL \),
+  \[
+    \LL(P_n(x)P_m(x)) = \delta_{n,m}K_n,
+  \]
+  where \( K_n\ne 0 \). We have
+  \begin{align*}
+    \LL^e(E_n(x)E_m(x))
+    &= \LL(E_n(x^2)E_m(x^2)) = \LL(P_{2n}(x)P_{2m}(x)) = \delta_{n,m} K_{2n},\\
+    \LL^o(O_n(x)O_m(x))
+    &= \frac{1}{\lambda_1}\LL(x^2O_n(x^2)O_m(x^2)) = \LL(P_{2n+1}(x)P_{2m+1}(x)) = \delta_{n,m} K_{2n+1}.
+  \end{align*}
+  This shows the first statement. Since
+  \begin{align*}
+    \mu^e_n &= \LL^e(x^n) = \LL(x^{2n}) = \mu_{2n}, \\
+    \mu^o_n &= \LL^o(x^n) = \frac{1}{\lambda_1}\LL(x^2\cdot x^{2n}) = \frac{1}{\lambda_1} \mu_{2n+2},
+  \end{align*}
+  we obtain the second statement.
+\end{proof}
+
+Since \( \{E_n(x)\}_{n\ge0} \) and \( \{R_n(x)\}_{n\ge0} \) are OPS
+they satisfy 3-term recurrences. Their 3-term recurrences can be
+obtained easily from the original 3-term recurrence for
+\( \{ P_n(x) \}_{n\ge 0} \).
+
+\begin{thm}\label{thm:19}
+  We have
+\begin{align*}
+  E_{n+1}(x) &= (x-\lambda_{2n}-\lambda_{2n+1}) E_n(x)
+   - \lambda_{2n-1}\lambda_{2n}E_{n-1}(x),\\
+  O_{n+1}(x) &= (x-\lambda_{2n+1}-\lambda_{2n+2}) O_n(x)
+   - \lambda_{2n}\lambda_{2n+1}O_{n-1}(x).
+\end{align*}
+\end{thm}
+
+\begin{proof}
+  Replacing \( n \) by \( 2n \) and \( 2n+1 \), respectively, in
+  \eqref{eq:69}, we have
+  \begin{align}
+\label{eq:70}    P_{2n+1}(x) &= x P_{2n}(x) - \lambda_{2n} P_{2n-1}(x),\\
+\label{eq:71}    P_{2n+2}(x) &= x P_{2n+1}(x) - \lambda_{2n+1} P_{2n}(x).
+  \end{align}
+  Multiplying both sides by \( x \) in \eqref{eq:70} gives
+  \[
+    O_n(x^2) = x^2 E_{n}(x^2) - \lambda_{2n} O_{n-1}(x^2),
+  \]
+  and \eqref{eq:71} is equivalent to
+  \[
+    E_{n+1}(x^2) = O_{n}(x^2) - \lambda_{2n+1} E_{n}(x^2).
+  \]
+  Thus
+  \begin{align*}
+  xE_n(x)  &= O_n(x) + \lambda_{2n} O_{n-1}(x),\\
+  O_n(x)  &= E_{n+1}(x) + \lambda_{2n+1}E_n(x).
+  \end{align*}
+  Substituting \( E_n(x) \) and \( O_n(x) \) appropriately, we obtain
+  the recurrence in the theorem.
+\end{proof}
+
+
+There is also a simple connection between the moments of
+\( \{ P_n(x) \}_{n\ge 0} \) and the moments of its even and odd
+polynomials.
+
+
+\begin{cor}\label{cor:7}
+  Let \( \{\lambda_k\}_{k\ge0} \) be a sequence with
+  \( \lambda_0=0 \) and let
+\[
+    \begin{aligned}
+    \vec 0 &= \{b_k=0\}_{k\ge0},\\
+    \vb^e &= \{\lambda_{2k}+\lambda_{2k+1}\}_{k\ge 0},\\
+    \vb^o &=\{\lambda_{2k+1}+\lambda_{2k+2}\}_{k\ge 0},
+  \end{aligned}
+  \qquad
+    \begin{aligned}
+    \vla &= \{\lambda_k\}_{k\ge1},\\
+    \vla^e &= \{\lambda_{2k-1}\lambda_{2k}\}_{k\ge1},\\
+    \vla^o &= \{\lambda_{2k}\lambda_{2k+1}\}_{k\ge1}.
+  \end{aligned}
+\]
+  For a nonnegative integer \( n \), we have
+\begin{align*}
+ \mu_{2n}(\vec 0,\vla) &= \mu_n(\vb^e, \vla^e), \\
+ \mu_{2n+2}(\vec 0,\vla) &= \lambda_1 \mu_n(\vb^o, \vla^o).
+\end{align*}
+\end{cor}
+\begin{proof}
+This follows immediate from  \Cref{thm:18} and \Cref{thm:19}.
+\end{proof}
+
+\section{Converting Dyck paths into bi-colored Motzkin paths}
+
+In this section we give a combinatorial proof of \Cref{cor:7}. The
+idea of proof is to convert a Dyck path into a bi-colored Motzkin
+path.
+
+\begin{defn}\label{def:9}
+  A \emph{bi-colored Motzkin path} is a Motzkin path in which every
+  horizontal step is colored red or blue. Let \( \Motz_n(2) \) denote
+  the set of bi-colored Motzkin paths from \( (0,0) \) to \( (n,0) \).
+  We also define \( \Motz^0_n(2) \) to be the set of bi-colored
+  Motzkin paths in \( \Motz_n(2) \) such that every horizontal step of
+  height \( 0 \) is colored red.
+\end{defn}
+
+Let \( \pi\in \Dyck_{2n} \). Write \( \pi = S_1 \cdots S_{2n} \) as a
+sequence of steps. We denote by \( U,D,H_r \), and \( H_b \) an up
+step, a down step, a red horizontal step, and a blue horizontal step,
+respectively. Then we define \( \phi_0(\pi) \) to be the bi-colored
+Motzkin path \( \tau = T_1 \cdots T_n \in \Motz^0_n(2) \) such that
+\[
+  T_i =
+  \begin{cases}
+   U & \mbox{if \( S_{2i-1}S_{2i} = UU \)},\\
+   D & \mbox{if \( S_{2i-1}S_{2i} = DD \)},\\
+   H_r & \mbox{if \( S_{2i-1}S_{2i} = UD \)},\\
+   H_b & \mbox{if \( S_{2i-1}S_{2i} = DU \)}.
+  \end{cases}
+\]
+For example, see \Cref{fig:25}.
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=.7]
+  \draw[help lines] (0,0) grid (16,4);
+\foreach \x in {0,...,16} \draw node at (\x,-.5) {\( \x \)};
+\foreach \x in {0,...,8} \draw[line width=1.5pt,orange] (2*\x,0) -- ++(0,4);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1);
+\dlabel22{\lambda_2}
+\dlabel31{\lambda_1}
+\dlabel51{\lambda_1}
+\dlabel{15}1{\lambda_1}
+\dlabel{14}2{\lambda_2}
+\dlabel{12}2{\lambda_2}
+\dlabel{11}3{\lambda_3}
+\dlabel{10}4{\lambda_4}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=1.4]
+  \draw[help lines] (0,0) grid (8,2);
+\foreach \x in {0,...,8} \draw node at (\x,-.5) {\( \x \)};
+\phantom{ \draw node at (8,-.5) {\( 16 \)};}
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,-1) -- ++(1,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,0) -- ++(1,-1);
+\draw[line width = 3pt,red] (2,0) --++ (1,0);
+\draw[line width = 3pt,dashed,blue] (6,1) --++ (1,0);
+\dlabel11{\lambda_1\lambda_2}
+\hlabel20{\lambda_1}
+\hlabel61{\lambda_2}
+\dlabel52{\lambda_3\lambda_4}
+\dlabel71{\lambda_1\lambda_2}
+\end{tikzpicture}
+\caption{A Dyck path \( \pi\in \Dyck_{2n} \) and the corresponding
+  bi-colored Motzkin path \( \phi_0(\pi)\in \Motz^0_n(2) \) for
+  \( n=8 \). For visibility, a blue horizontal step are drawn using dashed segments.}
+\label{fig:25}
+\end{figure}
+
+Now let \( \pi = S_1 \cdots S_{2n+2}\in \Dyck_{2n+2} \).
+Then we define \( \phi_1(\pi) \) to be the bi-colored
+Motzkin path \( \tau = T_1 \cdots T_n \in \Motz_n(2) \) such that
+\[
+  T_i =
+  \begin{cases}
+   U & \mbox{if \( S_{2i}S_{2i+1} = UU \)},\\
+   D & \mbox{if \( S_{2i}S_{2i+1} = DD \)},\\
+   H_r & \mbox{if \( S_{2i}S_{2i+1} = UD \)},\\
+   H_b & \mbox{if \( S_{2i}S_{2i+1} = DU \)}.
+  \end{cases}
+\]
+For example, see \Cref{fig:26}.
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}[scale=.7]
+  \draw[help lines] (0,0) grid (16,4);
+\foreach \x in {0,...,16} \draw node at (\x,-.5) {\( \x \)};
+\foreach \x in {0,...,7} \draw[line width=1.5pt,orange] (2*\x+1,0) -- ++(0,4);
+\draw[line width = 1.5pt] (0,0) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1) -- ++(1,-1) -- ++(1,1) -- ++(1,-1) -- ++(1,-1);
+\dlabel22{\lambda_2}
+\dlabel31{\lambda_1}
+\dlabel51{\lambda_1}
+\dlabel{15}1{\lambda_1}
+\dlabel{14}2{\lambda_2}
+\dlabel{12}2{\lambda_2}
+\dlabel{11}3{\lambda_3}
+\dlabel{10}4{\lambda_4}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=1.4]
+  \draw[help lines] (0,0) grid (7,2);
+\foreach \x in {0,...,7} \draw node at (\x,-.5) {\( \x \)};
+\phantom{ \draw node at (7,-.5) {\( 16 \)};}
+\draw[line width = 1.5pt] (0,0) -- ++(1,0) -- ++(1,0) -- ++(1,0) -- ++(1,1) -- ++(1,0) -- ++(1,-1) -- ++(1,0);
+\draw[line width = 3pt,red] (0,0) --++ (1,0);
+\draw[line width = 3pt,red] (4,1) --++ (1,0);
+\draw[line width = 3pt,red] (6,0) --++ (1,0);
+\draw[line width = 3pt,dashed,blue] (1,0) --++ (1,0);
+\draw[line width = 3pt,dashed, blue] (2,0) --++ (1,0);
+\hlabel00{\lambda_2}
+\hlabel10{\lambda_1}
+\hlabel20{\lambda_2}
+\hlabel41{\lambda_4}
+\dlabel51{\lambda_2\lambda_3}
+\hlabel60{\lambda_2}
+\end{tikzpicture}
+\caption{A Dyck path \( \pi\in \Dyck_{2n+2} \) and the corresponding
+  bi-colored Motzkin path \( \phi_1(\pi)\in \Motz_n(2) \) for
+  \( n=7 \).}
+\label{fig:26}
+\end{figure}
+
+\begin{thm}\label{thm:20}
+  The maps \( \phi_0:\Dyck_{2n} \to \Motz^0_n(2) \) and
+  \( \phi_1:\Dyck_{2n+2} \to \Motz_n(2) \) are bijections. Moreover,
+  if \( \phi_0(\pi) = \tau \) (resp.~\( \phi_1(\pi) = \tau \)), then
+  \( \wt(\pi;\vec 0,\vla) = \wt(\tau, \vb^e,\vla^e) \)
+  (resp.~\( \wt(\pi;\vec 0,\vla) = \lambda_1 \wt(\tau, \vb^o,\vla^o)
+  \)).
+\end{thm}
+
+\begin{proof}
+  This is immediate from the constructions of the maps \( \phi_0 \)
+  and \( \phi_1 \). Note that \( \phi_0(\pi) \) has no blue horizontal
+  steps because there is no \( DU \) at level \( 0 \) in \( \pi \). We
+  have \( \wt(\pi;\vec 0,\vla) = \lambda_1 \wt(\tau, \vb^o,\vla^o) \)
+  because \( S_{2n+2} \) is always a down step of starting height
+  \( 1 \).
+\end{proof}
+
+\Cref{thm:20} gives a combinatorial proof of \Cref{cor:7}.
+
+\section{J-fractions and S-fractions}
+
+In this section we find a connection between the following two types
+of continued fractions. A \emph{S-fraction} or
+\emph{Stieltjes-fraction} is a continued fraction of the form
+\[
+  \cfrac{1}{
+    1 -\cfrac{c_1x}{
+      1 - \cfrac{c_2x}{\ddots}}}.
+\]
+A \emph{J-fraction} or \emph{Jacobi-fraction} is a continued fraction
+of the form
+\[
+  \cfrac{1}{
+    1-b_0x- \cfrac{\lambda_1x^2}{
+      1-b_1x- \cfrac{\lambda_2x^2}{\ddots}}}.
+\]
+
+\begin{thm}
+  We have
+\begin{align*}
+  \cfrac{1}{
+    1 -\cfrac{\lambda_1x}{
+      1 - \cfrac{\lambda_2x}{\ddots}}}
+  &=  \cfrac{1}{
+    1-(\lambda_0+\lambda_1)x- \cfrac{\lambda_1\lambda_2x^2}{
+      1-(\lambda_2+\lambda_3)x- \cfrac{\lambda_3\lambda_4x^2}{\ddots}}}\\
+  &= 1+ \cfrac{\lambda_1 x}{
+    1-(\lambda_1+\lambda_2)x- \cfrac{\lambda_2\lambda_3x^2}{
+      1-(\lambda_3+\lambda_4)x- \cfrac{\lambda_4\lambda_5x^2}{\ddots}}},
+\end{align*}
+where \( \lambda_0=0 \).
+\end{thm}
+
+\begin{proof}
+  We use the notation in \Cref{cor:7}. Since
+  \[
+      \cfrac{1}{
+    1 -\cfrac{\lambda_1x}{
+      1 - \cfrac{\lambda_2x}{\ddots}}}
+  = \sum_{n\ge0} \sum_{\pi\in \Dyck_{2n}} \wt(\pi;\vec 0,\vla) x^n
+  = \sum_{n\ge0} \mu_{2n}(\vec 0, \vla) x^n
+  \]
+  and
+  \[
+  \cfrac{1}{
+    1-(\lambda_0+\lambda_1)x- \cfrac{\lambda_1\lambda_2x^2}{
+      1-(\lambda_2+\lambda_3)x- \cfrac{\lambda_3\lambda_4x^2}{\ddots}}}
+  = \sum_{n\ge0} \sum_{\pi\in \Motz_{n}} \wt(\pi;\vb^e,\vla^e) x^n
+  = \sum_{n\ge0} \mu_{n}(\vb^e, \vla^e) x^n,
+  \]
+  we obtain the first equality by \Cref{cor:7}. For the second
+  equality observe that, by \Cref{cor:7}, 
+  \[
+\lambda_1 \sum_{n\ge0} \mu_n(\vb^o, \vla^o) x^n =   \sum_{n\ge0} \mu_{2n+2}(\vec 0, \vla) x^n
+  = \frac{1}{x} \left(\sum_{n\ge0} \mu_{2n}(\vec 0, \vla) x^n -1 \right).
+  \]
+  Hence
+  \begin{align*}
+ \sum_{n\ge0} \mu_{2n}(\vec 0, \vla) x^n
+    &= 1+ \lambda_1x \sum_{n\ge0} \mu_n(\vb^o, \vla^o)x^n
+    = 1+ \lambda_1x 
+    \sum_{n\ge0} \sum_{\pi\in \Motz_{n}} \wt(\pi;\vb^o,\vla^o) x^n\\
+  &= 1+ \cfrac{\lambda_1 x}{
+    1-(\lambda_1+\lambda_2)x- \cfrac{\lambda_2\lambda_3x^2}{
+      1-(\lambda_3+\lambda_4)x- \cfrac{\lambda_4\lambda_5x^2}{\ddots}}},
+  \end{align*}
+which gives the second equality.
+\end{proof}
+
+\chapter{Linearization coefficients}
 
 
 
@@ -7777,3 +8292,4 @@ This implies
 \bibliography{/Users/jangsookim/Library/CloudStorage/Dropbox/newbiemacs/nbm-user-settings/references/ref.bib}
 
 \end{document}
+

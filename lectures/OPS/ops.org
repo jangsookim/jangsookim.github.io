@@ -90,3 +90,5 @@ Orthogonal polynomials are classical objects arising from the study of continued
 18. [2023-11-02 Thu]: Duality between mixed moments and coefficients, [[file:ops-files/OPS18.pdf][lecture notes]], [[https://youtu.be/o7duLc23eMk][video]]
 19. [2023-11-07 Tue]: Continued fractions 1, [[file:ops-files/OPS19.pdf][lecture notes]], [[https://youtu.be/vZX9iVYAFVM][video]]
 20. [2023-11-09 Thu]: Continued fractions 2, [[file:ops-files/OPS20.pdf][lecture notes]], [[https://youtu.be/2GlN45JFM9I][video]]
+21. [2023-11-14 Tue]: Determinants and disjoint cycles, [[file:ops-files/OPS21.pdf][lecture notes]], [[https://youtu.be/2l53CY6Wo04][video]]
+22. [2023-11-16 Thu]: Symmetric orthogonal polynomials, [[file:ops-files/OPS22.pdf][lecture notes]], [[https://youtu.be/aq0kJpiVvLE][video]]
