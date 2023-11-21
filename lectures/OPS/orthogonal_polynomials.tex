@@ -30,6 +30,12 @@
 \newtheorem*{note}{Note}
 
 % DO NOT DELETE THIS COMMENT!!! MACROS BELOW:
+\newcommand\PD{\operatorname{PD}}
+\newcommand\dc{\operatorname{dc}}
+\newcommand\NC{\operatorname{NC}}
+\newcommand\PM{\operatorname{PM}}
+\newcommand\IPM{\operatorname{IPM}}
+\newcommand\fix{\operatorname{fix}}
 \newcommand\st{\operatorname{st}}
 \newcommand\NI{\operatorname{NI}}
 \newcommand\LRmax{\operatorname{LRmax}}
@@ -6036,6 +6042,7 @@ This gives the following theorem.
 \]
 \end{thm}
 
+
 \begin{figure}
   \centering
 \begin{tikzpicture}
@@ -8150,6 +8157,655 @@ which gives the second equality.
 \chapter{Linearization coefficients}
 
 
+
+Let \( \{ P_n(x) \}_{n\ge 0} \) be an OPS for \( \LL \). A
+linearization problem is a problem to determine the coefficients
+\( c_{m,n}^{(\ell)} \) in the expansion:
+\[
+  P_m(x)P_n(x) = \sum_{\ell\ge0} c_{m,n}^{(\ell)} P_\ell(x).
+\]
+If we multiply both sides by \( P_\ell(x) \) and take the linear
+functional \( \LL \), we get
+\[
+  c_{m,n}^{(\ell)} = \frac{\LL(P_\ell(x)P_m(x)P_n(x))}{\LL(P_\ell(x)^2)}
+  = \frac{\LL(P_\ell(x)P_m(x)P_n(x))}{\lambda_1 \cdots \lambda_\ell}.
+\]
+Thus in order to find \( c_{m,n}^{(\ell)} \) it suffices to compute
+\( \LL(P_\ell(x)P_m(x)P_n(x)) \). For this reason, we will call
+\( \LL(P_\ell(x)P_m(x)P_n(x)) \), or more generally
+\( \LL(P_{n_1}(x)\cdots P_{n_k}(x)) \), a \emph{linearization
+  coefficient}.
+
+Finding a linearization coefficient in general can be difficult. In
+this chapter we will find combinatorial interpretations for the
+classical orthogonal polynomials: Tchebyshev polynomials of the second
+kind, Hermite polynomials, Charlier polynomials, and Laguerre
+polynomials. In the case of Laguerre polynomials, we will also find
+interesting connections to multi-derangements and MacMahon's master
+theorem.
+
+Roughly speaking the main idea is as follows. First, find a
+combinatorial interpretation for \( P_n(x) \). This will give a
+combinatorial meaning to the product \( P_{n_1}(x)\cdots P_{n_k}(x) \)
+in which every term is of a certain form \( a(T)x^{b(T)} \). Then
+applying the linear functional \( \LL \) converts this term into
+\( a(T)\mu_{b(T)} \). We then replace \( \mu_{b(T)} \) by the
+combinatorial meaning for the moment. Now we have a combinatorial
+meaning to \( \LL(P_{n_1}(x)\cdots P_{n_k}(x)) \). Finally, we find an
+appropriate sign-reversing involution to cancel unwanted negative
+terms.
+
+
+\section{Hermite polynomials}
+
+Recall that the (rescaled) Hermite polynomials
+\( \{ \widetilde{H}_n(x) \}_{n\ge 0} \) are defined by
+\[
+  \widetilde{H}_{n+1}(x) = x \widetilde{H}_n(x) - n \widetilde{H}_{n-1}(x).
+\]
+The \( n \)-th moment \( \mu_{n}= \LL(x^n) \) is equal to the number
+of perfect matchings on \( [n] \). Note that \( \LL(x^{2n+1}) = 0 \).
+
+
+Let \( M_n \) denote the set of all matchings on \( [n] \). For
+\( \tau\in M_n \), we define \( e(\tau) \) to be the number of edges
+in \( \tau \) and \( \fix(\tau) \) to be the number of singletons in
+\( \tau \).
+
+\begin{lem}\label{lem:10}
+  We have
+  \[
+    \widetilde{H}_n(x) = \sum_{\tau\in M_n} (-1)^{e(\tau)} x^{\fix(\tau)}.
+  \]
+\end{lem}
+
+\begin{proof}
+  This can be proved easily by induction on \( n \).
+\end{proof}
+
+\begin{defn}\label{def:10}
+  Let \( n_1,\dots,n_k \) be fixed nonnegative integers with
+\( n_1 + \cdots + n_k = n \). For \( 1\le s\le k \), let
+\[
+  J_s = \{ i: n_1 + \cdots + n_{j-1}+1 \le i\le n_1 + \cdots + n_j\}.
+\]
+Note that \( [n] = J_1 \sqcup \cdots \sqcup J_k \). Consider a
+matching \( \tau \) on \( [n] \). We say that an edge \( (i,j) \) of
+\( \tau \) is \emph{homogeneous} if \( i,j\in J_s \) for some \( s \).
+Otherwise, we say that \( (i,j) \) is \emph{inhomogeneous}. We also
+say that \( \tau \) is \emph{homogeneous} (resp.~\emph{inhomogeneous})
+if every edge in \( \tau \) is homogeneous (resp.~inhomogeneous). We
+denote by \( \IPM(n_1,\dots,n_k) \) the set of inhomogeneous perfect
+matchings on \( [n] \).
+\end{defn}
+
+
+\begin{thm}
+  We have
+\[
+  \LL(\widetilde{H}_{n_1}(x)\cdots \widetilde{H}_{n_k}(x))
+  = |\IPM(n_1,\dots,n_k)|.
+\]
+\end{thm}
+
+\begin{proof}
+  By \Cref{lem:10},
+  \begin{align*}
+    \LL \left( \widetilde{H}_{n_1}(x)\cdots \widetilde{H}_{n_k}(x) \right)
+    & =  \LL\left( \sum_{(\tau_1,\dots,\tau_k)\in M_{n_1} \times \cdots \times M_{n_k}}
+      \prod_{i=1}^{k} (-1)^{e(\tau_i)} x^{\fix(\tau_i)} \right)\\
+    & =   \sum_{(\tau_1,\dots,\tau_k)\in M_{n_1} \times \cdots \times M_{n_k}}
+        (-1)^{e(\tau_1) + \cdots + e(\tau_k)} 
+     \LL \left( x^{\fix(\tau_1) + \cdots + \fix(\tau_k)} \right).
+\end{align*}
+Since \( \LL \left( x^{\fix(\tau_1) + \cdots + \fix(\tau_k)} \right) \)
+is the number of perfect matchings of size
+\( \fix(\tau_1) + \cdots + \fix(\tau_k) \), we introduce the following
+definition.
+
+Let \( X \) be the set of all pairs \( (\tau,\pi) \) satisfying the
+following conditions:
+\begin{itemize}
+\item \( \tau \) is a homogeneous matching on \( [n] \),
+\item \( \pi \) is a perfect matching on the set of fixed points of \( \tau \).
+\end{itemize}
+Then the above equation can be written as follows:
+\[
+    \LL \left( \widetilde{H}_{n_1}(x)\cdots \widetilde{H}_{n_k}(x) \right)
+     =   \sum_{(\tau,\pi)\in X} (-1)^{e(\tau)}.
+\]
+
+Now we construct a sign-reversing involution on \( X \). Let
+\( (\tau,\pi)\in X \). If there are no homogeneous edges, then
+\( \tau \) has only fixed points and \( \pi\in \IPM(n_1,\dots,n_k) \).
+In this case we define \( \phi(\tau,\pi) = (\tau,\pi) \). Suppose that
+there are homogeneous edges in \( \tau \) or \( \pi \). Find the
+homogeneous edge \( (i,j) \) such that \( j \) is the smallest
+possible. Then we toggle the membership of this edge. More precisely,
+let
+\[
+  \tau' = \tau \Delta \{(i,j)\}, \qquad 
+  \pi' = \pi \Delta \{(i,j)\}, 
+\]
+where \( \tau\Delta\{(i,j)\} \) means the matching obtained from
+\( \tau \) by deleting the edge \( (i,j) \) if it is there, and adding
+the edge \( (i,j) \) otherwise. Let
+\( \phi(\tau,\pi) = (\tau',\pi') \). See \Cref{fig:27}.
+
+It is easy to see that \( \phi \) is a sign-reversing involution with
+fixed point set \( \IPM(n_1,\dots,n_k) \). This completes the proof.
+\end{proof}
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+\node[circle,fill,inner sep=2pt] (1) at (1,0) {};
+\node[circle,fill,inner sep=2pt] (6) at (6,0) {};
+\draw[dotted, out=90,in=90,line width=1pt] (1) to (6);
+\node[circle,fill,inner sep=2pt] (2) at (2,0) {};
+\node[circle,fill,inner sep=2pt] (4) at (4,0) {};
+\draw[out=90,in=90,line width = 1pt] (2) to (4);
+\node[circle,fill,inner sep=2pt] (3) at (3,0) {};
+\node[circle,fill,inner sep=2pt] (5) at (5,0) {};
+\draw[dotted, out=90,in=90,line width=1pt] (3) to (5);
+\node[circle,fill,inner sep=2pt] (7) at (7,0) {};
+\node[circle,fill,inner sep=2pt] (8) at (8,0) {};
+\draw[out=90,in=90,line width = 1pt] (7) to (8);
+\node[circle,fill,inner sep=2pt] (9) at (9,0) {};
+\node[circle,fill,inner sep=2pt] (10) at (10,0) {};
+\draw[dotted, out=90,in=90,line width=1pt] (9) to (10);
+\draw[line width = 1pt] (.7,-.2) rectangle (5.3,.2);
+\draw[line width = 1pt] (5.7,-.2) rectangle (9.3,.2);
+\draw[line width = 1pt] (9.7,-.2) rectangle (10.3,.2);
+\foreach \x in {1,...,10} \draw node at (\x,-.5) {\( \x \)};
+\end{tikzpicture}
+\begin{tikzpicture}
+\node[circle,fill,inner sep=2pt] (1) at (1,0) {};
+\node[circle,fill,inner sep=2pt] (6) at (6,0) {};
+\draw[dotted, out=90,in=90,line width=1pt] (1) to (6);
+\node[circle,fill,inner sep=2pt] (2) at (2,0) {};
+\node[circle,fill,inner sep=2pt] (4) at (4,0) {};
+\draw[dotted, out=90,in=90,line width=1pt] (2) to (4);
+\node[circle,fill,inner sep=2pt] (3) at (3,0) {};
+\node[circle,fill,inner sep=2pt] (5) at (5,0) {};
+\draw[dotted, out=90,in=90,line width=1pt] (3) to (5);
+\node[circle,fill,inner sep=2pt] (7) at (7,0) {};
+\node[circle,fill,inner sep=2pt] (8) at (8,0) {};
+\draw[out=90,in=90,line width = 1pt] (7) to (8);
+\node[circle,fill,inner sep=2pt] (9) at (9,0) {};
+\node[circle,fill,inner sep=2pt] (10) at (10,0) {};
+\draw[dotted, out=90,in=90,line width=1pt] (9) to (10);
+\draw[line width = 1pt] (.7,-.2) rectangle (5.3,.2);
+\draw[line width = 1pt] (5.7,-.2) rectangle (9.3,.2);
+\draw[line width = 1pt] (9.7,-.2) rectangle (10.3,.2);
+\foreach \x in {1,...,10} \draw node at (\x,-.5) {\( \x \)};
+\end{tikzpicture}
+\caption{An element \( (\tau,\pi)\in X \) and the corresponding
+  element \( \phi(\tau,\pi) \). The edges in \( \pi \) are drawn with
+  dotted arc. The map \( \phi \) toggles the edge \( (2,4) \).}
+  \label{fig:27}
+\end{figure}
+
+\begin{cor}
+  We have
+  \[
+  \LL(\widetilde{H}_{m}(x)\widetilde{H}_{n}(x)) = \delta_{m,n} n!.
+\]
+\end{cor}
+
+\begin{proof}
+  If \( m\ne n \), then there is no inhomogeneous perfect matching.
+  Hence the value is \( 0 \). If \( m = n \), there are \( n! \)
+  inhomogeneous perfect matchings since such an object is equivalent
+  to a bijection between \( J_1 \) and \( J_2 \).
+\end{proof}
+
+\section{Charlier polynomials}
+
+Recall that the Charlier polynomials are defined by
+\( C_{-1}(x;a) =0 \), \( C_{0}(x;a) =1 \), and
+\[
+  C_{n+1}(x;a) = (x-n-a) C_n(x;a) - an C_{n-1}(x;a), \qquad n\ge1.
+\]
+For simplicity we will only consider the case \( a=1 \).
+Let \( C_n(x) =  C_{n}(x;1) \).
+% and
+% \[
+%   C_{n}(x) = \sum_{k=0}^{n} \nu_{n,k}^C x^k.
+% \]
+Then
+\begin{equation}\label{eq:73}
+  C_{n+1}(x) = (x-n-1) C_n(x) - n C_{n-1}(x), \qquad n\ge1.
+\end{equation}
+The moment is
+\[
+  \mu_n = \LL(x^n) = |\Pi_n|,
+\]
+where \( \Pi_n \) is the set of set partitions of \( [n] \).
+
+\begin{defn}
+  A \emph{decorated} permutation is a permutation in which each cycle
+  may or may not be decorated. A \emph{properly decorated} permutation
+  is a decorated permutation such that every cycle of length at least
+  \( 2 \) is decorated. Let \( D_n \) denote the set of decorated
+  permutations on \( [n] \) and let \( \PD_n \) denote the set of
+  properly decorated permutations on \( [n] \). For \( \pi\in D_n \),
+  let \( \dc(\pi) \) denote the number of decorated cycles in
+  \( \pi \).
+  % We define the \emph{sign} \( \sgn(\pi) \) of a decorated
+  % permutation \( \pi\in D_n \) to be \( (-1)^{n-\dc(\pi)} \).
+  % Let
+  % \( \PD_{n,k} \) denote the set of elements in \( \PD_n \) such that
+  % there are exactly \( k \) decorated cycles.
+\end{defn}
+
+% Note that the sign of \( \pi\in D_n \) is the product of \( -1 \)
+% for every integer \( i\in [n] \) and for every decorated cycle in
+% \( \pi \).
+
+% Recall that the signless Stirling number of the first kind
+% \( c(n,k) \) is the number of permutations in \( \sym_{n} \) with
+% \( k \) cycles.
+
+We will always write a cycle so that it starts with the smallest
+integer and write a decorated cycle as \( \rho^* \).
+
+\begin{lem}\label{lem:9}
+  We have
+ \begin{equation}\label{eq:74}
+    C_n(x) = (-1)^{n} \sum_{\pi \in \PD_n}  (-x)^{\dc(\pi)}.
+  \end{equation}
+ %  Equivalently,
+ % \[
+ %    \nu_{n,k}^C = \sum_{\pi\in D_{n,k}} \sgn(\pi) = (-1)^{n-k}
+ %    \sum_{m=k}^{n} \binom{n}{m} c(m,k).
+ %  \] 
+\end{lem}
+
+\begin{proof}
+  Let \( F_n(x) \) be the right-hand side of \eqref{eq:74}.
+  We will prove that \( C_n(x) = F_n(x) \) by induction on \( n \).
+  It is true for \( n=0,1 \) because
+  \( F_0(x) = C_0(x) = 1 \) and
+  \[
+    F_1(x) = (-1) (1-x) = x-1 = C_1(x).
+  \]
+  Suppose that we have \( C_k(x) = F_k(x) \) for all \( k<n+1 \). By
+  \eqref{eq:73}, to prove \( C_{n+1}(x) = F_{n+1}(x) \), it suffices
+  to show that
+  \begin{equation}\label{eq:75}
+  F_{n+1}(x) = (x-n-1) F_n(x) - n F_{n-1}(x).
+  \end{equation}
+  The right-hand side of \eqref{eq:75} is equal to
+ \begin{multline*}
+   xF_n(x)-F_n(x)-nF_n(x) - n F_{n-1}(x) = \\
+   (-1)^{n} \left(
+  - \sum_{\pi \in A_1} (-x)^{\dc(\pi)} 
+ -\sum_{\pi \in A_2} (-x)^{\dc(\pi)} 
+ -\sum_{\pi \in A_3} (-x)^{\dc(\pi)} 
+ +\sum_{\pi \in A_4} (-x)^{\dc(\pi)} \right),
+ \end{multline*} 
+ where \( A_1 \), \( A_2 \), \( A_3 \) and \( A_4 \) are the sets of
+ \( \pi\in D_{n+1} \) defined as follows:
+ \begin{itemize}
+ \item \( \pi\in A_1 \) if and only if \( \pi = \sigma (n+1)^* \) for some
+   \( \sigma\in \PD_n \),
+ \item \( \pi\in A_2 \) if and only if \( \pi = \sigma (n+1) \) for some
+   \( \sigma\in \PD_n \),
+ \item \( \pi\in A_3 \) if and only if \( \pi \) is obtained from
+   \( \sigma \) by inserting \( n+1 \) after any integer for some
+   \( \sigma\in \PD_n \),
+ \item \( \pi\in A_4 \) if and only if \( \pi = \sigma'(i,n+1) \), for
+   some \( i\in [n] \) and \( \sigma\in \PD_n \), and \( \sigma' \) is
+   the decorated permutation obtained from \( \sigma \) by increasing
+   every integer \( j \), \( i\le j\le n \), by \( 1 \).
+ \end{itemize}
+  
+ Observe that \( A_1\subseteq \PD_{n+1} \),
+ \( A_2\subseteq \PD_{n+1} \), but \( A_3 \not\subseteq \PD_{n+1} \)
+ and \( A_4 \cap \PD_{n+1} = \emptyset \). Moreover, for
+ \( \pi\in A_3 \), we have \( \pi\not \in \PD_{n+1} \) if and only if
+ \( \pi \) has a non-decorated cycle \( (i,n+1) \) for some
+ \( i\in[n] \). Let \( A_3' = A_3\cap \PD_{n+1} \) and
+ \( A_3'' = A_3 - \PD_{n+1} \). Then \( A_3'' \) is the set of
+ elements \( \pi \) such that \( n+1 \) is in a non-decorated cycle
+ \( (i,n+1) \) of length \( 2 \). This will be canceled with
+ \( A_4 \):
+ \[
+  - \sum_{\pi \in A''_3} (-1)^{n+1-\dc(\pi)}x^{\dc(\pi)} + \sum_{\pi \in
+     A_4} (-1)^{n+1-\dc(\pi)}x^{\dc(\pi)} = 0.
+ \]
+ Thus
+ \[
+   xF_n(x)-F_n(x)-nF_n(x) - n F_{n-1}(x) = 
+   (-1)^{n+1} \sum_{\pi \in A_1\sqcup A_2 \sqcup A_3'} (-x)^{\dc(\pi)} .
+ \]
+
+ Now consider \( \pi\in \PD_{n+1} \).
+ Then there are 3 cases: 
+ \begin{itemize}
+ \item \( n+1 \) forms a decorated cycle \( (n+1)^* \) of length \( 1 \), 
+ \item \( n+1 \) forms a non-decorated cycle \( (n+1) \) of length \( 1 \),
+ \item \( n+1 \) is contained in a decorated cycle of length at least
+   \( 2 \).
+ \end{itemize}
+ These cases are exactly those in \( A_1,A_2,A_3' \) respectively.
+ Thus \( A_1\sqcup A_2 \sqcup A_3' = \PD_{n+1} \), and we obtain
+ \eqref{eq:75}.
+\end{proof}
+
+In a similar way to \Cref{def:10}, we define \( \Pi(n_1,\dots,n_k) \)
+to be the set of inhomogeneous set partitions on
+\( [n] = J_1 \sqcup \cdots \sqcup J_k \), where
+\[
+  J_s = \{ i: n_1 + \cdots + n_{j-1}+1 \le i\le n_1 + \cdots + n_j\}.
+\]
+Similarly, a \emph{homogeneous cycle} is a cycle consisting of elements from
+\( J_s \) for some \( s\in [k]\). 
+
+\begin{thm}
+  For any integers \( n_1,\dots,n_k\ge0 \),
+  we have
+\[
+  \LL(C_{n_1}(x)\cdots C_{n_k}(x))
+  = \sum_{\pi \in \Pi(n_1,\dots,n_k)} \wt(\pi).
+\]
+\end{thm}
+
+\begin{proof}
+  Let \( n= n_1 + \cdots + n_k \). By \Cref{lem:9},
+  \begin{align*}
+    \LL \left( C_{n_1}(x)\cdots C_{n_k}(x) \right)
+    & =  (-1)^n \LL\left( \sum_{(\tau_1,\dots,\tau_k)\in \Pi_{n_1} \times \cdots \times \Pi_{n_k}}
+      \prod_{i=1}^{k} (-x)^{\dc(\tau_i)} \right)\\
+    & =  (-1)^n \sum_{(\tau_1,\dots,\tau_k)\in \Pi_{n_1} \times \cdots \times \Pi_{n_k}}
+      (-1)^{\dc(\tau_1) + \cdots + \dc(\tau_k)}\LL\left( 
+      x^{\dc(\tau_1) + \cdots + \dc(\tau_k)} \right)\\
+    & =  (-1)^n \sum_{(\tau_1,\dots,\tau_k)\in \Pi_{n_1} \times \cdots \times \Pi_{n_k}}
+      (-1)^{\dc(\tau_1) + \cdots + \dc(\tau_k)}
+      |\Pi_{\dc(\tau_1) + \cdots + \dc(\tau_k)}|.
+\end{align*}
+Note that every non-decorated cycle has length \( 1 \). Hence they can
+be reconstructed from the decorated cycles and we can safely ignore
+them. Note that \( |\Pi_{\dc(\tau_1) + \cdots + \dc(\tau_k)}| \) is
+the number of ways to construct a set partition of the set of all
+decorated cycles. To describe this more precisely, we define the
+following set.
+
+Let \( X \) be the set of collections \( \pi = \{ B_1,\dots,B_r\} \)
+satisfying the following conditions:
+\begin{enumerate}
+\item each \( B_i = \{ C^{(i)}_{1},\dots,C^{(i)}_{t_i}\} \) is a
+  nonempty set of homogeneous cycles;
+\item \( \{C^{(i)}_j: 1\le i\le r, 1\le j\le t_i\} \) is a partition
+  of a subset \( A \) of \( [n] \), where \( C^{(i)}_j \) is
+  considered as the set of elements in it.
+\end{enumerate}
+Given \( \pi = \{ B_1,\dots,B_r\}\in X \),
+we define
+\[
+  \sgn(\pi) = (-1)^{|B_1| + \cdots + |B_k|}.
+\]
+Then, by the above observation, we have
+\begin{equation}\label{eq:76}
+    \LL \left( C_{n_1}(x)\cdots C_{n_k}(x) \right)
+    = (-1)^{n} \sum_{\pi \in X}  \sgn(\pi).
+\end{equation}
+
+Now we will find a sign-reversing involution on \( X \). Suppose
+\( \pi = \{ B_1,\dots,B_r\}\in X \). We first cancel a non-decorated
+cycle (of length \( 1 \)) and a block consisting of a single
+(decorated) cycle of length \( 1 \). After the cancellation, we may
+assume that \( \pi \) has neither non-decorated cycles nor blocks
+consisting of a single cycle of length \( 1 \).
+
+Suppose that \( \pi \) has a block \( B_r \) that contains two
+elements from the same set \( J_s \). Then we find smallest such
+\( r \) and then find \( i,j\in B_r\cap J_s \) such that \( (i,j) \)
+is the lexicographically smallest. Let \( \pi' \) be the configuration
+obtained by multiplying the transposition \( (i,j) \) to the
+underlying permutation of \( \pi \). This gives a sign-reversing
+involution.
+
+The fixed points are the configurations
+\( \pi = \{ B_1,\dots,B_r\}\in X \) such that
+for every \( i \),
+\begin{itemize}
+\item \( B_i \) consists of (decorated) cycles of length \( 1 \),
+\item \( |B_i|\ge2 \),
+\item \( B_i\cap J_j \) has at most one element for all \( j \).
+\end{itemize}
+Hence the fixed points are in natural bijection with inhomogeneous set
+partitions in \( \Pi(n_1,\dots,n_k) \). Moreover in this case, we have
+\( (-1)^{n}\sgn(\pi) = (-1)^{n+n} = 1 \).
+\end{proof}
+
+\begin{exam}
+  Let \( (n_1,n_2,n_3) = (4,5,3) \).
+ \begin{enumerate}
+ \item Let 
+   \begin{align*}
+     \tau &= \{ (1,3)^*, (2)^*, (4))\}\cup \{(5,6,9)^*, (7), (8)\}\cup \{ (10)^*, (11,12)^*\},\\
+     \pi &= \bigg\{ \{ (1,3)^*, (5,6,9)^*)\}, \{(2)^*,(11,12)^*\}, \{(10)^*\} \bigg\}.
+   \end{align*}
+   Then \( 4 \) is the smallest integer \( j \) such that there is
+   \( (j) \) or \( \{(j)^*\} \). Hence
+   \( (\tau,\pi) \mapsto (\tau',\pi') \), where
+   \begin{align*}
+     \tau' &= \{ (1,3)^*, (2)^*)\}\cup \{(4)^*\}\cup \{(5,6,9)^*, (7), (8)\}\cup \{ (10)^*, (11,12)^*\},\\
+     \pi' &= \bigg\{ \{ (1,3)^*, (5,6,9)^*)\},\{(4)^*\}, \{(2)^*,(11,12)^*\}, \{(10)^*\} \bigg\}.
+   \end{align*}
+
+ \item Let 
+   \begin{align*}
+     \tau &= \{ (1,3,4)^*, (2)^*)\}\cup \{(5,6,9)^*, (7)^*, (8)^*\}\cup \{ (10)^*, (11,12)^*\},\\
+     \pi &= \bigg\{ \{ (1,3,4)^*,(2)^*, (5,6,9)^*)\}, \{ (7)^*, (8)^*, (10)^*\},\{(11,12)^*\} \bigg\}.
+   \end{align*}
+   In this case, there is no integer \( j \) such that there is
+   \( (j) \) or \( \{(j)^*\} \). Therefore, we find the pair
+   \( (1,2) \), which is the lexicographically smallest \( (i,j) \)
+   such that \( i \) and \( j \) are in the same block of \( \pi \).
+   Thus we multiply \( (1,2) \) to the permutation \( (1,3,4)(2) \):
+   \[
+     (1,2)(1,3,4)(2) = (1,3,4,2).
+   \]
+   Thus \( (\tau,\pi) \mapsto (\tau',\pi') \), where
+   \begin{align*}
+     \tau' &= \{ (1,3,4,2)^*)\}\cup \{(5,6,9)^*, (7), (8)\}\cup \{ (10)^*, (11,12)^*\},\\
+     \pi &= \bigg\{ \{ (1,3,4,2)^*, (5,6,9)^*)\}, \{ (7)^*, (8)^*, (10)^*\},\{(11,12)^*\} \bigg\}.
+   \end{align*}
+ \end{enumerate}
+ 
+\end{exam}
+
+
+
+\begin{cor}
+  We have
+  \[
+  \LL(C_{m}(x)C_{n}(x)) = \delta_{m,n} n!.
+\]
+\end{cor}
+
+
+\section{Tchebyshev polynomials}
+
+The (normalized) \emph{Tchebyshev polynomials of the second kind}
+\( \widetilde{U}_n(x) \) are defined by
+  \[
+    \widetilde{U}_{n+1}(x) = x \widetilde{U}_n(x) - \widetilde{U}_{n-1}(x), \qquad n\ge0.
+  \]
+
+  By the recurrence (or by the Favard tiling model), we have
+  \begin{equation}\label{eq:72}
+    \widetilde{U}_n(x) = \sum_{\tau\in F(n)} (-1)^{e(\tau)} x^{\fix(\tau)},
+  \end{equation}
+  where \( F(n) \) is the set of matchings on \( [n] \) such that
+  every edge consists of two consecutive integers. The moment is
+  \[
+    \LL(x^n) = \mu_n = |\Dyck_{n}|.
+  \]
+  Note that \( \mu_{2n} = C_n \) and \( \mu_{2n+1} = 0 \).
+  There are many combinatorial objects counted by the Catalan number \( C_n \).
+  For our purpose, it is convenient to use the following objects.
+
+\begin{defn}
+  A matching \( \pi \) is \emph{noncrossing} if there are no two edges
+  \( (a,c) \) and \( (b,d) \) such that \( a<b<c<d \).
+\end{defn}
+
+\begin{prop}\label{pro:6}
+The number of noncrossing perfect matchings on \( [2n] \)
+is \( C_n \).
+\end{prop}
+
+\begin{proof}
+  Recall the bijection between Hermite histories and perfect
+  matchings. If every label of a down step is \( 1 \), then the
+  corresponding matching is noncrossing. This gives a bijection
+  between Dyck paths of length \( 2n \) and noncrossing perfect
+  matchings on \( [2n] \).
+\end{proof}
+
+  
+  Let \( \NC(n_1,\dots,n_k) \) denote the number of inhomogeneous
+  noncrossing matchings.
+
+
+\begin{thm}
+  We have
+\[
+  \LL(\widetilde{U}_{n_1}(x)\cdots \widetilde{U}_{n_k}(x))
+  = |\NC(n_1,\dots,n_k)|.
+\]
+\end{thm}
+
+
+\section{Laguerre polynomials}
+
+\[
+  L^{(\alpha)}_{n+1}(x) = (x-2n-\alpha) L^{(\alpha)}_n(x) - n(n-1+\alpha) L^{(\alpha)}_{n-1}(x), \qquad n\ge1.
+\]
+
+Idea, a figure X is canceled since
+there are three ways to create a figure X.
+one way is from \( \lambda_n \)
+and two ways from \( b_n \).
+We can cancel them so that we only
+have in perfect matchings on \( K_{n,n} \)
+without any ordering of the creation of edges.
+
+\begin{lem}
+  \[
+    L^{(0)}_{n}(x)
+    = \sum_{k=0}^{n} (-1)^{k} |M_{n,k}|x^{n-k},
+  \]
+  where \( M_{n,k} \) is the set of matchings on \( K_{n,n} \) with
+  \( k \) edges.
+\end{lem}
+
+
+
+\begin{thm}
+\[
+  \LL(L_{n_1}(x)\cdots L_{n_k}(x))
+  = \sum_{\pi \in D(n_1,\dots,n_k)} \wt(\pi).
+\]
+\end{thm}
+
+\section{Multi-derangements and MacMahon's master theorem}
+\label{sec:enumeration}
+
+Recall that a \emph{derangement} is a permutation \( \pi\in \sym_n \)
+such that \( \pi_i\ne i \) for all \( i\in [n] \). We can generalize
+the notion of derangements for multiset permutations as follows. A
+\emph{derangement} of $\{1^{n_1}, 2^{n_2},\dots,k^{n_k}\}$ is a
+permutation on this multiset such that the first $n_1$ entries are not
+1, the next $n_2$ entries are not $2$, and so on. Let
+$d(n_1,n_2,\dots,n_k)$ denote the number of derangements of
+$\{1^{n_1}, 2^{n_2},\dots,k^{n_k}\}$.
+
+\begin{thm}
+For a fixed integer \( k>0 \), we have
+  \[
+\sum_{n_1,\dots,n_k\geq0} d(n_1,\dots,n_k) x_1^{n_1} \cdots x_k^{n_k}
+= \frac{1}{1-e_2-2e_3-3e_4-\cdots-(k-1)e_k},
+\]
+where
+$e_n$ is the elementary symmetric function of $x_1,\dots,x_k$, i.e.,
+\[
+e_n = \sum_{1\leq i_1<\cdots<i_n\leq k} x_{i_1}\cdots x_{i_n}.
+\]
+\end{thm}
+
+We will prove this theorem using MacMahon's master theorem.
+
+
+\begin{thm}[MacMahon's master theorem]
+  \label{thm:MMT}
+  For a matrix \( A = (a_{i,j})_{i,j=1}^m \), let
+\[
+  G(k_1,\dots,k_m)  =  \bigl[y_1^{k_1}\cdots y_m^{k_m}\bigr] 
+\prod_{i=1}^m \bigl(a_{i,1}y_1 + \dots + a_{i,m}y_m \bigl)^{k_i}.
+\]
+Then
+\[
+  \sum _{k_{1},\dots ,k_{m}\ge 0}G(k_{1},\dots ,k_{m})x_{1}^{k_{1}}\cdots x_{m}^{k_{m}}
+  ={\frac {1}{\det(I_{m}-TA)}},
+\]
+where \( T = (\delta_{i,j}x_i)_{i,j=1}^m \).
+\end{thm}
+
+\begin{proof}
+
+
+\end{proof}
+
+Let \( J_k \) be the \( k\times k \) matrix such that every entry is
+\( 1 \).
+
+\begin{lem}\label{lem:12}
+  We have \( \det(I_{k}-J_{k}) = 1-k \). 
+\end{lem}
+
+\begin{proof}
+  We have
+  \[
+    \det(xI_{k}-J_{k}) = (x-\lambda_1) \cdots (x-\lambda_k),
+  \]
+  where \( \lambda_1,\dots,\lambda_k \) are the eigenvalues of
+  \( J_k \). Observe that \( 0 \) is an eigenvalue of \( J_k \) with
+  eigenvectors \( \epsilon_i-\epsilon_{i+1} \), \( 1\le i\le k-1 \)
+  and \( k \) is an eigenvalue with eigenvector
+  \( \epsilon_1 + \cdots + \epsilon_k \), where
+  \( \epsilon_1,\dots,\epsilon_k \) are the standard basis vectors in
+  \( \RR^k \). Thus, \( (\lambda_1,\dots,\lambda_k) = (0,\dots,0,k) \)
+  and we obtain
+  \[
+    \det(xI_{k}-J_{k}) = x^{k-1}(x-k).
+  \]
+  Substituting \( x=1 \) gives the lemma.
+\end{proof}
+
+\begin{lem}
+  Let \( A = J_m-I_m \). Then
+  \[
+    \det(I_{m}-TA) = 1-e_2-2e_3-3e_4-\cdots-(k-1)e_k.
+  \]
+\end{lem}
+
+\begin{proof}
+ Let \( I_{m}-TA = (b_{i,j})_{i,j=1}^m \).
+ Then
+  \begin{align*}
+    \det(I_{m}-TA)
+    &= \sum_{\pi\in \sym_m}  \sgn(\pi) \prod_{i=1}^m b_{i,\pi(i)}
+    = \sum_{H\subseteq [m]}\sum_{\pi\in \sym_m, \Fix(\pi) = [m]\setminus H}  \sgn(\pi) \prod_{i=1}^m b_{i,\pi(i)}\\
+    &= \sum_{H\subseteq [m]} \det(I_{|H|}-J_{|H|}) \prod_{i\in H} x_i\\
+    &= \sum_{k=0}^{m} \det(I_{k}-J_{k}) e_k = 1-e_2-2e_3-3e_4-\cdots-(k-1)e_k,
+  \end{align*}
+  where the last equality follows from \Cref{lem:12}.
+\end{proof}
 
 \newpage
 
