@@ -33,12 +33,10 @@ Orthogonal polynomials are classical objects arising from the study of continued
 * Lecture notes
 - [[file:orthogonal_polynomials.pdf][Lecture notes]] (This file will be updated regularly.)
 * Homework
-- Current homework: Homework 4 (Due: Nov 9) 
 - [[file:homework.pdf][Homework problems]] (This file will be updated regularly.)
 - [[file:homework(solutions).pdf][Homework solutions with grading criteria]] (This file will be updated regularly.)
 - Please email your homework as a single pdf file to the instructor by the due date.
 * Student presentation
-- *Send an email to the instructor by Nov 10* indicating which paper you want to present.
 - Dates: Nov 28, Nov 30, Dec 5, Dec 7
 - Each student will give a presentation for 20 min.
 - You can use a board or a beamer.
@@ -92,3 +90,4 @@ Orthogonal polynomials are classical objects arising from the study of continued
 20. [2023-11-09 Thu]: Continued fractions 2, [[file:ops-files/OPS20.pdf][lecture notes]], [[https://youtu.be/2GlN45JFM9I][video]]
 21. [2023-11-14 Tue]: Determinants and disjoint cycles, [[file:ops-files/OPS21.pdf][lecture notes]], [[https://youtu.be/2l53CY6Wo04][video]]
 22. [2023-11-16 Thu]: Symmetric orthogonal polynomials, [[file:ops-files/OPS22.pdf][lecture notes]], [[https://youtu.be/aq0kJpiVvLE][video]]
+23. [2023-11-21 Tue]: Linearization coefficients 1, [[file:ops-files/OPS23.pdf][lecture notes]], [[https://youtu.be/8L7aQNlhLIU][video]]
