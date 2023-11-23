@@ -8226,9 +8226,9 @@ in \( \tau \) and \( \fix(\tau) \) to be the number of singletons in
 \begin{defn}\label{def:10}
   Let \( n_1,\dots,n_k \) be fixed nonnegative integers with
 \( n_1 + \cdots + n_k = n \). For \( 1\le s\le k \), let
-\[
+\begin{equation}\label{eq:81}
   J_s = \{ i: n_1 + \cdots + n_{j-1}+1 \le i\le n_1 + \cdots + n_j\}.
-\]
+\end{equation}
 Note that \( [n] = J_1 \sqcup \cdots \sqcup J_k \). Consider a
 matching \( \tau \) on \( [n] \). We say that an edge \( (i,j) \) of
 \( \tau \) is \emph{homogeneous} if \( i,j\in J_s \) for some \( s \).
@@ -8679,53 +8679,158 @@ is \( C_n \).
 
 \section{Laguerre polynomials}
 
+The Laguerre polynomials are defined by
 \[
   L^{(\alpha)}_{n+1}(x) = (x-2n-\alpha) L^{(\alpha)}_n(x) - n(n-1+\alpha) L^{(\alpha)}_{n-1}(x), \qquad n\ge1.
 \]
+In this section we will only consider the case \( \alpha=1 \). Let
+\( L_n(x) = L^{(1)}_n(x) \) so that
+\begin{equation}\label{eq:78}
+  L_{n+1}(x) = (x-2n-1) L_n(x) - n^2 L_{n-1}(x), \qquad n\ge1.
+\end{equation}
+Recall that
+\[
+  \mu_n = \LL(x^n) = n!.
+\]
 
-Idea, a figure X is canceled since
-there are three ways to create a figure X.
-one way is from \( \lambda_n \)
-and two ways from \( b_n \).
-We can cancel them so that we only
-have in perfect matchings on \( K_{n,n} \)
-without any ordering of the creation of edges.
+Let \( [\overline{n}] = \{ \overline{1},\dots,\overline{n}\} \). We
+denote by \( K_{n,n} \) the complete bipartite graph with vertex set
+\( [n]\sqcup [\overline{n}] \) and edge set
+\( \{(i,\overline{j}): i,j\in [n]\} \). Let \( M(K_{n,n}) \) be the
+set of matchings on \( [n]\sqcup [\overline{n}] \) whose edges are of
+the form \( (i,\overline{j}) \) for some \( i,j\in [n] \).
+
 
 \begin{lem}
-  \[
-    L^{(0)}_{n}(x)
-    = \sum_{k=0}^{n} (-1)^{k} |M_{n,k}|x^{n-k},
-  \]
-  where \( M_{n,k} \) is the set of matchings on \( K_{n,n} \) with
-  \( k \) edges.
+  We have
+  \begin{equation}\label{eq:77}
+    L_{n}(x) = \sum_{\tau\in M(K_{n,n})} (-1)^{e(\tau)} x^{\fix(e)/2}.
+  \end{equation}
 \end{lem}
 
+\begin{proof}
+  Let \( F_n(x) \) be the right-hand side of \eqref{eq:77}. We will
+  prove that \( L_n(x) = F_n(x) \) by induction on \( n \). It is true
+  for \( n=0,1 \) because \( F_0(x) = L_0(x) = 1 \) and
+  \( F_1(x) = x-1 = L_1(x) \). Suppose that we have
+  \( L_k(x) = F_k(x) \) for all \( k<n+1 \). By \eqref{eq:78}, to
+  prove \( L_{n+1}(x) = F_{n+1}(x) \), it suffices to show that
+  \begin{equation}\label{eq:79}
+  F_{n+1}(x) = (x-2n-1) F_n(x) - n^2 F_{n-1}(x).
+  \end{equation}
+  Letting \( w(\tau) = (-1)^{e(\tau)} x^{\fix(\tau)/2} \), the right-hand
+  side of \eqref{eq:79} is equal to
+ \begin{multline}\label{eq:80}
+   xF_n(x)-F_n(x)-nF_n(x)-nF_n(x) - n^2 F_{n-1}(x) = \\
+  + \sum_{\tau \in A_1} w(\tau)
+ +\sum_{\tau \in A_2} w(\tau)
+ +\sum_{\tau \in A_3} w(\tau)
+ +\sum_{\tau \in A_4} w(\tau)
+ -\sum_{\tau \in A_5} w(\tau),
+ \end{multline} 
+ where
+ \begin{align*}
+   A_1 &= \{ \tau\in M(K_{n+1,n+1}): \mbox{\( n+1 \) and \( \overline{n+1} \) are fixed points in \( \tau \)}\}, \\
+   A_2 &= \{ \tau\in M(K_{n+1,n+1}): \mbox{\( (n+1,\overline{n+1}) \) is an edge in \( \tau \)}\}, \\
+   A_3 &= \{ \tau\in M(K_{n+1,n+1}): \mbox{\( (\overline{i},n+1) \) is an edge in \( \tau \) for some \( 1\le i\le n \)}\}, \\
+   A_4 &= \{ \tau\in M(K_{n+1,n+1}): \mbox{\( (i,\overline{n+1}) \) is an edge in \( \tau \) for some \( 1\le i\le n \)}\}, \\
+   A_5 &= \{ \tau\in M(K_{n+1,n+1}): \mbox{\( (\overline{i},n+1) \) and \( (j,\overline{n+1}) \) is an edge in \( \tau \) for some \( 1\le i,j\le n \)}\}.
+ \end{align*}
+ Since \( A_3\cap A_4 = A_5 \), the right-hand side of \eqref{eq:80}
+ is equal to
+ \[
+   \sum_{\tau \in A_1\cup A_2\cup A_3\cup A_4} w(\tau) = \sum_{\tau
+     \in M(K_{n+1,n+1})} w(\tau)  = F_{n+1}(x).
+ \]
+ This shows \eqref{eq:79}, which completes the proof.
+\end{proof}
+
+
+Recall that a derangement is a permutation \( \pi\in \sym_n \)
+such that \( \pi_i\ne i \) for all \( i\in [n] \). We generalize the
+notion of derangements as follows.
+
+\begin{defn}
+  Let \( n_1,\dots,n_k \) be nonnegative integers with
+  \( n_1 + \cdots + n_k = n \). We use the notation \( J_s \) in
+  \eqref{eq:81}. An \emph{\( (n_1,\dots,n_k) \)-derangement} is a
+  permutation \( \pi\in \sym_n \) such that for any \( 1\le s\le k \),
+  if \( i\in J_s \), then \( \pi_i \not\in J_s \). Let
+  \( d(n_1,\dots,n_k) \) denote the number of all
+  \( (n_1,\dots,n_k) \)-derangements.
+\end{defn}
+
+Note that the a usual derangement is a \( (1,\dots,1) \)-derangement.
 
 
 \begin{thm}
+  We have
 \[
-  \LL(L_{n_1}(x)\cdots L_{n_k}(x))
-  = \sum_{\pi \in D(n_1,\dots,n_k)} \wt(\pi).
+  \LL(L_{n_1}(x)\cdots L_{n_k}(x)) = d(n_1,\dots,n_k).
 \]
 \end{thm}
+
+\begin{proof}
+  Let \( n= n_1 + \cdots + n_k \). By \eqref{eq:77},
+  \begin{align*}
+    &  \LL \left( L_{n_1}(x)\cdots L_{n_k}(x) \right)\\
+    & =  \LL\left( \sum_{(\tau_1,\dots,\tau_k)\in M(K_{n_1,n_1}) \times \cdots \times M(K_{n_k,n_k})}
+      \prod_{i=1}^{k} (-1)^{e(\tau_i)} x^{\fix(\tau_i)/2} \right)\\
+    & =  \sum_{(\tau_1,\dots,\tau_k)\in M(K_{n_1,n_1}) \times \cdots \times M(K_{n_k,n_k})}
+      (-1)^{e(\tau_1) + \cdots + e(\tau_k)}
+      \LL\left( x^{(\fix(\tau_1) + \cdots + \fix(\tau_k))/2} \right)\\
+    & =  \sum_{(\tau_1,\dots,\tau_k)\in M(K_{n_1,n_1}) \times \cdots \times M(K_{n_k,n_k})}
+      (-1)^{e(\tau_1) + \cdots + e(\tau_k)}
+      ((\fix(\tau_1) + \cdots + \fix(\tau_k))/2)! .
+\end{align*}
+
+Observe that \( ((\fix(\tau_1) + \cdots + \fix(\tau_k))/2)! \) is the
+number of ways to connect the fixed points in \( [n] \) to the fixed
+points in \( [\overline{n}] \). We will find a combinatorial interpretation of the above sum.
+
+Consider a matching \( \tau \in M(K_{n,n}) \). We say that an edge
+\( (i,\overline{j}) \) of \( \tau \) is \emph{homogeneous} if
+\( i,j\in J_s \) for some \( s \). Otherwise, \( (i,\overline{j}) \)
+is \emph{inhomogeneous}. Let \( X \) be the set of pairs
+\( (\tau,\pi) \) satisfying the following conditions:
+\begin{enumerate}
+\item \( \tau \) is a homogeneous matching in \( M(K_{n,n}) \);
+\item \( \pi \) is a complete matching on the fixed points of
+  \( \tau \) using edges from \( M(K_{n,n}) \).
+\end{enumerate}
+Then we have
+\[
+    \LL \left( L_{n_1}(x)\cdots L_{n_k}(x) \right)
+ = \sum_{(\tau,\pi)\in X}  (-1)^{e(\tau)}.
+\]
+
+Now we will find a sign-reversing involution \( \phi \) on \( X \).
+Suppose \( (\tau,\pi)\in X \). If there is no homogeneous edge, then
+define \( \phi(\tau,\pi) = (\tau,\pi) \). If there are homogeneous
+edges, find the lexicographically smallest \( (i,j) \) such that
+\( (i,\overline{j}) \) is a homogeneous edge in \( \tau \) or
+\( \pi \). Define \( \phi(\tau,\pi) = (\tau',\pi') \), where
+\( \tau' = \tau \Delta \{(i,\overline{j}) \} \) and
+\( \pi = \pi \Delta \{(i,\overline{j}) \} \). This is a sign-reversing
+involution. The fixed point set is the set of \( (\tau,\pi)\in X \)
+such that \( \tau \) has no edges and \( \pi \) is an inhomogeneous
+perfect matching on \( K_{n,n} \). This is in natural bijection with
+\( (n_1,\dots,n_k) \)-derangements.
+\end{proof}
+
 
 \section{Multi-derangements and MacMahon's master theorem}
 \label{sec:enumeration}
 
-Recall that a \emph{derangement} is a permutation \( \pi\in \sym_n \)
-such that \( \pi_i\ne i \) for all \( i\in [n] \). We can generalize
-the notion of derangements for multiset permutations as follows. A
-\emph{derangement} of $\{1^{n_1}, 2^{n_2},\dots,k^{n_k}\}$ is a
-permutation on this multiset such that the first $n_1$ entries are not
-1, the next $n_2$ entries are not $2$, and so on. Let
-$d(n_1,n_2,\dots,n_k)$ denote the number of derangements of
-$\{1^{n_1}, 2^{n_2},\dots,k^{n_k}\}$.
+In this section we will prove the following formula for the generating
+function for the number of \( (n_1,\dots,n_k) \)-derangements.
 
-\begin{thm}
+\begin{thm}\label{thm:21}
 For a fixed integer \( k>0 \), we have
   \[
-\sum_{n_1,\dots,n_k\geq0} d(n_1,\dots,n_k) x_1^{n_1} \cdots x_k^{n_k}
-= \frac{1}{1-e_2-2e_3-3e_4-\cdots-(k-1)e_k},
+    \sum_{n_1,\dots,n_k\geq0} d(n_1,\dots,n_k)
+    \frac{x_1^{n_1}}{n_1!} \cdots \frac{x_k^{n_k}}{n_k!} =
+    \frac{1}{1-e_2-2e_3-3e_4-\cdots-(k-1)e_k},
 \]
 where
 $e_n$ is the elementary symmetric function of $x_1,\dots,x_k$, i.e.,
@@ -8736,46 +8841,93 @@ e_n = \sum_{1\leq i_1<\cdots<i_n\leq k} x_{i_1}\cdots x_{i_n}.
 
 We will prove this theorem using MacMahon's master theorem.
 
-
 \begin{thm}[MacMahon's master theorem]
   \label{thm:MMT}
-  For a matrix \( A = (a_{i,j})_{i,j=1}^m \), let
+  For a matrix \( A = (a_{i,j})_{i,j=1}^k \), let
 \[
-  G(k_1,\dots,k_m)  =  \bigl[y_1^{k_1}\cdots y_m^{k_m}\bigr] 
-\prod_{i=1}^m \bigl(a_{i,1}y_1 + \dots + a_{i,m}y_m \bigl)^{k_i}.
+  F(n_1,\dots,n_k)  =  \bigl[y_1^{n_1}\cdots y_k^{n_k}\bigr] 
+\prod_{i=1}^k \bigl(a_{i,1}y_1 + \dots + a_{i,k}y_k \bigl)^{n_i}.
 \]
 Then
 \[
-  \sum _{k_{1},\dots ,k_{m}\ge 0}G(k_{1},\dots ,k_{m})x_{1}^{k_{1}}\cdots x_{m}^{k_{m}}
-  ={\frac {1}{\det(I_{m}-TA)}},
+  \sum _{n_{1},\dots ,n_{k}\ge 0}F(n_{1},\dots ,n_{k})x_{1}^{n_{1}}\cdots x_{k}^{n_{k}}
+  ={\frac {1}{\det(I_{k}-TA)}},
 \]
-where \( T = (\delta_{i,j}x_i)_{i,j=1}^m \).
+where \( T = (\delta_{i,j}x_i)_{i,j=1}^k \).
 \end{thm}
 
+
+A \emph{multi-derangement} of \(\{1^{n_1}, 2^{n_2},\dots,k^{n_k}\}\) is
+an arrangement \( \pi=\pi_1 \cdots \pi_n \) of the elements in this
+multiset such that \( \pi_i\ne i \) for all \( 1\le i\le k \).
+The number of multi-derangements of \(\{1^{n_1}, 2^{n_2},\dots,k^{n_k}\}\)
+is
+\[
+  m(n_1,\dots,n_k) := \frac{ d(n_1,\dots,n_k)}{n_1! \cdots n_k!}.
+\]
+
+
+\begin{lem}\label{lem:13}
+  We have
+  \[
+      m(n_1,\dots,n_k)  = \left[y_1^{n_1}\cdots y_k^{n_k}\right] 
+\prod_{i=1}^k \bigl(a_{i,1}y_1 + \dots + a_{i,k}y_k \bigl)^{n_i},
+  \]
+  where  \( a_{i,j}=1-\delta_{i,j} \). 
+\end{lem}
+
 \begin{proof}
-
-
+  Let \( \pi=\pi_1 \cdots \pi_n \) be a multi-derangement of
+  \(\{1^{n_1}, 2^{n_2},\dots,k^{n_k}\}\). Then
+  \( \pi_1,\dots,\pi_{n_1} \) are integers in \( [k]-\{1\} \).
+  Thus, the subword \( \pi_1\cdots\pi_{n_1} \)
+  can be constructed by selecting \( y_{\pi_1},\dots,y_{\pi_{n_1}} \)
+  in the expansion of the product
+  \[
+    \bigl(a_{1,1}y_1 + \dots + a_{1,k}y_k \bigl)^{n_1}
+    = \bigl(y_2 + \dots + y_k \bigl)^{n_1}.
+  \]
+  Similarly, the subword \( \pi_{n_1+1}\cdots\pi_{n_1+n_2} \) can be
+  constructed by from a term in the expansion of the product
+  \[
+    \bigl(a_{2,1}y_1 + \dots + a_{2,k}y_k \bigl)^{n_2}
+    = \bigl(y_1+ y_3 + \dots + y_k \bigl)^{n_2}.
+  \]
+  Continuing in this manner
+  we can constuct the word \( \pi \)
+  from a term in the expansion of 
+  \begin{equation}\label{eq:82}
+    \prod_{i=1}^k \bigl(a_{i,1}y_1 + \dots + a_{i,k}y_k \bigl)^{n_i}.
+  \end{equation}
+  Since \( \pi \) has \( n_i \) \( i \)'s, such a term must be equal
+  to \( y_1^{n_1}\cdots y_k^{n_k} \). This gives a bijection between
+  all multi-derangements of \(\{1^{n_1}, 2^{n_2},\dots,k^{n_k}\}\) and
+  the terms equal to \( y_1^{n_1}\cdots y_k^{n_k} \) in the expansion
+  \eqref{eq:82}. This implies the statement in the lemma.
 \end{proof}
 
 Let \( J_k \) be the \( k\times k \) matrix such that every entry is
 \( 1 \).
 
 \begin{lem}\label{lem:12}
-  We have \( \det(I_{k}-J_{k}) = 1-k \). 
+  We have 
+  \[
+    \det(I_{k}-J_{k}) = 1-k.
+  \]
 \end{lem}
 
 \begin{proof}
-  We have
+  If \( \lambda_1,\dots,\lambda_k \) are the eigenvalues of
+  \( J_k \), then
   \[
-    \det(xI_{k}-J_{k}) = (x-\lambda_1) \cdots (x-\lambda_k),
+    \det(xI_{k}-J_{k}) = (x-\lambda_1) \cdots (x-\lambda_k).
   \]
-  where \( \lambda_1,\dots,\lambda_k \) are the eigenvalues of
-  \( J_k \). Observe that \( 0 \) is an eigenvalue of \( J_k \) with
+   Observe that \( 0 \) is an eigenvalue of \( J_k \) with
   eigenvectors \( \epsilon_i-\epsilon_{i+1} \), \( 1\le i\le k-1 \)
   and \( k \) is an eigenvalue with eigenvector
   \( \epsilon_1 + \cdots + \epsilon_k \), where
   \( \epsilon_1,\dots,\epsilon_k \) are the standard basis vectors in
-  \( \RR^k \). Thus, \( (\lambda_1,\dots,\lambda_k) = (0,\dots,0,k) \)
+  \( \RR^k \). Thus, \( (\lambda_1,\dots,\lambda_k) = (k,0,\dots,0) \)
   and we obtain
   \[
     \det(xI_{k}-J_{k}) = x^{k-1}(x-k).
@@ -8783,24 +8935,46 @@ Let \( J_k \) be the \( k\times k \) matrix such that every entry is
   Substituting \( x=1 \) gives the lemma.
 \end{proof}
 
-\begin{lem}
-  Let \( A = J_m-I_m \). Then
+\begin{lem}\label{lem:14}
+  Let \( A = J_k-I_k \). Then
   \[
-    \det(I_{m}-TA) = 1-e_2-2e_3-3e_4-\cdots-(k-1)e_k.
+    \det(I_{k}-TA) = 1-e_2-2e_3-3e_4-\cdots-(k-1)e_k,
   \]
+where \( T = (\delta_{i,j}x_i)_{i,j=1}^k \).
 \end{lem}
 
 \begin{proof}
- Let \( I_{m}-TA = (b_{i,j})_{i,j=1}^m \).
- Then
+  We have \( I_{k}-TA = (b_{i,j})_{i,j=1}^k \),
+  where 
+  \[
+    b_{i,j} =
+    \begin{cases}
+     1 & \mbox{if \( i=j \)},\\
+     -x_i & \mbox{otherwise.}
+    \end{cases}
+  \]
+  Then
   \begin{align*}
-    \det(I_{m}-TA)
-    &= \sum_{\pi\in \sym_m}  \sgn(\pi) \prod_{i=1}^m b_{i,\pi(i)}
-    = \sum_{H\subseteq [m]}\sum_{\pi\in \sym_m, \Fix(\pi) = [m]\setminus H}  \sgn(\pi) \prod_{i=1}^m b_{i,\pi(i)}\\
-    &= \sum_{H\subseteq [m]} \det(I_{|H|}-J_{|H|}) \prod_{i\in H} x_i\\
-    &= \sum_{k=0}^{m} \det(I_{k}-J_{k}) e_k = 1-e_2-2e_3-3e_4-\cdots-(k-1)e_k,
+    \det(I_{k}-TA)
+    &= \sum_{\pi\in \sym_k}  \sgn(\pi) \prod_{i=1}^k b_{i,\pi(i)}
+      = \sum_{H\subseteq [k]}\sum_{\pi\in \sym_k, \Fix(\pi) = [k]\setminus H}  \sgn(\pi)
+      \prod_{i\in H} b_{i,\pi(i)}\\
+    &= \sum_{H\subseteq [k]} \det(I_{|H|}-J_{|H|}) \prod_{i\in H} x_i\\
+    &= \sum_{\ell=0}^{k} \det(I_{\ell}-J_{\ell}) e_\ell = 1-e_2-2e_3-3e_4-\cdots-(k-1)e_k,
   \end{align*}
   where the last equality follows from \Cref{lem:12}.
+\end{proof}
+
+Now we are ready to prove \Cref{thm:21}.
+
+\begin{proof}[Proof of \Cref{thm:21}]
+  Let \( A = J_k-I_k \). Then by \Cref{lem:13} and \Cref{thm:MMT},
+\[
+  \sum_{n_1,\dots,n_k\geq0} m(n_1,\dots,n_k) x_1^{n_1} \cdots
+  x_k^{n_k} = {\frac {1}{\det(I_{k}-TA)}},
+\]
+where \( T = (\delta_{i,j}x_i)_{i,j=1}^k \). Then we obtain the
+theorem by \Cref{lem:14}.
 \end{proof}
 
 \newpage
