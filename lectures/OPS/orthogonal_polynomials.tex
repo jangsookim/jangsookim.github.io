@@ -8857,11 +8857,11 @@ where \( T = (\delta_{i,j}x_i)_{i,j=1}^k \).
 \end{thm}
 
 
-A \emph{multi-derangement} of \(\{1^{n_1}, 2^{n_2},\dots,k^{n_k}\}\) is
-an arrangement \( \pi=\pi_1 \cdots \pi_n \) of the elements in this
-multiset such that \( \pi_i\ne i \) for all \( 1\le i\le k \).
-The number of multi-derangements of \(\{1^{n_1}, 2^{n_2},\dots,k^{n_k}\}\)
-is
+A \emph{multi-derangement} of \(\{1^{n_1}, 2^{n_2},\dots,k^{n_k}\}\)
+is an arrangement \( \pi=\pi_1 \cdots \pi_n \) of the elements in this
+multiset such that for all \( 1\le s\le k \), if \( i\in J_s \), then
+\( \pi_i\ne s \). The number of multi-derangements of
+\(\{1^{n_1}, 2^{n_2},\dots,k^{n_k}\}\) is
 \[
   m(n_1,\dots,n_k) := \frac{ d(n_1,\dots,n_k)}{n_1! \cdots n_k!}.
 \]
@@ -8912,25 +8912,25 @@ Let \( J_k \) be the \( k\times k \) matrix such that every entry is
 \begin{lem}\label{lem:12}
   We have 
   \[
-    \det(I_{k}-J_{k}) = 1-k.
+    \det(I_{r}-J_{r}) = 1-r.
   \]
 \end{lem}
 
 \begin{proof}
-  If \( \lambda_1,\dots,\lambda_k \) are the eigenvalues of
-  \( J_k \), then
+  If \( \lambda_1,\dots,\lambda_r \) are the eigenvalues of
+  \( J_r \), then
   \[
-    \det(xI_{k}-J_{k}) = (x-\lambda_1) \cdots (x-\lambda_k).
+    \det(xI_{r}-J_{r}) = (x-\lambda_1) \cdots (x-\lambda_r).
   \]
-   Observe that \( 0 \) is an eigenvalue of \( J_k \) with
-  eigenvectors \( \epsilon_i-\epsilon_{i+1} \), \( 1\le i\le k-1 \)
-  and \( k \) is an eigenvalue with eigenvector
-  \( \epsilon_1 + \cdots + \epsilon_k \), where
-  \( \epsilon_1,\dots,\epsilon_k \) are the standard basis vectors in
-  \( \RR^k \). Thus, \( (\lambda_1,\dots,\lambda_k) = (k,0,\dots,0) \)
+   Observe that \( 0 \) is an eigenvalue of \( J_r \) with
+  eigenvectors \( \epsilon_i-\epsilon_{i+1} \), \( 1\le i\le r-1 \)
+  and \( r \) is an eigenvalue with eigenvector
+  \( \epsilon_1 + \cdots + \epsilon_r \), where
+  \( \epsilon_1,\dots,\epsilon_r \) are the standard basis vectors in
+  \( \RR^r \). Thus, \( (\lambda_1,\dots,\lambda_r) = (r,0,\dots,0) \)
   and we obtain
   \[
-    \det(xI_{k}-J_{k}) = x^{k-1}(x-k).
+    \det(xI_{r}-J_{r}) = x^{r-1}(x-r).
   \]
   Substituting \( x=1 \) gives the lemma.
 \end{proof}
@@ -8954,15 +8954,35 @@ where \( T = (\delta_{i,j}x_i)_{i,j=1}^k \).
     \end{cases}
   \]
   Then
+  \begin{equation}\label{eq:83}
+        \det(I_{k}-TA)
+    = \sum_{\pi\in \sym_k}  \sgn(\pi) \prod_{i=1}^k b_{i,\pi(i)}
+     = \sum_{H\subseteq [k]}\sum_{\pi\in \sym_k, \Fix(\pi) = [k]\setminus H}  \sgn(\pi)
+      \prod_{i\in H} b_{i,\pi(i)}.
+  \end{equation}
+
+  Suppose \( H\subseteq [k] \). If \( \pi\in \sym_n \) satisfies
+  \( \Fix(\pi) = [k]\setminus H \), then
+  \[
+    \prod_{i\in H} b_{i,\pi(i)} = \prod_{i\in H} (-x_i) = (-1)^{|H|}  \prod_{i\in H} x_i.
+  \]
+  Thus
+  \begin{align*}
+    \sum_{\pi\in \sym_k, \Fix(\pi) = [k]\setminus H}  \sgn(\pi) \prod_{i\in H} b_{i,\pi(i)} 
+   &= \left( (-1)^{|H|} \prod_{i\in H} x_i \right)
+    \sum_{\pi\in \sym_k, \Fix(\pi) = [k]\setminus H}  \sgn(\pi) \\
+  &=  \left( (-1)^{|H|} \prod_{i\in H} x_i \right) \det(J_{|H|}-I_{|H|})\\
+  &=   \det(I_{|H|}-J_{|H|}) \prod_{i\in H} x_i\\
+  &=   (1-|H|)\prod_{i\in H} x_i,
+  \end{align*}
+  where the last equality follows from \Cref{lem:12}. Therefore we can
+  rewrite \eqref{eq:83} as
   \begin{align*}
     \det(I_{k}-TA)
-    &= \sum_{\pi\in \sym_k}  \sgn(\pi) \prod_{i=1}^k b_{i,\pi(i)}
-      = \sum_{H\subseteq [k]}\sum_{\pi\in \sym_k, \Fix(\pi) = [k]\setminus H}  \sgn(\pi)
-      \prod_{i\in H} b_{i,\pi(i)}\\
-    &= \sum_{H\subseteq [k]} \det(I_{|H|}-J_{|H|}) \prod_{i\in H} x_i\\
-    &= \sum_{\ell=0}^{k} \det(I_{\ell}-J_{\ell}) e_\ell = 1-e_2-2e_3-3e_4-\cdots-(k-1)e_k,
+    &= \sum_{H\subseteq [k]} (1-|H|) \prod_{i\in H} x_i\\
+    &= \sum_{\ell=0}^{k} (1-\ell) e_\ell = 1-e_2-2e_3-3e_4-\cdots-(k-1)e_k,
   \end{align*}
-  where the last equality follows from \Cref{lem:12}.
+  as desired.
 \end{proof}
 
 Now we are ready to prove \Cref{thm:21}.

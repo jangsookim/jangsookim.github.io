@@ -91,3 +91,4 @@ Orthogonal polynomials are classical objects arising from the study of continued
 21. [2023-11-14 Tue]: Determinants and disjoint cycles, [[file:ops-files/OPS21.pdf][lecture notes]], [[https://youtu.be/2l53CY6Wo04][video]]
 22. [2023-11-16 Thu]: Symmetric orthogonal polynomials, [[file:ops-files/OPS22.pdf][lecture notes]], [[https://youtu.be/aq0kJpiVvLE][video]]
 23. [2023-11-21 Tue]: Linearization coefficients 1, [[file:ops-files/OPS23.pdf][lecture notes]], [[https://youtu.be/8L7aQNlhLIU][video]]
+24. [2023-11-23 Thu]: Linearization coefficients 2, [[file:ops-files/OPS24.pdf][lecture notes]], [[https://youtu.be/sA8AmbQEvEo][video]]
