@@ -23,6 +23,7 @@
 
 * Papers
 ** Preprints
+- Lecture hall graphs and the Askey scheme (with Sylvie Corteel, Bhargavi Jonnadula, Jonathan Keating) [[https://arxiv.org/abs/2311.12761][arXiv:2311.12761]]
 - Bounded Littlewood identities for cylindric Schur functions (with JiSun Huh, Christian Krattenthaler, Soichi Okada), [[https://arxiv.org/abs/2301.13117][arXiv:2301.13117]]
 - Extended commonality of paths and cycles via Schur convexity (with Joonkyung Lee), [[https://arxiv.org/abs/2210.00977][arXiv:2210.00977]]
 - Three families of /q/-Lommel polynomials (with Dennis Stanton), [[https://arxiv.org/abs/2105.10096][arXiv:2105.10096]]
@@ -171,7 +172,9 @@
 - Byung-Hak Hwang
 - [[https://jihyeugjang.github.io/][Jihyeug Jang]]
 - [[http://www.combinatorics.net.cn/homepage/ji/][Kathy Ji]]
+- Bhargavi Jonnadula
 - [[https://www.irif.fr/~josuat/][Matthieu Josuat-Vergès]]
+- [[https://en.wikipedia.org/wiki/Jonathan_Keating][Jonathan Keating]]
 - [[http://square.seoultech.ac.kr/~bkim4/][Byungchan Kim]]
 - [[https://donghyunkim8.wixsite.com/dhkim][Donghyun Kim]]
 - [[http://mathsci.kaist.ac.kr/~dskim/][Dongsu Kim]]
