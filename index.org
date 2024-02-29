@@ -164,18 +164,18 @@
 
 * Collaborators
 - [[https://geometry.knu.ac.kr/~anbyhee/][Byung Hee An]]
-- [[http://riordan.skku.edu/home/GSCheon.php][Gi-Sang Cheon]]
+- Gi-Sang Cheon
 - Yumin Cho
 - [[https://sites.google.com/site/yhchomath/][Yunhyung Cho]]
 - [[http://acmi.ajou.ac.kr/~schoi/][Suyoung Choi]]
 - [[https://math.berkeley.edu/~corteel/][Sylvie Corteel]]
-- [[https://sites.google.com/umn.edu/galen-dorpalen-barry/][Galen Dorpalen-Barry]]
+- [[https://galen.dorpalen-barry.org][Galen Dorpalen-Barry]]
 - Dan Drake
 - [[http://people.brandeis.edu/~gessel/][Ira M. Gessel]]
 - JiSun Huh
 - Byung-Hak Hwang
 - [[https://jihyeugjang.github.io/][Jihyeug Jang]]
-- [[http://www.combinatorics.net.cn/homepage/ji/][Kathy Ji]]
+- Kathy Ji
 - Bhargavi Jonnadula
 - [[https://www.irif.fr/~josuat/][Matthieu Josuat-Vergès]]
 - [[https://en.wikipedia.org/wiki/Jonathan_Keating][Jonathan Keating]]
@@ -186,7 +186,7 @@
 - [[https://www.mat.univie.ac.at/~kratt/][Christian Krattenthaler]]
 - [[https://sites.google.com/view/eunjeonglee/][Eunjeong Lee]]
 - [[https://sites.google.com/site/joonkyungleemaths/][Joonkyung Lee]]
-- [[http://www.math.uconn.edu/~khlee/][Kyu-Hwan Lee]]
+- [[https://automorphy.github.io/al-folio/][Kyu-Hwan Lee]]
 - Nakyung Lee
 - [[https://pi.math.cornell.edu/~karola/][Karola Mészáros]]
 - [[http://ahmadmojallal.weebly.com/][Seyed Ahmad Mojallal]]
@@ -197,12 +197,12 @@
 - [[https://sites.google.com/usc.edu/gpanova/home][Greta Panova]]
 - [[http://www-users.math.umn.edu/~reiner/][Vic Reiner]]
 - [[https://www.mat.univie.ac.at/~schlosse/][Michael Schlosser]]
-- [[https://sites.google.com/site/shyunseo/][Seunghyun Seo]]
+- [[https://sites.google.com/view/shyunseo/][Seunghyun Seo]]
 - [[http://hshin.info/][Heesung Shin]]
 - Minho Song
-- [[https://u-keun.github.io/][U-Keun Song]]
+- U-Keun Song
 - [[http://www.math.umn.edu/~stanton/][Dennis Stanton]]
-- [[http://dbwilson.com/][David B. Wilson]]
+- David B. Wilson
 - [[https://meesue.github.io/index.html][Meesue Yoo]]
 - Sang-Hoon Yu
 - Sun-mi Yun
