@@ -1,25 +1,39 @@
-#+TITLE: Jang Soo Kim's homepage
-#+SETUPFILE: /Users/jangsookim/Dropbox/newbiemacs/nbm-user-settings/org-themes/src/bigblow_inline/bigblow_inline.theme
-#+OPTIONS: toc:nil num:nil
+#+title: Jang Soo Kim
+#+OPTIONS: toc:nil author:nil num:nil date:nil
+#+LATEX_CLASS: article
+#+LATEX_HEADER: \usepackage{a4wide}
 
-* Home
+* Contact Information
+| Address  | 31256B in Natural Science Building #1              |
+|          | Department of Mathematics, Sungkyunkwan University |
+|          | 2066 Seobu-ro, Jangan-gu, Suwon, Gyeonggi-do 16419 |
+|          | South Korea                                        |
+| Email    | [[mailto:][jangsookim@skku.edu]]                                |
+| Homepage | https://jangsookim.github.io                       |
 
-: Professor
-:
-: Department of Mathematics
-: Sungkyunkwan University (SKKU)
-:
-: 2066 Seobu-ro, Jangan-gu
-: Suwon, Gyeonggi-do 16419
-: South Korea
-:
-: Office: 31256B in Natural Science Building #1
-: Email: name@skku.edu, where name=jangsookim
+* Research Area
+ Enumerative Combinatorics and Algebraic Combinatorics
 
-[[file:files/cv.pdf][Curriculum vitae]]
+* Positions
+| 2022/9 - current  | Professor, Sungkyunkwan University                                       |
+| 2015/9 - 2022/8    | Associate Professor, Sungkyunkwan University                             |
+| 2014/3 - 2015/8    | Assistant Professor, Sungkyunkwan University                             |
+| 2013/6 - 2014/2    | Research Fellow, KIAS                                                    |
+| 2010/9 - 2013/5    | Dunham Jackson Assistant Professor                                       |
+|                  | School of Mathematics, University of Minnesota                           |
+| 2009/3 - 2010/7    | CNRS postdoctor (mentor: Sylvie Corteel) at LIAFA, University of Paris 7 |
 
-#+ATTR_HTML: :width 300
-[[./files/photo.jpeg]]
+* Education
+| 2003/3 - 2009/1   | Ph.D. in Mathematical Sciences, KAIST (advisor : Dongsu Kim) |
+| 1999/3 - 2003/2   | B.S. in Mathematics, KAIST                                   |
+
+* Service
+| Department Chair            | 2024 Jan - current                            |
+| Discrete Mathematics        | 2020 Nov - current: Associate Editor           |
+| Combinatorial Theory        | 2020 Nov - current: Handling Editor            |
+| Annals of Combinatorics     | 2019 Sep - current: Editor                     |
+| FPSAC                       | 2019 Sep - current: Executive Committee member |
+| KIAS Combinatorics Workshop | 2016 Aug - current: Organizer                  |
 
 * Papers
 ** Preprints
@@ -162,100 +176,3 @@
 - Ratios of Hahn-Exton /q/-Bessel functions and /q/-Lommel polynomials (with
      Dennis Stanton), [[https://arxiv.org/abs/2006.08120][arXiv:2006.08120]]
 
-* Collaborators
-- [[https://geometry.knu.ac.kr/~anbyhee/][Byung Hee An]]
-- Gi-Sang Cheon
-- Yumin Cho
-- [[https://sites.google.com/site/yhchomath/][Yunhyung Cho]]
-- [[http://acmi.ajou.ac.kr/~schoi/][Suyoung Choi]]
-- [[https://math.berkeley.edu/~corteel/][Sylvie Corteel]]
-- [[https://galen.dorpalen-barry.org][Galen Dorpalen-Barry]]
-- Dan Drake
-- [[http://people.brandeis.edu/~gessel/][Ira M. Gessel]]
-- JiSun Huh
-- Byung-Hak Hwang
-- [[https://jihyeugjang.github.io/][Jihyeug Jang]]
-- Kathy Ji
-- Bhargavi Jonnadula
-- [[https://www.irif.fr/~josuat/][Matthieu Josuat-Vergès]]
-- [[https://en.wikipedia.org/wiki/Jonathan_Keating][Jonathan Keating]]
-- [[https://sites.google.com/view/mathbkim/home][Byungchan Kim]]
-- [[https://donghyunkim8.wixsite.com/dhkim][Donghyun Kim]]
-- [[http://mathsci.kaist.ac.kr/~dskim/][Dongsu Kim]]
-- Jaehyun Kim
-- [[https://www.mat.univie.ac.at/~kratt/][Christian Krattenthaler]]
-- [[https://sites.google.com/view/eunjeonglee/][Eunjeong Lee]]
-- [[https://sites.google.com/site/joonkyungleemaths/][Joonkyung Lee]]
-- [[https://automorphy.github.io/al-folio/][Kyu-Hwan Lee]]
-- Nakyung Lee
-- [[https://pi.math.cornell.edu/~karola/][Karola Mészáros]]
-- [[http://ahmadmojallal.weebly.com/][Seyed Ahmad Mojallal]]
-- [[https://sites.google.com/view/jaeseong-oh/][Jaeseong Oh]]
-- [[https://sites.google.com/site/mathsejinoh/][Se-jin Oh]]
-- Suho Oh
-- Soichi Okada
-- [[https://sites.google.com/usc.edu/gpanova/home][Greta Panova]]
-- [[http://www-users.math.umn.edu/~reiner/][Vic Reiner]]
-- [[https://www.mat.univie.ac.at/~schlosse/][Michael Schlosser]]
-- [[https://sites.google.com/view/shyunseo/][Seunghyun Seo]]
-- [[http://hshin.info/][Heesung Shin]]
-- Minho Song
-- U-Keun Song
-- [[http://www.math.umn.edu/~stanton/][Dennis Stanton]]
-- David B. Wilson
-- [[https://meesue.github.io/index.html][Meesue Yoo]]
-- Sang-Hoon Yu
-- Sun-mi Yun
-
-* Lecture Videos
-** Topics in Combinatorics: Combinatorics of orthogonal polynomials
-[[file:lectures/OPS/ops.org][Lecture Homepage]]
-** Introduction to Newbiemacs
-- [[https://youtu.be/vhWpeNRi7Ts][link to video]]
-** Juggling and Mathematics
-- [[https://youtu.be/3H4E3d6GiSU][link to video]]
-- An undergraduate colloquium talk at Kyunghee University
-** $\mathrm{\LaTeX}$ in Visual Studio Code
-- This is a course that I taught online in December 2020. We learn how to
-     use $\mathrm{\LaTeX}$ in Visual Studio Code.
-- [[./lectures/vscode/flyer_vscode.pdf][Poster]]
-- [[file:lectures/vscode/vscode_lecture0.org][Lecture Homepage]]
-- [[https://www.youtube.com/playlist?list=PLGB0U_OssPo4cnACf9kBIBwwyO_2GDPXo][Link to lecture videos]]
-** Topics in Combinatorics: The Theory of Alternating Sign Matrices
-- [[https://www.youtube.com/playlist?list=PLGB0U_OssPo73Ha4Ity13ZgPjlg2hxdbU][link to videos]]
-- This is a graduate course that I taught at Sungkyunkwan University in 2017.
-     We closely follow the book: Proofs and Confirmations - The Story of the
-     Alternating Sign Matrix Conjecture by Bressoud.
-** Representation Theory (in Korean)
-- [[https://www.youtube.com/playlist?list=PLGB0U_OssPo5BAvB6QvWiOLPJhw4_jRZG][link to videos]]
-- This is a graduate course on Representation Theory that I taught at
-     Sungkyunkwan University in 2018. We cover Lectures 1~6 of the textbook
-     Representation Theory, A First Course, by Fulton and Harris.
-** Lie Groups and Lie Algebras
-- [[https://www.youtube.com/playlist?list=PLGB0U_OssPo5agzqnsr9Ubx3ACk0_2S2Y][link to videos]]
-- This is a graduate course that I taught at Sungkyunkwan University in 2019.
-     We closely follow Chapters 1-10 of the textbook: Lie Groups, Lie Algebras,
-     and Representations, 2nd ed, by Brian C. Hall.
-** Discrete Mathematics
-- [[https://www.youtube.com/playlist?list=PLGB0U_OssPo4coTntcR4v0HFnM85HnDcE][link to videos]]
-- This is an undergraduate course on Discrete Mathematics that I taught at
-     Sungkyunkwan University in 2017. We cover Chapters 1-9 of Discrete
-     Mathematics by Johnsonbaugh, 7th edition.
-** Introduction to Combinatorics
-- [[https://www.youtube.com/playlist?list=PLGB0U_OssPo61SjBLstG16BF6BgmCAwKS][link to videos]]
-- This is an undergraduate course on Combinatorics that I taught at
-     Sungkyunkwan University in 2016. We cover Chapters 1-6 in the textbook:
-     Combinatorics Through Guided Discovery by Kenneth P. Bogart.
-* WeBWorK
-- [[file:webwork/index.org][Introduction to WeBWorK]]
-* Newbiemacs
-- Newbiemacs is a pre-configured [[https://www.gnu.org/software/emacs/][GNU Emacs]] distribution inspired by [[https://www.spacemacs.org/][Spacemacs]].
-- Newbiemacs is desiged for mathematician who are new to Emacs.
-- [[file:newbiemacs/newbiemacs-home.org][Newbiemacs Homepage]]
-- Screenshots
-#+ATTR_HTML: :width 600
-[[file:files/newbiemacs-screenshot.png][file:newbiemacs/files/newbiemacs-screenshot.png]]
-#+ATTR_HTML: :width 600
-[[file:newbiemacs/files/leader-key.png][file:newbiemacs/files/leader-key.png]]
-#+ATTR_HTML: :width 500
-file:newbiemacs/files/torus-screenshot.png
