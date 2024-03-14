@@ -88,6 +88,12 @@
 ** How to view the connections of the org files
 - Type ~u~ in the Newbiemacs screen.
 
+** How to add a link to a file (or a directory)
+- Drag-and-drop a file (or a directory) in your org file will create a
+  link to that file.
+- (Optional) If you want to open every linked file or directory using your system default application, add the following line in your ~user-init.el~. (To open ~user-init.el~, type ~SPC N c u~.)
+  : (setq org-file-apps nil)
+
 * Magit (git interface)
 ** Configuring Git user name and email (one time only)
 - Before using Git you need to identify yourself by entering this.
