@@ -228,6 +228,9 @@ For more details, click [[file:newbiemacs-manual.org][the Newbiemacs manual]].
 4. Start Emacs.
 ** How can I use a spell-checker?
 Check the section on "Spell checking" in [[file:newbiemacs-manual.org][the Newbiemacs manual]].
+** How can change fontsize globally?
+- Add the following line in your ~user-init.el~ and change the number ~150~ as you want. (To open ~user-init.el~, type ~SPC N c u~.)
+  : (set-face-attribute 'default nil :height 150)
 
 ** How can I re-install Newbiemacs?
 You can re-installing Newbiemacs keeping your Newbiemacs folder
