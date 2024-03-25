@@ -1,0 +1,212 @@
+\documentclass{amsart}
+
+\usepackage{amsmath,amsthm,amssymb,bm}
+\usepackage{hyperref}
+\usepackage{a4wide}
+\usepackage{cleveref}
+% \usepackage{refcheck}
+\usepackage{graphicx,color}
+\usepackage{tikz}
+\numberwithin{equation}{section}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+\newtheorem{exam}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem*{note}{Note}
+
+% DO NOT DELETE THIS COMMENT!!! MACROS BELOW:
+\newcommand\NI{\operatorname{NI}}
+\newcommand\LRmin{\operatorname{LRmin}}
+\newcommand\pts[1]{\textbf{[#1~points]}}
+\newcommand\Pts[1]{\quad\textbf{[#1~points]}}
+\newcommand\evencycle{\operatorname{evencycle}}
+\newcommand\inv{\operatorname{inv}}
+\newcommand\cycle{\operatorname{cycle}}
+\newcommand\Motz{\operatorname{Motz}}
+\newcommand\Fix{\operatorname{Fix}}
+\newcommand\sgn{\operatorname{sgn}}
+\newcommand\sym{\mathfrak{S}}
+\newcommand\invol{\mathfrak{I}}
+\newcommand\NN{\mathbb{N}}
+\newcommand\QQ{\mathbb{Q}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand\LL{\mathcal{L}}
+\newcommand\FF{\mathbb{F}}
+\newcommand\LH{\operatorname{LH}}
+\newcommand\CH{\operatorname{CH}}
+
+\newcommand\Mot{\operatorname{Mot}}
+\newcommand{\Dyck}{\operatorname{Dyck}}
+
+\newcommand\Par{\operatorname{Par}}
+\newcommand\RPP{\operatorname{RPP}}
+\newcommand\SSYT{\operatorname{SSYT}}
+\newcommand\SYT{\operatorname{SYT}}
+
+\newcommand\wt{\operatorname{wt}}
+
+\renewcommand\vec[1]{\bm{#1}}
+\newcommand\vx{\vec{x}}
+\newcommand\vb{\vec{b}}
+\newcommand\vla{\vec{\lambda}}
+\newcommand\flr[1]{\left\lfloor #1\right\rfloor}
+\newcommand\Qbinom[3]{\genfrac{[}{]}{0pt}{}{#1}{#2}_{#3}}
+\newcommand\qbinom[2]{\Qbinom{#1}{#2}{q}}
+
+\newcommand\hyper[5]{{}_{#1}F_{#2} \left(#3;#4;#5\right)}
+\newcommand\qhyper[5]{{}_{#1}\phi_{#2} \left(#3;#4;#5\right)}
+\newcommand\Hyper[5]{{}_{#1}F_{#2} \left( \left.
+    \begin{matrix}
+      #3\\
+      #4\\
+    \end{matrix}
+    \:\right|\: #5
+    \right)}
+\newcommand\qHyper[5]{{}_{#1}\phi_{#2} \left(
+    \begin{matrix}
+      #3\\
+      #4\\
+    \end{matrix}
+    ; #5
+    \right)}
+
+\newcommand\comment[1]{\textcolor{blue}{\bf #1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Homework}
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+\section{Homework 1 (Due: Apr 5)}
+
+\begin{problem}
+ Let \(A\) be a nonempty set and let \(k\) be a positive integer with \(k \leq|A|\). The symmetric group \(S_A\) acts on the set \(B\) consisting of all subsets of \(A\) of cardinality \(k\) by 
+ \[
+   \sigma \cdot\left\{a_1, \ldots, a_k\right\}= \left\{\sigma\left(a_1\right), \ldots, \sigma\left(a_k\right)\right\}.
+ \]
+ \begin{enumerate}
+ \item Prove that this is a group action.
+ \item Describe explicitly how the elements (1 2) and (1 2 3) act on the six 2-element subsets of \(\{1,2,3,4\}\).
+ \end{enumerate}
+
+\end{problem}
+
+\begin{problem}
+  Let \(H\) be a group acting on a set \(A\). Prove that the relation
+  \(\sim\) on \(A\) defined by \(a \sim b \) if and only if
+  \( a=h b \) for some \(h \in H\) is an equivalence
+  relation. (For each \(x \in A\) the equivalence class of \(x\) under
+  \(\sim\) is called the orbit of \(x\) under the action of \(H\). The
+  orbits under the action of \(H\) partition the set \(A\).)
+\end{problem}
+
+
+\begin{problem}
+ In each of parts (1) to (5) give the number of nonisomorphic abelian groups of the specified order - do not list the groups:
+\begin{enumerate}
+\item order 100
+\item order 576
+\item order 1155
+\item order 42875
+\item order 2704
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+  In each of parts (1) to (5) give the lists of invariant factors for all abelian groups of the specified order:
+\begin{enumerate}
+\item order 270
+\item order 9801
+\item order 320
+\item order 105
+\item order 44100
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+  In each of parts (1) to (5) give the lists of elementary divisors
+  for all abelian groups of the specified order and then match each
+  list with the corresponding list of invariant factors found
+  in the preceding problem:
+\begin{enumerate}
+\item order 270
+\item order 9801
+\item order 320
+\item order 105
+\item order 44100
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+  Let \(R\) be a ring with identity and let \(S\) be a subring of
+  \(R\) containing the identity. Prove that if \(u\) is a unit in
+  \(S\) then \(u\) is a unit in \(R\). Show by example that the
+  converse is false.
+\end{problem}
+
+\begin{problem}
+  Let \( R \) be a ring with \( 1\ne 0 \).
+  \begin{enumerate}
+  \item Prove that if \( a \) is a zero divisor, then it is not a
+    unit.
+  \item Prove that if \( ab=ac \) and \( a \) is not a zero divisor,
+  then \( b=c \).
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+ Assume \(R\) is commutative. Prove that if \(P\) is a prime ideal of \(R\) and \(P\) contains no zero divisors then \(R\) is an integral domain. 
+\end{problem}
+
+\begin{problem}
+  Let \( R \) be a ring with \( 1\ne 0 \).
+  Let \(A=\left(a_1, a_2, \ldots, a_n\right)\) be a nonzero finitely
+  generated ideal of \(R\). Prove that there is an ideal \(B\) which
+  is maximal with respect to the property that it does not contain
+  \(A\). [Use Zorn’s Lemma.]
+\end{problem}
+
+\begin{problem}
+Let \(n_1, n_2, \ldots, n_k\) be integers which are relatively prime in pairs: \(\left(n_i, n_j\right)=1\) for all \(i \neq j\).
+\begin{enumerate}
+\item Show that the Chinese Remainder Theorem implies that for any \(a_1, \ldots, a_k \in \mathbb{Z}\) there is a solution \(x \in \mathbb{Z}\) to the simultaneous congruences
+\[
+x \equiv a_1 \bmod n_1, \quad x \equiv a_2 \bmod n_2, \quad \ldots, \quad x \equiv a_k \bmod n_k
+\]
+and that the solution \(x\) is unique \(\bmod n = n_1 n_2 \ldots n_k\).
+\item Let \(n_i^{\prime}=n / n_i\) be the quotient of \(n\) by \(n_i\), which is relatively prime to \(n_i\) by assumption. Let \(t_i\) be the inverse of \(n_i^{\prime} \bmod n_i\). Prove that the solution \(x\) in (a) is given by
+\[
+x=a_1 t_1 n_1^{\prime}+a_2 t_2 n_2^{\prime}+\cdots+a_k t_k n_k^{\prime} \bmod n .
+\]
+Note that the elements \(t_i\) can be quickly found by the Euclidean Algorithm as described in Section 2 of the Preliminaries chapter (writing \(a n_i+b n_i^{\prime}=\left(n_i, n_i^{\prime}\right)=1\) gives \(t_i=b\) ) and that these then quickly give the solutions to the system of congruences above for any choice of \(a_1, a_2, \ldots, a_k\).
+
+\item Solve the simultaneous system of congruences
+\[
+x \equiv 1 \bmod 8, \quad x \equiv 2 \bmod 25, \quad \text { and } x \equiv 3 \bmod 81
+\]
+and the simultaneous system
+\[
+y \equiv 5 \bmod 8, \quad y \equiv 12 \bmod 25, \quad \text { and } \quad y \equiv 47 \bmod 81
+\]
+\end{enumerate}
+\end{problem}
+
+
+\end{document}
