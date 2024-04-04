@@ -28,7 +28,8 @@
 - Lecture hall graphs and the Askey scheme (with Sylvie Corteel, Bhargavi Jonnadula, Jonathan Keating), [[https://arxiv.org/abs/2311.12761][arXiv:2311.12761]]
 - Bounded Littlewood identities for cylindric Schur functions (with JiSun Huh, Christian Krattenthaler, Soichi Okada), [[https://arxiv.org/abs/2301.13117][arXiv:2301.13117]]
 - Three families of /q/-Lommel polynomials (with Dennis Stanton), [[https://arxiv.org/abs/2105.10096][arXiv:2105.10096]]
-- Refined canonical stable Grothendieck polynomials and their duals (with Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), [[https://arxiv.org/abs/2104.04251][arXiv:2104.04251]]
+- Refined canonical stable Grothendieck polynomials and their duals, Part 2 (with Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), [[https://arxiv.org/abs/2404.02483][arXiv:2404.02483]]
+- Refined canonical stable Grothendieck polynomials and their duals, Part 1 (with Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), [[https://arxiv.org/abs/2104.04251][arXiv:2104.04251]]
 - Characteristic polynomials of the weak order on classical and affine Coxeter groups (with Sun-mi Yun), to appear in /Order/, [[https://arxiv.org/abs/2204.01310][arXiv:2204.01310]]
 ** 2024
 - Extended commonality of paths and cycles via Schur convexity (with Joonkyung Lee), /J. Combin. Theory Ser. B/ 166 (2024), 109--122, [[https://arxiv.org/abs/2210.00977][arXiv:2210.00977]]
