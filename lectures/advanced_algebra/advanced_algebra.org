@@ -4,5 +4,5 @@
 
 * Homework
 - [[file:homework.pdf][Homework problems]] (This file will be updated regularly.)
-- [[file:homework(solutions).pdf][Homework solutions with grading criteria]] (This file will be updated regularly.)
+- [[file:homework(solutions).pdf][Homework solutions]] (This file will be updated regularly.)
 - Please email your homework as a single pdf file to the instructor (jangsookim@skku.edu) by the due date.
