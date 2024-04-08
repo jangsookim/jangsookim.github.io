@@ -104,8 +104,14 @@
  \item Prove that this is a group action.
  \item Describe explicitly how the elements (1 2) and (1 2 3) act on the six 2-element subsets of \(\{1,2,3,4\}\).
  \end{enumerate}
-
 \end{problem}
+
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.2]{./figures/image1.png}
+% \end{center}
+% \end{proof}
+
 
 \begin{problem}
   Let \(H\) be a group acting on a set \(A\). Prove that the relation
@@ -115,6 +121,12 @@
   \(\sim\) is called the orbit of \(x\) under the action of \(H\). The
   orbits under the action of \(H\) partition the set \(A\).)
 \end{problem}
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.25]{./figures/image2.png}
+% \end{center}
+% \end{proof}
+
 
 
 \begin{problem}
@@ -128,6 +140,13 @@
 \end{enumerate}
 \end{problem}
 
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.15]{./figures/image3.png}
+% \end{center}
+% \end{proof}
+
+
 \begin{problem}
   In each of parts (1) to (5) give the lists of invariant factors for all abelian groups of the specified order:
 \begin{enumerate}
@@ -138,6 +157,13 @@
 \item order 44100
 \end{enumerate}
 \end{problem}
+
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.2]{./figures/image4.png}
+% \end{center}
+% \end{proof}
+
 
 \begin{problem}
   In each of parts (1) to (5) give the lists of elementary divisors
@@ -153,6 +179,13 @@
 \end{enumerate}
 \end{problem}
 
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.2]{./figures/image5.png}
+% \end{center}
+% \end{proof}
+
+
 
 \begin{problem}
   Let \(R\) be a ring with identity and let \(S\) be a subring of
@@ -160,6 +193,13 @@
   \(S\) then \(u\) is a unit in \(R\). Show by example that the
   converse is false.
 \end{problem}
+
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.2]{./figures/image6.png}
+% \end{center}
+% \end{proof}
+
 
 \begin{problem}
   Let \( R \) be a ring with \( 1\ne 0 \).
@@ -171,9 +211,23 @@
   \end{enumerate}
 \end{problem}
 
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.2]{./figures/image7.png}
+% \end{center}
+% \end{proof}
+
+
 \begin{problem}
  Assume \(R\) is commutative with \( 1\ne0 \). Prove that if \(P\) is a prime ideal of \(R\) and \(P\) contains no zero divisors then \(R\) is an integral domain. 
 \end{problem}
+
+% \begin{proof}[Solution]
+% \begin{center}
+%   \includegraphics[scale=.2]{./figures/image8.png}
+% \end{center}
+% \end{proof}
+
 
 \begin{problem}
   Let \( R \) be a ring with \( 1\ne 0 \).
@@ -182,6 +236,13 @@
   is maximal with respect to the property that it does not contain
   \(A\). [Use Zorn’s Lemma.]
 \end{problem}
+
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.2]{./figures/image9.png}
+% \end{center}
+% \end{proof}
+
 
 \begin{problem}
 Let \(n_1, n_2, \ldots, n_k\) be integers which are relatively prime in pairs: \(\left(n_i, n_j\right)=1\) for all \(i \neq j\).
@@ -207,5 +268,197 @@ y \equiv 5 \bmod 8, \quad y \equiv 12 \bmod 25, \quad \text { and } \quad y \equ
 \]
 \end{enumerate}
 \end{problem}
+
+% \begin{proof}[Solution]\
+% \newpage
+% \begin{center}
+%   \includegraphics[scale=.2]{./figures/image10.png}
+% \end{center}
+% \end{proof}
+
+
+
+\newpage
+\section{Homework 2 (Due: Apr 19)}
+
+For all problems, suppose that \( R \) is a ring with \( 1\ne0 \)
+and \( M \) is a left \( R \)-module.
+
+\begin{problem}
+  An element \(m\) of the \(R\)-module \(M\) is called a \emph{torsion
+  element} if \(r m=0\) for some nonzero element \(r \in R\). The set
+  of torsion elements is denoted
+\[
+\operatorname{Tor}(M)=\{m \in M \mid r m=0 \text { for some nonzero } r \in R\} .
+\]
+\begin{enumerate}
+\item Prove that if \(R\) is an integral domain then \(\operatorname{Tor}(M)\) is a submodule of \(M\) (called the torsion submodule of \(M\) ).
+\item  Give an example of a ring \(R\) and an \(R\)-module \(M\) such that \(\operatorname{Tor}(M)\) is not a submodule. [Consider the torsion elements in the \(R\)-module \(R\).]
+\item If \(R\) has zero divisors show that every nonzero \(R\)-module has nonzero torsion elements.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+  \begin{enumerate}
+  \item If \(N\) is a submodule of \(M\), the \emph{annihilator of \(N\) in \(R\) } is defined to be \(\{r \in R \mid r n=0\) for all
+    \(n \in N\}\). Prove that the annihilator of \(N\) in \(R\) is a
+    2-sided ideal of \(R\).
+  \item If \(I\) is a right ideal of \(R\), the \emph{annihilator of \(I\) in \(M\)} is defined to be \{ \(m \in M \mid a m=0\) for all \(a \in I\}\). Prove that the annihilator of \(I\) in \(M\) is a submodule of \(M\).
+  \item Let \(M\) be the abelian group (i.e., \(\mathbb{Z}\)-module) \(\mathbb{Z} / 24 \mathbb{Z} \times \mathbb{Z} / 15 \mathbb{Z} \times \mathbb{Z} / 50 \mathbb{Z}\).
+    \begin{enumerate}
+    \item Find the annihilator of \(M\) in \(\mathbb{Z}\) (i.e., a generator for this principal ideal).
+    \item Let \(I=2 \mathbb{Z}\). Describe the annihilator of \(I\) in \(M\) as a direct product of cyclic groups.
+    \end{enumerate}
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+  \begin{enumerate}
+  \item Let \(F=\mathbb{R}\), let \(V=\mathbb{R}^2\) and let \(T\) be the linear transformation from \(V\) to \(V\) which is rotation clockwise about the origin by \(\pi / 2\) radians. Show that \(V\) and 0 are the only \(F[x]\)-submodules for this \(T\).
+  \item Let \(F=\mathbb{R}\), let \(V=\mathbb{R}^2\) and let \(T\) be the linear transformation from \(V\) to \(V\) which is projection onto the \(y\)-axis. Show that \(V, 0\), the \(x\)-axis and the \(y\)-axis are the only \(F[x]-\) submodules for this \(T\).
+  \item Let \(F=\mathbb{R}\), let \(V=\mathbb{R}^2\) and let \(T\) be the linear transformation from \(V\) to \(V\) which is rotation clockwise about the origin by \(\pi\) radians. Show that every subspace of \(V\) is an
+\(F[x]\)-submodule for this \(T\).
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+  \begin{enumerate}
+    \item For any left ideal \(I\) of \(R\) define
+\[
+I M=\left\{\sum_{\text {finite }} a_i m_i \mid a_i \in I, m_i \in M\right\}
+\]
+to be the collection of all finite sums of elements of the form \(a m\) where \(a \in I\) and \(m \in M\). Prove that \(I M\) is a submodule of \(M\).
+  \item Let \(A_1, A_2, \ldots, A_n\) be \(R\)-modules and let \(B_i\) be a submodule of \(A_i\) for each \(i=1,2, \ldots, n\). Prove that
+\[
+\left(A_1 \times \cdots \times A_n\right) /\left(B_1 \times \cdots \times B_n\right) \cong\left(A_1 / B_1\right) \times \cdots \times\left(A_n / B_n\right) .
+\]
+\item Let \(I\) be a left ideal of \(R\) and let \(n\) be a positive integer. Prove that
+\[
+R^n / I R^n \cong R / I R \times \cdots \times R / I R \quad(n \text { times) }.
+\]
+\item   Assume \(R\) is commutative. Prove that \(R^n \cong R^m\) if and
+  only if \(n=m\), i.e., two free \(R\)-modules of finite rank are
+  isomorphic if and only if they have the same rank. [Apply the
+  previous problem with \(I\) a maximal ideal of \(R\). You may use
+  the fact that if \(F\) is a field, then \(F^n \cong F^m\) if and
+  only if \(n=m\).]
+  \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+  Let \(I\) be a nonempty index set and for each \(i \in I\) let \(M_i\) be an \(R\)-module. The direct product of the modules \(M_i\) is defined to be their direct product as abelian groups (cf. Exercise 15 in Section 5.1) with the action of \(R\) componentwise multiplication. The direct sum of the modules \(M_i\) is defined to be the restricted direct product of the abelian groups \(M_i\) (cf. Exercise 17 in Section 5.1) with the action of \(R\) componentwise multiplication. In other words, the direct sum of the \(M_i\)'s is the subset of the direct product, \(\prod_{i \in I} M_i\), which consists of all elements \(\prod_{i \in I} m_i\) such that only finitely many of the components \(m_i\) are nonzero; the action of \(R\) on the direct product or direct sum is given by \(r \prod_{i \in I} m_i=\prod_{i \in I} r m_i\) (cf. Appendix I for the definition of Cartesian products of infinitely many sets). The direct sum will be denoted by \(\oplus_{i \in I} M_i\).
+  \begin{enumerate}
+  \item Prove that the direct product of the \(M_i\)'s is an \(R\)-module and the direct sum of the \(M_i\)'s is a submodule of their direct product.
+  \item Show that if \(R=\mathbb{Z}, I=\mathbb{Z}^{+}\)and \(M_i\) is the cyclic group of order \(i\) for each \(i\), then the direct sum of the \(M_i\) 's is not isomorphic to their direct product. [Look at torsion.]
+  \end{enumerate}
+\end{problem}
+
+
+% \begin{problem}
+%   (An arbitrary direct product of free modules need not be free) For each positive integer \(i\) let \(M_i\) be the free \(\mathbb{Z}\)-module \(\mathbb{Z}\), and let \(M\) be the direct product \(\prod_{i \in \mathbb{Z}^{+}} M_i\). Each element of \(M\) can be written uniquely in the form \(\left(a_1, a_2, a_3, \ldots\right)\) with \(a_i \in \mathbb{Z}\) for all \(i\). Let \(N\) be the submodule of \(M\) consisting of all such tuples with only finitely many nonzero \(a_i\). Assume \(M\) is a free \(\mathbb{Z}\)-module with basis \(\mathcal{B}\).
+%   \begin{enumerate}
+%   \item Show that \(N\) is countable.
+% \item Show that there is some countable subset \(\mathcal{B}_1\) of \(\mathcal{B}\) such that \(N\) is contained in the submodule, \(N_1\), generated by \(\mathcal{B}_1\). Show also that \(N_1\) is countable.
+% \item Let \(\bar{M}=M / N_1\). Show that \(\bar{M}\) is a free \(\mathbb{Z}\)-module. Deduce that if \(\bar{x}\) is any nonzero element of \(\bar{M}\) then there are only finitely many distinct positive integers \(k\) such that \(\bar{x}=k \bar{m}\) for some \(m \in M\) (depending on \(k\) ).
+% \item Let \(\mathcal{S}=\left\{\left(b_1, b_2, b_3, \ldots\right) \mid b_i= \pm i!\right.\) for all \(\left.i\right\}\). Prove that \(\mathcal{S}\) is uncountable. Deduce that there is some \(s \in \mathcal{S}\) with \(s \notin N_1\).
+% \item Show that the assumption \(M\) is free leads to a contradiction: By (4) we may choose \(s \in \mathcal{S}\) with \(s \notin N_1\). Show that for each positive integer \(k\) there is some \(m \in M\) with \(\bar{s}=k \bar{m}\), contrary to (3). [Use the fact that \(N \subseteq N_1\).]
+%   \end{enumerate}
+
+% \end{problem}
+
+% \begin{problem}
+%   (Free modules over noncommutative rings need not have a unique rank) Let \(M\) be the \(\mathbb{Z}\)-module \(\mathbb{Z} \times \mathbb{Z} \times \cdots\) of Exercise 24 and let \(R\) be its endomorphism \(\operatorname{ring}, R=\operatorname{End}_{\mathbb{Z}}(M)\) (cf. Exercises 29 and 30 in Section 7.1). Define \(\varphi_1, \varphi_2 \in R\) by
+% \[
+% \begin{aligned}
+% & \varphi_1\left(a_1, a_2, a_3, \ldots\right)=\left(a_1, a_3, a_5, \ldots\right) \\
+% & \varphi_2\left(a_1, a_2, a_3, \ldots\right)=\left(a_2, a_4, a_6, \ldots\right)
+% \end{aligned}
+% \]
+% \begin{enumerate}
+% \item Prove that \(\left\{\varphi_1, \varphi_2\right\}\) is a free basis of the left \(R\)-module \(R\). [Define the maps \(\psi_1\) and \(\psi_2\) by \(\psi_1\left(a_1, a_2, \ldots\right)=\left(a_1, 0, a_2, 0, \ldots\right)\) and \(\psi_2\left(a_1, a_2, \ldots\right)=\left(0, a_1, 0, a_2, \ldots\right)\). Verify that \(\varphi_i \psi_i=1, \varphi_1 \psi_2=0=\varphi_2 \psi_1\) and \(\psi_1 \varphi_1+\psi_2 \varphi_2=1\). Use these relations to prove that \(\varphi_1, \varphi_2\) are independent and generate \(R\) as a left \(R\)-module.]
+% \item Use (1) to prove that \(R \cong R^2\) and deduce that \(R \cong R^n\) for all \(n \in \mathbb{Z}^{+}\).
+% \end{enumerate}
+% \end{problem}
+
+
+\begin{problem}
+  \begin{enumerate}
+  \item Show that the element ``\(2 \otimes 1\)'' is 0 in \(\mathbb{Z} \otimes_{\mathbb{Z}} \mathbb{Z} / 2 \mathbb{Z}\) but is nonzero in \(2 \mathbb{Z} \otimes_{\mathbb{Z}} \mathbb{Z} / 2 \mathbb{Z}\).
+  \item Show that \(\mathbb{C} \otimes_{\mathbb{R}} \mathbb{C}\) and \(\mathbb{C} \otimes_{\mathbb{C}} \mathbb{C}\) are both left \(\mathbb{R}\)-modules but are not isomorphic as \(\mathbb{R}\)-modules.
+  \item Show that \(\mathbb{Q} \otimes_{\mathbb{Z}} \mathbb{Q}\) and \(\mathbb{Q} \otimes_{\mathbb{Q}} \mathbb{Q}\) are isomorphic left \(\mathbb{Q}\)-modules. [Show they are both 1-dimensional vector spaces over \(\mathbb{Q}\).]
+  \item   If \(R\) is any integral domain with quotient field \(Q\), prove that \((Q / R) \otimes_R(Q / R)=0\).
+  \item   Let \(\left\{e_1, e_2\right\}\) be a basis of \(V=\mathbb{R}^2\). Show that the element \(e_1 \otimes e_2+e_2 \otimes e_1\) in \(V \otimes_{\mathbb{R}} V\) cannot be written as a simple tensor \(v \otimes w\) for any \(v, w \in \mathbb{R}^2\).
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+  Suppose \(R\) is commutative and \(N \cong R^n\) is a free \(R\)-module of rank \(n\) with \(R\)-module basis \(e_1, \ldots, e_n\).
+  \begin{enumerate}
+  \item For any nonzero \(R\)-module \(M\) show that every element of \(M \otimes N\) can be written uniquely in the form \(\sum_{i=1}^n m_i \otimes e_i\) where \(m_i \in M\). Deduce that if \(\sum_{i=1}^n m_i \otimes e_i=0\) in \(M \otimes N\) then \(m_i=0\) for \(i=1, \ldots, n\).
+\item Show that if \(\sum m_i \otimes n_i=0\) in \(M \otimes N\) where the \(n_i\) are merely assumed to be \(R\) linearly independent then it is not necessarily true that all the \(m_i\) are 0 . [Consider \(R=\mathbb{Z}, n=1, M=\mathbb{Z} / 2 \mathbb{Z}\), and the element \(1 \otimes 2\).
+  \end{enumerate}
+\end{problem}
+
+% \begin{problem}
+%   Let \(I=(2, x)\) be the ideal generated by 2 and \(x\) in the ring \(R=\mathbb{Z}[x]\). The ring \(\mathbb{Z} / 2 \mathbb{Z}=R / I\) is naturally an \(R\)-module annihilated by both 2 and \(x\).
+% \begin{enumerate}
+% \item Show that the map \(\varphi: I \times I \rightarrow \mathbb{Z} / 2 \mathbb{Z}\) defined by
+% \[
+% \varphi\left(a_0+a_1 x+\cdots+a_n x^n, b_0+b_1 x+\cdots+b_m x^m\right)=\frac{a_0}{2} b_1 \bmod 2
+% \]
+% is \(R\)-bilinear.
+% \item Show that there is an \(R\)-module homomorphism from \(I \otimes_R I \rightarrow \mathbb{Z} / 2 \mathbb{Z}\) mapping \(p(x) \otimes q(x)\) to \(\frac{p(0)}{2} q^{\prime}(0)\) where \(q^{\prime}\) denotes the usual polynomial derivative of \(q\).
+% \item Show that \(2 \otimes x \neq x \otimes 2\) in \(I \otimes_R I\).
+% \end{enumerate}
+% \end{problem}
+
+
+
+\begin{problem}
+ Suppose that
+ \begin{center}
+  \includegraphics[scale=.15]{./figures/image11.png}
+\end{center}
+is a commutative diagram of groups and that the rows are exact. Prove that
+\begin{enumerate}
+\item if \(\varphi\) and \(\alpha\) are surjective, and \(\beta\) is injective then \(\gamma\) is injective. [If \(c \in \operatorname{ker} \gamma\), show there is a \(b \in B\) with \(\varphi(b)=c\). Show that \(\varphi^{\prime}(\beta(b))=0\) and deduce that \(\beta(b)=\psi^{\prime}\left(a^{\prime}\right)\) for some \(a^{\prime} \in A^{\prime}\). Show there is an \(a \in A\) with \(\alpha(a)=a^{\prime}\) and that \(\beta(\psi(a))=\beta(b)\). Conclude that \(b=\psi(a)\) and hence \(c=\varphi(b)=0\).]
+\item if \(\psi^{\prime}, \alpha\), and \(\gamma\) are injective, then \(\beta\) is injective,
+\item if \(\varphi, \alpha\), and \(\gamma\) are surjective, then \(\beta\) is surjective,
+\item if \(\beta\) is injective, \(\alpha\) and \(\gamma\) are surjective, then \(\gamma\) is injective,
+\item if \(\beta\) is surjective, \(\gamma\) and \(\psi^{\prime}\) are injective, then \(\alpha\) is surjective.
+\end{enumerate}
+
+
+\end{problem}
+
+
+\begin{problem}
+  \begin{enumerate}
+  \item Let \(P_1\) and \(P_2\) be \(R\)-modules. Prove that \(P_1 \oplus P_2\) is a projective \(R\)-module if and only if both \(P_1\) and \(P_2\) are projective.
+  \item Let \(Q_1\) and \(Q_2\) be \(R\)-modules. Prove that \(Q_1 \oplus Q_2\) is an injective \(R\)-module if and only if both \(Q_1\) and \(Q_2\) are injective.
+  \item Let \(A_1\) and \(A_2\) be \(R\)-modules. Prove that \(A_1 \oplus A_2\) is a flat \(R\)-module if and only if both \(A_1\) and \(A_2\) are flat. More generally, prove that an arbitrary direct sum \(\sum A_i\) of \(R\)-modules is flat if and only if each \(A_i\) is flat. [Use the fact that tensor product commutes with arbitrary direct sums.]
+  \end{enumerate}
+\end{problem}
+
+
+\begin{problem}
+ Let \(0 \longrightarrow L \xrightarrow{\psi} M \xrightarrow{\varphi} N \longrightarrow 0\) be a sequence of \(R\)-modules.
+\begin{enumerate}
+ \item Prove that the associated sequence
+\[
+0 \longrightarrow \operatorname{Hom}_R(D, L) \xrightarrow{\psi^{\prime}} \operatorname{Hom}_R(D, M) \xrightarrow{\varphi^{\prime}} \operatorname{Hom}_R(D, N) \longrightarrow 0
+\]
+is a short exact sequence of abelian groups for all \(R\)-modules \(D\) if and only if the original sequence is a split short exact sequence. [To show the sequence splits, take \(D=N\) and show the lift of the identity map in \(\operatorname{Hom}_R(N, N)\) to \(\operatorname{Hom}_R(N, \boldsymbol{M})\) is a splitting homomorphism for \(\varphi\).]
+\item Prove that the associated sequence
+\[
+0 \longrightarrow \operatorname{Hom}_R(N, D) \xrightarrow{\varphi^{\prime}} \operatorname{Hom}_R(M, D) \xrightarrow{\psi^{\prime}} \operatorname{Hom}_R(L, D) \longrightarrow 0
+\]
+is a short exact sequence of abelian groups for all \(R\)-modules \(D\) if and only if the original sequence is a split short exact sequence.
+\end{enumerate}
+
+\end{problem}
+
+
 
 \end{document}
