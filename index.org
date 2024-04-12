@@ -200,7 +200,7 @@
 - [[https://www.mat.univie.ac.at/~schlosse/][Michael Schlosser]]
 - [[https://sites.google.com/view/shyunseo/][Seunghyun Seo]]
 - [[http://hshin.info/][Heesung Shin]]
-- Minho Song
+- [[https://minhosong.github.io][Minho Song]]
 - U-Keun Song
 - [[http://www.math.umn.edu/~stanton/][Dennis Stanton]]
 - David B. Wilson
