@@ -1,0 +1,265 @@
+\documentclass{amsart}
+
+\usepackage{amsmath,amsthm,amssymb,bm}
+\usepackage{hyperref}
+\usepackage{a4wide}
+\usepackage{cleveref}
+% \usepackage{refcheck}
+\usepackage{graphicx,color}
+\usepackage{tikz}
+\numberwithin{equation}{section}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\theoremstyle{definition}
+\newtheorem{exam}[thm]{Example}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem*{note}{Note}
+
+% DO NOT DELETE THIS COMMENT!!! MACROS BELOW:
+\newcommand\Gal{\operatorname{Gal}}
+\newcommand\NI{\operatorname{NI}}
+\newcommand\LRmin{\operatorname{LRmin}}
+\newcommand\pts[1]{\textbf{[#1~points]}}
+\newcommand\Pts[1]{\quad\textbf{[#1~points]}}
+\newcommand\evencycle{\operatorname{evencycle}}
+\newcommand\inv{\operatorname{inv}}
+\newcommand\cycle{\operatorname{cycle}}
+\newcommand\Motz{\operatorname{Motz}}
+\newcommand\Fix{\operatorname{Fix}}
+\newcommand\sgn{\operatorname{sgn}}
+\newcommand\sym{\mathfrak{S}}
+\newcommand\invol{\mathfrak{I}}
+\newcommand\NN{\mathbb{N}}
+\newcommand\QQ{\mathbb{Q}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand\LL{\mathcal{L}}
+\newcommand\FF{\mathbb{F}}
+\newcommand\LH{\operatorname{LH}}
+\newcommand\CH{\operatorname{CH}}
+
+\newcommand\Mot{\operatorname{Mot}}
+\newcommand{\Dyck}{\operatorname{Dyck}}
+
+\newcommand\Par{\operatorname{Par}}
+\newcommand\RPP{\operatorname{RPP}}
+\newcommand\SSYT{\operatorname{SSYT}}
+\newcommand\SYT{\operatorname{SYT}}
+
+\newcommand\wt{\operatorname{wt}}
+
+\renewcommand\vec[1]{\bm{#1}}
+\newcommand\vx{\vec{x}}
+\newcommand\vb{\vec{b}}
+\newcommand\vla{\vec{\lambda}}
+\newcommand\flr[1]{\left\lfloor #1\right\rfloor}
+\newcommand\Qbinom[3]{\genfrac{[}{]}{0pt}{}{#1}{#2}_{#3}}
+\newcommand\qbinom[2]{\Qbinom{#1}{#2}{q}}
+
+\newcommand\hyper[5]{{}_{#1}F_{#2} \left(#3;#4;#5\right)}
+\newcommand\qhyper[5]{{}_{#1}\phi_{#2} \left(#3;#4;#5\right)}
+\newcommand\Hyper[5]{{}_{#1}F_{#2} \left( \left.
+    \begin{matrix}
+      #3\\
+      #4\\
+    \end{matrix}
+    \:\right|\: #5
+    \right)}
+\newcommand\qHyper[5]{{}_{#1}\phi_{#2} \left(
+    \begin{matrix}
+      #3\\
+      #4\\
+    \end{matrix}
+    ; #5
+    \right)}
+
+\newcommand\comment[1]{\textcolor{blue}{\bf #1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Homework}
+
+
+\begin{document}
+
+% \maketitle
+% \tableofcontents
+
+
+\section*{Homework 5 (Due: June 14)}
+
+\begin{problem}[Section 14.1, Exercise 1]
+  \begin{enumerate}
+  \item Show that if the field \(K\) is generated over \(F\) by the elements \(\alpha_1, \ldots, \alpha_n\) then an automorphism \(\sigma\) of \(K\) fixing \(F\) is uniquely determined by \(\sigma\left(\alpha_1\right), \ldots, \sigma\left(\alpha_n\right)\). In particular show that an automorphism fixes \(K\) if and only if it fixes a set of generators for \(K\).
+\item Let \(G \leq \operatorname{Gal}(K / F)\) be a subgroup of the Galois group of the extension \(K / F\) and suppose \(\sigma_1, \ldots, \sigma_k\) are generators for \(G\). Show that the subfield \(E / F\) is fixed by \(G\) if and only if it is fixed by the generators \(\sigma_1, \ldots, \sigma_k\).
+  \end{enumerate}
+\end{problem}
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.24]{./figures/image45.png}
+% \end{center}
+% \end{proof}
+
+
+
+\begin{problem}[Section 14.1, Exercise 5]
+Determine the automorphisms of the extension \( \mathbb{Q}(\sqrt[4]{2}) / \mathbb{Q}(\sqrt{2})  \) explicitly.
+\end{problem}
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.24]{./figures/image46.png}
+% \end{center}
+% \end{proof}
+
+
+
+\begin{problem}[Section 14.1, Exercise 10]
+Let \(K\) be an extension of the field \(F\). Let \(\varphi: K \rightarrow K^{\prime}\) be an isomorphism of \(K\) with a field \(K^{\prime}\) which maps \(F\) to the subfield \(F^{\prime}\) of \(K^{\prime}\). Prove that the map \(\sigma \mapsto \varphi \sigma \varphi^{-1}\) defines a group isomorphism \(\operatorname{Aut}(K / F) \xrightarrow{\sim} \operatorname{Aut}\left(K^{\prime} / F^{\prime}\right)\).
+\end{problem}
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.24]{./figures/image47.png}
+% \end{center}
+% \end{proof}
+
+
+
+\begin{problem}[Section 14.2, Exercise 3]
+Determine the Galois group of \((x^2-2)(x^2-3)(x^2-5)\). Determine all the subfields of the splitting field of this polynomial.
+\end{problem}
+% \begin{proof}[Solution]\
+%   \begin{center}
+%   \includegraphics[scale=.24]{./figures/image49.png}
+% \end{center}
+% \end{proof}
+
+
+\begin{problem}[Section 14.2, Exercise 5]
+Prove that the Galois group of \(x^p-2\) for \(p\) a prime is isomorphic to the group of matrices \(\left(\begin{array}{rr}a & b \\ 0 & 1\end{array}\right)\) where \(a, b \in \mathbb{F}_p, a \neq 0\).
+\end{problem}
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.24]{./figures/image50.png}
+% \end{center}
+% \end{proof}
+
+
+
+
+\begin{problem}[Section 14.2, Exercise 9]
+  Give an example of fields \(F_1, F_2, F_3\) with \(\mathbb{Q} \subset F_1 \subset F_2 \subset F_3,\left[F_3: \mathbb{Q}\right]=8\) and each field is Galois over all its subfields with the exception that \(F_2\) is not Galois over \(\mathbb{Q}\).
+\end{problem}
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.24]{./figures/image51.png}
+% \end{center}
+% \end{proof}
+
+
+\begin{problem}[Section 14.2, Exercise 13]
+Prove that if the Galois group of the splitting field of a cubic over \(\mathbb{Q}\) is the cyclic group of order 3 then all the roots of the cubic are real.
+\end{problem}
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.2]{./figures/image52.png}
+% \end{center}
+% \end{proof}
+
+
+\begin{problem}[Section 14.2, Exercise 15]
+  (Biquadratic Extensions)
+  Let \(F\) be a field of characteristic \(\neq 2\).
+  \begin{enumerate}
+\item If \(K=F\left(\sqrt{D_1}, \sqrt{D_2}\right)\) where \(D_1, D_2 \in F\) have the property that none of \(D_1, D_2\) or \(D_1 D_2\) is a square in \(F\), prove that \(K / F\) is a Galois extension with \(\operatorname{Gal}(K / F)\) isomorphic to the Klein 4-group.
+\item Conversely, suppose \(K / F\) is a Galois extension with \(\operatorname{Gal}(K / F)\) isomorphic to the Klein 4-group. Prove that \(K=F\left(\sqrt{D_1}, \sqrt{D_2}\right)\) where \(D_1, D_2 \in F\) have the property that none of \(D_1, D_2\) or \(D_1 D_2\) is a square in \(F\).
+  \end{enumerate}
+\end{problem}
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.24]{./figures/image53.png}
+% \end{center}
+% \end{proof}
+
+
+\begin{problem}[Section 14.2, Exercise 16]
+  \begin{enumerate}
+\item Prove that \(x^4-2 x^2-2\) is irreducible over \(\mathbb{Q}\).
+\item Show the roots of this quartic are
+\[
+\begin{array}{ll}
+\alpha_1=\sqrt{1+\sqrt{3}} & \alpha_3=-\sqrt{1+\sqrt{3}} \\
+\alpha_2=\sqrt{1-\sqrt{3}} & \alpha_4=-\sqrt{1-\sqrt{3}} .
+\end{array}
+\]
+\item Let \(K_1=\mathbb{Q}\left(\alpha_1\right)\) and \(K_2=\mathbb{Q}\left(\alpha_2\right)\). Show that \(K_1 \neq K_2\), and \(K_1 \cap K_2=\mathbb{Q}(\sqrt{3})=F\).
+\item Prove that \(K_1, K_2\) and \(K_1 K_2\) are Galois over \(F\) with \(\mathrm{Gal}\left(K_1 K_2 / F\right)\) the Klein 4-group. Write out the elements of \(\operatorname{Gal}\left(K_1 K_2 / F\right)\) explicitly. Determine all the subgroups of the Galois group and give their corresponding fixed subfields of \(K_1 K_2\) containing \(F\).
+\item Prove that the splitting field of \(x^4-2 x^2-2\) over \(\mathbb{Q}\) is of degree 8 with dihedral Galois group.
+  \end{enumerate}
+\end{problem}
+% \begin{proof}[Solution]\
+% \begin{center}
+%   \includegraphics[scale=.2]{./figures/image54.png}
+% \end{center}
+% \end{proof}
+
+
+\begin{problem}[Section 14.2, Exercise 28]
+Let \(f(x) \in F[x]\) be an irreducible separable polynomial of degree \(n\) over the field \(F\), let \(L\) be the splitting field of \(f(x)\) over \(F\) and let \(\alpha\) be a root of \(f(x)\) in \(L\). If \(K\) is any Galois extension of \(F\) contained in \(L\), show that the polynomial \(f(x)\) splits into a product of \(m\) irreducible polynomials each of degree \(d\) over \(K\), where \(m=[F(\alpha) \cap K: F]\) and \(d=[K(\alpha): K]\) (cf. also the generalization in Exercise 4 of Section 4). [If \(H\) is the subgroup of the Galois group of \(L\) over \(F\) corresponding to \(K\) then the factors of \(f(x)\) over \(K\) correspond to the orbits of \(H\) on the roots of \(f(x)\). Then use Exercise 9 of Section 4.1.]
+\end{problem}
+% \begin{proof}[Solution]\
+%   \begin{center}
+%   \includegraphics[scale=.24]{./figures/image56.png}
+% \end{center}
+% \end{proof}
+
+
+
+% \begin{problem}[Section 14.6, Exercise 38]\label{pro:1}
+%  Recall the lexicographic monomial order with \(x_1>x_2>\cdots>x_n\) defined in Section 9.6, where the nonzero monomial term with exponents \(\left(a_1, a_2, \ldots, a_n\right)\) comes before the nonzero monomial term with exponents \(\left(b_1, b_2, \ldots, b_n\right)\) if the initial components of the two \(n\)-tuples of exponents are equal and the first component where they differ has \(a_i>b_i\). If \(f\left(x_1, \ldots, x_n\right)\) contains the monomial \(A x_1^{a_1} x_2^{a_2} \ldots x_n^{a_n}\) then since \(f\left(x_1, \ldots, x_n\right)\) is symmetric it also contains all the permuted monomials. Among these choose the lexicographically largest monomial, which therefore satisfies \(a_1 \geq a_2 \geq \cdots \geq a_n \geq 0\).
+% \begin{enumerate}
+% \item Show that the monomial \(A s_1^{a_1-a_2} s_2^{a_2-a_3} \cdots s_n^{a_n}\) in the elementary symmetric functions has the same lexicographic initial term.
+% \item Show that subtracting \(A s_1^{a_1-a_2} s_2^{a_2-a_3} \cdots s_n^{a_n}\) from \(f(x)\) yields either 0 or a symmetric polynomial of the same degree whose terms are lexicographically smaller than the terms in \(f\left(x_1, \ldots, x_n\right)\).
+% \item Show that the iteration of this procedure (lexicographic ordering, choosing the lexicographically largest term, subtracting the associated monomial in the elementary symmetric functions) terminates, expressing \(f\left(x_1, \ldots, x_n\right)\) as a polynomial in the elementary symmetric functions.
+% \end{enumerate} 
+% \end{problem}
+
+% \begin{problem}[Section 14.6, Exercise 39]
+%   Use the algorithm described in \Cref{pro:1} to prove that a
+%   polynomial \(f\left(x_1, \ldots, x_n\right)\) that is symmetric in
+%   \(x_1, \ldots, x_n\) can be expressed uniquely as a polynomial in
+%   the elementary symmetric functions.
+% \end{problem}
+
+% \begin{problem}[Section 14.6, Exercise 40]
+%   Use the procedure in \Cref{pro:1} to express each of the following
+%   symmetric functions as a polynomial in the elementary symmetric
+%   functions:
+% \begin{enumerate}
+% \item \(\left(x_1-x_2\right)^2\)
+% \item \(x_1^2+x_2^2+x_3^2\)
+% \item \(x_1^2 x_2^2+x_1^2 x_3^2+x_2^2 x_3^2\).
+% \end{enumerate} 
+% \end{problem}
+
+% \begin{problem}[Section 14.6, Exercise 41]
+%   Use the procedure in \Cref{pro:1} to express \(\sum_{i \neq j} x_i^2 x_j\) as a polynomial in the elementary symmetric functions.
+% \end{problem}
+
+% \begin{problem}
+%   Let \( K/F \) be a Galois extension. Suppose that \( f(x)\in F[x] \)
+%   is an irreducible polynomial with a root (hence all roots) in
+%   \( K \). Prove that \( \Gal(K/F) \) acts transitively on the roots
+%   of \( f(x) \), that is, for any two roots \( \alpha,\beta \) of
+%   \( f(x) \), there is an automorphism \( \sigma\in \Gal(K/F) \) such
+%   that \( \sigma(\alpha) = \beta \).
+% \end{problem}
+
+\end{document}
