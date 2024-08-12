@@ -33,7 +33,7 @@
 - Refined canonical stable Grothendieck polynomials and their duals, Part 1 (with Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), /Adv. Math./ 446 (2024), 109670, [[https://arxiv.org/abs/2104.04251][arXiv:2104.04251]]
 - Extended commonality of paths and cycles via Schur convexity (with Joonkyung Lee), /J. Combin. Theory Ser. B/ 166 (2024), 109--122, [[https://arxiv.org/abs/2210.00977][arXiv:2210.00977]]
 ** 2023
-- Three families of /q/-Lommel polynomials (with Dennis Stanton), Sém. Lothar. Combin.87B(2023), Art. 8, 25 pp., [[https://arxiv.org/abs/2105.10096][arXiv:2105.10096]]
+- Three families of /q/-Lommel polynomials (with Dennis Stanton), Sém. Lothar. Combin.87B (2023), Art. 8, 25 pp., [[https://arxiv.org/abs/2105.10096][arXiv:2105.10096]]
 - Combinatorics of orthogonal polynomials of type /R_I/ (with Dennis Stanton), /Ramanujan Journal/ 61 (2023), no. 2, 329–390, [[https://arxiv.org/abs/2009.14475][arXiv:2009.14475]]
 - Enumeration of standard barely set-valued tableaux of shifted shapes (with Michael Schlosser and Meesue Yoo), /European Journal of Combinatorics/ 112 (2023), Paper No. 103727, [[https://arxiv.org/abs/2006.03253][arXiv:2006.03253]]
 - Negative moments of orthogonal polynomials (with Jihyeug Jang, Donghyun Kim,  Minho Song, U-Keun Song), /Forum of Mathematics, Sigma/ 11 (2023), Paper No. e22, 34 pp, [[https://arxiv.org/abs/2201.11344][arxiv:2201.11344]]
@@ -174,7 +174,7 @@
 - Dan Drake
 - [[http://people.brandeis.edu/~gessel/][Ira M. Gessel]]
 - JiSun Huh
-- Byung-Hak Hwang
+- [[https://byunghakhwang.github.io/][Byung-Hak Hwang]]
 - [[https://jihyeugjang.github.io/][Jihyeug Jang]]
 - Kathy Ji
 - Bhargavi Jonnadula
