@@ -28,6 +28,19 @@
 ** How to open the current directory in the file manager
 1. Suppose that file A is opened in Newbiemacs.
 2. To open the directory containing A in the file manager, you can simply type ~M-o f F~.
+** Symlinks
+- A symlink is a link to a file similar to a "shortcut" to a file.
+- Creating a symlink will allow you to search a file without moving it
+  to one of the ~pdf~, ~tex~, ~misc~ folders.
+*** How to create a symlink to a file
+1. Go to the Newbiemacs screen.
+2. In your Finder or File Explorer, find a file that you want to create a symlink.
+3. Drag-and-drop the file into the Newbiemacs screen.
+4. Type ~SPC f S~. Then it will ask you to enter a symlink name. Follow the instructions.
+5. On macOS, a symlink will be created in this way and you are done.
+6. On Windows, however, it will only copy a string in the
+   clipboard. Now open the command prompt run as administrator. Paste
+   the string in the command prompt.
 * LaTeX-mode
 ** How to edit a tex file
 - To compile a tex file type ~M-RET b~
@@ -64,6 +77,36 @@
 - Type ~, t B~
 - This will create a new bib file with file name "local-ref.bib" in
   the current directory.
+** Some useful tools
+*** Add a figure in a tex file
+- Using Newbiemacs you can add an image into your tex file as follows.
+  1. Take a screenshot (or upload a screenshot from your tablet).
+  2. Go to your tex file.
+  3. Press ~, i f~ and follow the instructions.
+- By default Newbiemacs will search the downloads folder and the desktop.
+- If your computer saves screenshots in a different folder you can add
+  the folder: type ~ALT-BACKSPACE~ (or ~Command-BACKSPACE~ in macOS) followed by ~x~ followed by ~3~, and
+  add the directory path in a new line.
+*** Change variables
+- While writing your paper, you realized that you want to change the variable ~i~ to ~j~.
+- You cannot simply replace all ~i~ to ~j~, because then it will also
+  change a word like ~this~ to ~thjs~ and a macro like ~\int~ to ~\jnt~.
+- In Newbiemacs you can do the variable change as follows.
+  1. Open your tex file.
+  2. If you want the change only on some part, select the region by
+     dragging your mouse. (If you want the change in the entire file, you don't have to do this.)
+  3. Press ~, t v~ and follow the instructions.
+     
+*** Convert latex code to HWP math code (for Korean)
+- Suppose that you want to use the following latex code in Hangul program (한글 프로그램).
+  : \sum_{i=1}^n \frac{a_i}{b_i} = \prod_{i=1}^n c_i^2
+- You can convert this latex code to HWP math code as follows.
+  1. Place your cursor inside a math environment.
+  2. Press ~, t h~ and a converted HWP math code will be stored in the
+     clipboard. For example, the above latex code will be converted to
+     : sum_{ i=1}^n   {a_i }over{b_i } =  prod_{ i=1}^n  c_i^2
+  3. Go to Hangul program and paste the clipboard string in the math
+     input window (~ctrl n m~)
 
 * Org-mode
 - [[https://orgmode.org/][Org-mode]] is a very useful tool to organize text files with extension "org".
@@ -72,21 +115,21 @@
 - In Newbiemacs we use [[https://www.orgroam.com/][org-roam]], which is a package to connect org files nicely.
 
 ** How to create an org file
-- Type ~r~ in the Newbiemacs screen.
+- Type ~SPC o r~.
 - Type a title of a new org file. It will open a new org file.
 - Write anything you want there.
 - Type ~C-c C-c~ when you are done.
 
 ** How to search an org file
-- Type ~r~ in the Newbiemacs screen.
+- Type ~SPC o r~.
 - Type anything you remember about the title of the org file.
 
 ** How to insert an org file link into the current org file
-- Type ~i~ in the Newbiemacs screen.
+- Type ~, i n~.
 - Enter the tile of the org file to which you want to insert a link.
 
 ** How to view the connections of the org files
-- Type ~u~ in the Newbiemacs screen.
+- Type ~SPC o u~.
 
 ** How to add a link to a file (or a directory)
 - Drag-and-drop a file (or a directory) in your org file will create a
@@ -177,8 +220,8 @@
 ** Keybindings of basic commands
 | mode   | keybinding    | description                                             |
 |--------+---------------+---------------------------------------------------------|
-| all | ~C-g~         | cancel entering keyboard input                          |
-| normal | ~BACKSPACE~   | go to newbiemacs screen                                 |
+| all    | ~C-g~         | cancel entering keyboard input                          |
+| normal | ~M-BACKSPACE~ | go to newbiemacs screen                                 |
 | normal | ~i~           | change to insert mode                                   |
 | insert | ~ESC~         | change to normal mode                                   |
 | normal | ~v~           | start visual mode                                       |
