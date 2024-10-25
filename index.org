@@ -16,13 +16,14 @@
 : Office: 31256B in Natural Science Building #1
 : Email: name@skku.edu, where name=jangsookim
 
-[[file:files/cv.pdf][Curriculum vitae]]
+[[file:index-files/cv.pdf][Curriculum vitae]]
 
 #+ATTR_HTML: :width 300
-[[./files/photo.jpeg]]
+[[file:index-files/photo.jpeg]]
 
 * Papers
 ** Preprints
+- Hook-valued tableaux uncrowding and tableau switching (with Jihyeug Jang, Jianping Pan, Joseph Pappe, Anne Schilling), [[https://arxiv.org/abs/2410.18343][arXiv:2410.18343]]
 - Enumeration of multiplex juggling card sequences using generalized /q/-derivatives (with Yumin Cho, Jaehyun Kim, and Nakyung Lee),
  [[https://arxiv.org/abs/2402.09903][arXiv:2402.09903]]
 - Lecture hall graphs and the Askey scheme (with Sylvie Corteel, Bhargavi Jonnadula, Jonathan Keating), [[https://arxiv.org/abs/2311.12761][arXiv:2311.12761]]
@@ -195,8 +196,11 @@
 - [[https://sites.google.com/site/mathsejinoh/][Se-jin Oh]]
 - Suho Oh
 - Soichi Okada
+- [[https://sites.google.com/view/jianping-pan][Jianping Pan]]
 - [[https://sites.google.com/usc.edu/gpanova/home][Greta Panova]]
+- Joseph Pappe
 - [[http://www-users.math.umn.edu/~reiner/][Vic Reiner]]
+- [[https://www.math.ucdavis.edu/~anne/][Anne Schilling]]
 - [[https://www.mat.univie.ac.at/~schlosse/][Michael Schlosser]]
 - [[https://sites.google.com/view/shyunseo/][Seunghyun Seo]]
 - [[http://hshin.info/][Heesung Shin]]
@@ -210,7 +214,7 @@
 
 * Lecture Videos
 ** Topics in Combinatorics: Combinatorics of orthogonal polynomials
-[[file:lectures/OPS/ops.org][Lecture Homepage]]
+[[file:index-files/ops.org][Lecture Homepage]]
 ** Introduction to Newbiemacs
 - [[https://youtu.be/vhWpeNRi7Ts][link to video]]
 ** Juggling and Mathematics
@@ -219,8 +223,8 @@
 ** $\mathrm{\LaTeX}$ in Visual Studio Code
 - This is a course that I taught online in December 2020. We learn how to
      use $\mathrm{\LaTeX}$ in Visual Studio Code.
-- [[./lectures/vscode/flyer_vscode.pdf][Poster]]
-- [[file:lectures/vscode/vscode_lecture0.org][Lecture Homepage]]
+- [[./index-files/flyer_vscode.pdf][Poster]]
+- [[file:index-files/vscode_lecture0.org][Lecture Homepage]]
 - [[https://www.youtube.com/playlist?list=PLGB0U_OssPo4cnACf9kBIBwwyO_2GDPXo][Link to lecture videos]]
 ** Topics in Combinatorics: The Theory of Alternating Sign Matrices
 - [[https://www.youtube.com/playlist?list=PLGB0U_OssPo73Ha4Ity13ZgPjlg2hxdbU][link to videos]]
@@ -248,11 +252,11 @@
      Sungkyunkwan University in 2016. We cover Chapters 1-6 in the textbook:
      Combinatorics Through Guided Discovery by Kenneth P. Bogart.
 * WeBWorK
-- [[file:webwork/index.org][Introduction to WeBWorK]]
+- [[file:index-files/index.org][Introduction to WeBWorK]]
 * Newbiemacs
 - Newbiemacs is a pre-configured [[https://www.gnu.org/software/emacs/][GNU Emacs]] distribution inspired by [[https://www.spacemacs.org/][Spacemacs]].
 - Newbiemacs is desiged for mathematician who are new to Emacs.
-- [[file:newbiemacs/newbiemacs-home.org][Newbiemacs Homepage]]
+- [[file:index-files/newbiemacs-home.org][Newbiemacs Homepage]]
 - Screenshots
 #+ATTR_HTML: :width 600
 [[file:files/newbiemacs-screenshot.png][file:newbiemacs/files/newbiemacs-screenshot.png]]
