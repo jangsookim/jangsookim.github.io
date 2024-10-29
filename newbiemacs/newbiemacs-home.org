@@ -4,7 +4,7 @@
 
 * Home
 #+ATTR_HTML: :width 600
-[[file:files/newbiemacs-screenshot.png][file:files/newbiemacs-screenshot.png]]
+file:files/newbiemacs-screenshot.png
 Newbiemacs character by [[https://instagram.com/ujoo_peace][Artist Ujoo]]
 
 ** Introduction
@@ -96,7 +96,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 - In this tutorial you will learn how to use Newbiemacs.
 - You can use the basic features of Newbiemacs in the following Newbiemacs screen. (To go to the Newbiemacs screen, type ~ALT-BACKSPACE~, or ~Command-BACKSPACE~ in macOS.)
 #+ATTR_HTML: :width 600
-[[file:files/newbiemacs-screenshot.png][file:files/newbiemacs-screenshot.png]]
+file:files/newbiemacs-screenshot.png
 - By default your Newbiemacs folder will be ~~/newbiemacs~ (~~~ means
   your home folder.)
 - The current file name is shown at the bottom of the
