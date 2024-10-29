@@ -16,10 +16,10 @@
 : Office: 31256B in Natural Science Building #1
 : Email: name@skku.edu, where name=jangsookim
 
-[[file:index-files/cv.pdf][Curriculum vitae]]
+[[file:files/cv.pdf][Curriculum vitae]]
 
 #+ATTR_HTML: :width 300
-[[file:index-files/photo.jpeg]]
+[[file:files/photo.jpeg]]
 
 * Papers
 ** Preprints
@@ -214,7 +214,7 @@
 
 * Lecture Videos
 ** Topics in Combinatorics: Combinatorics of orthogonal polynomials
-[[file:index-files/ops.org][Lecture Homepage]]
+[[file:lectures/OPS/ops.org][Lecture Homepage]]
 ** Introduction to Newbiemacs
 - [[https://youtu.be/vhWpeNRi7Ts][link to video]]
 ** Juggling and Mathematics
@@ -223,8 +223,8 @@
 ** $\mathrm{\LaTeX}$ in Visual Studio Code
 - This is a course that I taught online in December 2020. We learn how to
      use $\mathrm{\LaTeX}$ in Visual Studio Code.
-- [[./index-files/flyer_vscode.pdf][Poster]]
-- [[file:index-files/vscode_lecture0.org][Lecture Homepage]]
+- [[./files/flyer_vscode.pdf][Poster]]
+- [[file:files/vscode_lecture0.org][Lecture Homepage]]
 - [[https://www.youtube.com/playlist?list=PLGB0U_OssPo4cnACf9kBIBwwyO_2GDPXo][Link to lecture videos]]
 ** Topics in Combinatorics: The Theory of Alternating Sign Matrices
 - [[https://www.youtube.com/playlist?list=PLGB0U_OssPo73Ha4Ity13ZgPjlg2hxdbU][link to videos]]
@@ -252,11 +252,11 @@
      Sungkyunkwan University in 2016. We cover Chapters 1-6 in the textbook:
      Combinatorics Through Guided Discovery by Kenneth P. Bogart.
 * WeBWorK
-- [[file:index-files/index.org][Introduction to WeBWorK]]
+- [[file:webwork/index.org][Introduction to WeBWorK]]
 * Newbiemacs
 - Newbiemacs is a pre-configured [[https://www.gnu.org/software/emacs/][GNU Emacs]] distribution inspired by [[https://www.spacemacs.org/][Spacemacs]].
 - Newbiemacs is desiged for mathematician who are new to Emacs.
-- [[file:index-files/newbiemacs-home.org][Newbiemacs Homepage]]
+- [[file:newbiemacs/newbiemacs-home.org][Newbiemacs Homepage]]
 - Screenshots
 #+ATTR_HTML: :width 600
 [[file:files/newbiemacs-screenshot.png][file:newbiemacs/files/newbiemacs-screenshot.png]]
