@@ -49,34 +49,6 @@
 - To go to the location of the tex file from the pdf file, do
   "Command+Shift+mouse click" if you are using Skim on macOS or do "double
   click" if you are using SumatraPDF on Windows.
-** BibTeX
-*** How to use the main bib file
-- In your tex file, type ~, t b~
-- This will add the following two lines in your tex file.
-  : \bibliographystyle{abbrv}
-  : \bibliography{(path-to-newbiemacs)/newbiemacs/nbm-user-settings/references/ref.bib}
-- To add a citation, type ~, i c~
-*** How to toggle the bibliography
-- In your tex file, type ~, t b~
-- This will toggle the above two lines to the actual bibitems.
-- This may be useful if you want to share your tex file with your collaborators without sharing the bib file.
-
-*** How to open the main bib file
-- Type ~SPC N s 5~
-
-*** How to add a new bibtex item from MathSciNet
-1. Copy a bibtex item from MathSciNet or zbMath.
-2. In a latex file, type ~, n b~ and follow the instructions.
-
-*** How to add a new bibtex item from arxiv
-1. Go to the arxiv page of the article you you want to cite.
-2. Click "Export BibTeX Citation" on the right box and copy the contents.
-3. In a latex file, type ~, n b~ and follow the instructions.
-
-*** How to create a new bib file containing the current bibitems only
-- Type ~, t B~
-- This will create a new bib file with file name "local-ref.bib" in
-  the current directory.
 ** Some useful tools
 *** Add a figure in a tex file
 - Using Newbiemacs you can add an image into your tex file as follows.
@@ -108,6 +80,38 @@
   3. Go to Hangul program and paste the clipboard string in the math
      input window (~ctrl n m~)
 
+** BibTeX
+*** How to open the main bib file
+- Type ~SPC N s 5~
+
+*** How to use the main bib file
+- In your tex file, type ~, B T~
+- This will add the following two lines in your tex file.
+  : \bibliographystyle{abbrv}
+  : \bibliography{(path-to-newbiemacs)/newbiemacs/nbm-user-settings/references/ref.bib}
+- To insert a citation, type ~, r c~
+*** How to toggle the bibliography
+- In your tex file, type ~, B T~
+- This will toggle the above two lines to the actual bibitems.
+- This may be useful if you want to share your tex file with your collaborators without sharing the bib file.
+
+*** How to add a new bibtex item from MathSciNet
+1. Copy a bibtex item from MathSciNet or zbMath.
+2. In a latex file, type ~, B n~ and follow the instructions.
+
+*** How to add a new bibtex item from arxiv
+1. Go to the arxiv page of the article you you want to cite.
+2. Click "Export BibTeX Citation" on the right box and copy the contents.
+3. In a latex file, type ~, B n~ and follow the instructions.
+
+*** How to create a new bib file containing the current bibitems only
+- Type ~, B c~
+- This will create a new bib file with file name "local-ref.bib" in the current directory.
+*** Toggle between main bib and local bib
+- Type ~, B t~
+*** Add one bib item to the existing local-ref.bib file
+1. Move the cursor at the bib key inside \cite{..}.
+2. Type ~, B l~ to add the bib item from the main bib file to the local bib file.
 * Org-mode
 - [[https://orgmode.org/][Org-mode]] is a very useful tool to organize text files with extension "org".
 - An org file is basically a text file with [[https://en.wikipedia.org/wiki/Markdown][mark-down]]-like structure.
