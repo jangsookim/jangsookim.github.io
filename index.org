@@ -214,6 +214,10 @@
 - Sun-mi Yun
 
 * Lecture Videos
+** 저글링하는 수학자가 있다고? (Are there really mathematicians who juggle?)
+- 제32회 서울대 자연과학 공개강연 (Public lecture at SNU)
+- [[https://youtu.be/-QI5uQcrId4?si=1uFjDDM-v7Dkqlw-][interview video]]
+- [[https://youtu.be/NyKYq_OXtPg?si=GWE5UrjQrDM7ZnJV][lecture video]]
 ** Topics in Combinatorics: Combinatorics of orthogonal polynomials
 [[file:lectures/OPS/ops.org][Lecture Homepage]]
 ** Introduction to Newbiemacs
