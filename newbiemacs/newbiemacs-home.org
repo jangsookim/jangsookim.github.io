@@ -24,7 +24,7 @@ file:files/torus-screenshot.png
 
 * Installation
 ** macOS
-1. Install [[https://www.gnu.org/software/emacs/][Emacs]] version 28.2. Click [[https://emacsformacosx.com/emacs-builds/Emacs-28.2-universal.dmg][here]] to download an installation file.
+1. Install [[https://www.gnu.org/software/emacs/][Emacs]]. Click [[https://emacsformacosx.com/][here]] to download an installation file.
 2. Install [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][Git]]. (Type ~git --version~ in the terminal. If you don’t have it installed already, it will prompt you to install it.)
 3. Open a terminal and enter the following lines. (You can open the
    terminal by pressing Command+Space and typing "terminal". You can
