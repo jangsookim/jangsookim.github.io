@@ -109,9 +109,8 @@
 - This will create a new bib file with file name "local-ref.bib" in the current directory.
 *** Toggle between main bib and local bib
 - Type ~, B t~
-*** Add one bib item to the existing local-ref.bib file
-1. Move the cursor at the bib key inside \cite{..}.
-2. Type ~, B l~ to add the bib item from the main bib file to the local bib file.
+*** Add a bibitem from main bib to local bib
+1. Type ~, B m~ to add the bib item from the main bib file to the local bib file.
 * Org-mode
 - [[https://orgmode.org/][Org-mode]] is a very useful tool to organize text files with extension "org".
 - An org file is basically a text file with [[https://en.wikipedia.org/wiki/Markdown][mark-down]]-like structure.

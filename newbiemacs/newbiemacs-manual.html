@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-01-29 Wed 20:43 -->
+<!-- 2025-02-21 Fri 20:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Newbiemacs Manual</title>
@@ -211,27 +211,6 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 <script type="text/javascript">
 $(function() {    $('.note').before("<p class='admonition-title note'>Note</p>");    $('.seealso').before("<p class='admonition-title seealso'>See also</p>");    $('.warning').before("<p class='admonition-title warning'>Warning</p>");    $('.caution').before("<p class='admonition-title caution'>Caution</p>");    $('.attention').before("<p class='admonition-title attention'>Attention</p>");    $('.tip').before("<p class='admonition-title tip'>Tip</p>");    $('.important').before("<p class='admonition-title important'>Important</p>");    $('.hint').before("<p class='admonition-title hint'>Hint</p>");    $('.error').before("<p class='admonition-title error'>Error</p>");    $('.danger').before("<p class='admonition-title danger'>Danger</p>");});$( document ).ready(function() {        $(document).on('click', "[data-toggle='wy-nav-top']", function() {      $("[data-toggle='wy-nav-shift']").toggleClass("shift");      $("[data-toggle='rst-versions']").toggleClass("shift");    });        $(document).on('click', ".wy-menu-vertical .current ul li a", function() {      $("[data-toggle='wy-nav-shift']").removeClass("shift");      $("[data-toggle='rst-versions']").toggleClass("shift");    });    $(document).on('click', "[data-toggle='rst-current-version']", function() {      $("[data-toggle='rst-versions']").toggleClass("shift-up");    });        $("table.docutils:not(.field-list)").wrap("<div class='wy-table-responsive'></div>");});$( document ).ready(function() {    $('#text-table-of-contents ul').first().addClass('nav');    $('body').scrollspy({target: '#text-table-of-contents'});            var $postamble = $('#postamble');    var $tableOfContents = $('#table-of-contents');    $tableOfContents.css({paddingBottom: $postamble.outerHeight()});        var toggleSidebar = $('<div id="toggle-sidebar"><a href="#table-of-contents"><h2>Table of Contents</h2></a></div>');    $('#content').prepend(toggleSidebar);        var closeBtn = $('<a class="close-sidebar" href="#">Close</a>');    var tocTitle = $('#table-of-contents').find('h2');    tocTitle.append(closeBtn);});window.SphinxRtdTheme = (function (jquery) {    var stickyNav = (function () {        var navBar,            win,            stickyNavCssClass = 'stickynav',            applyStickNav = function () {                if (navBar.height() <= win.height()) {                    navBar.addClass(stickyNavCssClass);                } else {                    navBar.removeClass(stickyNavCssClass);                }            },            enable = function () {                applyStickNav();                win.on('resize', applyStickNav);            },            init = function () {                navBar = jquery('nav.wy-nav-side:first');                win    = jquery(window);            };        jquery(init);        return {            enable : enable        };    }());    return {        StickyNav : stickyNav    };}($));
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content" class="content">
@@ -240,99 +219,99 @@ $(function() {    $('.note').before("<p class='admonition-title note'>Note</p>")
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5da855c">1. Keybinding Notation</a></li>
-<li><a href="#orgb8cf907">2. Cheat sheets</a></li>
-<li><a href="#org7526300">3. File managements</a>
+<li><a href="#orgeafd3c2">1. Keybinding Notation</a></li>
+<li><a href="#orga7c9b28">2. Cheat sheets</a></li>
+<li><a href="#orgdce4bcd">3. File managements</a>
 <ul>
-<li><a href="#org0a9d3e4">3.1. How to open a file in Newbiemacs</a></li>
-<li><a href="#orgc190b6a">3.2. How to open the current directory in the file manager</a></li>
-<li><a href="#org4f14082">3.3. Symlinks</a>
+<li><a href="#orgcc8389c">3.1. How to open a file in Newbiemacs</a></li>
+<li><a href="#orgb6c1d3f">3.2. How to open the current directory in the file manager</a></li>
+<li><a href="#org544c077">3.3. Symlinks</a>
 <ul>
-<li><a href="#orgefb2133">3.3.1. How to create a symlink to a file</a></li>
+<li><a href="#org9132192">3.3.1. How to create a symlink to a file</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org9f0aac0">4. LaTeX-mode</a>
+<li><a href="#org3c19a4f">4. LaTeX-mode</a>
 <ul>
-<li><a href="#orge46ff03">4.1. How to edit a tex file</a></li>
-<li><a href="#org108beec">4.2. Some useful tools</a>
+<li><a href="#org9f20372">4.1. How to edit a tex file</a></li>
+<li><a href="#org8649114">4.2. Some useful tools</a>
 <ul>
-<li><a href="#org0f71750">4.2.1. Add a figure in a tex file</a></li>
-<li><a href="#org034f5e3">4.2.2. Change variables</a></li>
-<li><a href="#orgc1cad9f">4.2.3. Convert latex code to HWP math code (for Korean)</a></li>
+<li><a href="#org4da35d9">4.2.1. Add a figure in a tex file</a></li>
+<li><a href="#orga7ed414">4.2.2. Change variables</a></li>
+<li><a href="#orgf806028">4.2.3. Convert latex code to HWP math code (for Korean)</a></li>
 </ul>
 </li>
-<li><a href="#orgdfaa9be">4.3. BibTeX</a>
+<li><a href="#org0b530b2">4.3. BibTeX</a>
 <ul>
-<li><a href="#org623d1d0">4.3.1. How to open the main bib file</a></li>
-<li><a href="#org0762848">4.3.2. How to use the main bib file</a></li>
-<li><a href="#org7b11983">4.3.3. How to toggle the bibliography</a></li>
-<li><a href="#org3aa8d5f">4.3.4. How to add a new bibtex item from MathSciNet</a></li>
-<li><a href="#org39b2ce8">4.3.5. How to add a new bibtex item from arxiv</a></li>
-<li><a href="#org3a20737">4.3.6. How to create a new bib file containing the current bibitems only</a></li>
-<li><a href="#orgce16a25">4.3.7. Toggle between main bib and local bib</a></li>
-<li><a href="#org9b6530e">4.3.8. Add one bib item to the existing local-ref.bib file</a></li>
+<li><a href="#org8df40a6">4.3.1. How to open the main bib file</a></li>
+<li><a href="#org6316513">4.3.2. How to use the main bib file</a></li>
+<li><a href="#org26bd76c">4.3.3. How to toggle the bibliography</a></li>
+<li><a href="#orgce42789">4.3.4. How to add a new bibtex item from MathSciNet</a></li>
+<li><a href="#orgb490d0c">4.3.5. How to add a new bibtex item from arxiv</a></li>
+<li><a href="#orgca5d4c5">4.3.6. How to create a new bib file containing the current bibitems only</a></li>
+<li><a href="#org68f5fad">4.3.7. Toggle between main bib and local bib</a></li>
+<li><a href="#org94f6945">4.3.8. Add a bibitem from main bib to local bib</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org1a2398f">5. Org-mode</a>
+<li><a href="#orgad9b07c">5. Org-mode</a>
 <ul>
-<li><a href="#org61fe5a7">5.1. How to create an org file</a></li>
-<li><a href="#orgd65cb51">5.2. How to search an org file</a></li>
-<li><a href="#org2e5b70f">5.3. How to insert an org file link into the current org file</a></li>
-<li><a href="#org4d0710d">5.4. How to view the connections of the org files</a></li>
-<li><a href="#org3d29510">5.5. How to add a link to a file (or a directory)</a></li>
+<li><a href="#org7e7c947">5.1. How to create an org file</a></li>
+<li><a href="#org7fa6171">5.2. How to search an org file</a></li>
+<li><a href="#org3336db7">5.3. How to insert an org file link into the current org file</a></li>
+<li><a href="#orga17d254">5.4. How to view the connections of the org files</a></li>
+<li><a href="#orgb39bd15">5.5. How to add a link to a file (or a directory)</a></li>
 </ul>
 </li>
-<li><a href="#org3b449c9">6. Magit (git interface)</a>
+<li><a href="#org8307ffe">6. Magit (git interface)</a>
 <ul>
-<li><a href="#org189207a">6.1. Configuring Git user name and email (one time only)</a></li>
-<li><a href="#orga4e3d04">6.2. Install GitHub CLI (one time only)</a></li>
-<li><a href="#org4982c2b">6.3. Test if everything is working</a></li>
-<li><a href="#orge015008">6.4. Newbiemacs git commands</a></li>
-<li><a href="#org7811bed">6.5. Basic magit commands</a></li>
-<li><a href="#org800e5f7">6.6. Basic git work flow</a></li>
+<li><a href="#org8d5714e">6.1. Configuring Git user name and email (one time only)</a></li>
+<li><a href="#orgd2fda9e">6.2. Install GitHub CLI (one time only)</a></li>
+<li><a href="#orgac3ec1b">6.3. Test if everything is working</a></li>
+<li><a href="#orge02f34a">6.4. Newbiemacs git commands</a></li>
+<li><a href="#org643a5e4">6.5. Basic magit commands</a></li>
+<li><a href="#org0388b9d">6.6. Basic git work flow</a></li>
 </ul>
 </li>
-<li><a href="#orgb06c5d1">7. Vim</a>
+<li><a href="#org3b4d7f3">7. Vim</a>
 <ul>
-<li><a href="#orgf6b7852">7.1. Basic concepts on Vim</a></li>
-<li><a href="#orgcee3211">7.2. Keybindings of basic commands</a></li>
+<li><a href="#orgd60b24a">7.1. Basic concepts on Vim</a></li>
+<li><a href="#orgb4d6021">7.2. Keybindings of basic commands</a></li>
 </ul>
 </li>
-<li><a href="#org0aff64a">8. Emacs Basics</a>
+<li><a href="#orgdfd2f5d">8. Emacs Basics</a>
 <ul>
-<li><a href="#org07ef530">8.1. Terminology</a></li>
-<li><a href="#org0f696b1">8.2. Emacs mode</a></li>
-<li><a href="#org7985c83">8.3. Keybindings</a></li>
-<li><a href="#org605c376">8.4. Window managements</a></li>
-<li><a href="#org339fd81">8.5. Buffer managements</a></li>
-<li><a href="#org3cba67f">8.6. Which-key</a></li>
-<li><a href="#orgf9b6e47">8.7. Execute command</a></li>
+<li><a href="#orgd9201ee">8.1. Terminology</a></li>
+<li><a href="#org4dde0c4">8.2. Emacs mode</a></li>
+<li><a href="#orge7e0db7">8.3. Keybindings</a></li>
+<li><a href="#orgff9fc1b">8.4. Window managements</a></li>
+<li><a href="#orge9b0f2e">8.5. Buffer managements</a></li>
+<li><a href="#orgfc59a3e">8.6. Which-key</a></li>
+<li><a href="#orgd038717">8.7. Execute command</a></li>
 </ul>
 </li>
-<li><a href="#orgde93af3">9. Spell checking</a>
+<li><a href="#org7a5a05d">9. Spell checking</a>
 <ul>
-<li><a href="#org1682394">9.1. Install a spell checker on macOS</a></li>
-<li><a href="#orgde9e7f6">9.2. Install a spell checker on Windows</a></li>
-<li><a href="#org5b9f3cd">9.3. Install a spell checker on GNU/Linux</a></li>
+<li><a href="#org4b13843">9.1. Install a spell checker on macOS</a></li>
+<li><a href="#orgcf1a7e7">9.2. Install a spell checker on Windows</a></li>
+<li><a href="#org7b9e015">9.3. Install a spell checker on GNU/Linux</a></li>
 </ul>
 </li>
-<li><a href="#orgb30f724">10. Configurations</a>
+<li><a href="#org1d9c4e9">10. Configurations</a>
 <ul>
-<li><a href="#org4cccd9e">10.1. key-tree</a></li>
-<li><a href="#org17a3989">10.2. user-init</a></li>
+<li><a href="#org340a48b">10.1. key-tree</a></li>
+<li><a href="#org5032df2">10.2. user-init</a></li>
 </ul>
 </li>
-<li><a href="#org611366e">11. Further readings</a></li>
+<li><a href="#org5b8d4ea">11. Further readings</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5da855c" class="outline-2">
-<h2 id="org5da855c"><span class="section-number-2">1.</span> Keybinding Notation</h2>
+<div id="outline-container-orgeafd3c2" class="outline-2">
+<h2 id="orgeafd3c2"><span class="section-number-2">1.</span> Keybinding Notation</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><code>C</code> means Ctrl, i.e., the control key</li>
@@ -347,8 +326,8 @@ case-sensitive, so <code>S</code> is different from <code>s</code>)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb8cf907" class="outline-2">
-<h2 id="orgb8cf907"><span class="section-number-2">2.</span> Cheat sheets</h2>
+<div id="outline-container-orga7c9b28" class="outline-2">
+<h2 id="orga7c9b28"><span class="section-number-2">2.</span> Cheat sheets</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="newbiemacs_cheat_sheet_vim.pdf">Cheat sheet for VIM style</a></li>
@@ -358,16 +337,16 @@ case-sensitive, so <code>S</code> is different from <code>s</code>)</li>
 </div>
 </div>
 
-<div id="outline-container-org7526300" class="outline-2">
-<h2 id="org7526300"><span class="section-number-2">3.</span> File managements</h2>
+<div id="outline-container-orgdce4bcd" class="outline-2">
+<h2 id="orgdce4bcd"><span class="section-number-2">3.</span> File managements</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>For beginners, I recommend using your system's file manager.</li>
 <li>If you are comfortable with basics of emacs, I recommend <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html">dired</a> for the file management.</li>
 </ul>
 </div>
-<div id="outline-container-org0a9d3e4" class="outline-3">
-<h3 id="org0a9d3e4"><span class="section-number-3">3.1.</span> How to open a file in Newbiemacs</h3>
+<div id="outline-container-orgcc8389c" class="outline-3">
+<h3 id="orgcc8389c"><span class="section-number-3">3.1.</span> How to open a file in Newbiemacs</h3>
 <div class="outline-text-3" id="text-3-1">
 <ol class="org-ol">
 <li>In your system's file manager, open the directory of the file that you want to open.</li>
@@ -377,8 +356,8 @@ case-sensitive, so <code>S</code> is different from <code>s</code>)</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgc190b6a" class="outline-3">
-<h3 id="orgc190b6a"><span class="section-number-3">3.2.</span> How to open the current directory in the file manager</h3>
+<div id="outline-container-orgb6c1d3f" class="outline-3">
+<h3 id="orgb6c1d3f"><span class="section-number-3">3.2.</span> How to open the current directory in the file manager</h3>
 <div class="outline-text-3" id="text-3-2">
 <ol class="org-ol">
 <li>Suppose that file A is opened in Newbiemacs.</li>
@@ -386,8 +365,8 @@ case-sensitive, so <code>S</code> is different from <code>s</code>)</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org4f14082" class="outline-3">
-<h3 id="org4f14082"><span class="section-number-3">3.3.</span> Symlinks</h3>
+<div id="outline-container-org544c077" class="outline-3">
+<h3 id="org544c077"><span class="section-number-3">3.3.</span> Symlinks</h3>
 <div class="outline-text-3" id="text-3-3">
 <ul class="org-ul">
 <li>A symlink is a link to a file similar to a "shortcut" to a file.</li>
@@ -395,8 +374,8 @@ case-sensitive, so <code>S</code> is different from <code>s</code>)</li>
 to one of the <code>pdf</code>, <code>tex</code>, <code>misc</code> folders.</li>
 </ul>
 </div>
-<div id="outline-container-orgefb2133" class="outline-4">
-<h4 id="orgefb2133"><span class="section-number-4">3.3.1.</span> How to create a symlink to a file</h4>
+<div id="outline-container-org9132192" class="outline-4">
+<h4 id="org9132192"><span class="section-number-4">3.3.1.</span> How to create a symlink to a file</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <ol class="org-ol">
 <li>Go to the Newbiemacs screen.</li>
@@ -412,12 +391,12 @@ the string in the command prompt.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org9f0aac0" class="outline-2">
-<h2 id="org9f0aac0"><span class="section-number-2">4.</span> LaTeX-mode</h2>
+<div id="outline-container-org3c19a4f" class="outline-2">
+<h2 id="org3c19a4f"><span class="section-number-2">4.</span> LaTeX-mode</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orge46ff03" class="outline-3">
-<h3 id="orge46ff03"><span class="section-number-3">4.1.</span> How to edit a tex file</h3>
+<div id="outline-container-org9f20372" class="outline-3">
+<h3 id="org9f20372"><span class="section-number-3">4.1.</span> How to edit a tex file</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>To compile a tex file type <code>M-RET b</code></li>
@@ -429,12 +408,12 @@ click" if you are using SumatraPDF on Windows.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org108beec" class="outline-3">
-<h3 id="org108beec"><span class="section-number-3">4.2.</span> Some useful tools</h3>
+<div id="outline-container-org8649114" class="outline-3">
+<h3 id="org8649114"><span class="section-number-3">4.2.</span> Some useful tools</h3>
 <div class="outline-text-3" id="text-4-2">
 </div>
-<div id="outline-container-org0f71750" class="outline-4">
-<h4 id="org0f71750"><span class="section-number-4">4.2.1.</span> Add a figure in a tex file</h4>
+<div id="outline-container-org4da35d9" class="outline-4">
+<h4 id="org4da35d9"><span class="section-number-4">4.2.1.</span> Add a figure in a tex file</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <ul class="org-ul">
 <li>Using Newbiemacs you can add an image into your tex file as follows.
@@ -450,8 +429,8 @@ add the directory path in a new line.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org034f5e3" class="outline-4">
-<h4 id="org034f5e3"><span class="section-number-4">4.2.2.</span> Change variables</h4>
+<div id="outline-container-orga7ed414" class="outline-4">
+<h4 id="orga7ed414"><span class="section-number-4">4.2.2.</span> Change variables</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <ul class="org-ul">
 <li>While writing your paper, you realized that you want to change the variable <code>i</code> to <code>j</code>.</li>
@@ -468,8 +447,8 @@ dragging your mouse. (If you want the change in the entire file, you don't have 
 </div>
 </div>
 
-<div id="outline-container-orgc1cad9f" class="outline-4">
-<h4 id="orgc1cad9f"><span class="section-number-4">4.2.3.</span> Convert latex code to HWP math code (for Korean)</h4>
+<div id="outline-container-orgf806028" class="outline-4">
+<h4 id="orgf806028"><span class="section-number-4">4.2.3.</span> Convert latex code to HWP math code (for Korean)</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <ul class="org-ul">
 <li><p>
@@ -496,12 +475,12 @@ input window (<code>ctrl n m</code>)</li>
 </div>
 </div>
 
-<div id="outline-container-orgdfaa9be" class="outline-3">
-<h3 id="orgdfaa9be"><span class="section-number-3">4.3.</span> BibTeX</h3>
+<div id="outline-container-org0b530b2" class="outline-3">
+<h3 id="org0b530b2"><span class="section-number-3">4.3.</span> BibTeX</h3>
 <div class="outline-text-3" id="text-4-3">
 </div>
-<div id="outline-container-org623d1d0" class="outline-4">
-<h4 id="org623d1d0"><span class="section-number-4">4.3.1.</span> How to open the main bib file</h4>
+<div id="outline-container-org8df40a6" class="outline-4">
+<h4 id="org8df40a6"><span class="section-number-4">4.3.1.</span> How to open the main bib file</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <ul class="org-ul">
 <li>Type <code>SPC N s 5</code></li>
@@ -509,8 +488,8 @@ input window (<code>ctrl n m</code>)</li>
 </div>
 </div>
 
-<div id="outline-container-org0762848" class="outline-4">
-<h4 id="org0762848"><span class="section-number-4">4.3.2.</span> How to use the main bib file</h4>
+<div id="outline-container-org6316513" class="outline-4">
+<h4 id="org6316513"><span class="section-number-4">4.3.2.</span> How to use the main bib file</h4>
 <div class="outline-text-4" id="text-4-3-2">
 <ul class="org-ul">
 <li>In your tex file, type <code>, B T</code></li>
@@ -525,8 +504,8 @@ This will add the following two lines in your tex file.
 </ul>
 </div>
 </div>
-<div id="outline-container-org7b11983" class="outline-4">
-<h4 id="org7b11983"><span class="section-number-4">4.3.3.</span> How to toggle the bibliography</h4>
+<div id="outline-container-org26bd76c" class="outline-4">
+<h4 id="org26bd76c"><span class="section-number-4">4.3.3.</span> How to toggle the bibliography</h4>
 <div class="outline-text-4" id="text-4-3-3">
 <ul class="org-ul">
 <li>In your tex file, type <code>, B T</code></li>
@@ -536,8 +515,8 @@ This will add the following two lines in your tex file.
 </div>
 </div>
 
-<div id="outline-container-org3aa8d5f" class="outline-4">
-<h4 id="org3aa8d5f"><span class="section-number-4">4.3.4.</span> How to add a new bibtex item from MathSciNet</h4>
+<div id="outline-container-orgce42789" class="outline-4">
+<h4 id="orgce42789"><span class="section-number-4">4.3.4.</span> How to add a new bibtex item from MathSciNet</h4>
 <div class="outline-text-4" id="text-4-3-4">
 <ol class="org-ol">
 <li>Copy a bibtex item from MathSciNet or zbMath.</li>
@@ -546,8 +525,8 @@ This will add the following two lines in your tex file.
 </div>
 </div>
 
-<div id="outline-container-org39b2ce8" class="outline-4">
-<h4 id="org39b2ce8"><span class="section-number-4">4.3.5.</span> How to add a new bibtex item from arxiv</h4>
+<div id="outline-container-orgb490d0c" class="outline-4">
+<h4 id="orgb490d0c"><span class="section-number-4">4.3.5.</span> How to add a new bibtex item from arxiv</h4>
 <div class="outline-text-4" id="text-4-3-5">
 <ol class="org-ol">
 <li>Go to the arxiv page of the article you you want to cite.</li>
@@ -557,8 +536,8 @@ This will add the following two lines in your tex file.
 </div>
 </div>
 
-<div id="outline-container-org3a20737" class="outline-4">
-<h4 id="org3a20737"><span class="section-number-4">4.3.6.</span> How to create a new bib file containing the current bibitems only</h4>
+<div id="outline-container-orgca5d4c5" class="outline-4">
+<h4 id="orgca5d4c5"><span class="section-number-4">4.3.6.</span> How to create a new bib file containing the current bibitems only</h4>
 <div class="outline-text-4" id="text-4-3-6">
 <ul class="org-ul">
 <li>Type <code>, B c</code></li>
@@ -566,27 +545,26 @@ This will add the following two lines in your tex file.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgce16a25" class="outline-4">
-<h4 id="orgce16a25"><span class="section-number-4">4.3.7.</span> Toggle between main bib and local bib</h4>
+<div id="outline-container-org68f5fad" class="outline-4">
+<h4 id="org68f5fad"><span class="section-number-4">4.3.7.</span> Toggle between main bib and local bib</h4>
 <div class="outline-text-4" id="text-4-3-7">
 <ul class="org-ul">
 <li>Type <code>, B t</code></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9b6530e" class="outline-4">
-<h4 id="org9b6530e"><span class="section-number-4">4.3.8.</span> Add one bib item to the existing local-ref.bib file</h4>
+<div id="outline-container-org94f6945" class="outline-4">
+<h4 id="org94f6945"><span class="section-number-4">4.3.8.</span> Add a bibitem from main bib to local bib</h4>
 <div class="outline-text-4" id="text-4-3-8">
 <ol class="org-ol">
-<li>Move the cursor at the bib key inside \cite{..}.</li>
-<li>Type <code>, B l</code> to add the bib item from the main bib file to the local bib file.</li>
+<li>Type <code>, B m</code> to add the bib item from the main bib file to the local bib file.</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org1a2398f" class="outline-2">
-<h2 id="org1a2398f"><span class="section-number-2">5.</span> Org-mode</h2>
+<div id="outline-container-orgad9b07c" class="outline-2">
+<h2 id="orgad9b07c"><span class="section-number-2">5.</span> Org-mode</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><a href="https://orgmode.org/">Org-mode</a> is a very useful tool to organize text files with extension "org".</li>
@@ -596,8 +574,8 @@ This will add the following two lines in your tex file.
 </ul>
 </div>
 
-<div id="outline-container-org61fe5a7" class="outline-3">
-<h3 id="org61fe5a7"><span class="section-number-3">5.1.</span> How to create an org file</h3>
+<div id="outline-container-org7e7c947" class="outline-3">
+<h3 id="org7e7c947"><span class="section-number-3">5.1.</span> How to create an org file</h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li>Type <code>SPC o r</code>.</li>
@@ -608,8 +586,8 @@ This will add the following two lines in your tex file.
 </div>
 </div>
 
-<div id="outline-container-orgd65cb51" class="outline-3">
-<h3 id="orgd65cb51"><span class="section-number-3">5.2.</span> How to search an org file</h3>
+<div id="outline-container-org7fa6171" class="outline-3">
+<h3 id="org7fa6171"><span class="section-number-3">5.2.</span> How to search an org file</h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>Type <code>SPC o r</code>.</li>
@@ -618,8 +596,8 @@ This will add the following two lines in your tex file.
 </div>
 </div>
 
-<div id="outline-container-org2e5b70f" class="outline-3">
-<h3 id="org2e5b70f"><span class="section-number-3">5.3.</span> How to insert an org file link into the current org file</h3>
+<div id="outline-container-org3336db7" class="outline-3">
+<h3 id="org3336db7"><span class="section-number-3">5.3.</span> How to insert an org file link into the current org file</h3>
 <div class="outline-text-3" id="text-5-3">
 <ul class="org-ul">
 <li>Type <code>, i n</code>.</li>
@@ -628,8 +606,8 @@ This will add the following two lines in your tex file.
 </div>
 </div>
 
-<div id="outline-container-org4d0710d" class="outline-3">
-<h3 id="org4d0710d"><span class="section-number-3">5.4.</span> How to view the connections of the org files</h3>
+<div id="outline-container-orga17d254" class="outline-3">
+<h3 id="orga17d254"><span class="section-number-3">5.4.</span> How to view the connections of the org files</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li>Type <code>SPC o u</code>.</li>
@@ -637,8 +615,8 @@ This will add the following two lines in your tex file.
 </div>
 </div>
 
-<div id="outline-container-org3d29510" class="outline-3">
-<h3 id="org3d29510"><span class="section-number-3">5.5.</span> How to add a link to a file (or a directory)</h3>
+<div id="outline-container-orgb39bd15" class="outline-3">
+<h3 id="orgb39bd15"><span class="section-number-3">5.5.</span> How to add a link to a file (or a directory)</h3>
 <div class="outline-text-3" id="text-5-5">
 <ul class="org-ul">
 <li>Drag-and-drop a file (or a directory) in your org file will create a
@@ -654,12 +632,12 @@ link to that file.</li>
 </div>
 </div>
 
-<div id="outline-container-org3b449c9" class="outline-2">
-<h2 id="org3b449c9"><span class="section-number-2">6.</span> Magit (git interface)</h2>
+<div id="outline-container-org8307ffe" class="outline-2">
+<h2 id="org8307ffe"><span class="section-number-2">6.</span> Magit (git interface)</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org189207a" class="outline-3">
-<h3 id="org189207a"><span class="section-number-3">6.1.</span> Configuring Git user name and email (one time only)</h3>
+<div id="outline-container-org8d5714e" class="outline-3">
+<h3 id="org8d5714e"><span class="section-number-3">6.1.</span> Configuring Git user name and email (one time only)</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li><p>
@@ -672,8 +650,8 @@ git config --global user.email "your_email"
 </ul>
 </div>
 </div>
-<div id="outline-container-orga4e3d04" class="outline-3">
-<h3 id="orga4e3d04"><span class="section-number-3">6.2.</span> Install GitHub CLI (one time only)</h3>
+<div id="outline-container-orgd2fda9e" class="outline-3">
+<h3 id="orgd2fda9e"><span class="section-number-3">6.2.</span> Install GitHub CLI (one time only)</h3>
 <div class="outline-text-3" id="text-6-2">
 <ul class="org-ul">
 <li>To connect with GitHub we need GitHub CLI (and obvious a GitHub account).</li>
@@ -689,8 +667,8 @@ browser.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4982c2b" class="outline-3">
-<h3 id="org4982c2b"><span class="section-number-3">6.3.</span> Test if everything is working</h3>
+<div id="outline-container-orgac3ec1b" class="outline-3">
+<h3 id="orgac3ec1b"><span class="section-number-3">6.3.</span> Test if everything is working</h3>
 <div class="outline-text-3" id="text-6-3">
 <ol class="org-ol">
 <li>Create a temporary folder.</li>
@@ -701,8 +679,8 @@ browser.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orge015008" class="outline-3">
-<h3 id="orge015008"><span class="section-number-3">6.4.</span> Newbiemacs git commands</h3>
+<div id="outline-container-orge02f34a" class="outline-3">
+<h3 id="orge02f34a"><span class="section-number-3">6.4.</span> Newbiemacs git commands</h3>
 <div class="outline-text-3" id="text-6-4">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -748,8 +726,8 @@ browser.</li>
 </div>
 </div>
 
-<div id="outline-container-org7811bed" class="outline-3">
-<h3 id="org7811bed"><span class="section-number-3">6.5.</span> Basic magit commands</h3>
+<div id="outline-container-org643a5e4" class="outline-3">
+<h3 id="org643a5e4"><span class="section-number-3">6.5.</span> Basic magit commands</h3>
 <div class="outline-text-3" id="text-6-5">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -810,8 +788,8 @@ browser.</li>
 </div>
 </div>
 
-<div id="outline-container-org800e5f7" class="outline-3">
-<h3 id="org800e5f7"><span class="section-number-3">6.6.</span> Basic git work flow</h3>
+<div id="outline-container-org0388b9d" class="outline-3">
+<h3 id="org0388b9d"><span class="section-number-3">6.6.</span> Basic git work flow</h3>
 <div class="outline-text-3" id="text-6-6">
 <ol class="org-ol">
 <li>Edit your files in a git repository.</li>
@@ -840,8 +818,8 @@ browser.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb06c5d1" class="outline-2">
-<h2 id="orgb06c5d1"><span class="section-number-2">7.</span> Vim</h2>
+<div id="outline-container-org3b4d7f3" class="outline-2">
+<h2 id="org3b4d7f3"><span class="section-number-2">7.</span> Vim</h2>
 <div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li>Newbiemacs uses <a href="https://www.emacswiki.org/emacs/Evil">evil mode</a>, which allows us to use <a href="https://en.wikipedia.org/wiki/Vim_(text_editor)">Vim</a> keybindings.</li>
@@ -852,8 +830,8 @@ browser.</li>
 </ul>
 </div>
 
-<div id="outline-container-orgf6b7852" class="outline-3">
-<h3 id="orgf6b7852"><span class="section-number-3">7.1.</span> Basic concepts on Vim</h3>
+<div id="outline-container-orgd60b24a" class="outline-3">
+<h3 id="orgd60b24a"><span class="section-number-3">7.1.</span> Basic concepts on Vim</h3>
 <div class="outline-text-3" id="text-7-1">
 <ul class="org-ul">
 <li>In Vim, there are several modes. The two most important modes are called <b>normal mode</b> and <b>insert mode</b></li>
@@ -861,7 +839,7 @@ browser.</li>
 <b>normal mode</b> has a fat cursor and the icon at the bottom left corder has orange color.
 </p>
 
-<div id="orgeb8d893" class="figure">
+<div id="org47e33b8" class="figure">
 <p><a href="files/normal-mode.png" width="600"><img src="files/normal-mode.png" alt="normal-mode.png" width="600" /></a>
 </p>
 </div></li>
@@ -869,7 +847,7 @@ browser.</li>
 <b>insert mode</b> has a thin cursor and the icon at the bottom left corder has green color.
 </p>
 
-<div id="orgf9f81b7" class="figure">
+<div id="org2d90f0e" class="figure">
 <p><a href="files/normal-mode.png" width="600"><img src="files/insert-mode.png" alt="insert-mode.png" width="600" /></a>
 </p>
 </div></li>
@@ -883,8 +861,8 @@ select a region, just like what you usually do with your mouse. In
 </div>
 </div>
 
-<div id="outline-container-orgcee3211" class="outline-3">
-<h3 id="orgcee3211"><span class="section-number-3">7.2.</span> Keybindings of basic commands</h3>
+<div id="outline-container-orgb4d6021" class="outline-3">
+<h3 id="orgb4d6021"><span class="section-number-3">7.2.</span> Keybindings of basic commands</h3>
 <div class="outline-text-3" id="text-7-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -962,12 +940,12 @@ select a region, just like what you usually do with your mouse. In
 </div>
 </div>
 </div>
-<div id="outline-container-org0aff64a" class="outline-2">
-<h2 id="org0aff64a"><span class="section-number-2">8.</span> Emacs Basics</h2>
+<div id="outline-container-orgdfd2f5d" class="outline-2">
+<h2 id="orgdfd2f5d"><span class="section-number-2">8.</span> Emacs Basics</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org07ef530" class="outline-3">
-<h3 id="org07ef530"><span class="section-number-3">8.1.</span> Terminology</h3>
+<div id="outline-container-orgd9201ee" class="outline-3">
+<h3 id="orgd9201ee"><span class="section-number-3">8.1.</span> Terminology</h3>
 <div class="outline-text-3" id="text-8-1">
 <ul class="org-ul">
 <li>The following are fundamental terms in Emacs .</li>
@@ -983,8 +961,8 @@ commends.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0f696b1" class="outline-3">
-<h3 id="org0f696b1"><span class="section-number-3">8.2.</span> Emacs mode</h3>
+<div id="outline-container-org4dde0c4" class="outline-3">
+<h3 id="org4dde0c4"><span class="section-number-3">8.2.</span> Emacs mode</h3>
 <div class="outline-text-3" id="text-8-2">
 <ul class="org-ul">
 <li><p>
@@ -993,7 +971,7 @@ Besides <b>normal mode</b> and <b>insert mode</b>, there is another mode called
 corner.
 </p>
 
-<div id="org596d991" class="figure">
+<div id="orgcfbdb64" class="figure">
 <p><img src="files/emacs-mode.png" alt="emacs-mode.png" width="600" />
 </p>
 </div></li>
@@ -1007,8 +985,8 @@ type <code>C-z</code>.</li>
 </div>
 </div>
 
-<div id="outline-container-org7985c83" class="outline-3">
-<h3 id="org7985c83"><span class="section-number-3">8.3.</span> Keybindings</h3>
+<div id="outline-container-orge7e0db7" class="outline-3">
+<h3 id="orge7e0db7"><span class="section-number-3">8.3.</span> Keybindings</h3>
 <div class="outline-text-3" id="text-8-3">
 <ul class="org-ul">
 <li>Here are some basic Emacs keybindings.</li>
@@ -1083,8 +1061,8 @@ type <code>C-z</code>.</li>
 </div>
 </div>
 
-<div id="outline-container-org605c376" class="outline-3">
-<h3 id="org605c376"><span class="section-number-3">8.4.</span> Window managements</h3>
+<div id="outline-container-orgff9fc1b" class="outline-3">
+<h3 id="orgff9fc1b"><span class="section-number-3">8.4.</span> Window managements</h3>
 <div class="outline-text-3" id="text-8-4">
 <ul class="org-ul">
 <li>If you use Emacs, you will often encounter a situation that the
@@ -1095,8 +1073,8 @@ be closed by simply typing <code>q</code> (if it's in Emacs mode).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org339fd81" class="outline-3">
-<h3 id="org339fd81"><span class="section-number-3">8.5.</span> Buffer managements</h3>
+<div id="outline-container-orge9b0f2e" class="outline-3">
+<h3 id="orge9b0f2e"><span class="section-number-3">8.5.</span> Buffer managements</h3>
 <div class="outline-text-3" id="text-8-5">
 <ul class="org-ul">
 <li>To switch to another buffer type <code>M-o b b</code></li>
@@ -1104,8 +1082,8 @@ be closed by simply typing <code>q</code> (if it's in Emacs mode).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3cba67f" class="outline-3">
-<h3 id="org3cba67f"><span class="section-number-3">8.6.</span> Which-key</h3>
+<div id="outline-container-orgfc59a3e" class="outline-3">
+<h3 id="orgfc59a3e"><span class="section-number-3">8.6.</span> Which-key</h3>
 <div class="outline-text-3" id="text-8-6">
 <ul class="org-ul">
 <li>There are many Emacs keybindings starting with <code>C-x</code> or <code>C-c</code> or <code>C-h</code>.</li>
@@ -1114,8 +1092,8 @@ be closed by simply typing <code>q</code> (if it's in Emacs mode).</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf9b6e47" class="outline-3">
-<h3 id="orgf9b6e47"><span class="section-number-3">8.7.</span> Execute command</h3>
+<div id="outline-container-orgd038717" class="outline-3">
+<h3 id="orgd038717"><span class="section-number-3">8.7.</span> Execute command</h3>
 <div class="outline-text-3" id="text-8-7">
 <ul class="org-ul">
 <li>In Emacs there are tons of commands you can execute.</li>
@@ -1127,16 +1105,16 @@ to those containing what you typed there.</li>
 </div>
 </div>
 
-<div id="outline-container-orgde93af3" class="outline-2">
-<h2 id="orgde93af3"><span class="section-number-2">9.</span> Spell checking</h2>
+<div id="outline-container-org7a5a05d" class="outline-2">
+<h2 id="org7a5a05d"><span class="section-number-2">9.</span> Spell checking</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li>To spell check we need to install a spell checking program (only once).</li>
 <li>Once the program is installed, you can spell check by typing <code>M-o S b</code> or <code>M-o S i</code></li>
 </ul>
 </div>
-<div id="outline-container-org1682394" class="outline-3">
-<h3 id="org1682394"><span class="section-number-3">9.1.</span> Install a spell checker on macOS</h3>
+<div id="outline-container-org4b13843" class="outline-3">
+<h3 id="org4b13843"><span class="section-number-3">9.1.</span> Install a spell checker on macOS</h3>
 <div class="outline-text-3" id="text-9-1">
 <ol class="org-ol">
 <li><p>
@@ -1160,8 +1138,8 @@ brew install ispell
 </ol>
 </div>
 </div>
-<div id="outline-container-orgde9e7f6" class="outline-3">
-<h3 id="orgde9e7f6"><span class="section-number-3">9.2.</span> Install a spell checker on Windows</h3>
+<div id="outline-container-orgcf1a7e7" class="outline-3">
+<h3 id="orgcf1a7e7"><span class="section-number-3">9.2.</span> Install a spell checker on Windows</h3>
 <div class="outline-text-3" id="text-9-2">
 <ul class="org-ul">
 <li>We first need to install <a href="https://www.msys2.org/">Msys2</a>. Click the link and install it as instructed.</li>
@@ -1180,8 +1158,8 @@ pacman -S mingw-w64-x86_64-hunspell-en
 </ul>
 </div>
 </div>
-<div id="outline-container-org5b9f3cd" class="outline-3">
-<h3 id="org5b9f3cd"><span class="section-number-3">9.3.</span> Install a spell checker on GNU/Linux</h3>
+<div id="outline-container-org7b9e015" class="outline-3">
+<h3 id="org7b9e015"><span class="section-number-3">9.3.</span> Install a spell checker on GNU/Linux</h3>
 <div class="outline-text-3" id="text-9-3">
 <ul class="org-ul">
 <li><p>
@@ -1195,12 +1173,12 @@ sudo apt-get install ispell
 </div>
 </div>
 
-<div id="outline-container-orgb30f724" class="outline-2">
-<h2 id="orgb30f724"><span class="section-number-2">10.</span> Configurations</h2>
+<div id="outline-container-org1d9c4e9" class="outline-2">
+<h2 id="org1d9c4e9"><span class="section-number-2">10.</span> Configurations</h2>
 <div class="outline-text-2" id="text-10">
 </div>
-<div id="outline-container-org4cccd9e" class="outline-3">
-<h3 id="org4cccd9e"><span class="section-number-3">10.1.</span> key-tree</h3>
+<div id="outline-container-org340a48b" class="outline-3">
+<h3 id="org340a48b"><span class="section-number-3">10.1.</span> key-tree</h3>
 <div class="outline-text-3" id="text-10-1">
 <ul class="org-ul">
 <li>You can add your own keybindings.</li>
@@ -1211,8 +1189,8 @@ to update Newbiemacs.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org17a3989" class="outline-3">
-<h3 id="org17a3989"><span class="section-number-3">10.2.</span> user-init</h3>
+<div id="outline-container-org5032df2" class="outline-3">
+<h3 id="org5032df2"><span class="section-number-3">10.2.</span> user-init</h3>
 <div class="outline-text-3" id="text-10-2">
 <ul class="org-ul">
 <li>You can add your own configurations in the user init file.</li>
@@ -1222,8 +1200,8 @@ to update Newbiemacs.</li>
 </div>
 </div>
 
-<div id="outline-container-org611366e" class="outline-2">
-<h2 id="org611366e"><span class="section-number-2">11.</span> Further readings</h2>
+<div id="outline-container-org5b8d4ea" class="outline-2">
+<h2 id="org5b8d4ea"><span class="section-number-2">11.</span> Further readings</h2>
 <div class="outline-text-2" id="text-11">
 <ul class="org-ul">
 <li><a href="https://www.gnu.org/software/emacs/tour/">A Guided Tour of Emacs</a></li>
@@ -1236,7 +1214,7 @@ to update Newbiemacs.</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jang Soo Kim</p>
-<p class="date">Created: 2025-01-29 Wed 20:43</p>
+<p class="date">Created: 2025-02-21 Fri 20:27</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
