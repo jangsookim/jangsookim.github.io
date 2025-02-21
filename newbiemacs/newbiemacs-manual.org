@@ -107,10 +107,10 @@
 *** How to create a new bib file containing the current bibitems only
 - Type ~, B c~
 - This will create a new bib file with file name "local-ref.bib" in the current directory.
-*** Toggle between main bib and local bib
+*** Toggle between the main bib file and the local bib file
 - Type ~, B t~
-*** Add a bibitem from main bib to local bib
-1. Type ~, B m~ to add the bib item from the main bib file to the local bib file.
+*** Add a bibitem from the main bib file to the local bib file
+1. Type ~, B m~ to add a bibitem from the main bib file to the local bib file.
 * Org-mode
 - [[https://orgmode.org/][Org-mode]] is a very useful tool to organize text files with extension "org".
 - An org file is basically a text file with [[https://en.wikipedia.org/wiki/Markdown][mark-down]]-like structure.
