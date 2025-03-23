@@ -1,4 +1,4 @@
-#+title: Newbiemacs Cheat Sheet for WINDOWS style (ver 1.30)
+#+title: Newbiemacs Cheat Sheet for WINDOWS style (ver 1.86)
 #+OPTIONS: toc:nil author:nil date:nil
 
 #+LATEX_CLASS: article
@@ -29,16 +29,12 @@
 | ~C-v~      | paste            |
 | ~C-x~      | cut              |
 | ~C-s~      | save             |
-| ~C-w~      | close file       |
-| ~C-a~      | select all       |
 | ~C-z~      | undo             |
 | ~C-y~      | redo             |
 | ~C-f~      | search       |
 | ~C-F~      | search and replace |
-| ~C-1~      | maximize window  |
 - During search, typing ~C-s~ again finds the next match.
 - During search, typing ~C-r~ finds the previous match.
-- ~C-1~ can be useful when there is a pop-up window which you don't want to see.
 
 * Basic global commands
 - Global commands are applied to all files.
