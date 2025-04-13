@@ -175,7 +175,7 @@
 - [[https://galen.dorpalen-barry.org][Galen Dorpalen-Barry]]
 - Dan Drake
 - [[http://people.brandeis.edu/~gessel/][Ira M. Gessel]]
-- JiSun Huh
+- [[https://sites.google.com/yonsei.ac.kr/hyunyjia][JiSun Huh]]
 - [[https://byunghakhwang.github.io/][Byung-Hak Hwang]]
 - [[https://jihyeugjang.github.io/][Jihyeug Jang]]
 - Kathy Ji
