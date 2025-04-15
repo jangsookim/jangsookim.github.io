@@ -23,6 +23,7 @@
 
 * Papers
 ** Preprints
+- Refinement of Hikita's /e/-positivity theorem via Abreu-Nigro's /g/-functions and restricted modular law, [[https://arxiv.org/abs/2504.09123][arXiv:2504.09123]]
 - Combinatorics of generalized orthogonal polynomials of type /R_{II}/ (with Minho Song), [[https://arxiv.org/abs/2411.12345][arXiv:2411.12345]]
 - Hook-valued tableaux uncrowding and tableau switching (with Jihyeug Jang, Jianping Pan, Joseph Pappe, Anne Schilling), [[https://arxiv.org/abs/2410.18343][arXiv:2410.18343]]
 - Enumeration of multiplex juggling card sequences using generalized /q/-derivatives (with Yumin Cho, Jaehyun Kim, and Nakyung Lee),
