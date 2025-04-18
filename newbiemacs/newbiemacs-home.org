@@ -197,7 +197,7 @@ You can re-installing Newbiemacs keeping your Newbiemacs folder
 * Torus Leader Board
 | rank | name    |  score | level | date       |
 |------+---------+--------+-------+------------|
-|    1 | jia     | 576900 |    17 | 2023/02/28 |
-|    2 | jjh     | 459600 |    15 | 2023/03/25 |
+|    1 | jia     | 990000 |    24 | 2025/04/18 |
+|    2 | jjh     | 862500 |    22 | 2024/07/10 |
 |    3 | U-keun  | 382200 |    13 | 2023/02/21 |
 |    4 | jangsoo | 329700 |    13 | 2023/02/13 |
