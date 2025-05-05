@@ -29,8 +29,9 @@
 - Enumeration of multiplex juggling card sequences using generalized /q/-derivatives (with Yumin Cho, Jaehyun Kim, and Nakyung Lee),
  [[https://arxiv.org/abs/2402.09903][arXiv:2402.09903]]
 - Lecture hall graphs and the Askey scheme (with Sylvie Corteel, Bhargavi Jonnadula, Jonathan Keating), [[https://arxiv.org/abs/2311.12761][arXiv:2311.12761]]
-- Refined canonical stable Grothendieck polynomials and their duals, Part 2 (with Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), [[https://arxiv.org/abs/2404.02483][arXiv:2404.02483]]
 - Bounded Littlewood identities for cylindric Schur functions (with JiSun Huh, Christian Krattenthaler, Soichi Okada), [[https://arxiv.org/abs/2301.13117][arXiv:2301.13117]], to appear in the Transactions of the American Mathematical Society
+** 2025
+- Refined canonical stable Grothendieck polynomials and their duals, Part 2 (with Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), /European J. Combin. 127 (2025), 104166/ [[https://arxiv.org/abs/2404.02483][arXiv:2404.02483]]
 ** 2024
 - Characteristic polynomials of the weak order on classical and affine Coxeter groups (with Sun-mi Yun), /Order/, 41 (2024), no.2, 319–334, [[https://arxiv.org/abs/2204.01310][arXiv:2204.01310]]
 - Refined canonical stable Grothendieck polynomials and their duals, Part 1 (with Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), /Adv. Math./ 446 (2024), 109670, [[https://arxiv.org/abs/2104.04251][arXiv:2104.04251]]
