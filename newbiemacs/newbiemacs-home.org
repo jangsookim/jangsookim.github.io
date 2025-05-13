@@ -48,7 +48,7 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
    - Arguments should the the same things for Emacs, i.e. ~--no-wait +%line "%file"~.
 
 ** Windows
-1. Install [[https://www.gnu.org/software/emacs/][Emacs]] version 28.2. Click [[https://ftp.gnu.org/gnu/emacs/windows/emacs-28/emacs-28.2-installer.exe][here]] to download an installation file.
+1. Install [[https://www.gnu.org/software/emacs/][Emacs]] version 30.1. Click [[http://mirror.ossplanet.net/gnu/emacs/windows/emacs-30/emacs-30.1-installer.exe][here]] to download an installation file.
 2. Install Git.  Click [[https://git-scm.com/download/win][here]] to download an installation file.
 3. Install [[https://strawberryperl.com/][Perl]].
 4. Open "Command Prompt" (not "terminal" or "PowerShell") and enter
@@ -69,10 +69,10 @@ If you want to use latex in Newbiemacs, you need to do the following (only once)
 2. Install Sumatra PDF. [[https://www.sumatrapdfreader.org/download-free-pdf-viewer][Click here]] (Download "Installer", not "Portable version".)
 3. Open Sumatra PDF and in the menu go to ~Settings~ and click ~Options...~.
 4. Enter the following line in the box below ~Set inverse search command-line~.
-   : C:\Program Files\Emacs\emacs-28.2\bin\emacsclientw.exe -n +%l "%f"
+   : C:\Program Files\Emacs\emacs-30.1\bin\emacsclientw.exe -n +%l "%f"
    If the box is not visible, then in the menu go to ~Settings~ and click ~Advanced Options...~.
    It will open a text file. Enter the following line anywhere there and save the file.
-   : InverseSearchCmdLine = C:\Program Files\Emacs\emacs-28.2\bin\emacsclientw.exe -n +%l "%f"
+   : InverseSearchCmdLine = C:\Program Files\Emacs\emacs-30.1\bin\emacsclientw.exe -n +%l "%f"
 ** GNU/Linux
 1. Install Emacs version 28.1 or later (Install "GNU Emacs" using
    "Ubuntu Software" if you installed Ubuntu).
