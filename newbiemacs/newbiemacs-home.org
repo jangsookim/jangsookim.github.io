@@ -201,4 +201,4 @@ You can re-installing Newbiemacs keeping your Newbiemacs folder
 |    2 | jjh     | 862500 |    22 | 2024/07/10 |
 |    3 | hojoon  | 407400 |    14 | 2025/03/04 |
 |    4 | U-keun  | 382200 |    13 | 2023/02/21 |
-|    5 | jangsoo | 329700 |    13 | 2023/02/13 |
+|    5 | jangsoo | 342300 |    13 | 2025/05/19 |
