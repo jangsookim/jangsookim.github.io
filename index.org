@@ -231,7 +231,7 @@
 - This is a course that I taught online in December 2020. We learn how to
      use $\mathrm{\LaTeX}$ in Visual Studio Code.
 - [[./files/flyer_vscode.pdf][Poster]]
-- [[file:files/vscode_lecture0.org][Lecture Homepage]]
+- [[file:lectures/vscode/vscode_lecture0.org][Lecture Homepage]]
 - [[https://www.youtube.com/playlist?list=PLGB0U_OssPo4cnACf9kBIBwwyO_2GDPXo][Link to lecture videos]]
 ** Topics in Combinatorics: The Theory of Alternating Sign Matrices
 - [[https://www.youtube.com/playlist?list=PLGB0U_OssPo73Ha4Ity13ZgPjlg2hxdbU][link to videos]]
