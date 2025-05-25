@@ -1,8 +1,11 @@
 #+title: Newbiemacs Lecture 1
 #+author: Jang Soo Kim
 #+date: May 26, 2025
-#+SETUPFILE: /Users/jangsookim/Library/CloudStorage/Dropbox/newbiemacs/nbm-user-settings/org-themes/src/readtheorg_inline/readtheorg_inline.theme
-#+OPTIONS: num:nil timestamp:nil
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_THEME: dracula
+#+REVEAL_INIT_OPTIONS: transition: 'default'
+#+OPTIONS: num:nil timestamp:nil toc:nil
+#+REVEAL_DEFAULT_FRAGMENT: appear
 
 
 * Introduction
@@ -24,13 +27,12 @@
 
 * Basic notions
 ** Notation
-| key             | description                                        |
-|-----------------+----------------------------------------------------|
-| ~C~             | Ctrl key                                           |
-| ~M~             | Meta key (*Command* for Mac and *Alt* for Windows) |
-| ~RET~           | Return key (Enter key)                             |
-| ~M-<backspace>~ | hold ~M~ and then press ~<backspace>~              |
-| ~M-RET~         | hold ~M~ and then press ~RET~                      |
+| notation | description                                        |
+|----------+----------------------------------------------------|
+| ~C~      | Ctrl key                                           |
+| ~M~      | Meta key (*Command* for Mac and *Alt* for Windows) |
+| ~RET~    | Return key (Enter key)                             |
+| ~M-RET~  | hold ~M~ and then press ~RET~                      |
 
 ** Newbiemacs screen
 - To visit this: click *Bee icon*
@@ -42,7 +44,7 @@ file:files/newbiemacs-screenshot.png
 - *folder icon* in Newbiemacs screen
 * Organize pdf and tex files
 ** How to find pdf or tex file
-- Type ~p~ or ~t~ in the Newbiemacs screen.
+- Type ~p~ or ~t~ in Newbiemacs screen.
 - Or click the *pdf* or *tex* icon anytime.
 
 ** Add new pdf files
@@ -66,7 +68,7 @@ file:files/newbiemacs-screenshot.png
 1. Add 3 papers using mathscinet.
 2. Open the 3 papers that you downloaded.
 ** How to create a new tex file
-1. Type ~n~ in the Newbiemacs screen.
+1. Type ~n~ in Newbiemacs screen.
 2. Enter a file name.
 3. Choose a template file.
 *** Exercises
@@ -110,11 +112,12 @@ file:files/newbiemacs-screenshot.png
 ** Change variables
 1. Select the region.
 2. Press ~M-RET t v~.
-** Move the cursor
+** Jump to sections
+- ~M-RET ==~
+** Jump to anywhere in screen
 1. Type ~M-n~
 2. Type the first letter of the word you want to move.
 3. Type the label.
-
 * BibTeX
 ** How to open the main bib file
 - In Newbiemacs screen ~x 5~
@@ -195,7 +198,7 @@ file:files/newbiemacs-screenshot.png
 ** Change themes
 - ~M-o N T ?~: help
 - ~M-o N T c~: Change theme
-** Org mode
-- Organize everything!
-** Vim
-- In Newbiemacs screen ~x e~ and select *vim*.
+** Further study
+- *Org mode*: Organize everything!
+- *Vim*: In Newbiemacs screen ~x e~ and select *vim*.
+- *Git*: You can collaborate with others using Overleaf.
