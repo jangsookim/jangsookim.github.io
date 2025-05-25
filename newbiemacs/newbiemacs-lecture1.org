@@ -1,0 +1,198 @@
+#+title: Newbiemacs Lecture 1
+#+author: Jang Soo Kim
+#+date: May25, 2025
+#+SETUPFILE: /Users/jangsookim/Library/CloudStorage/Dropbox/newbiemacs/nbm-user-settings/org-themes/src/readtheorg_inline/readtheorg_inline.theme
+#+OPTIONS: num:nil timestamp:nil
+
+
+* Introduction
+#+ATTR_REVEAL: :frag (roll-in)
+- Newbiemacs는 Emacs를 기반으로 개발한 수학자를 위한 프로그램
+- AI가 latex 코드를 생성해 주는 시대에 latex을 배울 필요가 있을까?
+- AI로 코드를 생성한 후 그것을 편집하는 것이 중요함
+- Newbiemacs는 latex 코드를 원하는 대로 편집하는데 편리한 기능을 제공
+
+** History
+- 2022년 10월부터 Newbiemacs 개발 시작
+- 현재 국내외 10명정도 사용중
+
+** Features of Newbiemacs
+- pdf와 tex 파일 통합 관리
+- 다양한 LaTeX 편집 기능
+- 손쉬운 사용자 스니펫 추가
+- 간편한 BibTeX 사용
+
+* Basic notions
+** Notation
+| key             | description                                        |
+|-----------------+----------------------------------------------------|
+| ~C~             | Ctrl key                                           |
+| ~M~             | Meta key (*Command* for Mac and *Alt* for Windows) |
+| ~RET~           | Return key (Enter key)                             |
+| ~M-<backspace>~ | hold ~M~ and then press ~<backspace>~              |
+| ~M-RET~         | hold ~M~ and then press ~RET~                      |
+
+** Newbiemacs screen
+- To visit this: click *Bee icon*
+- Or type ~M-<backspace>~
+#+ATTR_HTML: :width 600
+file:files/newbiemacs-screenshot.png
+** Newbiemacs home folder
+- Newbiemacs folder: ~~/newbiemacs~
+- *folder icon* in Newbiemacs screen
+* Organize pdf and tex files
+** How to find pdf or tex file
+- Type ~p~ or ~t~ in the Newbiemacs screen.
+- Or click the *pdf* or *tex* icon anytime.
+
+** Add new pdf files
+*** How to add a pdf file from arxiv
+1. Visit the title page of a paper from https://arxiv.org/ 
+   #+ATTR_HTML: :width 400
+   [[./files/arxiv.png]]
+2. (Skip this in macOS.) Copy the address.
+3. Type ~a~ in Newbiemacs screen.
+*** Exercises
+1. Add 3 papers from the arxiv.
+2. Open the 3 papers that you downloaded.
+*** How to add a pdf file of a published paper
+1. Download a pdf file.
+2. Find the paper in [[https://mathscinet.ams.org/mathscinet/index.html][MathSciNet]].
+   #+ATTR_HTML: :width 900
+   |[[./files/mathscinet.png]]| [[./files/mathscinet2.png]]|
+3. Click ~Cite~, and then click ~Copy~.
+4. In Newbiemacs screen, type ~m~.
+*** Exercises
+1. Add 3 papers using mathscinet.
+2. Open the 3 papers that you downloaded.
+** How to create a new tex file
+1. Type ~n~ in the Newbiemacs screen.
+2. Enter a file name.
+3. Choose a template file.
+*** Exercises
+1. Create 3 tex files.
+2. Open the 3 tex files that you created.
+** How to delete, copy, or rename pdf or tex files
+1. Open the Newbiemacs home folder.
+2. Goto the pdf or tex folder.
+3. You can delete, copy, or rename files as you normally do.
+
+* LaTeX Features
+** How to edit a tex file
+- Compile: ~M-RET b~
+- View pdf: ~M-RET v~
+- pdf to tex: *Command+Shift+mouse click* (mac)
+- pdf to tex: *double click* (win)
+** The dollar key
+- $키를 한번 누르면 inline math mode
+- $키를 두번 누르면 display math mode
+- 수식 입력후 $키를 누르면 수식 밖으로 커서가 이동
+- 한글 입력 상태인 경우 한영 자동 전환
+- 한영 전환: ~M-i~
+** 수식 전환
+- ~M-RET t i~: inline math에서 display math로 변환
+- ~M-RET t e~: display math에서 \begin{equation} 환경으로 전환
+** 화면의 수식 복사
+- ~M-RET p~ 누르고 복사를 원하는 수식 레이블 입력
+** Insert environments
+- ~M-RET e~ 누르고 원하는 environment 선택
+- ~M-RET e RET~ 현재 environment를 변경
+** Define new macros
+- ~M-RET n m~
+** Greek letters
+- To insert ~\alpha~, type ~`a~
+** Insert references
+- ~M-RET r r~
+** Add screenshots
+1. Take a screenshot.
+2. Go to your tex file.
+3. Press ~M-RET i f~.
+** Change variables
+1. Select the region.
+2. Press ~M-RET t v~.
+** Move the cursor
+1. Type ~M-n~
+2. Type the first letter of the word you want to move.
+3. Type the label.
+
+* BibTeX
+** How to open the main bib file
+- In Newbiemacs screen ~x 5~
+- You may copy and paste the content of your own bib file to this file.
+
+** How to use the main bib file
+- In your tex file, type ~M-RET B T~
+- This will add the following two lines in your tex file.
+  : \bibliographystyle{abbrv}
+  : \bibliography{(path-to-newbiemacs)/newbiemacs/nbm-user-settings/references/ref.bib}
+- To insert a citation, type ~M-RET r c~
+** How to toggle the bibliography
+- In your tex file, type ~M-RET B T~
+- This will toggle the above two lines to the actual bibitems.
+- This may be useful if you want to share your tex file with your collaborators without sharing the bib file.
+
+** How to add a new bibtex item from MathSciNet
+1. Copy a bibtex item from MathSciNet or zbMath.
+2. In a latex file, type ~M-RET B n~ and follow the instructions.
+
+** How to add a new bibtex item from arxiv
+1. Go to the arxiv page of the article you you want to cite.
+2. Click "Export BibTeX Citation" on the right box and copy the contents.
+3. In a latex file, type ~M-RET B n~ and follow the instructions.
+
+* Snippets
+** What is a snippet?
+- It is a code block that you can insert quickly.
+** How to use snippets?
+1. Type the key of the snippet.
+2. Type ~TAB~ key.
+3. You may enter contents and type ~TAB~ to exit the snippet.
+** How to see existing snippets?
+- ~M-RET s t~
+** Exercises
+1. Use the following snippets:
+   1. ~fr~, ~bi~
+   2. ~lp~, ~la~
+   3. ~su,~, ~su;~, ~pr,~, ~pr;~
+   4. ~++~, ~--~, ~..~, ~,,~
+   5. ~<<~, ~<<=~, ~>>~
+   6. ~inv~ (in math mode try ~a inv~ and ~TAB~)
+   7. ~iff~
+   8. ~xn+~, ~xn,~
+2. Discover 3 more snippets on your own.
+** How to create a new snippet?
+- ~M-RET s q~: create a simple snippet
+- ~M-RET s n~: create a complicated snippet
+** Exercises
+1. Create a snippet with key *skku* and content *Sungkyunkwan University*
+2. Create 3 more snippets on your own.
+** Snippet syntax
+- Example
+: # -*- mode: snippet -*-
+: # name: frac
+: # key: fr
+: # --
+: \frac{$1}{$2}
+
+- Example
+: # -*- mode: snippet -*-
+: # name: x1+...+xn
+: # key: xn+
+: # --
+: ${1:x}_1 + \cdots + $1_{${2:n}}
+** Exercises
+1. Create a snippet for the Vandermonde determinant.
+   1. key: vdm
+   2. content
+      : \prod_{1\le i<j\le n}(x_i-x_j)
+   3. Make ~n~ and ~x~ be modifiable.
+2. Create 3 more snippets on your own.
+* Extra
+** Update Newbiemacs
+- Type ~U~ in Newbiemacs screen.
+** Torus Game
+- Click *Torus icon*.
+** Org mode
+- Organize everything!
+** Vim
+- In Newbiemacs screen ~x e~ and select *vim*.

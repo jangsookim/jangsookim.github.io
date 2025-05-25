@@ -11,7 +11,6 @@ Newbiemacs character by [[https://instagram.com/ujoo_peace][Artist Ujoo]]
 - Newbiemacs is a pre-configured [[https://www.gnu.org/software/emacs/][GNU Emacs]] distribution inspired by [[https://www.spacemacs.org/][Spacemacs]].
 - Newbiemacs is desiged for mathematicians who are new to Emacs.
 ** Links
-- [[https://youtu.be/vhWpeNRi7Ts][Introduction video]]
 - [[https://github.com/jangsookim/newbiemacs][Git Repository]]
 - [[https://open.kakao.com/o/gbVGi9Te][Kakao Open Chat]]
 ** Main features of Newbiemacs
@@ -134,7 +133,7 @@ file:files/newbiemacs-screenshot.png
 3. Go to your Emacs with the Newbiemacs main screen.
 4. Type ~a~ and follow the instructions at the bottom of the Emacs screen.
 5. It will save a pdf with name scheme such as "Author 1, Authur 2, Title".
-6. Now you can search the pdf by typing ~p~ in on the Newbiemacs main screen.
+6. Now you can search the pdf by typing ~p~ in the Newbiemacs main screen.
 *** How to add a pdf file of a published paper
 1. Download a pdf file into your download folder.
 2. Go to [[https://mathscinet.ams.org/mathscinet/index.html][MathSciNet]] or [[https://zbmath.org/][zbMATH]] (zbMATH is free).
@@ -148,17 +147,23 @@ file:files/newbiemacs-screenshot.png
 6. Go to your Emacs with the Newbiemacs main screen.
 7. Type ~m~ and follow the instructions at the bottom of the Emacs screen.
 8. It will save a pdf with name scheme such as "Author 1, Authur 2, Year, Title".
-9. Now you can search the pdf by typing ~p~ in on the Newbiemacs main screen.
+9. Now you can search the pdf by typing ~p~ in the Newbiemacs main screen.
 10. It will also ask if you want to create a bib item for this paper.
 *** How to create a new tex file
 1. Type ~n~ in the Newbiemacs screen.
 2. Enter a file name for the new tex file. (The extension ~.tex~ is
    not needed. This name will also be the title inside the tex file.)
 3. Choose a template file. (For the default, just hit the enter key.)
-4. Now you can search the tex file by typing ~t~ in on the Newbiemacs main screen.
+4. Now you can search the tex file by typing ~t~ in the Newbiemacs main screen.
 * Manual
 For more details, click [[file:newbiemacs-manual.org][the Newbiemacs manual]].
+* Videos
+** [2022-12-28 Wed] Introduction to Newbiemacs at Sage Days 116
+- [[https://youtu.be/vhWpeNRi7Ts][video]]
 
+** [2025-05-26 Mon] Special Seminar at SKKU 
+- [[file:newbiemacs-lecture1-slides.html][Slides]]
+- [[file:newbiemacs-lecture1.html][Lecture Notes]]
 * FAQ
 ** How can I open the Newbiemacs directory?
 1. Type ~ALT-BACKSPACE~ twice and then type ~F~
