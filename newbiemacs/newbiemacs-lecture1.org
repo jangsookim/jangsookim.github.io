@@ -1,6 +1,6 @@
 #+title: Newbiemacs Lecture 1
 #+author: Jang Soo Kim
-#+date: May25, 2025
+#+date: May 26, 2025
 #+SETUPFILE: /Users/jangsookim/Library/CloudStorage/Dropbox/newbiemacs/nbm-user-settings/org-themes/src/readtheorg_inline/readtheorg_inline.theme
 #+OPTIONS: num:nil timestamp:nil
 
@@ -192,6 +192,9 @@ file:files/newbiemacs-screenshot.png
 - Type ~U~ in Newbiemacs screen.
 ** Torus Game
 - Click *Torus icon*.
+** Change themes
+- ~M-o N T ?~: help
+- ~M-o N T c~: Change theme
 ** Org mode
 - Organize everything!
 ** Vim
