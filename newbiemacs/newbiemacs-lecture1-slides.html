@@ -13,6 +13,17 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/dracula.css" id="theme"/>
 
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
@@ -22,8 +33,8 @@
 <h2 class="author">Jang Soo Kim</h2><h2 class="date">May 26, 2025</h2>
 </section>
 <section>
-<section id="slide-org012a540">
-<h2 id="org012a540">Introduction</h2>
+<section id="slide-org497b8cb">
+<h2 id="org497b8cb">Introduction</h2>
 <ul>
 <li class="fragment roll-in">Newbiemacs는 Emacs를 기반으로 개발한 수학자를 위한 프로그램</li>
 <li class="fragment roll-in">AI가 latex 코드를 생성해 주는 시대에 latex을 배울 필요가 있을까?</li>
@@ -32,16 +43,16 @@
 
 </ul>
 </section>
-<section id="slide-org2b1720e">
-<h3 id="org2b1720e">History</h3>
+<section id="slide-org8d15894">
+<h3 id="org8d15894">History of Newbiemacs</h3>
 <ul>
 <li>2022년 10월부터 Newbiemacs 개발 시작</li>
-<li>현재 국내외 10명정도 사용중</li>
+<li>현재 국내외 약 10명이 사용중</li>
 
 </ul>
 </section>
-<section id="slide-orgd408b18">
-<h3 id="orgd408b18">Features of Newbiemacs</h3>
+<section id="slide-orgf958eb8">
+<h3 id="orgf958eb8">Features of Newbiemacs</h3>
 <ul>
 <li>pdf와 tex 파일 통합 관리</li>
 <li>다양한 LaTeX 편집 기능</li>
@@ -52,13 +63,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org91e579d">
-<h2 id="org91e579d">Basic notions</h2>
-<div class="outline-text-2" id="text-org91e579d">
+<section id="slide-org8e8b123">
+<h2 id="org8e8b123">Basic notions</h2>
+<div class="outline-text-2" id="text-org8e8b123">
 </div>
 </section>
-<section id="slide-org65742cc">
-<h3 id="org65742cc">Notation</h3>
+<section id="slide-org40a94ae">
+<h3 id="org40a94ae">Notation</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -69,7 +80,7 @@
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-left">key</th>
+<th scope="col" class="org-left">notation</th>
 <th scope="col" class="org-left">description</th>
 </tr>
 </thead>
@@ -81,7 +92,7 @@
 
 <tr>
 <td class="org-left"><code>M</code></td>
-<td class="org-left">Meta key (<b>Command</b> for Mac and <b>Alt</b> for Windows)</td>
+<td class="org-left">Meta key (<b>Alt</b> or <b>Command</b> for Mac)</td>
 </tr>
 
 <tr>
@@ -90,84 +101,86 @@
 </tr>
 
 <tr>
-<td class="org-left"><code>M-&lt;backspace&gt;</code></td>
-<td class="org-left">hold <code>M</code> and then press <code>&lt;backspace&gt;</code></td>
-</tr>
-
-<tr>
 <td class="org-left"><code>M-RET</code></td>
-<td class="org-left">hold <code>M</code> and then press <code>RET</code></td>
+<td class="org-left">hold <code>M</code> and press <code>RET</code></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="slide-orgb852d6e">
-<h3 id="orgb852d6e">Newbiemacs screen</h3>
+<section id="slide-org5dc2a24">
+<h3 id="org5dc2a24">Newbiemacs screen</h3>
 <ul>
-<li>To visit this: click <b>Bee icon</b></li>
+<li>Click <b>Bee Icon</b></li>
 <li>Or type <code>M-&lt;backspace&gt;</code></li>
 
 </ul>
 
-<div id="orgf742e30" class="figure">
+<div id="org7ac5a70" class="figure">
 <p><img src="files/newbiemacs-screenshot.png" alt="newbiemacs-screenshot.png" width="600" />
 </p>
 </div>
 </section>
-<section id="slide-org7e82e02">
-<h3 id="org7e82e02">Newbiemacs home folder</h3>
+<section id="slide-org47e4c24">
+<h3 id="org47e4c24">Newbiemacs home folder</h3>
 <ul>
 <li>Newbiemacs folder: <code>~/newbiemacs</code></li>
-<li><b>folder icon</b> in Newbiemacs screen</li>
+<li><b>Folder Icon</b> in Newbiemacs screen</li>
+
+</ul>
+</section>
+<section id="slide-org339c40a">
+<h3 id="org339c40a">Help</h3>
+<ul>
+<li>Type <code>?</code> in Newbiemacs screen.</li>
 
 </ul>
 </section>
 </section>
 <section>
-<section id="slide-org491a89e">
-<h2 id="org491a89e">Organize pdf and tex files</h2>
-<div class="outline-text-2" id="text-org491a89e">
+<section id="slide-org31d897d">
+<h2 id="org31d897d">Organize pdf and tex files</h2>
+<div class="outline-text-2" id="text-org31d897d">
 </div>
 </section>
-<section id="slide-orgce98e54">
-<h3 id="orgce98e54">How to find pdf or tex file</h3>
+<section id="slide-org0bb7091">
+<h3 id="org0bb7091">How to find pdf or tex file</h3>
 <ul>
-<li>Type <code>p</code> or <code>t</code> in the Newbiemacs screen.</li>
-<li>Or click the <b>pdf</b> or <b>tex</b> icon anytime.</li>
+<li>Type <code>p</code> or <code>t</code> in Newbiemacs screen.</li>
+<li>Or click <b>PDF</b> or <b>TEX</b> Icon anytime.</li>
 
 </ul>
 </section>
-<section id="slide-orgc11e52e">
-<h3 id="orgc11e52e">Add new pdf files</h3>
-<div class="outline-text-3" id="text-orgc11e52e">
+<section id="slide-org3f0bbee">
+<h3 id="org3f0bbee">Add pdf files</h3>
+<div class="outline-text-3" id="text-org3f0bbee">
 </div>
 </section>
-<section id="slide-org7296144">
-<h4 id="org7296144">How to add a pdf file from arxiv</h4>
+<section id="slide-org9c4a73a">
+<h4 id="org9c4a73a">How to add a pdf file from arxiv</h4>
 <ol>
 <li><p>
 Visit the title page of a paper from <a href="https://arxiv.org/">https://arxiv.org/</a> 
 </p>
 
-<div id="org1844985" class="figure">
+<div id="orgbe06b2d" class="figure">
 <p><img src="./files/arxiv.png" alt="arxiv.png" width="400" />
 </p>
 </div></li>
-<li>(Skip this in macOS.) Copy the address.</li>
+<li>(Skip this in mac) Copy the address.</li>
 <li>Type <code>a</code> in Newbiemacs screen.</li>
 
 </ol>
 </section>
-<section id="slide-orgcaa4c34">
-<h4 id="orgcaa4c34">Exercises</h4>
+<section id="slide-org3a58b9c">
+<h4 id="org3a58b9c">Exercises</h4>
 <ol>
 <li>Add 3 papers from the arxiv.</li>
 <li>Open the 3 papers that you downloaded.</li>
 
 </ol>
 </section>
-<section id="slide-orgf7da9d8">
-<h4 id="orgf7da9d8">How to add a pdf file of a published paper</h4>
+<section id="slide-org9f3b9d1">
+<h4 id="org9f3b9d1">How to add a pdf file of a published paper</h4>
 <ol>
 <li>Download a pdf file.</li>
 <li><p>
@@ -193,155 +206,250 @@ Find the paper in <a href="https://mathscinet.ams.org/mathscinet/index.html">Mat
 
 </ol>
 </section>
-<section id="slide-orga0b3217">
-<h4 id="orga0b3217">Exercises</h4>
+<section id="slide-org815ae18">
+<h4 id="org815ae18">Exercises</h4>
 <ol>
 <li>Add 3 papers using mathscinet.</li>
 <li>Open the 3 papers that you downloaded.</li>
 
 </ol>
 </section>
-<section id="slide-orgb37f009">
-<h3 id="orgb37f009">How to create a new tex file</h3>
+<section id="slide-org8537de1">
+<h3 id="org8537de1">How to create a new tex file</h3>
 <ol>
-<li>Type <code>n</code> in the Newbiemacs screen.</li>
+<li>Type <code>n</code> in Newbiemacs screen.</li>
 <li>Enter a file name.</li>
 <li>Choose a template file.</li>
 
 </ol>
 </section>
-<section id="slide-orgbf2ce29">
-<h4 id="orgbf2ce29">Exercises</h4>
+<section id="slide-org6777d4a">
+<h4 id="org6777d4a">Exercises</h4>
 <ol>
 <li>Create 3 tex files.</li>
 <li>Open the 3 tex files that you created.</li>
 
 </ol>
 </section>
-<section id="slide-org21c4353">
-<h3 id="org21c4353">How to delete, copy, or rename pdf or tex files</h3>
+<section id="slide-org4cfd7d5">
+<h3 id="org4cfd7d5">How to delete, copy, or rename pdf or tex files</h3>
+<ul>
+<li>Open current folder: <b>Folder Icon</b></li>
+<li>Open pdf or tex folder
 <ol>
 <li>Open the Newbiemacs home folder.</li>
 <li>Goto the pdf or tex folder.</li>
 <li>You can delete, copy, or rename files as you normally do.</li>
 
-</ol>
-</section>
-</section>
-<section>
-<section id="slide-org2e334e1">
-<h2 id="org2e334e1">LaTeX Features</h2>
-<div class="outline-text-2" id="text-org2e334e1">
-</div>
-</section>
-<section id="slide-org2926f77">
-<h3 id="org2926f77">How to edit a tex file</h3>
-<ul>
-<li>Compile: <code>M-RET b</code></li>
-<li>View pdf: <code>M-RET v</code></li>
-<li>pdf to tex: <b>Command+Shift+mouse click</b> (mac)</li>
-<li>pdf to tex: <b>double click</b> (win)</li>
+</ol></li>
 
 </ul>
 </section>
-<section id="slide-org1c6eb81">
-<h3 id="org1c6eb81">The dollar key</h3>
+</section>
+<section>
+<section id="slide-orga736bbb">
+<h2 id="orga736bbb">LaTeX Features</h2>
+<div class="outline-text-2" id="text-orga736bbb">
+</div>
+</section>
+<section id="slide-orgf102e71">
+<h3 id="orgf102e71">How to edit tex files</h3>
 <ul>
-<li>$키를 한번 누르면 inline math mode</li>
-<li>$키를 두번 누르면 display math mode</li>
+<li>Compile: <code>M-RET b</code></li>
+<li>View pdf: <code>M-RET v</code></li>
+<li>pdf to tex:
+<ul>
+<li>(mac) <b>Command+Shift+mouse click</b></li>
+<li>(win) <b>double click</b></li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgb7d59e8">
+<h3 id="orgb7d59e8">Basic keybindings</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">keybinding</th>
+<th scope="col" class="org-left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>C-c</code>, <code>C-v</code>, <code>C-x</code></td>
+<td class="org-left">copy, paste, cut</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-s</code></td>
+<td class="org-left">save file</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-z</code>, <code>C-y</code></td>
+<td class="org-left">undo, redo</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-f</code></td>
+<td class="org-left">search</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-F</code></td>
+<td class="org-left">search and replace</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>(During search) <code>C-s</code>: next match</li>
+<li>(During search) <code>C-r</code>: previous match</li>
+
+</ul>
+</section>
+<section id="slide-orgfb37ea7">
+<h3 id="orgfb37ea7">The dollar key</h3>
+<ul>
+<li>$키를 <b>한 번</b> 누르면 inline math mode</li>
+<li>$키를 <b>두 번</b> 누르면 display math mode</li>
 <li>수식 입력후 $키를 누르면 수식 밖으로 커서가 이동</li>
 <li>한글 입력 상태인 경우 한영 자동 전환</li>
 <li>한영 전환: <code>M-i</code></li>
 
 </ul>
 </section>
-<section id="slide-org87742af">
-<h3 id="org87742af">수식 전환</h3>
+<section id="slide-org76f03a3">
+<h3 id="org76f03a3">수식 전환</h3>
 <ul>
 <li><code>M-RET t i</code>: inline math에서 display math로 변환</li>
 <li><code>M-RET t e</code>: display math에서 \begin{equation} 환경으로 전환</li>
+<li><code>M-RET t a</code>: display math에서 \begin{align} 환경으로 전환</li>
 
 </ul>
 </section>
-<section id="slide-orgf70795a">
-<h3 id="orgf70795a">화면의 수식 복사</h3>
+<section id="slide-org59f35ec">
+<h3 id="org59f35ec">화면의 수식 복사</h3>
 <ul>
 <li><code>M-RET p</code> 누르고 복사를 원하는 수식 레이블 입력</li>
+<li><code>M-RET P</code>: environment를 붙여넣기</li>
 
 </ul>
 </section>
-<section id="slide-org86f9d76">
-<h3 id="org86f9d76">Insert environments</h3>
+<section id="slide-org2dda405">
+<h3 id="org2dda405">Insert environments</h3>
 <ul>
 <li><code>M-RET e</code> 누르고 원하는 environment 선택</li>
 <li><code>M-RET e RET</code> 현재 environment를 변경</li>
 
 </ul>
 </section>
-<section id="slide-org4bb8db5">
-<h3 id="org4bb8db5">Define new macros</h3>
+<section id="slide-org0657545">
+<h3 id="org0657545">Define new macros</h3>
 <ul>
 <li><code>M-RET n m</code></li>
 
 </ul>
 </section>
-<section id="slide-org376fd2b">
-<h3 id="org376fd2b">Greek letters</h3>
+<section id="slide-orgdd44d92">
+<h3 id="orgdd44d92">Greek letters</h3>
 <ul>
 <li>To insert <code>\alpha</code>, type <code>`a</code></li>
 
 </ul>
 </section>
-<section id="slide-org4caabfa">
-<h3 id="org4caabfa">Insert references</h3>
+<section id="slide-org629a9bf">
+<h3 id="org629a9bf">Insert references</h3>
 <ul>
-<li><code>M-RET r r</code></li>
+<li><code>M-RET r r</code> or <code>M-RET r i</code></li>
+<li><code>M-RET t r</code>: toggle <b>\usepackage{refcheck}</b></li>
 
 </ul>
 </section>
-<section id="slide-orgb651f1e">
-<h3 id="orgb651f1e">Add screenshots</h3>
+<section id="slide-org11a7e68">
+<h3 id="org11a7e68">Add screenshots</h3>
 <ol>
 <li>Take a screenshot.</li>
-<li>Go to your tex file.</li>
-<li>Press <code>M-RET i f</code>.</li>
+<li>Type the following in your tex file.
+<ul>
+<li><code>M-RET i f</code>: insert a figure environment</li>
+<li><code>M-RET i q</code>: insert image only</li>
+
+</ul></li>
 
 </ol>
 </section>
-<section id="slide-orgec753c7">
-<h3 id="orgec753c7">Change variables</h3>
+<section id="slide-org8fc6f26">
+<h3 id="org8fc6f26">Change variables</h3>
 <ol>
-<li>Select the region.</li>
+<li>Select the region to apply changes.</li>
 <li>Press <code>M-RET t v</code>.</li>
 
 </ol>
 </section>
-<section id="slide-orgc6e3983">
-<h3 id="orgc6e3983">Move the cursor</h3>
+<section id="slide-orgf87a4db">
+<h3 id="orgf87a4db">Jump to sections</h3>
+<ul>
+<li><code>M-RET =</code></li>
+<li><code>M-RET j s</code></li>
+
+</ul>
+</section>
+<section id="slide-orgc6846f4">
+<h3 id="orgc6846f4">Jump to anywhere in screen</h3>
 <ol>
-<li>Type <code>M-n</code></li>
+<li>Type <code>M-n</code>.</li>
 <li>Type the first letter of the word you want to move.</li>
 <li>Type the label.</li>
 
 </ol>
 </section>
+<section id="slide-org8f6c49c">
+<h3 id="org8f6c49c">More features</h3>
+<ul>
+<li><code>M-RET `</code>: Go to error</li>
+<li><code>M-RET c</code>: Copy the current math content</li>
+<li><code>M-RET C</code>: Copy the current math content with environment</li>
+<li><code>M-RET d</code>: Delete the current math content</li>
+<li><code>M-RET D</code>: Delete the current math content with environment</li>
+<li><code>M-RET t =</code>: Swap LHS and RHS.</li>
+<li><code>M-RET t p</code>: Toggle patheses <b>(..)</b> to <b>\left(..\right)</b>.</li>
+<li><code>M-RET n s</code>: New section</li>
+<li><code>M-RET .</code>: Select the current environment</li>
+
+</ul>
+</section>
 </section>
 <section>
-<section id="slide-org71832ec">
-<h2 id="org71832ec">BibTeX</h2>
-<div class="outline-text-2" id="text-org71832ec">
+<section id="slide-orgcb152b5">
+<h2 id="orgcb152b5">BibTeX</h2>
+<div class="outline-text-2" id="text-orgcb152b5">
 </div>
 </section>
-<section id="slide-org1932a25">
-<h3 id="org1932a25">How to open the main bib file</h3>
+<section id="slide-org43b9b19">
+<h3 id="org43b9b19">What is BibTeX?</h3>
 <ul>
-<li>In Newbiemacs screen <code>x 5</code></li>
+<li>It is a program that manages references.</li>
+
+</ul>
+</section>
+<section id="slide-org3647f2e">
+<h3 id="org3647f2e">How to open the main bib file</h3>
+<ul>
+<li>In Newbiemacs screen, type <code>x 5</code></li>
 <li>You may copy and paste the content of your own bib file to this file.</li>
 
 </ul>
 </section>
-<section id="slide-org9890bff">
-<h3 id="org9890bff">How to use the main bib file</h3>
+<section id="slide-org43cd910">
+<h3 id="org43cd910">How to use the main bib file</h3>
 <ul>
 <li>In your tex file, type <code>M-RET B T</code></li>
 <li><p>
@@ -355,8 +463,8 @@ This will add the following two lines in your tex file.
 
 </ul>
 </section>
-<section id="slide-org1f0f051">
-<h3 id="org1f0f051">How to toggle the bibliography</h3>
+<section id="slide-orgffb89fe">
+<h3 id="orgffb89fe">How to toggle the bibliography</h3>
 <ul>
 <li>In your tex file, type <code>M-RET B T</code></li>
 <li>This will toggle the above two lines to the actual bibitems.</li>
@@ -364,55 +472,64 @@ This will add the following two lines in your tex file.
 
 </ul>
 </section>
-<section id="slide-orgad63950">
-<h3 id="orgad63950">How to add a new bibtex item from MathSciNet</h3>
+<section id="slide-orgb26274d">
+<h3 id="orgb26274d">How to add a new bibtex item from MathSciNet</h3>
 <ol>
 <li>Copy a bibtex item from MathSciNet or zbMath.</li>
-<li>In a latex file, type <code>M-RET B n</code> and follow the instructions.</li>
+<li>In a tex file, type <code>M-RET B n</code> and follow the instructions.</li>
 
 </ol>
 </section>
-<section id="slide-org90a6c4c">
-<h3 id="org90a6c4c">How to add a new bibtex item from arxiv</h3>
+<section id="slide-org9135749">
+<h3 id="org9135749">How to add a new bibtex item from arxiv</h3>
 <ol>
-<li>Go to the arxiv page of the article you you want to cite.</li>
-<li>Click "Export BibTeX Citation" on the right box and copy the contents.</li>
-<li>In a latex file, type <code>M-RET B n</code> and follow the instructions.</li>
+<li>Go to the arxiv page of the article you want to cite.</li>
+<li>Click <b>Export BibTeX Citation</b> on the right box and copy the contents.</li>
+<li>In a tex file, type <code>M-RET B n</code> and follow the instructions.</li>
 
 </ol>
 </section>
 </section>
 <section>
-<section id="slide-org90d0439">
-<h2 id="org90d0439">Snippets</h2>
-<div class="outline-text-2" id="text-org90d0439">
+<section id="slide-orgc079c2f">
+<h2 id="orgc079c2f">Snippets</h2>
+<div class="outline-text-2" id="text-orgc079c2f">
 </div>
 </section>
-<section id="slide-org88fc651">
-<h3 id="org88fc651">What is a snippet?</h3>
+<section id="slide-org7a086ba">
+<h3 id="org7a086ba">What is a snippet?</h3>
 <ul>
 <li>It is a code block that you can insert quickly.</li>
 
 </ul>
 </section>
-<section id="slide-org25b0e92">
-<h3 id="org25b0e92">How to use snippets?</h3>
+<section id="slide-orgdf61dd8">
+<h3 id="orgdf61dd8">How to use snippets</h3>
+<ul>
+<li>With keys
 <ol>
 <li>Type the key of the snippet.</li>
 <li>Type <code>TAB</code> key.</li>
 <li>You may enter contents and type <code>TAB</code> to exit the snippet.</li>
 
-</ol>
+</ol></li>
+<li>Without keys
+<ul>
+<li><code>M-RET s i</code></li>
+
+</ul></li>
+
+</ul>
 </section>
-<section id="slide-org0961f5c">
-<h3 id="org0961f5c">How to see existing snippets?</h3>
+<section id="slide-org899c11f">
+<h3 id="org899c11f">How to see existing snippets</h3>
 <ul>
 <li><code>M-RET s t</code></li>
 
 </ul>
 </section>
-<section id="slide-org9cbd2b3">
-<h3 id="org9cbd2b3">Exercises</h3>
+<section id="slide-org9e4de68">
+<h3 id="org9e4de68">Exercises</h3>
 <ol>
 <li>Use the following snippets:
 <ol>
@@ -430,24 +547,26 @@ This will add the following two lines in your tex file.
 
 </ol>
 </section>
-<section id="slide-org605d591">
-<h3 id="org605d591">How to create a new snippet?</h3>
+<section id="slide-orge5590e2">
+<h3 id="orge5590e2">How to create a new snippet</h3>
 <ul>
 <li><code>M-RET s q</code>: create a simple snippet</li>
 <li><code>M-RET s n</code>: create a complicated snippet</li>
+<li><code>M-RET s d</code>: delete a snippet</li>
+<li><code>M-RET s f</code>: visit a snippet file</li>
 
 </ul>
 </section>
-<section id="slide-orgaf845e4">
-<h3 id="orgaf845e4">Exercises</h3>
+<section id="slide-orga579c14">
+<h3 id="orga579c14">Exercises</h3>
 <ol>
 <li>Create a snippet with key <b>skku</b> and content <b>Sungkyunkwan University</b></li>
-<li>Create 3 more snippets on your own.</li>
+<li>Create 3 more snippets on your own. (e.g. LHS, RHS, TFAE, etc.)</li>
 
 </ol>
 </section>
-<section id="slide-orgeca80c8">
-<h3 id="orgeca80c8">Snippet syntax</h3>
+<section id="slide-org5f6edad">
+<h3 id="org5f6edad">Snippet syntax</h3>
 <ul>
 <li>Example</li>
 
@@ -472,15 +591,30 @@ This will add the following two lines in your tex file.
 # --
 ${1:x}_1 + \cdots + $1_{${2:n}}
 </pre>
+
+
+<ul>
+<li>Example</li>
+
+</ul>
+<pre class="example">
+# -*- mode: snippet -*-
+# name: display-math
+# key: dm
+# --
+\[
+  $0
+\]
+</pre>
 </section>
-<section id="slide-org5c64c96">
-<h3 id="org5c64c96">Exercises</h3>
+<section id="slide-org7354e9c">
+<h3 id="org7354e9c">Exercises</h3>
 <ol>
 <li>Create a snippet for the Vandermonde determinant.
 <ol>
 <li>key: vdm</li>
 <li><p>
-content
+content:
 </p>
 <pre class="example">
 \prod_{1\le i&lt;j\le n}(x_i-x_j)
@@ -488,50 +622,61 @@ content
 <li>Make <code>n</code> and <code>x</code> be modifiable.</li>
 
 </ol></li>
-<li>Create 3 more snippets on your own.</li>
+<li><p>
+Create 3 more snippets on your own. For example,
+</p>
+<pre class="example">
+\lim_{n\to \infty}
+\det\left( \right)
+\bigcup_{i=0}^n
+</pre></li>
 
 </ol>
 </section>
 </section>
 <section>
-<section id="slide-orgf51dee3">
-<h2 id="orgf51dee3">Extra</h2>
-<div class="outline-text-2" id="text-orgf51dee3">
+<section id="slide-org5dd2a6e">
+<h2 id="org5dd2a6e">Extra</h2>
+<div class="outline-text-2" id="text-org5dd2a6e">
 </div>
 </section>
-<section id="slide-org5e5cf2c">
-<h3 id="org5e5cf2c">Update Newbiemacs</h3>
+<section id="slide-org9c51607">
+<h3 id="org9c51607">Update Newbiemacs</h3>
 <ul>
 <li>Type <code>U</code> in Newbiemacs screen.</li>
 
 </ul>
 </section>
-<section id="slide-orgf962cdf">
-<h3 id="orgf962cdf">Torus Game</h3>
+<section id="slide-org239c4bb">
+<h3 id="org239c4bb">Torus Game</h3>
 <ul>
-<li>Click <b>Torus icon</b>.</li>
+<li>Click <b>Torus Icon</b>.</li>
 
 </ul>
 </section>
-<section id="slide-orge1771c6">
-<h3 id="orge1771c6">Change themes</h3>
+<section id="slide-org0e7d970">
+<h3 id="org0e7d970">Change themes</h3>
 <ul>
 <li><code>M-o N T ?</code>: help</li>
 <li><code>M-o N T c</code>: Change theme</li>
 
 </ul>
 </section>
-<section id="slide-org09feb8f">
-<h3 id="org09feb8f">Org mode</h3>
-<ul>
-<li>Organize everything!</li>
+<section id="slide-org2d3aa8d">
+<h3 id="org2d3aa8d">Modify template files</h3>
+<ol>
+<li>In Newbiemacs screen, type <code>x 4</code></li>
+<li>Edit any template tex file you want.</li>
+<li>You may also add your own template files here.</li>
 
-</ul>
+</ol>
 </section>
-<section id="slide-orgf6352e0">
-<h3 id="orgf6352e0">Vim</h3>
+<section id="slide-org651ac0d">
+<h3 id="org651ac0d">Further study</h3>
 <ul>
-<li>In Newbiemacs screen <code>x e</code> and select <b>vim</b>.</li>
+<li><b>Org mode</b>: Organize everything!</li>
+<li><b>Vim</b>: In Newbiemacs screen <code>x e</code> and select <b>vim</b>.</li>
+<li><b>Git</b>: You can collaborate with people using Overleaf.</li>
 
 </ul>
 </section>
@@ -539,17 +684,20 @@ content
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
-
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-plugins: [RevealMarkdown, RevealZoom, RevealNotes],
-transition: 'default'
+transition: 'default',
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+
 });
 
 </script>
