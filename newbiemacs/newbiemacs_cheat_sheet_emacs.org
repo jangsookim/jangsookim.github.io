@@ -1,4 +1,4 @@
-#+title: Newbiemacs Cheat Sheet for Emacs style (ver 1.30)
+#+title: Newbiemacs Cheat Sheet for Emacs style (ver 2.00)
 #+OPTIONS: toc:nil author:nil date:nil
 
 #+LATEX_CLASS: article
@@ -8,81 +8,63 @@
 #+LATEX_HEADER: \usepackage{multicol}
 #+LATEX_HEADER: \usepackage{nopageno}
 
-[[https://jangsookim.github.io/newbiemacs/newbiemacs-home.html][Newbiemacs Homepage]]
-
 * Notation
-| key       | description                                           |
-|-----------+-------------------------------------------------------|
-| ~C~       | the ctrl key, i.e., the control key                   |
-| ~M~       | the meta key, i.e., the command key for Mac           |
-|           | or the alt key for Windows                            |
-| ~SPC~     | the space key                                         |
-| ~RET~     | the return key, i.e. the enter key                    |
-| ~C-c~     | hold the ctrl key and press ~c~                 |
-| ~M-o f s~ | hold the meta key and press ~o~                       |
-|           | and then press ~f~ and ~s~ (without holding the meta) |
+| key             | description                                       |
+|-----------------+---------------------------------------------------|
+| ~C~             | Ctrl key                                          |
+| ~M~             | Meta key (Alt key)                                |
+| ~SPC~           | Space key                                         |
+| ~RET~           | Return key (Enter key)                            |
+| ~C-c~           | hold Ctrl key and press ~c~                       |
+| ~M-o f s~       | hold Meta key and press ~o~                       |
+|                 | and then press ~f~ and ~s~ (without holding Meta) |
+| ~<leader>~      | ~M-o~                                             |
+| ~<localleader>~ | ~M-RET~                                           |
 
 * Basic keybindings
-| keybinding | description      |
-|------------+------------------|
-| ~M-w~      | copy             |
-| ~C-y~      | paste            |
-| ~C-w~   | cut              |
-| ~C-x C-s~  | save             |
-| ~C-x k~    | close file       |
-| ~C-x h~   | select all       |
-| ~C-/~     | undo             |
-| ~C-r~      | redo             |
-| ~C-s~      | search       |
-| ~M-%~     | search and replace |
-| ~C-x 1~    | maximize window  |
-- During search, typing ~C-s~ again finds the next match.
-- During search, typing ~C-r~ finds the previous match.
-- ~C-x 1~ can be useful when there is a pop-up window which you don't want to see.
+| keybinding | description        |
+|------------+--------------------|
+| ~M-w~      | copy               |
+| ~C-y~      | paste              |
+| ~C-w~      | cut                |
+| ~C-x C-s~  | save               |
+| ~C-/~      | undo               |
+| ~C-r~      | redo               |
+| ~C-s~      | search             |
+| ~M-%~      | search and replace |
+- (during search) ~C-s~: next match
+- (during search) ~C-r~: previous match
 
 * Basic global commands
-- Global commands are applied to all files.
-- Every keybinding of a global command starts with ~M-o~
-- Keybindings are organized by their categories.
-- For example, commands related to files start with ~M-o f~
-| keybinding | description                |
-|------------+----------------------------|
-| ~M-o f s~  | save                       |
-| ~M-o f A~  | save as                    |
-| ~M-o f R~  | rename file                |
-| ~M-o f r~  | recent files               |
-| ~M-o f f~  | find files           |
-| ~M-o f F~  | Finder (file manager)      |
-| ~M-o p~    | pdf find                   |
-| ~M-o t~    | tex find                   |
-| ~M-o m~    | misc find                  |
-| ~M-o o r~ | org-roam find          |
+| keybinding     | description           |
+|----------------+-----------------------|
+| ~<leader> f s~ | save                  |
+| ~<leader> p~   | pdf find              |
+| ~<leader> t~   | tex find              |
+| ~<leader> SPC~ | all Emacs commands    |
+| ~M-i~          | Toggle English/Korean |
 
-* Useful global commands
-| keybinding | description           |
-|------------+-----------------------|
-| ~M-x~      | all emacs commands    |
-| ~M-o TAB~  | last buffer           |
-| ~M-o b b~  | buffer list           |
-| ~M-o f b~  | bookmark current file |
-| ~M-o RET~  | bookmark search       |
-
-* Basic latex commands
-| keybinding  | description               |
-|-------------+---------------------------|
-| ~M-RET b~   | build (compile)           |
-| ~M-RET v~   | view pdf                  |
-| ~M-RET ,~   | tex master command        |
-| ~M-RET .~   | mark (select) environment |
-| ~M-RET r r~ | reference                 |
-| ~M-RET n m~ | new macro                 |
+* Basic LaTeX commands
+| keybinding          | description        |
+|---------------------+--------------------|
+| ~<localleader> b~   | build (compile)    |
+| ~<localleader> v~   | view pdf           |
+| ~<localleader> r r~ | insert reference   |
+| ~<localleader> n m~ | new macro          |
+| ~<localleader> p~   | paste math         |
+| ~<localleader> e~   | insert environment |
+| ~<localleader> i f~ | insert screenshot  |
+| ~<localleader> t v~ | change variables   |
+| ~<localleader> =~   | jump to section    |
+| ~<localleader> `~   | jump to error      |
+| ~`a~                | insert Greek alpha |
 
 * Basic org-mode commands
-| keybinding | description               |
-|------------+---------------------------|
-| ~M-RET e~      | export to various format  |
-| ~M-RET h h~    | export to html            |
-| ~M-RET h H~    | insert html theme         |
-| ~M-RET h r~    | export to presentation    |
-| ~M-RET h R~    | insert presentation theme |
-| ~M-RET T T~    | toggle TODO               |
+| keybinding          | description               |
+|---------------------+---------------------------|
+| ~<localleader> e~   | export to various format  |
+| ~<localleader> h h~ | export to html            |
+| ~<localleader> h H~ | insert html theme         |
+| ~<localleader> h r~ | export to presentation    |
+| ~<localleader> h R~ | insert presentation theme |
+| ~<localleader> T T~ | toggle TODO               |
