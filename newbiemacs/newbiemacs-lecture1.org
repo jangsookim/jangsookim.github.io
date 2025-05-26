@@ -81,7 +81,10 @@ file:files/newbiemacs-screenshot.png
   1. Open the Newbiemacs home folder.
   2. Goto the pdf or tex folder.
   3. You can delete, copy, or rename files as you normally do.
-
+** Exercises
+1. Download [[file:files/sample-tex-file.zip][sample-tex-file]].
+2. Copy the sample-tex-file folder under the tex folder.
+3. Open the tex file in Newbiemacs.
 * LaTeX Features
 ** How to edit tex files
 - Compile: ~M-RET b~
