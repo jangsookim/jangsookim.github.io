@@ -2,20 +2,25 @@
 #+SETUPFILE: /Users/jangsookim/Library/CloudStorage/Dropbox/newbiemacs/nbm-user-settings/org-themes/src/readtheorg_inline/readtheorg_inline.theme
 #+OPTIONS: title:t author:t date:t toc:t num:t
 
-* Keybinding Notation
-- ~C~ means Ctrl, i.e., the control key 
-- ~M~ means Meta, i.e., the command key for macOS or the alt key for Windows
-- ~SPC~ means the space key
-- ~RET~ means the return key, i.e., the enter key.
-- ~C-g~ means hold ~C~ and then press ~g~
-- ~C-x k~ means ~C-x~ and then ~k~ (without holding ~C~)
-- ~C-x C-=~ means ~C-x~ and then ~C-=~
-- ~SPC S i~ means ~SPC~ and then ~S~ and then ~i~ (This is
-  case-sensitive, so ~S~ is different from ~s~)
-* Cheat sheets
-- [[file:newbiemacs_cheat_sheet_vim.pdf][Cheat sheet for VIM style]]
-- [[file:newbiemacs_cheat_sheet_emacs.pdf][Cheat sheet for Emacs style]]
-- [[file:newbiemacs_cheat_sheet_windows.pdf][Cheat sheet for Windows style]]
+* Notation
+| key             | description                                                                   |
+|-----------------+-------------------------------------------------------------------------------|
+| ~C~             | Ctrl key                                                                      |
+| ~M~             | Meta key (Alt key)                                                            |
+| ~SPC~           | Space key                                                                     |
+| ~RET~           | Return key (Enter key)                                                        |
+| ~C-c~           | hold Ctrl key and press ~c~                                                   |
+| ~M-o f s~       | hold Meta key and press ~o~ and then press ~f~ and ~s~ (without holding Meta) |
+
+- Most Newbiemacs commands start with "<leader> key" or "<localleader> key".
+- Typing "<leader> key" shows commands for global purposes.
+- Typing "<localleader> key" shows commands specific to current file (tex, org, etc).
+- <leader> can be typed in one of the following ways:
+  - ~M-o~
+  - ~SPC~ (normal mode in Vim)
+- <localleader> can be typed in one of the following ways:
+  - ~M-RET~
+  - ~,~ (normal mode in Vim)
 
 * File managements
 - For beginners, I recommend using your system's file manager.
@@ -27,7 +32,7 @@
 4. You can also drag a folder to Newbiemacs. It will then show the list of files in it.
 ** How to open the current directory in the file manager
 1. Suppose that file A is opened in Newbiemacs.
-2. To open the directory containing A in the file manager, you can simply type ~M-o f F~.
+2. To open the directory containing A in the file manager, you can simply type ~<leader> f F~.
 ** Symlinks
 - A symlink is a link to a file similar to a "shortcut" to a file.
 - Creating a symlink will allow you to search a file without moving it
@@ -36,15 +41,15 @@
 1. Go to the Newbiemacs screen.
 2. In your Finder or File Explorer, find a file that you want to create a symlink.
 3. Drag-and-drop the file into the Newbiemacs screen.
-4. Type ~SPC f S~. Then it will ask you to enter a symlink name. Follow the instructions.
+4. Type ~<leader> f S~. Then it will ask you to enter a symlink name. Follow the instructions.
 5. On macOS, a symlink will be created in this way and you are done.
 6. On Windows, however, it will only copy a string in the
    clipboard. Now open the command prompt run as administrator. Paste
    the string in the command prompt.
 * LaTeX-mode
 ** How to edit a tex file
-- To compile a tex file type ~M-RET b~
-- To view the pdf file type ~M-RET v~
+- To compile a tex file type ~<localleader> b~
+- To view the pdf file type ~<localleader> v~
 - The forward searching (tex file to pdf file) will be done automatically.
 - To go to the location of the tex file from the pdf file, do
   "Command+Shift+mouse click" if you are using Skim on macOS or do "double
@@ -54,7 +59,7 @@
 - Using Newbiemacs you can add an image into your tex file as follows.
   1. Take a screenshot (or upload a screenshot from your tablet).
   2. Go to your tex file.
-  3. Press ~, i f~ and follow the instructions.
+  3. Press ~<localleader> i f~ and follow the instructions.
 - By default Newbiemacs will search the downloads folder and the desktop.
 - If your computer saves screenshots in a different folder you can add
   the folder: type ~ALT-BACKSPACE~ (or ~Command-BACKSPACE~ in macOS) followed by ~x~ followed by ~3~, and
@@ -67,14 +72,14 @@
   1. Open your tex file.
   2. If you want the change only on some part, select the region by
      dragging your mouse. (If you want the change in the entire file, you don't have to do this.)
-  3. Press ~, t v~ and follow the instructions.
+  3. Press ~<localleader> t v~ and follow the instructions.
      
 *** Convert latex code to HWP math code (for Korean)
 - Suppose that you want to use the following latex code in Hangul program (한글 프로그램).
   : \sum_{i=1}^n \frac{a_i}{b_i} = \prod_{i=1}^n c_i^2
 - You can convert this latex code to HWP math code as follows.
   1. Place your cursor inside a math environment.
-  2. Press ~, t h~ and a converted HWP math code will be stored in the
+  2. Press ~<localleader> t h~ and a converted HWP math code will be stored in the
      clipboard. For example, the above latex code will be converted to
      : sum_{ i=1}^n   {a_i }over{b_i } =  prod_{ i=1}^n  c_i^2
   3. Go to Hangul program and paste the clipboard string in the math
@@ -82,35 +87,35 @@
 
 ** BibTeX
 *** How to open the main bib file
-- Type ~SPC N s 5~
+- Type ~<leader> N s 5~
 
 *** How to use the main bib file
-- In your tex file, type ~, B T~
+- In your tex file, type ~<localleader> B T~
 - This will add the following two lines in your tex file.
   : \bibliographystyle{abbrv}
   : \bibliography{(path-to-newbiemacs)/newbiemacs/nbm-user-settings/references/ref.bib}
-- To insert a citation, type ~, r c~
+- To insert a citation, type ~<localleader> r c~
 *** How to toggle the bibliography
-- In your tex file, type ~, B T~
+- In your tex file, type ~<localleader> B T~
 - This will toggle the above two lines to the actual bibitems.
 - This may be useful if you want to share your tex file with your collaborators without sharing the bib file.
 
 *** How to add a new bibtex item from MathSciNet
 1. Copy a bibtex item from MathSciNet or zbMath.
-2. In a latex file, type ~, B n~ and follow the instructions.
+2. In a latex file, type ~<localleader> B n~ and follow the instructions.
 
 *** How to add a new bibtex item from arxiv
-1. Go to the arxiv page of the article you you want to cite.
+1. Go to the arxiv page of the article you want to cite.
 2. Click "Export BibTeX Citation" on the right box and copy the contents.
-3. In a latex file, type ~, B n~ and follow the instructions.
+3. In a latex file, type ~<localleader> B n~ and follow the instructions.
 
 *** How to create a new bib file containing the current bibitems only
-- Type ~, B c~
+- Type ~<localleader> B c~
 - This will create a new bib file with file name "local-ref.bib" in the current directory.
 *** Toggle between the main bib file and the local bib file
-- Type ~, B t~
+- Type ~<localleader> B t~
 *** Add a bibitem from the main bib file to the local bib file
-1. Type ~, B m~ to add a bibitem from the main bib file to the local bib file.
+1. Type ~<localleader> B m~ to add a bibitem from the main bib file to the local bib file.
 * Org-mode
 - [[https://orgmode.org/][Org-mode]] is a very useful tool to organize text files with extension "org".
 - An org file is basically a text file with [[https://en.wikipedia.org/wiki/Markdown][mark-down]]-like structure.
@@ -118,26 +123,26 @@
 - In Newbiemacs we use [[https://www.orgroam.com/][org-roam]], which is a package to connect org files nicely.
 
 ** How to create an org file
-- Type ~SPC o r~.
+- Type ~<leader> o r~.
 - Type a title of a new org file. It will open a new org file.
 - Write anything you want there.
 - Type ~C-c C-c~ when you are done.
 
 ** How to search an org file
-- Type ~SPC o r~.
+- Type ~<leader> o r~.
 - Type anything you remember about the title of the org file.
 
 ** How to insert an org file link into the current org file
-- Type ~, i n~.
+- Type ~<localleader> i n~.
 - Enter the tile of the org file to which you want to insert a link.
 
 ** How to view the connections of the org files
-- Type ~SPC o u~.
+- Type ~<leader> o u~.
 
 ** How to add a link to a file (or a directory)
 - Drag-and-drop a file (or a directory) in your org file will create a
   link to that file.
-- (Optional) If you want to open every linked file or directory using your system default application, add the following line in your ~user-init.el~. (To open ~user-init.el~, type ~SPC N c u~.)
+- (Optional) If you want to open every linked file or directory using your system default application, add the following line in your ~user-init.el~. (To open ~user-init.el~, type ~<leader> N c u~.)
   : (setq org-file-apps nil)
 
 * Magit (git interface)
@@ -154,18 +159,18 @@
   browser.
 ** Test if everything is working
 1. Create a temporary folder.
-2. Inside the temporary folder, type ~M-o g i~ to initiate a repository.
+2. Inside the temporary folder, type ~<leader> g i~ to initiate a repository.
 3. Type "y" twice and enter any repository name.
 4. Create any file and commit and push.
 5. Check if this repository is created in github.
 ** Newbiemacs git commands
 | command   | keybinding                         |
 |-----------+------------------------------------|
-| ~M-o g s~ | start magit                        |
-| ~M-o g c~ | clone repository                   |
-| ~M-o g i~ | initiate git repository            |
-| ~M-o g p~ | publish to github                  |
-| ~M-o g m~ | merge tool for resolving conflicts |
+| ~<leader> g s~ | start magit                        |
+| ~<leader> g c~ | clone repository                   |
+| ~<leader> g i~ | initiate git repository            |
+| ~<leader> g p~ | publish to github                  |
+| ~<leader> g m~ | merge tool for resolving conflicts |
 
 ** Basic magit commands
 | command          | keybinding |
@@ -181,7 +186,7 @@
 
 ** Basic git work flow
 1. Edit your files in a git repository.
-2. Start magit (type ~M-o g s~)
+2. Start magit (type ~<leader> g s~)
 3. Stage the files you want to commit (place the cursor at each file and type ~s~)
 4. Commit (type ~c c~ and enter a commit message and then type ~C-c C-c~)
 5. Push (type ~P p~)
@@ -191,7 +196,7 @@
    3. If there are no conflicts, you are done.
    4. If there are conflicts, Git will automatically write them in each conflicted file, which you need to [[https://magit.vc/manual/magit.html#Resolving-Conflicts][resolve conflicts]] as follows.
       1. Visit a conflicted file (place the cursor at a conflicted file and type ~RET~)
-      2. Once the conflicted file is open, run a merge tool (type ~M-o g m~)
+      2. Once the conflicted file is open, run a merge tool (type ~<leader> g m~)
       3. The merge tool will find each line with conflicts. You can resolve the conflicts as instructed in the minibuffer.
       4. Go back to magit and stage the conflicted file that have been resolved. (This file may have been automatically staged by the merge tool.)
       5. Repeat the above process for each conflicted file.
@@ -201,8 +206,8 @@
 * Vim
 - Newbiemacs uses [[https://www.emacswiki.org/emacs/Evil][evil mode]], which allows us to use [[https://en.wikipedia.org/wiki/Vim_(text_editor)][Vim]] keybindings.
 - To enable Vim, in the Newbiemacs screen, type ~e~ and choose "vim". Then restart Emacs.
-- Once Vim is enabled, the shortcut prefix ~M-o~ can be replaced by ~SPC~ and the shortcut prefix ~M-RET~ can be replaced by ~,~ in normal mode.
-- For example, you can open the current directory using the system file manager by typing ~SPC f F~ in normal mode instead of typing ~M-o f F~, and you can compile a tex file by typing ~, b~ in normal mode instead of typing ~M-RET b~,
+- Once Vim is enabled, the shortcut prefix ~M-o~ can be replaced by ~<leader>~ and the shortcut prefix ~M-RET~ can be replaced by ~,~ in normal mode.
+- For example, you can open the current directory using the system file manager by typing ~<leader> f F~ in normal mode instead of typing ~M-o f F~, and you can compile a tex file by typing ~, b~ in normal mode instead of typing ~M-RET b~.
 - Note, however, that ~M-o~ and ~M-RET~ has the advantage that they can be used in any Vim mode (normal mode, insert mode or anything else).
   
 ** Basic concepts on Vim
