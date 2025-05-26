@@ -31,10 +31,7 @@ file:files/torus-screenshot.png
    : cd ~
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
    : cp ~/nbm-root/.emacs ~/.emacs
-4. Run Emacs. It will take several minutes to download necessary
-   packages. There may be some warnings but it's okay.
-   When it's done, there will be a message at the bottom saying
-   "For information about GNU Emacs and the GNU system, type C-h C-a."
+4. Run Emacs. (If it's already open, close it and run it again.) It will take several minutes to download necessary packages. There may be some warnings but it's okay. When it's done, there will be a message at the bottom saying "For information about GNU Emacs and the GNU system, type C-h C-a."
 5. Close Emacs and run it again. The Newbiemacs main screen will be shown.
 *** Additional steps for latex on macOS (optional)
 If you want to edit tex files in Newbiemacs, you need to do the following (only once).
@@ -81,10 +78,7 @@ If you want to use latex in Newbiemacs, you need to do the following (only once)
    : cd ~
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
    : cp ~/nbm-root/.emacs ~/.emacs
-4. Run Emacs. It will take several minutes to download necessary
-   packages. There may be some warnings but it's okay.
-   When it's done, there will be a message at the bottom saying
-   "For information about GNU Emacs and the GNU system, type C-h C-a."
+4. Run Emacs. (If it's already open, close it and run it again.) It will take several minutes to download necessary packages. There may be some warnings but it's okay. When it's done, there will be a message at the bottom saying "For information about GNU Emacs and the GNU system, type C-h C-a."
 5. Close Emacs and run it again. The Newbiemacs main screen will be shown.
 *** Additional steps for latex on GNU/Linux (optional)
 If you want to edit tex files in Newbiemacs, you need to do the following (only once).
