@@ -180,9 +180,13 @@ You can re-installing Newbiemacs keeping your Newbiemacs folder
 1. Delete the folder ~~/nbm-root~
 2. (For macOS or GNU/Linux) Enter the following in a terminal.
    : cd ~
+   : rm -rf .emacs.d
+   : rm -rf nbm-root
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
 3. (For Windows) Enter the following in Command Prompt.
    : cd %userprofile%
+   : rmdir /s /q .emacs.d
+   : rmdir /s /q nbm-root
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
 * Troubleshooting
 ** Newbiemacs crashed! What should I do?
