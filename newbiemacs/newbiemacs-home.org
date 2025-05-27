@@ -176,8 +176,7 @@ Check the section on "Spell checking" in [[file:newbiemacs-manual.org][the Newbi
 
 ** How can I re-install Newbiemacs?
 You can re-installing Newbiemacs keeping your Newbiemacs folder. You
-don't have to reinstall Emacs. It will take much less than the actual
-installation.
+don't have to reinstall Emacs. 
 1. (For macOS or GNU/Linux) Enter the following in a terminal.
    : cd ~
    : cp nbm-root/nbm-home.txt nbm-home.txt
