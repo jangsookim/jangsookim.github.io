@@ -175,19 +175,26 @@ Check the section on "Spell checking" in [[file:newbiemacs-manual.org][the Newbi
   : (set-face-attribute 'default nil :height 150)
 
 ** How can I re-install Newbiemacs?
-You can re-installing Newbiemacs keeping your Newbiemacs folder
-~~/newbiemacs~.  It will take much less than the actual installation.
-1. Delete the folder ~~/nbm-root~
-2. (For macOS or GNU/Linux) Enter the following in a terminal.
+You can re-installing Newbiemacs keeping your Newbiemacs folder. You
+don't have to reinstall Emacs. It will take much less than the actual
+installation.
+1. (For macOS or GNU/Linux) Enter the following in a terminal.
    : cd ~
+   : cp nbm-root/nbm-home.txt nbm-home.txt
    : rm -rf .emacs.d
    : rm -rf nbm-root
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
-3. (For Windows) Enter the following in Command Prompt.
+   : cp nbm-home.txt nbm-root/nbm-home.txt
+   : rm nbm-home.txt
+2. (For Windows) Enter the following in Command Prompt.
    : cd %userprofile%
+   : copy nbm-root\nbm-home.txt nbm-home.txt
    : rmdir /s /q .emacs.d
    : rmdir /s /q nbm-root
    : git clone https://github.com/jangsookim/newbiemacs.git nbm-root
+   : copy nbm-home.txt nbm-root\nbm-home.txt
+   : del nbm-home.txt
+3. Run Emacs.
 * Troubleshooting
 ** Newbiemacs crashed! What should I do?
 1. Restart Newbiemacs.
