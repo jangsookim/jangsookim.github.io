@@ -23,6 +23,7 @@
 
 * Papers
 ** Preprints
+- Hilbert polynomials of configuration spaces over graphs of circumference at most 1 (with Byung Hee An), [[https://arxiv.org/abs/2505.24416][arXiv:2505.24416]]
 - Refinement of Hikita's /e/-positivity theorem via Abreu-Nigro's /g/-functions and restricted modular law (with JiSun Huh, Byung-Hak Hwang, Donghyun Kim, and Jaeseong Oh), [[https://arxiv.org/abs/2504.09123][arXiv:2504.09123]]
 - Combinatorics of generalized orthogonal polynomials of type /R_{II}/ (with Minho Song), [[https://arxiv.org/abs/2411.12345][arXiv:2411.12345]]
 - Hook-valued tableaux uncrowding and tableau switching (with Jihyeug Jang, Jianping Pan, Joseph Pappe, Anne Schilling), [[https://arxiv.org/abs/2410.18343][arXiv:2410.18343]]
