@@ -204,10 +204,10 @@ don't have to reinstall Emacs.
 3. If you need to use icloud, whose path is ~/Users/<username>/Library/Mobile Documents/com~apple~CloudDocs~, you need to run the following in your terminal. (You have to change ~<username>~ with your actual username.)
    : ln -s "/Users/<username>/Library/Mobile Documents" "/Users/<username>/Library/Mobile-Documents"
 * Torus Leader Board
-| rank | name    |  score | level | date       |
-|------+---------+--------+-------+------------|
-|    1 | jia     | 990000 |    24 | 2025/04/18 |
-|    2 | jjh     | 862500 |    22 | 2024/07/10 |
-|    3 | hojoon  | 407400 |    14 | 2025/03/04 |
-|    4 | U-keun  | 382200 |    13 | 2023/02/21 |
-|    5 | jangsoo | 366000 |    13 | 2025/05/28 |
+| rank | name    |   score | level | date       |
+|------+---------+---------+-------+------------|
+|    2 | jjh     | 1026300 |    24 | 2025/06/18 |
+|    1 | jia     |  990000 |    24 | 2025/04/18 |
+|    3 | hojoon  |  407400 |    14 | 2025/03/04 |
+|    4 | U-keun  |  382200 |    13 | 2023/02/21 |
+|    5 | jangsoo |  366000 |    13 | 2025/05/28 |
