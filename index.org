@@ -23,6 +23,7 @@
 
 * Papers
 ** Preprints
+- Hall-Littlewood expansions of chromatic quasisymmetric functions using linked rook placements (with Seung Jin Lee and Meesue Yoo), [[https://arxiv.org/abs/2506.23082][arXiv:2506.23082]]
 - Hilbert polynomials of configuration spaces over graphs of circumference at most 1 (with Byung Hee An), [[https://arxiv.org/abs/2505.24416][arXiv:2505.24416]]
 - Refinement of Hikita's /e/-positivity theorem via Abreu-Nigro's /g/-functions and restricted modular law (with JiSun Huh, Byung-Hak Hwang, Donghyun Kim, and Jaeseong Oh), [[https://arxiv.org/abs/2504.09123][arXiv:2504.09123]]
 - Combinatorics of generalized orthogonal polynomials of type /R_{II}/ (with Minho Song), [[https://arxiv.org/abs/2411.12345][arXiv:2411.12345]]
@@ -194,6 +195,7 @@
 - [[https://sites.google.com/site/joonkyungleemaths/][Joonkyung Lee]]
 - [[https://automorphy.github.io/al-folio/][Kyu-Hwan Lee]]
 - Nakyung Lee
+- [[https://sites.google.com/site/lsjin1986/seung-jin-lees-hompage][Seung Jin Lee]]
 - [[https://pi.math.cornell.edu/~karola/][Karola Mészáros]]
 - [[http://ahmadmojallal.weebly.com/][Seyed Ahmad Mojallal]]
 - [[https://sites.google.com/view/jaeseong-oh/][Jaeseong Oh]]
