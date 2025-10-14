@@ -23,6 +23,7 @@
 
 * Papers
 ** Preprints
+- Bounded Littlewood identities with fixed number of odd rows or odd columns (with JiSun Huh, Christian Krattenthaler, Soichi Okada), [[https://arxiv.org/abs/2510.11054][arXiv:2510.11054]]
 - Hall-Littlewood expansions of chromatic quasisymmetric functions using linked rook placements (with Seung Jin Lee and Meesue Yoo), [[https://arxiv.org/abs/2506.23082][arXiv:2506.23082]]
 - Hilbert polynomials of configuration spaces over graphs of circumference at most 1 (with Byung Hee An), [[https://arxiv.org/abs/2505.24416][arXiv:2505.24416]]
 - Refinement of Hikita's /e/-positivity theorem via Abreu-Nigro's /g/-functions and restricted modular law (with JiSun Huh, Byung-Hak Hwang, Donghyun Kim, and Jaeseong Oh), [[https://arxiv.org/abs/2504.09123][arXiv:2504.09123]]
