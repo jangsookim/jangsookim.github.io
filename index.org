@@ -23,6 +23,8 @@
 
 * Papers
 ** Preprints
+- Hadamard Products of dual Jacobi-Trudi matrices (with Robert Angarone, Jaeseong Oh, Daniel Soskin), [[https://arxiv.org/abs/2511.08969][arXiv:2511.08969]]
+- Bott manifolds of Bott--Samelson type and assemblies of ordered partitions (with Junho Jeong, Eunjeong Lee), [[https://arxiv.org/abs/2511.09380][arXiv:2511.09380]]
 - Bounded Littlewood identities with fixed number of odd rows or odd columns (with JiSun Huh, Christian Krattenthaler, Soichi Okada), [[https://arxiv.org/abs/2510.11054][arXiv:2510.11054]]
 - Hall-Littlewood expansions of chromatic quasisymmetric functions using linked rook placements (with Seung Jin Lee and Meesue Yoo), [[https://arxiv.org/abs/2506.23082][arXiv:2506.23082]]
 - Hilbert polynomials of configuration spaces over graphs of circumference at most 1 (with Byung Hee An), [[https://arxiv.org/abs/2505.24416][arXiv:2505.24416]]
@@ -167,11 +169,13 @@
 - The initial involution patterns of permutations (with Dongsu Kim),
      /Electron. J. Combin./ 14 (2007), #R2
 ** Unpublished manuscript
+- Total positivity of Hadamard product of dual Jacobi--Trudi matrices with (Jaeseong Oh), [[https://arxiv.org/abs/2504.12583][arXiv:2504.12583]]
 - Ratios of Hahn-Exton /q/-Bessel functions and /q/-Lommel polynomials (with
      Dennis Stanton), [[https://arxiv.org/abs/2006.08120][arXiv:2006.08120]]
 
 * Collaborators
 - [[https://geometry.knu.ac.kr/~anbyhee/][Byung Hee An]]
+- [[https://sites.google.com/umn.edu/robertangarone/home][Robert Angarone]]
 - Gi-Sang Cheon
 - Yumin Cho
 - [[https://sites.google.com/site/yhchomath/][Yunhyung Cho]]
@@ -183,6 +187,7 @@
 - [[https://sites.google.com/yonsei.ac.kr/hyunyjia][JiSun Huh]]
 - [[https://byunghakhwang.github.io/][Byung-Hak Hwang]]
 - [[https://jihyeugjang.github.io/][Jihyeug Jang]]
+- Junho Jeong
 - Kathy Ji
 - Bhargavi Jonnadula
 - [[https://www.irif.fr/~josuat/][Matthieu Josuat-Vergès]]
@@ -213,6 +218,7 @@
 - [[https://profile.hshin.kr/][Heesung Shin]]
 - [[https://minhosong.github.io][Minho Song]]
 - U-Keun Song
+- [[https://danielsoskinhome.wixsite.com/portfolio][Daniel Soskin]]
 - [[http://www.math.umn.edu/~stanton/][Dennis Stanton]]
 - David B. Wilson
 - [[https://meesue.github.io/index.html][Meesue Yoo]]
