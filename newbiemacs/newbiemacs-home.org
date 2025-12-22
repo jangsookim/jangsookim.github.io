@@ -92,11 +92,8 @@ If you want to edit tex files in Newbiemacs, you need to do the following (only 
 file:files/newbiemacs-screenshot.png
 - By default your Newbiemacs folder will be ~~/newbiemacs~ (~~~ means
   your home folder.)
-- The current file name is shown at the bottom of the
-  Newbiemacs screen.
-- Type ~F~ in the Newbiemacs screen to open the folder containing the
-  current file.
-- Newbiemacs provides three editing styles, [[https://en.wikipedia.org/wiki/Vim_(text_editor)][Vim]], Emacs, and Windows (default). To change the editing style, type ~e~ in the Newbiemacs screen.
+- To open the Newbiemacs home folder, go to the Newbiemacs screen and click the folder icon at the top.
+- Newbiemacs provides three editing styles, [[https://en.wikipedia.org/wiki/Vim_(text_editor)][Vim]], Emacs, and Windows (default). To change the editing style, type ~x~ and then ~e~ in the Newbiemacs screen.
 - You can view the Newbiemacs cheat sheet by typing ~?~ in the Newbiemacs screen.
 
 ** Overview
@@ -104,7 +101,6 @@ file:files/newbiemacs-screenshot.png
 - The basic concept of managing files is to store these files in their
   directories and search them.
 - The directories for these files are under the newbiemacs folder.
-- To open the newbiemacs folder, type ~ALT-BACKSPACE~ (or ~Command-BACKSPACE~ in macOS) twice and then type ~F~
 - The pdf and tex files will be stored in the ~pdf~ and ~tex~ folders under the newbiemacs folder.
 - You may manually move your files into one of these folders.
   
