@@ -231,7 +231,8 @@
 - [[https://youtu.be/-QI5uQcrId4?si=1uFjDDM-v7Dkqlw-][interview video]]
 - [[https://youtu.be/NyKYq_OXtPg?si=GWE5UrjQrDM7ZnJV][lecture video]]
 ** Topics in Combinatorics: Combinatorics of orthogonal polynomials
-[[file:lectures/OPS/ops.org][Lecture Homepage]]
+- [[file:lectures/OPS/ops.org][Lecture Homepage]]
+- This is a graduate course on Combinatorics that I taught at Sungkyunkwan University in 2023. 
 ** Introduction to Newbiemacs
 - [[https://youtu.be/vhWpeNRi7Ts][link to video]]
 ** Juggling and Mathematics
