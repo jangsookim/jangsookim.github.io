@@ -156,7 +156,8 @@ For more details, click [[file:newbiemacs-manual.org][the Newbiemacs manual]].
 - [[file:newbiemacs-lecture1.html][Lecture Notes]]
 * FAQ
 ** How can I open the Newbiemacs directory?
-1. Type ~ALT-BACKSPACE~ twice and then type ~F~
+1. Go to the Newbiemacs main screen.
+2. Click the folder icon at the top.
 ** How can I update Newbiemacs?
 1. Type ~U~ in the Newbiemacs screen. (You may need to restart Emacs.)
 ** How can I change the newbiemacs folder?
