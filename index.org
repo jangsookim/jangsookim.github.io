@@ -30,10 +30,9 @@
 - Hilbert polynomials of configuration spaces over graphs of circumference at most 1 (with Byung Hee An), [[https://arxiv.org/abs/2505.24416][arXiv:2505.24416]]
 - Refinement of Hikita's /e/-positivity theorem via Abreu-Nigro's /g/-functions and restricted modular law (with JiSun Huh, Byung-Hak Hwang, Donghyun Kim, and Jaeseong Oh), [[https://arxiv.org/abs/2504.09123][arXiv:2504.09123]]
 - Combinatorics of generalized orthogonal polynomials of type /R_{II}/ (with Minho Song), [[https://arxiv.org/abs/2411.12345][arXiv:2411.12345]]
-- Enumeration of multiplex juggling card sequences using generalized /q/-derivatives (with Yumin Cho, Jaehyun Kim, and Nakyung Lee),
- [[https://arxiv.org/abs/2402.09903][arXiv:2402.09903]]
 - Lecture hall graphs and the Askey scheme (with Sylvie Corteel, Bhargavi Jonnadula, Jonathan Keating), [[https://arxiv.org/abs/2311.12761][arXiv:2311.12761]]
 ** 2026
+- Enumeration of multiplex juggling card sequences using generalized /q/-derivatives (with Yumin Cho, Jaehyun Kim, and Nakyung Lee), Enumerative Combinatorics and Applications 6:2 (2026) Article S2R12, [[https://arxiv.org/abs/2402.09903][arXiv:2402.09903]]
 - Hook-valued tableau uncrowding and tableau switching (with Jihyeug Jang, Jianping Pan, Joseph Pappe, Anne Schilling), SIAM J. Discrete Math. 40 (2026), no. 1, 32–51, [[https://arxiv.org/abs/2410.18343][arXiv:2410.18343]]
 ** 2025
 - Bounded Littlewood identities for cylindric Schur functions (with JiSun Huh, Christian Krattenthaler, Soichi Okada), Trans. Amer. Math. Soc. 378 (2025), 6765-6829, [[https://arxiv.org/abs/2301.13117][arXiv:2301.13117]]
