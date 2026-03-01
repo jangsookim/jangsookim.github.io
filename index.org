@@ -33,20 +33,20 @@
 - Lecture hall graphs and the Askey scheme (with Sylvie Corteel, Bhargavi Jonnadula, Jonathan Keating), [[https://arxiv.org/abs/2311.12761][arXiv:2311.12761]]
 ** 2026
 - Enumeration of multiplex juggling card sequences using generalized /q/-derivatives (with Yumin Cho, Jaehyun Kim, and Nakyung Lee), Enumerative Combinatorics and Applications 6:2 (2026) Article S2R12, [[https://arxiv.org/abs/2402.09903][arXiv:2402.09903]]
-- Hook-valued tableau uncrowding and tableau switching (with Jihyeug Jang, Jianping Pan, Joseph Pappe, Anne Schilling), SIAM J. Discrete Math. 40 (2026), no. 1, 32–51, [[https://arxiv.org/abs/2410.18343][arXiv:2410.18343]]
+- Hook-valued tableau uncrowding and tableau switching (with Jihyeug Jang, Jianping Pan, Joseph Pappe, Anne Schilling), SIAM J. Discrete Math. 40 (2026), no. 1, 32–51, [[https://arxiv.org/abs/2410.18343][arXiv:2410.18343]], [[https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2025/18.html][Extended Abstract in FPSAC 2025]]
 ** 2025
 - Bounded Littlewood identities for cylindric Schur functions (with JiSun Huh, Christian Krattenthaler, Soichi Okada), Trans. Amer. Math. Soc. 378 (2025), 6765-6829, [[https://arxiv.org/abs/2301.13117][arXiv:2301.13117]]
 - Refined canonical stable Grothendieck polynomials and their duals, Part 2 (with Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), /European J. Combin. 127 (2025), 104166/ [[https://arxiv.org/abs/2404.02483][arXiv:2404.02483]]
 ** 2024
 - Characteristic polynomials of the weak order on classical and affine Coxeter groups (with Sun-mi Yun), /Order/, 41 (2024), no.2, 319–334, [[https://arxiv.org/abs/2204.01310][arXiv:2204.01310]]
-- Refined canonical stable Grothendieck polynomials and their duals, Part 1 (with Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), /Adv. Math./ 446 (2024), 109670, [[https://arxiv.org/abs/2104.04251][arXiv:2104.04251]]
+- Refined canonical stable Grothendieck polynomials and their duals, Part 1 (with Byung-Hak Hwang, Jihyeug Jang, Minho Song, and U-Keun Song), /Adv. Math./ 446 (2024), 109670, [[https://arxiv.org/abs/2104.04251][arXiv:2104.04251]], [[https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2023/31.html][Extended Abstract in FPSAC 2023]]
 - Extended commonality of paths and cycles via Schur convexity (with Joonkyung Lee), /J. Combin. Theory Ser. B/ 166 (2024), 109--122, [[https://arxiv.org/abs/2210.00977][arXiv:2210.00977]]
 ** 2023
 - Three families of /q/-Lommel polynomials (with Dennis Stanton), Sém. Lothar. Combin.87B (2023), Art. 8, 25 pp., [[https://arxiv.org/abs/2105.10096][arXiv:2105.10096]]
 - Combinatorics of orthogonal polynomials of type /R_I/ (with Dennis Stanton), /Ramanujan Journal/ 61 (2023), no. 2, 329–390, [[https://arxiv.org/abs/2009.14475][arXiv:2009.14475]]
 - Enumeration of standard barely set-valued tableaux of shifted shapes (with Michael Schlosser and Meesue Yoo), /European Journal of Combinatorics/ 112 (2023), Paper No. 103727, [[https://arxiv.org/abs/2006.03253][arXiv:2006.03253]]
 - Negative moments of orthogonal polynomials (with Jihyeug Jang, Donghyun Kim,  Minho Song, U-Keun Song), /Forum of Mathematics, Sigma/ 11 (2023), Paper No. e22, 34 pp, [[https://arxiv.org/abs/2201.11344][arxiv:2201.11344]]
-- Weight multiplicities and Young tableaux through affine crystals (with Kyu-Hwan Lee and Se-jin Oh), /Memoirs of the American Mathematical Society/, Volume 283 (2023), no 1401, [[https://arxiv.org/abs/1703.10321][arXiv:1703.10321]]
+- Weight multiplicities and Young tableaux through affine crystals (with Kyu-Hwan Lee and Se-jin Oh), /Memoirs of the American Mathematical Society/, Volume 283 (2023), no 1401, [[https://arxiv.org/abs/1703.10321][arXiv:1703.10321]], [[https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2017/25%20Oh%20Kim%20Lee.html][Extended Abstract in FPSAC 2017]]
 
 ** 2022
 - Symmetric Pascal matrices and related graphs (with Gi-Sang Cheon, Seyed Ahmad Mojallal, Meesue Yoo), /Linear and Multilinear Algebra/ 70 (2022), no. 21, 6345–6357
@@ -64,7 +64,7 @@
      [[https://arxiv.org/abs/1804.02489][arXiv:1804.02489]]
 - On linearization coefficients of /q/-Laguerre polynomials (with Byung-Hak
      Hwang, Jaeseong Oh and Sang-Hoon Yu), /Electronic J. Combin./ 27(2)(2020),
-     #P2.22, [[https://arxiv.org/abs/2001.01930][arXiv:2001.01930]]
+     #P2.22, [[https://arxiv.org/abs/2001.01930][arXiv:2001.01930]], [[https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2020/55.html][Extended Abstract in FPSAC 2020]]
 - Enumeration of bounded lecture hall tableaux (with Sylvie Corteel),
      /Séminaire Lotharingien de Combinatoire/ B81f (2020), 28 pp,
      [[https://arxiv.org/abs/1904.10602][arXiv:1904.10602]]
@@ -73,13 +73,13 @@
 ** 2019
 - Reverse plane partitions of skew staircase shapes and /q/-Euler numbers (with
      Byung-Hak Hwang, Meesue Yoo and Sun-mi Yun), /J. Combin. Theory Ser. A/ 168
-     (2019), 120–163, [[https://arxiv.org/abs/1711.02337][arXiv:1711.02337]]
+     (2019), 120–163, [[https://arxiv.org/abs/1711.02337][arXiv:1711.02337]], [[https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2018/54-Hwang-Kim-Yoo-Yun.html][Extended Abstract in FPSAC 2018]]
 - Hook length property of /d/-complete posets via /q/-integrals (with Meesue
-     Yoo), /J. Combin. Theory, Ser. A/ 162 (2019), 167-221, [[https://arxiv.org/abs/1708.09109][arXiv:1708.09109]]
+     Yoo), /J. Combin. Theory, Ser. A/ 162 (2019), 167-221, [[https://arxiv.org/abs/1708.09109][arXiv:1708.09109]], [[https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2018/28-Kim-Yoo.html][Extended Abstract in FPSAC 2018]]
 ** 2018
 - Proof of Chapoton's conjecture on Newton polygons of /q/-Ehrhart polynomials
      (with U-Keun Song), /Electronic J. Combin./ 25(2)(2018), #P2.51
-     [[https://arxiv.org/abs/1704.05621][arXiv:1704.05621]]
+     [[https://arxiv.org/abs/1704.05621][arXiv:1704.05621]], [[https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2018/27-Kim-Song.html][Extended Abstract in FPSAC 2018]]
 - Spectral properties of Pascal graphs (with Gi-Sang Cheon and Seyed Ahmad
      Mojallal), /Linear and Multilinear Algebra/ 66 (2018), 1403-1417
 - On the /f/-vectors of Gelfand-Cetlin polytopes (with Byung Hee An and
@@ -91,11 +91,11 @@
      Meszaros), /Comptes Rendus Mathematique/ 355(3) (2017), 248–259,
      [[https://arxiv.org/abs/1612.00102][arXiv:1612.00102]]
 - On /q/-integrals over order polytopes (with Dennis Stanton), /Adv. Math./
-     308(21) (2017), 1269–1317, [[https://arxiv.org/abs/1608.03342][arXiv:1608.03342]]
+     308(21) (2017), 1269–1317, [[https://arxiv.org/abs/1608.03342][arXiv:1608.03342]], [[https://dmtcs.episciences.org/6413/][Extended Abstract in FPSAC 2016]]
 - A new /q/-Selberg integral, Schur functions, and Young books (with Soichi
      Okada), /Ramanujan Journal/ 42 (2017), 43-57, [[https://arxiv.org/abs/1412.7914][arXiv:1412.7914]]
 - The Selberg integral and Young books (with Suho Oh), /J. Combin. Theory Ser.
-     A/ 145 (2017), 1–24, [[https://arxiv.org/abs/1409.1317][arXiv:1409.1317]]
+     A/ 145 (2017), 1–24, [[https://arxiv.org/abs/1409.1317][arXiv:1409.1317]], [[https://dmtcs.episciences.org/2408][Extended Abstract in FPSAC 2014]]
 ** 2016
 - Moments of orthogonal polynomials and combinatorics (with Sylvie Corteel
      and Dennis Stanton), a book chapter, /IMA Volumes in Mathematics and
@@ -104,7 +104,7 @@
      Kathy Ji and Byungchan Kim), /Int. J. Number Theory/ 12, 1475-1482
      (2016)
 - Generalized Dyck tilings (with Matthieu Josuat-Vergès), /European J. Combin./
-     51 (2016), 458–474, [[https://arxiv.org/abs/1410.1270][arXiv:1410.1270]]
+     51 (2016), 458–474, [[https://arxiv.org/abs/1410.1270][arXiv:1410.1270]], [[https://dmtcs.episciences.org/2391][Extended Abstract in FPSAC 2014]]
 ** 2015
 - The combinatorics of associated Laguerre polynomials (with Dennis Stanton),
      /SIGMA/ 11 (2015), 039, [[https://arxiv.org/abs/1501.03880][arXiv:1501.03880]]
@@ -112,13 +112,13 @@
      Anal. Appl./, 421 (2015), 501-520, [[https://arxiv.org/abs/1403.0053][arXiv:1403.0053]]
 ** 2014
 - Moments of Askey-Wilson polynomials (with Dennis Stanton), /J. Combin.
-     Theory Ser. A/ 125 (2014), 113-145, [[https://arxiv.org/abs/1207.3446][arXiv:1207.3446]]
+     Theory Ser. A/ 125 (2014), 113-145, [[https://arxiv.org/abs/1207.3446][arXiv:1207.3446]], [[https://dmtcs.episciences.org/12802][Extended Abstract in FPSAC 2013]]
 - Annular noncrossing permutations and minimal transitive factorizations
      (with Seunghyun Seo and Heesung Shin), /J. Combin. Theory Ser. A/ 124
-     (2014), 251–262, [[https://arxiv.org/abs/1201.5703][arXiv:1201.5703]]
+     (2014), 251–262, [[https://arxiv.org/abs/1201.5703][arXiv:1201.5703]], [[https://dmtcs.episciences.org/3073][Extended Abstract in FPSAC 2012]]
 - Dyck tilings, increasing trees, descents, and inversions (with Karola
      Mészáros, Greta Panova, David B. Wilson), /J. Combin. Theory Ser. A/ 122
-     (2014), 9-27, [[https://arxiv.org/abs/1205.6578][arXiv:1205.6578]]
+     (2014), 9-27, [[https://arxiv.org/abs/1205.6578][arXiv:1205.6578]], [[https://dmtcs.episciences.org/3081][Extended Abstract in FPSAC 2012]]
 ** 2013
 - Crossings of signed permutations and /q/-Eulerian numbers of type B (with
      Sylvie Corteel and Matthieu Josuat-Vergès), /Journal of Combinatorics/ 4
@@ -129,12 +129,12 @@
      /Annals of Combinatorics/ 17 (2013), no. 2, 339-352, [[https://arxiv.org/abs/1108.6038][arXiv:1108.6038]]
 - Touchard-Riordan formulas, T-fractions, and Jacobi's triple product
      identity (with Matthieu Josuat-Vergès), /Ramanujan J./ 30 (2013), no. 3,
-     341-378, [[https://arxiv.org/abs/1101.5608][arXiv:1101.5608]]
+     341-378, [[https://arxiv.org/abs/1101.5608][arXiv:1101.5608]], [[https://dmtcs.episciences.org/2934/][Extended Abstract in FPSAC 2011]]
 ** 2012
 - Enumeration formulas for generalized /q/-Euler numbers, /Adv. App. Math./ 49
      (2012), 326-350, [[https://arxiv.org/abs/1104.4584][arXiv:1104.4584]]
 - Proofs of two conjectures of Kenyon and Wilson on Dyck tilings, /J. Combin.
-     Theory Ser. A/ 119 (2012), 1692-1710, [[https://arxiv.org/abs/1108.5558][arXiv:1108.5558]]
+     Theory Ser. A/ 119 (2012), 1692-1710, [[https://arxiv.org/abs/1108.5558][arXiv:1108.5558]], [[https://dmtcs.episciences.org/3046][Extended Abstract in FPSAC 2012]]
 ** 2011
 - Combinatorial rigidity of 3-dimensional simplicial polytopes (with Suyoung
      Choi), /Int. Math. Res. Notices/ 2011 (2011), 1935-1951, [[https://arxiv.org/abs/1002.0828][arXiv:1002.0828]]
@@ -149,7 +149,7 @@
 - /q/-analog of tableau containment, /J. Combin. Theory Ser. A/ 118
      (2011),1021-1038, [[https://arxiv.org/abs/0812.1256][arXiv:0812.1256]]
 - Chain enumeration of /k/-divisible noncrossing partitions of classical types,
-     /J. Combin. Theory Ser. A/ 118 (2011), 879-898, [[https://arxiv.org/abs/0908.2641][arXiv:0908.2641]]
+     /J. Combin. Theory Ser. A/ 118 (2011), 879-898, [[https://arxiv.org/abs/0908.2641][arXiv:0908.2641]], [[https://dmtcs.episciences.org/2813][Extended Abstract in FPSAC 2010]]
 
 ** 2010
 - A note on 2-distant noncrossing partitions and weighted Motzkin paths (with
@@ -161,7 +161,7 @@
 - A combinatorial proof of a formula for Betti numbers of a stacked polytope
      (with Suyoung Choi), /Electron. J. Combin./ 17 (2010), #R9, [[https://arxiv.org/abs/0902.2444][arXiv:0902.2444]]
 - Skew domino Schensted algorithm and sign-imbalance, /European J. Combin./ 31
-     (2010), 210-229, [[https://arxiv.org/abs/0711.1035][arXiv:0711.1035]]
+     (2010), 210-229, [[https://arxiv.org/abs/0711.1035][arXiv:0711.1035]], [[https://dmtcs.episciences.org/3623][Extended Abstract in FPSAC 2008]]
 ** 2009
 - /k/-distant crossings and nestings of matchings and partitions (with Dan
      Drake), /DMTCS proc., AK (FPSAC 2009)/ 349-360, [[https://arxiv.org/abs/0812.2725][arXiv:0812.2725]]
