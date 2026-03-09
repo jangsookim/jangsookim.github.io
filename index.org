@@ -269,16 +269,6 @@
 - This is an undergraduate course on Combinatorics that I taught at
      Sungkyunkwan University in 2016. We cover Chapters 1-6 in the textbook:
      Combinatorics Through Guided Discovery by Kenneth P. Bogart.
-* WeBWorK
+* Links
 - [[file:webwork/index.org][Introduction to WeBWorK]]
-* Newbiemacs
-- Newbiemacs is a pre-configured [[https://www.gnu.org/software/emacs/][GNU Emacs]] distribution inspired by [[https://www.spacemacs.org/][Spacemacs]].
-- Newbiemacs is desiged for mathematician who are new to Emacs.
 - [[file:newbiemacs/newbiemacs-home.org][Newbiemacs Homepage]]
-- Screenshots
-#+ATTR_HTML: :width 600
-file:newbiemacs/files/newbiemacs-screenshot.png
-#+ATTR_HTML: :width 600
-file:newbiemacs/files/leader-key.png
-#+ATTR_HTML: :width 500
-file:newbiemacs/files/torus-screenshot.png
