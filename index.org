@@ -23,6 +23,7 @@
 
 * Papers
 ** Preprints
+- Bijections for rhombic alternative tableaux (with Sylvie Corteel, Olya Mandelshtam, Philippe Nadeau), [[https://arxiv.org/abs/2603.12700][arXiv:2603.12700]]
 - Hadamard Products of dual Jacobi-Trudi matrices (with Robert Angarone, Jaeseong Oh, Daniel Soskin), [[https://arxiv.org/abs/2511.08969][arXiv:2511.08969]]
 - Bott manifolds of Bott--Samelson type and assemblies of ordered partitions (with Junho Jeong, Eunjeong Lee), [[https://arxiv.org/abs/2511.09380][arXiv:2511.09380]]
 - Bounded Littlewood identities with fixed number of odd rows or odd columns (with JiSun Huh, Christian Krattenthaler, Soichi Okada), [[https://arxiv.org/abs/2510.11054][arXiv:2510.11054]]
@@ -202,7 +203,9 @@
 - [[https://automorphy.github.io/al-folio/][Kyu-Hwan Lee]]
 - Nakyung Lee
 - [[https://sites.google.com/site/lsjin1986/seung-jin-lees-hompage][Seung Jin Lee]]
+- [[https://www.math.uwaterloo.ca/~omandels/][Olya Mandelshtam]]
 - [[https://pi.math.cornell.edu/~karola/][Karola Mészáros]]
+- [[https://math.univ-lyon1.fr/~nadeau/][Philippe Nadeau]]
 - [[http://ahmadmojallal.weebly.com/][Seyed Ahmad Mojallal]]
 - [[https://sites.google.com/view/jaeseong-oh/][Jaeseong Oh]]
 - [[https://sites.google.com/site/mathsejinoh/][Se-jin Oh]]
