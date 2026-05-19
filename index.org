@@ -23,6 +23,7 @@
 
 * Papers
 ** Preprints
+- Thrall's problem for two rows (with JiSun Huh, Woo-Seok Jung, Meesue Yoo) [[https://arxiv.org/abs/2605.17880][arXiv:2605.17880]]
 - Bijections for rhombic alternative tableaux (with Sylvie Corteel, Olya Mandelshtam, Philippe Nadeau), [[https://arxiv.org/abs/2603.12700][arXiv:2603.12700]]
 - Hadamard Products of dual Jacobi-Trudi matrices (with Robert Angarone, Jaeseong Oh, Daniel Soskin), [[https://arxiv.org/abs/2511.08969][arXiv:2511.08969]]
 - Bott manifolds of Bott--Samelson type and assemblies of ordered partitions (with Junho Jeong, Eunjeong Lee), [[https://arxiv.org/abs/2511.09380][arXiv:2511.09380]]
@@ -192,6 +193,7 @@
 - Kathy Ji
 - Bhargavi Jonnadula
 - [[https://www.irif.fr/~josuat/][Matthieu Josuat-Vergès]]
+- [[https://sites.google.com/view/woo-seokjung][Woo-Seok Jung]]
 - [[https://en.wikipedia.org/wiki/Jonathan_Keating][Jonathan Keating]]
 - [[https://sites.google.com/view/mathbkim/home][Byungchan Kim]]
 - [[https://donghyunkim8.wixsite.com/dhkim][Donghyun Kim]]
