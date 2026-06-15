@@ -23,7 +23,8 @@
 
 * Papers
 ** Preprints
-- Thrall's problem for two rows (with JiSun Huh, Woo-Seok Jung, Meesue Yoo) [[https://arxiv.org/abs/2605.17880][arXiv:2605.17880]]
+- An explicit formula for Koornwinder moments and Rains' positivity conjecture (with Younggwang Cho, Donghyun Kim, Hojoon Lee, Jing Liu, Minho Song), [[https://arxiv.org/abs/2606.14241][arXiv:2606.14241]]
+- Thrall's problem for two rows (with JiSun Huh, Woo-Seok Jung, Meesue Yoo), [[https://arxiv.org/abs/2605.17880][arXiv:2605.17880]]
 - Bijections for rhombic alternative tableaux (with Sylvie Corteel, Olya Mandelshtam, Philippe Nadeau), [[https://arxiv.org/abs/2603.12700][arXiv:2603.12700]]
 - Hadamard Products of dual Jacobi-Trudi matrices (with Robert Angarone, Jaeseong Oh, Daniel Soskin), [[https://arxiv.org/abs/2511.08969][arXiv:2511.08969]]
 - Bott manifolds of Bott--Samelson type and assemblies of ordered partitions (with Junho Jeong, Eunjeong Lee), [[https://arxiv.org/abs/2511.09380][arXiv:2511.09380]]
@@ -33,7 +34,7 @@
 - Refinement of Hikita's /e/-positivity theorem via Abreu-Nigro's /g/-functions and restricted modular law (with JiSun Huh, Byung-Hak Hwang, Donghyun Kim, and Jaeseong Oh), [[https://arxiv.org/abs/2504.09123][arXiv:2504.09123]]
 - Combinatorics of generalized orthogonal polynomials of type /R_{II}/ (with Minho Song), [[https://arxiv.org/abs/2411.12345][arXiv:2411.12345]]
 ** 2026
-- Lecture hall graphs and the Askey scheme (with Sylvie Corteel, Bhargavi Jonnadula, Jonathan Keating), /Adv. in Math./, 499 (2026) 111056, [[https://arxiv.org/abs/2311.12761][arXiv:2311.12761]]
+- Lecture hall graphs and the Askey scheme (with Sylvie Corteel, Bhargavi Jonnadula, Jonathan Keating), /Adv. Math./, 499 (2026) 111056, [[https://arxiv.org/abs/2311.12761][arXiv:2311.12761]]
 - Enumeration of multiplex juggling card sequences using generalized /q/-derivatives (with Yumin Cho, Jaehyun Kim, and Nakyung Lee), Enumerative Combinatorics and Applications 6:2 (2026) Article S2R12, [[https://arxiv.org/abs/2402.09903][arXiv:2402.09903]]
 - Hook-valued tableau uncrowding and tableau switching (with Jihyeug Jang, Jianping Pan, Joseph Pappe, Anne Schilling), SIAM J. Discrete Math. 40 (2026), no. 1, 32–51, [[https://arxiv.org/abs/2410.18343][arXiv:2410.18343]], [[https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2025/18.html][Extended Abstract in FPSAC 2025]]
 ** 2025
@@ -181,6 +182,7 @@
 - Gi-Sang Cheon
 - Yumin Cho
 - [[https://sites.google.com/site/yhchomath/][Yunhyung Cho]]
+- [[https://sites.google.com/view/younggwangcho][Younggwang Cho]]
 - [[http://acmi.ajou.ac.kr/~schoi/][Suyoung Choi]]
 - [[https://math.berkeley.edu/~corteel/][Sylvie Corteel]]
 - [[https://galen.dorpalen-barry.org][Galen Dorpalen-Barry]]
@@ -201,10 +203,12 @@
 - Jaehyun Kim
 - [[https://www.mat.univie.ac.at/~kratt/][Christian Krattenthaler]]
 - [[https://sites.google.com/view/eunjeonglee/][Eunjeong Lee]]
+- [[https://sites.google.com/view/hojoonlee][Hojoon Lee]]
 - [[https://sites.google.com/site/joonkyungleemaths/][Joonkyung Lee]]
 - [[https://automorphy.github.io/al-folio/][Kyu-Hwan Lee]]
 - Nakyung Lee
 - [[https://sites.google.com/site/lsjin1986/seung-jin-lees-hompage][Seung Jin Lee]]
+- Jing Liu
 - [[https://www.math.uwaterloo.ca/~omandels/][Olya Mandelshtam]]
 - [[https://pi.math.cornell.edu/~karola/][Karola Mészáros]]
 - [[https://math.univ-lyon1.fr/~nadeau/][Philippe Nadeau]]
