@@ -145,6 +145,38 @@
 - (Optional) If you want to open every linked file or directory using your system default application, add the following line in your ~user-init.el~. (To open ~user-init.el~, type ~<leader> N c u~.)
   : (setq org-file-apps nil)
 
+* AI tools
+- The AI tools currently work on macOS.
+- Install the [[https://docs.anthropic.com/en/docs/claude-code/overview][Claude Code]] and/or [[https://developers.openai.com/codex/cli/][Codex CLI]] command that you want to use.
+** Open an AI tool in the current folder
+- Type ~<leader> c x~ to run ~nbm-codex-open-terminal~. This opens a new
+  Terminal window, changes to the current folder, and starts Codex.
+- Type ~<leader> c l~ to run ~nbm-claude-open-terminal~. This opens a new
+  Terminal window, changes to the current folder, and starts Claude Code.
+** Send a command to an AI tool
+1. Start Codex or Claude Code in a Terminal window.
+2. In Newbiemacs, open the file that you want the AI tool to work on.
+3. If you want the AI tool to work on only part of the file, select that region.
+4. Type ~<leader> c c~ to run ~nbm-ai-command~.
+5. Choose one of the following commands.
+   | key       | command                                        |
+   |-----------+------------------------------------------------|
+   | ~r~       | Resolve the comment                            |
+   | ~g~       | Check the grammar                              |
+   | ~s~       | Check this with Sage                           |
+   | ~m~       | Check if the content is mathematically correct |
+   | ~any key~ | Enter any command                              |
+6. Newbiemacs sends the command and the current file name to the active
+   Terminal window. If a region is selected, it also sends the starting
+   and ending line and column numbers.
+7. Press any key not listed in the menu to type a one-time command.
+** Customize the command menu
+- In the ~nbm-ai-command~ menu, press ~+~ to add a command.
+- Press ~-~ to delete a command, and then press the command's key.
+- The keys ~+~ and ~-~ are reserved and cannot be assigned to commands.
+- Custom commands are saved in
+  ~nbm-user-settings/nbm-variables/nbm-ai-command.txt~.
+
 * Magit (git interface)
 ** Configuring Git user name and email (one time only)
 - Before using Git you need to identify yourself by entering this.
@@ -324,7 +356,6 @@
 ** user-init
 - You can add your own configurations in the user init file.
 - Press ~M-o N c u~
-
 * Further readings
 - [[https://www.gnu.org/software/emacs/tour/][A Guided Tour of Emacs]]
 - [[https://www.openvim.com/][Interactive Vim tutorial]]
