@@ -149,31 +149,35 @@
 - The AI tools currently work on macOS.
 - Install the [[https://docs.anthropic.com/en/docs/claude-code/overview][Claude Code]] and/or [[https://developers.openai.com/codex/cli/][Codex CLI]] command that you want to use.
 ** Open an AI tool in the current folder
-- Type ~<leader> c x~ to run ~nbm-codex-open-terminal~. This opens a new
-  Terminal window, changes to the current folder, and starts Codex.
-- Type ~<leader> c l~ to run ~nbm-claude-open-terminal~. This opens a new
-  Terminal window, changes to the current folder, and starts Claude Code.
+1. Open a file in the folder where you want to start the AI tool.
+2. Type ~<leader> c~ to open the ~nbm-ai-command~ menu.
+3. Press ~o~ to open the AI-tool submenu.
+4. Press ~x~ for Codex or ~l~ for Claude Code.
+5. Newbiemacs opens a new Terminal window, changes to the current folder,
+   and starts the selected AI tool.
 ** Send a command to an AI tool
 1. Start Codex or Claude Code in a Terminal window.
 2. In Newbiemacs, open the file that you want the AI tool to work on.
 3. If you want the AI tool to work on only part of the file, select that region.
-4. Type ~<leader> c c~ to run ~nbm-ai-command~.
-5. Choose one of the following commands.
-   | key       | command                                        |
-   |-----------+------------------------------------------------|
-   | ~r~       | Resolve the comment                            |
-   | ~g~       | Check the grammar                              |
-   | ~s~       | Check this with Sage                           |
-   | ~m~       | Check if the content is mathematically correct |
-   | ~any key~ | Enter any command                              |
+4. Type ~<leader> c~ to open the ~nbm-ai-command~ menu.
+5. Choose a custom command. The initial commands are:
+   | key     | command                                        |
+   |---------+------------------------------------------------|
+   | ~r~     | Resolve the comment                            |
+   | ~g~     | Check the grammar                              |
+   | ~s~     | Check this with Sage                           |
+   | ~m~     | Check if the content is mathematically correct |
+   | ~other~ | Enter a one-time command                       |
+   ~other~ means any key that is not otherwise listed in the menu.
 6. Newbiemacs sends the command and the current file name to the active
    Terminal window. If a region is selected, it also sends the starting
    and ending line and column numbers.
-7. Press any key not listed in the menu to type a one-time command.
 ** Customize the command menu
-- In the ~nbm-ai-command~ menu, press ~+~ to add a command.
-- Press ~-~ to delete a command, and then press the command's key.
-- The keys ~+~ and ~-~ are reserved and cannot be assigned to commands.
+- In the ~nbm-ai-command~ menu, press ~+~, enter a key, and enter the
+  command to add a custom command.
+- Press ~-~, and then press a custom command's key, to delete it.
+- The keys ~+~, ~-~, and ~o~ are reserved and cannot be assigned to
+  custom commands.
 - Custom commands are saved in
   ~nbm-user-settings/nbm-variables/nbm-ai-command.txt~.
 
