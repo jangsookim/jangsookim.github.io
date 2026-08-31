@@ -23,6 +23,7 @@
 
 * Papers
 ** Preprints
+- Note on adjacency spectra for twice punctured hypercubes (with Victor Reiner, Laura Schoenzeit), [[https://arxiv.org/abs/2608.27887][arXiv:2608.27887]]
 - An explicit formula for Koornwinder moments and Rains' positivity conjecture (with Younggwang Cho, Donghyun Kim, Hojoon Lee, Jing Liu, Minho Song), [[https://arxiv.org/abs/2606.14241][arXiv:2606.14241]]
 - Thrall's problem for two rows (with JiSun Huh, Woo-Seok Jung, Meesue Yoo), [[https://arxiv.org/abs/2605.17880][arXiv:2605.17880]]
 - Bijections for rhombic alternative tableaux (with Sylvie Corteel, Olya Mandelshtam, Philippe Nadeau), [[https://arxiv.org/abs/2603.12700][arXiv:2603.12700]]
@@ -223,6 +224,7 @@
 - [[http://www-users.math.umn.edu/~reiner/][Vic Reiner]]
 - [[https://www.math.ucdavis.edu/~anne/][Anne Schilling]]
 - [[https://www.mat.univie.ac.at/~schlosse/][Michael Schlosser]]
+- Laura Schoenzeit
 - [[https://sites.google.com/view/shyunseo/][Seunghyun Seo]]
 - [[https://profile.hshin.kr/][Heesung Shin]]
 - [[https://minhosong.github.io][Minho Song]]
