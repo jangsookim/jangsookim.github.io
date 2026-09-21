@@ -16,7 +16,7 @@
 : Office: 31256B in Natural Science Building #1
 : Email: name@skku.edu, where name=jangsookim
 
-[[file:files/cv.pdf][Curriculum vitae]]
+[[file:files/cv-jangsookim.pdf][Curriculum vitae]]
 
 #+ATTR_HTML: :width 300
 [[file:files/photo.jpeg]]
@@ -172,7 +172,7 @@
 ** 2007
 - The initial involution patterns of permutations (with Dongsu Kim),
      /Electron. J. Combin./ 14 (2007), #R2
-** Unpublished manuscript
+** Unpublished manuscripts
 - Total positivity of Hadamard product of dual Jacobi--Trudi matrices with (Jaeseong Oh), [[https://arxiv.org/abs/2504.12583][arXiv:2504.12583]]
 - Ratios of Hahn-Exton /q/-Bessel functions and /q/-Lommel polynomials (with
      Dennis Stanton), [[https://arxiv.org/abs/2006.08120][arXiv:2006.08120]]
