@@ -23,6 +23,7 @@
 
 * Papers
 ** Preprints
+- Askey-Wilson polynomials with ASEP parameters (with Younggwang Cho, Donghyun Kim), [[https://arxiv.org/abs/2609.24091][arXiv:2609.24091]]
 - Note on adjacency spectra for twice punctured hypercubes (with Victor Reiner, Laura Schoenzeit), [[https://arxiv.org/abs/2608.27887][arXiv:2608.27887]]
 - An explicit formula for Koornwinder moments and Rains' positivity conjecture (with Younggwang Cho, Donghyun Kim, Hojoon Lee, Jing Liu, Minho Song), [[https://arxiv.org/abs/2606.14241][arXiv:2606.14241]]
 - Thrall's problem for two rows (with JiSun Huh, Woo-Seok Jung, Meesue Yoo), [[https://arxiv.org/abs/2605.17880][arXiv:2605.17880]]
