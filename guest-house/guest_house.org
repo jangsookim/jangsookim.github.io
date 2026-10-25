@@ -12,10 +12,12 @@
 - Check-out by 12:00 PM.
 - See the image below for the direction to Guest House from Sungkyunkwan Univ. Station.
 
+#+ATTR_HTML: :style max-width: 100%; max-height: 90vh; width: auto; height: auto;
 [[file:Guest_information/2022-02-05_17-06-58_image1.png]]
 
 - See the image below for the direction to Math Department from Guest House.
 
+#+ATTR_HTML: :style max-width: 100%; max-height: 90vh; width: auto; height: auto;
 [[file:Guest_information/2022-02-05_17-08-36_image2.png]]
 
 - The math department is located in Natural Science Building 1 (Building #23 on the campus map).
