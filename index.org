@@ -23,6 +23,7 @@
 
 * Papers
 ** Preprints
+- The /e/-expansion of integral form Macdonald polynomials (with Jim Haglund, Jaeseong Oh, Meesue Yoo), [[https://arxiv.org/abs/2610.34772][arXiv:2610.34772]]
 - Askey-Wilson polynomials with ASEP parameters (with Younggwang Cho, Donghyun Kim), [[https://arxiv.org/abs/2609.24091][arXiv:2609.24091]]
 - Note on adjacency spectra for twice punctured hypercubes (with Victor Reiner, Laura Schoenzeit), [[https://arxiv.org/abs/2608.27887][arXiv:2608.27887]]
 - An explicit formula for Koornwinder moments and Rains' positivity conjecture (with Younggwang Cho, Donghyun Kim, Hojoon Lee, Jing Liu, Minho Song), [[https://arxiv.org/abs/2606.14241][arXiv:2606.14241]]
@@ -190,6 +191,7 @@
 - [[https://galen.dorpalen-barry.org][Galen Dorpalen-Barry]]
 - Dan Drake
 - [[http://people.brandeis.edu/~gessel/][Ira M. Gessel]]
+- [[https://www2.math.upenn.edu/~jhaglund/][Jim Haglund]]
 - [[https://sites.google.com/yonsei.ac.kr/hyunyjia][JiSun Huh]]
 - [[https://byunghakhwang.github.io/][Byung-Hak Hwang]]
 - [[https://jihyeugjang.github.io/][Jihyeug Jang]]
