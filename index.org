@@ -34,8 +34,8 @@
 - Hall-Littlewood expansions of chromatic quasisymmetric functions using linked rook placements (with Seung Jin Lee and Meesue Yoo), [[https://arxiv.org/abs/2506.23082][arXiv:2506.23082]]
 - Hilbert polynomials of configuration spaces over graphs of circumference at most 1 (with Byung Hee An), [[https://arxiv.org/abs/2505.24416][arXiv:2505.24416]]
 - Refinement of Hikita's /e/-positivity theorem via Abreu-Nigro's /g/-functions and restricted modular law (with JiSun Huh, Byung-Hak Hwang, Donghyun Kim, and Jaeseong Oh), [[https://arxiv.org/abs/2504.09123][arXiv:2504.09123]]
-- Combinatorics of generalized orthogonal polynomials of type /R_{II}/ (with Minho Song), [[https://arxiv.org/abs/2411.12345][arXiv:2411.12345]]
 ** 2026
+- Combinatorics of generalized orthogonal polynomials of type /R_{II}/ (with Minho Song), /Electronic J. Combin./ 33 (2026), no. 4, P4.24, [[https://arxiv.org/abs/2411.12345][arXiv:2411.12345]]
 - Bounded Littlewood identities with fixed number of odd rows or odd columns (with JiSun Huh, Christian Krattenthaler, Soichi Okada), /Electronic J. Combin./ 33 (2026), no. 3, P3.5, [[https://arxiv.org/abs/2510.11054][arXiv:2510.11054]]
 - Lecture hall graphs and the Askey scheme (with Sylvie Corteel, Bhargavi Jonnadula, Jonathan Keating), /Adv. Math./, 499 (2026) 111056, [[https://arxiv.org/abs/2311.12761][arXiv:2311.12761]]
 - Enumeration of multiplex juggling card sequences using generalized /q/-derivatives (with Yumin Cho, Jaehyun Kim, and Nakyung Lee), /Enumerative Combinatorics and Applications/ 6:2 (2026) Article S2R12, [[https://arxiv.org/abs/2402.09903][arXiv:2402.09903]]
