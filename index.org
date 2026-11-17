@@ -23,6 +23,7 @@
 
 * Papers
 ** Preprints
+- Discriminants and resultants of orthogonal polynomials (with Mourad E. H. Ismail, Jihyeug Jang, Dennis Stanton), [[https://arxiv.org/abs/2611.20962][arXiv:2611.20962]]
 - The /e/-expansion of integral form Macdonald polynomials (with Jim Haglund, Jaeseong Oh, Meesue Yoo), [[https://arxiv.org/abs/2610.34772][arXiv:2610.34772]]
 - Askey-Wilson polynomials with ASEP parameters (with Younggwang Cho, Donghyun Kim), [[https://arxiv.org/abs/2609.24091][arXiv:2609.24091]]
 - Note on adjacency spectra for twice punctured hypercubes (with Victor Reiner, Laura Schoenzeit), [[https://arxiv.org/abs/2608.27887][arXiv:2608.27887]]
@@ -194,6 +195,7 @@
 - [[https://www2.math.upenn.edu/~jhaglund/][Jim Haglund]]
 - [[https://sites.google.com/yonsei.ac.kr/hyunyjia][JiSun Huh]]
 - [[https://byunghakhwang.github.io/][Byung-Hak Hwang]]
+- [[https://louisiana.edu/directory/people/mourad-eh-ismail][Mourad E. H. Ismail]]
 - [[https://jihyeugjang.github.io/][Jihyeug Jang]]
 - Junho Jeong
 - Kathy Ji
